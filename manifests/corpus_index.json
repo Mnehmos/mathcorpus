@@ -1,22 +1,22 @@
 {
-  "packet_count": 35,
+  "packet_count": 48,
   "by_domain": {
-    "algebra": 17,
-    "combinatorics": 3,
+    "algebra": 25,
+    "combinatorics": 4,
     "geometry": 6,
-    "number_theory": 9
+    "number_theory": 13
   },
   "by_level": {
-    "L0_elementary": 18,
-    "L1_proof_basics": 14,
-    "L2_olympiad": 3
+    "L0_elementary": 25,
+    "L1_proof_basics": 19,
+    "L2_olympiad": 4
   },
   "by_kind": {
-    "concept": 34,
+    "concept": 47,
     "negative_example": 1
   },
   "by_status": {
-    "kernel_verified": 34,
+    "kernel_verified": 47,
     "failed_attempt": 1
   },
   "packets": [
@@ -71,6 +71,16 @@
       "packet_sha256": "ace3578c9b48c0a7f12a73ac3c2a2bc4840a933a5dc9271ca7d229cc46786045"
     },
     {
+      "packet_id": "elementary.algebra.neg_neg.v1",
+      "title": "Double negation",
+      "domain": "algebra",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "f982a9118c4040b1301798aa0f79c3f629f1c361a4190cd07e6de94294401cc8"
+    },
+    {
       "packet_id": "elementary.algebra.square_of_difference.v1",
       "title": "Square of a difference",
       "domain": "algebra",
@@ -81,6 +91,16 @@
       "packet_sha256": "1f94dba8e915d03757703d03e6f5ccf93262d1f309e70cc32b3ac270ee2a3c68"
     },
     {
+      "packet_id": "elementary.algebra.sub_self.v1",
+      "title": "A number minus itself is zero",
+      "domain": "algebra",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "427c6045e36b6cc3c6f95d17121448e4dfe6bcbd1d1851c57f711e47f3558f1b"
+    },
+    {
       "packet_id": "elementary.algebra.sum_of_cubes.v1",
       "title": "Sum of cubes",
       "domain": "algebra",
@@ -89,6 +109,16 @@
       "status": "kernel_verified",
       "eligibility": "public_train",
       "packet_sha256": "d120a3d9ba2a5e6d98735f04762f1cf756ce360544346997c6c253e481ee8acd"
+    },
+    {
+      "packet_id": "elementary.combinatorics.card_insert_le.v1",
+      "title": "Insertion increases cardinality by at most one",
+      "domain": "combinatorics",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "ff38eb47b0c09121f07f8996da510cf68992109846102d3f8e73b0f82b6bd0ed"
     },
     {
       "packet_id": "elementary.combinatorics.card_le_of_subset.v1",
@@ -141,6 +171,36 @@
       "packet_sha256": "291b0509b7fb0a8fd89c7fbb359c62568f9da9b258928d5e4a1a6039cf55fbad"
     },
     {
+      "packet_id": "elementary.functions.abs_neg.v1",
+      "title": "Absolute value of a negation",
+      "domain": "algebra",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "185e3287ccae4a8acc1ad93cddd906a5d673ad449050c8623d5890f6a20948f1"
+    },
+    {
+      "packet_id": "elementary.functions.abs_nonneg.v1",
+      "title": "Absolute value is nonnegative",
+      "domain": "algebra",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "be40b26657afc635564318ef6a34ed9839e065b577517d455ac7ca6fced4d166"
+    },
+    {
+      "packet_id": "elementary.functions.abs_sub_comm.v1",
+      "title": "Absolute value of a difference is symmetric",
+      "domain": "algebra",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "0174a5f5b8f9af8831cdcfc922250f8ccb51359421202127806d2fe98423e984"
+    },
+    {
       "packet_id": "elementary.functions.geom_series_mul.v1",
       "title": "Finite geometric series times (r-1)",
       "domain": "algebra",
@@ -149,6 +209,16 @@
       "status": "kernel_verified",
       "eligibility": "public_train",
       "packet_sha256": "ddf9fdf508d7173e432cb714da60ccbf5ff8dfa33aa68959572f1b759ccc913f"
+    },
+    {
+      "packet_id": "elementary.functions.sq_abs.v1",
+      "title": "Square of the absolute value",
+      "domain": "algebra",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "bc7090335767b00c1295eb9372c50ac05ac38378832fc375799a5b3768602baf"
     },
     {
       "packet_id": "elementary.geometry.dist_sq_symm.v1",
@@ -241,6 +311,26 @@
       "packet_sha256": "a8725ef63bdc447eb34c2dbe43a5c21531d408ad08dd094982452bbabd5fb6af"
     },
     {
+      "packet_id": "elementary.inequalities.mul_self_nonneg.v1",
+      "title": "A number times itself is nonnegative",
+      "domain": "algebra",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "79fdab91301d46eec789e1708928fdddca33d416478d9a6caead1bf11670c5d1"
+    },
+    {
+      "packet_id": "elementary.inequalities.reverse_triangle.v1",
+      "title": "Reverse triangle inequality",
+      "domain": "algebra",
+      "level": "L2_olympiad",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "103a7524cffbcc0b28bdbf383f50101b46678f26f44503fb61c30d90d152a063"
+    },
+    {
       "packet_id": "elementary.inequalities.sq_nonneg.v1",
       "title": "A real square is nonnegative",
       "domain": "algebra",
@@ -279,6 +369,16 @@
       "status": "kernel_verified",
       "eligibility": "public_train",
       "packet_sha256": "e284e163fd97f7e179bbbf887121690a26d5b3b8c5ec3fdfaed57b96ce501634"
+    },
+    {
+      "packet_id": "elementary.number_theory.dvd_gcd.v1",
+      "title": "Common divisor divides the gcd",
+      "domain": "number_theory",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "f76e7dd77e1242f2b2312a7844b8c7e0b29971196158484cf056b67e2eed18a4"
     },
     {
       "packet_id": "elementary.number_theory.dvd_mul.v1",
@@ -331,6 +431,16 @@
       "packet_sha256": "423402f909118a1eeecd056f206ae60c8f7e24b02effd2efaeeb168ee7d5178b"
     },
     {
+      "packet_id": "elementary.number_theory.even_or_odd.v1",
+      "title": "Every integer is even or odd",
+      "domain": "number_theory",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "e9079015a816690616982f934633673cabb9c2e303dc3289515a5d5821845a0b"
+    },
+    {
       "packet_id": "elementary.number_theory.gcd_comm.v1",
       "title": "gcd is commutative",
       "domain": "number_theory",
@@ -351,6 +461,16 @@
       "packet_sha256": "65965ef9d00e6b262dd9350fb34a34d3ec45c152f8543ada5bd0038f965674f6"
     },
     {
+      "packet_id": "elementary.number_theory.gcd_dvd_right.v1",
+      "title": "gcd divides its second argument",
+      "domain": "number_theory",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "68e4eaa736c2b63ed1e9fa5b313c2f98bf3542a986cba3d381d1df7ea8e481e9"
+    },
+    {
       "packet_id": "elementary.number_theory.odd_add_odd.v1",
       "title": "Sum of two odd integers is even",
       "domain": "number_theory",
@@ -359,6 +479,16 @@
       "status": "kernel_verified",
       "eligibility": "public_train",
       "packet_sha256": "6ed85ebd8a77e2a0596d0c29ee1033cdbd34be0b46b8d6207460b9709bf6aec9"
+    },
+    {
+      "packet_id": "elementary.number_theory.succ_ne_self.v1",
+      "title": "A successor is never equal to itself",
+      "domain": "number_theory",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "500e096db340d80240e21f02077da3be120cc2497d2889597c1885234d31ef18"
     },
     {
       "packet_id": "negative.geometry.angle_atoms.nlinarith_failure.v1",

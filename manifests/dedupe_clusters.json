@@ -1,5 +1,5 @@
 {
-  "packet_count": 35,
+  "packet_count": 48,
   "exact_file_duplicates": {},
   "canonical_theorem_duplicates": {},
   "family_clusters": {
@@ -12,14 +12,23 @@
       "elementary.algebra.square_of_difference.v1",
       "elementary.algebra.sum_of_cubes.v1"
     ],
+    "algebra.ring_basics": [
+      "elementary.algebra.neg_neg.v1",
+      "elementary.algebra.sub_self.v1"
+    ],
     "combinatorics.finset_card": [
+      "elementary.combinatorics.card_insert_le.v1",
       "elementary.combinatorics.card_le_of_subset.v1",
       "elementary.combinatorics.card_range.v1",
       "elementary.combinatorics.sum_ones_card.v1"
     ],
     "functions.absolute_value": [
       "elementary.functions.abs_add_le.v1",
-      "elementary.functions.abs_mul.v1"
+      "elementary.functions.abs_mul.v1",
+      "elementary.functions.abs_neg.v1",
+      "elementary.functions.abs_nonneg.v1",
+      "elementary.functions.abs_sub_comm.v1",
+      "elementary.functions.sq_abs.v1"
     ],
     "functions.geometric_series": [
       "elementary.functions.geom_series_mul.v1"
@@ -50,10 +59,14 @@
       "elementary.inequalities.two_mul_le_add_sq.v1"
     ],
     "inequalities.square_nonneg": [
+      "elementary.inequalities.mul_self_nonneg.v1",
       "elementary.inequalities.sq_nonneg.v1"
     ],
     "inequalities.sum_of_squares": [
       "elementary.inequalities.three_var_sq_ge.v1"
+    ],
+    "inequalities.triangle": [
+      "elementary.inequalities.reverse_triangle.v1"
     ],
     "number_theory.divisibility_closure": [
       "elementary.number_theory.dvd_add.v1",
@@ -61,13 +74,19 @@
       "elementary.number_theory.dvd_trans.v1"
     ],
     "number_theory.gcd_basics": [
+      "elementary.number_theory.dvd_gcd.v1",
       "elementary.number_theory.gcd_comm.v1",
-      "elementary.number_theory.gcd_dvd_left.v1"
+      "elementary.number_theory.gcd_dvd_left.v1",
+      "elementary.number_theory.gcd_dvd_right.v1"
+    ],
+    "number_theory.nat_basics": [
+      "elementary.number_theory.succ_ne_self.v1"
     ],
     "number_theory.parity_closure": [
       "elementary.number_theory.even_add_even.v1",
       "elementary.number_theory.even_mul.v1",
       "elementary.number_theory.even_mul_succ_self.v1",
+      "elementary.number_theory.even_or_odd.v1",
       "elementary.number_theory.odd_add_odd.v1"
     ]
   }

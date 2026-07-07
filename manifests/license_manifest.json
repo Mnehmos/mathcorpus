@@ -31,13 +31,31 @@
       "source_kind": "author_written"
     },
     {
+      "packet_id": "elementary.algebra.neg_neg.v1",
+      "license_spdx": "Apache-2.0",
+      "license_content": "CC-BY-4.0",
+      "source_kind": "author_written"
+    },
+    {
       "packet_id": "elementary.algebra.square_of_difference.v1",
       "license_spdx": "Apache-2.0",
       "license_content": "CC-BY-4.0",
       "source_kind": "author_written"
     },
     {
+      "packet_id": "elementary.algebra.sub_self.v1",
+      "license_spdx": "Apache-2.0",
+      "license_content": "CC-BY-4.0",
+      "source_kind": "author_written"
+    },
+    {
       "packet_id": "elementary.algebra.sum_of_cubes.v1",
+      "license_spdx": "Apache-2.0",
+      "license_content": "CC-BY-4.0",
+      "source_kind": "author_written"
+    },
+    {
+      "packet_id": "elementary.combinatorics.card_insert_le.v1",
       "license_spdx": "Apache-2.0",
       "license_content": "CC-BY-4.0",
       "source_kind": "author_written"
@@ -73,7 +91,31 @@
       "source_kind": "author_written"
     },
     {
+      "packet_id": "elementary.functions.abs_neg.v1",
+      "license_spdx": "Apache-2.0",
+      "license_content": "CC-BY-4.0",
+      "source_kind": "author_written"
+    },
+    {
+      "packet_id": "elementary.functions.abs_nonneg.v1",
+      "license_spdx": "Apache-2.0",
+      "license_content": "CC-BY-4.0",
+      "source_kind": "author_written"
+    },
+    {
+      "packet_id": "elementary.functions.abs_sub_comm.v1",
+      "license_spdx": "Apache-2.0",
+      "license_content": "CC-BY-4.0",
+      "source_kind": "author_written"
+    },
+    {
       "packet_id": "elementary.functions.geom_series_mul.v1",
+      "license_spdx": "Apache-2.0",
+      "license_content": "CC-BY-4.0",
+      "source_kind": "author_written"
+    },
+    {
+      "packet_id": "elementary.functions.sq_abs.v1",
       "license_spdx": "Apache-2.0",
       "license_content": "CC-BY-4.0",
       "source_kind": "author_written"
@@ -133,6 +175,18 @@
       "source_kind": "author_written"
     },
     {
+      "packet_id": "elementary.inequalities.mul_self_nonneg.v1",
+      "license_spdx": "Apache-2.0",
+      "license_content": "CC-BY-4.0",
+      "source_kind": "author_written"
+    },
+    {
+      "packet_id": "elementary.inequalities.reverse_triangle.v1",
+      "license_spdx": "Apache-2.0",
+      "license_content": "CC-BY-4.0",
+      "source_kind": "author_written"
+    },
+    {
       "packet_id": "elementary.inequalities.sq_nonneg.v1",
       "license_spdx": "Apache-2.0",
       "license_content": "CC-BY-4.0",
@@ -152,6 +206,12 @@
     },
     {
       "packet_id": "elementary.number_theory.dvd_add.v1",
+      "license_spdx": "Apache-2.0",
+      "license_content": "CC-BY-4.0",
+      "source_kind": "author_written"
+    },
+    {
+      "packet_id": "elementary.number_theory.dvd_gcd.v1",
       "license_spdx": "Apache-2.0",
       "license_content": "CC-BY-4.0",
       "source_kind": "author_written"
@@ -187,6 +247,12 @@
       "source_kind": "author_written"
     },
     {
+      "packet_id": "elementary.number_theory.even_or_odd.v1",
+      "license_spdx": "Apache-2.0",
+      "license_content": "CC-BY-4.0",
+      "source_kind": "author_written"
+    },
+    {
       "packet_id": "elementary.number_theory.gcd_comm.v1",
       "license_spdx": "Apache-2.0",
       "license_content": "CC-BY-4.0",
@@ -199,7 +265,19 @@
       "source_kind": "author_written"
     },
     {
+      "packet_id": "elementary.number_theory.gcd_dvd_right.v1",
+      "license_spdx": "Apache-2.0",
+      "license_content": "CC-BY-4.0",
+      "source_kind": "author_written"
+    },
+    {
       "packet_id": "elementary.number_theory.odd_add_odd.v1",
+      "license_spdx": "Apache-2.0",
+      "license_content": "CC-BY-4.0",
+      "source_kind": "author_written"
+    },
+    {
+      "packet_id": "elementary.number_theory.succ_ne_self.v1",
       "license_spdx": "Apache-2.0",
       "license_content": "CC-BY-4.0",
       "source_kind": "author_written"

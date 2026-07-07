@@ -74,6 +74,25 @@ def render_lean(spec: dict) -> str:
     )
 
 
+def _verification(v: dict, env_hash: str) -> dict:
+    """Assemble the verification record. episode_id + environment_hash uniquely identify
+    the proof in the proofsearch ledger; trajectory hashes / verified_at are optional
+    auditability extras included only when supplied."""
+    rec = {
+        "verifier": "proofsearch",
+        "environment_hash": env_hash,
+        "episode_id": v["episode_id"],
+        "outcome": "kernel_verified",
+        "kernel_verified": True,
+        "fidelity_status": v.get("fidelity_status", "attested"),
+        "step_count": v.get("step_count", 1),
+    }
+    for opt in ("import_manifest_hash", "trajectory_first_hash", "trajectory_last_hash", "verified_at"):
+        if v.get(opt):
+            rec[opt] = v[opt]
+    return rec
+
+
 def build_packet(spec: dict, toolchain: dict, env_hash: str) -> dict:
     v = spec["verification"]
     packet = {
@@ -131,19 +150,7 @@ def build_packet(spec: dict, toolchain: dict, env_hash: str) -> dict:
             "review_basis": "repo self-review; kernel-verified through the tracked proof-search loop",
             "reviewer_status": "repo_reviewed",
         },
-        "verification": {
-            "verifier": "proofsearch",
-            "environment_hash": env_hash,
-            "episode_id": v["episode_id"],
-            "outcome": "kernel_verified",
-            "kernel_verified": True,
-            "fidelity_status": v.get("fidelity_status", "attested"),
-            "import_manifest_hash": v["import_manifest_hash"],
-            "trajectory_first_hash": v["trajectory_first_hash"],
-            "trajectory_last_hash": v["trajectory_last_hash"],
-            "step_count": v.get("step_count", 1),
-            "verified_at": v["verified_at"],
-        },
+        "verification": _verification(v, env_hash),
         "notes": spec.get("notes",
                           f"Proof authority: Lean kernel via the tracked proof-search loop "
                           f"(episode {v['episode_id'][:8]})."),
