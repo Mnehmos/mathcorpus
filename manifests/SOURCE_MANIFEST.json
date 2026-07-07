@@ -1,7 +1,7 @@
 {
   "entries": [
     {
-      "packet_id": "elementary.algebra.diff_of_squares.v1",
+      "packet_id": "elementary.algebra.binomial_square.v1",
       "source_kind": "author_written",
       "source_refs": [],
       "authors": [
@@ -11,11 +11,9 @@
       "source_sha256": null
     },
     {
-      "packet_id": "frontier.ramsey.r33_le6.certificate.v1",
-      "source_kind": "repo_original",
-      "source_refs": [
-        "ramsey_theory_standard_theorem"
-      ],
+      "packet_id": "elementary.algebra.diff_of_squares.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
       "authors": [
         "The MathCorpus Authors"
       ],

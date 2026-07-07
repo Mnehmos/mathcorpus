@@ -40,6 +40,11 @@ def main() -> int:
     neg_rows = export.negative_rows(packets)
 
     out = Path(args.out)
+    # Clear stale exports so a removed/relabeled packet cannot linger in a split file
+    # (a stale row would otherwise slip past the redaction audit).
+    out.mkdir(parents=True, exist_ok=True)
+    for stale in out.glob("*.jsonl"):
+        stale.unlink()
     _write_jsonl(out / "packets.jsonl", rows)
     _write_jsonl(out / "negative_examples.jsonl", neg_rows)
 

@@ -253,6 +253,24 @@
         "reviewed_at": { "type": "string" }
       }
     },
+    "verification": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Provenance of the tracked verifier run that produced this packet's proof authority. Present on kernel_verified / verified_certificate packets produced through the proof-search loop.",
+      "properties": {
+        "verifier": { "type": "string", "description": "e.g. 'proofsearch'" },
+        "environment_hash": { "type": "string", "description": "Pinned Lean+mathlib environment hash the kernel ran under." },
+        "episode_id": { "type": "string" },
+        "outcome": { "type": "string", "enum": ["kernel_verified", "certified", "verified_certificate"] },
+        "kernel_verified": { "type": "boolean" },
+        "fidelity_status": { "type": "string", "enum": ["attested", "verified", "unreviewed"] },
+        "import_manifest_hash": { "type": "string" },
+        "trajectory_first_hash": { "type": "string" },
+        "trajectory_last_hash": { "type": "string" },
+        "step_count": { "type": "integer", "minimum": 0 },
+        "verified_at": { "type": "string" }
+      }
+    },
     "hashes": {
       "type": "object",
       "additionalProperties": false,

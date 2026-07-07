@@ -2,23 +2,22 @@
   "packet_count": 3,
   "split_family_counts": {
     "negative_example_only": 1,
-    "test_public": 1,
-    "train": 1
+    "train": 2
   },
   "entries": [
+    {
+      "packet_id": "elementary.algebra.binomial_square.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "algebra.factorization_basics",
+      "dedupe_cluster_id": "algebra.binomial_square"
+    },
     {
       "packet_id": "elementary.algebra.diff_of_squares.v1",
       "eligibility": "public_train",
       "split_family": "train",
       "template_family_id": "algebra.factorization_basics",
       "dedupe_cluster_id": "algebra.diff_of_squares"
-    },
-    {
-      "packet_id": "frontier.ramsey.r33_le6.certificate.v1",
-      "eligibility": "public_test",
-      "split_family": "test_public",
-      "template_family_id": "ramsey.small_graph_bounds",
-      "dedupe_cluster_id": "ramsey.r33"
     },
     {
       "packet_id": "negative.geometry.angle_atoms.nlinarith_failure.v1",

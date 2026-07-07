@@ -4,13 +4,11 @@
   "canonical_theorem_duplicates": {},
   "family_clusters": {
     "algebra.factorization_basics": [
+      "elementary.algebra.binomial_square.v1",
       "elementary.algebra.diff_of_squares.v1"
     ],
     "geometry.automation_hazards": [
       "negative.geometry.angle_atoms.nlinarith_failure.v1"
-    ],
-    "ramsey.small_graph_bounds": [
-      "frontier.ramsey.r33_le6.certificate.v1"
     ]
   }
 }
