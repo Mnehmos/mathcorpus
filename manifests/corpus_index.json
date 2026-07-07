@@ -1,25 +1,35 @@
 {
-  "packet_count": 62,
+  "packet_count": 76,
   "by_domain": {
-    "algebra": 31,
-    "combinatorics": 5,
-    "geometry": 7,
-    "number_theory": 19
+    "algebra": 42,
+    "combinatorics": 6,
+    "geometry": 8,
+    "number_theory": 20
   },
   "by_level": {
-    "L0_elementary": 31,
-    "L1_proof_basics": 25,
-    "L2_olympiad": 6
+    "L0_elementary": 42,
+    "L1_proof_basics": 27,
+    "L2_olympiad": 7
   },
   "by_kind": {
-    "concept": 61,
+    "concept": 75,
     "negative_example": 1
   },
   "by_status": {
-    "kernel_verified": 61,
+    "kernel_verified": 75,
     "failed_attempt": 1
   },
   "packets": [
+    {
+      "packet_id": "elementary.algebra.add_assoc.v1",
+      "title": "Addition is associative",
+      "domain": "algebra",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "6416a94c3034ff4196a1b127b320e6633de46b14e66175d5514342832180cb5e"
+    },
     {
       "packet_id": "elementary.algebra.add_comm.v1",
       "title": "Addition is commutative",
@@ -29,6 +39,16 @@
       "status": "kernel_verified",
       "eligibility": "public_train",
       "packet_sha256": "e08ead12d116a35afc68580e74b304ef25f8280f2878fa22b3bb863159c9c314"
+    },
+    {
+      "packet_id": "elementary.algebra.add_zero.v1",
+      "title": "Zero is a right identity for addition",
+      "domain": "algebra",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "b88026e53c65bdd5dfbaf83b6e4e55b2d92d5f942f9223ac14d097a7d8de3309"
     },
     {
       "packet_id": "elementary.algebra.binomial_cube.v1",
@@ -81,6 +101,16 @@
       "packet_sha256": "ace3578c9b48c0a7f12a73ac3c2a2bc4840a933a5dc9271ca7d229cc46786045"
     },
     {
+      "packet_id": "elementary.algebra.mul_assoc.v1",
+      "title": "Multiplication is associative",
+      "domain": "algebra",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "d937d421c1725289f9397717b5f38f47d8f58b2c1f2af54186acb7b904ce0966"
+    },
+    {
       "packet_id": "elementary.algebra.mul_comm.v1",
       "title": "Multiplication is commutative",
       "domain": "algebra",
@@ -91,6 +121,26 @@
       "packet_sha256": "9475bca0081d0547ac83d53364ec4ebbba62b36d76daa60cfe7e3462fcdc9741"
     },
     {
+      "packet_id": "elementary.algebra.mul_one.v1",
+      "title": "One is a right identity for multiplication",
+      "domain": "algebra",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "6318563ab52c1e20c453e18489cc32aee153dd02c7e4651c1da8229b43a08542"
+    },
+    {
+      "packet_id": "elementary.algebra.mul_zero.v1",
+      "title": "Anything times zero is zero",
+      "domain": "algebra",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "0c2988179c4bec59db1a8637ccde77b07d6f51a78d3e77da604c7e245c5fbb9b"
+    },
+    {
       "packet_id": "elementary.algebra.neg_neg.v1",
       "title": "Double negation",
       "domain": "algebra",
@@ -99,6 +149,16 @@
       "status": "kernel_verified",
       "eligibility": "public_train",
       "packet_sha256": "f982a9118c4040b1301798aa0f79c3f629f1c361a4190cd07e6de94294401cc8"
+    },
+    {
+      "packet_id": "elementary.algebra.one_mul.v1",
+      "title": "One is a left identity for multiplication",
+      "domain": "algebra",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "3614393abb45894970ee96607b59002dc2657ff9504656ddcd42aff1a81a4f1a"
     },
     {
       "packet_id": "elementary.algebra.square_of_difference.v1",
@@ -141,6 +201,16 @@
       "packet_sha256": "7c51ea99456f72c53d4e32a3af7f49bc57637fb4ebdc21ed71952c587c5629f9"
     },
     {
+      "packet_id": "elementary.algebra.zero_add.v1",
+      "title": "Zero is a left identity for addition",
+      "domain": "algebra",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "5d0006b0768f33192c9eda7558c9b35cd53487c601df04ac415a4e68fe30ad9c"
+    },
+    {
       "packet_id": "elementary.combinatorics.card_insert_le.v1",
       "title": "Insertion increases cardinality by at most one",
       "domain": "combinatorics",
@@ -181,6 +251,16 @@
       "packet_sha256": "65d75a5e5146a05d57a278fc044117a085166fd779876ce16845fbd19a4eab38"
     },
     {
+      "packet_id": "elementary.combinatorics.mem_range.v1",
+      "title": "Membership in Finset.range",
+      "domain": "combinatorics",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "578ba9892060d879735f3f999b8922d4993ad3c7ec7442d21d13d0110da9c4ff"
+    },
+    {
       "packet_id": "elementary.combinatorics.sum_ones_card.v1",
       "title": "Summing 1 over a finite set counts its elements",
       "domain": "combinatorics",
@@ -189,6 +269,16 @@
       "status": "kernel_verified",
       "eligibility": "public_train",
       "packet_sha256": "436019b631cfa80f23407f8db6b59e27da42c3d8538c17d1330e5a127fa1f476"
+    },
+    {
+      "packet_id": "elementary.functions.abs_abs.v1",
+      "title": "Absolute value is idempotent",
+      "domain": "algebra",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "ae7279d29ac0bd427b5d2a3f849a0edb90aba7797959e6990849203cda60e6db"
     },
     {
       "packet_id": "elementary.functions.abs_add_le.v1",
@@ -241,6 +331,16 @@
       "packet_sha256": "0174a5f5b8f9af8831cdcfc922250f8ccb51359421202127806d2fe98423e984"
     },
     {
+      "packet_id": "elementary.functions.abs_zero.v1",
+      "title": "Absolute value of zero",
+      "domain": "algebra",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "f0c4aee177e6330c26d105c74e3cacf0374e3dda002029f2405e9c9cc8746b18"
+    },
+    {
       "packet_id": "elementary.functions.geom_series_mul.v1",
       "title": "Finite geometric series times (r-1)",
       "domain": "algebra",
@@ -251,6 +351,26 @@
       "packet_sha256": "ddf9fdf508d7173e432cb714da60ccbf5ff8dfa33aa68959572f1b759ccc913f"
     },
     {
+      "packet_id": "elementary.functions.max_comm.v1",
+      "title": "Maximum is commutative",
+      "domain": "algebra",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "0c80df4706bed7e91f460c198fe5d11280b471c5df52963fc4ff476425e34dc0"
+    },
+    {
+      "packet_id": "elementary.functions.min_comm.v1",
+      "title": "Minimum is commutative",
+      "domain": "algebra",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "ff10dfec3f0e8ba917c10d88d26cc417768f6f335f7764285d807cd3a4c5a67a"
+    },
+    {
       "packet_id": "elementary.functions.sq_abs.v1",
       "title": "Square of the absolute value",
       "domain": "algebra",
@@ -259,6 +379,16 @@
       "status": "kernel_verified",
       "eligibility": "public_train",
       "packet_sha256": "bc7090335767b00c1295eb9372c50ac05ac38378832fc375799a5b3768602baf"
+    },
+    {
+      "packet_id": "elementary.geometry.collinear_det.v1",
+      "title": "Equal-slope collinearity vanishes the area determinant",
+      "domain": "geometry",
+      "level": "L2_olympiad",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "f3aee53a8ad45bbd9e4788df3ca7f9128642bcfd6878642a8031e1aa0769b24b"
     },
     {
       "packet_id": "elementary.geometry.dist_sq_symm.v1",
@@ -489,6 +619,16 @@
       "status": "kernel_verified",
       "eligibility": "public_train",
       "packet_sha256": "a9e9aa5531cf570f5c82d92d7ba39c770ef1e3d986c81d6b8d99b37865eafa18"
+    },
+    {
+      "packet_id": "elementary.number_theory.even_add.v1",
+      "title": "Parity of a sum",
+      "domain": "number_theory",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "fda3caa3e13750acc0efb7e8169fa3523933618fc5c008d286c212921e8a6dee"
     },
     {
       "packet_id": "elementary.number_theory.even_add_even.v1",

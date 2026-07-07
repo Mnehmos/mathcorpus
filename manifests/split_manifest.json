@@ -1,16 +1,30 @@
 {
-  "packet_count": 62,
+  "packet_count": 76,
   "split_family_counts": {
     "negative_example_only": 1,
-    "train": 61
+    "train": 75
   },
   "entries": [
+    {
+      "packet_id": "elementary.algebra.add_assoc.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "algebra.ring_basics",
+      "dedupe_cluster_id": "algebra.add_assoc"
+    },
     {
       "packet_id": "elementary.algebra.add_comm.v1",
       "eligibility": "public_train",
       "split_family": "train",
       "template_family_id": "algebra.ring_basics",
       "dedupe_cluster_id": "algebra.add_comm"
+    },
+    {
+      "packet_id": "elementary.algebra.add_zero.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "algebra.ring_basics",
+      "dedupe_cluster_id": "algebra.add_zero"
     },
     {
       "packet_id": "elementary.algebra.binomial_cube.v1",
@@ -48,6 +62,13 @@
       "dedupe_cluster_id": "algebra.factor_by_grouping"
     },
     {
+      "packet_id": "elementary.algebra.mul_assoc.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "algebra.ring_basics",
+      "dedupe_cluster_id": "algebra.mul_assoc"
+    },
+    {
       "packet_id": "elementary.algebra.mul_comm.v1",
       "eligibility": "public_train",
       "split_family": "train",
@@ -55,11 +76,32 @@
       "dedupe_cluster_id": "algebra.mul_comm"
     },
     {
+      "packet_id": "elementary.algebra.mul_one.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "algebra.ring_basics",
+      "dedupe_cluster_id": "algebra.mul_one"
+    },
+    {
+      "packet_id": "elementary.algebra.mul_zero.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "algebra.ring_basics",
+      "dedupe_cluster_id": "algebra.mul_zero"
+    },
+    {
       "packet_id": "elementary.algebra.neg_neg.v1",
       "eligibility": "public_train",
       "split_family": "train",
       "template_family_id": "algebra.ring_basics",
       "dedupe_cluster_id": "algebra.neg_neg"
+    },
+    {
+      "packet_id": "elementary.algebra.one_mul.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "algebra.ring_basics",
+      "dedupe_cluster_id": "algebra.one_mul"
     },
     {
       "packet_id": "elementary.algebra.square_of_difference.v1",
@@ -90,6 +132,13 @@
       "dedupe_cluster_id": "algebra.two_mul"
     },
     {
+      "packet_id": "elementary.algebra.zero_add.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "algebra.ring_basics",
+      "dedupe_cluster_id": "algebra.zero_add"
+    },
+    {
       "packet_id": "elementary.combinatorics.card_insert_le.v1",
       "eligibility": "public_train",
       "split_family": "train",
@@ -118,11 +167,25 @@
       "dedupe_cluster_id": "combinatorics.card_union"
     },
     {
+      "packet_id": "elementary.combinatorics.mem_range.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "combinatorics.finset_membership",
+      "dedupe_cluster_id": "combinatorics.mem_range"
+    },
+    {
       "packet_id": "elementary.combinatorics.sum_ones_card.v1",
       "eligibility": "public_train",
       "split_family": "train",
       "template_family_id": "combinatorics.finset_card",
       "dedupe_cluster_id": "combinatorics.sum_ones"
+    },
+    {
+      "packet_id": "elementary.functions.abs_abs.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "functions.absolute_value",
+      "dedupe_cluster_id": "functions.abs_abs"
     },
     {
       "packet_id": "elementary.functions.abs_add_le.v1",
@@ -160,6 +223,13 @@
       "dedupe_cluster_id": "functions.abs_sub_comm"
     },
     {
+      "packet_id": "elementary.functions.abs_zero.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "functions.absolute_value",
+      "dedupe_cluster_id": "functions.abs_zero"
+    },
+    {
       "packet_id": "elementary.functions.geom_series_mul.v1",
       "eligibility": "public_train",
       "split_family": "train",
@@ -167,11 +237,32 @@
       "dedupe_cluster_id": "functions.geom_series"
     },
     {
+      "packet_id": "elementary.functions.max_comm.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "functions.order_lattice",
+      "dedupe_cluster_id": "functions.max_comm"
+    },
+    {
+      "packet_id": "elementary.functions.min_comm.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "functions.order_lattice",
+      "dedupe_cluster_id": "functions.min_comm"
+    },
+    {
       "packet_id": "elementary.functions.sq_abs.v1",
       "eligibility": "public_train",
       "split_family": "train",
       "template_family_id": "functions.absolute_value",
       "dedupe_cluster_id": "functions.sq_abs"
+    },
+    {
+      "packet_id": "elementary.geometry.collinear_det.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "geometry.triangle_area",
+      "dedupe_cluster_id": "geometry.collinear"
     },
     {
       "packet_id": "elementary.geometry.dist_sq_symm.v1",
@@ -333,6 +424,13 @@
       "split_family": "train",
       "template_family_id": "number_theory.divisibility_closure",
       "dedupe_cluster_id": "number_theory.dvd_trans"
+    },
+    {
+      "packet_id": "elementary.number_theory.even_add.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "number_theory.parity_closure",
+      "dedupe_cluster_id": "number_theory.even_add"
     },
     {
       "packet_id": "elementary.number_theory.even_add_even.v1",

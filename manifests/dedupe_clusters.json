@@ -1,5 +1,5 @@
 {
-  "packet_count": 62,
+  "packet_count": 76,
   "exact_file_duplicates": {},
   "canonical_theorem_duplicates": {},
   "family_clusters": {
@@ -13,11 +13,18 @@
       "elementary.algebra.sum_of_cubes.v1"
     ],
     "algebra.ring_basics": [
+      "elementary.algebra.add_assoc.v1",
       "elementary.algebra.add_comm.v1",
+      "elementary.algebra.add_zero.v1",
+      "elementary.algebra.mul_assoc.v1",
       "elementary.algebra.mul_comm.v1",
+      "elementary.algebra.mul_one.v1",
+      "elementary.algebra.mul_zero.v1",
       "elementary.algebra.neg_neg.v1",
+      "elementary.algebra.one_mul.v1",
       "elementary.algebra.sub_self.v1",
-      "elementary.algebra.two_mul.v1"
+      "elementary.algebra.two_mul.v1",
+      "elementary.algebra.zero_add.v1"
     ],
     "combinatorics.finset_card": [
       "elementary.combinatorics.card_insert_le.v1",
@@ -26,16 +33,25 @@
       "elementary.combinatorics.card_union_le.v1",
       "elementary.combinatorics.sum_ones_card.v1"
     ],
+    "combinatorics.finset_membership": [
+      "elementary.combinatorics.mem_range.v1"
+    ],
     "functions.absolute_value": [
+      "elementary.functions.abs_abs.v1",
       "elementary.functions.abs_add_le.v1",
       "elementary.functions.abs_mul.v1",
       "elementary.functions.abs_neg.v1",
       "elementary.functions.abs_nonneg.v1",
       "elementary.functions.abs_sub_comm.v1",
+      "elementary.functions.abs_zero.v1",
       "elementary.functions.sq_abs.v1"
     ],
     "functions.geometric_series": [
       "elementary.functions.geom_series_mul.v1"
+    ],
+    "functions.order_lattice": [
+      "elementary.functions.max_comm.v1",
+      "elementary.functions.min_comm.v1"
     ],
     "geometry.angle_relations": [
       "elementary.geometry.supplementary_angle.v1",
@@ -50,6 +66,7 @@
       "elementary.geometry.parallelogram_law.v1"
     ],
     "geometry.triangle_area": [
+      "elementary.geometry.collinear_det.v1",
       "elementary.geometry.shoelace_identity.v1"
     ],
     "induction.arithmetic_series": [
@@ -99,6 +116,7 @@
       "elementary.number_theory.two_pow_pos.v1"
     ],
     "number_theory.parity_closure": [
+      "elementary.number_theory.even_add.v1",
       "elementary.number_theory.even_add_even.v1",
       "elementary.number_theory.even_mul.v1",
       "elementary.number_theory.even_mul_succ_self.v1",
