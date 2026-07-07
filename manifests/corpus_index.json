@@ -1,22 +1,22 @@
 {
-  "packet_count": 90,
+  "packet_count": 104,
   "by_domain": {
-    "algebra": 52,
-    "combinatorics": 6,
+    "algebra": 61,
+    "combinatorics": 7,
     "geometry": 9,
-    "number_theory": 23
+    "number_theory": 27
   },
   "by_level": {
-    "L0_elementary": 51,
-    "L1_proof_basics": 31,
+    "L0_elementary": 57,
+    "L1_proof_basics": 39,
     "L2_olympiad": 8
   },
   "by_kind": {
-    "concept": 89,
+    "concept": 103,
     "negative_example": 1
   },
   "by_status": {
-    "kernel_verified": 89,
+    "kernel_verified": 103,
     "failed_attempt": 1
   },
   "packets": [
@@ -39,6 +39,16 @@
       "status": "kernel_verified",
       "eligibility": "public_train",
       "packet_sha256": "e08ead12d116a35afc68580e74b304ef25f8280f2878fa22b3bb863159c9c314"
+    },
+    {
+      "packet_id": "elementary.algebra.add_left_comm.v1",
+      "title": "Left commutativity of addition",
+      "domain": "algebra",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "dcbbff68c4f5cb4eda8c96aac9cdaae735f249e8c46749c38d059fa064b5ce9b"
     },
     {
       "packet_id": "elementary.algebra.add_mul.v1",
@@ -141,6 +151,16 @@
       "packet_sha256": "9475bca0081d0547ac83d53364ec4ebbba62b36d76daa60cfe7e3462fcdc9741"
     },
     {
+      "packet_id": "elementary.algebra.mul_left_comm.v1",
+      "title": "Left commutativity of multiplication",
+      "domain": "algebra",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "42061b6ac06923b9a7685301bdadc6202671a03c26d4f87e27effba1d5c3d1a6"
+    },
+    {
       "packet_id": "elementary.algebra.mul_neg.v1",
       "title": "Negation of the right factor",
       "domain": "algebra",
@@ -189,6 +209,16 @@
       "status": "kernel_verified",
       "eligibility": "public_train",
       "packet_sha256": "f982a9118c4040b1301798aa0f79c3f629f1c361a4190cd07e6de94294401cc8"
+    },
+    {
+      "packet_id": "elementary.algebra.neg_zero.v1",
+      "title": "Negation of zero",
+      "domain": "algebra",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "63c2c39fe7fdcbf3448d6b31a37d950f8894f9a2b7e82f5271666a9660564270"
     },
     {
       "packet_id": "elementary.algebra.one_mul.v1",
@@ -251,6 +281,16 @@
       "packet_sha256": "427c6045e36b6cc3c6f95d17121448e4dfe6bcbd1d1851c57f711e47f3558f1b"
     },
     {
+      "packet_id": "elementary.algebra.sub_zero.v1",
+      "title": "Subtracting zero",
+      "domain": "algebra",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "d66c883e21a8122dd74fe347b601ca76ef9dcb26a3afafbccdbf5b728331a678"
+    },
+    {
       "packet_id": "elementary.algebra.sum_of_cubes.v1",
       "title": "Sum of cubes",
       "domain": "algebra",
@@ -281,6 +321,16 @@
       "packet_sha256": "5d0006b0768f33192c9eda7558c9b35cd53487c601df04ac415a4e68fe30ad9c"
     },
     {
+      "packet_id": "elementary.algebra.zero_sub.v1",
+      "title": "Zero minus a",
+      "domain": "algebra",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "7476a28cf687ae6ac1140d6eb4d92c5373d842fb441a5a70195cee1939b8d6c9"
+    },
+    {
       "packet_id": "elementary.combinatorics.card_insert_le.v1",
       "title": "Insertion increases cardinality by at most one",
       "domain": "combinatorics",
@@ -309,6 +359,16 @@
       "status": "kernel_verified",
       "eligibility": "public_train",
       "packet_sha256": "6ef7f1be38eee9a2555aa8ea2a648bcc06810c98900ca15559d3ed9c48d74fb8"
+    },
+    {
+      "packet_id": "elementary.combinatorics.card_singleton.v1",
+      "title": "Cardinality of a singleton",
+      "domain": "combinatorics",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "d24e76161c5ca2252cda8e7cd92b808a70055728af1dfb7d99b1adbd0fc654d7"
     },
     {
       "packet_id": "elementary.combinatorics.card_union_le.v1",
@@ -391,6 +451,16 @@
       "packet_sha256": "be40b26657afc635564318ef6a34ed9839e065b577517d455ac7ca6fced4d166"
     },
     {
+      "packet_id": "elementary.functions.abs_of_nonneg.v1",
+      "title": "Absolute value of a nonnegative",
+      "domain": "algebra",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "a39fa17f0efb9fb1bc2f28501918c6f91f6f15dc7b8ad1e47cfb79989b436b4b"
+    },
+    {
       "packet_id": "elementary.functions.abs_sub_comm.v1",
       "title": "Absolute value of a difference is symmetric",
       "domain": "algebra",
@@ -419,6 +489,16 @@
       "status": "kernel_verified",
       "eligibility": "public_train",
       "packet_sha256": "ddf9fdf508d7173e432cb714da60ccbf5ff8dfa33aa68959572f1b759ccc913f"
+    },
+    {
+      "packet_id": "elementary.functions.le_abs_self.v1",
+      "title": "A number is at most its absolute value",
+      "domain": "algebra",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "999667a0815d80fb268f77660d5fe90ceb445cbb0b4e18f53effa34e0851d5b6"
     },
     {
       "packet_id": "elementary.functions.max_comm.v1",
@@ -459,6 +539,16 @@
       "status": "kernel_verified",
       "eligibility": "public_train",
       "packet_sha256": "1539a69d9e93429b3246946961fc561a32c44e238a94c9661ff1f6fef40e63a0"
+    },
+    {
+      "packet_id": "elementary.functions.neg_abs_le.v1",
+      "title": "Negated absolute value is a lower bound",
+      "domain": "algebra",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "1333df118d4f4eea728a6b797b6cfe977ee54f0b795c08b38541c0bc8d17538a"
     },
     {
       "packet_id": "elementary.functions.sq_abs.v1",
@@ -621,6 +711,16 @@
       "packet_sha256": "d954d1b08a7fa4c9e5b393582eb939f452058e00d63e0e7c83c842d6c14bc8de"
     },
     {
+      "packet_id": "elementary.inequalities.mul_pos.v1",
+      "title": "Product of positives is positive",
+      "domain": "algebra",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "6dff07ff96d56f6d820501799cea085c95b20ebb0d670b52ec62bed28aadb78e"
+    },
+    {
       "packet_id": "elementary.inequalities.mul_self_nonneg.v1",
       "title": "A number times itself is nonnegative",
       "domain": "algebra",
@@ -679,6 +779,26 @@
       "status": "kernel_verified",
       "eligibility": "public_train",
       "packet_sha256": "801fbdcf7bd37aa53ddfbfac6adec4cdb1bdd980c6c3858a8f0589e2fdc3a429"
+    },
+    {
+      "packet_id": "elementary.number_theory.add_mod.v1",
+      "title": "Addition modulo n",
+      "domain": "number_theory",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "ca63b1d7ca81219dc63616a1b46a7b6d8fe603fea1e57be34eaa71e54f08a118"
+    },
+    {
+      "packet_id": "elementary.number_theory.coprime_comm.v1",
+      "title": "Coprimality is symmetric",
+      "domain": "number_theory",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "f1c2f661210e82ad5ac485c555cd5d3e5738da7d0016117814c4acf8af658f6f"
     },
     {
       "packet_id": "elementary.number_theory.coprime_one_left.v1",
@@ -841,6 +961,16 @@
       "packet_sha256": "68e4eaa736c2b63ed1e9fa5b313c2f98bf3542a986cba3d381d1df7ea8e481e9"
     },
     {
+      "packet_id": "elementary.number_theory.gcd_one_right.v1",
+      "title": "gcd with one on the right",
+      "domain": "number_theory",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "93acdb873348cce870c2a37c0a148cb5fb6420b9a251cf85db46825e44611df1"
+    },
+    {
       "packet_id": "elementary.number_theory.gcd_self.v1",
       "title": "gcd of a number with itself",
       "domain": "number_theory",
@@ -869,6 +999,16 @@
       "status": "kernel_verified",
       "eligibility": "public_train",
       "packet_sha256": "e66dce613f9f34f659fe7387e8057f1a17d065be731218471d94eb65c8ab082e"
+    },
+    {
+      "packet_id": "elementary.number_theory.mul_mod.v1",
+      "title": "Multiplication modulo n",
+      "domain": "number_theory",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "79583b5e86c580a10ec08374ecff0e182dbd31bd1ddb8e2f832c1e17c7be6f8f"
     },
     {
       "packet_id": "elementary.number_theory.odd_add_odd.v1",

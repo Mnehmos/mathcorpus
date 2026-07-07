@@ -1,5 +1,5 @@
 {
-  "packet_count": 90,
+  "packet_count": 104,
   "exact_file_duplicates": {},
   "canonical_theorem_duplicates": {},
   "family_clusters": {
@@ -23,24 +23,30 @@
     "algebra.ring_basics": [
       "elementary.algebra.add_assoc.v1",
       "elementary.algebra.add_comm.v1",
+      "elementary.algebra.add_left_comm.v1",
       "elementary.algebra.add_zero.v1",
       "elementary.algebra.mul_assoc.v1",
       "elementary.algebra.mul_comm.v1",
+      "elementary.algebra.mul_left_comm.v1",
       "elementary.algebra.mul_neg.v1",
       "elementary.algebra.mul_one.v1",
       "elementary.algebra.mul_zero.v1",
       "elementary.algebra.neg_mul.v1",
       "elementary.algebra.neg_neg.v1",
+      "elementary.algebra.neg_zero.v1",
       "elementary.algebra.one_mul.v1",
       "elementary.algebra.sub_eq_add_neg.v1",
       "elementary.algebra.sub_self.v1",
+      "elementary.algebra.sub_zero.v1",
       "elementary.algebra.two_mul.v1",
-      "elementary.algebra.zero_add.v1"
+      "elementary.algebra.zero_add.v1",
+      "elementary.algebra.zero_sub.v1"
     ],
     "combinatorics.finset_card": [
       "elementary.combinatorics.card_insert_le.v1",
       "elementary.combinatorics.card_le_of_subset.v1",
       "elementary.combinatorics.card_range.v1",
+      "elementary.combinatorics.card_singleton.v1",
       "elementary.combinatorics.card_union_le.v1",
       "elementary.combinatorics.sum_ones_card.v1"
     ],
@@ -53,8 +59,11 @@
       "elementary.functions.abs_mul.v1",
       "elementary.functions.abs_neg.v1",
       "elementary.functions.abs_nonneg.v1",
+      "elementary.functions.abs_of_nonneg.v1",
       "elementary.functions.abs_sub_comm.v1",
       "elementary.functions.abs_zero.v1",
+      "elementary.functions.le_abs_self.v1",
+      "elementary.functions.neg_abs_le.v1",
       "elementary.functions.sq_abs.v1"
     ],
     "functions.geometric_series": [
@@ -99,6 +108,9 @@
     "inequalities.cauchy_schwarz": [
       "elementary.inequalities.cauchy_two_term.v1"
     ],
+    "inequalities.positivity": [
+      "elementary.inequalities.mul_pos.v1"
+    ],
     "inequalities.square_nonneg": [
       "elementary.inequalities.mul_self_nonneg.v1",
       "elementary.inequalities.sq_nonneg.v1"
@@ -111,6 +123,7 @@
       "elementary.inequalities.reverse_triangle.v1"
     ],
     "number_theory.coprime_basics": [
+      "elementary.number_theory.coprime_comm.v1",
       "elementary.number_theory.coprime_one_left.v1"
     ],
     "number_theory.divisibility_closure": [
@@ -124,8 +137,13 @@
       "elementary.number_theory.gcd_comm.v1",
       "elementary.number_theory.gcd_dvd_left.v1",
       "elementary.number_theory.gcd_dvd_right.v1",
+      "elementary.number_theory.gcd_one_right.v1",
       "elementary.number_theory.gcd_self.v1",
       "elementary.number_theory.gcd_zero_left.v1"
+    ],
+    "number_theory.modular_arithmetic": [
+      "elementary.number_theory.add_mod.v1",
+      "elementary.number_theory.mul_mod.v1"
     ],
     "number_theory.nat_basics": [
       "elementary.number_theory.factorial_pos.v1",

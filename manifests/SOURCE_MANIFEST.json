@@ -21,6 +21,16 @@
       "source_sha256": null
     },
     {
+      "packet_id": "elementary.algebra.add_left_comm.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
       "packet_id": "elementary.algebra.add_mul.v1",
       "source_kind": "author_written",
       "source_refs": [],
@@ -121,6 +131,16 @@
       "source_sha256": null
     },
     {
+      "packet_id": "elementary.algebra.mul_left_comm.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
       "packet_id": "elementary.algebra.mul_neg.v1",
       "source_kind": "author_written",
       "source_refs": [],
@@ -162,6 +182,16 @@
     },
     {
       "packet_id": "elementary.algebra.neg_neg.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.algebra.neg_zero.v1",
       "source_kind": "author_written",
       "source_refs": [],
       "authors": [
@@ -231,6 +261,16 @@
       "source_sha256": null
     },
     {
+      "packet_id": "elementary.algebra.sub_zero.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
       "packet_id": "elementary.algebra.sum_of_cubes.v1",
       "source_kind": "author_written",
       "source_refs": [],
@@ -261,6 +301,16 @@
       "source_sha256": null
     },
     {
+      "packet_id": "elementary.algebra.zero_sub.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
       "packet_id": "elementary.combinatorics.card_insert_le.v1",
       "source_kind": "author_written",
       "source_refs": [],
@@ -282,6 +332,16 @@
     },
     {
       "packet_id": "elementary.combinatorics.card_range.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.combinatorics.card_singleton.v1",
       "source_kind": "author_written",
       "source_refs": [],
       "authors": [
@@ -371,6 +431,16 @@
       "source_sha256": null
     },
     {
+      "packet_id": "elementary.functions.abs_of_nonneg.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
       "packet_id": "elementary.functions.abs_sub_comm.v1",
       "source_kind": "author_written",
       "source_refs": [],
@@ -392,6 +462,16 @@
     },
     {
       "packet_id": "elementary.functions.geom_series_mul.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.functions.le_abs_self.v1",
       "source_kind": "author_written",
       "source_refs": [],
       "authors": [
@@ -432,6 +512,16 @@
     },
     {
       "packet_id": "elementary.functions.min_self.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.functions.neg_abs_le.v1",
       "source_kind": "author_written",
       "source_refs": [],
       "authors": [
@@ -601,6 +691,16 @@
       "source_sha256": null
     },
     {
+      "packet_id": "elementary.inequalities.mul_pos.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
       "packet_id": "elementary.inequalities.mul_self_nonneg.v1",
       "source_kind": "author_written",
       "source_refs": [],
@@ -652,6 +752,26 @@
     },
     {
       "packet_id": "elementary.inequalities.two_mul_le_add_sq.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.number_theory.add_mod.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.number_theory.coprime_comm.v1",
       "source_kind": "author_written",
       "source_refs": [],
       "authors": [
@@ -821,6 +941,16 @@
       "source_sha256": null
     },
     {
+      "packet_id": "elementary.number_theory.gcd_one_right.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
       "packet_id": "elementary.number_theory.gcd_self.v1",
       "source_kind": "author_written",
       "source_refs": [],
@@ -842,6 +972,16 @@
     },
     {
       "packet_id": "elementary.number_theory.mod_lt.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.number_theory.mul_mod.v1",
       "source_kind": "author_written",
       "source_refs": [],
       "authors": [

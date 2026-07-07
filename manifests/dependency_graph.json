@@ -2,6 +2,7 @@
   "nodes": [
     "elementary.algebra.add_assoc.v1",
     "elementary.algebra.add_comm.v1",
+    "elementary.algebra.add_left_comm.v1",
     "elementary.algebra.add_mul.v1",
     "elementary.algebra.add_zero.v1",
     "elementary.algebra.binomial_cube.v1",
@@ -12,23 +13,28 @@
     "elementary.algebra.mul_add.v1",
     "elementary.algebra.mul_assoc.v1",
     "elementary.algebra.mul_comm.v1",
+    "elementary.algebra.mul_left_comm.v1",
     "elementary.algebra.mul_neg.v1",
     "elementary.algebra.mul_one.v1",
     "elementary.algebra.mul_zero.v1",
     "elementary.algebra.neg_mul.v1",
     "elementary.algebra.neg_neg.v1",
+    "elementary.algebra.neg_zero.v1",
     "elementary.algebra.one_mul.v1",
     "elementary.algebra.pow_one.v1",
     "elementary.algebra.pow_zero.v1",
     "elementary.algebra.square_of_difference.v1",
     "elementary.algebra.sub_eq_add_neg.v1",
     "elementary.algebra.sub_self.v1",
+    "elementary.algebra.sub_zero.v1",
     "elementary.algebra.sum_of_cubes.v1",
     "elementary.algebra.two_mul.v1",
     "elementary.algebra.zero_add.v1",
+    "elementary.algebra.zero_sub.v1",
     "elementary.combinatorics.card_insert_le.v1",
     "elementary.combinatorics.card_le_of_subset.v1",
     "elementary.combinatorics.card_range.v1",
+    "elementary.combinatorics.card_singleton.v1",
     "elementary.combinatorics.card_union_le.v1",
     "elementary.combinatorics.mem_range.v1",
     "elementary.combinatorics.sum_ones_card.v1",
@@ -37,13 +43,16 @@
     "elementary.functions.abs_mul.v1",
     "elementary.functions.abs_neg.v1",
     "elementary.functions.abs_nonneg.v1",
+    "elementary.functions.abs_of_nonneg.v1",
     "elementary.functions.abs_sub_comm.v1",
     "elementary.functions.abs_zero.v1",
     "elementary.functions.geom_series_mul.v1",
+    "elementary.functions.le_abs_self.v1",
     "elementary.functions.max_comm.v1",
     "elementary.functions.max_self.v1",
     "elementary.functions.min_comm.v1",
     "elementary.functions.min_self.v1",
+    "elementary.functions.neg_abs_le.v1",
     "elementary.functions.sq_abs.v1",
     "elementary.geometry.collinear_det.v1",
     "elementary.geometry.dist_sq_symm.v1",
@@ -60,12 +69,15 @@
     "elementary.inequalities.add_one_div_ge_two.v1",
     "elementary.inequalities.am_gm_two.v1",
     "elementary.inequalities.cauchy_two_term.v1",
+    "elementary.inequalities.mul_pos.v1",
     "elementary.inequalities.mul_self_nonneg.v1",
     "elementary.inequalities.reverse_triangle.v1",
     "elementary.inequalities.sq_nonneg.v1",
     "elementary.inequalities.three_var_am_gm.v1",
     "elementary.inequalities.three_var_sq_ge.v1",
     "elementary.inequalities.two_mul_le_add_sq.v1",
+    "elementary.number_theory.add_mod.v1",
+    "elementary.number_theory.coprime_comm.v1",
     "elementary.number_theory.coprime_one_left.v1",
     "elementary.number_theory.dvd_add.v1",
     "elementary.number_theory.dvd_gcd.v1",
@@ -82,9 +94,11 @@
     "elementary.number_theory.gcd_comm.v1",
     "elementary.number_theory.gcd_dvd_left.v1",
     "elementary.number_theory.gcd_dvd_right.v1",
+    "elementary.number_theory.gcd_one_right.v1",
     "elementary.number_theory.gcd_self.v1",
     "elementary.number_theory.gcd_zero_left.v1",
     "elementary.number_theory.mod_lt.v1",
+    "elementary.number_theory.mul_mod.v1",
     "elementary.number_theory.odd_add_odd.v1",
     "elementary.number_theory.sub_add_cancel.v1",
     "elementary.number_theory.succ_ne_self.v1",
@@ -107,6 +121,20 @@
       }
     ],
     "elementary.algebra.add_comm.v1": [
+      {
+        "to": "core_algebra",
+        "type": "kits"
+      },
+      {
+        "to": "addition",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "commutativity",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.algebra.add_left_comm.v1": [
       {
         "to": "core_algebra",
         "type": "kits"
@@ -276,6 +304,20 @@
         "type": "prerequisite_concepts"
       }
     ],
+    "elementary.algebra.mul_left_comm.v1": [
+      {
+        "to": "core_algebra",
+        "type": "kits"
+      },
+      {
+        "to": "multiplication",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "commutativity",
+        "type": "prerequisite_concepts"
+      }
+    ],
     "elementary.algebra.mul_neg.v1": [
       {
         "to": "core_algebra",
@@ -339,6 +381,20 @@
       },
       {
         "to": "negation",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.algebra.neg_zero.v1": [
+      {
+        "to": "core_algebra",
+        "type": "kits"
+      },
+      {
+        "to": "negation",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "zero",
         "type": "prerequisite_concepts"
       }
     ],
@@ -418,6 +474,20 @@
         "type": "prerequisite_concepts"
       }
     ],
+    "elementary.algebra.sub_zero.v1": [
+      {
+        "to": "core_algebra",
+        "type": "kits"
+      },
+      {
+        "to": "subtraction",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "zero",
+        "type": "prerequisite_concepts"
+      }
+    ],
     "elementary.algebra.sum_of_cubes.v1": [
       {
         "to": "core_algebra",
@@ -464,6 +534,20 @@
         "type": "prerequisite_concepts"
       }
     ],
+    "elementary.algebra.zero_sub.v1": [
+      {
+        "to": "core_algebra",
+        "type": "kits"
+      },
+      {
+        "to": "subtraction",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "negation",
+        "type": "prerequisite_concepts"
+      }
+    ],
     "elementary.combinatorics.card_insert_le.v1": [
       {
         "to": "ExtremalCombinatoricsKit",
@@ -501,6 +585,20 @@
       }
     ],
     "elementary.combinatorics.card_range.v1": [
+      {
+        "to": "ExtremalCombinatoricsKit",
+        "type": "kits"
+      },
+      {
+        "to": "finite_set",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "cardinality",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.combinatorics.card_singleton.v1": [
       {
         "to": "ExtremalCombinatoricsKit",
         "type": "kits"
@@ -598,6 +696,16 @@
         "type": "prerequisite_concepts"
       }
     ],
+    "elementary.functions.abs_of_nonneg.v1": [
+      {
+        "to": "absolute_value",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "order",
+        "type": "prerequisite_concepts"
+      }
+    ],
     "elementary.functions.abs_sub_comm.v1": [
       {
         "to": "absolute_value",
@@ -632,6 +740,16 @@
         "type": "prerequisite_concepts"
       }
     ],
+    "elementary.functions.le_abs_self.v1": [
+      {
+        "to": "absolute_value",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "order",
+        "type": "prerequisite_concepts"
+      }
+    ],
     "elementary.functions.max_comm.v1": [
       {
         "to": "max",
@@ -661,6 +779,16 @@
     "elementary.functions.min_self.v1": [
       {
         "to": "min",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.functions.neg_abs_le.v1": [
+      {
+        "to": "absolute_value",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "order",
         "type": "prerequisite_concepts"
       }
     ],
@@ -928,6 +1056,20 @@
         "type": "prerequisite_concepts"
       }
     ],
+    "elementary.inequalities.mul_pos.v1": [
+      {
+        "to": "InequalityEstimateKit",
+        "type": "kits"
+      },
+      {
+        "to": "positivity",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "multiplication",
+        "type": "prerequisite_concepts"
+      }
+    ],
     "elementary.inequalities.mul_self_nonneg.v1": [
       {
         "to": "InequalityEstimateKit",
@@ -1009,6 +1151,26 @@
       },
       {
         "to": "amgm",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.number_theory.add_mod.v1": [
+      {
+        "to": "elementary_number_theory",
+        "type": "kits"
+      },
+      {
+        "to": "modular_arithmetic",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.number_theory.coprime_comm.v1": [
+      {
+        "to": "elementary_number_theory",
+        "type": "kits"
+      },
+      {
+        "to": "coprime",
         "type": "prerequisite_concepts"
       }
     ],
@@ -1216,6 +1378,16 @@
         "type": "prerequisite_concepts"
       }
     ],
+    "elementary.number_theory.gcd_one_right.v1": [
+      {
+        "to": "elementary_number_theory",
+        "type": "kits"
+      },
+      {
+        "to": "gcd",
+        "type": "prerequisite_concepts"
+      }
+    ],
     "elementary.number_theory.gcd_self.v1": [
       {
         "to": "elementary_number_theory",
@@ -1237,6 +1409,16 @@
       }
     ],
     "elementary.number_theory.mod_lt.v1": [
+      {
+        "to": "elementary_number_theory",
+        "type": "kits"
+      },
+      {
+        "to": "modular_arithmetic",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.number_theory.mul_mod.v1": [
       {
         "to": "elementary_number_theory",
         "type": "kits"
