@@ -1,8 +1,8 @@
 {
-  "packet_count": 118,
+  "packet_count": 132,
   "split_family_counts": {
     "negative_example_only": 1,
-    "train": 117
+    "train": 131
   },
   "entries": [
     {
@@ -286,6 +286,13 @@
       "dedupe_cluster_id": "combinatorics.mem_insert"
     },
     {
+      "packet_id": "elementary.combinatorics.mem_inter.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "combinatorics.finset_membership",
+      "dedupe_cluster_id": "combinatorics.mem_inter"
+    },
+    {
       "packet_id": "elementary.combinatorics.mem_range.v1",
       "eligibility": "public_train",
       "split_family": "train",
@@ -298,6 +305,20 @@
       "split_family": "train",
       "template_family_id": "combinatorics.finset_membership",
       "dedupe_cluster_id": "combinatorics.mem_union"
+    },
+    {
+      "packet_id": "elementary.combinatorics.prod_range_one.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "combinatorics.finset_sum",
+      "dedupe_cluster_id": "combinatorics.prod_range_one"
+    },
+    {
+      "packet_id": "elementary.combinatorics.subset_refl.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "combinatorics.finset_set_ops",
+      "dedupe_cluster_id": "combinatorics.subset_refl"
     },
     {
       "packet_id": "elementary.combinatorics.subset_union_left.v1",
@@ -319,6 +340,13 @@
       "split_family": "train",
       "template_family_id": "combinatorics.finset_sum",
       "dedupe_cluster_id": "combinatorics.sum_range_one"
+    },
+    {
+      "packet_id": "elementary.combinatorics.union_assoc.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "combinatorics.finset_set_ops",
+      "dedupe_cluster_id": "combinatorics.union_assoc"
     },
     {
       "packet_id": "elementary.combinatorics.union_comm.v1",
@@ -440,6 +468,13 @@
       "dedupe_cluster_id": "functions.sq_abs"
     },
     {
+      "packet_id": "elementary.geometry.angle_bisector_double.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "geometry.angle_relations",
+      "dedupe_cluster_id": "geometry.angle_bisector"
+    },
+    {
       "packet_id": "elementary.geometry.centroid_sum.v1",
       "eligibility": "public_train",
       "split_family": "train",
@@ -452,6 +487,13 @@
       "split_family": "train",
       "template_family_id": "geometry.triangle_area",
       "dedupe_cluster_id": "geometry.collinear"
+    },
+    {
+      "packet_id": "elementary.geometry.complementary_angle.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "geometry.angle_relations",
+      "dedupe_cluster_id": "geometry.complementary"
     },
     {
       "packet_id": "elementary.geometry.dist_sq_symm.v1",
@@ -475,11 +517,25 @@
       "dedupe_cluster_id": "geometry.distance_nonneg"
     },
     {
+      "packet_id": "elementary.geometry.dot_product_comm.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "geometry.perpendicularity",
+      "dedupe_cluster_id": "geometry.dot_comm"
+    },
+    {
       "packet_id": "elementary.geometry.exterior_angle.v1",
       "eligibility": "public_train",
       "split_family": "train",
       "template_family_id": "geometry.angle_relations",
       "dedupe_cluster_id": "geometry.exterior_angle"
+    },
+    {
+      "packet_id": "elementary.geometry.isosceles_base_angle.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "geometry.angle_relations",
+      "dedupe_cluster_id": "geometry.isosceles"
     },
     {
       "packet_id": "elementary.geometry.midpoint_double.v1",
@@ -510,11 +566,32 @@
       "dedupe_cluster_id": "geometry.perp_rotation"
     },
     {
+      "packet_id": "elementary.geometry.reflex_angle.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "geometry.angle_relations",
+      "dedupe_cluster_id": "geometry.reflex"
+    },
+    {
+      "packet_id": "elementary.geometry.section_formula_thirds.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "geometry.coordinate_distance",
+      "dedupe_cluster_id": "geometry.section"
+    },
+    {
       "packet_id": "elementary.geometry.shoelace_identity.v1",
       "eligibility": "public_train",
       "split_family": "train",
       "template_family_id": "geometry.triangle_area",
       "dedupe_cluster_id": "geometry.shoelace"
+    },
+    {
+      "packet_id": "elementary.geometry.slope_cross_symm.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "geometry.coordinate_distance",
+      "dedupe_cluster_id": "geometry.slope_symm"
     },
     {
       "packet_id": "elementary.geometry.supplementary_angle.v1",
@@ -601,6 +678,13 @@
       "dedupe_cluster_id": "inequalities.mul_self_nonneg"
     },
     {
+      "packet_id": "elementary.inequalities.qm_am_bound.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "inequalities.sum_of_squares",
+      "dedupe_cluster_id": "inequalities.qm_am"
+    },
+    {
       "packet_id": "elementary.inequalities.reverse_triangle.v1",
       "eligibility": "public_train",
       "split_family": "train",
@@ -683,6 +767,13 @@
       "split_family": "train",
       "template_family_id": "number_theory.divisibility_closure",
       "dedupe_cluster_id": "number_theory.dvd_mul_left"
+    },
+    {
+      "packet_id": "elementary.number_theory.dvd_refl.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "number_theory.divisibility_closure",
+      "dedupe_cluster_id": "number_theory.dvd_refl"
     },
     {
       "packet_id": "elementary.number_theory.dvd_trans.v1",
@@ -802,6 +893,13 @@
       "split_family": "train",
       "template_family_id": "number_theory.parity_closure",
       "dedupe_cluster_id": "number_theory.odd_add_odd"
+    },
+    {
+      "packet_id": "elementary.number_theory.one_dvd.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "number_theory.divisibility_closure",
+      "dedupe_cluster_id": "number_theory.one_dvd"
     },
     {
       "packet_id": "elementary.number_theory.sub_add_cancel.v1",

@@ -1,22 +1,22 @@
 {
-  "packet_count": 118,
+  "packet_count": 132,
   "by_domain": {
-    "algebra": 61,
-    "combinatorics": 15,
-    "geometry": 15,
-    "number_theory": 27
+    "algebra": 62,
+    "combinatorics": 19,
+    "geometry": 22,
+    "number_theory": 29
   },
   "by_level": {
-    "L0_elementary": 58,
-    "L1_proof_basics": 52,
-    "L2_olympiad": 8
+    "L0_elementary": 61,
+    "L1_proof_basics": 61,
+    "L2_olympiad": 10
   },
   "by_kind": {
-    "concept": 117,
+    "concept": 131,
     "negative_example": 1
   },
   "by_status": {
-    "kernel_verified": 117,
+    "kernel_verified": 131,
     "failed_attempt": 1
   },
   "packets": [
@@ -421,6 +421,16 @@
       "packet_sha256": "01e7b0c06d378c5bf92281cede533b38e7034010235bdf1e079eb47a38405be8"
     },
     {
+      "packet_id": "elementary.combinatorics.mem_inter.v1",
+      "title": "Membership in an intersection",
+      "domain": "combinatorics",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "4074c9848b1125e15366458ffa73be6fe0839cb83ae64aca8f9d2063c4bd2187"
+    },
+    {
       "packet_id": "elementary.combinatorics.mem_range.v1",
       "title": "Membership in Finset.range",
       "domain": "combinatorics",
@@ -439,6 +449,26 @@
       "status": "kernel_verified",
       "eligibility": "public_train",
       "packet_sha256": "0b932b0d859fc0007a7b2de0977bec3c8236d24bb735500eb3b5d37cc1342eff"
+    },
+    {
+      "packet_id": "elementary.combinatorics.prod_range_one.v1",
+      "title": "Product over range one",
+      "domain": "combinatorics",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "c96c95956be68e333ca192fc03bd1b38d35052c29a4346653bfce268534e27ab"
+    },
+    {
+      "packet_id": "elementary.combinatorics.subset_refl.v1",
+      "title": "Subset is reflexive",
+      "domain": "combinatorics",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "39636651c213a19b039f86c9d0d0a4cd8b4a4108b55f76b94808d0d87e69407c"
     },
     {
       "packet_id": "elementary.combinatorics.subset_union_left.v1",
@@ -469,6 +499,16 @@
       "status": "kernel_verified",
       "eligibility": "public_train",
       "packet_sha256": "b75dc5640ef5b8c3a5917a671a66e5e03ed32b2d51867cf3ff6f88f1dce47c30"
+    },
+    {
+      "packet_id": "elementary.combinatorics.union_assoc.v1",
+      "title": "Union is associative",
+      "domain": "combinatorics",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "8bae9a90646141204fd35277e789930ee4d9b2965f6c88cb8bb099cd1630a8bc"
     },
     {
       "packet_id": "elementary.combinatorics.union_comm.v1",
@@ -641,6 +681,16 @@
       "packet_sha256": "bc7090335767b00c1295eb9372c50ac05ac38378832fc375799a5b3768602baf"
     },
     {
+      "packet_id": "elementary.geometry.angle_bisector_double.v1",
+      "title": "Doubling a bisected angle",
+      "domain": "geometry",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "53a1f7e143ef0a75547391f11d1baf3a881c5d1114f8f976d7847e2fb57fdb84"
+    },
+    {
       "packet_id": "elementary.geometry.centroid_sum.v1",
       "title": "Tripling the centroid coordinate",
       "domain": "geometry",
@@ -659,6 +709,16 @@
       "status": "kernel_verified",
       "eligibility": "public_train",
       "packet_sha256": "f3aee53a8ad45bbd9e4788df3ca7f9128642bcfd6878642a8031e1aa0769b24b"
+    },
+    {
+      "packet_id": "elementary.geometry.complementary_angle.v1",
+      "title": "Complementary angles",
+      "domain": "geometry",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "6d006bd67941c926531a1abc48e394ea49fcec4d65f4cf83b61ff259cd635059"
     },
     {
       "packet_id": "elementary.geometry.dist_sq_symm.v1",
@@ -691,6 +751,16 @@
       "packet_sha256": "249cb7cd6394c1b179dc471c858582b21789eb773c1f89aa7b7a30e29bcb8261"
     },
     {
+      "packet_id": "elementary.geometry.dot_product_comm.v1",
+      "title": "Dot product is commutative",
+      "domain": "geometry",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "982773b7d9d9b8a74e934d5e1eb95604f4ea1f020c18cf7212336eb8c237f6b5"
+    },
+    {
       "packet_id": "elementary.geometry.exterior_angle.v1",
       "title": "Exterior-angle relation",
       "domain": "geometry",
@@ -699,6 +769,16 @@
       "status": "kernel_verified",
       "eligibility": "public_train",
       "packet_sha256": "14cc687cdc867a9a058ef92f7bcc0f985bac7e7b0f7bf327678fd0184a62e685"
+    },
+    {
+      "packet_id": "elementary.geometry.isosceles_base_angle.v1",
+      "title": "Isosceles base angle",
+      "domain": "geometry",
+      "level": "L2_olympiad",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "0782fd148d13f2cf03a605faa12f1cb5ccbe3b2f6babdc457902f8a5fe1614f0"
     },
     {
       "packet_id": "elementary.geometry.midpoint_double.v1",
@@ -741,6 +821,26 @@
       "packet_sha256": "b8899e9332f2b5f030c680702b58b995b0aea90e0252f6e87f75b07cd20e42c4"
     },
     {
+      "packet_id": "elementary.geometry.reflex_angle.v1",
+      "title": "An angle plus its reflex is a full turn",
+      "domain": "geometry",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "da165ec5051ee673928557b7235c7071e0c49590f8c7ce44a6240cd792cfe088"
+    },
+    {
+      "packet_id": "elementary.geometry.section_formula_thirds.v1",
+      "title": "Section formula (1:2 division point)",
+      "domain": "geometry",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "25513af1f08535223b3bab929f88fce613699aa03ac9628b231df1552b5ddb14"
+    },
+    {
       "packet_id": "elementary.geometry.shoelace_identity.v1",
       "title": "Shoelace identity for twice the signed triangle area",
       "domain": "geometry",
@@ -749,6 +849,16 @@
       "status": "kernel_verified",
       "eligibility": "public_train",
       "packet_sha256": "bee898809ec821508e4501de6ac03bfe2d0726653b91d4c4f38deb158459c89c"
+    },
+    {
+      "packet_id": "elementary.geometry.slope_cross_symm.v1",
+      "title": "Slope cross-product symmetry",
+      "domain": "geometry",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "81a3b82abd089bcf332f1de35bb419783ab0da2b4ade3f22b5ee0613452e12a0"
     },
     {
       "packet_id": "elementary.geometry.supplementary_angle.v1",
@@ -871,6 +981,16 @@
       "packet_sha256": "79fdab91301d46eec789e1708928fdddca33d416478d9a6caead1bf11670c5d1"
     },
     {
+      "packet_id": "elementary.inequalities.qm_am_bound.v1",
+      "title": "QM-AM bound (a+b)² ≤ 2(a²+b²)",
+      "domain": "algebra",
+      "level": "L2_olympiad",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "406250d18be5f627a28c0e3f1f6b17b21a7143119364a1795564c6f454ed6b94"
+    },
+    {
       "packet_id": "elementary.inequalities.reverse_triangle.v1",
       "title": "Reverse triangle inequality",
       "domain": "algebra",
@@ -989,6 +1109,16 @@
       "status": "kernel_verified",
       "eligibility": "public_train",
       "packet_sha256": "c4c32efcbafb0da2917fe6f095cb55e60243362846bf5eafaeceb694074d9a1e"
+    },
+    {
+      "packet_id": "elementary.number_theory.dvd_refl.v1",
+      "title": "Divisibility is reflexive",
+      "domain": "number_theory",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "d7ed8fae0d8078e7adb14a4e72b672134ead3cf3f45c17233d927d5d088efd6e"
     },
     {
       "packet_id": "elementary.number_theory.dvd_trans.v1",
@@ -1159,6 +1289,16 @@
       "status": "kernel_verified",
       "eligibility": "public_train",
       "packet_sha256": "6ed85ebd8a77e2a0596d0c29ee1033cdbd34be0b46b8d6207460b9709bf6aec9"
+    },
+    {
+      "packet_id": "elementary.number_theory.one_dvd.v1",
+      "title": "One divides everything",
+      "domain": "number_theory",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "7bd9a2ba6d75ba7adb68df11ded3d334e552f6fb8689b01527dfc73a92132642"
     },
     {
       "packet_id": "elementary.number_theory.sub_add_cancel.v1",
