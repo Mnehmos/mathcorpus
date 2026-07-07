@@ -1,6 +1,16 @@
 {
   "entries": [
     {
+      "packet_id": "elementary.algebra.binomial_cube.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
       "packet_id": "elementary.algebra.binomial_square.v1",
       "source_kind": "author_written",
       "source_refs": [],
@@ -31,7 +41,47 @@
       "source_sha256": null
     },
     {
+      "packet_id": "elementary.algebra.factor_by_grouping.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
       "packet_id": "elementary.algebra.square_of_difference.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.algebra.sum_of_cubes.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.number_theory.dvd_add.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.number_theory.even_add_even.v1",
       "source_kind": "author_written",
       "source_refs": [],
       "authors": [

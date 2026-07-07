@@ -1,22 +1,33 @@
 {
-  "packet_count": 5,
+  "packet_count": 10,
   "by_domain": {
-    "algebra": 4,
+    "algebra": 7,
+    "number_theory": 2,
     "geometry": 1
   },
   "by_level": {
-    "L0_elementary": 4,
+    "L0_elementary": 9,
     "L2_olympiad": 1
   },
   "by_kind": {
-    "concept": 4,
+    "concept": 9,
     "negative_example": 1
   },
   "by_status": {
-    "kernel_verified": 4,
+    "kernel_verified": 9,
     "failed_attempt": 1
   },
   "packets": [
+    {
+      "packet_id": "elementary.algebra.binomial_cube.v1",
+      "title": "Binomial cube",
+      "domain": "algebra",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "b10eda3d483ba5551e7fb194bfdd3b15a107be01268f75068bb7a5b313b5cf5e"
+    },
     {
       "packet_id": "elementary.algebra.binomial_square.v1",
       "title": "Binomial square",
@@ -48,6 +59,16 @@
       "packet_sha256": "e0a0d078f7d1dae81f2fd7421cfb14c68bf363de0aa8b6deb0e98f87d3623cd5"
     },
     {
+      "packet_id": "elementary.algebra.factor_by_grouping.v1",
+      "title": "Factoring by grouping",
+      "domain": "algebra",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "ace3578c9b48c0a7f12a73ac3c2a2bc4840a933a5dc9271ca7d229cc46786045"
+    },
+    {
       "packet_id": "elementary.algebra.square_of_difference.v1",
       "title": "Square of a difference",
       "domain": "algebra",
@@ -56,6 +77,36 @@
       "status": "kernel_verified",
       "eligibility": "public_train",
       "packet_sha256": "1f94dba8e915d03757703d03e6f5ccf93262d1f309e70cc32b3ac270ee2a3c68"
+    },
+    {
+      "packet_id": "elementary.algebra.sum_of_cubes.v1",
+      "title": "Sum of cubes",
+      "domain": "algebra",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "d120a3d9ba2a5e6d98735f04762f1cf756ce360544346997c6c253e481ee8acd"
+    },
+    {
+      "packet_id": "elementary.number_theory.dvd_add.v1",
+      "title": "Divisibility distributes over addition",
+      "domain": "number_theory",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "e284e163fd97f7e179bbbf887121690a26d5b3b8c5ec3fdfaed57b96ce501634"
+    },
+    {
+      "packet_id": "elementary.number_theory.even_add_even.v1",
+      "title": "Sum of two even integers is even",
+      "domain": "number_theory",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "41a1b599533d724de4fe4d695076c356a7ff833b1f4a1868fe9d610016cdd5f3"
     },
     {
       "packet_id": "negative.geometry.angle_atoms.nlinarith_failure.v1",

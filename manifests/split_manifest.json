@@ -1,10 +1,17 @@
 {
-  "packet_count": 5,
+  "packet_count": 10,
   "split_family_counts": {
     "negative_example_only": 1,
-    "train": 4
+    "train": 9
   },
   "entries": [
+    {
+      "packet_id": "elementary.algebra.binomial_cube.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "algebra.factorization_basics",
+      "dedupe_cluster_id": "algebra.binomial_cube"
+    },
     {
       "packet_id": "elementary.algebra.binomial_square.v1",
       "eligibility": "public_train",
@@ -27,11 +34,39 @@
       "dedupe_cluster_id": "algebra.diff_of_squares"
     },
     {
+      "packet_id": "elementary.algebra.factor_by_grouping.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "algebra.factorization_basics",
+      "dedupe_cluster_id": "algebra.factor_by_grouping"
+    },
+    {
       "packet_id": "elementary.algebra.square_of_difference.v1",
       "eligibility": "public_train",
       "split_family": "train",
       "template_family_id": "algebra.factorization_basics",
       "dedupe_cluster_id": "algebra.square_of_difference"
+    },
+    {
+      "packet_id": "elementary.algebra.sum_of_cubes.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "algebra.factorization_basics",
+      "dedupe_cluster_id": "algebra.sum_of_cubes"
+    },
+    {
+      "packet_id": "elementary.number_theory.dvd_add.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "number_theory.divisibility_closure",
+      "dedupe_cluster_id": "number_theory.dvd_add"
+    },
+    {
+      "packet_id": "elementary.number_theory.even_add_even.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "number_theory.parity_closure",
+      "dedupe_cluster_id": "number_theory.even_add_even"
     },
     {
       "packet_id": "negative.geometry.angle_atoms.nlinarith_failure.v1",

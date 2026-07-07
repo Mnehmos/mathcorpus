@@ -1,16 +1,25 @@
 {
-  "packet_count": 5,
+  "packet_count": 10,
   "exact_file_duplicates": {},
   "canonical_theorem_duplicates": {},
   "family_clusters": {
     "algebra.factorization_basics": [
+      "elementary.algebra.binomial_cube.v1",
       "elementary.algebra.binomial_square.v1",
       "elementary.algebra.diff_of_cubes.v1",
       "elementary.algebra.diff_of_squares.v1",
-      "elementary.algebra.square_of_difference.v1"
+      "elementary.algebra.factor_by_grouping.v1",
+      "elementary.algebra.square_of_difference.v1",
+      "elementary.algebra.sum_of_cubes.v1"
     ],
     "geometry.automation_hazards": [
       "negative.geometry.angle_atoms.nlinarith_failure.v1"
+    ],
+    "number_theory.divisibility_closure": [
+      "elementary.number_theory.dvd_add.v1"
+    ],
+    "number_theory.parity_closure": [
+      "elementary.number_theory.even_add_even.v1"
     ]
   }
 }

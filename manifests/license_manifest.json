@@ -1,6 +1,12 @@
 {
   "entries": [
     {
+      "packet_id": "elementary.algebra.binomial_cube.v1",
+      "license_spdx": "Apache-2.0",
+      "license_content": "CC-BY-4.0",
+      "source_kind": "author_written"
+    },
+    {
       "packet_id": "elementary.algebra.binomial_square.v1",
       "license_spdx": "Apache-2.0",
       "license_content": "CC-BY-4.0",
@@ -19,7 +25,31 @@
       "source_kind": "author_written"
     },
     {
+      "packet_id": "elementary.algebra.factor_by_grouping.v1",
+      "license_spdx": "Apache-2.0",
+      "license_content": "CC-BY-4.0",
+      "source_kind": "author_written"
+    },
+    {
       "packet_id": "elementary.algebra.square_of_difference.v1",
+      "license_spdx": "Apache-2.0",
+      "license_content": "CC-BY-4.0",
+      "source_kind": "author_written"
+    },
+    {
+      "packet_id": "elementary.algebra.sum_of_cubes.v1",
+      "license_spdx": "Apache-2.0",
+      "license_content": "CC-BY-4.0",
+      "source_kind": "author_written"
+    },
+    {
+      "packet_id": "elementary.number_theory.dvd_add.v1",
+      "license_spdx": "Apache-2.0",
+      "license_content": "CC-BY-4.0",
+      "source_kind": "author_written"
+    },
+    {
+      "packet_id": "elementary.number_theory.even_add_even.v1",
       "license_spdx": "Apache-2.0",
       "license_content": "CC-BY-4.0",
       "source_kind": "author_written"
