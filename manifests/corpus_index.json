@@ -1,19 +1,19 @@
 {
-  "packet_count": 3,
+  "packet_count": 5,
   "by_domain": {
-    "algebra": 2,
+    "algebra": 4,
     "geometry": 1
   },
   "by_level": {
-    "L0_elementary": 2,
+    "L0_elementary": 4,
     "L2_olympiad": 1
   },
   "by_kind": {
-    "concept": 2,
+    "concept": 4,
     "negative_example": 1
   },
   "by_status": {
-    "kernel_verified": 2,
+    "kernel_verified": 4,
     "failed_attempt": 1
   },
   "packets": [
@@ -28,6 +28,16 @@
       "packet_sha256": "8b2e01526502c462610f22f95184ed510b68cd00feb86fb74b04885e78994dc9"
     },
     {
+      "packet_id": "elementary.algebra.diff_of_cubes.v1",
+      "title": "Difference of cubes",
+      "domain": "algebra",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "d9ab94abc8e03d8c260fd28a7fb7cc7a89570f167691bea9587a719d0902bd12"
+    },
+    {
       "packet_id": "elementary.algebra.diff_of_squares.v1",
       "title": "Difference of squares",
       "domain": "algebra",
@@ -36,6 +46,16 @@
       "status": "kernel_verified",
       "eligibility": "public_train",
       "packet_sha256": "e0a0d078f7d1dae81f2fd7421cfb14c68bf363de0aa8b6deb0e98f87d3623cd5"
+    },
+    {
+      "packet_id": "elementary.algebra.square_of_difference.v1",
+      "title": "Square of a difference",
+      "domain": "algebra",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "1f94dba8e915d03757703d03e6f5ccf93262d1f309e70cc32b3ac270ee2a3c68"
     },
     {
       "packet_id": "negative.geometry.angle_atoms.nlinarith_failure.v1",

@@ -1,11 +1,13 @@
 {
-  "packet_count": 3,
+  "packet_count": 5,
   "exact_file_duplicates": {},
   "canonical_theorem_duplicates": {},
   "family_clusters": {
     "algebra.factorization_basics": [
       "elementary.algebra.binomial_square.v1",
-      "elementary.algebra.diff_of_squares.v1"
+      "elementary.algebra.diff_of_cubes.v1",
+      "elementary.algebra.diff_of_squares.v1",
+      "elementary.algebra.square_of_difference.v1"
     ],
     "geometry.automation_hazards": [
       "negative.geometry.angle_atoms.nlinarith_failure.v1"

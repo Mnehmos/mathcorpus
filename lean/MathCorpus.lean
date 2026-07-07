@@ -2,3 +2,5 @@
 -- Each public formal packet references a module under `MathCorpus/`.
 import MathCorpus.Elementary.Algebra.DiffSquares
 import MathCorpus.Elementary.Algebra.BinomialSquare
+import MathCorpus.Elementary.Algebra.SquareOfDifference
+import MathCorpus.Elementary.Algebra.DiffCubes

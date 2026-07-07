@@ -11,7 +11,27 @@
       "source_sha256": null
     },
     {
+      "packet_id": "elementary.algebra.diff_of_cubes.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
       "packet_id": "elementary.algebra.diff_of_squares.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.algebra.square_of_difference.v1",
       "source_kind": "author_written",
       "source_refs": [],
       "authors": [

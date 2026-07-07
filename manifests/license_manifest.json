@@ -7,7 +7,19 @@
       "source_kind": "author_written"
     },
     {
+      "packet_id": "elementary.algebra.diff_of_cubes.v1",
+      "license_spdx": "Apache-2.0",
+      "license_content": "CC-BY-4.0",
+      "source_kind": "author_written"
+    },
+    {
       "packet_id": "elementary.algebra.diff_of_squares.v1",
+      "license_spdx": "Apache-2.0",
+      "license_content": "CC-BY-4.0",
+      "source_kind": "author_written"
+    },
+    {
+      "packet_id": "elementary.algebra.square_of_difference.v1",
       "license_spdx": "Apache-2.0",
       "license_content": "CC-BY-4.0",
       "source_kind": "author_written"
