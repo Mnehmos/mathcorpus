@@ -1,8 +1,12 @@
 {
-  "packet_count": 76,
+  "packet_count": 90,
   "exact_file_duplicates": {},
   "canonical_theorem_duplicates": {},
   "family_clusters": {
+    "algebra.distributivity": [
+      "elementary.algebra.add_mul.v1",
+      "elementary.algebra.mul_add.v1"
+    ],
     "algebra.factorization_basics": [
       "elementary.algebra.binomial_cube.v1",
       "elementary.algebra.binomial_square.v1",
@@ -12,16 +16,23 @@
       "elementary.algebra.square_of_difference.v1",
       "elementary.algebra.sum_of_cubes.v1"
     ],
+    "algebra.power_basics": [
+      "elementary.algebra.pow_one.v1",
+      "elementary.algebra.pow_zero.v1"
+    ],
     "algebra.ring_basics": [
       "elementary.algebra.add_assoc.v1",
       "elementary.algebra.add_comm.v1",
       "elementary.algebra.add_zero.v1",
       "elementary.algebra.mul_assoc.v1",
       "elementary.algebra.mul_comm.v1",
+      "elementary.algebra.mul_neg.v1",
       "elementary.algebra.mul_one.v1",
       "elementary.algebra.mul_zero.v1",
+      "elementary.algebra.neg_mul.v1",
       "elementary.algebra.neg_neg.v1",
       "elementary.algebra.one_mul.v1",
+      "elementary.algebra.sub_eq_add_neg.v1",
       "elementary.algebra.sub_self.v1",
       "elementary.algebra.two_mul.v1",
       "elementary.algebra.zero_add.v1"
@@ -51,7 +62,9 @@
     ],
     "functions.order_lattice": [
       "elementary.functions.max_comm.v1",
-      "elementary.functions.min_comm.v1"
+      "elementary.functions.max_self.v1",
+      "elementary.functions.min_comm.v1",
+      "elementary.functions.min_self.v1"
     ],
     "geometry.angle_relations": [
       "elementary.geometry.supplementary_angle.v1",
@@ -62,6 +75,7 @@
     ],
     "geometry.coordinate_distance": [
       "elementary.geometry.dist_sq_symm.v1",
+      "elementary.geometry.distance_sq_nonneg.v1",
       "elementary.geometry.midpoint_equidist.v1",
       "elementary.geometry.parallelogram_law.v1"
     ],
@@ -90,10 +104,14 @@
       "elementary.inequalities.sq_nonneg.v1"
     ],
     "inequalities.sum_of_squares": [
+      "elementary.inequalities.three_var_am_gm.v1",
       "elementary.inequalities.three_var_sq_ge.v1"
     ],
     "inequalities.triangle": [
       "elementary.inequalities.reverse_triangle.v1"
+    ],
+    "number_theory.coprime_basics": [
+      "elementary.number_theory.coprime_one_left.v1"
     ],
     "number_theory.divisibility_closure": [
       "elementary.number_theory.dvd_add.v1",
@@ -112,10 +130,12 @@
     "number_theory.nat_basics": [
       "elementary.number_theory.factorial_pos.v1",
       "elementary.number_theory.mod_lt.v1",
+      "elementary.number_theory.sub_add_cancel.v1",
       "elementary.number_theory.succ_ne_self.v1",
       "elementary.number_theory.two_pow_pos.v1"
     ],
     "number_theory.parity_closure": [
+      "elementary.number_theory.emod_two.v1",
       "elementary.number_theory.even_add.v1",
       "elementary.number_theory.even_add_even.v1",
       "elementary.number_theory.even_mul.v1",

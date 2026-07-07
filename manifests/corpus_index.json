@@ -1,22 +1,22 @@
 {
-  "packet_count": 76,
+  "packet_count": 90,
   "by_domain": {
-    "algebra": 42,
+    "algebra": 52,
     "combinatorics": 6,
-    "geometry": 8,
-    "number_theory": 20
+    "geometry": 9,
+    "number_theory": 23
   },
   "by_level": {
-    "L0_elementary": 42,
-    "L1_proof_basics": 27,
-    "L2_olympiad": 7
+    "L0_elementary": 51,
+    "L1_proof_basics": 31,
+    "L2_olympiad": 8
   },
   "by_kind": {
-    "concept": 75,
+    "concept": 89,
     "negative_example": 1
   },
   "by_status": {
-    "kernel_verified": 75,
+    "kernel_verified": 89,
     "failed_attempt": 1
   },
   "packets": [
@@ -39,6 +39,16 @@
       "status": "kernel_verified",
       "eligibility": "public_train",
       "packet_sha256": "e08ead12d116a35afc68580e74b304ef25f8280f2878fa22b3bb863159c9c314"
+    },
+    {
+      "packet_id": "elementary.algebra.add_mul.v1",
+      "title": "Right distributivity",
+      "domain": "algebra",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "18f3ea7c2d9566bc2b5521710559b1e14f9b354fefaecce907fb790a269ba435"
     },
     {
       "packet_id": "elementary.algebra.add_zero.v1",
@@ -101,6 +111,16 @@
       "packet_sha256": "ace3578c9b48c0a7f12a73ac3c2a2bc4840a933a5dc9271ca7d229cc46786045"
     },
     {
+      "packet_id": "elementary.algebra.mul_add.v1",
+      "title": "Left distributivity",
+      "domain": "algebra",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "7d2c32e8c8e06b8153113fdcbbe7b512a0a83a695556fb3d8b41746fa6972c75"
+    },
+    {
       "packet_id": "elementary.algebra.mul_assoc.v1",
       "title": "Multiplication is associative",
       "domain": "algebra",
@@ -119,6 +139,16 @@
       "status": "kernel_verified",
       "eligibility": "public_train",
       "packet_sha256": "9475bca0081d0547ac83d53364ec4ebbba62b36d76daa60cfe7e3462fcdc9741"
+    },
+    {
+      "packet_id": "elementary.algebra.mul_neg.v1",
+      "title": "Negation of the right factor",
+      "domain": "algebra",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "05402039f5ebbfbadde607e740a58f1f1ef95235e085df5c5aef8e82f2ac484f"
     },
     {
       "packet_id": "elementary.algebra.mul_one.v1",
@@ -141,6 +171,16 @@
       "packet_sha256": "0c2988179c4bec59db1a8637ccde77b07d6f51a78d3e77da604c7e245c5fbb9b"
     },
     {
+      "packet_id": "elementary.algebra.neg_mul.v1",
+      "title": "Negation of the left factor",
+      "domain": "algebra",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "2363af81e084ab1a39932a2f789c35b5a7fff40a630912bcc0d10da1b3dcfa5b"
+    },
+    {
       "packet_id": "elementary.algebra.neg_neg.v1",
       "title": "Double negation",
       "domain": "algebra",
@@ -161,6 +201,26 @@
       "packet_sha256": "3614393abb45894970ee96607b59002dc2657ff9504656ddcd42aff1a81a4f1a"
     },
     {
+      "packet_id": "elementary.algebra.pow_one.v1",
+      "title": "First power is the base",
+      "domain": "algebra",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "1bc52c959a17be20faf574fd837225939e5ada569377877622791f317e76f905"
+    },
+    {
+      "packet_id": "elementary.algebra.pow_zero.v1",
+      "title": "Zeroth power is one",
+      "domain": "algebra",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "ae45c73f5d2566e35b5585cae1f672d1a248e568881399658372a9778672d31c"
+    },
+    {
       "packet_id": "elementary.algebra.square_of_difference.v1",
       "title": "Square of a difference",
       "domain": "algebra",
@@ -169,6 +229,16 @@
       "status": "kernel_verified",
       "eligibility": "public_train",
       "packet_sha256": "1f94dba8e915d03757703d03e6f5ccf93262d1f309e70cc32b3ac270ee2a3c68"
+    },
+    {
+      "packet_id": "elementary.algebra.sub_eq_add_neg.v1",
+      "title": "Subtraction as addition of negation",
+      "domain": "algebra",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "dda6f1c3146a2d918ba3a5b7a649feecb51d9d7f36ac19905e0ef139bc8b8dc2"
     },
     {
       "packet_id": "elementary.algebra.sub_self.v1",
@@ -361,6 +431,16 @@
       "packet_sha256": "0c80df4706bed7e91f460c198fe5d11280b471c5df52963fc4ff476425e34dc0"
     },
     {
+      "packet_id": "elementary.functions.max_self.v1",
+      "title": "Maximum with itself",
+      "domain": "algebra",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "4ebe20dfd42505be9be64ab0a5ef457a1a377a27b544c22194a1cf4646983121"
+    },
+    {
       "packet_id": "elementary.functions.min_comm.v1",
       "title": "Minimum is commutative",
       "domain": "algebra",
@@ -369,6 +449,16 @@
       "status": "kernel_verified",
       "eligibility": "public_train",
       "packet_sha256": "ff10dfec3f0e8ba917c10d88d26cc417768f6f335f7764285d807cd3a4c5a67a"
+    },
+    {
+      "packet_id": "elementary.functions.min_self.v1",
+      "title": "Minimum with itself",
+      "domain": "algebra",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "1539a69d9e93429b3246946961fc561a32c44e238a94c9661ff1f6fef40e63a0"
     },
     {
       "packet_id": "elementary.functions.sq_abs.v1",
@@ -399,6 +489,16 @@
       "status": "kernel_verified",
       "eligibility": "public_train",
       "packet_sha256": "c35d25a8991f58bdb0b8e26355729d893a84ee27115237c090c47353e4b22044"
+    },
+    {
+      "packet_id": "elementary.geometry.distance_sq_nonneg.v1",
+      "title": "Squared distance is nonnegative",
+      "domain": "geometry",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "249cb7cd6394c1b179dc471c858582b21789eb773c1f89aa7b7a30e29bcb8261"
     },
     {
       "packet_id": "elementary.geometry.midpoint_equidist.v1",
@@ -551,6 +651,16 @@
       "packet_sha256": "8feb9c7929785d2614ec5648918d0633c71d2cd35fb18d925a846f4b5721bc50"
     },
     {
+      "packet_id": "elementary.inequalities.three_var_am_gm.v1",
+      "title": "3(ab+bc+ca) ≤ (a+b+c)²",
+      "domain": "algebra",
+      "level": "L2_olympiad",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "63916928717b2f67123afc107dcc4c501c2b7043ed2dab9fa03d5ddf4bf7e471"
+    },
+    {
       "packet_id": "elementary.inequalities.three_var_sq_ge.v1",
       "title": "ab + bc + ca ≤ a² + b² + c²",
       "domain": "algebra",
@@ -569,6 +679,16 @@
       "status": "kernel_verified",
       "eligibility": "public_train",
       "packet_sha256": "801fbdcf7bd37aa53ddfbfac6adec4cdb1bdd980c6c3858a8f0589e2fdc3a429"
+    },
+    {
+      "packet_id": "elementary.number_theory.coprime_one_left.v1",
+      "title": "One is coprime to everything",
+      "domain": "number_theory",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "46ff1ba36bdeba59790939fed95e266e7b002f8b7eac65c04fafe5f206f01c23"
     },
     {
       "packet_id": "elementary.number_theory.dvd_add.v1",
@@ -619,6 +739,16 @@
       "status": "kernel_verified",
       "eligibility": "public_train",
       "packet_sha256": "a9e9aa5531cf570f5c82d92d7ba39c770ef1e3d986c81d6b8d99b37865eafa18"
+    },
+    {
+      "packet_id": "elementary.number_theory.emod_two.v1",
+      "title": "An integer is 0 or 1 mod 2",
+      "domain": "number_theory",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "4069f601a841c3aa1a623c1cd90a6c9c8437937661c501d226b6b9226e94b23d"
     },
     {
       "packet_id": "elementary.number_theory.even_add.v1",
@@ -749,6 +879,16 @@
       "status": "kernel_verified",
       "eligibility": "public_train",
       "packet_sha256": "6ed85ebd8a77e2a0596d0c29ee1033cdbd34be0b46b8d6207460b9709bf6aec9"
+    },
+    {
+      "packet_id": "elementary.number_theory.sub_add_cancel.v1",
+      "title": "Truncated subtraction cancels",
+      "domain": "number_theory",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "f9ef7b7d05da5f6e2e878155accc57b338af463ccce43db33c2daa084cdc2204"
     },
     {
       "packet_id": "elementary.number_theory.succ_ne_self.v1",
