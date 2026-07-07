@@ -7,8 +7,15 @@
     "elementary.algebra.factor_by_grouping.v1",
     "elementary.algebra.square_of_difference.v1",
     "elementary.algebra.sum_of_cubes.v1",
+    "elementary.functions.abs_add_le.v1",
+    "elementary.functions.abs_mul.v1",
+    "elementary.functions.geom_series_mul.v1",
     "elementary.induction.gauss_sum.v1",
+    "elementary.induction.sum_odds.v1",
+    "elementary.induction.sum_squares.v1",
+    "elementary.inequalities.add_one_div_ge_two.v1",
     "elementary.inequalities.sq_nonneg.v1",
+    "elementary.inequalities.three_var_sq_ge.v1",
     "elementary.inequalities.two_mul_le_add_sq.v1",
     "elementary.number_theory.dvd_add.v1",
     "elementary.number_theory.dvd_mul.v1",
@@ -142,6 +149,44 @@
         "type": "prerequisite_concepts"
       }
     ],
+    "elementary.functions.abs_add_le.v1": [
+      {
+        "to": "absolute_value",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "triangle_inequality",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.functions.abs_mul.v1": [
+      {
+        "to": "absolute_value",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.functions.geom_series_mul.v1": [
+      {
+        "to": "PowerSeriesKit",
+        "type": "kits"
+      },
+      {
+        "to": "RecurrenceGeneratingFunctionKit",
+        "type": "kits"
+      },
+      {
+        "to": "geometric_series",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "finite_sum",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "telescoping",
+        "type": "prerequisite_concepts"
+      }
+    ],
     "elementary.induction.gauss_sum.v1": [
       {
         "to": "RecurrenceGeneratingFunctionKit",
@@ -160,6 +205,60 @@
         "type": "prerequisite_concepts"
       }
     ],
+    "elementary.induction.sum_odds.v1": [
+      {
+        "to": "RecurrenceGeneratingFunctionKit",
+        "type": "kits"
+      },
+      {
+        "to": "induction",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "finite_sum",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "odd_numbers",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.induction.sum_squares.v1": [
+      {
+        "to": "RecurrenceGeneratingFunctionKit",
+        "type": "kits"
+      },
+      {
+        "to": "induction",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "finite_sum",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "squares",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.inequalities.add_one_div_ge_two.v1": [
+      {
+        "to": "InequalityEstimateKit",
+        "type": "kits"
+      },
+      {
+        "to": "amgm",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "division",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "square",
+        "type": "prerequisite_concepts"
+      }
+    ],
     "elementary.inequalities.sq_nonneg.v1": [
       {
         "to": "InequalityEstimateKit",
@@ -171,6 +270,20 @@
       },
       {
         "to": "order",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.inequalities.three_var_sq_ge.v1": [
+      {
+        "to": "InequalityEstimateKit",
+        "type": "kits"
+      },
+      {
+        "to": "square",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "sum_of_squares",
         "type": "prerequisite_concepts"
       }
     ],

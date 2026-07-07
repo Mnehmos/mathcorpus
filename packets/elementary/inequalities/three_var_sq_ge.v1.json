@@ -1,0 +1,101 @@
+{
+  "packet_id": "elementary.inequalities.three_var_sq_ge.v1",
+  "packet_version": "1.0.0",
+  "title": "ab + bc + ca ≤ a² + b² + c²",
+  "domain": "algebra",
+  "level": "L2_olympiad",
+  "kind": "concept",
+  "status": "kernel_verified",
+  "difficulty_bin": "D2",
+  "lean_module": "MathCorpus.Elementary.Inequalities.ThreeVarSq",
+  "theorem_name": "three_var_sq_ge",
+  "imports": [
+    "Mathlib"
+  ],
+  "toolchain": {
+    "lean_version": "v4.32.0-rc1",
+    "mathlib_rev": "360da6fa66c1273b76b6b2d8c5666fd5ac2e3b56"
+  },
+  "source_provenance": {
+    "source_kind": "author_written",
+    "source_refs": [],
+    "authors": [
+      "The MathCorpus Authors"
+    ],
+    "copyright_holder": "The MathCorpus Authors",
+    "license_spdx": "Apache-2.0",
+    "license_content": "CC-BY-4.0",
+    "statement_fidelity": "author_written"
+  },
+  "informal_statement": "For all real a, b, c: ab + bc + ca ≤ a² + b² + c².",
+  "informal_proof_idea": "Sum of squares: (a-b)² + (b-c)² + (c-a)² ≥ 0 rearranges to the bound. nlinarith with the three square hints.",
+  "formal_statement_pp": "theorem three_var_sq_ge (a b c : ℝ) : a * b + b * c + c * a ≤ a ^ 2 + b ^ 2 + c ^ 2",
+  "proof_body_path": "lean/MathCorpus/Elementary/Inequalities/ThreeVarSq.lean",
+  "proof_body_redacted": false,
+  "trust": {
+    "rung": 1,
+    "proof_authority": "lean_kernel",
+    "certificate_checker": "kernel_decide",
+    "encoding_required": false,
+    "encoding_soundness_status": "not_applicable",
+    "independent_review_status": "repo_reviewed",
+    "public_claim_class": "public_safe"
+  },
+  "training": {
+    "eligibility": "public_train",
+    "reason_codes": [
+      "public",
+      "non_benchmark",
+      "unredacted"
+    ],
+    "dedupe_cluster_id": "inequalities.three_var_sq",
+    "template_family_id": "inequalities.sum_of_squares",
+    "contamination_risk": "low",
+    "can_export_proof_body": true
+  },
+  "dependencies": {
+    "kits": [
+      "InequalityEstimateKit"
+    ],
+    "tactic_tags": [
+      "nlinarith",
+      "sq_nonneg"
+    ],
+    "prerequisite_concepts": [
+      "square",
+      "sum_of_squares"
+    ]
+  },
+  "metrics": {
+    "loc": 3,
+    "tactic_count": 1
+  },
+  "artifacts": {
+    "public_files": [
+      "lean/MathCorpus/Elementary/Inequalities/ThreeVarSq.lean"
+    ]
+  },
+  "review": {
+    "review_basis": "repo self-review; kernel-verified through the tracked proof-search loop",
+    "reviewer_status": "repo_reviewed"
+  },
+  "verification": {
+    "verifier": "proofsearch",
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "episode_id": "2d093daf-b16c-4212-9209-4af2fcd7b799",
+    "outcome": "kernel_verified",
+    "kernel_verified": true,
+    "fidelity_status": "attested",
+    "import_manifest_hash": "aaf21893d520a78dee0787a1bcaf939ee6b922265ff670c272e2e1d450dd29a7",
+    "trajectory_first_hash": "5fdb2ade43049533cb5d20390c53896e6d34afdb72f4f3ee107c291d447d6a02",
+    "trajectory_last_hash": "3db5f2672e8caf1f016539fcba4e6001008a7ca93fc39a7b63c45aa2060e1c5d",
+    "step_count": 1,
+    "verified_at": "2026-07-07T18:38:20Z"
+  },
+  "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 2d093daf).",
+  "hashes": {
+    "packet_sha256": "f4d8116e9fcf12da3846162b9517260c3a0a1c0c8e84560aed127171f712c672",
+    "formal_statement_sha256": "1eb6ca7cf7f2a1e0b7122b8cb59701cecff49baa590b2aad4d56fc46911e7fea",
+    "proof_body_sha256": "1992013554902e65e502936830edac85be26ce7326b6d016d48c6513431f7c34"
+  }
+}

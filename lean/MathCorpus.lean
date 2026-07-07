@@ -8,8 +8,15 @@ import MathCorpus.Elementary.Algebra.DiffSquares
 import MathCorpus.Elementary.Algebra.FactorByGrouping
 import MathCorpus.Elementary.Algebra.SquareOfDifference
 import MathCorpus.Elementary.Algebra.SumCubes
+import MathCorpus.Elementary.Functions.AbsAdd
+import MathCorpus.Elementary.Functions.AbsMul
+import MathCorpus.Elementary.Functions.GeomSeriesMul
 import MathCorpus.Elementary.Induction.GaussSum
+import MathCorpus.Elementary.Induction.SumOdds
+import MathCorpus.Elementary.Induction.SumSquares
+import MathCorpus.Elementary.Inequalities.AddOneDivGeTwo
 import MathCorpus.Elementary.Inequalities.SqNonneg
+import MathCorpus.Elementary.Inequalities.ThreeVarSq
 import MathCorpus.Elementary.Inequalities.TwoMulLeAddSq
 import MathCorpus.Elementary.NumberTheory.DvdAdd
 import MathCorpus.Elementary.NumberTheory.DvdMul

@@ -1,8 +1,8 @@
 {
-  "packet_count": 18,
+  "packet_count": 25,
   "split_family_counts": {
     "negative_example_only": 1,
-    "train": 17
+    "train": 24
   },
   "entries": [
     {
@@ -55,6 +55,27 @@
       "dedupe_cluster_id": "algebra.sum_of_cubes"
     },
     {
+      "packet_id": "elementary.functions.abs_add_le.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "functions.absolute_value",
+      "dedupe_cluster_id": "functions.abs_add"
+    },
+    {
+      "packet_id": "elementary.functions.abs_mul.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "functions.absolute_value",
+      "dedupe_cluster_id": "functions.abs_mul"
+    },
+    {
+      "packet_id": "elementary.functions.geom_series_mul.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "functions.geometric_series",
+      "dedupe_cluster_id": "functions.geom_series"
+    },
+    {
       "packet_id": "elementary.induction.gauss_sum.v1",
       "eligibility": "public_train",
       "split_family": "train",
@@ -62,11 +83,39 @@
       "dedupe_cluster_id": "induction.gauss_sum"
     },
     {
+      "packet_id": "elementary.induction.sum_odds.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "induction.arithmetic_series",
+      "dedupe_cluster_id": "induction.sum_odds"
+    },
+    {
+      "packet_id": "elementary.induction.sum_squares.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "induction.arithmetic_series",
+      "dedupe_cluster_id": "induction.sum_squares"
+    },
+    {
+      "packet_id": "elementary.inequalities.add_one_div_ge_two.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "inequalities.amgm_reciprocal",
+      "dedupe_cluster_id": "inequalities.add_one_div"
+    },
+    {
       "packet_id": "elementary.inequalities.sq_nonneg.v1",
       "eligibility": "public_train",
       "split_family": "train",
       "template_family_id": "inequalities.square_nonneg",
       "dedupe_cluster_id": "inequalities.sq_nonneg"
+    },
+    {
+      "packet_id": "elementary.inequalities.three_var_sq_ge.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "inequalities.sum_of_squares",
+      "dedupe_cluster_id": "inequalities.three_var_sq"
     },
     {
       "packet_id": "elementary.inequalities.two_mul_le_add_sq.v1",

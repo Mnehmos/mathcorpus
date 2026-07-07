@@ -1,21 +1,21 @@
 {
-  "packet_count": 18,
+  "packet_count": 25,
   "by_domain": {
-    "algebra": 10,
+    "algebra": 17,
     "number_theory": 7,
     "geometry": 1
   },
   "by_level": {
     "L0_elementary": 14,
-    "L1_proof_basics": 3,
-    "L2_olympiad": 1
+    "L1_proof_basics": 8,
+    "L2_olympiad": 3
   },
   "by_kind": {
-    "concept": 17,
+    "concept": 24,
     "negative_example": 1
   },
   "by_status": {
-    "kernel_verified": 17,
+    "kernel_verified": 24,
     "failed_attempt": 1
   },
   "packets": [
@@ -90,6 +90,36 @@
       "packet_sha256": "d120a3d9ba2a5e6d98735f04762f1cf756ce360544346997c6c253e481ee8acd"
     },
     {
+      "packet_id": "elementary.functions.abs_add_le.v1",
+      "title": "Triangle inequality for real absolute value",
+      "domain": "algebra",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "4febd893521a6561d28aca94392a896443aba7fdc3f1978e3062f9c973071623"
+    },
+    {
+      "packet_id": "elementary.functions.abs_mul.v1",
+      "title": "Absolute value is multiplicative",
+      "domain": "algebra",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "291b0509b7fb0a8fd89c7fbb359c62568f9da9b258928d5e4a1a6039cf55fbad"
+    },
+    {
+      "packet_id": "elementary.functions.geom_series_mul.v1",
+      "title": "Finite geometric series times (r-1)",
+      "domain": "algebra",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "ddf9fdf508d7173e432cb714da60ccbf5ff8dfa33aa68959572f1b759ccc913f"
+    },
+    {
       "packet_id": "elementary.induction.gauss_sum.v1",
       "title": "Gauss sum: twice the sum of 0..n is n(n+1)",
       "domain": "algebra",
@@ -100,6 +130,36 @@
       "packet_sha256": "16eb73f60f7916db7e93a120a56bc722041fa5c151b8308eaa424bcc2899e695"
     },
     {
+      "packet_id": "elementary.induction.sum_odds.v1",
+      "title": "Sum of the first n odd numbers is n squared",
+      "domain": "algebra",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "350bc8216c837ba0b84fca276b7a22ea208aed82c8d0b9ba85b79c5b55587581"
+    },
+    {
+      "packet_id": "elementary.induction.sum_squares.v1",
+      "title": "Sum of the first n squares",
+      "domain": "algebra",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "d74d790f1db55f5b6a44a3823b221d70c12f1d4dc40fa9808ae6078601e29872"
+    },
+    {
+      "packet_id": "elementary.inequalities.add_one_div_ge_two.v1",
+      "title": "x + 1/x ≥ 2 for positive x",
+      "domain": "algebra",
+      "level": "L2_olympiad",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "a8725ef63bdc447eb34c2dbe43a5c21531d408ad08dd094982452bbabd5fb6af"
+    },
+    {
       "packet_id": "elementary.inequalities.sq_nonneg.v1",
       "title": "A real square is nonnegative",
       "domain": "algebra",
@@ -108,6 +168,16 @@
       "status": "kernel_verified",
       "eligibility": "public_train",
       "packet_sha256": "8feb9c7929785d2614ec5648918d0633c71d2cd35fb18d925a846f4b5721bc50"
+    },
+    {
+      "packet_id": "elementary.inequalities.three_var_sq_ge.v1",
+      "title": "ab + bc + ca ≤ a² + b² + c²",
+      "domain": "algebra",
+      "level": "L2_olympiad",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "f4d8116e9fcf12da3846162b9517260c3a0a1c0c8e84560aed127171f712c672"
     },
     {
       "packet_id": "elementary.inequalities.two_mul_le_add_sq.v1",

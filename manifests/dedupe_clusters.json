@@ -1,5 +1,5 @@
 {
-  "packet_count": 18,
+  "packet_count": 25,
   "exact_file_duplicates": {},
   "canonical_theorem_duplicates": {},
   "family_clusters": {
@@ -12,17 +12,32 @@
       "elementary.algebra.square_of_difference.v1",
       "elementary.algebra.sum_of_cubes.v1"
     ],
+    "functions.absolute_value": [
+      "elementary.functions.abs_add_le.v1",
+      "elementary.functions.abs_mul.v1"
+    ],
+    "functions.geometric_series": [
+      "elementary.functions.geom_series_mul.v1"
+    ],
     "geometry.automation_hazards": [
       "negative.geometry.angle_atoms.nlinarith_failure.v1"
     ],
     "induction.arithmetic_series": [
-      "elementary.induction.gauss_sum.v1"
+      "elementary.induction.gauss_sum.v1",
+      "elementary.induction.sum_odds.v1",
+      "elementary.induction.sum_squares.v1"
+    ],
+    "inequalities.amgm_reciprocal": [
+      "elementary.inequalities.add_one_div_ge_two.v1"
     ],
     "inequalities.amgm_two_var": [
       "elementary.inequalities.two_mul_le_add_sq.v1"
     ],
     "inequalities.square_nonneg": [
       "elementary.inequalities.sq_nonneg.v1"
+    ],
+    "inequalities.sum_of_squares": [
+      "elementary.inequalities.three_var_sq_ge.v1"
     ],
     "number_theory.divisibility_closure": [
       "elementary.number_theory.dvd_add.v1",

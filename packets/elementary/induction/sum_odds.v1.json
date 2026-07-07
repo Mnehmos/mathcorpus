@@ -1,0 +1,103 @@
+{
+  "packet_id": "elementary.induction.sum_odds.v1",
+  "packet_version": "1.0.0",
+  "title": "Sum of the first n odd numbers is n squared",
+  "domain": "algebra",
+  "level": "L1_proof_basics",
+  "kind": "concept",
+  "status": "kernel_verified",
+  "difficulty_bin": "D2",
+  "lean_module": "MathCorpus.Elementary.Induction.SumOdds",
+  "theorem_name": "sum_odds",
+  "imports": [
+    "Mathlib"
+  ],
+  "toolchain": {
+    "lean_version": "v4.32.0-rc1",
+    "mathlib_rev": "360da6fa66c1273b76b6b2d8c5666fd5ac2e3b56"
+  },
+  "source_provenance": {
+    "source_kind": "author_written",
+    "source_refs": [],
+    "authors": [
+      "The MathCorpus Authors"
+    ],
+    "copyright_holder": "The MathCorpus Authors",
+    "license_spdx": "Apache-2.0",
+    "license_content": "CC-BY-4.0",
+    "statement_fidelity": "author_written"
+  },
+  "informal_statement": "For every natural number n, the sum of the first n odd numbers 1 + 3 + ... + (2n-1) equals n^2.",
+  "informal_proof_idea": "Induction on n: peel the last term (2k+1) with Finset.sum_range_succ, apply the hypothesis, and k^2 + (2k+1) = (k+1)^2 by ring.",
+  "formal_statement_pp": "theorem sum_odds (n : ℕ) : (∑ i ∈ Finset.range n, (2 * i + 1)) = n ^ 2",
+  "proof_body_path": "lean/MathCorpus/Elementary/Induction/SumOdds.lean",
+  "proof_body_redacted": false,
+  "trust": {
+    "rung": 1,
+    "proof_authority": "lean_kernel",
+    "certificate_checker": "kernel_decide",
+    "encoding_required": false,
+    "encoding_soundness_status": "not_applicable",
+    "independent_review_status": "repo_reviewed",
+    "public_claim_class": "public_safe"
+  },
+  "training": {
+    "eligibility": "public_train",
+    "reason_codes": [
+      "public",
+      "non_benchmark",
+      "unredacted"
+    ],
+    "dedupe_cluster_id": "induction.sum_odds",
+    "template_family_id": "induction.arithmetic_series",
+    "contamination_risk": "low",
+    "can_export_proof_body": true
+  },
+  "dependencies": {
+    "kits": [
+      "RecurrenceGeneratingFunctionKit"
+    ],
+    "tactic_tags": [
+      "induction",
+      "Finset.sum_range_succ",
+      "ring"
+    ],
+    "prerequisite_concepts": [
+      "induction",
+      "finite_sum",
+      "odd_numbers"
+    ]
+  },
+  "metrics": {
+    "loc": 6,
+    "tactic_count": 4
+  },
+  "artifacts": {
+    "public_files": [
+      "lean/MathCorpus/Elementary/Induction/SumOdds.lean"
+    ]
+  },
+  "review": {
+    "review_basis": "repo self-review; kernel-verified through the tracked proof-search loop",
+    "reviewer_status": "repo_reviewed"
+  },
+  "verification": {
+    "verifier": "proofsearch",
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "episode_id": "939139c6-1648-47bc-86c0-0a56cff1871e",
+    "outcome": "kernel_verified",
+    "kernel_verified": true,
+    "fidelity_status": "attested",
+    "import_manifest_hash": "3b1409728dbe6053ecad3c51bd2cec2db81abd34c5e19820be82bafde616a8ba",
+    "trajectory_first_hash": "e6d9bee3c4b7f7c5d8d87ce67ab4bcc38260734193c8a35183493cda6a40acb2",
+    "trajectory_last_hash": "73f10bb2450bfb18cb85e354634d2f6e92d8c8807a36e4a83def4952ce1c6ead",
+    "step_count": 1,
+    "verified_at": "2026-07-07T18:36:57Z"
+  },
+  "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 939139c6).",
+  "hashes": {
+    "packet_sha256": "350bc8216c837ba0b84fca276b7a22ea208aed82c8d0b9ba85b79c5b55587581",
+    "formal_statement_sha256": "9944ad1e49efafbea3aecab4fd9b88b95ac1fc2ac25dfe5b4dd57fe6e1fbdbe4",
+    "proof_body_sha256": "958ae8c3aa5ac4016cc3ca528f8159b278d2d3a9950fc53972ef68c6249df154"
+  }
+}
