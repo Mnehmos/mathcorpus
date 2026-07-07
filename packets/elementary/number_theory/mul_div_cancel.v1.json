@@ -1,0 +1,97 @@
+{
+  "packet_id": "elementary.number_theory.mul_div_cancel.v1",
+  "packet_version": "1.0.0",
+  "title": "Multiplying back a quotient",
+  "domain": "number_theory",
+  "level": "L1_proof_basics",
+  "kind": "concept",
+  "status": "kernel_verified",
+  "difficulty_bin": "D1",
+  "lean_module": "MathCorpus.Elementary.NumberTheory.MulDivCancel",
+  "theorem_name": "mul_div_cancel'",
+  "imports": [
+    "Mathlib"
+  ],
+  "toolchain": {
+    "lean_version": "v4.32.0-rc1",
+    "mathlib_rev": "360da6fa66c1273b76b6b2d8c5666fd5ac2e3b56"
+  },
+  "source_provenance": {
+    "source_kind": "author_written",
+    "source_refs": [],
+    "authors": [
+      "The MathCorpus Authors"
+    ],
+    "copyright_holder": "The MathCorpus Authors",
+    "license_spdx": "Apache-2.0",
+    "license_content": "CC-BY-4.0",
+    "statement_fidelity": "author_written"
+  },
+  "informal_statement": "If a divides b then multiplying a by the quotient b/a recovers b.",
+  "informal_proof_idea": "Directly `Nat.mul_div_cancel'`.",
+  "formal_statement_pp": "theorem mul_div_cancel' (a b : ℕ) (h : a ∣ b) : a * (b / a) = b",
+  "proof_body_path": "lean/MathCorpus/Elementary/NumberTheory/MulDivCancel.lean",
+  "proof_body_redacted": false,
+  "trust": {
+    "rung": 1,
+    "proof_authority": "lean_kernel",
+    "certificate_checker": "kernel_decide",
+    "encoding_required": false,
+    "encoding_soundness_status": "not_applicable",
+    "independent_review_status": "repo_reviewed",
+    "public_claim_class": "public_safe"
+  },
+  "training": {
+    "eligibility": "public_train",
+    "reason_codes": [
+      "public",
+      "non_benchmark",
+      "unredacted"
+    ],
+    "dedupe_cluster_id": "number_theory.mul_div_cancel",
+    "template_family_id": "number_theory.nat_basics",
+    "contamination_risk": "low",
+    "can_export_proof_body": true
+  },
+  "dependencies": {
+    "kits": [
+      "elementary_number_theory"
+    ],
+    "tactic_tags": [
+      "Nat.mul_div_cancel'"
+    ],
+    "prerequisite_concepts": [
+      "divisibility",
+      "division"
+    ]
+  },
+  "metrics": {
+    "loc": 3,
+    "tactic_count": 1
+  },
+  "artifacts": {
+    "public_files": [
+      "lean/MathCorpus/Elementary/NumberTheory/MulDivCancel.lean"
+    ]
+  },
+  "review": {
+    "review_basis": "repo self-review; kernel-verified through the tracked proof-search loop",
+    "reviewer_status": "repo_reviewed"
+  },
+  "verification": {
+    "verifier": "proofsearch",
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "episode_id": "66c0439a-70f4-4983-ab12-68912d8823dd",
+    "outcome": "kernel_verified",
+    "kernel_verified": true,
+    "fidelity_status": "attested",
+    "step_count": 1,
+    "import_manifest_hash": "aaf21893d520a78dee0787a1bcaf939ee6b922265ff670c272e2e1d450dd29a7"
+  },
+  "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 66c0439a).",
+  "hashes": {
+    "packet_sha256": "5f07f34404e5ea91a0830ffde18a75ed2d0f61de5f729bd555fd0dcbcd77f656",
+    "formal_statement_sha256": "0d60e32f913aee1f8703c7ed984c5e0610ecee4ce8b043aca4c44f5bae421cb8",
+    "proof_body_sha256": "476d8f874d1ddf6456a376cb4273ebe91d92ba1f47116249de7d4f01a01046b7"
+  }
+}

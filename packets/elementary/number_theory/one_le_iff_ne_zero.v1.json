@@ -1,0 +1,97 @@
+{
+  "packet_id": "elementary.number_theory.one_le_iff_ne_zero.v1",
+  "packet_version": "1.0.0",
+  "title": "At least one iff nonzero",
+  "domain": "number_theory",
+  "level": "L1_proof_basics",
+  "kind": "concept",
+  "status": "kernel_verified",
+  "difficulty_bin": "D1",
+  "lean_module": "MathCorpus.Elementary.NumberTheory.OneLeIffNeZero",
+  "theorem_name": "one_le_iff_ne_zero'",
+  "imports": [
+    "Mathlib"
+  ],
+  "toolchain": {
+    "lean_version": "v4.32.0-rc1",
+    "mathlib_rev": "360da6fa66c1273b76b6b2d8c5666fd5ac2e3b56"
+  },
+  "source_provenance": {
+    "source_kind": "author_written",
+    "source_refs": [],
+    "authors": [
+      "The MathCorpus Authors"
+    ],
+    "copyright_holder": "The MathCorpus Authors",
+    "license_spdx": "Apache-2.0",
+    "license_content": "CC-BY-4.0",
+    "statement_fidelity": "author_written"
+  },
+  "informal_statement": "A natural number is at least one exactly when it is nonzero.",
+  "informal_proof_idea": "Directly `Nat.one_le_iff_ne_zero`.",
+  "formal_statement_pp": "theorem one_le_iff_ne_zero' (n : ℕ) : 1 ≤ n ↔ n ≠ 0",
+  "proof_body_path": "lean/MathCorpus/Elementary/NumberTheory/OneLeIffNeZero.lean",
+  "proof_body_redacted": false,
+  "trust": {
+    "rung": 1,
+    "proof_authority": "lean_kernel",
+    "certificate_checker": "kernel_decide",
+    "encoding_required": false,
+    "encoding_soundness_status": "not_applicable",
+    "independent_review_status": "repo_reviewed",
+    "public_claim_class": "public_safe"
+  },
+  "training": {
+    "eligibility": "public_train",
+    "reason_codes": [
+      "public",
+      "non_benchmark",
+      "unredacted"
+    ],
+    "dedupe_cluster_id": "number_theory.one_le_iff_ne_zero",
+    "template_family_id": "number_theory.nat_basics",
+    "contamination_risk": "low",
+    "can_export_proof_body": true
+  },
+  "dependencies": {
+    "kits": [
+      "elementary_number_theory"
+    ],
+    "tactic_tags": [
+      "Nat.one_le_iff_ne_zero"
+    ],
+    "prerequisite_concepts": [
+      "order",
+      "zero"
+    ]
+  },
+  "metrics": {
+    "loc": 3,
+    "tactic_count": 1
+  },
+  "artifacts": {
+    "public_files": [
+      "lean/MathCorpus/Elementary/NumberTheory/OneLeIffNeZero.lean"
+    ]
+  },
+  "review": {
+    "review_basis": "repo self-review; kernel-verified through the tracked proof-search loop",
+    "reviewer_status": "repo_reviewed"
+  },
+  "verification": {
+    "verifier": "proofsearch",
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "episode_id": "1df983bc-6fab-44ef-80f4-7b5b3511c0ff",
+    "outcome": "kernel_verified",
+    "kernel_verified": true,
+    "fidelity_status": "attested",
+    "step_count": 1,
+    "import_manifest_hash": "aaf21893d520a78dee0787a1bcaf939ee6b922265ff670c272e2e1d450dd29a7"
+  },
+  "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 1df983bc).",
+  "hashes": {
+    "packet_sha256": "be24d690ececcc386a29f30d20ba061b8c0d0be161f6941cbbec0e32298be080",
+    "formal_statement_sha256": "13599fc8d8a21954679fe151e1ea525c9998a8a3f5e614363a52ce4716303d7e",
+    "proof_body_sha256": "1c4a10f8261f5ed5d4bbbfc61d6f8694cdf207f87ac2f4b561de0f75254a9b61"
+  }
+}

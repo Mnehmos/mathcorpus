@@ -1,22 +1,22 @@
 {
-  "packet_count": 132,
+  "packet_count": 146,
   "by_domain": {
-    "algebra": 62,
-    "combinatorics": 19,
-    "geometry": 22,
-    "number_theory": 29
+    "algebra": 64,
+    "combinatorics": 22,
+    "geometry": 24,
+    "number_theory": 36
   },
   "by_level": {
-    "L0_elementary": 61,
-    "L1_proof_basics": 61,
-    "L2_olympiad": 10
+    "L0_elementary": 64,
+    "L1_proof_basics": 68,
+    "L2_olympiad": 14
   },
   "by_kind": {
-    "concept": 131,
+    "concept": 145,
     "negative_example": 1
   },
   "by_status": {
-    "kernel_verified": 131,
+    "kernel_verified": 145,
     "failed_attempt": 1
   },
   "packets": [
@@ -391,6 +391,16 @@
       "packet_sha256": "e03355b9fda63d8a3274c2dc70b51eeb5ced7ef1716ceede5ad246d210077608"
     },
     {
+      "packet_id": "elementary.combinatorics.filter_subset.v1",
+      "title": "A filtered set is a subset",
+      "domain": "combinatorics",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "2a5577e10957d9c42e1f25d2b9c6b0dd835dbda0453b1f8cb60e461ddd696e4b"
+    },
+    {
       "packet_id": "elementary.combinatorics.inter_comm.v1",
       "title": "Intersection is commutative",
       "domain": "combinatorics",
@@ -409,6 +419,16 @@
       "status": "kernel_verified",
       "eligibility": "public_train",
       "packet_sha256": "81673bfff7d80580998bae0e0f20e0e264a3a46f8c26e45cfa9a95a2d95e67d9"
+    },
+    {
+      "packet_id": "elementary.combinatorics.inter_subset_right.v1",
+      "title": "Intersection subset of the right operand",
+      "domain": "combinatorics",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "5e6858462f9231121bd31ddc191f18f745ab0215893a91dc0ba9404b8774b889"
     },
     {
       "packet_id": "elementary.combinatorics.mem_insert.v1",
@@ -439,6 +459,16 @@
       "status": "kernel_verified",
       "eligibility": "public_train",
       "packet_sha256": "578ba9892060d879735f3f999b8922d4993ad3c7ec7442d21d13d0110da9c4ff"
+    },
+    {
+      "packet_id": "elementary.combinatorics.mem_singleton.v1",
+      "title": "Membership in a singleton",
+      "domain": "combinatorics",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "7b8f98aedcb5f09211b9149c3500ba3b4fcc6404ea8c84fc2e19d08c49150bc0"
     },
     {
       "packet_id": "elementary.combinatorics.mem_union.v1",
@@ -801,6 +831,16 @@
       "packet_sha256": "a298990853f3111449c663d9c8fbb30753b652631d937cd96f72637cc465cc06"
     },
     {
+      "packet_id": "elementary.geometry.midpoint_symm.v1",
+      "title": "Midpoint is symmetric in endpoints",
+      "domain": "geometry",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "5c52650a1b6fd9b6d6c0145fcedcc46c1e1c7c008c8759fa89254635603ab7dc"
+    },
+    {
       "packet_id": "elementary.geometry.parallelogram_law.v1",
       "title": "Parallelogram law in coordinates",
       "domain": "geometry",
@@ -879,6 +919,16 @@
       "status": "kernel_verified",
       "eligibility": "public_train",
       "packet_sha256": "b60a00b251fc147f938dfd608ea0c1e6fa29b848e8a22dfd55b1c3ffc8cf2084"
+    },
+    {
+      "packet_id": "elementary.geometry.two_dot_le.v1",
+      "title": "Twice the dot product bound",
+      "domain": "geometry",
+      "level": "L2_olympiad",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "37169ebf05349f6f14b91cca26a0a70c50881e43c2ae247b736e949dea79e7ba"
     },
     {
       "packet_id": "elementary.geometry.vertical_angles.v1",
@@ -1011,6 +1061,16 @@
       "packet_sha256": "8feb9c7929785d2614ec5648918d0633c71d2cd35fb18d925a846f4b5721bc50"
     },
     {
+      "packet_id": "elementary.inequalities.three_sq_bound.v1",
+      "title": "(a+b+c)² ≤ 3(a²+b²+c²)",
+      "domain": "algebra",
+      "level": "L2_olympiad",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "79168df2ebb4110d09a98dd0a5d48b4d052efb2693773593579070dd14fa905e"
+    },
+    {
       "packet_id": "elementary.inequalities.three_var_am_gm.v1",
       "title": "3(ab+bc+ca) ≤ (a+b+c)²",
       "domain": "algebra",
@@ -1039,6 +1099,16 @@
       "status": "kernel_verified",
       "eligibility": "public_train",
       "packet_sha256": "801fbdcf7bd37aa53ddfbfac6adec4cdb1bdd980c6c3858a8f0589e2fdc3a429"
+    },
+    {
+      "packet_id": "elementary.inequalities.two_sq_prod_le.v1",
+      "title": "2a²b² ≤ a⁴ + b⁴",
+      "domain": "algebra",
+      "level": "L2_olympiad",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "29621be7e316f29d16d09c4b8373ca47d0e5c844d313411b19a4c0706d3c0cd2"
     },
     {
       "packet_id": "elementary.number_theory.add_mod.v1",
@@ -1131,6 +1201,16 @@
       "packet_sha256": "a9e9aa5531cf570f5c82d92d7ba39c770ef1e3d986c81d6b8d99b37865eafa18"
     },
     {
+      "packet_id": "elementary.number_theory.dvd_zero.v1",
+      "title": "Everything divides zero",
+      "domain": "number_theory",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "44f9fddf639ceecd23632cfd9954c33f8e9cb36edc2af401d3fdab723bebd9a0"
+    },
+    {
       "packet_id": "elementary.number_theory.emod_two.v1",
       "title": "An integer is 0 or 1 mod 2",
       "domain": "number_theory",
@@ -1191,6 +1271,16 @@
       "packet_sha256": "e9079015a816690616982f934633673cabb9c2e303dc3289515a5d5821845a0b"
     },
     {
+      "packet_id": "elementary.number_theory.factorial_le.v1",
+      "title": "Factorial is monotone",
+      "domain": "number_theory",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "cccda21b6f86cc9bc9ebb709abc4cdc3a587a68a11e2c2040a99cac5df1e9cab"
+    },
+    {
       "packet_id": "elementary.number_theory.factorial_pos.v1",
       "title": "Factorial is positive",
       "domain": "number_theory",
@@ -1229,6 +1319,16 @@
       "status": "kernel_verified",
       "eligibility": "public_train",
       "packet_sha256": "68e4eaa736c2b63ed1e9fa5b313c2f98bf3542a986cba3d381d1df7ea8e481e9"
+    },
+    {
+      "packet_id": "elementary.number_theory.gcd_mul_left.v1",
+      "title": "gcd distributes over a common factor",
+      "domain": "number_theory",
+      "level": "L2_olympiad",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "42be99de2dc1c33e7ffaeae3ede34219f57368699655b16b5eab182cc5dba980"
     },
     {
       "packet_id": "elementary.number_theory.gcd_one_right.v1",
@@ -1271,6 +1371,16 @@
       "packet_sha256": "e66dce613f9f34f659fe7387e8057f1a17d065be731218471d94eb65c8ab082e"
     },
     {
+      "packet_id": "elementary.number_theory.mul_div_cancel.v1",
+      "title": "Multiplying back a quotient",
+      "domain": "number_theory",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "5f07f34404e5ea91a0830ffde18a75ed2d0f61de5f729bd555fd0dcbcd77f656"
+    },
+    {
       "packet_id": "elementary.number_theory.mul_mod.v1",
       "title": "Multiplication modulo n",
       "domain": "number_theory",
@@ -1301,6 +1411,26 @@
       "packet_sha256": "7bd9a2ba6d75ba7adb68df11ded3d334e552f6fb8689b01527dfc73a92132642"
     },
     {
+      "packet_id": "elementary.number_theory.one_le_iff_ne_zero.v1",
+      "title": "At least one iff nonzero",
+      "domain": "number_theory",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "be24d690ececcc386a29f30d20ba061b8c0d0be161f6941cbbec0e32298be080"
+    },
+    {
+      "packet_id": "elementary.number_theory.pow_le_pow_left.v1",
+      "title": "Power is monotone in the base",
+      "domain": "number_theory",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "a1c34379d73cef778df074da740f21f36c43aa85630223931a158e4df5dc72c6"
+    },
+    {
       "packet_id": "elementary.number_theory.sub_add_cancel.v1",
       "title": "Truncated subtraction cancels",
       "domain": "number_theory",
@@ -1319,6 +1449,16 @@
       "status": "kernel_verified",
       "eligibility": "public_train",
       "packet_sha256": "500e096db340d80240e21f02077da3be120cc2497d2889597c1885234d31ef18"
+    },
+    {
+      "packet_id": "elementary.number_theory.succ_pos.v1",
+      "title": "A successor is positive",
+      "domain": "number_theory",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "0afabe1e3c4b13d364f692a41ea9cc51039599783299d9be2687934377d376be"
     },
     {
       "packet_id": "elementary.number_theory.two_pow_pos.v1",

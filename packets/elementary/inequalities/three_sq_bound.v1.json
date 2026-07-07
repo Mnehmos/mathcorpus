@@ -1,0 +1,98 @@
+{
+  "packet_id": "elementary.inequalities.three_sq_bound.v1",
+  "packet_version": "1.0.0",
+  "title": "(a+b+c)² ≤ 3(a²+b²+c²)",
+  "domain": "algebra",
+  "level": "L2_olympiad",
+  "kind": "concept",
+  "status": "kernel_verified",
+  "difficulty_bin": "D2",
+  "lean_module": "MathCorpus.Elementary.Inequalities.ThreeSqBound",
+  "theorem_name": "three_sq_bound",
+  "imports": [
+    "Mathlib"
+  ],
+  "toolchain": {
+    "lean_version": "v4.32.0-rc1",
+    "mathlib_rev": "360da6fa66c1273b76b6b2d8c5666fd5ac2e3b56"
+  },
+  "source_provenance": {
+    "source_kind": "author_written",
+    "source_refs": [],
+    "authors": [
+      "The MathCorpus Authors"
+    ],
+    "copyright_holder": "The MathCorpus Authors",
+    "license_spdx": "Apache-2.0",
+    "license_content": "CC-BY-4.0",
+    "statement_fidelity": "author_written"
+  },
+  "informal_statement": "For all reals a, b, c: (a+b+c)² ≤ 3(a²+b²+c²) (a power-mean bound).",
+  "informal_proof_idea": "3(a²+b²+c²) - (a+b+c)² = (a-b)² + (b-c)² + (c-a)² ≥ 0. nlinarith with three square hints.",
+  "formal_statement_pp": "theorem three_sq_bound (a b c : ℝ) : (a + b + c) ^ 2 ≤ 3 * (a ^ 2 + b ^ 2 + c ^ 2)",
+  "proof_body_path": "lean/MathCorpus/Elementary/Inequalities/ThreeSqBound.lean",
+  "proof_body_redacted": false,
+  "trust": {
+    "rung": 1,
+    "proof_authority": "lean_kernel",
+    "certificate_checker": "kernel_decide",
+    "encoding_required": false,
+    "encoding_soundness_status": "not_applicable",
+    "independent_review_status": "repo_reviewed",
+    "public_claim_class": "public_safe"
+  },
+  "training": {
+    "eligibility": "public_train",
+    "reason_codes": [
+      "public",
+      "non_benchmark",
+      "unredacted"
+    ],
+    "dedupe_cluster_id": "inequalities.three_sq_bound",
+    "template_family_id": "inequalities.sum_of_squares",
+    "contamination_risk": "low",
+    "can_export_proof_body": true
+  },
+  "dependencies": {
+    "kits": [
+      "InequalityEstimateKit"
+    ],
+    "tactic_tags": [
+      "nlinarith",
+      "sq_nonneg"
+    ],
+    "prerequisite_concepts": [
+      "sum_of_squares",
+      "power_mean"
+    ]
+  },
+  "metrics": {
+    "loc": 3,
+    "tactic_count": 1
+  },
+  "artifacts": {
+    "public_files": [
+      "lean/MathCorpus/Elementary/Inequalities/ThreeSqBound.lean"
+    ]
+  },
+  "review": {
+    "review_basis": "repo self-review; kernel-verified through the tracked proof-search loop",
+    "reviewer_status": "repo_reviewed"
+  },
+  "verification": {
+    "verifier": "proofsearch",
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "episode_id": "727a02b0-ca44-41cd-8ae5-b2240f04d7cd",
+    "outcome": "kernel_verified",
+    "kernel_verified": true,
+    "fidelity_status": "attested",
+    "step_count": 1,
+    "import_manifest_hash": "aaf21893d520a78dee0787a1bcaf939ee6b922265ff670c272e2e1d450dd29a7"
+  },
+  "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 727a02b0).",
+  "hashes": {
+    "packet_sha256": "79168df2ebb4110d09a98dd0a5d48b4d052efb2693773593579070dd14fa905e",
+    "formal_statement_sha256": "310e86e0baab665f93a8a6a937bb469c3771df3eb733bd658a3c69975413385b",
+    "proof_body_sha256": "a82007cd9637133c808324f18e8318699a35b790d6d338ffd46e663825379dc9"
+  }
+}

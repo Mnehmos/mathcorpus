@@ -1,5 +1,5 @@
 {
-  "packet_count": 132,
+  "packet_count": 146,
   "exact_file_duplicates": {},
   "canonical_theorem_duplicates": {},
   "family_clusters": {
@@ -54,12 +54,15 @@
       "elementary.combinatorics.mem_insert.v1",
       "elementary.combinatorics.mem_inter.v1",
       "elementary.combinatorics.mem_range.v1",
+      "elementary.combinatorics.mem_singleton.v1",
       "elementary.combinatorics.mem_union.v1"
     ],
     "combinatorics.finset_set_ops": [
       "elementary.combinatorics.empty_subset.v1",
+      "elementary.combinatorics.filter_subset.v1",
       "elementary.combinatorics.inter_comm.v1",
       "elementary.combinatorics.inter_subset_left.v1",
+      "elementary.combinatorics.inter_subset_right.v1",
       "elementary.combinatorics.subset_refl.v1",
       "elementary.combinatorics.subset_union_left.v1",
       "elementary.combinatorics.union_assoc.v1",
@@ -111,13 +114,15 @@
       "elementary.geometry.distance_sq_nonneg.v1",
       "elementary.geometry.midpoint_double.v1",
       "elementary.geometry.midpoint_equidist.v1",
+      "elementary.geometry.midpoint_symm.v1",
       "elementary.geometry.parallelogram_law.v1",
       "elementary.geometry.section_formula_thirds.v1",
       "elementary.geometry.slope_cross_symm.v1"
     ],
     "geometry.perpendicularity": [
       "elementary.geometry.dot_product_comm.v1",
-      "elementary.geometry.perp_rotation.v1"
+      "elementary.geometry.perp_rotation.v1",
+      "elementary.geometry.two_dot_le.v1"
     ],
     "geometry.triangle_area": [
       "elementary.geometry.collinear_det.v1",
@@ -148,8 +153,10 @@
     ],
     "inequalities.sum_of_squares": [
       "elementary.inequalities.qm_am_bound.v1",
+      "elementary.inequalities.three_sq_bound.v1",
       "elementary.inequalities.three_var_am_gm.v1",
-      "elementary.inequalities.three_var_sq_ge.v1"
+      "elementary.inequalities.three_var_sq_ge.v1",
+      "elementary.inequalities.two_sq_prod_le.v1"
     ],
     "inequalities.triangle": [
       "elementary.inequalities.reverse_triangle.v1"
@@ -164,6 +171,7 @@
       "elementary.number_theory.dvd_mul_left.v1",
       "elementary.number_theory.dvd_refl.v1",
       "elementary.number_theory.dvd_trans.v1",
+      "elementary.number_theory.dvd_zero.v1",
       "elementary.number_theory.one_dvd.v1"
     ],
     "number_theory.gcd_basics": [
@@ -171,6 +179,7 @@
       "elementary.number_theory.gcd_comm.v1",
       "elementary.number_theory.gcd_dvd_left.v1",
       "elementary.number_theory.gcd_dvd_right.v1",
+      "elementary.number_theory.gcd_mul_left.v1",
       "elementary.number_theory.gcd_one_right.v1",
       "elementary.number_theory.gcd_self.v1",
       "elementary.number_theory.gcd_zero_left.v1"
@@ -180,10 +189,15 @@
       "elementary.number_theory.mul_mod.v1"
     ],
     "number_theory.nat_basics": [
+      "elementary.number_theory.factorial_le.v1",
       "elementary.number_theory.factorial_pos.v1",
       "elementary.number_theory.mod_lt.v1",
+      "elementary.number_theory.mul_div_cancel.v1",
+      "elementary.number_theory.one_le_iff_ne_zero.v1",
+      "elementary.number_theory.pow_le_pow_left.v1",
       "elementary.number_theory.sub_add_cancel.v1",
       "elementary.number_theory.succ_ne_self.v1",
+      "elementary.number_theory.succ_pos.v1",
       "elementary.number_theory.two_pow_pos.v1"
     ],
     "number_theory.parity_closure": [
