@@ -1,6 +1,16 @@
 {
   "entries": [
     {
+      "packet_id": "elementary.algebra.add_comm.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
       "packet_id": "elementary.algebra.binomial_cube.v1",
       "source_kind": "author_written",
       "source_refs": [],
@@ -51,6 +61,16 @@
       "source_sha256": null
     },
     {
+      "packet_id": "elementary.algebra.mul_comm.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
       "packet_id": "elementary.algebra.neg_neg.v1",
       "source_kind": "author_written",
       "source_refs": [],
@@ -91,6 +111,16 @@
       "source_sha256": null
     },
     {
+      "packet_id": "elementary.algebra.two_mul.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
       "packet_id": "elementary.combinatorics.card_insert_le.v1",
       "source_kind": "author_written",
       "source_refs": [],
@@ -112,6 +142,16 @@
     },
     {
       "packet_id": "elementary.combinatorics.card_range.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.combinatorics.card_union_le.v1",
       "source_kind": "author_written",
       "source_refs": [],
       "authors": [
@@ -221,6 +261,16 @@
       "source_sha256": null
     },
     {
+      "packet_id": "elementary.geometry.parallelogram_law.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
       "packet_id": "elementary.geometry.shoelace_identity.v1",
       "source_kind": "author_written",
       "source_refs": [],
@@ -261,6 +311,16 @@
       "source_sha256": null
     },
     {
+      "packet_id": "elementary.induction.sum_cubes.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
       "packet_id": "elementary.induction.sum_odds.v1",
       "source_kind": "author_written",
       "source_refs": [],
@@ -282,6 +342,26 @@
     },
     {
       "packet_id": "elementary.inequalities.add_one_div_ge_two.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.inequalities.am_gm_two.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.inequalities.cauchy_two_term.v1",
       "source_kind": "author_written",
       "source_refs": [],
       "authors": [
@@ -371,6 +451,16 @@
       "source_sha256": null
     },
     {
+      "packet_id": "elementary.number_theory.dvd_mul_left.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
       "packet_id": "elementary.number_theory.dvd_trans.v1",
       "source_kind": "author_written",
       "source_refs": [],
@@ -421,6 +511,16 @@
       "source_sha256": null
     },
     {
+      "packet_id": "elementary.number_theory.factorial_pos.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
       "packet_id": "elementary.number_theory.gcd_comm.v1",
       "source_kind": "author_written",
       "source_refs": [],
@@ -451,6 +551,36 @@
       "source_sha256": null
     },
     {
+      "packet_id": "elementary.number_theory.gcd_self.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.number_theory.gcd_zero_left.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.number_theory.mod_lt.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
       "packet_id": "elementary.number_theory.odd_add_odd.v1",
       "source_kind": "author_written",
       "source_refs": [],
@@ -462,6 +592,16 @@
     },
     {
       "packet_id": "elementary.number_theory.succ_ne_self.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.number_theory.two_pow_pos.v1",
       "source_kind": "author_written",
       "source_refs": [],
       "authors": [

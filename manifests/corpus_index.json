@@ -1,25 +1,35 @@
 {
-  "packet_count": 48,
+  "packet_count": 62,
   "by_domain": {
-    "algebra": 25,
-    "combinatorics": 4,
-    "geometry": 6,
-    "number_theory": 13
+    "algebra": 31,
+    "combinatorics": 5,
+    "geometry": 7,
+    "number_theory": 19
   },
   "by_level": {
-    "L0_elementary": 25,
-    "L1_proof_basics": 19,
-    "L2_olympiad": 4
+    "L0_elementary": 31,
+    "L1_proof_basics": 25,
+    "L2_olympiad": 6
   },
   "by_kind": {
-    "concept": 47,
+    "concept": 61,
     "negative_example": 1
   },
   "by_status": {
-    "kernel_verified": 47,
+    "kernel_verified": 61,
     "failed_attempt": 1
   },
   "packets": [
+    {
+      "packet_id": "elementary.algebra.add_comm.v1",
+      "title": "Addition is commutative",
+      "domain": "algebra",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "e08ead12d116a35afc68580e74b304ef25f8280f2878fa22b3bb863159c9c314"
+    },
     {
       "packet_id": "elementary.algebra.binomial_cube.v1",
       "title": "Binomial cube",
@@ -71,6 +81,16 @@
       "packet_sha256": "ace3578c9b48c0a7f12a73ac3c2a2bc4840a933a5dc9271ca7d229cc46786045"
     },
     {
+      "packet_id": "elementary.algebra.mul_comm.v1",
+      "title": "Multiplication is commutative",
+      "domain": "algebra",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "9475bca0081d0547ac83d53364ec4ebbba62b36d76daa60cfe7e3462fcdc9741"
+    },
+    {
       "packet_id": "elementary.algebra.neg_neg.v1",
       "title": "Double negation",
       "domain": "algebra",
@@ -111,6 +131,16 @@
       "packet_sha256": "d120a3d9ba2a5e6d98735f04762f1cf756ce360544346997c6c253e481ee8acd"
     },
     {
+      "packet_id": "elementary.algebra.two_mul.v1",
+      "title": "Two times a is a plus a",
+      "domain": "algebra",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "7c51ea99456f72c53d4e32a3af7f49bc57637fb4ebdc21ed71952c587c5629f9"
+    },
+    {
       "packet_id": "elementary.combinatorics.card_insert_le.v1",
       "title": "Insertion increases cardinality by at most one",
       "domain": "combinatorics",
@@ -139,6 +169,16 @@
       "status": "kernel_verified",
       "eligibility": "public_train",
       "packet_sha256": "6ef7f1be38eee9a2555aa8ea2a648bcc06810c98900ca15559d3ed9c48d74fb8"
+    },
+    {
+      "packet_id": "elementary.combinatorics.card_union_le.v1",
+      "title": "Cardinality of a union is subadditive",
+      "domain": "combinatorics",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "65d75a5e5146a05d57a278fc044117a085166fd779876ce16845fbd19a4eab38"
     },
     {
       "packet_id": "elementary.combinatorics.sum_ones_card.v1",
@@ -241,6 +281,16 @@
       "packet_sha256": "a298990853f3111449c663d9c8fbb30753b652631d937cd96f72637cc465cc06"
     },
     {
+      "packet_id": "elementary.geometry.parallelogram_law.v1",
+      "title": "Parallelogram law in coordinates",
+      "domain": "geometry",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "6cc99f270e95535ace01e94966a15430ae9b57daf9f9f24e3394d47234cb6c68"
+    },
+    {
       "packet_id": "elementary.geometry.shoelace_identity.v1",
       "title": "Shoelace identity for twice the signed triangle area",
       "domain": "geometry",
@@ -281,6 +331,16 @@
       "packet_sha256": "16eb73f60f7916db7e93a120a56bc722041fa5c151b8308eaa424bcc2899e695"
     },
     {
+      "packet_id": "elementary.induction.sum_cubes.v1",
+      "title": "Sum of the first n cubes",
+      "domain": "algebra",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "6715e78dbc99bc0d85f008bd8689a497de5b4ad33b82bcc467ab751d048a75fc"
+    },
+    {
       "packet_id": "elementary.induction.sum_odds.v1",
       "title": "Sum of the first n odd numbers is n squared",
       "domain": "algebra",
@@ -309,6 +369,26 @@
       "status": "kernel_verified",
       "eligibility": "public_train",
       "packet_sha256": "a8725ef63bdc447eb34c2dbe43a5c21531d408ad08dd094982452bbabd5fb6af"
+    },
+    {
+      "packet_id": "elementary.inequalities.am_gm_two.v1",
+      "title": "AM-GM for two reals (mean-square form)",
+      "domain": "algebra",
+      "level": "L2_olympiad",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "8326c94018b69e6b024c6567b09aff38f86eee4c17b0eb13383157624c28ad30"
+    },
+    {
+      "packet_id": "elementary.inequalities.cauchy_two_term.v1",
+      "title": "Two-term Cauchy-Schwarz",
+      "domain": "algebra",
+      "level": "L2_olympiad",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "d954d1b08a7fa4c9e5b393582eb939f452058e00d63e0e7c83c842d6c14bc8de"
     },
     {
       "packet_id": "elementary.inequalities.mul_self_nonneg.v1",
@@ -391,6 +471,16 @@
       "packet_sha256": "1e3e263673fdca611770ad7601cc103e332e1ecac97d957677af39387275fce7"
     },
     {
+      "packet_id": "elementary.number_theory.dvd_mul_left.v1",
+      "title": "a divides b times a",
+      "domain": "number_theory",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "c4c32efcbafb0da2917fe6f095cb55e60243362846bf5eafaeceb694074d9a1e"
+    },
+    {
       "packet_id": "elementary.number_theory.dvd_trans.v1",
       "title": "Divisibility is transitive",
       "domain": "number_theory",
@@ -441,6 +531,16 @@
       "packet_sha256": "e9079015a816690616982f934633673cabb9c2e303dc3289515a5d5821845a0b"
     },
     {
+      "packet_id": "elementary.number_theory.factorial_pos.v1",
+      "title": "Factorial is positive",
+      "domain": "number_theory",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "f2f567c21184befba67cc0570e8777cd0fe2227deb8acb722d8cb011385e94c6"
+    },
+    {
       "packet_id": "elementary.number_theory.gcd_comm.v1",
       "title": "gcd is commutative",
       "domain": "number_theory",
@@ -471,6 +571,36 @@
       "packet_sha256": "68e4eaa736c2b63ed1e9fa5b313c2f98bf3542a986cba3d381d1df7ea8e481e9"
     },
     {
+      "packet_id": "elementary.number_theory.gcd_self.v1",
+      "title": "gcd of a number with itself",
+      "domain": "number_theory",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "98507d6f3a6776725e6ca08596363cae8bf2c87daa1b87c7cf60d3eb480fdd74"
+    },
+    {
+      "packet_id": "elementary.number_theory.gcd_zero_left.v1",
+      "title": "gcd with zero on the left",
+      "domain": "number_theory",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "2aa799ae6b0c18b65c7e22e0dc00b58e65b3e0a56b521a3d6cb31ede4e661d6c"
+    },
+    {
+      "packet_id": "elementary.number_theory.mod_lt.v1",
+      "title": "Remainder is less than a positive modulus",
+      "domain": "number_theory",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "e66dce613f9f34f659fe7387e8057f1a17d065be731218471d94eb65c8ab082e"
+    },
+    {
       "packet_id": "elementary.number_theory.odd_add_odd.v1",
       "title": "Sum of two odd integers is even",
       "domain": "number_theory",
@@ -489,6 +619,16 @@
       "status": "kernel_verified",
       "eligibility": "public_train",
       "packet_sha256": "500e096db340d80240e21f02077da3be120cc2497d2889597c1885234d31ef18"
+    },
+    {
+      "packet_id": "elementary.number_theory.two_pow_pos.v1",
+      "title": "Powers of two are positive",
+      "domain": "number_theory",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "f6cab940f90b0f432451d4aefecf14499b24e6ad94d388f57799f45238fe3aac"
     },
     {
       "packet_id": "negative.geometry.angle_atoms.nlinarith_failure.v1",

@@ -1,10 +1,17 @@
 {
-  "packet_count": 48,
+  "packet_count": 62,
   "split_family_counts": {
     "negative_example_only": 1,
-    "train": 47
+    "train": 61
   },
   "entries": [
+    {
+      "packet_id": "elementary.algebra.add_comm.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "algebra.ring_basics",
+      "dedupe_cluster_id": "algebra.add_comm"
+    },
     {
       "packet_id": "elementary.algebra.binomial_cube.v1",
       "eligibility": "public_train",
@@ -41,6 +48,13 @@
       "dedupe_cluster_id": "algebra.factor_by_grouping"
     },
     {
+      "packet_id": "elementary.algebra.mul_comm.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "algebra.ring_basics",
+      "dedupe_cluster_id": "algebra.mul_comm"
+    },
+    {
       "packet_id": "elementary.algebra.neg_neg.v1",
       "eligibility": "public_train",
       "split_family": "train",
@@ -69,6 +83,13 @@
       "dedupe_cluster_id": "algebra.sum_of_cubes"
     },
     {
+      "packet_id": "elementary.algebra.two_mul.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "algebra.ring_basics",
+      "dedupe_cluster_id": "algebra.two_mul"
+    },
+    {
       "packet_id": "elementary.combinatorics.card_insert_le.v1",
       "eligibility": "public_train",
       "split_family": "train",
@@ -88,6 +109,13 @@
       "split_family": "train",
       "template_family_id": "combinatorics.finset_card",
       "dedupe_cluster_id": "combinatorics.card_range"
+    },
+    {
+      "packet_id": "elementary.combinatorics.card_union_le.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "combinatorics.finset_card",
+      "dedupe_cluster_id": "combinatorics.card_union"
     },
     {
       "packet_id": "elementary.combinatorics.sum_ones_card.v1",
@@ -160,6 +188,13 @@
       "dedupe_cluster_id": "geometry.midpoint"
     },
     {
+      "packet_id": "elementary.geometry.parallelogram_law.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "geometry.coordinate_distance",
+      "dedupe_cluster_id": "geometry.parallelogram"
+    },
+    {
       "packet_id": "elementary.geometry.shoelace_identity.v1",
       "eligibility": "public_train",
       "split_family": "train",
@@ -188,6 +223,13 @@
       "dedupe_cluster_id": "induction.gauss_sum"
     },
     {
+      "packet_id": "elementary.induction.sum_cubes.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "induction.arithmetic_series",
+      "dedupe_cluster_id": "induction.sum_cubes"
+    },
+    {
       "packet_id": "elementary.induction.sum_odds.v1",
       "eligibility": "public_train",
       "split_family": "train",
@@ -207,6 +249,20 @@
       "split_family": "train",
       "template_family_id": "inequalities.amgm_reciprocal",
       "dedupe_cluster_id": "inequalities.add_one_div"
+    },
+    {
+      "packet_id": "elementary.inequalities.am_gm_two.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "inequalities.amgm_two_var",
+      "dedupe_cluster_id": "inequalities.am_gm_two"
+    },
+    {
+      "packet_id": "elementary.inequalities.cauchy_two_term.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "inequalities.cauchy_schwarz",
+      "dedupe_cluster_id": "inequalities.cauchy_2term"
     },
     {
       "packet_id": "elementary.inequalities.mul_self_nonneg.v1",
@@ -265,6 +321,13 @@
       "dedupe_cluster_id": "number_theory.dvd_mul"
     },
     {
+      "packet_id": "elementary.number_theory.dvd_mul_left.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "number_theory.divisibility_closure",
+      "dedupe_cluster_id": "number_theory.dvd_mul_left"
+    },
+    {
       "packet_id": "elementary.number_theory.dvd_trans.v1",
       "eligibility": "public_train",
       "split_family": "train",
@@ -300,6 +363,13 @@
       "dedupe_cluster_id": "number_theory.even_or_odd"
     },
     {
+      "packet_id": "elementary.number_theory.factorial_pos.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "number_theory.nat_basics",
+      "dedupe_cluster_id": "number_theory.factorial_pos"
+    },
+    {
       "packet_id": "elementary.number_theory.gcd_comm.v1",
       "eligibility": "public_train",
       "split_family": "train",
@@ -321,6 +391,27 @@
       "dedupe_cluster_id": "number_theory.gcd_dvd_right"
     },
     {
+      "packet_id": "elementary.number_theory.gcd_self.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "number_theory.gcd_basics",
+      "dedupe_cluster_id": "number_theory.gcd_self"
+    },
+    {
+      "packet_id": "elementary.number_theory.gcd_zero_left.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "number_theory.gcd_basics",
+      "dedupe_cluster_id": "number_theory.gcd_zero_left"
+    },
+    {
+      "packet_id": "elementary.number_theory.mod_lt.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "number_theory.nat_basics",
+      "dedupe_cluster_id": "number_theory.mod_lt"
+    },
+    {
       "packet_id": "elementary.number_theory.odd_add_odd.v1",
       "eligibility": "public_train",
       "split_family": "train",
@@ -333,6 +424,13 @@
       "split_family": "train",
       "template_family_id": "number_theory.nat_basics",
       "dedupe_cluster_id": "number_theory.succ_ne_self"
+    },
+    {
+      "packet_id": "elementary.number_theory.two_pow_pos.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "number_theory.nat_basics",
+      "dedupe_cluster_id": "number_theory.two_pow_pos"
     },
     {
       "packet_id": "negative.geometry.angle_atoms.nlinarith_failure.v1",

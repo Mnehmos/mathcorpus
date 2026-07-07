@@ -1,5 +1,5 @@
 {
-  "packet_count": 48,
+  "packet_count": 62,
   "exact_file_duplicates": {},
   "canonical_theorem_duplicates": {},
   "family_clusters": {
@@ -13,13 +13,17 @@
       "elementary.algebra.sum_of_cubes.v1"
     ],
     "algebra.ring_basics": [
+      "elementary.algebra.add_comm.v1",
+      "elementary.algebra.mul_comm.v1",
       "elementary.algebra.neg_neg.v1",
-      "elementary.algebra.sub_self.v1"
+      "elementary.algebra.sub_self.v1",
+      "elementary.algebra.two_mul.v1"
     ],
     "combinatorics.finset_card": [
       "elementary.combinatorics.card_insert_le.v1",
       "elementary.combinatorics.card_le_of_subset.v1",
       "elementary.combinatorics.card_range.v1",
+      "elementary.combinatorics.card_union_le.v1",
       "elementary.combinatorics.sum_ones_card.v1"
     ],
     "functions.absolute_value": [
@@ -42,13 +46,15 @@
     ],
     "geometry.coordinate_distance": [
       "elementary.geometry.dist_sq_symm.v1",
-      "elementary.geometry.midpoint_equidist.v1"
+      "elementary.geometry.midpoint_equidist.v1",
+      "elementary.geometry.parallelogram_law.v1"
     ],
     "geometry.triangle_area": [
       "elementary.geometry.shoelace_identity.v1"
     ],
     "induction.arithmetic_series": [
       "elementary.induction.gauss_sum.v1",
+      "elementary.induction.sum_cubes.v1",
       "elementary.induction.sum_odds.v1",
       "elementary.induction.sum_squares.v1"
     ],
@@ -56,7 +62,11 @@
       "elementary.inequalities.add_one_div_ge_two.v1"
     ],
     "inequalities.amgm_two_var": [
+      "elementary.inequalities.am_gm_two.v1",
       "elementary.inequalities.two_mul_le_add_sq.v1"
+    ],
+    "inequalities.cauchy_schwarz": [
+      "elementary.inequalities.cauchy_two_term.v1"
     ],
     "inequalities.square_nonneg": [
       "elementary.inequalities.mul_self_nonneg.v1",
@@ -71,16 +81,22 @@
     "number_theory.divisibility_closure": [
       "elementary.number_theory.dvd_add.v1",
       "elementary.number_theory.dvd_mul.v1",
+      "elementary.number_theory.dvd_mul_left.v1",
       "elementary.number_theory.dvd_trans.v1"
     ],
     "number_theory.gcd_basics": [
       "elementary.number_theory.dvd_gcd.v1",
       "elementary.number_theory.gcd_comm.v1",
       "elementary.number_theory.gcd_dvd_left.v1",
-      "elementary.number_theory.gcd_dvd_right.v1"
+      "elementary.number_theory.gcd_dvd_right.v1",
+      "elementary.number_theory.gcd_self.v1",
+      "elementary.number_theory.gcd_zero_left.v1"
     ],
     "number_theory.nat_basics": [
-      "elementary.number_theory.succ_ne_self.v1"
+      "elementary.number_theory.factorial_pos.v1",
+      "elementary.number_theory.mod_lt.v1",
+      "elementary.number_theory.succ_ne_self.v1",
+      "elementary.number_theory.two_pow_pos.v1"
     ],
     "number_theory.parity_closure": [
       "elementary.number_theory.even_add_even.v1",
