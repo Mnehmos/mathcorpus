@@ -1,0 +1,100 @@
+{
+  "packet_id": "elementary.number_theory.gcd_dvd_left.v1",
+  "packet_version": "1.0.0",
+  "title": "gcd divides its first argument",
+  "domain": "number_theory",
+  "level": "L0_elementary",
+  "kind": "concept",
+  "status": "kernel_verified",
+  "difficulty_bin": "D0",
+  "lean_module": "MathCorpus.Elementary.NumberTheory.GcdDvd",
+  "theorem_name": "gcd_dvd_left'",
+  "imports": [
+    "Mathlib"
+  ],
+  "toolchain": {
+    "lean_version": "v4.32.0-rc1",
+    "mathlib_rev": "360da6fa66c1273b76b6b2d8c5666fd5ac2e3b56"
+  },
+  "source_provenance": {
+    "source_kind": "author_written",
+    "source_refs": [],
+    "authors": [
+      "The MathCorpus Authors"
+    ],
+    "copyright_holder": "The MathCorpus Authors",
+    "license_spdx": "Apache-2.0",
+    "license_content": "CC-BY-4.0",
+    "statement_fidelity": "author_written"
+  },
+  "informal_statement": "The gcd of a and b divides a.",
+  "informal_proof_idea": "Directly `Nat.gcd_dvd_left`.",
+  "formal_statement_pp": "theorem gcd_dvd_left' (a b : ℕ) : Nat.gcd a b ∣ a",
+  "proof_body_path": "lean/MathCorpus/Elementary/NumberTheory/GcdDvd.lean",
+  "proof_body_redacted": false,
+  "trust": {
+    "rung": 1,
+    "proof_authority": "lean_kernel",
+    "certificate_checker": "kernel_decide",
+    "encoding_required": false,
+    "encoding_soundness_status": "not_applicable",
+    "independent_review_status": "repo_reviewed",
+    "public_claim_class": "public_safe"
+  },
+  "training": {
+    "eligibility": "public_train",
+    "reason_codes": [
+      "public",
+      "non_benchmark",
+      "unredacted"
+    ],
+    "dedupe_cluster_id": "number_theory.gcd_dvd",
+    "template_family_id": "number_theory.gcd_basics",
+    "contamination_risk": "low",
+    "can_export_proof_body": true
+  },
+  "dependencies": {
+    "kits": [
+      "elementary_number_theory"
+    ],
+    "tactic_tags": [
+      "Nat.gcd_dvd_left"
+    ],
+    "prerequisite_concepts": [
+      "gcd",
+      "divisibility"
+    ]
+  },
+  "metrics": {
+    "loc": 3,
+    "tactic_count": 1
+  },
+  "artifacts": {
+    "public_files": [
+      "lean/MathCorpus/Elementary/NumberTheory/GcdDvd.lean"
+    ]
+  },
+  "review": {
+    "review_basis": "repo self-review; kernel-verified through the tracked proof-search loop",
+    "reviewer_status": "repo_reviewed"
+  },
+  "verification": {
+    "verifier": "proofsearch",
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "episode_id": "6dcd9358-ca30-4c91-a3f6-1348136d8e11",
+    "outcome": "kernel_verified",
+    "kernel_verified": true,
+    "fidelity_status": "attested",
+    "import_manifest_hash": "aaf21893d520a78dee0787a1bcaf939ee6b922265ff670c272e2e1d450dd29a7",
+    "trajectory_first_hash": "353f2641d4b4dad85f01988a1b31852419aa860f64bfcc15fe96ffccc740076e",
+    "trajectory_last_hash": "c9b58445c54e397ac8b66cd7e36c35d1ac6d3add1e9465aed266d2af0d8517d2",
+    "step_count": 1,
+    "verified_at": "2026-07-07T19:12:34Z"
+  },
+  "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 6dcd9358).",
+  "hashes": {
+    "packet_sha256": "65965ef9d00e6b262dd9350fb34a34d3ec45c152f8543ada5bd0038f965674f6",
+    "formal_statement_sha256": "e935647a9020f169aab4d7e7fe5ea4fe4dd2e0d0701072fe7afeb548884d328c",
+    "proof_body_sha256": "656e8246fcc77a8bc576995f61ec87472bfd174c9f5a4a23fe20e5a0e644be9b"
+  }
+}

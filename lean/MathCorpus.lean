@@ -8,9 +8,17 @@ import MathCorpus.Elementary.Algebra.DiffSquares
 import MathCorpus.Elementary.Algebra.FactorByGrouping
 import MathCorpus.Elementary.Algebra.SquareOfDifference
 import MathCorpus.Elementary.Algebra.SumCubes
+import MathCorpus.Elementary.Combinatorics.CardLeCard
+import MathCorpus.Elementary.Combinatorics.CardRange
+import MathCorpus.Elementary.Combinatorics.SumOnes
 import MathCorpus.Elementary.Functions.AbsAdd
 import MathCorpus.Elementary.Functions.AbsMul
 import MathCorpus.Elementary.Functions.GeomSeriesMul
+import MathCorpus.Elementary.Geometry.DistSymm
+import MathCorpus.Elementary.Geometry.MidpointEquidist
+import MathCorpus.Elementary.Geometry.Shoelace
+import MathCorpus.Elementary.Geometry.SupplementaryAngle
+import MathCorpus.Elementary.Geometry.TriangleAngleSum
 import MathCorpus.Elementary.Induction.GaussSum
 import MathCorpus.Elementary.Induction.SumOdds
 import MathCorpus.Elementary.Induction.SumSquares
@@ -24,4 +32,6 @@ import MathCorpus.Elementary.NumberTheory.DvdTrans
 import MathCorpus.Elementary.NumberTheory.EvenAddEven
 import MathCorpus.Elementary.NumberTheory.EvenMul
 import MathCorpus.Elementary.NumberTheory.EvenMulSucc
+import MathCorpus.Elementary.NumberTheory.GcdComm
+import MathCorpus.Elementary.NumberTheory.GcdDvd
 import MathCorpus.Elementary.NumberTheory.OddAddOdd

@@ -1,5 +1,5 @@
 {
-  "packet_count": 25,
+  "packet_count": 35,
   "exact_file_duplicates": {},
   "canonical_theorem_duplicates": {},
   "family_clusters": {
@@ -12,6 +12,11 @@
       "elementary.algebra.square_of_difference.v1",
       "elementary.algebra.sum_of_cubes.v1"
     ],
+    "combinatorics.finset_card": [
+      "elementary.combinatorics.card_le_of_subset.v1",
+      "elementary.combinatorics.card_range.v1",
+      "elementary.combinatorics.sum_ones_card.v1"
+    ],
     "functions.absolute_value": [
       "elementary.functions.abs_add_le.v1",
       "elementary.functions.abs_mul.v1"
@@ -19,8 +24,19 @@
     "functions.geometric_series": [
       "elementary.functions.geom_series_mul.v1"
     ],
+    "geometry.angle_relations": [
+      "elementary.geometry.supplementary_angle.v1",
+      "elementary.geometry.triangle_angle_sum.v1"
+    ],
     "geometry.automation_hazards": [
       "negative.geometry.angle_atoms.nlinarith_failure.v1"
+    ],
+    "geometry.coordinate_distance": [
+      "elementary.geometry.dist_sq_symm.v1",
+      "elementary.geometry.midpoint_equidist.v1"
+    ],
+    "geometry.triangle_area": [
+      "elementary.geometry.shoelace_identity.v1"
     ],
     "induction.arithmetic_series": [
       "elementary.induction.gauss_sum.v1",
@@ -43,6 +59,10 @@
       "elementary.number_theory.dvd_add.v1",
       "elementary.number_theory.dvd_mul.v1",
       "elementary.number_theory.dvd_trans.v1"
+    ],
+    "number_theory.gcd_basics": [
+      "elementary.number_theory.gcd_comm.v1",
+      "elementary.number_theory.gcd_dvd_left.v1"
     ],
     "number_theory.parity_closure": [
       "elementary.number_theory.even_add_even.v1",

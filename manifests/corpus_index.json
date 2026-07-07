@@ -1,21 +1,22 @@
 {
-  "packet_count": 25,
+  "packet_count": 35,
   "by_domain": {
     "algebra": 17,
-    "number_theory": 7,
-    "geometry": 1
+    "combinatorics": 3,
+    "geometry": 6,
+    "number_theory": 9
   },
   "by_level": {
-    "L0_elementary": 14,
-    "L1_proof_basics": 8,
+    "L0_elementary": 18,
+    "L1_proof_basics": 14,
     "L2_olympiad": 3
   },
   "by_kind": {
-    "concept": 24,
+    "concept": 34,
     "negative_example": 1
   },
   "by_status": {
-    "kernel_verified": 24,
+    "kernel_verified": 34,
     "failed_attempt": 1
   },
   "packets": [
@@ -90,6 +91,36 @@
       "packet_sha256": "d120a3d9ba2a5e6d98735f04762f1cf756ce360544346997c6c253e481ee8acd"
     },
     {
+      "packet_id": "elementary.combinatorics.card_le_of_subset.v1",
+      "title": "Cardinality is monotone under subset",
+      "domain": "combinatorics",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "09d9172f04cd1e38d8c6a133474bfcb4f9e2a85efebd143da0c03e42fe1dfff6"
+    },
+    {
+      "packet_id": "elementary.combinatorics.card_range.v1",
+      "title": "Cardinality of Finset.range",
+      "domain": "combinatorics",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "6ef7f1be38eee9a2555aa8ea2a648bcc06810c98900ca15559d3ed9c48d74fb8"
+    },
+    {
+      "packet_id": "elementary.combinatorics.sum_ones_card.v1",
+      "title": "Summing 1 over a finite set counts its elements",
+      "domain": "combinatorics",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "436019b631cfa80f23407f8db6b59e27da42c3d8538c17d1330e5a127fa1f476"
+    },
+    {
       "packet_id": "elementary.functions.abs_add_le.v1",
       "title": "Triangle inequality for real absolute value",
       "domain": "algebra",
@@ -118,6 +149,56 @@
       "status": "kernel_verified",
       "eligibility": "public_train",
       "packet_sha256": "ddf9fdf508d7173e432cb714da60ccbf5ff8dfa33aa68959572f1b759ccc913f"
+    },
+    {
+      "packet_id": "elementary.geometry.dist_sq_symm.v1",
+      "title": "Squared distance is symmetric",
+      "domain": "geometry",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "c35d25a8991f58bdb0b8e26355729d893a84ee27115237c090c47353e4b22044"
+    },
+    {
+      "packet_id": "elementary.geometry.midpoint_equidist.v1",
+      "title": "Midpoint is equidistant from the endpoints",
+      "domain": "geometry",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "a298990853f3111449c663d9c8fbb30753b652631d937cd96f72637cc465cc06"
+    },
+    {
+      "packet_id": "elementary.geometry.shoelace_identity.v1",
+      "title": "Shoelace identity for twice the signed triangle area",
+      "domain": "geometry",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "bee898809ec821508e4501de6ac03bfe2d0726653b91d4c4f38deb158459c89c"
+    },
+    {
+      "packet_id": "elementary.geometry.supplementary_angle.v1",
+      "title": "Supplementary angles",
+      "domain": "geometry",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "f1eb8df4b3f41313b761f50fe406f6a1a6dd4d2c804b0f47b9932c6047725ad7"
+    },
+    {
+      "packet_id": "elementary.geometry.triangle_angle_sum.v1",
+      "title": "Triangle angle sum (scalar form)",
+      "domain": "geometry",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "b60a00b251fc147f938dfd608ea0c1e6fa29b848e8a22dfd55b1c3ffc8cf2084"
     },
     {
       "packet_id": "elementary.induction.gauss_sum.v1",
@@ -248,6 +329,26 @@
       "status": "kernel_verified",
       "eligibility": "public_train",
       "packet_sha256": "423402f909118a1eeecd056f206ae60c8f7e24b02effd2efaeeb168ee7d5178b"
+    },
+    {
+      "packet_id": "elementary.number_theory.gcd_comm.v1",
+      "title": "gcd is commutative",
+      "domain": "number_theory",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "5b3e2f8b49d7d468ad03275d0cc84b82c24dcbf283b45d996bbf0388f6766600"
+    },
+    {
+      "packet_id": "elementary.number_theory.gcd_dvd_left.v1",
+      "title": "gcd divides its first argument",
+      "domain": "number_theory",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "65965ef9d00e6b262dd9350fb34a34d3ec45c152f8543ada5bd0038f965674f6"
     },
     {
       "packet_id": "elementary.number_theory.odd_add_odd.v1",

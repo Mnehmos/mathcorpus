@@ -1,8 +1,8 @@
 {
-  "packet_count": 25,
+  "packet_count": 35,
   "split_family_counts": {
     "negative_example_only": 1,
-    "train": 24
+    "train": 34
   },
   "entries": [
     {
@@ -55,6 +55,27 @@
       "dedupe_cluster_id": "algebra.sum_of_cubes"
     },
     {
+      "packet_id": "elementary.combinatorics.card_le_of_subset.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "combinatorics.finset_card",
+      "dedupe_cluster_id": "combinatorics.card_mono"
+    },
+    {
+      "packet_id": "elementary.combinatorics.card_range.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "combinatorics.finset_card",
+      "dedupe_cluster_id": "combinatorics.card_range"
+    },
+    {
+      "packet_id": "elementary.combinatorics.sum_ones_card.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "combinatorics.finset_card",
+      "dedupe_cluster_id": "combinatorics.sum_ones"
+    },
+    {
       "packet_id": "elementary.functions.abs_add_le.v1",
       "eligibility": "public_train",
       "split_family": "train",
@@ -74,6 +95,41 @@
       "split_family": "train",
       "template_family_id": "functions.geometric_series",
       "dedupe_cluster_id": "functions.geom_series"
+    },
+    {
+      "packet_id": "elementary.geometry.dist_sq_symm.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "geometry.coordinate_distance",
+      "dedupe_cluster_id": "geometry.dist_symm"
+    },
+    {
+      "packet_id": "elementary.geometry.midpoint_equidist.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "geometry.coordinate_distance",
+      "dedupe_cluster_id": "geometry.midpoint"
+    },
+    {
+      "packet_id": "elementary.geometry.shoelace_identity.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "geometry.triangle_area",
+      "dedupe_cluster_id": "geometry.shoelace"
+    },
+    {
+      "packet_id": "elementary.geometry.supplementary_angle.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "geometry.angle_relations",
+      "dedupe_cluster_id": "geometry.supplementary"
+    },
+    {
+      "packet_id": "elementary.geometry.triangle_angle_sum.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "geometry.angle_relations",
+      "dedupe_cluster_id": "geometry.triangle_angle_sum"
     },
     {
       "packet_id": "elementary.induction.gauss_sum.v1",
@@ -165,6 +221,20 @@
       "split_family": "train",
       "template_family_id": "number_theory.parity_closure",
       "dedupe_cluster_id": "number_theory.even_mul_succ"
+    },
+    {
+      "packet_id": "elementary.number_theory.gcd_comm.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "number_theory.gcd_basics",
+      "dedupe_cluster_id": "number_theory.gcd_comm"
+    },
+    {
+      "packet_id": "elementary.number_theory.gcd_dvd_left.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "number_theory.gcd_basics",
+      "dedupe_cluster_id": "number_theory.gcd_dvd"
     },
     {
       "packet_id": "elementary.number_theory.odd_add_odd.v1",

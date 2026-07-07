@@ -1,0 +1,101 @@
+{
+  "packet_id": "elementary.combinatorics.sum_ones_card.v1",
+  "packet_version": "1.0.0",
+  "title": "Summing 1 over a finite set counts its elements",
+  "domain": "combinatorics",
+  "level": "L1_proof_basics",
+  "kind": "concept",
+  "status": "kernel_verified",
+  "difficulty_bin": "D1",
+  "lean_module": "MathCorpus.Elementary.Combinatorics.SumOnes",
+  "theorem_name": "sum_ones_card",
+  "imports": [
+    "Mathlib"
+  ],
+  "toolchain": {
+    "lean_version": "v4.32.0-rc1",
+    "mathlib_rev": "360da6fa66c1273b76b6b2d8c5666fd5ac2e3b56"
+  },
+  "source_provenance": {
+    "source_kind": "author_written",
+    "source_refs": [],
+    "authors": [
+      "The MathCorpus Authors"
+    ],
+    "copyright_holder": "The MathCorpus Authors",
+    "license_spdx": "Apache-2.0",
+    "license_content": "CC-BY-4.0",
+    "statement_fidelity": "author_written"
+  },
+  "informal_statement": "Summing the constant 1 over a finite set equals the number of elements of the set.",
+  "informal_proof_idea": "A constant sum is card • constant; `simp` reduces to the cardinality.",
+  "formal_statement_pp": "theorem sum_ones_card (s : Finset ℕ) : (∑ _i ∈ s, (1 : ℕ)) = s.card",
+  "proof_body_path": "lean/MathCorpus/Elementary/Combinatorics/SumOnes.lean",
+  "proof_body_redacted": false,
+  "trust": {
+    "rung": 1,
+    "proof_authority": "lean_kernel",
+    "certificate_checker": "kernel_decide",
+    "encoding_required": false,
+    "encoding_soundness_status": "not_applicable",
+    "independent_review_status": "repo_reviewed",
+    "public_claim_class": "public_safe"
+  },
+  "training": {
+    "eligibility": "public_train",
+    "reason_codes": [
+      "public",
+      "non_benchmark",
+      "unredacted"
+    ],
+    "dedupe_cluster_id": "combinatorics.sum_ones",
+    "template_family_id": "combinatorics.finset_card",
+    "contamination_risk": "low",
+    "can_export_proof_body": true
+  },
+  "dependencies": {
+    "kits": [
+      "ExtremalCombinatoricsKit"
+    ],
+    "tactic_tags": [
+      "simp",
+      "Finset.sum_const"
+    ],
+    "prerequisite_concepts": [
+      "finite_sum",
+      "cardinality"
+    ]
+  },
+  "metrics": {
+    "loc": 3,
+    "tactic_count": 1
+  },
+  "artifacts": {
+    "public_files": [
+      "lean/MathCorpus/Elementary/Combinatorics/SumOnes.lean"
+    ]
+  },
+  "review": {
+    "review_basis": "repo self-review; kernel-verified through the tracked proof-search loop",
+    "reviewer_status": "repo_reviewed"
+  },
+  "verification": {
+    "verifier": "proofsearch",
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "episode_id": "81036d67-e643-4a3e-919a-e5d358f7de9e",
+    "outcome": "kernel_verified",
+    "kernel_verified": true,
+    "fidelity_status": "attested",
+    "import_manifest_hash": "3b1409728dbe6053ecad3c51bd2cec2db81abd34c5e19820be82bafde616a8ba",
+    "trajectory_first_hash": "85a22b87e209ef1c7e2c26824996c3786cf1098c3e757502389ffdd539fe36d1",
+    "trajectory_last_hash": "11f7d295ce2e869180691542e3775af1a8bd0e2aafbe4b1ca4d824f333eeeb27",
+    "step_count": 1,
+    "verified_at": "2026-07-07T19:11:38Z"
+  },
+  "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 81036d67).",
+  "hashes": {
+    "packet_sha256": "436019b631cfa80f23407f8db6b59e27da42c3d8538c17d1330e5a127fa1f476",
+    "formal_statement_sha256": "1137af2bb493a9db83eecceffb02cfd8501d400689ee6fa20b897167a3228651",
+    "proof_body_sha256": "e0e1bab1ceec2fbd536cd17de976f4c4e39094147bb77695561d0ec2f0ceb5bc"
+  }
+}
