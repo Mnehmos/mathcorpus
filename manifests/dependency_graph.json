@@ -1,0 +1,47 @@
+{
+  "nodes": [
+    "elementary.algebra.diff_of_squares.v1",
+    "frontier.ramsey.r33_le6.certificate.v1",
+    "negative.geometry.angle_atoms.nlinarith_failure.v1"
+  ],
+  "edges": {
+    "elementary.algebra.diff_of_squares.v1": [
+      {
+        "to": "core_algebra",
+        "type": "kits"
+      },
+      {
+        "to": "ring_automation",
+        "type": "kits"
+      },
+      {
+        "to": "distributivity",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "frontier.ramsey.r33_le6.certificate.v1": [
+      {
+        "to": "FiniteCertificateKit",
+        "type": "kits"
+      },
+      {
+        "to": "ramsey_number",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "cnf_encoding",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "lrat_replay",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "negative.geometry.angle_atoms.nlinarith_failure.v1": [
+      {
+        "to": "GeometryAngleKit",
+        "type": "kits"
+      }
+    ]
+  }
+}

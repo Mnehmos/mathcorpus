@@ -1,0 +1,87 @@
+{
+  "packet_id": "elementary.algebra.diff_of_squares.v1",
+  "packet_version": "1.0.0",
+  "title": "Difference of squares",
+  "domain": "algebra",
+  "level": "L0_elementary",
+  "kind": "concept",
+  "status": "kernel_verified",
+  "difficulty_bin": "D0",
+  "lean_module": "MathCorpus.Elementary.Algebra.DiffSquares",
+  "theorem_name": "diff_sq",
+  "imports": [
+    "Mathlib"
+  ],
+  "toolchain": {
+    "lean_version": "4.15.0",
+    "mathlib_rev": "v4.15.0"
+  },
+  "source_provenance": {
+    "source_kind": "author_written",
+    "source_refs": [],
+    "authors": [
+      "The MathCorpus Authors"
+    ],
+    "copyright_holder": "The MathCorpus Authors",
+    "license_spdx": "Apache-2.0",
+    "license_content": "CC-BY-4.0",
+    "statement_fidelity": "author_written"
+  },
+  "informal_statement": "For integers a and b, a^2 - b^2 factors as (a - b) * (a + b).",
+  "informal_proof_idea": "Expand the right-hand side and cancel the cross terms; `ring` closes it.",
+  "formal_statement_pp": "theorem diff_sq (a b : ℤ) : a ^ 2 - b ^ 2 = (a - b) * (a + b)",
+  "proof_body_path": "lean/MathCorpus/Elementary/Algebra/DiffSquares.lean",
+  "proof_body_redacted": false,
+  "trust": {
+    "rung": 1,
+    "proof_authority": "lean_kernel",
+    "certificate_checker": "kernel_decide",
+    "encoding_required": false,
+    "encoding_soundness_status": "not_applicable",
+    "independent_review_status": "repo_reviewed",
+    "public_claim_class": "public_safe"
+  },
+  "training": {
+    "eligibility": "public_train",
+    "reason_codes": [
+      "public",
+      "non_benchmark",
+      "unredacted"
+    ],
+    "dedupe_cluster_id": "algebra.diff_of_squares",
+    "template_family_id": "algebra.factorization_basics",
+    "contamination_risk": "low",
+    "can_export_proof_body": true
+  },
+  "dependencies": {
+    "kits": [
+      "core_algebra",
+      "ring_automation"
+    ],
+    "tactic_tags": [
+      "ring"
+    ],
+    "prerequisite_concepts": [
+      "distributivity"
+    ]
+  },
+  "metrics": {
+    "loc": 3,
+    "tactic_count": 1
+  },
+  "artifacts": {
+    "public_files": [
+      "lean/MathCorpus/Elementary/Algebra/DiffSquares.lean"
+    ]
+  },
+  "review": {
+    "review_basis": "repo self-review; kernel-verified via `ring`",
+    "reviewer_status": "repo_reviewed"
+  },
+  "notes": "Illustrative v0.1 sample. toolchain.mathlib_rev is a tag placeholder to be replaced with the exact pinned commit once the Lean environment is provisioned.",
+  "hashes": {
+    "packet_sha256": "ec811c6347798bb6ca6199b5feae741239d7b390a68068fec0276a064018cd97",
+    "formal_statement_sha256": "0ed0e2cbcfe7facb145d271db6f2a5e6288852fb4fc04b5e94f06262b357c671",
+    "proof_body_sha256": "79733246fcf27234baabfa252d58a848f8877f58e5b465b68a288adb250c0c2d"
+  }
+}

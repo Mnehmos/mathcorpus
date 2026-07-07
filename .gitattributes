@@ -1,0 +1,11 @@
+# Byte-stability matters: source/proof hashes are computed over LF-normalized bytes.
+# Force LF on checkout everywhere so file hashes are reproducible cross-platform.
+* text=auto eol=lf
+
+# Treat exports and certificates as data/binary (never CRLF-mangled).
+*.jsonl  text eol=lf
+*.parquet binary
+*.lrat   binary
+*.drat   binary
+*.cnf    binary
+*.olean  binary

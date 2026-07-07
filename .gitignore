@@ -1,0 +1,40 @@
+# Generated exports (regenerable from packets/ via tools/)
+/exports/
+/dist/
+
+# Private artifact store — NEVER commit restricted proofs, certificates, audit bundles
+/private/
+*.lrat
+*.drat
+*.cnf
+!schema/**/*.cnf
+
+# Lean build
+lean/.lake/
+lean/build/
+lean/lake-packages/
+*.olean
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Editors / OS
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# Stray tooling not part of this project
+/.approval_tests_temp/
+
+# Source PDF (design input, not distributed)
+/MathCorpus Roadmap*.pdf
+
+# Local MCP config (machine-specific absolute paths). Use .mcp.json.example as a template.
+/.mcp.json

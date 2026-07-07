@@ -1,0 +1,10 @@
+# MathCorpus tooling dependencies.
+# Core (required for validation/export):
+jsonschema>=4.20
+
+# Optional — Parquet mirror export. Tools degrade gracefully if absent.
+# pyarrow>=15.0
+
+# Optional — Hugging Face publishing (tools/publish_hf.py, not required for CI).
+# datasets>=2.19
+# huggingface_hub>=0.23

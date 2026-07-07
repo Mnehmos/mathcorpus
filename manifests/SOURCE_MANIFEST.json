@@ -1,0 +1,36 @@
+{
+  "entries": [
+    {
+      "packet_id": "elementary.algebra.diff_of_squares.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "frontier.ramsey.r33_le6.certificate.v1",
+      "source_kind": "repo_original",
+      "source_refs": [
+        "ramsey_theory_standard_theorem"
+      ],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "negative.geometry.angle_atoms.nlinarith_failure.v1",
+      "source_kind": "repo_original",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    }
+  ]
+}

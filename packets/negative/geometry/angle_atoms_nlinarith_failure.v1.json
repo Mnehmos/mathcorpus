@@ -1,0 +1,58 @@
+{
+  "packet_id": "negative.geometry.angle_atoms.nlinarith_failure.v1",
+  "packet_version": "1.0.0",
+  "title": "nlinarith fails on raw Euclidean angle atoms",
+  "domain": "geometry",
+  "level": "L2_olympiad",
+  "kind": "negative_example",
+  "status": "failed_attempt",
+  "difficulty_bin": "D2",
+  "source_provenance": {
+    "source_kind": "repo_original",
+    "source_refs": [],
+    "authors": [
+      "The MathCorpus Authors"
+    ],
+    "copyright_holder": "The MathCorpus Authors",
+    "license_spdx": "Apache-2.0",
+    "license_content": "CC-BY-4.0",
+    "statement_fidelity": "author_written"
+  },
+  "informal_statement": "A goal over `EuclideanGeometry.angle` atoms attacked by `nlinarith` before bridging the angles into scalar equations.",
+  "failure": {
+    "gap_category": "tactic_mismatch",
+    "sub_category": "nonlinear_arith_on_geometry_atoms",
+    "input_context_summary": "Goal involved angle identities over EuclideanGeometry.angle terms.",
+    "attempt_summary": "Applied nlinarith directly before converting angles to scalar equations; it burned the heartbeat budget as a deterministic timeout.",
+    "lesson": "Bridge geometry facts into scalar angle equalities before invoking arithmetic automation; treat nlinarith over angle atoms as expensive."
+  },
+  "proof_body_redacted": false,
+  "trust": {
+    "rung": 0,
+    "proof_authority": "none",
+    "public_claim_class": "public_safe"
+  },
+  "training": {
+    "eligibility": "negative_example_only",
+    "reason_codes": [
+      "public",
+      "explicit_negative_label"
+    ],
+    "dedupe_cluster_id": "geom.angle.failure_patterns",
+    "template_family_id": "geometry.automation_hazards",
+    "contamination_risk": "low"
+  },
+  "dependencies": {
+    "kits": [
+      "GeometryAngleKit"
+    ],
+    "tactic_tags": [
+      "nlinarith",
+      "EuclideanGeometry.angle"
+    ]
+  },
+  "notes": "Illustrative v0.1 negative example. Labeled non-proof-bearing training data (rung 0).",
+  "hashes": {
+    "packet_sha256": "7827922c0a547d9c461c95f6f35b1a123bbd7bdeea0a19cd76ef218bd326fffe"
+  }
+}

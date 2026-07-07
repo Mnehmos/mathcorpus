@@ -1,0 +1,22 @@
+{
+  "entries": [
+    {
+      "packet_id": "elementary.algebra.diff_of_squares.v1",
+      "license_spdx": "Apache-2.0",
+      "license_content": "CC-BY-4.0",
+      "source_kind": "author_written"
+    },
+    {
+      "packet_id": "frontier.ramsey.r33_le6.certificate.v1",
+      "license_spdx": "Apache-2.0",
+      "license_content": "CC-BY-4.0",
+      "source_kind": "repo_original"
+    },
+    {
+      "packet_id": "negative.geometry.angle_atoms.nlinarith_failure.v1",
+      "license_spdx": "Apache-2.0",
+      "license_content": "CC-BY-4.0",
+      "source_kind": "repo_original"
+    }
+  ]
+}

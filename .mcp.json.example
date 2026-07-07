@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "proofsearch": {
+      "command": "/path/to/llm-driven-proof-search/target/release/proofsearch-mcp",
+      "args": ["/path/to/llm-driven-proof-search/proofsearch.db"],
+      "env": {
+        "PROOFSEARCH_ELAN_BIN_PATH": "/path/to/.elan/bin",
+        "PROOFSEARCH_ELAN_HOME": "/path/to/elan",
+        "PROOFSEARCH_LEAN_PROJECT_PATH": "/path/to/llm-driven-proof-search/lean-checker"
+      }
+    }
+  }
+}

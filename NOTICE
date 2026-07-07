@@ -1,0 +1,22 @@
+MathCorpus
+Copyright 2026 The MathCorpus Authors
+
+This product bundles content under two licenses:
+
+  * Code, Lean sources, tactics, formal proofs, and tooling are licensed
+    under the Apache License, Version 2.0 (see LICENSE).
+
+  * Expository prose, informal statements, proof ideas, curriculum notes,
+    and dataset cards are licensed under the Creative Commons Attribution
+    4.0 International license (CC BY 4.0) (see CONTENT_LICENSE).
+
+  * Pure metadata / manifests with no expressive content are offered under
+    CC BY 4.0 as well, to keep attribution attached to derived datasets.
+
+Internal / private audit artifacts, restricted proof bodies, solver models,
+and benchmark-specific CNF encodings are NOT distributed under any public
+license and are not part of this repository. See EXPORT_POLICY.md and
+REDACTION_POLICY.md.
+
+Third-party attributions, where applicable, are recorded in ATTRIBUTION.md
+and in each packet's `source_provenance` object.

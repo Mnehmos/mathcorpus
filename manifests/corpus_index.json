@@ -1,0 +1,55 @@
+{
+  "packet_count": 3,
+  "by_domain": {
+    "algebra": 1,
+    "combinatorics": 1,
+    "geometry": 1
+  },
+  "by_level": {
+    "L0_elementary": 1,
+    "L6_known_theorem": 1,
+    "L2_olympiad": 1
+  },
+  "by_kind": {
+    "concept": 1,
+    "certificate_claim": 1,
+    "negative_example": 1
+  },
+  "by_status": {
+    "kernel_verified": 1,
+    "verified_certificate": 1,
+    "failed_attempt": 1
+  },
+  "packets": [
+    {
+      "packet_id": "elementary.algebra.diff_of_squares.v1",
+      "title": "Difference of squares",
+      "domain": "algebra",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "ec811c6347798bb6ca6199b5feae741239d7b390a68068fec0276a064018cd97"
+    },
+    {
+      "packet_id": "frontier.ramsey.r33_le6.certificate.v1",
+      "title": "Certificate-backed proof of R(3,3) <= 6",
+      "domain": "combinatorics",
+      "level": "L6_known_theorem",
+      "kind": "certificate_claim",
+      "status": "verified_certificate",
+      "eligibility": "public_test",
+      "packet_sha256": "ac7ecbb546185fe8603668e79a071a84f2b38cd6c8680232102b9781249347aa"
+    },
+    {
+      "packet_id": "negative.geometry.angle_atoms.nlinarith_failure.v1",
+      "title": "nlinarith fails on raw Euclidean angle atoms",
+      "domain": "geometry",
+      "level": "L2_olympiad",
+      "kind": "negative_example",
+      "status": "failed_attempt",
+      "eligibility": "negative_example_only",
+      "packet_sha256": "7827922c0a547d9c461c95f6f35b1a123bbd7bdeea0a19cd76ef218bd326fffe"
+    }
+  ]
+}

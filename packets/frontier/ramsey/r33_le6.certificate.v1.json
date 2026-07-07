@@ -1,0 +1,105 @@
+{
+  "packet_id": "frontier.ramsey.r33_le6.certificate.v1",
+  "packet_version": "1.0.0",
+  "title": "Certificate-backed proof of R(3,3) <= 6",
+  "domain": "combinatorics",
+  "level": "L6_known_theorem",
+  "kind": "certificate_claim",
+  "status": "verified_certificate",
+  "difficulty_bin": "D4",
+  "lean_module": "MathCorpus.Frontier.Ramsey.R33Le6",
+  "theorem_name": "ramsey_two_three_le_six",
+  "imports": [
+    "Mathlib",
+    "MathCorpus.Kits.FiniteCertificateKit"
+  ],
+  "toolchain": {
+    "lean_version": "4.15.0",
+    "mathlib_rev": "v4.15.0"
+  },
+  "source_provenance": {
+    "source_kind": "repo_original",
+    "source_refs": [
+      "ramsey_theory_standard_theorem"
+    ],
+    "authors": [
+      "The MathCorpus Authors"
+    ],
+    "copyright_holder": "The MathCorpus Authors",
+    "license_spdx": "Apache-2.0",
+    "license_content": "CC-BY-4.0",
+    "statement_fidelity": "author_written"
+  },
+  "informal_statement": "Every 2-colouring of the edges of the complete graph on 6 vertices contains a monochromatic triangle; equivalently R(3,3) <= 6.",
+  "informal_proof_idea": "Encode 'a 2-colouring of K6 with no monochromatic triangle' as a CNF, show it is UNSAT with a verified LRAT replay, and state the theorem directly over the encoded finite object.",
+  "formal_statement_pp": "theorem ramsey_two_three_le_six : RamseyNumberLE 3 3 6",
+  "proof_body_path": "lean/MathCorpus/Frontier/Ramsey/R33Le6.lean",
+  "proof_body_redacted": false,
+  "certificate": {
+    "certificate_type": "lrat",
+    "certificate_checker": "bv_decide_lrat",
+    "certificate_sha256": "6fd2aa11cc00dd44ee55ff66aa77bb88cc99dd00ee11ff2233445566778899aa",
+    "certificate_artifact_redacted": true,
+    "canonical_cnf_sha256": "4aa1bb22cc33dd44ee55ff66aa77bb88cc99dd00ee11ff2233445566778899bb",
+    "dimacs_serializer_version": "std.sat.cnf.dimacs/v1",
+    "solver_name": "CaDiCaL",
+    "solver_version": "2.x",
+    "replay_runtime_ms": 1200,
+    "memory_class": "small",
+    "private_artifact_uri": "private://certificates/ramsey/r33_le6.lrat"
+  },
+  "encoding_soundness": {
+    "encoding_required": false,
+    "encoding_soundness_status": "stated_directly",
+    "encoding_soundness_lemma": null,
+    "formula_fact_status": "proved",
+    "math_fact_status": "proved"
+  },
+  "trust": {
+    "rung": 2,
+    "proof_authority": "lean_verified_lrat",
+    "certificate_checker": "bv_decide_lrat",
+    "formula_fact_status": "proved",
+    "math_fact_status": "proved",
+    "encoding_required": false,
+    "encoding_soundness_status": "stated_directly",
+    "independent_review_status": "repo_reviewed",
+    "public_claim_class": "public_safe"
+  },
+  "training": {
+    "eligibility": "public_test",
+    "reason_codes": [
+      "public",
+      "certificate_backed",
+      "non_benchmark"
+    ],
+    "dedupe_cluster_id": "ramsey.r33",
+    "template_family_id": "ramsey.small_graph_bounds",
+    "contamination_risk": "medium",
+    "can_export_proof_body": true,
+    "can_export_certificate_metadata": true,
+    "can_export_certificate_file": false
+  },
+  "dependencies": {
+    "kits": [
+      "FiniteCertificateKit"
+    ],
+    "theorem_deps": [],
+    "prerequisite_concepts": [
+      "ramsey_number",
+      "cnf_encoding",
+      "lrat_replay"
+    ]
+  },
+  "review": {
+    "review_basis": "repo review; verified LRAT replay; theorem stated directly over the encoded object",
+    "reviewer_status": "repo_reviewed"
+  },
+  "notes": "Illustrative v0.1 sample. Certificate/CNF hashes and the private artifact URI are placeholders; the public export must (and does) redact the certificate file while retaining its metadata.",
+  "hashes": {
+    "canonical_cnf_sha256": "4aa1bb22cc33dd44ee55ff66aa77bb88cc99dd00ee11ff2233445566778899bb",
+    "certificate_sha256": "6fd2aa11cc00dd44ee55ff66aa77bb88cc99dd00ee11ff2233445566778899aa",
+    "packet_sha256": "ac7ecbb546185fe8603668e79a071a84f2b38cd6c8680232102b9781249347aa",
+    "formal_statement_sha256": "b9c2e2e8885b6781caa9f2e557b39e3a256d67ef48567d6be740150ad165279d"
+  }
+}

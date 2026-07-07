@@ -1,0 +1,55 @@
+name: MathCorpus CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  corpus:
+    name: Validate corpus (schema · hashes · policy · redaction)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install tooling
+        run: python -m pip install -r tools/requirements.txt
+
+      - name: Hashes are stamped and current
+        run: python tools/stamp_hashes.py --check packets/
+
+      - name: Schema + policy validation (warnings fail CI)
+        run: python tools/validate_packets.py packets/ --check-hashes --warn-as-error
+
+      - name: Build manifests
+        run: |
+          python tools/build_manifests.py packets/ --out manifests/
+          python tools/build_split_manifest.py packets/ --out manifests/split_manifest.json
+          python tools/dedupe_pipeline.py packets/ --out manifests/dedupe_clusters.json
+
+      - name: Build public exports
+        run: python tools/export_jsonl.py packets/ --out exports/
+
+      - name: Redaction audit (fail-closed)
+        run: python tools/redaction_audit.py packets/ exports/
+
+  lean:
+    name: Lean build (kernel check)
+    runs-on: ubuntu-latest
+    # The formal packets build against a pinned Lean + mathlib. This job is heavy
+    # (mathlib cache) and is a required gate once the toolchain is provisioned.
+    # It only runs when Lean sources change.
+    if: ${{ false }}  # flip to a path filter once lean-toolchain/mathlib rev is finalized
+    steps:
+      - uses: actions/checkout@v4
+      - uses: leanprover/lean-action@v1
+        with:
+          lake-package-directory: "lean"
+          build-args: "MathCorpus"

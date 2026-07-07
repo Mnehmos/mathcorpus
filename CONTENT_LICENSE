@@ -1,0 +1,23 @@
+MathCorpus — Content License (prose, informal statements, metadata)
+
+All expressive, non-code content in this repository — informal statements,
+informal proof ideas, titles, curriculum notes, dataset cards, and
+manifests with expressive content — is licensed under:
+
+    Creative Commons Attribution 4.0 International (CC BY 4.0)
+    https://creativecommons.org/licenses/by/4.0/legalcode
+
+You are free to share and adapt this content for any purpose, provided you
+give appropriate credit to "The MathCorpus Authors", link to the license,
+and indicate if changes were made.
+
+Code, Lean sources, tactics, and formal proofs are licensed separately under
+the Apache License, Version 2.0 (see LICENSE), NOT under CC BY 4.0.
+
+Each packet records its effective licenses in `source_provenance`:
+  * `license_spdx`    — license for code-like assets (default Apache-2.0)
+  * `license_content` — license for prose-like assets (default CC-BY-4.0)
+
+Where a packet imports or adapts third-party material, the packet's
+`source_provenance` records the upstream license and attribution, which
+governs that material.
