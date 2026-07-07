@@ -1,5 +1,5 @@
 {
-  "packet_count": 10,
+  "packet_count": 18,
   "exact_file_duplicates": {},
   "canonical_theorem_duplicates": {},
   "family_clusters": {
@@ -15,11 +15,25 @@
     "geometry.automation_hazards": [
       "negative.geometry.angle_atoms.nlinarith_failure.v1"
     ],
+    "induction.arithmetic_series": [
+      "elementary.induction.gauss_sum.v1"
+    ],
+    "inequalities.amgm_two_var": [
+      "elementary.inequalities.two_mul_le_add_sq.v1"
+    ],
+    "inequalities.square_nonneg": [
+      "elementary.inequalities.sq_nonneg.v1"
+    ],
     "number_theory.divisibility_closure": [
-      "elementary.number_theory.dvd_add.v1"
+      "elementary.number_theory.dvd_add.v1",
+      "elementary.number_theory.dvd_mul.v1",
+      "elementary.number_theory.dvd_trans.v1"
     ],
     "number_theory.parity_closure": [
-      "elementary.number_theory.even_add_even.v1"
+      "elementary.number_theory.even_add_even.v1",
+      "elementary.number_theory.even_mul.v1",
+      "elementary.number_theory.even_mul_succ_self.v1",
+      "elementary.number_theory.odd_add_odd.v1"
     ]
   }
 }

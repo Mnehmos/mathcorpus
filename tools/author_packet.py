@@ -52,25 +52,26 @@ from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
 
-LEAN_TEMPLATE = """import Mathlib
-
-/-!
-# {title}
-
-Packet: `{packet_id}`
-Level:  {level} · Domain: {domain} · Trust rung 1 (Lean kernel).
-
-{informal_statement}
-Kernel-verified through the tracked proof-search loop (episode {episode_short}).
--/
-
-namespace {namespace}
-
-{statement} := by
-  {proof}
-
-end {namespace}
-"""
+def render_lean(spec: dict) -> str:
+    opens = spec.get("opens", [])
+    opens_block = ("\n" + "\n".join(opens) + "\n") if opens else ""
+    proof_lines = spec["file_proof"].split("\n")
+    proof_block = "\n".join(("  " + ln) if ln.strip() else "" for ln in proof_lines)
+    return (
+        f"import Mathlib{opens_block}\n"
+        f"/-!\n"
+        f"# {spec['title']}\n\n"
+        f"Packet: `{spec['packet_id']}`\n"
+        f"Level:  {spec['level']} · Domain: {spec['domain']} · Trust rung 1 (Lean kernel).\n\n"
+        f"{spec['informal_statement']}\n"
+        f"Kernel-verified through the tracked proof-search loop "
+        f"(episode {spec['verification']['episode_id'][:8]}).\n"
+        f"-/\n\n"
+        f"namespace {spec['namespace']}\n\n"
+        f"{spec['formal_statement_pp']} := by\n"
+        f"{proof_block}\n\n"
+        f"end {spec['namespace']}\n"
+    )
 
 
 def build_packet(spec: dict, toolchain: dict, env_hash: str) -> dict:
@@ -152,17 +153,7 @@ def build_packet(spec: dict, toolchain: dict, env_hash: str) -> dict:
 
 
 def write_lean(spec: dict) -> Path:
-    content = LEAN_TEMPLATE.format(
-        title=spec["title"],
-        packet_id=spec["packet_id"],
-        level=spec["level"],
-        domain=spec["domain"],
-        informal_statement=spec["informal_statement"],
-        episode_short=spec["verification"]["episode_id"][:8],
-        namespace=spec["namespace"],
-        statement=spec["formal_statement_pp"],
-        proof=spec["file_proof"],
-    )
+    content = render_lean(spec)
     path = REPO / spec["module_path"]
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(content, encoding="utf-8", newline="\n")

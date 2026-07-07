@@ -71,6 +71,36 @@
       "source_sha256": null
     },
     {
+      "packet_id": "elementary.induction.gauss_sum.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.inequalities.sq_nonneg.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.inequalities.two_mul_le_add_sq.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
       "packet_id": "elementary.number_theory.dvd_add.v1",
       "source_kind": "author_written",
       "source_refs": [],
@@ -81,7 +111,57 @@
       "source_sha256": null
     },
     {
+      "packet_id": "elementary.number_theory.dvd_mul.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.number_theory.dvd_trans.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
       "packet_id": "elementary.number_theory.even_add_even.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.number_theory.even_mul.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.number_theory.even_mul_succ_self.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.number_theory.odd_add_odd.v1",
       "source_kind": "author_written",
       "source_refs": [],
       "authors": [

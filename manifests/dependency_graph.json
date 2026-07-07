@@ -7,8 +7,16 @@
     "elementary.algebra.factor_by_grouping.v1",
     "elementary.algebra.square_of_difference.v1",
     "elementary.algebra.sum_of_cubes.v1",
+    "elementary.induction.gauss_sum.v1",
+    "elementary.inequalities.sq_nonneg.v1",
+    "elementary.inequalities.two_mul_le_add_sq.v1",
     "elementary.number_theory.dvd_add.v1",
+    "elementary.number_theory.dvd_mul.v1",
+    "elementary.number_theory.dvd_trans.v1",
     "elementary.number_theory.even_add_even.v1",
+    "elementary.number_theory.even_mul.v1",
+    "elementary.number_theory.even_mul_succ_self.v1",
+    "elementary.number_theory.odd_add_odd.v1",
     "negative.geometry.angle_atoms.nlinarith_failure.v1"
   ],
   "edges": {
@@ -134,7 +142,73 @@
         "type": "prerequisite_concepts"
       }
     ],
+    "elementary.induction.gauss_sum.v1": [
+      {
+        "to": "RecurrenceGeneratingFunctionKit",
+        "type": "kits"
+      },
+      {
+        "to": "induction",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "finite_sum",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "arithmetic_series",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.inequalities.sq_nonneg.v1": [
+      {
+        "to": "InequalityEstimateKit",
+        "type": "kits"
+      },
+      {
+        "to": "square",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "order",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.inequalities.two_mul_le_add_sq.v1": [
+      {
+        "to": "InequalityEstimateKit",
+        "type": "kits"
+      },
+      {
+        "to": "square",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "amgm",
+        "type": "prerequisite_concepts"
+      }
+    ],
     "elementary.number_theory.dvd_add.v1": [
+      {
+        "to": "elementary_number_theory",
+        "type": "kits"
+      },
+      {
+        "to": "divisibility",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.number_theory.dvd_mul.v1": [
+      {
+        "to": "elementary_number_theory",
+        "type": "kits"
+      },
+      {
+        "to": "divisibility",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.number_theory.dvd_trans.v1": [
       {
         "to": "elementary_number_theory",
         "type": "kits"
@@ -151,6 +225,52 @@
       },
       {
         "to": "parity",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "even",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.number_theory.even_mul.v1": [
+      {
+        "to": "elementary_number_theory",
+        "type": "kits"
+      },
+      {
+        "to": "parity",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "even",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.number_theory.even_mul_succ_self.v1": [
+      {
+        "to": "elementary_number_theory",
+        "type": "kits"
+      },
+      {
+        "to": "parity",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "consecutive_integers",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.number_theory.odd_add_odd.v1": [
+      {
+        "to": "elementary_number_theory",
+        "type": "kits"
+      },
+      {
+        "to": "parity",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "odd",
         "type": "prerequisite_concepts"
       },
       {

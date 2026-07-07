@@ -1,20 +1,21 @@
 {
-  "packet_count": 10,
+  "packet_count": 18,
   "by_domain": {
-    "algebra": 7,
-    "number_theory": 2,
+    "algebra": 10,
+    "number_theory": 7,
     "geometry": 1
   },
   "by_level": {
-    "L0_elementary": 9,
+    "L0_elementary": 14,
+    "L1_proof_basics": 3,
     "L2_olympiad": 1
   },
   "by_kind": {
-    "concept": 9,
+    "concept": 17,
     "negative_example": 1
   },
   "by_status": {
-    "kernel_verified": 9,
+    "kernel_verified": 17,
     "failed_attempt": 1
   },
   "packets": [
@@ -89,6 +90,36 @@
       "packet_sha256": "d120a3d9ba2a5e6d98735f04762f1cf756ce360544346997c6c253e481ee8acd"
     },
     {
+      "packet_id": "elementary.induction.gauss_sum.v1",
+      "title": "Gauss sum: twice the sum of 0..n is n(n+1)",
+      "domain": "algebra",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "16eb73f60f7916db7e93a120a56bc722041fa5c151b8308eaa424bcc2899e695"
+    },
+    {
+      "packet_id": "elementary.inequalities.sq_nonneg.v1",
+      "title": "A real square is nonnegative",
+      "domain": "algebra",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "8feb9c7929785d2614ec5648918d0633c71d2cd35fb18d925a846f4b5721bc50"
+    },
+    {
+      "packet_id": "elementary.inequalities.two_mul_le_add_sq.v1",
+      "title": "Two-variable AM-GM: 2ab ≤ a² + b²",
+      "domain": "algebra",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "801fbdcf7bd37aa53ddfbfac6adec4cdb1bdd980c6c3858a8f0589e2fdc3a429"
+    },
+    {
       "packet_id": "elementary.number_theory.dvd_add.v1",
       "title": "Divisibility distributes over addition",
       "domain": "number_theory",
@@ -99,6 +130,26 @@
       "packet_sha256": "e284e163fd97f7e179bbbf887121690a26d5b3b8c5ec3fdfaed57b96ce501634"
     },
     {
+      "packet_id": "elementary.number_theory.dvd_mul.v1",
+      "title": "Divisibility is preserved under multiplication",
+      "domain": "number_theory",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "1e3e263673fdca611770ad7601cc103e332e1ecac97d957677af39387275fce7"
+    },
+    {
+      "packet_id": "elementary.number_theory.dvd_trans.v1",
+      "title": "Divisibility is transitive",
+      "domain": "number_theory",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "a9e9aa5531cf570f5c82d92d7ba39c770ef1e3d986c81d6b8d99b37865eafa18"
+    },
+    {
       "packet_id": "elementary.number_theory.even_add_even.v1",
       "title": "Sum of two even integers is even",
       "domain": "number_theory",
@@ -107,6 +158,36 @@
       "status": "kernel_verified",
       "eligibility": "public_train",
       "packet_sha256": "41a1b599533d724de4fe4d695076c356a7ff833b1f4a1868fe9d610016cdd5f3"
+    },
+    {
+      "packet_id": "elementary.number_theory.even_mul.v1",
+      "title": "Even times any integer is even",
+      "domain": "number_theory",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "b519b708ab5cf641d20d4729a6933cba93d9487cc3931b28a6ef121924125878"
+    },
+    {
+      "packet_id": "elementary.number_theory.even_mul_succ_self.v1",
+      "title": "Product of consecutive integers is even",
+      "domain": "number_theory",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "423402f909118a1eeecd056f206ae60c8f7e24b02effd2efaeeb168ee7d5178b"
+    },
+    {
+      "packet_id": "elementary.number_theory.odd_add_odd.v1",
+      "title": "Sum of two odd integers is even",
+      "domain": "number_theory",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "6ed85ebd8a77e2a0596d0c29ee1033cdbd34be0b46b8d6207460b9709bf6aec9"
     },
     {
       "packet_id": "negative.geometry.angle_atoms.nlinarith_failure.v1",

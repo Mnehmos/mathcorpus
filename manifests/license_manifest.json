@@ -43,13 +43,61 @@
       "source_kind": "author_written"
     },
     {
+      "packet_id": "elementary.induction.gauss_sum.v1",
+      "license_spdx": "Apache-2.0",
+      "license_content": "CC-BY-4.0",
+      "source_kind": "author_written"
+    },
+    {
+      "packet_id": "elementary.inequalities.sq_nonneg.v1",
+      "license_spdx": "Apache-2.0",
+      "license_content": "CC-BY-4.0",
+      "source_kind": "author_written"
+    },
+    {
+      "packet_id": "elementary.inequalities.two_mul_le_add_sq.v1",
+      "license_spdx": "Apache-2.0",
+      "license_content": "CC-BY-4.0",
+      "source_kind": "author_written"
+    },
+    {
       "packet_id": "elementary.number_theory.dvd_add.v1",
       "license_spdx": "Apache-2.0",
       "license_content": "CC-BY-4.0",
       "source_kind": "author_written"
     },
     {
+      "packet_id": "elementary.number_theory.dvd_mul.v1",
+      "license_spdx": "Apache-2.0",
+      "license_content": "CC-BY-4.0",
+      "source_kind": "author_written"
+    },
+    {
+      "packet_id": "elementary.number_theory.dvd_trans.v1",
+      "license_spdx": "Apache-2.0",
+      "license_content": "CC-BY-4.0",
+      "source_kind": "author_written"
+    },
+    {
       "packet_id": "elementary.number_theory.even_add_even.v1",
+      "license_spdx": "Apache-2.0",
+      "license_content": "CC-BY-4.0",
+      "source_kind": "author_written"
+    },
+    {
+      "packet_id": "elementary.number_theory.even_mul.v1",
+      "license_spdx": "Apache-2.0",
+      "license_content": "CC-BY-4.0",
+      "source_kind": "author_written"
+    },
+    {
+      "packet_id": "elementary.number_theory.even_mul_succ_self.v1",
+      "license_spdx": "Apache-2.0",
+      "license_content": "CC-BY-4.0",
+      "source_kind": "author_written"
+    },
+    {
+      "packet_id": "elementary.number_theory.odd_add_odd.v1",
       "license_spdx": "Apache-2.0",
       "license_content": "CC-BY-4.0",
       "source_kind": "author_written"
