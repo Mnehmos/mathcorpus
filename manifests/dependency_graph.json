@@ -36,8 +36,16 @@
     "elementary.combinatorics.card_range.v1",
     "elementary.combinatorics.card_singleton.v1",
     "elementary.combinatorics.card_union_le.v1",
+    "elementary.combinatorics.empty_subset.v1",
+    "elementary.combinatorics.inter_comm.v1",
+    "elementary.combinatorics.inter_subset_left.v1",
+    "elementary.combinatorics.mem_insert.v1",
     "elementary.combinatorics.mem_range.v1",
+    "elementary.combinatorics.mem_union.v1",
+    "elementary.combinatorics.subset_union_left.v1",
     "elementary.combinatorics.sum_ones_card.v1",
+    "elementary.combinatorics.sum_range_one.v1",
+    "elementary.combinatorics.union_comm.v1",
     "elementary.functions.abs_abs.v1",
     "elementary.functions.abs_add_le.v1",
     "elementary.functions.abs_mul.v1",
@@ -54,14 +62,20 @@
     "elementary.functions.min_self.v1",
     "elementary.functions.neg_abs_le.v1",
     "elementary.functions.sq_abs.v1",
+    "elementary.geometry.centroid_sum.v1",
     "elementary.geometry.collinear_det.v1",
     "elementary.geometry.dist_sq_symm.v1",
+    "elementary.geometry.distance_expand.v1",
     "elementary.geometry.distance_sq_nonneg.v1",
+    "elementary.geometry.exterior_angle.v1",
+    "elementary.geometry.midpoint_double.v1",
     "elementary.geometry.midpoint_equidist.v1",
     "elementary.geometry.parallelogram_law.v1",
+    "elementary.geometry.perp_rotation.v1",
     "elementary.geometry.shoelace_identity.v1",
     "elementary.geometry.supplementary_angle.v1",
     "elementary.geometry.triangle_angle_sum.v1",
+    "elementary.geometry.vertical_angles.v1",
     "elementary.induction.gauss_sum.v1",
     "elementary.induction.sum_cubes.v1",
     "elementary.induction.sum_odds.v1",
@@ -630,6 +644,78 @@
         "type": "prerequisite_concepts"
       }
     ],
+    "elementary.combinatorics.empty_subset.v1": [
+      {
+        "to": "ExtremalCombinatoricsKit",
+        "type": "kits"
+      },
+      {
+        "to": "finite_set",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "subset",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "empty_set",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.combinatorics.inter_comm.v1": [
+      {
+        "to": "ExtremalCombinatoricsKit",
+        "type": "kits"
+      },
+      {
+        "to": "finite_set",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "intersection",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "commutativity",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.combinatorics.inter_subset_left.v1": [
+      {
+        "to": "ExtremalCombinatoricsKit",
+        "type": "kits"
+      },
+      {
+        "to": "finite_set",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "intersection",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "subset",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.combinatorics.mem_insert.v1": [
+      {
+        "to": "ExtremalCombinatoricsKit",
+        "type": "kits"
+      },
+      {
+        "to": "finite_set",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "membership",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "insert",
+        "type": "prerequisite_concepts"
+      }
+    ],
     "elementary.combinatorics.mem_range.v1": [
       {
         "to": "ExtremalCombinatoricsKit",
@@ -644,6 +730,42 @@
         "type": "prerequisite_concepts"
       }
     ],
+    "elementary.combinatorics.mem_union.v1": [
+      {
+        "to": "ExtremalCombinatoricsKit",
+        "type": "kits"
+      },
+      {
+        "to": "finite_set",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "membership",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "union",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.combinatorics.subset_union_left.v1": [
+      {
+        "to": "ExtremalCombinatoricsKit",
+        "type": "kits"
+      },
+      {
+        "to": "finite_set",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "union",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "subset",
+        "type": "prerequisite_concepts"
+      }
+    ],
     "elementary.combinatorics.sum_ones_card.v1": [
       {
         "to": "ExtremalCombinatoricsKit",
@@ -655,6 +777,38 @@
       },
       {
         "to": "cardinality",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.combinatorics.sum_range_one.v1": [
+      {
+        "to": "ExtremalCombinatoricsKit",
+        "type": "kits"
+      },
+      {
+        "to": "finite_sum",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "range",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.combinatorics.union_comm.v1": [
+      {
+        "to": "ExtremalCombinatoricsKit",
+        "type": "kits"
+      },
+      {
+        "to": "finite_set",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "union",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "commutativity",
         "type": "prerequisite_concepts"
       }
     ],
@@ -802,6 +956,20 @@
         "type": "prerequisite_concepts"
       }
     ],
+    "elementary.geometry.centroid_sum.v1": [
+      {
+        "to": "AffineAreaKit",
+        "type": "kits"
+      },
+      {
+        "to": "centroid",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "coordinates",
+        "type": "prerequisite_concepts"
+      }
+    ],
     "elementary.geometry.collinear_det.v1": [
       {
         "to": "AffineAreaKit",
@@ -834,6 +1002,20 @@
         "type": "prerequisite_concepts"
       }
     ],
+    "elementary.geometry.distance_expand.v1": [
+      {
+        "to": "AffineAreaKit",
+        "type": "kits"
+      },
+      {
+        "to": "distance",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "coordinates",
+        "type": "prerequisite_concepts"
+      }
+    ],
     "elementary.geometry.distance_sq_nonneg.v1": [
       {
         "to": "AffineAreaKit",
@@ -849,6 +1031,38 @@
       },
       {
         "to": "square",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.geometry.exterior_angle.v1": [
+      {
+        "to": "GeometryAngleKit",
+        "type": "kits"
+      },
+      {
+        "to": "angle",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "triangle",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "angle_sum",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.geometry.midpoint_double.v1": [
+      {
+        "to": "AffineAreaKit",
+        "type": "kits"
+      },
+      {
+        "to": "midpoint",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "coordinates",
         "type": "prerequisite_concepts"
       }
     ],
@@ -885,6 +1099,20 @@
       },
       {
         "to": "coordinates",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.geometry.perp_rotation.v1": [
+      {
+        "to": "AffineAreaKit",
+        "type": "kits"
+      },
+      {
+        "to": "perpendicularity",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "dot_product",
         "type": "prerequisite_concepts"
       }
     ],
@@ -935,6 +1163,24 @@
       },
       {
         "to": "angle_sum",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.geometry.vertical_angles.v1": [
+      {
+        "to": "GeometryAngleKit",
+        "type": "kits"
+      },
+      {
+        "to": "angle",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "vertical_angles",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "supplementary",
         "type": "prerequisite_concepts"
       }
     ],

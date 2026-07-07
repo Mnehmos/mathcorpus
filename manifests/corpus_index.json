@@ -1,22 +1,22 @@
 {
-  "packet_count": 104,
+  "packet_count": 118,
   "by_domain": {
     "algebra": 61,
-    "combinatorics": 7,
-    "geometry": 9,
+    "combinatorics": 15,
+    "geometry": 15,
     "number_theory": 27
   },
   "by_level": {
-    "L0_elementary": 57,
-    "L1_proof_basics": 39,
+    "L0_elementary": 58,
+    "L1_proof_basics": 52,
     "L2_olympiad": 8
   },
   "by_kind": {
-    "concept": 103,
+    "concept": 117,
     "negative_example": 1
   },
   "by_status": {
-    "kernel_verified": 103,
+    "kernel_verified": 117,
     "failed_attempt": 1
   },
   "packets": [
@@ -381,6 +381,46 @@
       "packet_sha256": "65d75a5e5146a05d57a278fc044117a085166fd779876ce16845fbd19a4eab38"
     },
     {
+      "packet_id": "elementary.combinatorics.empty_subset.v1",
+      "title": "Empty set is a subset",
+      "domain": "combinatorics",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "e03355b9fda63d8a3274c2dc70b51eeb5ced7ef1716ceede5ad246d210077608"
+    },
+    {
+      "packet_id": "elementary.combinatorics.inter_comm.v1",
+      "title": "Intersection is commutative",
+      "domain": "combinatorics",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "62ae1a570c4c52f552425114357fc3cd6d4c40c1603c8394522dc8638bf3d881"
+    },
+    {
+      "packet_id": "elementary.combinatorics.inter_subset_left.v1",
+      "title": "Intersection is a subset",
+      "domain": "combinatorics",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "81673bfff7d80580998bae0e0f20e0e264a3a46f8c26e45cfa9a95a2d95e67d9"
+    },
+    {
+      "packet_id": "elementary.combinatorics.mem_insert.v1",
+      "title": "Membership in an insertion",
+      "domain": "combinatorics",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "01e7b0c06d378c5bf92281cede533b38e7034010235bdf1e079eb47a38405be8"
+    },
+    {
       "packet_id": "elementary.combinatorics.mem_range.v1",
       "title": "Membership in Finset.range",
       "domain": "combinatorics",
@@ -391,6 +431,26 @@
       "packet_sha256": "578ba9892060d879735f3f999b8922d4993ad3c7ec7442d21d13d0110da9c4ff"
     },
     {
+      "packet_id": "elementary.combinatorics.mem_union.v1",
+      "title": "Membership in a union",
+      "domain": "combinatorics",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "0b932b0d859fc0007a7b2de0977bec3c8236d24bb735500eb3b5d37cc1342eff"
+    },
+    {
+      "packet_id": "elementary.combinatorics.subset_union_left.v1",
+      "title": "Subset of a union",
+      "domain": "combinatorics",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "63b169ac0ceeb6363317ba1be88fbab7ff1ae8eb485af9d6bd11954e8bfc15c8"
+    },
+    {
       "packet_id": "elementary.combinatorics.sum_ones_card.v1",
       "title": "Summing 1 over a finite set counts its elements",
       "domain": "combinatorics",
@@ -399,6 +459,26 @@
       "status": "kernel_verified",
       "eligibility": "public_train",
       "packet_sha256": "436019b631cfa80f23407f8db6b59e27da42c3d8538c17d1330e5a127fa1f476"
+    },
+    {
+      "packet_id": "elementary.combinatorics.sum_range_one.v1",
+      "title": "Sum over range one",
+      "domain": "combinatorics",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "b75dc5640ef5b8c3a5917a671a66e5e03ed32b2d51867cf3ff6f88f1dce47c30"
+    },
+    {
+      "packet_id": "elementary.combinatorics.union_comm.v1",
+      "title": "Union is commutative",
+      "domain": "combinatorics",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "774c0f7b8ab5530003f006e354a6af3148e81eac9dc9466139c404c792bca5da"
     },
     {
       "packet_id": "elementary.functions.abs_abs.v1",
@@ -561,6 +641,16 @@
       "packet_sha256": "bc7090335767b00c1295eb9372c50ac05ac38378832fc375799a5b3768602baf"
     },
     {
+      "packet_id": "elementary.geometry.centroid_sum.v1",
+      "title": "Tripling the centroid coordinate",
+      "domain": "geometry",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "5519fdb06bc2a4d9cebedeca77b9e2c25d3dd4c34d8f89b64bd1da1f67354ad1"
+    },
+    {
       "packet_id": "elementary.geometry.collinear_det.v1",
       "title": "Equal-slope collinearity vanishes the area determinant",
       "domain": "geometry",
@@ -581,6 +671,16 @@
       "packet_sha256": "c35d25a8991f58bdb0b8e26355729d893a84ee27115237c090c47353e4b22044"
     },
     {
+      "packet_id": "elementary.geometry.distance_expand.v1",
+      "title": "Expansion of the squared distance",
+      "domain": "geometry",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "547491d04d129a502d4dd232020a1bf532bb42dcc7764af03e5b402a3ef05eb2"
+    },
+    {
       "packet_id": "elementary.geometry.distance_sq_nonneg.v1",
       "title": "Squared distance is nonnegative",
       "domain": "geometry",
@@ -589,6 +689,26 @@
       "status": "kernel_verified",
       "eligibility": "public_train",
       "packet_sha256": "249cb7cd6394c1b179dc471c858582b21789eb773c1f89aa7b7a30e29bcb8261"
+    },
+    {
+      "packet_id": "elementary.geometry.exterior_angle.v1",
+      "title": "Exterior-angle relation",
+      "domain": "geometry",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "14cc687cdc867a9a058ef92f7bcc0f985bac7e7b0f7bf327678fd0184a62e685"
+    },
+    {
+      "packet_id": "elementary.geometry.midpoint_double.v1",
+      "title": "Doubling the midpoint coordinate",
+      "domain": "geometry",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "0aa0572ce1ed69df4e3abc586b79ed6aeb033532457e6c61afd954d2180305ac"
     },
     {
       "packet_id": "elementary.geometry.midpoint_equidist.v1",
@@ -609,6 +729,16 @@
       "status": "kernel_verified",
       "eligibility": "public_train",
       "packet_sha256": "6cc99f270e95535ace01e94966a15430ae9b57daf9f9f24e3394d47234cb6c68"
+    },
+    {
+      "packet_id": "elementary.geometry.perp_rotation.v1",
+      "title": "A vector is perpendicular to its 90-degree rotation",
+      "domain": "geometry",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "b8899e9332f2b5f030c680702b58b995b0aea90e0252f6e87f75b07cd20e42c4"
     },
     {
       "packet_id": "elementary.geometry.shoelace_identity.v1",
@@ -639,6 +769,16 @@
       "status": "kernel_verified",
       "eligibility": "public_train",
       "packet_sha256": "b60a00b251fc147f938dfd608ea0c1e6fa29b848e8a22dfd55b1c3ffc8cf2084"
+    },
+    {
+      "packet_id": "elementary.geometry.vertical_angles.v1",
+      "title": "Vertical angles are equal",
+      "domain": "geometry",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "0981c9c6873420a8c2648d377ed4f2dbe4d01ff306a44ccbb9d052bb29cef4b7"
     },
     {
       "packet_id": "elementary.induction.gauss_sum.v1",

@@ -1,5 +1,5 @@
 {
-  "packet_count": 104,
+  "packet_count": 118,
   "exact_file_duplicates": {},
   "canonical_theorem_duplicates": {},
   "family_clusters": {
@@ -51,7 +51,19 @@
       "elementary.combinatorics.sum_ones_card.v1"
     ],
     "combinatorics.finset_membership": [
-      "elementary.combinatorics.mem_range.v1"
+      "elementary.combinatorics.mem_insert.v1",
+      "elementary.combinatorics.mem_range.v1",
+      "elementary.combinatorics.mem_union.v1"
+    ],
+    "combinatorics.finset_set_ops": [
+      "elementary.combinatorics.empty_subset.v1",
+      "elementary.combinatorics.inter_comm.v1",
+      "elementary.combinatorics.inter_subset_left.v1",
+      "elementary.combinatorics.subset_union_left.v1",
+      "elementary.combinatorics.union_comm.v1"
+    ],
+    "combinatorics.finset_sum": [
+      "elementary.combinatorics.sum_range_one.v1"
     ],
     "functions.absolute_value": [
       "elementary.functions.abs_abs.v1",
@@ -76,17 +88,25 @@
       "elementary.functions.min_self.v1"
     ],
     "geometry.angle_relations": [
+      "elementary.geometry.exterior_angle.v1",
       "elementary.geometry.supplementary_angle.v1",
-      "elementary.geometry.triangle_angle_sum.v1"
+      "elementary.geometry.triangle_angle_sum.v1",
+      "elementary.geometry.vertical_angles.v1"
     ],
     "geometry.automation_hazards": [
       "negative.geometry.angle_atoms.nlinarith_failure.v1"
     ],
     "geometry.coordinate_distance": [
+      "elementary.geometry.centroid_sum.v1",
       "elementary.geometry.dist_sq_symm.v1",
+      "elementary.geometry.distance_expand.v1",
       "elementary.geometry.distance_sq_nonneg.v1",
+      "elementary.geometry.midpoint_double.v1",
       "elementary.geometry.midpoint_equidist.v1",
       "elementary.geometry.parallelogram_law.v1"
+    ],
+    "geometry.perpendicularity": [
+      "elementary.geometry.perp_rotation.v1"
     ],
     "geometry.triangle_area": [
       "elementary.geometry.collinear_det.v1",
