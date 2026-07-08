@@ -1,0 +1,99 @@
+{
+  "packet_id": "elementary.combinatorics.card_union_add_card_inter.v1",
+  "packet_version": "1.0.0",
+  "title": "Inclusion-exclusion for finite set cardinality",
+  "domain": "combinatorics",
+  "level": "L1_proof_basics",
+  "kind": "concept",
+  "status": "kernel_verified",
+  "difficulty_bin": "D1",
+  "lean_module": "MathCorpus.Elementary.Combinatorics.CardUnionAddCardInter",
+  "theorem_name": "card_union_add_card_inter'",
+  "imports": [
+    "Mathlib"
+  ],
+  "toolchain": {
+    "lean_version": "v4.32.0-rc1",
+    "mathlib_rev": "360da6fa66c1273b76b6b2d8c5666fd5ac2e3b56"
+  },
+  "source_provenance": {
+    "source_kind": "author_written",
+    "source_refs": [],
+    "authors": [
+      "The MathCorpus Authors"
+    ],
+    "copyright_holder": "The MathCorpus Authors",
+    "license_spdx": "Apache-2.0",
+    "license_content": "CC-BY-4.0",
+    "statement_fidelity": "author_written"
+  },
+  "informal_statement": "The number of elements in the union plus the number of elements in the intersection equals the sum of the two set sizes (inclusion-exclusion for cardinality).",
+  "informal_proof_idea": "Directly `Finset.card_union_add_card_inter`.",
+  "formal_statement_pp": "theorem card_union_add_card_inter' (s t : Finset ℕ) : (s ∪ t).card + (s ∩ t).card = s.card + t.card",
+  "proof_body_path": "lean/MathCorpus/Elementary/Combinatorics/CardUnionAddCardInter.lean",
+  "proof_body_redacted": false,
+  "trust": {
+    "rung": 1,
+    "proof_authority": "lean_kernel",
+    "certificate_checker": "kernel_decide",
+    "encoding_required": false,
+    "encoding_soundness_status": "not_applicable",
+    "independent_review_status": "repo_reviewed",
+    "public_claim_class": "public_safe"
+  },
+  "training": {
+    "eligibility": "public_train",
+    "reason_codes": [
+      "public",
+      "non_benchmark",
+      "unredacted"
+    ],
+    "dedupe_cluster_id": "combinatorics.card_union_inter",
+    "template_family_id": "combinatorics.finset_card",
+    "contamination_risk": "low",
+    "can_export_proof_body": true
+  },
+  "dependencies": {
+    "kits": [
+      "ExtremalCombinatoricsKit"
+    ],
+    "tactic_tags": [
+      "Finset.card_union_add_card_inter"
+    ],
+    "prerequisite_concepts": [
+      "finite_set",
+      "cardinality",
+      "union",
+      "intersection"
+    ]
+  },
+  "metrics": {
+    "loc": 3,
+    "tactic_count": 1
+  },
+  "artifacts": {
+    "public_files": [
+      "lean/MathCorpus/Elementary/Combinatorics/CardUnionAddCardInter.lean"
+    ]
+  },
+  "review": {
+    "review_basis": "repo self-review; kernel-verified through the tracked proof-search loop",
+    "reviewer_status": "repo_reviewed"
+  },
+  "verification": {
+    "verifier": "proofsearch",
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "episode_id": "23c3ba16-1c40-44bb-ad33-12dd9f01fe60",
+    "outcome": "kernel_verified",
+    "kernel_verified": true,
+    "fidelity_status": "attested",
+    "step_count": 1,
+    "import_manifest_hash": "9bcbf693553e0e2efdb421fcec33c3cc5f71fcc7ea63883b4184635f5df699c2"
+  },
+  "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 23c3ba16). Fills the gap flagged by the paired negative example negative.combinatorics.finset_card_atoms.omega_failure.v1, which showed omega cannot derive this identity on its own.",
+  "hashes": {
+    "packet_sha256": "1a143969faae7bdf1720b0644cb3210646d8a101ace83a1616476f043799befe",
+    "formal_statement_sha256": "d13a69bed1cea310354189b2c8b2a80106be647692d46c881a15ee3d5722d729",
+    "proof_body_sha256": "c2915a479f3caadce7f2a405e889e89f812848953a95addc3f6c0e90c56bf8b7"
+  }
+}

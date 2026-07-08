@@ -9,7 +9,7 @@ packet schema — e.g. `core_algebra`, `ring_automation`,
 
 | Date | Packet | Depends on / Lends to | Domain/Kit | Notes |
 |------|--------|--------------------------|------------|-------|
-|      |        |                          |            |       |
+| 2026-07-08 | `card_union_add_card_inter.v1` | Depends on | `ExtremalCombinatoricsKit` | Same kit as `card_union_le.v1`; pairs the exact inclusion-exclusion identity with the existing inequality. |
 
 If a pattern is used by more than one domain, propose promoting it — see
 `agents/CROSS_DOMAIN_PROMOTIONS.md`.

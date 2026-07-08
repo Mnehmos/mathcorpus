@@ -8,9 +8,6 @@ Checked against the 33 existing packets (2026-07-07) to avoid duplicates.
 - [ ] `card_powerset` — `(Finset.powerset s).card = 2 ^ s.card` (D1, L1).
       A headline finite-combinatorics fact; currently nothing in this
       domain touches `powerset` at all.
-- [ ] `card_union_add_card_inter` — `(s ∪ t).card + (s ∩ t).card = s.card +
-      t.card` (D1, L1). The domain only has `card_union_le'` (an
-      inequality); the exact inclusion-exclusion identity is missing.
 - [ ] `disjoint_left` / a concrete disjoint-union card equality — `Disjoint
       s t -> (s ∪ t).card = s.card + t.card` (D0, L0/L1). No `Disjoint`
       packet exists yet, and it's the natural equality companion to the

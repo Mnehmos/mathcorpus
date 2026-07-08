@@ -160,3 +160,21 @@ this file is under heavy concurrent-agent write contention right now
 (repeated "modified since read" conflicts) — whoever next does a clean
 pass should fold this into the top-level totals/negative-examples list and
 re-derive via `python tools/corpus_stats.py`.
+
+## Proposed update — combinatorics elementary packet (this agent, 2026-07-08)
+
+Added `packets/elementary/combinatorics/card_union_add_card_inter.v1.json`:
+the inclusion-exclusion identity `(s ∪ t).card + (s ∩ t).card = s.card +
+t.card` over `Finset ℕ`, proved directly via `Finset.card_union_add_card_inter`.
+Produced via tracked episode `23c3ba16-1c40-44bb-ad33-12dd9f01fe60`
+(problem_version `6967d37a-6a76-4ad7-8fba-60ad72dc3f60`, dev-attested),
+`kernel_verified` in a single `solve` step. Fills the exact gap the paired
+negative example `packets/negative/combinatorics/finset_card_atoms_omega_failure.v1.json`
+flagged (bare `omega` cannot derive this identity between the four
+`Finset.card` atoms on its own). This is combinatorics' 34th elementary
+packet (L0: 10, L1: 24) — appended here rather than editing the tables
+above for the same concurrent-write-contention reason as the section
+above. Schema-validated (`validate_packets.py --check-hashes
+--warn-as-error`: 0 errors) and hash-stamped; also removed the now-filled
+`card_union_add_card_inter` item from
+`packets/elementary/combinatorics/QUEUE.md`.
