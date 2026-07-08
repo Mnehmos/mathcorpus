@@ -5,13 +5,8 @@ Checked against the 48 existing packets (2026-07-07) to avoid duplicates.
 
 ## Next targets
 
-- [ ] `lcm_comm` — `Nat.lcm a b = Nat.lcm b a` (D0, L0). The domain has a
-      full `gcd_*` family (`gcd_comm'`, `gcd_dvd_left'`, `gcd_dvd_right'`,
-      `gcd_mul_left'`, `gcd_one_right'`, `gcd_self'`, `gcd_zero_left'`) but
-      **no `lcm_*` packets at all** — this is the biggest single naming gap
-      in the domain.
 - [ ] `dvd_lcm_left` / `dvd_lcm_right` — `a ∣ Nat.lcm a b` (D0, L0). Pairs
-      with `lcm_comm`.
+      with `lcm_comm` (done, see below).
 - [ ] `gcd_mul_lcm` — `Nat.gcd a b * Nat.lcm a b = a * b` (D1, L1). The
       classic identity tying the two families together; good reusable
       lemma for the `core_algebra`/`ring_automation` kits.
@@ -20,12 +15,19 @@ Checked against the 48 existing packets (2026-07-07) to avoid duplicates.
 - [ ] `prime_dvd_mul` — `p.Prime -> (p ∣ a * b <-> p ∣ a ∨ p ∣ b)` (D1,
       L1). The single most reusable primality lemma for later divisibility
       work; natural next step after `prime_two`.
-- [ ] `even_sq` — `Even (n ^ 2) <-> Even n` (D1, L1). The domain has
-      `even_mul_right`, `even_mul_succ_self`, `odd_add_odd` but not the
-      classic "n even iff n^2 even" fact used in the standard irrationality
-      proof pattern.
 
 ## Done (this cycle)
+
+- [x] `lcm_comm` — `Nat.lcm a b = Nat.lcm b a` (D0, L0). Authored
+      2026-07-08 by a concurrent agent (commit `ab325b5`) — this file
+      hadn't been synced to reflect it until now; fixed to prevent a
+      duplicate re-proof attempt.
+
+- [x] `even_sq` — `Even (n ^ 2) <-> Even n` (D1, L1). Authored 2026-07-08
+      via tracked episode `5bbacd66-df54-4a0f-9dd7-d2aa08b946ba`
+      (kernel_verified on the first attempt: `Nat.even_pow' (by
+      norm_num)`). The classic fact from the standard irrationality-of-
+      sqrt-2 proof pattern.
 
 - [x] `prime_two` — `Nat.Prime 2` (D0, L0). Authored 2026-07-08 via
       tracked episode `86b4db53-554e-4887-a579-adfc290a0cb5`

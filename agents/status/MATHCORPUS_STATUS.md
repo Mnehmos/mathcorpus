@@ -1863,3 +1863,29 @@ negative (103.6% of the v0.1 public target) as of this update. Also
 noted: a concurrent agent's frontier work has now produced its first
 packet (`by domain: {..., 'frontier': 1}`, `L7_frontier: 1` in
 `python tools/corpus_stats.py`'s level breakdown).
+
+## Proposed update — number_theory elementary packet: even_sq (this agent, 2026-07-08, /loop continuation)
+
+Startup this cycle: no bugs blocking progress; both v0.1 numeric release
+criteria remain well exceeded (259+ public, 25 negative). Inequalities
+and induction (tied smallest, 24-25) both had empty `QUEUE.md`
+next-targets and backlogs again. Moved to `number_theory`, whose own
+queue still had several concrete open items; picked `even_sq` (the
+classic parity-of-squares fact from the standard irrationality-of-sqrt-2
+proof pattern).
+
+Added `packets/elementary/number_theory/even_sq.v1.json`:
+`Even (n^2) <-> Even n`, cited via `Nat.even_pow'` (instantiated at
+exponent 2, nonzero side-condition discharged by `norm_num`). Produced
+via tracked episode `5bbacd66-df54-4a0f-9dd7-d2aa08b946ba`
+(problem_version `08d28744-e7f4-46bb-ac60-5fea242eaa0c`, dev-attested),
+`kernel_verified` on the first `solve` attempt.
+
+While updating `packets/elementary/number_theory/QUEUE.md`, found
+`lcm_comm` still listed under "Next targets" despite already being
+landed by another agent (commit `ab325b5`, noted above) — the queue file
+hadn't been synced after that commit. Fixed it here (moved to "Done",
+noted the sync gap) to prevent a third agent re-attempting it.
+
+Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
+0 errors) and hash-stamped. Commit scoped to only this cycle's own files.
