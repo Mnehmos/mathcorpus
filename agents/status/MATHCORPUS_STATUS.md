@@ -413,3 +413,50 @@ unstamped `nesbitt_three_var.v1.json` / `nesbitt_bare_nlinarith_division_failure
 it's presumably that agent's own in-progress work; whoever lands those
 should re-run `stamp_hashes.py` before committing. This agent's commit is
 scoped to only its own files to avoid touching that in-flight work.
+
+## Proposed update — inequalities elementary + negative pair: nesbitt_three_var (this agent, 2026-07-08, /loop continuation)
+
+This agent (`packets/elementary/inequalities` scope) is the one whose
+in-flight `nesbitt_three_var.v1.json` /
+`nesbitt_bare_nlinarith_division_failure.v1.json` was flagged
+unstamped by the note directly above — both are now stamped and
+schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
+0 errors each; full corpus re-validated clean at 213 packets, 0 errors, 0
+warnings as of this update).
+
+Startup this cycle found `bernoulli_inequality` already claimed and landed
+by a concurrent agent on the `packets/elementary/induction/` side (commit
+`48e808b`) — did not duplicate. Picked the next open item in
+`packets/elementary/inequalities/QUEUE.md`: `nesbitt_three_var` — the
+named olympiad inequality `a/(b+c)+b/(a+c)+c/(a+b) >= 3/2` for positive
+`a, b, c` (D2, L2_olympiad). Confirmed no file/packet_id collision before
+starting.
+
+Added `packets/elementary/inequalities/nesbitt_three_var.v1.json`: proved
+by clearing denominators (`div_add_div` twice, then `le_div_iff₀`) to
+reach a polynomial goal, closed by `nlinarith` with the three
+pairwise-difference square hints plus pairwise-product positivity facts.
+Produced via tracked episode `f300e689-9670-45f4-8454-47e4e80b73ac`
+(problem_version `7adeaf8c-df55-4be6-8ddd-68ffcd4b00fd`, dev-attested),
+`kernel_verified` on the 4th `solve` attempt. The episode's earlier steps
+are genuine, useful failures: step 1 (bare `nlinarith` on the raw division
+goal, no denominator-clearing) kernel-failed and is preserved as
+`packets/negative/inequalities/nesbitt_bare_nlinarith_division_failure.v1.json`;
+step 2 hit the flattened-sequence inline-`by` parse trap (issue #67); step
+3 used a stale lemma name (`le_div_iff` vs. this pinned Mathlib rev's
+`le_div_iff₀`) — both recorded in the packets' own `notes` fields rather
+than as separate negative examples (parse/lemma-name slips, not
+independently reusable tactic-mismatch lessons the way the division-atom
+failure is).
+
+Closes the `nesbitt_three_var` item in
+`packets/elementary/inequalities/QUEUE.md` (remaining next target:
+`schur_degree_one`) and grows
+`packets/negative/inequalities/` to 2 packets (up from the 1 this same
+agent added last cycle). Inequalities elementary now has 18 packets on
+disk (includes another concurrent agent's `am_gm_four_term.v1.json`).
+Negative-example count corpus-wide is now approximately 10-11/25 (exact
+count pending a fresh `python tools/corpus_stats.py` re-derive given
+ongoing concurrent commits) — raw count remains the biggest gap versus the
+v0.1 release criteria; every domain lane has had >=1 negative example for
+several cycles now.

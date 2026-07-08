@@ -15,19 +15,25 @@ Checked against the 16 existing packets (2026-07-07) to avoid duplicates.
       machinery not attempted this cycle. Completes the AM-GM ladder
       alongside `am_gm_two` and `three_var_am_gm`.
 
+## Done
+
+- [x] `nesbitt_three_var` — `a/(b+c) + b/(a+c) + c/(a+b) >= 3/2` for
+      positive `a, b, c` (D2, L2_olympiad). Authored 2026-07-08 via tracked
+      episode `f300e689-9670-45f4-8454-47e4e80b73ac` (kernel_verified:
+      clear denominators via `div_add_div` ×2 + `le_div_iff₀`, then
+      `nlinarith` with the three pairwise-square hints and positivity of
+      the pairwise products). A bare-`nlinarith`-on-the-raw-division-goal
+      attempt kernel-failed first in the same episode and is preserved as
+      `packets/negative/inequalities/nesbitt_bare_nlinarith_division_failure.v1.json`.
+      (Note: `bernoulli_inequality` was independently claimed and landed on
+      the `packets/elementary/induction/` side — see that domain's
+      `QUEUE.md` — so it is removed from here rather than duplicated.)
+
 ## Next targets
 
-- [ ] `bernoulli_inequality` (inequality framing) — see
-      `packets/elementary/induction/QUEUE.md` for the induction-proof
-      version; if authored here instead, cross-reference the other domain
-      in `CROSS_DOMAIN.md` rather than duplicating.
-- [ ] `nesbitt_three_var` — `a/(b+c) + b/(a+c) + c/(a+b) >= 3/2` for
-      positive `a, b, c` (D2, L2_olympiad). Classic named olympiad
-      inequality; natural next step after the existing `three_var_am_gm` /
-      `three_var_sq_ge`.
 - [ ] `schur_degree_one` — Schur's inequality, `t = 1` case, for
       nonnegative `a, b, c` (D2, L2_olympiad). Pairs well with
-      `nesbitt_three_var` as a second named-inequality target.
+      `nesbitt_three_var` (done above) as a second named-inequality target.
 
 ## Backlog
 

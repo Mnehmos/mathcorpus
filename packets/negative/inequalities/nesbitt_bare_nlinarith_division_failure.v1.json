@@ -1,0 +1,66 @@
+{
+  "packet_id": "negative.inequalities.nesbitt_bare_nlinarith_division_failure.v1",
+  "packet_version": "1.0.0",
+  "title": "Bare nlinarith fails on Nesbitt's inequality without clearing denominators",
+  "domain": "algebra",
+  "level": "L2_olympiad",
+  "kind": "negative_example",
+  "status": "failed_attempt",
+  "difficulty_bin": "D2",
+  "source_provenance": {
+    "source_kind": "repo_original",
+    "source_refs": [
+      "packets/elementary/inequalities/nesbitt_three_var.v1.json"
+    ],
+    "authors": [
+      "The MathCorpus Authors"
+    ],
+    "copyright_holder": "The MathCorpus Authors",
+    "license_spdx": "Apache-2.0",
+    "license_content": "CC-BY-4.0",
+    "statement_fidelity": "author_written"
+  },
+  "informal_statement": "Nesbitt's inequality `a/(b+c) + b/(a+c) + c/(a+b) >= 3/2` for positive reals a, b, c, attacked with bare `nlinarith` (square hints supplied, but no denominator-clearing) before a clear-denominators-then-nlinarith proof closed the same episode.",
+  "failure": {
+    "gap_category": "tactic_mismatch",
+    "sub_category": "nlinarith_on_uncleared_division_atoms",
+    "input_context_summary": "Goal `a / (b + c) + b / (a + c) + c / (a + b) ≥ 3 / 2` over ℝ with `a, b, c > 0`; no rewriting of the division terms attempted first.",
+    "attempt_summary": "Submitted `nlinarith [sq_nonneg (a-b), sq_nonneg (b-c), sq_nonneg (a-c), mul_pos ha hb, mul_pos hb hc, mul_pos ha hc]` directly on the raw goal as the first solve action in a tracked episode. The kernel returned 'linarith failed to find a contradiction' — nlinarith cannot relate the three division atoms `a/(b+c)`, `b/(a+c)`, `c/(a+b)` to each other or to the square/positivity hints without first clearing denominators into a single polynomial inequality. Three further steps in the same episode iterated toward a fix: an inline-`by` flattened-sequence parse trap, a stale lemma name (`le_div_iff` vs. this Mathlib rev's `le_div_iff₀`), and finally `div_add_div` (twice) + `le_div_iff₀` to clear denominators, after which the same square/positivity hints closed it via nlinarith, reaching kernel_verified.",
+    "lesson": "nlinarith/linarith cannot reason through division atoms with variable, nonlinear denominators; clear denominators first (e.g. `div_add_div` + `le_div_iff₀`, or `field_simp` followed by `rw [div_le_div_iff ...]`) before supplying square-nonnegativity and positivity hints to nlinarith."
+  },
+  "proof_body_redacted": false,
+  "trust": {
+    "rung": 0,
+    "proof_authority": "none",
+    "public_claim_class": "public_safe"
+  },
+  "training": {
+    "eligibility": "negative_example_only",
+    "reason_codes": [
+      "public",
+      "explicit_negative_label"
+    ],
+    "dedupe_cluster_id": "inequalities.nesbitt.failure_patterns",
+    "template_family_id": "inequalities.automation_hazards",
+    "contamination_risk": "low"
+  },
+  "dependencies": {
+    "kits": [
+      "InequalityEstimateKit"
+    ],
+    "tactic_tags": [
+      "nlinarith",
+      "sq_nonneg",
+      "div_add_div",
+      "le_div_iff₀"
+    ],
+    "prerequisite_concepts": [
+      "clearing_denominators",
+      "sum_of_squares"
+    ]
+  },
+  "notes": "Captured via tracked proof-search episode f300e689-9670-45f4-8454-47e4e80b73ac (problem_version 7adeaf8c-df55-4be6-8ddd-68ffcd4b00fd, environment_hash 9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d): step 1 (bare nlinarith on the raw division goal) recorded kernel_fail with 'linarith failed to find a contradiction'; step 4 (div_add_div ×2 + le_div_iff₀, then nlinarith) closed the same episode kernel_verified as packets/elementary/inequalities/nesbitt_three_var.v1.json.",
+  "hashes": {
+    "packet_sha256": "1974989afc80920ffe55655b87fd3f24691692176ebfb28c4f2ecf00c0e4ceea"
+  }
+}
