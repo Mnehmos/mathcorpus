@@ -3306,3 +3306,48 @@ agents too, 0 errors, 0 warnings). Updated `DASHBOARD.md`/`QUEUE.md` in
 language and flagging a natural companion (right-inverse-implies-
 surjective) for a future cycle if this domain stays lowest-count.
 Committed only this cycle's own files, pathspec-scoped.
+
+## Proposed update — Erdős #1052: sigmaStar_mul_of_coprime transported (this agent, 2026-07-08, /loop continuation)
+
+Startup this cycle: fresh sweep of every elementary/negative-example
+`QUEUE.md` still showed everything empty (consistent with the prior
+cycle's finding), so continued in priority-4 frontier work. Checked
+`packets/frontier/erdos/COMPANION_RESULTS.md`, which still flagged
+`sigmaStar_mul_of_coprime` (deferred by this agent's own prior cycle) as
+the open priority target unblocking `omega_odd_le_two_adic_add_one` —
+nobody had claimed it since.
+
+Delegated to a subagent with the exact sibling source
+(`ErdosProblems/erdos-1052/proof/Erdos1052_sigmaStar_and_bounds.lean`,
+lines 40-125) and the specific de-bulleting technique that worked for the
+prior cycle's `sigmaStar_prime_pow` transport, scaled up: the source's
+5-branch `Finset.sum_nbij'` (with two NESTED-bullet `have := by apply
+Nat.dvd_gcd; · A; · B` blocks — bullets inside bullets) needed both the
+top-level bullets flattened to sequential unbulleted blocks AND the
+nested `apply`+bullet pairs rewritten as term-mode `Nat.dvd_gcd proofA
+proofB` applications. Kernel-verified on the 3rd attempt (episode
+`19b68166-8976-4d5b-96bb-391290d6afed`, problem_version
+`cea84b0b-b31d-4567-b5c4-327ba4817749`, dev-attested) after two genuine
+kernel_fails, both traced to a NEW SubmitModule flattener lesson beyond
+issue #67's known trap: a bare newline is a new-tactic boundary whenever
+bracket/paren depth is 0, which bit both a multi-line `refine ... ?_ ?_
+?_ ?_ ?_` and a multi-line term-mode application — fixed by keeping the
+`refine` on one line and wrapping multi-line applications in an outer
+paren immediately after `:=`.
+
+Added `packets/frontier/erdos/erdos_1052_sigmastar_mul_of_coprime.v1.json`:
+`SubmitModule` with 2 defs (`uDiv`/`sigmaStar`, re-transported since a
+SubmitModule is a self-contained namespace) + 4 helper theorems
+(`mem_uDiv`/`split_dvd_mul`/`quot_mul_quot`/`gcd_mul_left_eq`) + root
+`sigmaStar_mul_of_coprime`. `training.eligibility: quarantined`, matching
+this lane's default policy; anti-overclaim note states this is companion
+infrastructure only, not Erdős #1052 itself. Updated
+`packets/frontier/erdos/COMPANION_RESULTS.md` to record both the result
+and the new flattener lesson, and re-flag `omega_odd_le_two_adic_add_one`
+(now unblocked — cites this theorem) as the next priority target.
+
+Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
+0 errors) and hash-stamped; full corpus revalidated clean at 336 packets,
+0 errors, 0 warnings (308 verified public + 28 negative per
+`corpus_stats.py`, 123.2% of the 250-packet v0.1 public target). Commit
+scoped to only this cycle's own files.
