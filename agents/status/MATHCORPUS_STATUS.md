@@ -2839,3 +2839,24 @@ warnings). Updated `DASHBOARD.md` (34 -> 36 packets — 2 new: this packet
 plus retroactively counting the concurrent agent's already-landed
 `law_of_cosines`) and `QUEUE.md` in `packets/elementary/geometry/`.
 Committed separately, pathspec-scoped to only these files.
+
+## Proposed update — 2026-07-08 (loop agent, number_theory negative-example cycle)
+
+Added a negative/positive companion pair to `number_theory` closing the
+QUEUE.md-predicted "decide on an unbounded primality-style claim" gap:
+- `negative.number_theory.decide_unbounded_prime_universal.v1` — bare
+  `decide` fails on `∀ n : ℕ, ¬ Nat.Prime (4 * n)` (no `Decidable`
+  instance for an unbounded universal over ℕ; elaboration failure, not a
+  search timeout).
+- `elementary.number_theory.four_mul_not_prime.v1` — the working repair
+  (`intro n hp; have h2 : (2:ℕ) ∣ 4 * n := ⟨2 * n, by ring⟩; have h3 :=
+  hp.eq_one_or_self_of_dvd 2 h2; omega`), kernel_verified.
+
+Both via tracked episode `3148ceed-b740-4b21-a788-7b239face439`
+(problem_version `e6dee3bb-782e-412d-90e2-12a0e742b723`). Commit `1b89b92`.
+Full-corpus `validate_packets.py --check-hashes --warn-as-error`: 327
+packets, 0 errors/warnings. `corpus_stats.py`: 299 public / 28 negative
+(v0.1 criteria: both well past target — 250 public / 25 negative). Updated
+`packets/negative/number_theory/{QUEUE,DASHBOARD}.md` (queue item closed,
+packet count 3->4). No blocking dev-toolchain bugs found in
+`agents/github_issues/{BUGS,TRIAGE}.md` this cycle.
