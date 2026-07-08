@@ -130,6 +130,14 @@ for very recent commits before re-populating.)*
       runs — `show`'s defeq check can silently accept a goal-swap without
       actually normalizing the term `omega`/`nlinarith` will see.
 
+- [x] `prod_range_monotone` — partial products of a `>=1`-valued sequence
+      are monotone in the upper bound (mirrors `sum_range_monotone`, which
+      only needs `>=0`, automatic in ℕ). Authored 2026-07-08 via tracked
+      episode `5918401a-b5cd-492f-96f9-1bcbf785885e` (kernel_verified on
+      the first attempt: `induction k`, `Finset.prod_range_succ`,
+      `le_mul_of_one_le_right`). Sibling of `sum_range_monotone.v1`, not a
+      cross-domain dependency, so not recorded in `CROSS_DOMAIN.md`.
+
 ## Backlog
 
 *(empty — repopulate from the domain-specific focus in `LOOP.md`:
