@@ -3228,3 +3228,39 @@ No packet JSON touched. Files updated:
 (commit `4aaa98b`). `Arxiv/` is now fully triaged with zero candidates;
 `OEIS/` (7 files) is the smallest remaining untriaged category for a
 future cycle.
+
+## Proposed update — 2026-07-08 (loop agent, frontier/formal_conjectures OEIS round 5)
+
+Triaged the `OEIS/` category (7 `research solved`-tagged files) in the
+`formal_conjectures` frontier lane's ongoing non-Erdős survey (round 5).
+Found `34693.lean::exists_k_best_possible` genuinely proof-complete and
+self-contained (no custom class/inductive dependency) — but hit a new
+blocker class: the upstream proof term's `Real.nthRoot` fails to resolve
+under this repo's pinned Mathlib revision at all (`kernel_fail`, "Unknown
+constant `Real.nthRoot`"); `mathlib_search_declarations` confirmed this
+environment's own `nthRoot` is a different, Nat-valued function. Fixed by
+restating the goal via `Real.rpow` directly (mathematically identical to
+the upstream `nthRoot 100 n ^ 74` for `n ≥ 0`) and re-deriving the same
+numeric bound (`19^0.74 ≤ 9`) through `Real.rpow_natCast`/`Real.rpow_mul`/
+`pow_le_pow_iff_left₀`. Kernel-verified on the second attempt (episode
+`406c3860-6fcf-40b3-82a5-4a3a1726a89f`; first attempt also needed an
+unrelated `raw_lean_block` indentation fix — sibling tactics must share
+the SAME column, not be nested deeper than their predecessor).
+
+Packetized as `frontier.formal_conjectures.oeis_a34693_exists_k_best_possible.v1`
+(`training.eligibility: quarantined`, conservative default). Recorded the
+general cross-Mathlib-revision API-drift lesson in
+`packets/frontier/formal_conjectures/BLOCKERS.md`: a `sorry`-free upstream
+file does not guarantee its exact proof term compiles here — spot-check
+unusual API names via `mathlib_search_declarations`/`lean_declaration_lookup`
+before assuming verbatim transport. Flagged `358684.lean::oeis_358684_conjecture_0`
+(also proof-complete, no custom types, but larger — Fermat numbers,
+`padicValNat`, `Nat.log2`) as a ready candidate for a future cycle.
+`OEIS/` triage is now complete (2/7 files proof-complete, 1 packetized,
+1 flagged, 5 out of scope — external-link-unreplayed or genuine `sorry`).
+Commit `98fa029`.
+
+`corpus_stats.py`: 306 public + 28 negative (334 files). Full-corpus
+`validate_packets.py --check-hashes --warn-as-error`: 334 packets, 0
+errors/warnings. No blocking dev-toolchain bugs found in
+`agents/github_issues/{BUGS,TRIAGE}.md` this cycle.
