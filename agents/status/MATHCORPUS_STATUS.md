@@ -2488,3 +2488,53 @@ attempted this cycle.
 
 No packet JSON touched; only the three dossier markdown files. Commit
 scoped to only this cycle's own files.
+
+## Proposed update — frontier packet: Erdős #1052 companion infrastructure (this agent, 2026-07-08, /loop continuation)
+
+Startup this cycle: no bugs/triage; both v0.1 numeric release criteria
+remained comfortably exceeded (290 verified public + 26 negative at the
+top of this cycle). Checked induction, inequalities, functions, algebra,
+number_theory, combinatorics, and every negative-example queue — all
+genuinely drained (Next targets empty everywhere; only deferred/harder
+backlog items like geometry's "Law of sines" and algebra's now-completed
+quadratic-formula item remain). Per this loop's priority order
+(bugs > zero-coverage negative examples > furthest-behind elementary
+domain > frontier), this is the first cycle this session where frontier
+work was the honest next step rather than a fallback.
+
+Read `packets/frontier/erdos/OPEN_PROBLEMS.md`/`COMPANION_RESULTS.md`/
+`BLOCKERS.md` per that folder's `LOOP.md`. Picked the Subbarao–Warren
+"unitary perfect numbers are even" companion (#1052) — flagged
+`(none yet)` packetized despite being `kernel_verified` in the sibling
+repo. Read the sibling repo's
+`ErdosProblems/erdos-1052/proof/Erdos1052_even_of_isUnitaryPerfect.lean`
+(322 lines, 1 def + 8 helper lemmas + root theorem) and judged the full
+transport too large/risky for one cycle: three of the eight helpers
+(`proper_eq_erase`, `filter_not_dvd_eq_uDiv_ordCompl`) use `constructor` +
+`·`-bullet `Iff` splits, and two (`sum_uDiv_factor`'s `Finset.sum_bij'`,
+`sum_uDiv_even`'s `Finset.sum_involution`) use deeply NESTED bullets
+(bullets inside bullets) — all of which must be rewritten bullet-free
+since `SubmitModule` helper items are always flattened. Rather than
+gamble the whole assembly blind, scoped this cycle to the smallest
+self-contained useful piece: `uDiv` (def) + `mem_uDiv` + `self_mem_uDiv` +
+`proper_eq_erase` (root) — the bridge between the corpus's
+`properUnitaryDivisors` convention and `uDiv`.
+
+Added `packets/frontier/erdos/erdos_1052_proper_eq_erase.v1.json`.
+Produced via tracked episode `59a627f1-368a-4470-a8b6-bc08e5c70a7d`
+(problem_version `41662057-906e-478a-9593-de5cf47322a7`, dev-attested,
+`problem_imports: ["Mathlib"]`), `kernel_verified` on the FIRST
+`submit_module` attempt — the one bullet hazard in this bounded scope
+(`proper_eq_erase`'s `constructor; · A; · B`) rewrote cleanly as
+`Iff.intro (fun ... => A) (fun ... => ?_)`, continuing the remaining goal
+linearly (a single-`?_` `refine` never needs bullets). ANTI-OVERCLAIM
+recorded in the packet's own `notes`: this is bounded companion
+infrastructure, not Erdős #1052 itself (open) and not yet the full
+`even_of_isUnitaryPerfect` headline result — the harder `sum_bij'`/
+`sum_involution` lemmas are explicitly left for a future cycle.
+
+Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
+0 errors) and hash-stamped; commit `cd5fe12`, scoped to only these two new
+files. Full `packets/frontier/erdos/` revalidated clean at 8 packets, 0
+errors, 0 warnings; full corpus at 291 verified public + 26 negative
+(116.4% of the v0.1 public target) as of this update.
