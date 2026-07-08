@@ -24,12 +24,14 @@ triangle inequality, strengthening the one-sided `reverse_triangle`).
 Power-mean extension: `three_var_qm_am_bound` (extends `qm_am_bound`,
 two-term case, to three variables).
 
-Min/max family: `avg_between_min_max` (`min a b <= (a+b)/2 <= max a b`).
+Min/max family: `avg_between_min_max` (`min a b <= (a+b)/2 <= max a b`),
+`min_add_min_le` (min is superadditive).
 
-- [x] `min_add_min_le` — `min a c + min b d <= min (a+b) (c+d)` (D1, L1),
-      i.e. min is superadditive. Authored 2026-07-08 via tracked episode
-      `c1fdb760-3290-4537-945f-aff544b803a5` (kernel_verified on the first
-      attempt: `le_min`, `min_le_left`/`min_le_right`, closed by
+- [x] `max_add_le` — `max (a+b) (c+d) <= max a c + max b d` (D1, L1), i.e.
+      max is subadditive; the dual companion to `min_add_min_le`. Authored
+      2026-07-08 via tracked episode
+      `a6eb2a43-9d19-427d-a2e3-bbc8c60dc9a7` (kernel_verified on the first
+      attempt: `max_le`, `le_max_left`/`le_max_right`, closed by
       `linarith`).
 
 ## Next targets
