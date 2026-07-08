@@ -38,16 +38,22 @@ attempt via `Set.image_inter_subset`).
       lemma name were ambiguous (many unrelated `injective` hits from
       other namespaces polluted the search).
 
+- [x] `right_inverse_surjective` — a right inverse of f implies f is
+      surjective (D0, L1). Authored 2026-07-08 via tracked episode
+      `6f12df1e-e85a-4160-af71-19e22e9b0384` (kernel_verified on the
+      first attempt: `⟨g b, h b⟩` directly, no rewriting needed).
+      Completes the "inverse" focus pair alongside `left_inverse_injective`
+      — this was exactly the backlog item left last cycle for this pickup.
+
 ## Next targets
 
-*(empty — see Backlog.)*
+*(empty — every focus-list topic genuinely has multiple packets now,
+confirmed by grep, not just prose.)*
 
 ## Backlog
 
-- [ ] A right-inverse-implies-surjective companion to
-      `left_inverse_injective` would complete the "inverse" focus pair
-      (mirroring `Function.RightInverse`/surjectivity) — natural next
-      pick if this domain is still lowest-count next cycle.
-- [ ] v0.1's numeric release criteria (>=250 public, >=25 negative) were
-      both met this session — remaining work here is for quality/balance,
-      not raw count.
+*(empty — v0.1's numeric release criteria (>=250 public, >=25 negative)
+were both met this session; remaining work here is for quality/balance,
+not raw count. Check `git log --oneline -15 --
+packets/elementary/functions/` before starting a new target, since
+concurrent agents work this domain too.)*

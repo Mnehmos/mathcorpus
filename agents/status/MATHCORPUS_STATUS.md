@@ -3351,3 +3351,29 @@ Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
 0 errors, 0 warnings (308 verified public + 28 negative per
 `corpus_stats.py`, 123.2% of the 250-packet v0.1 public target). Commit
 scoped to only this cycle's own files.
+
+## Proposed update — functions: right_inverse_surjective packet (this agent, 2026-07-08)
+
+Priority-3 elementary work this cycle (no blocking bugs; no zero-coverage
+negative lane; functions/induction/inequalities tied at 31 packets each,
+but induction and inequalities both have only vague "repopulate from
+LOOP.md focus" backlog notes while functions had a concrete, specific
+ready item left from last cycle).
+
+Picked up exactly that item: `right_inverse_surjective` — a right
+inverse of f implies f is surjective, the companion to last cycle's
+`left_inverse_injective`, completing the domain's "inverse" focus pair.
+Kernel-verified on the FIRST attempt (tracked episode
+`6f12df1e-e85a-4160-af71-19e22e9b0384`): `Function.RightInverse g f`
+unfolds directly to `∀ x, f (g x) = x`, so `⟨g b, h b⟩` proves
+surjectivity with no rewriting needed at all — simpler than the
+left-inverse case, hence D0 not D1.
+
+Authored `packets/elementary/functions/right_inverse_surjective.v1.json`
++ `lean/MathCorpus/Elementary/Functions/RightInverseSurjective.lean`,
+stamped hashes, validated clean (337 packets total, 0 errors, 0
+warnings). Updated `DASHBOARD.md`/`QUEUE.md` in
+`packets/elementary/functions/` — the domain's "every focus topic
+covered" claim is now actually true (verified by grep, not just prose),
+closing the loop on last cycle's correction. Committed only this cycle's
+own files, pathspec-scoped.
