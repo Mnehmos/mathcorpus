@@ -2797,3 +2797,45 @@ Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
 packets, 0 errors, 0 warnings (297 verified public + 27 negative per
 `corpus_stats.py`, 118.8% of the 250-packet v0.1 public target). Commit
 scoped to only this cycle's own files.
+
+## Proposed update — geometry: apollonius_median packet (this agent, 2026-07-08)
+
+Priority-3 elementary work this cycle (no blocking bugs; no zero-coverage
+negative-example lane; re-checked induction/inequalities/functions
+elementary queues, all still genuinely empty). Geometry (34 packets, the
+lowest count among domains with any concrete backlog item) had two
+backlog entries: "Law of cosines" and "Law of sines". Discovered
+`law_of_cosines` had already been landed by a concurrent agent (episode
+`d1f31293`) but the queue file was stale — updated it to reflect that.
+
+Investigated "Law of sines" before attempting it: unlike `law_of_cosines`
+(a pure algebraic identity reusing the SAME given angle), a faithful law
+of sines needs an intrinsically-defined second triangle angle, which
+requires either Mathlib's `EuclideanGeometry`/`InnerProductGeometry.angle`
+API (a new dependency for this domain) or reintroducing `Real.sqrt`/
+division over side lengths — exactly the pattern this domain's packets
+have consistently avoided. Confirmed via `mathlib_search_declarations`
+that Mathlib has no existing `law_sin`/`law_cos` lemma to wrap. Deferred
+as a genuine multi-cycle target rather than forcing a fragile one-cycle
+attempt; recorded in `packets/elementary/geometry/QUEUE.md`.
+
+Picked Apollonius's theorem (median length theorem: for triangle ABC
+with M the midpoint of BC, AB^2+AC^2 = 2*AM^2+2*BM^2) instead — same
+difficulty tier, same coordinate-`ring` style as `midpoint_equidist`,
+still missing from the domain. First `problem_create` call omitted
+`problem_imports` and defaulted to a Ring+NormNum-only manifest that
+doesn't resolve `ℝ`; Lean's autoImplicit silently auto-generalized `ℝ`
+as an abstract type, producing a spurious `HSub` instance-synthesis
+failure on `ring`. Re-registered with `problem_imports: ["Mathlib"]`
+(same fix documented in `law_of_cosines`'s own packet notes) and it went
+through immediately via tracked episode `d56cbb06-f2e9-490c-b252-6974aedcf695`
+(`intro xA yA xB yB xC yC; ring`, kernel_verified).
+
+Authored `packets/elementary/geometry/apollonius_median.v1.json` +
+`lean/MathCorpus/Elementary/Geometry/ApolloniusMedian.lean`, stamped
+hashes, validated clean (`python tools/validate_packets.py packets/
+--check-hashes --warn-as-error`: 325 packets checked, 0 errors, 0
+warnings). Updated `DASHBOARD.md` (34 -> 36 packets — 2 new: this packet
+plus retroactively counting the concurrent agent's already-landed
+`law_of_cosines`) and `QUEUE.md` in `packets/elementary/geometry/`.
+Committed separately, pathspec-scoped to only these files.
