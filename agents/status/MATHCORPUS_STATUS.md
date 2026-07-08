@@ -3565,3 +3565,26 @@ last cycle since this was dossier-only work). Full-corpus
 `validate_packets.py --check-hashes --warn-as-error`: 341 packets, 0
 errors/warnings. No blocking dev-toolchain bugs found in
 `agents/github_issues/{BUGS,TRIAGE}.md` this cycle.
+
+## Proposed update — geometry: reflection_over_y_axis packet (this agent, 2026-07-08)
+
+Priority-3 elementary work this cycle (no blocking bugs; no zero-coverage
+negative lane; functions/induction/inequalities all confirmed genuinely
+dry — functions fully covered per grep, induction's monotonicity gap was
+just filled last cycle, inequalities has no concrete backlog item).
+Checked geometry (next-lowest domain) for a fresh, low-risk gap and found
+one immediately: only `reflection_over_x_axis` exists — no y-axis
+counterpart, despite the domain having both midpoint/distance symmetry
+families elsewhere.
+
+Authored `reflection_over_y_axis` — reflecting (x,y) to (-x,y) preserves
+squared distance to any point (0,qy) on the y-axis, mirroring
+`reflection_over_x_axis`'s exact shape with x/y roles swapped. Kernel-
+verified on the FIRST attempt (tracked episode
+`ecc942d6-2c5b-47d0-bae7-2d9e608a4074`): pure `ring`, no complications.
+
+Authored `packets/elementary/geometry/reflection_over_y_axis.v1.json` +
+`lean/MathCorpus/Elementary/Geometry/ReflectionOverYAxis.lean`, stamped
+hashes, validated clean (343 packets total, 0 errors, 0 warnings).
+Updated `DASHBOARD.md`/`QUEUE.md` in `packets/elementary/geometry/`.
+Committed only this cycle's own files, pathspec-scoped.

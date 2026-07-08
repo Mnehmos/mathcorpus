@@ -33,6 +33,12 @@ abstract type and a spurious `HSub` instance-synthesis failure —
 re-registered with `problem_imports: ["Mathlib"]` (same fix as
 `law_of_cosines`'s own note) and it went through immediately.
 
+- [x] `reflection_over_y_axis` — the y-axis companion to
+      `reflection_over_x_axis` (D0, L0). Authored 2026-07-08 via tracked
+      episode `ecc942d6-2c5b-47d0-bae7-2d9e608a4074` (kernel_verified on
+      the first attempt: pure `ring`). Confirmed via `grep -rl y_axis`
+      (no prior hits) before authoring — only the x-axis case existed.
+
 ## Next targets
 
 *(empty — see Backlog.)*
