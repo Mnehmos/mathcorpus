@@ -5,9 +5,6 @@ Checked against the 33 existing packets (2026-07-07) to avoid duplicates.
 
 ## Next targets
 
-- [ ] `card_image_le` — `(s.image f).card <= s.card` (L1). Promoted from
-      backlog now that the `Nat.choose` starter family
-      (`choose_zero_right'`/`choose_self'`/`choose_symm'`) is complete.
 - [ ] `choose_succ_succ` (Pascal's rule) — `Nat.choose (n+1) (k+1) =
       Nat.choose n k + Nat.choose n (k+1)` (D1, L1). Natural next
       `Nat.choose` identity now that the basics are in place; ties directly

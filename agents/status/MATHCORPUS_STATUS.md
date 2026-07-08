@@ -795,3 +795,18 @@ concurrent agent noted as already working that queue item — worth a
 general callout: check queue files for "another agent appears to be
 working this" notes before claiming a packet_id, and prefer a more
 specific name for a narrower/concrete variant of a queued general lemma.
+
+## Proposed update — combinatorics elementary packet #8 (this agent, 2026-07-08, /loop continuation)
+
+Added `packets/elementary/combinatorics/card_image_le.v1.json`:
+`(s.image f).card <= s.card` — the image of a finite set under a function
+has at most as many elements as the original set. Proved directly via
+`Finset.card_image_le`. Produced via tracked episode
+`56d41a21-a9b7-419f-828c-7fd4658197d1` (problem_version
+`1f2d5565-941c-4819-8211-88bc6ce197fb`, dev-attested), `kernel_verified`
+on the first `solve` attempt. Closes the `card_image_le` item (promoted
+from backlog last cycle) in `packets/elementary/combinatorics/QUEUE.md`;
+remaining next-target there is `choose_succ_succ` (Pascal's rule).
+Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
+0 errors) and hash-stamped; full corpus revalidated clean at 232 packets,
+0 errors, 0 warnings as of this update.

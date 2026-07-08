@@ -2,7 +2,7 @@
 
 | Metric | Value |
 |--------|-------|
-| Packets | 41 |
+| Packets | 42 |
 | Level breakdown | see individual packets — includes `card_union_not_additive.v1.json` (another concurrent agent's addition, commit `246ca69`) not itemized below |
 
 - `card_union_add_card_inter.v1.json` (added 2026-07-08) — inclusion-exclusion
@@ -36,6 +36,10 @@
   episode `2478c40d-0003-42ae-a1b9-343a7f150531`. Completes the roadmap's
   `Nat.choose` starter family (`choose_zero_right'`/`choose_self'`/
   `choose_symm'`).
+- `card_image_le.v1.json` (added 2026-07-08) — `(s.image f).card <=
+  s.card`; kernel-verified via episode
+  `56d41a21-a9b7-419f-828c-7fd4658197d1`. Closes the backlog-promoted
+  `card_image_le` item; `choose_succ_succ` (Pascal's rule) remains queued.
 
 Last synced: 2026-07-08 — re-sync against
 `agents/status/MATHCORPUS_STATUS.md` and `python tools/corpus_stats.py`
