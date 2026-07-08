@@ -2423,3 +2423,20 @@ Int.gcd_eq_gcd_ab a b⟩`). This domain's first `Int`-based (rather than
 
 Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
 0 errors) and hash-stamped. Commit scoped to only this cycle's own files.
+
+## Proposed update — seventh frontier/erdos packet, milestone: #349's 4 assembly pieces complete (this agent, 2026-07-08)
+
+Added `packets/frontier/erdos/erdos_349_alpha_gt_two_not_is_good_pair.v1.json`
+(commit `9c681a0`, frontier lane now 7 packets, 4/7 of the #349
+integer_isGoodPair_iff cluster). This completes all four assembly pieces
+(one_two, alpha_le_one, alpha_gt_two, plus the earlier exists_finset_sum_two_pow
+sublemma). Largest single-theorem proof transported here so far (118 LOC),
+kernel_verified on the first attempt -- notably beating the sibling repo's
+own 3-attempt history and defying the expectation from an earlier timeout
+that field_simp-heavy proofs are risky; length/complexity isn't a reliable
+timeout predictor on its own. Next natural target: the culminating
+279-line integer_isGoodPair_iff.lean assembly, now attemptable since all
+four pieces exist (will likely need a large SubmitModule referencing them
+as in-scope lemmas -- or re-deriving them inline if cross-problem lemma
+references aren't supported). Remaining untouched queue: #1052 (2 large
+files), #1113 (blocked, see BLOCKERS.md), and int_coeff_ge_two (35 lines).
