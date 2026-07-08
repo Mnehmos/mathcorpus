@@ -1,0 +1,69 @@
+{
+  "packet_id": "negative.number_theory.sq_parity.omega_nonlinear_failure.v1",
+  "packet_version": "1.0.0",
+  "title": "omega fails on n^2 % 2 = n % 2 without a linear bridge",
+  "domain": "number_theory",
+  "level": "L1_proof_basics",
+  "kind": "negative_example",
+  "status": "failed_attempt",
+  "difficulty_bin": "D1",
+  "source_provenance": {
+    "source_kind": "repo_original",
+    "source_refs": [],
+    "authors": [
+      "The MathCorpus Authors"
+    ],
+    "copyright_holder": "The MathCorpus Authors",
+    "license_spdx": "Apache-2.0",
+    "license_content": "CC-BY-4.0",
+    "statement_fidelity": "author_written"
+  },
+  "informal_statement": "For every natural number n, n^2 and n have the same remainder mod 2 (the same parity): n ^ 2 % 2 = n % 2. A goal of this shape attacked directly by `omega` before the square is case-split or expanded into a linear form.",
+  "formal_statement_pp": "theorem sq_mod_two_eq_self_mod_two : ∀ n : ℕ, n ^ 2 % 2 = n % 2",
+  "failure": {
+    "gap_category": "tactic_mismatch",
+    "sub_category": "nonlinear_arith_via_omega",
+    "input_context_summary": "Goal `n ^ 2 % 2 = n % 2` over ℕ after `intro n`.",
+    "attempt_summary": "Applied `omega` directly to the goal. omega only reasons about linear integer/nat arithmetic, so it treats `n ^ 2` as an opaque atom unrelated to `n` (internally introducing fresh terms `c := n ^ 2`, `d := n ^ 2 / 2` with no linear link back to `a := n`, `b := n / 2`). It cannot derive that the parity of `n ^ 2` tracks the parity of `n`, and fails deterministically (kernel_fail / tactic_failure, ~4.6s) rather than proving or timing out.",
+    "lesson": "omega only handles linear arithmetic over ℤ/ℕ; a nonlinear term like `n ^ 2` becomes an opaque atom it cannot relate back to `n`. Prove parity-of-square goals by case-splitting on the parity of `n` first (e.g. `rcases Nat.even_or_odd n with ⟨k, rfl⟩ | ⟨k, rfl⟩`, then `ring_nf`/`omega` on the now-expanded linear form), or via a dedicated parity lemma — never a direct `omega` call on the unexpanded power."
+  },
+  "proof_body_redacted": false,
+  "trust": {
+    "rung": 0,
+    "proof_authority": "none",
+    "public_claim_class": "public_safe"
+  },
+  "training": {
+    "eligibility": "negative_example_only",
+    "reason_codes": [
+      "public",
+      "explicit_negative_label"
+    ],
+    "dedupe_cluster_id": "nt.parity.failure_patterns",
+    "template_family_id": "number_theory.automation_hazards",
+    "contamination_risk": "low"
+  },
+  "dependencies": {
+    "kits": [],
+    "tactic_tags": [
+      "omega"
+    ],
+    "prerequisite_concepts": [
+      "parity",
+      "modular_arithmetic"
+    ]
+  },
+  "verification": {
+    "verifier": "proofsearch",
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "episode_id": "7381250f-097a-4151-b5ba-0e80303ff42e",
+    "import_manifest_hash": "409c28561ce51f049ff6d835330b5f8d9a9b1c943db488280748901a8181d3b7",
+    "kernel_verified": false,
+    "fidelity_status": "attested",
+    "step_count": 2
+  },
+  "notes": "Negative example captured via a tracked proofsearch episode (problem_version 3ea68a09-d6cb-48e6-9b8e-b226d225268a, episode 7381250f-097a-4151-b5ba-0e80303ff42e, root_statement_hash f37a3f71285f910657be8cc6d69d66e8029587a40898f2a58662a3506fb19b71). Single `solve` attempt (`intro n; omega`) rejected with kernel_fail/tactic_failure; episode closed via `give_up`. unsafe_dev_attestation=true (dev/negative-example capture, not a benchmark or fidelity-reviewed problem) so this is capped at attested, never certified.",
+  "hashes": {
+    "packet_sha256": "1180e83178294b0387609a870da22e0f19e3b217e24f6abf21d59886cf708b5c"
+  }
+}

@@ -141,3 +141,22 @@ least one, so the next priority is raw count, not coverage.
 ## Current safe batch size
 
 Sub-waves of 7 proof attempts.
+
+## Proposed update — number_theory negative example (this agent, 2026-07-08)
+
+Added `packets/negative/number_theory/sq_parity_omega_nonlinear_failure.v1.json`:
+`omega` applied directly to `n ^ 2 % 2 = n % 2` fails deterministically
+(`kernel_fail`/`tactic_failure`) — it treats `n ^ 2` as an opaque nonlinear
+atom unrelated to `n` and cannot connect the two parities. Produced via
+tracked episode `7381250f-097a-4151-b5ba-0e80303ff42e` (problem_version
+`3ea68a09-d6cb-48e6-9b8e-b226d225268a`, dev-attested), closed with
+`give_up` after one rejected solve attempt; no repair/fix step attempted
+this cycle. This is number_theory's 2nd negative example, alongside
+`divisor_case_split_omega_unevaluated_literal.v1.json`. Schema-validated
+(`validate_packets.py --check-hashes --warn-as-error`: 0 errors) and hash-stamped.
+
+This appended as a section rather than editing the tables above because
+this file is under heavy concurrent-agent write contention right now
+(repeated "modified since read" conflicts) — whoever next does a clean
+pass should fold this into the top-level totals/negative-examples list and
+re-derive via `python tools/corpus_stats.py`.
