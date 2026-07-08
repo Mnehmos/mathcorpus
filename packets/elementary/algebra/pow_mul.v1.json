@@ -1,0 +1,98 @@
+{
+  "packet_id": "elementary.algebra.pow_mul.v1",
+  "packet_version": "1.0.0",
+  "title": "Exponent multiplication law",
+  "domain": "algebra",
+  "level": "L0_elementary",
+  "kind": "concept",
+  "status": "kernel_verified",
+  "difficulty_bin": "D0",
+  "lean_module": "MathCorpus.Elementary.Algebra.PowMul",
+  "theorem_name": "pow_mul'",
+  "imports": [
+    "Mathlib"
+  ],
+  "toolchain": {
+    "lean_version": "v4.32.0-rc1",
+    "mathlib_rev": "360da6fa66c1273b76b6b2d8c5666fd5ac2e3b56"
+  },
+  "source_provenance": {
+    "source_kind": "author_written",
+    "source_refs": [],
+    "authors": [
+      "The MathCorpus Authors"
+    ],
+    "copyright_holder": "The MathCorpus Authors",
+    "license_spdx": "Apache-2.0",
+    "license_content": "CC-BY-4.0",
+    "statement_fidelity": "author_written"
+  },
+  "informal_statement": "For a real number x and naturals m, n: x^(m*n) = (x^m)^n.",
+  "informal_proof_idea": "Directly `pow_mul`, the Mathlib lemma for this exponent law. A `ring`-only attempt times out first (see the paired negative example negative.algebra.pow_mul_ring_timeout_failure.v1): unlike pow_add, ring cannot handle a *product* of two exponent variables efficiently.",
+  "formal_statement_pp": "theorem pow_mul' (x : ℝ) (m n : ℕ) : x ^ (m * n) = (x ^ m) ^ n",
+  "proof_body_path": "lean/MathCorpus/Elementary/Algebra/PowMul.lean",
+  "proof_body_redacted": false,
+  "trust": {
+    "rung": 1,
+    "proof_authority": "lean_kernel",
+    "certificate_checker": "kernel_decide",
+    "encoding_required": false,
+    "encoding_soundness_status": "not_applicable",
+    "independent_review_status": "repo_reviewed",
+    "public_claim_class": "public_safe"
+  },
+  "training": {
+    "eligibility": "public_train",
+    "reason_codes": [
+      "public",
+      "non_benchmark",
+      "unredacted"
+    ],
+    "dedupe_cluster_id": "algebra.pow_mul",
+    "template_family_id": "algebra.power_basics",
+    "contamination_risk": "low",
+    "can_export_proof_body": true
+  },
+  "dependencies": {
+    "kits": [
+      "core_algebra"
+    ],
+    "tactic_tags": [
+      "pow_mul"
+    ],
+    "prerequisite_concepts": [
+      "power",
+      "exponent_laws"
+    ]
+  },
+  "metrics": {
+    "loc": 2,
+    "tactic_count": 1
+  },
+  "artifacts": {
+    "public_files": [
+      "lean/MathCorpus/Elementary/Algebra/PowMul.lean"
+    ]
+  },
+  "review": {
+    "review_basis": "repo self-review; kernel-verified through the tracked proof-search loop",
+    "reviewer_status": "repo_reviewed"
+  },
+  "verification": {
+    "verifier": "proofsearch",
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "episode_id": "13c20f38-d366-44f6-95be-95d9216d102d",
+    "outcome": "kernel_verified",
+    "kernel_verified": true,
+    "fidelity_status": "attested",
+    "step_count": 2,
+    "import_manifest_hash": "aaf21893d520a78dee0787a1bcaf939ee6b922265ff670c272e2e1d450dd29a7",
+    "verified_at": "2026-07-08T08:28:20Z"
+  },
+  "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 13c20f38). Step 1 (bare `ring`) timed out after 60s and is preserved as negative.algebra.pow_mul_ring_timeout_failure.v1 — unlike the sibling pow_add packet, `ring` cannot cheaply normalize a goal with a *product* of two variable exponents. Step 2 (`exact pow_mul x m n`) closed kernel_verified immediately. Closes the pow_mul item in packets/elementary/algebra/QUEUE.md.",
+  "hashes": {
+    "packet_sha256": "28ea25182672be597d5788c752919da0a3ff03345b9728bc60c90fc4accb6201",
+    "formal_statement_sha256": "63b6052ca7ab805aa8d1d3737f0e04b037a101194aa4865c7948215f903d88bf",
+    "proof_body_sha256": "5a9bd0cff4e1d4d5127b589d71fdfd9032bf6816b9684eb8317354b76e68b5e3"
+  }
+}

@@ -49,3 +49,15 @@ pre-asserted facts.
       ring-ignores-hypotheses lesson) — kept both rather than discarding
       already-verified tracked evidence; distinct `packet_id`s, no schema
       collision.
+- [x] **ring times out on the exponent-multiplication law.**
+      `pow_mul_ring_timeout_failure.v1.json` — bare `ring` on `x^(m*n) =
+      (x^m)^n` genuinely times out after 60s (a deterministic
+      budget-burner, not a slow success), unlike the sibling `pow_add`
+      goal (`x^(m+n) = x^m*x^n`) where `ring` closes instantly — `ring`
+      cheaply normalizes a *sum* of variable exponents but not a
+      *product* of two. `exact pow_mul x m n` closes the same tracked
+      episode `13c20f38-d366-44f6-95be-95d9216d102d` `kernel_verified` as
+      the companion positive packet
+      `packets/elementary/algebra/pow_mul.v1.json`. A distinct
+      `sub_category` (timeout, not a clean rejection) from this lane's
+      other `ring`/hypothesis examples.

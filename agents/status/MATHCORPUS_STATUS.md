@@ -2207,3 +2207,33 @@ earlier); the division-free version of the same proof shape elaborated
 fine, confirming the division-clearing step specifically is what's slow.
 Recorded in BLOCKERS.md with a suggested workaround (Decompose into
 smaller sub-obligations) for whoever revisits it.
+
+## Proposed update — algebra elementary + negative pair: pow_mul (this agent, 2026-07-08, /loop continuation)
+
+Startup this cycle: no bugs/triage beyond the already-known
+`episode_observe` UNIQUE-constraint issue. `packets/elementary/algebra/QUEUE.md`
+(this agent's prior cycle) was stale — `neg_sq` and `sub_mul` had already
+landed via concurrent agents (commits `bd04c9d`, `0427733`) without the
+queue file being synced; fixed that and picked the next genuinely open
+item, `pow_mul` (companion to this agent's earlier `pow_add`).
+
+Added `packets/elementary/algebra/pow_mul.v1.json`: `x^(m*n) = (x^m)^n`
+for a real base and natural exponents. Interesting parallel to the
+frontier timeout noted in the section immediately above: a bare `ring`
+attempt (which closed the sibling `pow_add` goal instantly) genuinely
+timed out after 60s on this one — `ring` cheaply normalizes a *sum* of
+variable exponents but not a *product* of two. Preserved as
+`packets/negative/algebra/pow_mul_ring_timeout_failure.v1.json`, a new
+`sub_category` (deterministic timeout, not a clean tactic rejection) for
+this domain's negative-example lane. `exact pow_mul x m n` closed the
+same tracked episode `13c20f38-d366-44f6-95be-95d9216d102d` (problem_version
+`d07c4a9f-f64c-429b-93b9-72391f4ee59a`, dev-attested) `kernel_verified`.
+Closes the `pow_mul` item in `packets/elementary/algebra/QUEUE.md`
+(remaining next targets: `add_sq_three`, `div_add_div_same`, `pow_succ'`).
+
+Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
+0 errors each) and hash-stamped; full corpus revalidated clean at 306
+packets, 0 errors, 0 warnings (280 verified public + 26 negative per
+`corpus_stats.py`, 112.0% of the 250-packet v0.1 public target — both
+packet-count release criteria remain comfortably met, negative examples
+now at 26/25).

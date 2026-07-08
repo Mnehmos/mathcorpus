@@ -2,8 +2,8 @@
 
 | Metric | Value |
 |--------|-------|
-| Packets | 4 |
-| Level breakdown | L0_elementary: 2, L1_proof_basics: 2 — see `trust.rung: 0` |
+| Packets | 5 |
+| Level breakdown | L0_elementary: 3, L1_proof_basics: 2 — see `trust.rung: 0` |
 
 Packets:
 
@@ -37,6 +37,12 @@ Packets:
   independently-landed instance of the same ring-ignores-hypotheses lesson
   as `frac_sum_bare_ring_missing_field_simp.v1.json` above, on a distinct
   concrete statement.
+- `pow_mul_ring_timeout_failure.v1.json` — bare `ring` genuinely times out
+  after 60s on `x^(m*n) = (x^m)^n` (unlike the sibling `pow_add`, where
+  `ring` closes `x^(m+n) = x^m*x^n` instantly); `exact pow_mul x m n`
+  closes the same tracked episode (`13c20f38-d366-44f6-95be-95d9216d102d`)
+  `kernel_verified`. A distinct sub_category (timeout, not a clean
+  rejection) from this lane's other `ring` examples.
 
 Last synced: 2026-07-08 — re-sync against
 `agents/status/MATHCORPUS_STATUS.md` and `python tools/corpus_stats.py`

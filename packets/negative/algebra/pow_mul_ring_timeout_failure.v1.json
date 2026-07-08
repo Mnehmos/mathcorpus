@@ -1,0 +1,62 @@
+{
+  "packet_id": "negative.algebra.pow_mul_ring_timeout_failure.v1",
+  "packet_version": "1.0.0",
+  "title": "ring times out on the exponent-multiplication law",
+  "domain": "algebra",
+  "level": "L0_elementary",
+  "kind": "negative_example",
+  "status": "failed_attempt",
+  "difficulty_bin": "D0",
+  "source_provenance": {
+    "source_kind": "repo_original",
+    "source_refs": [
+      "packets/elementary/algebra/pow_mul.v1.json"
+    ],
+    "authors": [
+      "The MathCorpus Authors"
+    ],
+    "copyright_holder": "The MathCorpus Authors",
+    "license_spdx": "Apache-2.0",
+    "license_content": "CC-BY-4.0",
+    "statement_fidelity": "author_written"
+  },
+  "informal_statement": "The exponent-multiplication law `x^(m*n) = (x^m)^n` for a real base and natural exponents m, n, attacked with bare `ring` before `exact pow_mul x m n` closed the same episode.",
+  "failure": {
+    "gap_category": "tactic_mismatch",
+    "sub_category": "ring_timeout_on_variable_exponent_product",
+    "input_context_summary": "Goal `x ^ (m * n) = (x ^ m) ^ n` over ℝ with `m n : ℕ` both variable (not literals).",
+    "attempt_summary": "Submitted `ring` directly, by analogy with the sibling packet `pow_add` where `ring` closes `x^(m+n) = x^m * x^n` instantly. Here, `ring` instead ran for the full 60-second budget and the kernel rejected the step with 'Lean invocation timed out after 60 seconds' — a deterministic budget-burner, not a slow success. Tracked via proofsearch episode 13c20f38-d366-44f6-95be-95d9216d102d, step 1, kernel_fail. The same episode then closed the obligation on step 2 with `exact pow_mul x m n` (the direct Mathlib lemma), reaching kernel_verified immediately.",
+    "lesson": "`ring`'s normal form handles a *sum* of variable natural-number exponents cheaply (`x^(m+n) = x^m*x^n`, as in the `pow_add` packet) but a *product* of two variable exponents (`x^(m*n) = (x^m)^n`) is a much harder normalization problem for its internal representation and can time out rather than fail fast. Treat `ring` on a goal with a product of variable exponents as a likely deterministic timeout, not a slow-but-eventual success — reach directly for the named lemma (`pow_mul`) instead."
+  },
+  "proof_body_redacted": false,
+  "trust": {
+    "rung": 0,
+    "proof_authority": "none",
+    "public_claim_class": "public_safe"
+  },
+  "training": {
+    "eligibility": "negative_example_only",
+    "reason_codes": [
+      "public",
+      "explicit_negative_label"
+    ],
+    "dedupe_cluster_id": "algebra.pow_mul.failure_patterns",
+    "template_family_id": "algebra.automation_hazards",
+    "contamination_risk": "low"
+  },
+  "dependencies": {
+    "kits": [],
+    "tactic_tags": [
+      "ring",
+      "pow_mul"
+    ],
+    "prerequisite_concepts": [
+      "power",
+      "exponent_laws"
+    ]
+  },
+  "notes": "Captured via tracked proof-search episode 13c20f38-d366-44f6-95be-95d9216d102d (problem_version d07c4a9f-f64c-429b-93b9-72391f4ee59a, environment_hash 9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d): step 1 (bare `ring`) recorded kernel_fail with 'Lean invocation timed out after 60 seconds'; step 2 (`exact pow_mul x m n`) closed the same episode kernel_verified as packets/elementary/algebra/pow_mul.v1.json.",
+  "hashes": {
+    "packet_sha256": "d2d2eb4994a298021897d85ea9741a7fa8d6dd31f6afe7fcc908c66355997d98"
+  }
+}
