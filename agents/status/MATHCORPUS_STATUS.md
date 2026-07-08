@@ -1834,3 +1834,32 @@ this cycle: 258 verified public + 25 negative (283 files), 103.2% of the
 work (`packets/frontier/erdos/`, see the section immediately above) now
 that elementary/negative-example priorities are largely saturated —
 consistent with this loop's priority-4 fallback.
+
+## Proposed update — number_theory elementary packet: lcm_comm (this agent, 2026-07-08, /loop continuation)
+
+Startup this cycle: no bugs/triage. Considered `packets/elementary/geometry/QUEUE.md`'s
+remaining backlog item ("Law of sines", flagged L2, a genuinely harder
+companion to this agent's prior-cycle `law_of_cosines`, needing angle
+machinery beyond a simple two-side-one-angle coordinate setup) but judged
+it too risky to gamble a full cycle on blind, given comfortably-safer
+alternatives were available; checked combinatorics (queue empty),
+algebra, and number_theory instead. Picked number_theory's
+`lcm_comm` — flagged in that domain's own `QUEUE.md` as "the biggest
+single naming gap": a full `gcd_*` family existed but zero `lcm_*`
+packets.
+
+Added `packets/elementary/number_theory/lcm_comm.v1.json`: `Nat.lcm a b =
+Nat.lcm b a`, cited via `Nat.lcm_comm`. Produced via tracked episode
+`38f8f47e-8517-4ceb-966f-705792b6ab57` (problem_version
+`1a968cb9-bfb5-4362-994f-8e3b35a08c19`, dev-attested), `kernel_verified`
+on the first attempt. Opens the door for the queue's paired
+`dvd_lcm_left`/`dvd_lcm_right` and `gcd_mul_lcm` targets.
+
+Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
+0 errors) and hash-stamped; commit `ab325b5`, scoped to only these two new
+files. Full `packets/elementary/number_theory/` revalidated clean at 51
+packets, 0 errors, 0 warnings; full corpus at 259 verified public + 25
+negative (103.6% of the v0.1 public target) as of this update. Also
+noted: a concurrent agent's frontier work has now produced its first
+packet (`by domain: {..., 'frontier': 1}`, `L7_frontier: 1` in
+`python tools/corpus_stats.py`'s level breakdown).
