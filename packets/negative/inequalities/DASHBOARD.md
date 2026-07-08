@@ -2,7 +2,7 @@
 
 | Metric | Value |
 |--------|-------|
-| Packets | 3 |
+| Packets | 4 |
 | Level breakdown | n/a — negative examples are not leveled the same way; see `trust.rung: 0` |
 
 Packets:
@@ -24,6 +24,13 @@ Packets:
   b)]` closes the same tracked episode (`8cbd4eff-8a4a-4c80-b0bb-49cfa0c7e181`)
   `kernel_verified`. A distinct "wrong tactic entirely" failure class vs.
   this lane's other "right tactic, missing hints" examples.
+- `cauchy_three_term_bare_nlinarith_failure.v1.json` — bare `nlinarith` (no
+  hints) fails on the six-variable, degree-4 three-term Cauchy-Schwarz goal
+  `(ax+by+cz)^2 <= (a^2+b^2+c^2)(x^2+y^2+z^2)`; captured from a real tracked
+  episode (`e9e5244f-0ece-4b32-bc59-8c984a9f0307`), closed with `give_up`.
+  The Lagrange-identity square hints close the same statement on the first
+  attempt in a separate episode, authored as
+  `packets/elementary/inequalities/cauchy_three_term.v1.json`.
 
 Last synced: 2026-07-08 — re-sync against
 `agents/status/MATHCORPUS_STATUS.md` and `python tools/corpus_stats.py`

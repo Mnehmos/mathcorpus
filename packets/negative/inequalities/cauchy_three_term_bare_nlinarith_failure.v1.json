@@ -1,0 +1,59 @@
+{
+  "packet_id": "negative.inequalities.cauchy_three_term_bare_nlinarith_failure.v1",
+  "packet_version": "1.0.0",
+  "title": "Bare nlinarith fails on the three-term Cauchy-Schwarz inequality",
+  "domain": "algebra",
+  "level": "L2_olympiad",
+  "kind": "negative_example",
+  "status": "failed_attempt",
+  "difficulty_bin": "D2",
+  "source_provenance": {
+    "source_kind": "repo_original",
+    "source_refs": [
+      "packets/elementary/inequalities/cauchy_three_term.v1.json"
+    ],
+    "authors": [
+      "The MathCorpus Authors"
+    ],
+    "copyright_holder": "The MathCorpus Authors",
+    "license_spdx": "Apache-2.0",
+    "license_content": "CC-BY-4.0",
+    "statement_fidelity": "author_written"
+  },
+  "informal_statement": "The three-term Cauchy-Schwarz goal `(a*x+b*y+c*z)^2 <= (a^2+b^2+c^2)*(x^2+y^2+z^2)` (six free real variables) attacked by bare `nlinarith` with no hint terms.",
+  "failure": {
+    "gap_category": "tactic_mismatch",
+    "sub_category": "nlinarith_missing_sos_certificate",
+    "input_context_summary": "Goal: (a*x+b*y+c*z)^2 <= (a^2+b^2+c^2)*(x^2+y^2+z^2) over six free real variables a, b, c, x, y, z.",
+    "attempt_summary": "Applied bare `nlinarith` (no square hint terms) directly to the goal. nlinarith's default search only multiplies pairs of hypotheses/atomic subterms already in context; with no hypotheses at all and a degree-4 target over six variables, it cannot synthesize the needed Lagrange-identity decomposition (a*y-b*x)^2 + (a*z-c*x)^2 + (b*z-c*y)^2 on its own. Kernel-rejected (tracked episode e9e5244f-0ece-4b32-bc59-8c984a9f0307) with: \"linarith failed to find a contradiction\\na b c x y z : ℝ\\na✝ : (a^2+b^2+c^2)*(x^2+y^2+z^2) < (a*x+b*y+c*z)^2\\n⊢ False\\nfailed\".",
+    "lesson": "Supply the Lagrange-identity square hints explicitly -- nlinarith [sq_nonneg (a*y-b*x), sq_nonneg (a*z-c*x), sq_nonneg (b*z-c*y)] -- rather than expecting nlinarith to discover a three-term sum-of-squares certificate for a six-variable degree-4 goal unaided. The immediate fix kernel-verified on the first hinted attempt and became elementary.inequalities.cauchy_three_term.v1."
+  },
+  "proof_body_redacted": false,
+  "trust": {
+    "rung": 0,
+    "proof_authority": "none",
+    "public_claim_class": "public_safe"
+  },
+  "training": {
+    "eligibility": "negative_example_only",
+    "reason_codes": [
+      "public",
+      "explicit_negative_label"
+    ],
+    "dedupe_cluster_id": "inequalities.nlinarith_missing_hint_failures",
+    "template_family_id": "inequalities.automation_hazards",
+    "contamination_risk": "low"
+  },
+  "dependencies": {
+    "kits": [],
+    "tactic_tags": [
+      "nlinarith",
+      "sq_nonneg",
+      "cauchy_schwarz"
+    ]
+  },
+  "notes": "Captured via tracked proof-search episode e9e5244f-0ece-4b32-bc59-8c984a9f0307 (problem_version 21465ebd-7fc9-4c97-954c-3fff027d08e7, dev-attested; environment_hash 9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d), closed with give_up after the single rejected bare-nlinarith attempt. Companion to elementary.inequalities.cauchy_three_term.v1, which kernel-verified on its first attempt with the correct SOS hints in a separate episode. Labeled non-proof-bearing training data (rung 0).",
+  "hashes": {
+    "packet_sha256": "ee950db04732117aa1b986be942e092305733eaa44a96fd3179fb7a52dbd25a2"
+  }
+}

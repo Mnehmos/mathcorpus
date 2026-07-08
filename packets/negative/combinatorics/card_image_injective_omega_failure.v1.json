@@ -1,0 +1,73 @@
+{
+  "packet_id": "negative.combinatorics.card_image_injective.omega_failure.v1",
+  "packet_version": "1.0.0",
+  "title": "omega cannot use an injectivity hypothesis to relate image cardinality",
+  "domain": "combinatorics",
+  "level": "L1_proof_basics",
+  "kind": "negative_example",
+  "status": "failed_attempt",
+  "difficulty_bin": "D1",
+  "source_provenance": {
+    "source_kind": "repo_original",
+    "source_refs": [],
+    "authors": [
+      "The MathCorpus Authors"
+    ],
+    "copyright_holder": "The MathCorpus Authors",
+    "license_spdx": "Apache-2.0",
+    "license_content": "CC-BY-4.0",
+    "statement_fidelity": "author_written"
+  },
+  "informal_statement": "A goal proving `(s.image f).card = s.card` given `Function.Injective f`, attacked by `omega` directly on the two `Finset.card` atoms instead of citing the structural lemma that uses the injectivity hypothesis.",
+  "failure": {
+    "gap_category": "tactic_mismatch",
+    "sub_category": "linear_arith_on_opaque_finset_card_atoms",
+    "input_context_summary": "Goal was `(s.image f).card = s.card` for `s : Finset ℕ`, `f : ℕ → ℕ`, with `hf : Function.Injective f` in context.",
+    "attempt_summary": "Applied `omega` directly after `intro s f hf`. `omega` cannot consume the `Function.Injective f` hypothesis at all -- it treats `s.card` and `(Finset.image f s).card` as two independent, unconstrained natural-number atoms and reports a spurious counterexample (`a - b >= 1` for `a := s.card`, `b := (Finset.image f s).card`), since it has no built-in knowledge of the image-cardinality relationship the injectivity hypothesis establishes.",
+    "lesson": "Bridge Finset image-cardinality facts (e.g. `Finset.card_image_of_injective`) into the goal before invoking `omega`/`nlinarith`; these tactics only see linear relations they are told about over the atoms actually present in the goal, and cannot connect an unrelated hypothesis like `Function.Injective f` to a `Finset.card` equality on their own."
+  },
+  "proof_body_redacted": false,
+  "trust": {
+    "rung": 0,
+    "proof_authority": "none",
+    "public_claim_class": "public_safe"
+  },
+  "training": {
+    "eligibility": "negative_example_only",
+    "reason_codes": [
+      "public",
+      "explicit_negative_label"
+    ],
+    "dedupe_cluster_id": "combinatorics.card_image.failure_patterns",
+    "template_family_id": "combinatorics.automation_hazards",
+    "contamination_risk": "low"
+  },
+  "dependencies": {
+    "kits": [
+      "ExtremalCombinatoricsKit"
+    ],
+    "tactic_tags": [
+      "omega",
+      "Finset.card",
+      "Finset.card_image_of_injective"
+    ],
+    "prerequisite_concepts": [
+      "finite_set",
+      "cardinality",
+      "image",
+      "injective_function"
+    ]
+  },
+  "verification": {
+    "verifier": "proofsearch",
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "episode_id": "5f59b5d8-e34b-4def-9892-5ba68f409d7b",
+    "fidelity_status": "attested",
+    "import_manifest_hash": "9bcbf693553e0e2efdb421fcec33c3cc5f71fcc7ea63883b4184635f5df699c2",
+    "step_count": 2
+  },
+  "notes": "Produced through the tracked proof-search MCP loop (problem 8123695e-f185-49a4-8533-01f41051ae62, episode 5f59b5d8-e34b-4def-9892-5ba68f409d7b): step 1 (`intro s f hf; omega`) returned a kernel_fail with the omega tactic-failure diagnostic quoted in failure.attempt_summary; step 2, citing `Finset.card_image_of_injective` directly, reached kernel_verified in the same episode and was authored as the companion positive packet elementary.combinatorics.card_image_of_injective.v1. Closes the domain's long-queued 'omega/decide timeout on a Finset.card goal requiring an explicit structural lemma' backlog item.",
+  "hashes": {
+    "packet_sha256": "39fe787f4acdad14d928d510d4a5bd454a5f0a798c9ee175a3713c6ef369fb06"
+  }
+}

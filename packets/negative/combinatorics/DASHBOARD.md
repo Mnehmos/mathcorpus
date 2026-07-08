@@ -2,7 +2,7 @@
 
 | Metric | Value |
 |--------|-------|
-| Packets | 3 |
+| Packets | 4 |
 | Level breakdown | n/a — negative examples are not leveled the same way; see `trust.rung: 0` |
 
 - `filter_prime_simp_no_progress.v1.json` — bare `simp` makes no progress
@@ -30,6 +30,15 @@
   `packets/elementary/combinatorics/card_union_not_additive.v1.json`
   (episode `f2bb04ed-af84-4d4c-a1ac-c1f953ffea51`, `kernel_verified`, via
   witness `s = t = {0}`).
+- `card_image_injective_omega_failure.v1.json` — bare `omega` cannot use a
+  `Function.Injective f` hypothesis to relate `(s.image f).card` and
+  `s.card`, treating them as unrelated atoms; `Finset.card_image_of_injective`
+  closes it directly. Produced via tracked episode
+  `5f59b5d8-e34b-4def-9892-5ba68f409d7b` (step 1 `omega` -> kernel_fail,
+  step 2 the structural lemma -> kernel_verified, authored as the
+  companion positive packet
+  `elementary.combinatorics.card_image_of_injective.v1`). Resolves the
+  domain's long-queued backlog item.
 
 Last synced: 2026-07-08 — re-sync against
 `agents/status/MATHCORPUS_STATUS.md` and `python tools/corpus_stats.py`

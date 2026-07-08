@@ -2,7 +2,7 @@
 
 | Metric | Value |
 |--------|-------|
-| Packets | 50 |
+| Packets | 51 |
 | Level breakdown | see individual packets — includes `card_union_not_additive.v1.json` and `primes_below_ten_card.v1.json` (other concurrent agents' additions) not itemized below |
 
 Additions this session (2026-07-08, all kernel-verified via the tracked
@@ -20,7 +20,9 @@ cardinality packet), `pigeonhole_general` (arbitrary-cardinality
 generalization of `pigeonhole_3_into_2`), `card_filter_partition`
 (first filter counting/partition packet), and `prod_range_succ'` (first
 genuine recurrence-style product identity, beyond the trivial
-`prod_range_one'`/`prod_range_zero'`). Full episode IDs are in each packet's own
+`prod_range_one'`/`prod_range_zero'`), and `card_image_of_injective'`
+(companion to a paired negative example — bare `omega` cannot use a
+`Function.Injective` hypothesis). Full episode IDs are in each packet's own
 `verification.episode_id` field — see `git log` for this file for prior
 per-packet detail if needed.
 

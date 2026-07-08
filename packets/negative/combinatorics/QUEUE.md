@@ -10,9 +10,7 @@ hypotheses to verify via a real tracked episode, not pre-asserted facts.
 
 ## Backlog
 
-- [ ] `omega`/`decide` timeout attempting to close a `Finset.card` goal
-      that actually requires an explicit `Finset.card_image_of_injective`
-      or similar structural lemma rather than computation.
+- [ ] (empty)
 
 ## Done
 
@@ -29,3 +27,11 @@ hypotheses to verify via a real tracked episode, not pre-asserted facts.
       `decide` closes it. Verified live via tracked episode
       `d7f066f6-d930-417e-8988-390c84166574`, 2026-07-08. Companion
       positive packet: `elementary.combinatorics.primes_below_ten_card.v1`.
+- [x] **`omega`/`decide` on a `Finset.card` goal needing
+      `card_image_of_injective`.** `card_image_injective_omega_failure.v1.json`
+      — bare `omega` cannot use a `Function.Injective f` hypothesis to
+      relate `(s.image f).card` and `s.card`;
+      `Finset.card_image_of_injective` closes it. Verified live via
+      tracked episode `5f59b5d8-e34b-4def-9892-5ba68f409d7b`, 2026-07-08.
+      Companion positive packet:
+      `elementary.combinatorics.card_image_of_injective.v1`.

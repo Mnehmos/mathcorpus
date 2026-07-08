@@ -1631,3 +1631,30 @@ full validate: 274 packets, 0 errors; corpus_stats.py showed 251 verified
 public (100.4% of 250 -- public target already met) and 23 negative
 (92% of 25 -- only 2 more needed to close the v0.1 release criteria's
 last open gap).
+
+## Proposed update — combinatorics negative example #4 + positive companion (this agent, 2026-07-08, /loop continuation)
+
+With the public target met and the negative-example gap the clear
+priority (23/25 at start of this cycle), pivoted from the elementary
+`Set.mem_union` queue item to close this domain's own long-queued
+negative-example backlog item instead: "`omega`/`decide` timeout
+attempting to close a `Finset.card` goal that actually requires an
+explicit `Finset.card_image_of_injective`."
+
+Added `packets/negative/combinatorics/card_image_injective_omega_failure.v1.json`:
+bare `omega` applied to `(s.image f).card = s.card` given `hf :
+Function.Injective f` cannot consume the injectivity hypothesis at all —
+it treats `s.card` and `(Finset.image f s).card` as two unrelated opaque
+atoms and reports a spurious counterexample. Plus companion positive
+packet `packets/elementary/combinatorics/card_image_of_injective.v1.json`
+(`Finset.card_image_of_injective` closes it directly). Both produced via
+the same tracked episode `5f59b5d8-e34b-4def-9892-5ba68f409d7b` (problem_version
+`8123695e-f185-49a4-8533-01f41051ae62`, dev-attested): step 1 (`omega`)
+genuinely `kernel_fail`'d, step 2 (the structural lemma) reached
+`kernel_verified`. This is combinatorics' 4th negative example and closes
+the domain's negative-example QUEUE.md entirely (moved to `## Done`).
+Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
+0 errors each) and hash-stamped; full corpus revalidated clean at 277
+packets, 0 errors, 0 warnings as of this update — per this count the
+roadmap's negative-example gap is now at most 1 remaining corpus-wide
+(24/25 or better, depending on other agents' concurrent in-flight work).
