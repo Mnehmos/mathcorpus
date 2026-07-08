@@ -1,0 +1,72 @@
+{
+  "packet_id": "negative.number_theory.decide_unbounded_prime_universal.v1",
+  "packet_version": "1.0.0",
+  "title": "decide has no Decidable instance for an unbounded universal primality claim",
+  "domain": "number_theory",
+  "level": "L1_proof_basics",
+  "kind": "negative_example",
+  "status": "failed_attempt",
+  "difficulty_bin": "D1",
+  "source_provenance": {
+    "source_kind": "repo_original",
+    "source_refs": [],
+    "authors": [
+      "The MathCorpus Authors"
+    ],
+    "copyright_holder": "The MathCorpus Authors",
+    "license_spdx": "Apache-2.0",
+    "license_content": "CC-BY-4.0",
+    "statement_fidelity": "author_written"
+  },
+  "informal_statement": "For every natural n, 4*n is not prime: ∀ n : ℕ, ¬ Nat.Prime (4 * n), attacked by the `decide` tactic directly instead of an actual argument.",
+  "formal_statement_pp": "theorem root_theorem : ∀ n : ℕ, ¬ Nat.Prime (4 * n)",
+  "failure": {
+    "gap_category": "tactic_mismatch",
+    "sub_category": "decide_on_unbounded_universal",
+    "input_context_summary": "Goal `∀ n : ℕ, ¬ Nat.Prime (4 * n)` before any `intro`.",
+    "attempt_summary": "Applied `decide` directly on the unbounded universal. `decide` requires a `Decidable` instance for the whole goal, and Lean cannot synthesize `Decidable (∀ (n : ℕ), ¬Nat.Prime (4 * n))` since ℕ is infinite and there is no bounded/finite quantifier instance to fall back on. kernel_fail (elaboration failure: 'failed to synthesize Decidable (∀ (n : ℕ), ¬Nat.Prime (4 * n))').",
+    "lesson": "`decide` only works on goals with a genuine `Decidable` instance, which for quantified statements generally means the quantifier must range over a `Fintype`/bounded domain (e.g. `∀ n < N, P n` via `Nat.decidableBallLT`) or the statement must reduce to a decidable proposition after the binder is removed. A bare `∀ n : ℕ, ...` claim over the whole of ℕ has no such instance regardless of how simple the underlying arithmetic fact is -- this is a decidability-shape mismatch, not a difficulty issue. The fix is to `intro n` and prove the body directly (here: `2 ∣ 4*n` plus `Nat.Prime.eq_one_or_self_of_dvd` plus `omega`), which is exactly the companion positive packet's route."
+  },
+  "proof_body_redacted": false,
+  "trust": {
+    "rung": 0,
+    "proof_authority": "none",
+    "public_claim_class": "public_safe"
+  },
+  "training": {
+    "eligibility": "negative_example_only",
+    "reason_codes": [
+      "public",
+      "explicit_negative_label"
+    ],
+    "dedupe_cluster_id": "nt.four_mul_not_prime",
+    "template_family_id": "number_theory.automation_hazards",
+    "contamination_risk": "low"
+  },
+  "dependencies": {
+    "kits": [],
+    "tactic_tags": [
+      "decide",
+      "Decidable",
+      "Nat.Prime"
+    ],
+    "prerequisite_concepts": [
+      "primality",
+      "decidability",
+      "unbounded_quantifier"
+    ]
+  },
+  "verification": {
+    "verifier": "proofsearch",
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "episode_id": "3148ceed-b740-4b21-a788-7b239face439",
+    "import_manifest_hash": "aaf21893d520a78dee0787a1bcaf939ee6b922265ff670c272e2e1d450dd29a7",
+    "kernel_verified": false,
+    "fidelity_status": "attested",
+    "step_count": 2
+  },
+  "notes": "Produced via tracked proofsearch episode 3148ceed-b740-4b21-a788-7b239face439 (problem_version e6dee3bb-782e-412d-90e2-12a0e742b723): step 1, bare `decide`, returned kernel_fail with diagnostic 'failed to synthesize Decidable (∀ (n : ℕ), ¬Nat.Prime (4 * n))' -- confirming the number_theory negative-example queue's predicted failure mode for an unbounded primality-style claim. Step 2, `intro n hp; have h2 : (2:ℕ) ∣ 4 * n := ⟨2 * n, by ring⟩; have h3 := hp.eq_one_or_self_of_dvd 2 h2; omega`, reached kernel_verified and is packetized as the companion positive theorem elementary.number_theory.four_mul_not_prime.v1. This is a distinct decidability-shape failure mode from the domain's existing omega-focused negative examples (divisor_case_split_omega_unevaluated_literal, gcd_dvd_omega_no_gcd_theory, sq_parity_omega_nonlinear_failure) -- the tactic mismatch here is `decide`'s total inability to handle an unbounded universal, not omega's partial theory gaps.",
+  "hashes": {
+    "packet_sha256": "f00a88e774aef1a7353a5787e29a8473a97e5839c4530490040a1fefb812caf6"
+  }
+}

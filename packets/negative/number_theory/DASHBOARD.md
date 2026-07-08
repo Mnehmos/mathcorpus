@@ -2,7 +2,7 @@
 
 | Metric | Value |
 |--------|-------|
-| Packets | 3 |
+| Packets | 4 |
 | Level breakdown | n/a — negative examples are not leveled the same way; see `trust.rung: 0` |
 
 ## Packets
@@ -25,6 +25,14 @@
   step 2 `exact Nat.gcd_dvd_left a b` -> kernel_verified — but that
   theorem already existed as `elementary.number_theory.gcd_dvd_left.v1`,
   so no duplicate positive packet was authored).
+- `decide_unbounded_prime_universal.v1` — bare `decide` fails on
+  `∀ n : ℕ, ¬ Nat.Prime (4 * n)` because no `Decidable` instance exists
+  for an unbounded universal over ℕ (elaboration failure, not a search
+  timeout). Tracked via proofsearch episode
+  `3148ceed-b740-4b21-a788-7b239face439` (step 1 `decide` -> kernel_fail,
+  step 2 explicit divisibility argument -> kernel_verified; companion
+  positive packet `elementary.number_theory.four_mul_not_prime.v1`
+  authored alongside).
 
 Last synced: 2026-07-08 — re-sync against `agents/status/MATHCORPUS_STATUS.md`
 and `python tools/corpus_stats.py` after adding packets.

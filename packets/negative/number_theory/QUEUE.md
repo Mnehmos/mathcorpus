@@ -6,12 +6,7 @@ hypotheses to verify via a real tracked episode, not pre-asserted facts.
 
 ## Next targets
 
-- [ ] **decide on an unbounded primality-style claim.** Attempt
-      `decide`/`native_decide` on a statement quantified over all `n`
-      (e.g. "no `n` makes some divisibility pattern hold") rather than a
-      single concrete instance. Expected failure mode: the decidability
-      instance either doesn't exist or the search is unbounded; record
-      whatever error actually surfaces.
+(none currently queued — see Backlog)
 
 ## Backlog
 
@@ -38,6 +33,14 @@ hypotheses to verify via a real tracked episode, not pre-asserted facts.
       omega has zero theory of `Nat.gcd`, a total gap rather than a
       normalization issue. Verified live via tracked episode
       `e92f1fe2-eedb-48d5-94c8-9695aa253fed` (2026-07-08).
+- [x] `decide_unbounded_prime_universal.v1` — bare `decide` on
+      `∀ n : ℕ, ¬ Nat.Prime (4 * n)`; no `Decidable` instance for an
+      unbounded universal over ℕ (`kernel_fail`, elaboration failure, not
+      a search timeout). Verified live via tracked episode
+      `3148ceed-b740-4b21-a788-7b239face439` (2026-07-08). Companion
+      positive packet: `packets/elementary/number_theory/four_mul_not_prime.v1.json`
+      (`intro n hp; have h2 : (2:ℕ) ∣ 4 * n := ⟨2 * n, by ring⟩; have h3 :=
+      hp.eq_one_or_self_of_dvd 2 h2; omega`).
 
 Update this file after every completed packet (remove the item) and
 whenever a new candidate is identified (add it, with a one-line reason it's
