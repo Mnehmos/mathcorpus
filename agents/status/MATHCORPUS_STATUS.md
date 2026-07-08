@@ -646,3 +646,50 @@ Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
 0 errors) and hash-stamped. Commit scoped to only this packet's own files
 to avoid touching other agents' concurrent in-flight work elsewhere in
 the tree.
+
+## Proposed update — geometry elementary + negative pair: pythagorean_right_angle (this agent, 2026-07-08, /loop continuation)
+
+Startup this cycle: no bugs/triage. `python tools/corpus_stats.py` showed
+211 verified public + 11 negative (222 files). Checked
+`packets/elementary/inequalities/QUEUE.md` first (this agent's usual
+scope) — found its own prior `nesbitt_three_var` target's follow-up,
+`schur_degree_one`, already claimed and landed by another concurrent agent
+(commit visible in this file's section immediately above), and
+"Next targets" now empty there. Per priority-3 (furthest-behind domain),
+re-derived folder-level packet counts directly (the domain-field-based
+table above conflates `algebra`/`inequalities`/`induction`, all of which
+use `domain: "algebra"`): geometry had 29 packets on disk, the smallest
+folder at that moment (induction had already grown to 16 from concurrent
+agents this session). Picked geometry's `pythagorean_right_angle` — an
+explicitly flagged "curriculum-notable gap" in
+`packets/elementary/geometry/QUEUE.md` (the domain had `dist_sq_expand`,
+`distance_sq_nonneg`, `triangle_angle_sum` but no Pythagorean-theorem
+packet). Confirmed no file/packet_id collision before starting.
+
+Added `packets/elementary/geometry/pythagorean_right_angle.v1.json`: in
+this domain's coordinate-pair convention (points as plain `x_i y_i : ℝ`,
+not `EuclideanSpace`/`dist`), states that a right angle at B (dot product
+of (A-B) and (C-B) is zero) implies squared-distance(A,C) =
+squared-distance(A,B) + squared-distance(B,C). Produced via tracked
+episode `1ee45ae1-bde1-4cfa-bd4a-68261f9f8fb1` (problem_version
+`e220c871-1bc0-4699-bdf0-f7cd2b8b145a`, dev-attested), `kernel_verified` on
+the 2nd `solve` attempt (`nlinarith [h]`). Step 1, a bare `ring` attempt,
+genuinely kernel-failed with an `unsolved_goals` residual — `ring` only
+proves unconditional polynomial identities and never consults hypotheses,
+so it cannot use the right-angle condition `h` that makes this particular
+identity true. Preserved as
+`packets/negative/geometry/pythagorean_bare_ring_no_hypothesis_failure.v1.json`
+— a genuinely new `sub_category` (`ring_on_hypothesis_dependent_goal`) for
+this domain's negative-example lane, distinct from its existing
+`nlinarith`-timeout-on-angle-atoms example.
+
+Closes the `pythagorean_right_angle` item in
+`packets/elementary/geometry/QUEUE.md` (remaining next targets:
+`circle_point_dist_eq_radius`, `right_triangle_area_half_base_height`,
+`reflection_over_x_axis`); grows
+`packets/negative/geometry/` to 2 packets. Schema-validated
+(`validate_packets.py --check-hashes --warn-as-error`: 0 errors each) and
+hash-stamped; full corpus revalidated clean at 225 packets, 0 errors, 0
+warnings as of this update (213 verified public + 12 negative per
+`corpus_stats.py`, 85.2% of the 250-packet v0.1 public target, 12/25
+negative examples). Commit scoped to only this cycle's own files.

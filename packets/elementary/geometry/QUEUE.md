@@ -3,12 +3,20 @@
 Candidate packets to create or formalize next, roughly in priority order.
 Checked against the 29 existing packets (2026-07-07) to avoid duplicates.
 
+## Done
+
+- [x] `pythagorean_right_angle` — for a right angle at `B`, squared
+      distance A-to-C equals squared distance A-to-B plus squared distance
+      B-to-C (D1, L1). Authored 2026-07-08 via tracked episode
+      `1ee45ae1-bde1-4cfa-bd4a-68261f9f8fb1` (kernel_verified:
+      `nlinarith [h]` from the right-angle dot-product hypothesis). A bare
+      `ring` attempt kernel-failed first in the same episode (ring cannot
+      use hypotheses) and is preserved as
+      `packets/negative/geometry/pythagorean_bare_ring_no_hypothesis_failure.v1.json`.
+      Fills the curriculum-notable Pythagorean-theorem gap.
+
 ## Next targets
 
-- [ ] `pythagorean_right_angle` — for a right angle at `B`, `dist A C ^ 2 =
-      dist A B ^ 2 + dist B C ^ 2` (D1, L1). The domain has
-      `dist_sq_expand`, `distance_sq_nonneg`, and `triangle_angle_sum` but
-      no explicit Pythagorean-theorem packet — a curriculum-notable gap.
 - [ ] `circle_point_dist_eq_radius` — a point on a circle of center `c` and
       radius `r` satisfies `dist p c = r` (D0, L0). No circle-equation
       packet exists yet; pairs naturally with the existing
