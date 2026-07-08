@@ -1720,3 +1720,35 @@ gap (per this file's own guidance above: "keep adding packets for
 quality/balance... rather than treating the count targets as 'done,
 stop'") rather than just any available domain-furthest-behind item.
 Commit scoped to only this cycle's own files.
+
+## Proposed update — geometry elementary packet: law_of_cosines (this agent, 2026-07-08, /loop continuation)
+
+Startup this cycle: no new bugs/triage. Both v0.1 count criteria confirmed
+met (`python tools/corpus_stats.py`: 253 verified public + 25 negative at
+the top of this cycle). Checked `packets/elementary/geometry/QUEUE.md`
+(geometry, 37 packets) since induction/inequalities/functions queues were
+all previously drained: its backlog explicitly named "Law of cosines" as
+the natural next step after `triangle_angle_sum`/`dist_sq_expand`.
+
+Added `packets/elementary/geometry/law_of_cosines.v1.json`: coordinate/
+squared-distance form — placing vertices at the origin, `(b, 0)`, and
+`(a*cos θ, a*sin θ)`, the squared distance from `(b,0)` to the third
+vertex is `a^2 + b^2 - 2*a*b*cos θ`. Produced via tracked episode
+`d1f31293-c1bb-421f-aa27-8c7b8f88db8f` (problem_version
+`8695aa6a-ee35-42fa-8314-278e0bfa5b6c`, dev-attested), `kernel_verified`
+on the first attempt (`nlinarith [Real.sin_sq_add_cos_sq θ]`), matching
+the domain's established cos/sin-parametrization convention from
+`circle_point_dist_eq_radius`. Tooling note:
+`problem_imports: ["Mathlib.Analysis.SpecialFunctions.Trig.Basic"]` was
+rejected outright — that module's `.olean` doesn't exist on disk in this
+pinned build — fell back to the full `["Mathlib"]` import, which worked
+fine here (no repeat of the 60s-timeout issue hit on an unrelated target
+two cycles ago; likely load-dependent rather than import-set-dependent).
+Closes the "Law of cosines" backlog item; remaining backlog: "Law of
+sines" (a natural companion).
+
+Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
+0 errors) and hash-stamped; commit `987d5ee`, scoped to only these two new
+files. Full `packets/elementary/geometry/` revalidated clean at 35
+packets, 0 errors, 0 warnings; full corpus at 254 verified public + 25
+negative (101.6% of the v0.1 public target) as of this update.
