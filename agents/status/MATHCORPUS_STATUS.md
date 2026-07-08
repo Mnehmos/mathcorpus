@@ -584,3 +584,19 @@ Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
 files. Full `packets/elementary/induction/` revalidated clean at 16
 packets, 0 errors, 0 warnings as of this update (includes other agents'
 concurrent additions since the count above).
+
+## Proposed update — induction elementary packet, negative example pivot (this agent, 2026-07-08)
+
+Attempted the queued induction negative example ("induction without
+generalizing an auxiliary variable" -- foldl/reverse accumulator lemma
+proved by `induction l` with `acc` fixed). The natural-but-wrong attempt
+actually kernel-verified (`simp [ih]` bridges the accumulator shift on its
+own), so per the domain's own queue policy this was authored as a positive
+packet instead: `packets/elementary/induction/foldl_cons_eq_reverse_append.v1.json`
+(commit `5c61d06`). Corrected `packets/negative/induction/QUEUE.md` to
+suggest a weaker closing tactic (`rfl`/bare `exact ih`) for a genuine
+future attempt at this failure mode. Also hit a proof-transport snag along
+the way: a multi-line `induction l with | ... => ... | ... => ...` block
+under `proof_format: raw_lean_block` mis-parsed; putting the whole
+`with |...|...`  case-split on one line under the default
+`flat_tactic_sequence` format worked.
