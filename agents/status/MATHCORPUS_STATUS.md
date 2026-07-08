@@ -178,3 +178,25 @@ above. Schema-validated (`validate_packets.py --check-hashes
 --warn-as-error`: 0 errors) and hash-stamped; also removed the now-filled
 `card_union_add_card_inter` item from
 `packets/elementary/combinatorics/QUEUE.md`.
+
+## Proposed update — induction elementary packet (this agent, 2026-07-08, /loop continuation)
+
+Added `packets/elementary/induction/bernoulli_inequality.v1.json`: `1 + n*x
+<= (1+x)^n` for real `x >= -1`, proved by induction (successor step bridges
+`ih` through `mul_le_mul_of_nonneg_right` and drops the nonnegative
+`n*x^2` term via `sq_nonneg x`). Produced via tracked episode
+`344364cb-791a-4e8a-9f5e-be0cc95210de` (problem_version
+`b0ab294d-0ff8-4edd-9dd4-ef6e1a33f9da`, dev-attested), `kernel_verified` on
+the first `solve` attempt. Uses `InequalityEstimateKit`
+(cross-domain dependency recorded in
+`packets/elementary/induction/CROSS_DOMAIN.md`) and closes the
+`bernoulli_inequality` item from `packets/elementary/induction/QUEUE.md`.
+This is induction's 8th packet overall (7th elementary + the
+`two_pow_gt_self` negative example from the prior cycle this same session:
+commit `9229fac`). Schema-validated (`validate_packets.py --check-hashes
+--warn-as-error`: 0 errors) and hash-stamped;
+`python tools/validate_packets.py packets/` reports 200 packets total,
+0 errors, 0 warnings as of this update. Induction remains the smallest
+elementary domain (8 packets vs. next-smallest at 16) — recommend it stay
+top priority for elementary-gap work next cycle; remaining queue items are
+`sum_evens`, `geom_series_sum_induction`, `factorial_ge_two_pow`.

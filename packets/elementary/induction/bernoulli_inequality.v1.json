@@ -1,0 +1,104 @@
+{
+  "packet_id": "elementary.induction.bernoulli_inequality.v1",
+  "packet_version": "1.0.0",
+  "title": "Bernoulli's inequality",
+  "domain": "algebra",
+  "level": "L1_proof_basics",
+  "kind": "concept",
+  "status": "kernel_verified",
+  "difficulty_bin": "D1",
+  "lean_module": "MathCorpus.Elementary.Induction.BernoulliInequality",
+  "theorem_name": "bernoulli_inequality",
+  "imports": [
+    "Mathlib"
+  ],
+  "toolchain": {
+    "lean_version": "v4.32.0-rc1",
+    "mathlib_rev": "360da6fa66c1273b76b6b2d8c5666fd5ac2e3b56"
+  },
+  "source_provenance": {
+    "source_kind": "author_written",
+    "source_refs": [],
+    "authors": [
+      "The MathCorpus Authors"
+    ],
+    "copyright_holder": "The MathCorpus Authors",
+    "license_spdx": "Apache-2.0",
+    "license_content": "CC-BY-4.0",
+    "statement_fidelity": "author_written"
+  },
+  "informal_statement": "For every real x with x >= -1 and every natural number n, 1 + n*x <= (1 + x)^n (Bernoulli's inequality).",
+  "informal_proof_idea": "Induction on n. Base case n = 0: both sides equal 1. Successor case: from ih : 1 + n*x <= (1+x)^n and 1+x >= 0 (from x >= -1), multiply ih by (1+x) on the right (mul_le_mul_of_nonneg_right) to get (1+n*x)*(1+x) <= (1+x)^n*(1+x) = (1+x)^(n+1). Expand the left side to 1 + (n+1)*x + n*x^2 and drop the nonnegative n*x^2 term (sq_nonneg x) to land on 1 + (n+1)*x; nlinarith closes the chain.",
+  "formal_statement_pp": "theorem bernoulli_inequality (n : ℕ) (x : ℝ) (hx : -1 ≤ x) : 1 + (n : ℝ) * x ≤ (1 + x) ^ n",
+  "proof_body_path": "lean/MathCorpus/Elementary/Induction/BernoulliInequality.lean",
+  "proof_body_redacted": false,
+  "trust": {
+    "rung": 1,
+    "proof_authority": "lean_kernel",
+    "certificate_checker": "kernel_decide",
+    "encoding_required": false,
+    "encoding_soundness_status": "not_applicable",
+    "independent_review_status": "repo_reviewed",
+    "public_claim_class": "public_safe"
+  },
+  "training": {
+    "eligibility": "public_train",
+    "reason_codes": [
+      "public",
+      "non_benchmark",
+      "unredacted"
+    ],
+    "dedupe_cluster_id": "induction.bernoulli_inequality",
+    "template_family_id": "induction.exponential_growth_bounds",
+    "contamination_risk": "low",
+    "can_export_proof_body": true
+  },
+  "dependencies": {
+    "kits": [
+      "InequalityEstimateKit"
+    ],
+    "tactic_tags": [
+      "induction",
+      "pow_succ",
+      "mul_le_mul_of_nonneg_right",
+      "nlinarith",
+      "push_cast"
+    ],
+    "prerequisite_concepts": [
+      "induction",
+      "exponentiation",
+      "order_on_reals",
+      "nonnegativity"
+    ]
+  },
+  "metrics": {
+    "loc": 3,
+    "tactic_count": 1
+  },
+  "artifacts": {
+    "public_files": [
+      "lean/MathCorpus/Elementary/Induction/BernoulliInequality.lean"
+    ]
+  },
+  "review": {
+    "review_basis": "repo self-review; kernel-verified through the tracked proof-search loop",
+    "reviewer_status": "repo_reviewed"
+  },
+  "verification": {
+    "verifier": "proofsearch",
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "episode_id": "344364cb-791a-4e8a-9f5e-be0cc95210de",
+    "outcome": "kernel_verified",
+    "kernel_verified": true,
+    "fidelity_status": "attested",
+    "step_count": 1,
+    "import_manifest_hash": "5f890eac705f3ffc815a8935a6d7e2e3900e9479b5dff4d6bd467ae99f5e8f7e",
+    "verified_at": "2026-07-08T03:13:10Z"
+  },
+  "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 344364cb), first attempt kernel_verified. Closes the induction elementary QUEUE.md `bernoulli_inequality` target; cross-references `packets/elementary/inequalities/` per that queue note.",
+  "hashes": {
+    "packet_sha256": "74c05e32208e70d94036da03e7f2996542bd8ddbf3fae770c76c08e7b9ed29e4",
+    "formal_statement_sha256": "1f67eebcf603fe5e9172ac1b31bf6e032da237554b854718cee91bfda6e4ed2d",
+    "proof_body_sha256": "8ca3df9f4b850c68afab521f2a9fda071b40aec4d32417bce0ff15b5140a40f3"
+  }
+}

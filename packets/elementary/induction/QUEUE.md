@@ -1,7 +1,7 @@
 # Queue — Induction (Elementary)
 
 Candidate packets to create or formalize next, roughly in priority order.
-**This domain is the smallest in the corpus (7 packets) — prioritize it
+**This domain is the smallest in the corpus (8 packets) — prioritize it
 over other elementary domains when otherwise unconstrained**, per
 `agents/status/MATHCORPUS_STATUS.md`.
 
@@ -14,12 +14,16 @@ over other elementary domains when otherwise unconstrained**, per
       (no `pow_succ` rewrite) kernel-failed first in the same episode and is
       preserved as
       `packets/negative/induction/pow_succ_atom_nlinarith_failure.v1.json`.
+- [x] `bernoulli_inequality` — `1 + n*x <= (1+x)^n` for `x >= -1` (D1, L1).
+      Authored 2026-07-08 via tracked episode
+      `344364cb-791a-4e8a-9f5e-be0cc95210de` (kernel_verified on the first
+      attempt: `induction n`, `mul_le_mul_of_nonneg_right ih hx'` +
+      `sq_nonneg x` as nlinarith hints). Uses `InequalityEstimateKit`
+      (recorded in `CROSS_DOMAIN.md`); cross-references
+      `packets/elementary/inequalities/`.
 
 ## Next targets
 
-- [ ] `bernoulli_inequality` — `(1 + x) ^ n >= 1 + n * x` for `x >= -1`
-      (D1, L1). A textbook induction-by-tactic example; also a natural
-      cross-domain link to `packets/elementary/inequalities/`.
 - [ ] `sum_evens` — `∑ i in range n, 2 * i = n * (n - 1)` (D0/D1, L0/L1).
       The domain already has `sum_odds`; the evens companion is a natural,
       cheap addition.
