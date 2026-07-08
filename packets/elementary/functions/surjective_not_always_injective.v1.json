@@ -1,0 +1,100 @@
+{
+  "packet_id": "elementary.functions.surjective_not_always_injective.v1",
+  "packet_version": "1.0.0",
+  "title": "Surjective does not imply injective on an infinite domain",
+  "domain": "algebra",
+  "level": "L1_proof_basics",
+  "kind": "theorem",
+  "status": "kernel_verified",
+  "difficulty_bin": "D1",
+  "lean_module": "MathCorpus.Elementary.Functions.SurjectiveNotAlwaysInjective",
+  "theorem_name": "surjective_not_always_injective",
+  "imports": [
+    "Mathlib"
+  ],
+  "toolchain": {
+    "lean_version": "v4.32.0-rc1",
+    "mathlib_rev": "360da6fa66c1273b76b6b2d8c5666fd5ac2e3b56"
+  },
+  "source_provenance": {
+    "source_kind": "author_written",
+    "source_refs": [],
+    "authors": [
+      "The MathCorpus Authors"
+    ],
+    "copyright_holder": "The MathCorpus Authors",
+    "license_spdx": "Apache-2.0",
+    "license_content": "CC-BY-4.0",
+    "statement_fidelity": "author_written"
+  },
+  "informal_statement": "It is not the case that every surjective function f : ℕ -> ℕ is injective. The finite pigeonhole fact (surjective implies injective between equal-size finite sets) does not generalize to the infinite domain ℕ: witnessed by f(n) = n - 1 (Nat truncated subtraction), which is surjective (f(m+1) = m for every m) but not injective (f(0) = f(1) = 0).",
+  "informal_proof_idea": "Assume the universal claim for contradiction, instantiate at f = (n |-> n - 1), discharge surjectivity via the witness n = m + 1, then derive 0 = 1 from injectivity applied to the equal images f(0) = f(1) = 0, closing by decide.",
+  "formal_statement_pp": "theorem surjective_not_always_injective : ¬ (∀ f : ℕ → ℕ, Function.Surjective f → Function.Injective f)",
+  "proof_body_path": "lean/MathCorpus/Elementary/Functions/SurjectiveNotAlwaysInjective.lean",
+  "proof_body_redacted": false,
+  "trust": {
+    "rung": 1,
+    "proof_authority": "lean_kernel",
+    "certificate_checker": "kernel_decide",
+    "encoding_required": false,
+    "encoding_soundness_status": "not_applicable",
+    "independent_review_status": "repo_reviewed",
+    "public_claim_class": "public_safe"
+  },
+  "training": {
+    "eligibility": "public_train",
+    "reason_codes": [
+      "public",
+      "non_benchmark",
+      "unredacted"
+    ],
+    "dedupe_cluster_id": "functions.surjective_injective_converse",
+    "template_family_id": "functions.injectivity_basics",
+    "contamination_risk": "low",
+    "can_export_proof_body": true
+  },
+  "dependencies": {
+    "kits": [],
+    "tactic_tags": [
+      "decide",
+      "Function.Surjective",
+      "Function.Injective"
+    ],
+    "prerequisite_concepts": [
+      "function",
+      "injectivity",
+      "surjectivity",
+      "pigeonhole",
+      "infinite_set"
+    ]
+  },
+  "metrics": {
+    "loc": 6,
+    "tactic_count": 4
+  },
+  "artifacts": {
+    "public_files": [
+      "lean/MathCorpus/Elementary/Functions/SurjectiveNotAlwaysInjective.lean"
+    ]
+  },
+  "review": {
+    "review_basis": "repo self-review; kernel-verified through the tracked proof-search loop",
+    "reviewer_status": "repo_reviewed"
+  },
+  "verification": {
+    "verifier": "proofsearch",
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "episode_id": "0b3fa2fb-5c8c-4295-8fd2-317131e38400",
+    "outcome": "kernel_verified",
+    "kernel_verified": true,
+    "fidelity_status": "attested",
+    "step_count": 1,
+    "import_manifest_hash": "aaf21893d520a78dee0787a1bcaf939ee6b922265ff670c272e2e1d450dd29a7"
+  },
+  "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 0b3fa2fb, problem_version d8740856-06cf-4265-9564-11aff3106297). Companion to the negative example negative.functions.surjective_implies_injective.finite_pigeonhole_misapplied.v1, which captures the natural-but-false direct attempt on the unconditional claim (simp [Function.Injective], leaving an unsolved_goals residual) in a separate tracked episode (a1bfdf14).",
+  "hashes": {
+    "packet_sha256": "ec862a0048961c5ad7acb129d967678cd1ab0eb127951f298ccf0da80aecbaf0",
+    "formal_statement_sha256": "8093977f21dd338c15c37a0e0d58a958f1943978a4ac41b07c81602634f5ff68",
+    "proof_body_sha256": "8f102212eb0f4342397ebe1da639ee32883d875db8997c1111fc4c3ee5f2c8f4"
+  }
+}

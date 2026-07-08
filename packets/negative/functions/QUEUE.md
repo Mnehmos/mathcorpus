@@ -6,13 +6,7 @@ hypotheses to verify via a real tracked episode, not pre-asserted facts.
 
 ## Next targets
 
-- [ ] A false "converse" statement: attempting to prove every surjective
-      function between two `Finset`-backed finite types of equal
-      cardinality is automatically injective **without** invoking the
-      finite-cardinality lemma that makes it true (i.e. via a tactic that
-      can't see finiteness) — verify the concrete failure mode before
-      adding; if the natural tactic just succeeds, this isn't a valid
-      negative example.
+*(empty — see Backlog)*
 
 ## Backlog
 
@@ -35,3 +29,13 @@ hypotheses to verify via a real tracked episode, not pre-asserted facts.
       `9c3f7163-...`) — so a linear target is not a valid candidate for
       this failure mode; use a non-cancellable (quadratic or higher)
       target instead.
+- [x] **False converse: surjective implies injective, misapplied to an
+      infinite domain.**
+      `surjective_implies_injective_finite_pigeonhole_misapplied.v1.json`
+      — `simp [Function.Injective]` on `∀ f : ℕ → ℕ, Surjective f →
+      Injective f` correctly leaves the goal unsolved (the claim is
+      false without finiteness); falseness kernel-verified separately via
+      witness `f n = n - 1` in the companion positive packet
+      `elementary.functions.surjective_not_always_injective.v1`. Verified
+      live via tracked episodes `a1bfdf14-...` (failed attempt) and
+      `0b3fa2fb-...` (kernel_verified disproof), 2026-07-08.

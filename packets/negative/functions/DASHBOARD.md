@@ -2,11 +2,23 @@
 
 | Metric | Value |
 |--------|-------|
-| Packets | 2 |
+| Packets | 3 |
 | Level breakdown | n/a — negative examples are not leveled the same way; see `trust.rung: 0` |
 
 Packets:
 
+- `surjective_implies_injective_finite_pigeonhole_misapplied.v1.json` —
+  first `false_generalization`-category example for this domain: the
+  finite pigeonhole fact (surjective implies injective between equal-size
+  finite sets) does not generalize to ℕ; `simp [Function.Injective]`
+  correctly leaves the goal unsolved on `∀ f : ℕ → ℕ, Surjective f →
+  Injective f`. Tracked episode `a1bfdf14-1b81-4ab9-8765-58837d5a0df4`;
+  falseness separately kernel-verified via witness `f n = n - 1` in the
+  companion positive packet
+  `elementary.functions.surjective_not_always_injective.v1` (episode
+  `0b3fa2fb-5c8c-4295-8fd2-317131e38400`). Resolves the domain's queued
+  "false converse" candidate (simplified from the Finset-backed finite-
+  type phrasing to a direct ℕ-domain statement, same lesson).
 - `injective_add_decide_failure.v1.json` — `decide` fails to elaborate on
   `Function.Injective (fun n : ℕ => n + 5)` (no `Decidable` instance for a
   `∀`-goal over an infinite domain). Tracked via proofsearch episode
