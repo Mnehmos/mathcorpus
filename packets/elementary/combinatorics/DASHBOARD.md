@@ -2,31 +2,22 @@
 
 | Metric | Value |
 |--------|-------|
-| Packets | 52+ |
-| Level breakdown | see individual packets — includes `card_union_not_additive.v1.json` and `primes_below_ten_card.v1.json` (other concurrent agents' additions) not itemized below |
+| Packets | 53 |
+| Level breakdown | see individual packets |
 
-Additions this session (2026-07-08, all kernel-verified via the tracked
-proof-search loop, one `solve` step each unless noted):
-`card_union_add_card_inter'` (inclusion-exclusion identity, pairs with the
-domain's first negative example), `disjoint_union_card'` (equality
-companion to `card_union_le'`), `pigeonhole_3_into_2` (domain's first
-pigeonhole packet), `card_powerset'` (domain's first `powerset` packet),
-the `Nat.choose` starter family `choose_zero_right'`/`choose_self'`/
-`choose_symm'`, `card_image_le'`, `choose_succ_succ''` (Pascal's rule),
-`sum_range_choose'` (binomial-sum-is-2^n, ties `Nat.choose` back to
-`card_powerset'`), `card_biUnion_le'` (indexed-union generalization of
-`card_union_le'`), `card_sdiff_of_subset'` (first set-difference
-cardinality packet), `pigeonhole_general` (arbitrary-cardinality
-generalization of `pigeonhole_3_into_2`), `card_filter_partition`
-(first filter counting/partition packet), and `prod_range_succ'` (first
-genuine recurrence-style product identity, beyond the trivial
-`prod_range_one'`/`prod_range_zero'`), and `card_image_of_injective'`
-(companion to a paired negative example — bare `omega` cannot use a
-`Function.Injective` hypothesis), and `set_mem_union` (the domain's first
-plain-`Set`, non-`Finset` packet — every prior packet used `Finset` only,
-despite the README focus text naming both "Finset, Set"). Full episode
-IDs are in each packet's own `verification.episode_id` field — see
-`git log` for this file for prior per-packet detail if needed.
+Per-packet history (episode IDs, tactic scripts, lessons learned) lives
+in each packet's own `verification.episode_id`/`notes` fields and in
+`git log -- packets/elementary/combinatorics/`; this file previously grew
+an unbounded per-packet bullet list and has been condensed here (same
+cleanup already applied to induction/inequalities this session).
+
+Focus-area coverage as of 2026-07-08: `Finset` cardinality (union,
+intersection, set difference, indexed union, image, powerset, filter
+partition), `Nat.choose` basics + Pascal's rule + binomial sum, pigeonhole
+(concrete + general), finite products/sums (including the fundamental
+counting principle `card_product`), and the domain's first plain-`Set`
+packet (`set_mem_union`). Most sub-areas in the README's focus list now
+have at least one packet.
 
 Last synced: 2026-07-08 — re-sync against
 `agents/status/MATHCORPUS_STATUS.md` and `python tools/corpus_stats.py`

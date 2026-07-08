@@ -4001,3 +4001,34 @@ Authored `packets/elementary/inequalities/min_add_max.v1.json` +
 validated clean (353 packets total, 0 errors, 0 warnings). Updated
 `DASHBOARD.md`/`QUEUE.md` in `packets/elementary/inequalities/`.
 Committed only this cycle's own files, pathspec-scoped.
+
+## Proposed update — combinatorics elementary packet #16 (this agent, 2026-07-08, /loop continuation)
+
+With v0.1 met, the user confirmed continuing elementary bulk toward v1.0.
+Combinatorics' own `QUEUE.md` was empty (its last item, `set_mem_union`,
+had already landed via a concurrent agent — `git log` confirmed before
+starting anything new to avoid duplication). `packets/elementary/induction/`
+and `packets/elementary/inequalities/` were also both empty/backlog-empty
+and explicitly flagged as heavily multi-agent-contended, so stayed in
+combinatorics and identified a fresh gap directly: no packet in this
+domain used `Finset` products (`s ×ˢ t`) at all, despite the README naming
+"products" as a focus area alongside sums.
+
+Added `packets/elementary/combinatorics/card_product.v1.json`: `(s ×ˢ
+t).card = s.card * t.card` — the fundamental counting principle for
+Cartesian products. Proved directly via `Finset.card_product`. Produced
+via tracked episode `04430956-5741-493c-bd5c-fcb31cb89d30` (problem_version
+`628ef34b-5c6a-40ab-898c-402e7c75f0d0`, dev-attested), `kernel_verified`
+on the first `solve` attempt. Also condensed
+`packets/elementary/combinatorics/DASHBOARD.md`'s per-packet bullet list
+into a summary paragraph again (it had regrown since the last cleanup a
+few cycles ago). Schema-validated (`validate_packets.py --check-hashes
+--warn-as-error`: 0 errors) and hash-stamped; full corpus revalidated
+clean at 354 packets, 0 errors, 0 warnings as of this update.
+
+Housekeeping flag (not acted on): this status file itself is now ~4000
+lines and growing every cycle across many concurrent agents — the same
+unbounded-growth problem already fixed in several domains' own
+`DASHBOARD.md`/`QUEUE.md` files this session. Leaving it for the owning
+dev-loop agent to condense, since a disruptive rewrite here risks
+clobbering many other agents' in-flight append-only edits.
