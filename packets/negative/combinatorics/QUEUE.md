@@ -6,11 +6,7 @@ hypotheses to verify via a real tracked episode, not pre-asserted facts.
 
 ## Next targets
 
-- [ ] **simp looping on a filter with a non-reducible decidability
-      instance.** Attempt `simp` on a `Finset.filter p s` goal where `p`'s
-      `Decidable` instance isn't reducible by `simp`'s default set.
-      Expected failure mode: `simp` leaves a residual `Decidable` goal or
-      makes no progress; verify the concrete instance before adding.
+*(empty — see Backlog)*
 
 ## Backlog
 
@@ -27,3 +23,9 @@ hypotheses to verify via a real tracked episode, not pre-asserted facts.
       positive packet `elementary.combinatorics.card_union_not_additive.v1`.
       Verified live via tracked episodes `2e76ae52-...` (failed attempt)
       and `f2bb04ed-...` (kernel_verified disproof), 2026-07-08.
+- [x] **simp on a filter with a non-reducible decidability instance.**
+      `filter_prime_simp_no_progress.v1.json` — bare `simp` makes no
+      progress on `((Finset.range 10).filter Nat.Prime).card = 4`;
+      `decide` closes it. Verified live via tracked episode
+      `d7f066f6-d930-417e-8988-390c84166574`, 2026-07-08. Companion
+      positive packet: `elementary.combinatorics.primes_below_ten_card.v1`.

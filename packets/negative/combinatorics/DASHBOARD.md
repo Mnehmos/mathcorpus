@@ -2,9 +2,18 @@
 
 | Metric | Value |
 |--------|-------|
-| Packets | 2 |
+| Packets | 3 |
 | Level breakdown | n/a — negative examples are not leveled the same way; see `trust.rung: 0` |
 
+- `filter_prime_simp_no_progress.v1.json` — bare `simp` makes no progress
+  on the concrete finite computation
+  `((Finset.range 10).filter Nat.Prime).card = 4`; `decide` closes it
+  directly. Produced via tracked episode
+  `d7f066f6-d930-417e-8988-390c84166574` (step 1 `simp` -> kernel_fail,
+  step 2 `decide` -> kernel_verified, authored as the companion positive
+  packet `elementary.combinatorics.primes_below_ten_card.v1`). Resolves
+  the domain's queued "simp on a non-reducible-decidability filter"
+  candidate.
 - `finset_card_atoms_omega_failure.v1.json` — `omega` applied directly to raw
   `Finset.card` atoms (union/intersection identity) without bridging through
   `Finset.card_union_add_card_inter` first; produced via a real tracked
