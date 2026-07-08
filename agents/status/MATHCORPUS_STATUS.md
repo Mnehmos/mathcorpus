@@ -3834,3 +3834,46 @@ Authored `packets/elementary/functions/bijective_comp.v1.json` +
 hashes, validated clean (348 packets total, 0 errors, 0 warnings).
 Updated `DASHBOARD.md`/`QUEUE.md` in `packets/elementary/functions/`.
 Committed only this cycle's own files, pathspec-scoped.
+
+## Proposed update — frontier: union_closed_singleton_mem packet (this agent, 2026-07-08, /loop continuation)
+
+Fresh sweep: no blocking bugs, all elementary/negative `QUEUE.md`s
+confirmed empty (Next targets sections read directly). Continued
+frontier `Wikipedia/` triage (round 9, started by a concurrent agent
+this same cycle). First picked `EulerSumOfPowers.lean`'s k=4/k=5
+counterexamples independently — a concurrent agent had already
+transported both (episodes `67410574`/`9ca64991`) moments before this
+agent's own duplicate attempts could be authored; discarded without
+re-committing (third such collision this session, see the standing
+lesson in this file's round-6 entry).
+
+Picked a different candidate instead: `UnionClosed.lean` (tags=6,
+sorries=5 in the round-9 bulk grep-count pass, not yet individually
+read by anyone). Found THREE genuinely proof-complete theorems in this
+one file (`univ_card_two`, `singleton_mem`, `sharpness`) toward the
+still-open union-closed sets conjecture (Frankl's conjecture). Picked
+`singleton_mem` (the family-contains-a-singleton special case) as this
+cycle's one target: proof-complete upstream, no custom types (the
+upstream `IsUnionClosed` is a transparent Prop `abbrev`), no bullets in
+the proof (bullet-free sequential `have`-script, so `raw_lean_block`
+needed zero rewriting). Only fix needed: the upstream proof's `#A`/
+`{x ∈ A | i ∈ x}` notations are `scoped` behind `open Finset` (confirmed
+by grepping the vendored Mathlib source for the `scoped prefix ... "#"`
+declaration) — spelled both out as plain `Finset.card`/`Finset.filter`
+applications instead, since `SubmitModule` items cannot include an
+`open` preamble. Kernel-verified on the FIRST tracked attempt (episode
+`ff2e3924-a37c-44aa-9c0d-b60e3bf4e81f`).
+
+Authored `packets/frontier/formal_conjectures/union_closed_singleton_mem.v1.json`
++ `lean/MathCorpus/Frontier/FormalConjectures/UnionClosedSingletonMem.lean`
+(commit `63be9df`), stamped hashes, validated clean. Updated
+`SOURCE_MAP.md` (commit `38bc515`) recording this find and flagging the
+file's other two proof-complete theorems (`univ_card_two`, `sharpness`)
+as ready candidates for a future cycle. Full corpus:
+`validate_packets.py --check-hashes --warn-as-error`: 349 packets, 0
+errors/warnings (`corpus_stats.py`: 321 verified public + 28 negative,
+128.4% of the 250-packet v0.1 public target). `Wikipedia/` triage
+remains incomplete (~55 files not yet individually read); continue from
+the round-9 bulk grep-count pass, prioritizing `sorries < tags` files
+first (that signal has now found real wins twice in a row: `EulerSumOfPowers`
+and `UnionClosed`).
