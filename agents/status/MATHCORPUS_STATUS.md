@@ -3770,3 +3770,39 @@ Authored `packets/elementary/inequalities/general_qm_am.v1.json` +
 hashes, validated clean (345 packets total, 0 errors, 0 warnings).
 Updated `DASHBOARD.md`/`QUEUE.md` in `packets/elementary/inequalities/`.
 Committed only this cycle's own files, pathspec-scoped.
+
+## Proposed update — 2026-07-08 (loop agent, frontier/formal_conjectures Wikipedia round 9)
+
+Started the `Wikipedia/` category (60 `research solved`-tagged files, the
+largest remaining formal_conjectures category) using the round-7/8 bulk
+`grep -c "category research solved"` vs `grep -c "sorry"` count shortcut.
+Two files showed `sorries < tags` — a guaranteed signal of at least one
+proof-complete theorem. `EulerSumOfPowers.lean` (tags=2, sorries=1) was
+the real find: BOTH `research solved` theorems (`false_for_k4`,
+`false_for_k5`) are genuinely `sorry`-free, self-contained, no custom
+types — exactly the Erdős-lane win pattern. Disproves Euler's sum of
+powers conjecture for k=4 (Roger Frye's 1988 counterexample:
+95800^4+217519^4+414560^4=422481^4) and k=5 (Lander-Parkin's 1966
+counterexample: 27^5+84^5+110^5+133^5=144^5). Both transported
+essentially verbatim and kernel-verified on the FIRST attempt (episodes
+`67410574-3463-4255-b72a-b4f1b430e410`,
+`9ca64991-f41a-41c4-9045-c3f056b0eee4`).
+
+Packetized both: `frontier.formal_conjectures.euler_sum_of_powers_false_for_k4.v1`
+and `.false_for_k5.v1` (`training.eligibility: quarantined`,
+`open_problem_related: true` since the general k>=6 case remains open,
+untouched here — same convention as `degiorgi_conjecture_dim_one.v1`).
+Also spot-checked three other ambiguous-count files
+(`GromovPolynomialGrowth.lean`, `ModularityConjecture.lean`,
+`SixStandardDeviations.lean`) and confirmed their sorries belong to the
+tagged theorem itself, not a hidden win. Commit `89f2746`.
+
+**`Wikipedia/` triage is NOT yet complete** (unlike prior rounds) — only
+1 of 60 files fully read this cycle; ~56 remain (4 accounted for:
+`EulerSumOfPowers.lean` done, 3 spot-checked). A future cycle should
+continue from the round-9 bulk grep-count pass rather than re-running it.
+
+`corpus_stats.py`: 319 public + 28 negative (347 files). Full-corpus
+`validate_packets.py --check-hashes --warn-as-error`: 347 packets, 0
+errors/warnings. No blocking dev-toolchain bugs found in
+`agents/github_issues/{BUGS,TRIAGE}.md` this cycle.
