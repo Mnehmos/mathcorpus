@@ -1,0 +1,57 @@
+{
+  "packet_id": "negative.algebra.nat_sub_ring_trap.v1",
+  "packet_version": "1.0.0",
+  "title": "ring fails on a Nat truncated-subtraction cancellation despite a true hypothesis",
+  "domain": "algebra",
+  "level": "L0_elementary",
+  "kind": "negative_example",
+  "status": "failed_attempt",
+  "difficulty_bin": "D0",
+  "source_provenance": {
+    "source_kind": "repo_original",
+    "source_refs": [],
+    "authors": [
+      "The MathCorpus Authors"
+    ],
+    "copyright_holder": "The MathCorpus Authors",
+    "license_spdx": "Apache-2.0",
+    "license_content": "CC-BY-4.0",
+    "statement_fidelity": "author_written"
+  },
+  "informal_statement": "For a b : ℕ with b ≤ a, the goal `a - b + b = a` attacked by `ring` alone, ignoring the hypothesis `b ≤ a`.",
+  "failure": {
+    "gap_category": "tactic_mismatch",
+    "sub_category": "ring_on_nat_truncated_subtraction",
+    "input_context_summary": "Goal `a - b + b = a` over `a b : ℕ` with hypothesis `h : b ≤ a` in context after `intro a b h`.",
+    "attempt_summary": "Applied `ring` directly. `ℕ` is only a `CommSemiring` (no subtraction operation in the algebraic sense), so `ring` treats `Nat.sub` as an opaque atom and cannot consult the hypothesis `b ≤ a` to relate `a - b + b` to `a`; the kernel rejected the step with `unsolved goals`. Tracked via proofsearch episode b2f5f359-6f9c-42dd-b749-ee70b931ff70, step 1 (attempt dd173a71-b223-4f9c-be91-14686779720e), kernel_fail, diagnostic category `unsolved_goals`. The same episode then closed the obligation on step 2 with `omega`, which does understand truncated subtraction, reaching `kernel_verified`.",
+    "lesson": "Do not reach for `ring` on goals containing `ℕ` subtraction just because the shape looks like a ring identity — `ring` normalizes semiring operations only and ignores side-condition hypotheses like `b ≤ a`. Prefer `omega` (or `Nat.sub_add_cancel h`) for truncated-subtraction identities that depend on an ordering hypothesis."
+  },
+  "proof_body_redacted": false,
+  "trust": {
+    "rung": 0,
+    "proof_authority": "none",
+    "public_claim_class": "public_safe"
+  },
+  "training": {
+    "eligibility": "negative_example_only",
+    "reason_codes": [
+      "public",
+      "explicit_negative_label"
+    ],
+    "dedupe_cluster_id": "algebra.nat_sub.failure_patterns",
+    "template_family_id": "algebra.automation_hazards",
+    "contamination_risk": "low"
+  },
+  "dependencies": {
+    "kits": [],
+    "tactic_tags": [
+      "ring",
+      "omega",
+      "Nat.sub"
+    ]
+  },
+  "notes": "v0.1 negative example filling the algebra lane (previously empty). Produced through the tracked proof-search MCP loop: problem_version_id 550b86a3-5811-46ed-9780-e22dba2e1e70, episode_id b2f5f359-6f9c-42dd-b749-ee70b931ff70 (unsafe_dev_attestation dev mode). Step 1 (`ring`) recorded kernel_fail; step 2 (`omega`) recorded kernel_verified, terminating the episode with outcome kernel_verified / root_proved. Labeled non-proof-bearing training data (rung 0); this packet documents the failed step only, not the episode's eventual success.",
+  "hashes": {
+    "packet_sha256": "dd4196fc1b613ec059fda1003f4e2bc029a75a4f8104ad6a6c566c7a1c44bed9"
+  }
+}

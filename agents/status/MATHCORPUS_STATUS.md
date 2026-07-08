@@ -3,19 +3,28 @@
 Corpus-wide status for the MathCorpus agent workspace. Owned by the dev
 loop agent (`agents/github_issues/`); domain agents propose updates rather
 than editing directly. Re-derive with `python tools/corpus_stats.py` where
-available; this snapshot was computed by hand at scaffold time
-(2026-07-07).
+available; this snapshot was hand-updated 2026-07-08 after one algebra
+negative-example packet (proposed update — dev loop agent should confirm
+against a fresh `corpus_stats.py` run).
 
-## Corpus totals (measured, 2026-07-07)
+## Corpus totals (measured, 2026-07-08)
 
 | Metric | Value |
 |--------|-------|
-| Total packets | 190 |
+| Total packets | 191 |
 | Elementary (public) | 189 |
-| Negative examples | 1 |
+| Negative examples | 2 |
 | v0.1 target (`docs/roadmap.md`) | >=250 public packets, >=25 negative examples |
 | Progress to v0.1 (public) | 189 / 250 (~76%) |
-| Progress to v0.1 (negative) | 1 / 25 (~4%) |
+| Progress to v0.1 (negative) | 2 / 25 (~8%) |
+
+Note: a third negative-example candidate,
+`packets/negative/functions/injective_add_decide_failure.v1.json`, is
+present in the working tree but **uncommitted and unstamped**
+(`hashes.packet_sha256` is a placeholder, and its `domain` field says
+`algebra` while it lives under the `functions` folder) — it looks like another
+agent's in-progress work. Do not count it until it's stamped, validated, and
+committed by its owning agent.
 
 ## Elementary domain distribution (measured)
 
@@ -33,10 +42,15 @@ All 189 elementary packets are `status: kernel_verified`.
 
 ## Negative examples
 
-1 packet: `packets/negative/geometry/angle_atoms_nlinarith_failure.v1.json`.
-16 more domain lanes exist under `packets/negative/*` at scaffold time but
-are empty — the roadmap's >=25 negative-example release criterion is the
-biggest current gap.
+2 packets:
+- `packets/negative/geometry/angle_atoms_nlinarith_failure.v1.json`
+- `packets/negative/algebra/nat_sub_ring_trap.v1.json` (added 2026-07-08:
+  `ring` fails on a `ℕ` truncated-subtraction cancellation because it
+  ignores the ordering hypothesis; `omega` closes it)
+
+5 more domain lanes (`combinatorics`, `functions`, `induction`,
+`inequalities`, `number_theory`) are still empty — the roadmap's >=25
+negative-example release criterion is the biggest current gap.
 
 ## Frontier (Phase 5)
 
@@ -69,8 +83,11 @@ negative-example coverage matters before a v0.1 cut, not just raw count).
 
 ## Recommended next domains
 
-Induction (6 packets) is furthest behind; negative examples across every
-domain are the single biggest gap versus the v0.1 release criteria.
+Induction (6 packets) is furthest behind on the elementary spine; negative
+examples remain the single biggest gap versus the v0.1 release criteria —
+`combinatorics`, `induction`, `inequalities`, and `number_theory` still
+have zero negative-example packets (`functions` has one uncommitted/
+unstamped candidate in progress; see note above).
 
 ## Known environment bugs / workarounds
 
