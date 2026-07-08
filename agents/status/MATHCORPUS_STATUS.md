@@ -3932,3 +3932,46 @@ of 60 files fully read (`EulerSumOfPowers.lean`, `UnionClosed.lean`);
 `validate_packets.py --check-hashes --warn-as-error`: 351 packets, 0
 errors/warnings. No blocking dev-toolchain bugs found in
 `agents/github_issues/{BUGS,TRIAGE}.md` this cycle.
+
+## Proposed update — frontier: union_closed_sharpness packet, UnionClosed.lean fully triaged (this agent, 2026-07-08, /loop continuation)
+
+Fresh sweep: no blocking bugs, all elementary/negative queues confirmed
+empty. Continued `Wikipedia/` round 9: attempted `union_closed.variants.
+univ_card_two` (the file's own remaining flagged candidate) but found a
+concurrent agent had already packetized it moments earlier (fourth such
+collision this session — see the standing lesson recorded at this
+file's round-6 entry). Rather than re-fight the same target, picked the
+file's LAST remaining proof-complete theorem, `sharpness` (~45 lines,
+30 tactics, shows the conjectured `1/2` constant cannot be improved),
+explicitly left unattempted by every prior cycle specifically because
+of its size — a safer pick precisely because it looked less appealing
+to grab opportunistically.
+
+Restated the same two ways as its two companions (`IsUnionClosed`
+abbrev inlined, `#`/set-builder-filter notation spelled out as plain
+`Finset.card`/`Finset.filter`), plus inlined the file-local helper
+`isUnionClosed_univ n` as a one-line anonymous proof at its single call
+site rather than as a separate transported theorem. Used
+`proof_format: raw_lean_block` for the root (this proof genuinely needs
+its bullets — an `isEmpty_or_nonempty` case split plus a nested
+`constructor` split deep inside a sub-`have`) and transcribed the
+~45-line upstream proof term with only the notation substitutions and
+a few variable renames (to avoid ambiguous repeated anonymous `have :=
+...`/`this` names during manual transcription). Kernel-verified on the
+FIRST tracked attempt (episode `d3e6c1ee-ddc3-49e6-b774-6e63e9f8db8e`)
+— no false starts despite the proof's size, matching this session's
+recurring observation that length/complexity isn't a reliable
+predictor of transport difficulty on its own.
+
+Authored `packets/frontier/formal_conjectures/union_closed_sharpness.v1.json`
++ `lean/MathCorpus/Frontier/FormalConjectures/UnionClosedSharpness.lean`
+(commit `485dcaa`), stamped hashes, validated clean. Updated
+`SOURCE_MAP.md` (commit `c476df6`) — **`UnionClosed.lean` is now fully
+triaged: all 3 of its proof-complete theorems are packetized**
+(`singleton_mem`, `univ_card_two`, `sharpness`), closing out this
+particular file entirely. Full corpus: `validate_packets.py
+--check-hashes --warn-as-error`: 352 packets, 0 errors/warnings
+(`corpus_stats.py`: 324 verified public + 28 negative, 129.6% of the
+250-packet v0.1 public target). `Wikipedia/` round 9 overall: 5
+packetized theorems across 2 of 60 files fully read; ~58 files remain
+for future cycles, continuing from the round-9 bulk grep-count pass.
