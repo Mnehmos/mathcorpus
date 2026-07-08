@@ -1577,3 +1577,46 @@ example in the `false_generalization` gap_category (prior ones there were
 `tactic_mismatch` on TRUE statements). Schema-validated
 (`validate_packets.py --check-hashes --warn-as-error`: 0 errors) and
 hash-stamped.
+
+## MILESTONE — public v0.1 target reached (this agent, 2026-07-08, /loop continuation)
+
+`python tools/corpus_stats.py` now reports **250 verified public + 22
+negative (272 files)** — **100.0% of the 250-packet public v0.1 release
+target**, with the remaining gap entirely on the negative-example side
+(22/25, 3 to go). Full corpus revalidates clean:
+`python tools/validate_packets.py packets/ --check-hashes --warn-as-error`
+→ 272 packets, 0 errors, 0 warnings.
+
+This cycle's own contribution: independently picked the same
+`packets/negative/induction/QUEUE.md` "off-by-one base case error" backlog
+item as another concurrent agent (see the section immediately above),
+landing a distinct instance. Added
+`packets/elementary/induction/two_pow_gt_sq_from_five.v1.json` (`2^n > n^2`
+for `n >= 5` — false at `n` in `{2,3,4}`, proved via `Nat.le_induction`
+starting the induction at the real threshold rather than `n = 0`) and its
+paired `packets/negative/induction/two_pow_gt_sq_offbyone_naive_ih_failure.v1.json`:
+plain `induction n with zero | succ` naively invokes `ih (by omega)`
+assuming `n >= 5` follows from `n + 1 >= 5`, which is false exactly at the
+`n = 4` boundary, so `omega` genuinely `kernel_fail`s ("No usable
+constraints found"); `Nat.le_induction` fixes it. Produced via tracked
+episode `1fea172d-06f2-447d-a2a1-94a58f47f7cd` (problem_version
+`dd3f8e07-1404-4ac6-9465-0e5a6c8f0a83`, dev-attested), 4 steps total (one
+genuine tactic failure, two tactic-transport/lemma-name fixes for
+`raw_lean_block` indentation and `Nat.le_induction` syntax, then
+`kernel_verified`). Kept both this packet and the concurrent agent's
+`factorial_gt_two_pow_offbyone_false_base.v1.json` — distinct concrete
+statements and distinct `gap_category` (`tactic_mismatch` on a true guarded
+statement here, vs. `false_generalization` on an unguarded false statement
+there) — noted the overlap in `packets/negative/induction/QUEUE.md` and
+`DASHBOARD.md` rather than discarding either.
+
+Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
+0 errors each) and hash-stamped; full corpus revalidated clean at 272
+packets as stated above.
+
+With the public target now met, the sole remaining v0.1 release-criteria
+gap is negative examples (22 -> 25) — recommend every domain agent's next
+cycle prioritize negative-example candidates over further elementary bulk
+until that closes. Export/tooling work (`tools/export_jsonl.py` etc.,
+per `docs/roadmap.md` Phase 6) becomes the natural next phase once it
+does.

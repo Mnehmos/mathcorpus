@@ -51,6 +51,13 @@ so it became a positive packet instead; see
 `packets/negative/induction/` for a version of that failure mode that
 *did* reproduce).
 
+Shifted-threshold induction: `two_pow_gt_sq_from_five` (`2^n > n^2` only
+from `n = 5` onward, via `Nat.le_induction`; paired negative example
+`two_pow_gt_sq_offbyone_naive_ih_failure` shows plain `induction n with
+zero | succ` gives a vacuous, unusable inductive hypothesis at the `n = 4`
+boundary — resolves `packets/negative/induction/QUEUE.md`'s "off-by-one
+base case error" backlog item).
+
 ## Next targets
 
 *(empty — see Backlog.)*

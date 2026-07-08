@@ -1,0 +1,65 @@
+{
+  "packet_id": "negative.induction.two_pow_gt_sq_offbyone_naive_ih_failure.v1",
+  "packet_version": "1.0.0",
+  "title": "Plain induction from n=0 gives an unusable inductive hypothesis at a shifted threshold",
+  "domain": "algebra",
+  "level": "L1_proof_basics",
+  "kind": "negative_example",
+  "status": "failed_attempt",
+  "difficulty_bin": "D1",
+  "source_provenance": {
+    "source_kind": "repo_original",
+    "source_refs": [
+      "packets/elementary/induction/two_pow_gt_sq_from_five.v1.json"
+    ],
+    "authors": [
+      "The MathCorpus Authors"
+    ],
+    "copyright_holder": "The MathCorpus Authors",
+    "license_spdx": "Apache-2.0",
+    "license_content": "CC-BY-4.0",
+    "statement_fidelity": "author_written"
+  },
+  "informal_statement": "The goal `n >= 5 -> 2^n > n^2` (true only from n=5 onward: false at n in {2,3,4}), attacked with plain `induction n with zero | succ` whose successor case naively assumes `n >= 5` follows from `n + 1 >= 5`, before `Nat.le_induction` (starting the induction at the correct threshold n=5) closed the same episode.",
+  "failure": {
+    "gap_category": "tactic_mismatch",
+    "sub_category": "offbyone_induction_threshold",
+    "input_context_summary": "Goal `n ≥ 5 → 2 ^ n > n ^ 2` over ℕ, proved by `induction n with | zero => ... | succ n ih => ...` where `ih : n ≥ 5 → 2 ^ n > n ^ 2`.",
+    "attempt_summary": "In the successor case (proving the statement for `n + 1` given hypothesis `h : n + 1 ≥ 5`), the naive tactic `nlinarith [ih (by omega)]` tries to apply `ih` by discharging its premise `n ≥ 5` via `omega` from `h`. This is exactly the off-by-one boundary bug: at `n = 4` (so `n + 1 = 5`), `h` only gives `n ≥ 4`, and `n ≥ 5` is FALSE, so `omega` cannot (and must not) prove it — the kernel rejected the step with `omega could not prove the goal: No usable constraints found`. Plain induction starting at `n = 0` gives an inductive hypothesis that is vacuously true (and hence useless) for every `n < 5`, including the critical boundary case `n = 4` where the successor case must instead be verified directly, not derived from `ih`. Tracked via proofsearch episode 1fea172d-06f2-447d-a2a1-94a58f47f7cd, step 1, kernel_fail. The same episode then closed the obligation using `Nat.le_induction`, which starts the induction at the real threshold `n = 5` so every use of the inductive hypothesis is over an already-true instance, reaching `kernel_verified`.",
+    "lesson": "When a statement is only true from some threshold `k` onward (not from 0), plain `induction n with zero | succ` combined with a `n >= k` hypothesis produces an inductive hypothesis that is vacuously true below `k` and therefore cannot be invoked to prove the boundary case `n = k`. Use `Nat.le_induction` (or an equivalent shifted-base-case induction principle) to start the induction at the actual threshold, or explicitly case-split the boundary (`n = k - 1`) and verify it directly rather than deriving it from a vacuous hypothesis."
+  },
+  "proof_body_redacted": false,
+  "trust": {
+    "rung": 0,
+    "proof_authority": "none",
+    "public_claim_class": "public_safe"
+  },
+  "training": {
+    "eligibility": "negative_example_only",
+    "reason_codes": [
+      "public",
+      "explicit_negative_label"
+    ],
+    "dedupe_cluster_id": "induction.two_pow_gt_sq.failure_patterns",
+    "template_family_id": "induction.shifted_threshold_hazards",
+    "contamination_risk": "low"
+  },
+  "dependencies": {
+    "kits": [],
+    "tactic_tags": [
+      "induction",
+      "omega",
+      "Nat.le_induction",
+      "nlinarith"
+    ],
+    "prerequisite_concepts": [
+      "induction",
+      "shifted_base_case",
+      "vacuous_hypothesis"
+    ]
+  },
+  "notes": "Captured via tracked proof-search episode 1fea172d-06f2-447d-a2a1-94a58f47f7cd (problem_version dd3f8e07-1404-4ac6-9465-0e5a6c8f0a83, environment_hash 9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d): step 1 (plain induction, `ih (by omega)`) recorded kernel_fail with 'omega could not prove the goal: No usable constraints found'; step 4 (`Nat.le_induction` starting at n=5) closed the same episode kernel_verified as packets/elementary/induction/two_pow_gt_sq_from_five.v1.json. Resolves this domain's queued 'off-by-one base case error' backlog item in packets/negative/induction/QUEUE.md.",
+  "hashes": {
+    "packet_sha256": "4eec62b9ffcd3b9469a3b49b329e681337d61ebe19dee974c3e0cd2c11549447"
+  }
+}

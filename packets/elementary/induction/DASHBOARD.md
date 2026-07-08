@@ -16,6 +16,11 @@ which strengthens the well-founded case to a full correctness proof
 against `Nat.gcd` rather than a base-case-only fact). Also added
 `arith_seq_sum` (D1, L1, episode `b6ef7a97-8dc3-4d6c-b031-d31806c8cb53`):
 the general arithmetic-series formula, generalizing `gauss_sum`/
-`sum_odds`/`sum_evens` into one reusable lemma.
+`sum_odds`/`sum_evens` into one reusable lemma. And
+`two_pow_gt_sq_from_five` (D1, L1, episode
+`1fea172d-06f2-447d-a2a1-94a58f47f7cd`): `2^n > n^2` only from `n = 5`
+onward, via `Nat.le_induction` (shifted-threshold induction) — paired
+negative example `two_pow_gt_sq_offbyone_naive_ih_failure` demonstrates
+why plain `induction n with zero | succ` fails at the boundary.
 
 Next targets: see `QUEUE.md`.

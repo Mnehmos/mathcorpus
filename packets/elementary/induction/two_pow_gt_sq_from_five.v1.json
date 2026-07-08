@@ -1,0 +1,99 @@
+{
+  "packet_id": "elementary.induction.two_pow_gt_sq_from_five.v1",
+  "packet_version": "1.0.0",
+  "title": "2^n exceeds n^2 from n = 5 onward",
+  "domain": "algebra",
+  "level": "L1_proof_basics",
+  "kind": "concept",
+  "status": "kernel_verified",
+  "difficulty_bin": "D1",
+  "lean_module": "MathCorpus.Elementary.Induction.TwoPowGtSqFromFive",
+  "theorem_name": "two_pow_gt_sq_from_five",
+  "imports": [
+    "Mathlib"
+  ],
+  "toolchain": {
+    "lean_version": "v4.32.0-rc1",
+    "mathlib_rev": "360da6fa66c1273b76b6b2d8c5666fd5ac2e3b56"
+  },
+  "source_provenance": {
+    "source_kind": "author_written",
+    "source_refs": [],
+    "authors": [
+      "The MathCorpus Authors"
+    ],
+    "copyright_holder": "The MathCorpus Authors",
+    "license_spdx": "Apache-2.0",
+    "license_content": "CC-BY-4.0",
+    "statement_fidelity": "author_written"
+  },
+  "informal_statement": "For every natural number n >= 5, 2^n > n^2. False for n in {2,3,4} (e.g. 2^4 = 16 = 4^2), so the induction threshold genuinely starts at 5, not 0.",
+  "informal_proof_idea": "Induct starting at n=5 via `Nat.le_induction` (not plain `induction n with zero | succ`, whose inductive hypothesis at the n=4-to-5 boundary would require the false premise `4 >= 5` to be usable — see the paired negative example negative.induction.two_pow_gt_sq_offbyone_naive_ih_failure.v1). Base case n=5: 32>25 by norm_num. Successor step: 2^(n+1) = 2*2^n > 2*n^2 >= (n+1)^2 for n>=5, closed by nlinarith with the inductive hypothesis and n>=5.",
+  "formal_statement_pp": "theorem two_pow_gt_sq_from_five (n : ℕ) (h : n ≥ 5) : 2 ^ n > n ^ 2",
+  "proof_body_path": "lean/MathCorpus/Elementary/Induction/TwoPowGtSqFromFive.lean",
+  "proof_body_redacted": false,
+  "trust": {
+    "rung": 1,
+    "proof_authority": "lean_kernel",
+    "certificate_checker": "kernel_decide",
+    "encoding_required": false,
+    "encoding_soundness_status": "not_applicable",
+    "independent_review_status": "repo_reviewed",
+    "public_claim_class": "public_safe"
+  },
+  "training": {
+    "eligibility": "public_train",
+    "reason_codes": [
+      "public",
+      "non_benchmark",
+      "unredacted"
+    ],
+    "dedupe_cluster_id": "induction.two_pow_gt_sq_from_five",
+    "template_family_id": "induction.shifted_threshold_induction",
+    "contamination_risk": "low",
+    "can_export_proof_body": true
+  },
+  "dependencies": {
+    "kits": [],
+    "tactic_tags": [
+      "Nat.le_induction",
+      "pow_succ",
+      "nlinarith"
+    ],
+    "prerequisite_concepts": [
+      "induction",
+      "exponentiation",
+      "shifted_base_case"
+    ]
+  },
+  "metrics": {
+    "loc": 3,
+    "tactic_count": 3
+  },
+  "artifacts": {
+    "public_files": [
+      "lean/MathCorpus/Elementary/Induction/TwoPowGtSqFromFive.lean"
+    ]
+  },
+  "review": {
+    "review_basis": "repo self-review; kernel-verified through the tracked proof-search loop",
+    "reviewer_status": "repo_reviewed"
+  },
+  "verification": {
+    "verifier": "proofsearch",
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "episode_id": "1fea172d-06f2-447d-a2a1-94a58f47f7cd",
+    "outcome": "kernel_verified",
+    "kernel_verified": true,
+    "fidelity_status": "attested",
+    "step_count": 4,
+    "import_manifest_hash": "aaf21893d520a78dee0787a1bcaf939ee6b922265ff670c272e2e1d450dd29a7",
+    "verified_at": "2026-07-08T06:21:00Z"
+  },
+  "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 1fea172d). Step 1 (plain `induction n with zero | succ`, invoking `ih` via `ih (by omega)` assuming n>=5 follows from n+1>=5) kernel-failed and is preserved as negative.induction.two_pow_gt_sq_offbyone_naive_ih_failure.v1 — a genuine off-by-one pitfall: at the n=4 boundary, n+1>=5 holds but n>=5 does not, so the naive successor case cannot invoke ih. Steps 2-3 were tactic-transport/lemma-name fixes (raw_lean_block indentation, then Nat.le_induction syntax); step 4 closed kernel_verified with Nat.le_induction starting the induction at the correct threshold n=5.",
+  "hashes": {
+    "packet_sha256": "66b91bb2f51c16e45b829f751d9a510ac727cb88be406a454078b4dcd131113f",
+    "formal_statement_sha256": "c196a42241a80cf0d3abe7f2339eaf2cf47f2d4bb87c6670062b0c4d93bb4c1e",
+    "proof_body_sha256": "a1f9803ced9b177c128df3d1fe8c1dcdf8c1fa7bed6d9838a6d637e8ec5ec077"
+  }
+}

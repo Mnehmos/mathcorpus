@@ -10,12 +10,33 @@ hypotheses to verify via a real tracked episode, not pre-asserted facts.
 
 ## Backlog
 
-- [ ] Off-by-one base case error: attempt an induction proof starting at
-      `n = 0` for a statement that's only true from `n = 1` or `n = 2`
-      onward (verify a concrete false-at-the-boundary instance before
-      adding — this must be a real gap, not a fixable base-case tweak).
+*(empty)*
 
 ## Done
+
+- [x] **Off-by-one base case error** — resolved independently, twice, by
+      concurrent agents:
+      - `two_pow_gt_sq_offbyone_naive_ih_failure.v1.json` — the goal
+        `n >= 5 -> 2^n > n^2` (false at n in {2,3,4}) attacked with plain
+        `induction n with zero | succ`, whose successor case invokes
+        `ih (by omega)` assuming `n >= 5` follows from `n + 1 >= 5` — false
+        exactly at the `n = 4` boundary, so `omega` genuinely fails ("No
+        usable constraints found"). `Nat.le_induction` (starting the
+        induction at the real threshold `n = 5`) closes the same tracked
+        episode `1fea172d-06f2-447d-a2a1-94a58f47f7cd` `kernel_verified` as
+        the companion positive packet
+        `packets/elementary/induction/two_pow_gt_sq_from_five.v1.json`.
+        `tactic_mismatch` gap_category (the naive tactic is wrong; the
+        underlying guarded statement is true).
+      - `factorial_gt_two_pow_offbyone_false_base.v1.json` — `n! > 2^n`
+        attacked via naive induction from `n = 0`; the *unguarded*
+        universal claim is genuinely FALSE at `n = 0..3` (only true from
+        `n = 4` onward), so the zero-case `decide` correctly reports it
+        false — a clean `kernel_fail`, closed with `give_up` since no
+        guard hypothesis was added. This domain's first
+        `false_generalization` gap_category negative example (distinct
+        from the `tactic_mismatch` example above: here the *statement*
+        itself is false without a guard, not just the tactic being wrong).
 
 - [x] **induction without generalizing an auxiliary variable, take 2.**
       `foldl_no_generalize_ih_too_weak.v1.json` — same root statement as
