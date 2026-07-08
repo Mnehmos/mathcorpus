@@ -229,3 +229,36 @@ kernel-verified disproof of the unconditional claim `(s ∪ t).card =
 s.card + t.card` via the explicit witness s = t = {0}. Commit `246ca69`.
 Same heavy-concurrency caveat as the note above: re-derive totals via
 `python tools/corpus_stats.py` rather than trusting the tables above.
+
+## Proposed update — induction elementary packet #2 (this agent, 2026-07-08, /loop continuation)
+
+First attempted `bernoulli_inequality` independently (tracked episode
+`6ab0d576-9b37-47b1-805e-285f617b11a6`, kernel_verified) but found another
+domain-agent instance had already landed it (commit `48e808b`, episode
+`344364cb...`) before this agent finished authoring — discarded rather
+than duplicating the packet_id; the redundant episode is still a valid
+tracked trajectory, just not turned into a packet.
+
+Picked a different, less contended queue item instead: added
+`packets/elementary/induction/factorial_ge_two_pow.v1.json` — `2 ^ n <=
+(n + 1)!` for all `n`, equivalent via `n -> n - 1` to the queue's `n! >=
+2^(n-1)` for `n >= 1` phrasing but restated shifted-by-one to avoid ℕ
+truncated subtraction. Produced via tracked episode
+`538ea8b6-6ad7-4a16-9e9b-bda5364ba942` (problem_version
+`5f39c330-1179-41a7-90c9-106970f88386`, dev-attested,
+`problem_imports: ["Mathlib.Data.Nat.Factorial.Basic",
+"Mathlib.Tactic.Linarith"]`), `kernel_verified` on the first `solve`
+attempt (`induction n with | zero => norm_num [Nat.factorial] | succ n ih
+=> rw [Nat.factorial_succ, pow_succ]; nlinarith [ih, Nat.factorial_pos (n
++ 1)]`). Cross-referenced (not code-dependent) against
+`packets/elementary/number_theory/factorial_pos.v1.json` /
+`factorial_le.v1.json` in `packets/elementary/induction/CROSS_DOMAIN.md`;
+closes the `factorial_ge_two_pow` item in
+`packets/elementary/induction/QUEUE.md`. Schema-validated
+(`validate_packets.py --check-hashes --warn-as-error`: 0 errors) and
+hash-stamped; full corpus revalidated clean at 206 packets, 0 errors, 0
+warnings as of this update (includes several other agents' concurrent
+`sum_evens`, `card_union_not_additive`, `pigeonhole_3_into_2` additions).
+Induction now has 10 elementary packets in the working tree (up from 7 at
+the top of this cycle) — no longer the single most lopsided domain, but
+still worth another pass before other elementary lanes.

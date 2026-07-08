@@ -1,0 +1,101 @@
+{
+  "packet_id": "elementary.induction.factorial_ge_two_pow.v1",
+  "packet_version": "1.0.0",
+  "title": "Factorial dominates 2^n",
+  "domain": "algebra",
+  "level": "L1_proof_basics",
+  "kind": "concept",
+  "status": "kernel_verified",
+  "difficulty_bin": "D1",
+  "lean_module": "MathCorpus.Elementary.Induction.FactorialGeTwoPow",
+  "theorem_name": "factorial_ge_two_pow",
+  "imports": [
+    "Mathlib"
+  ],
+  "toolchain": {
+    "lean_version": "v4.32.0-rc1",
+    "mathlib_rev": "360da6fa66c1273b76b6b2d8c5666fd5ac2e3b56"
+  },
+  "source_provenance": {
+    "source_kind": "author_written",
+    "source_refs": [],
+    "authors": [
+      "The MathCorpus Authors"
+    ],
+    "copyright_holder": "The MathCorpus Authors",
+    "license_spdx": "Apache-2.0",
+    "license_content": "CC-BY-4.0",
+    "statement_fidelity": "author_written"
+  },
+  "informal_statement": "For every natural number n, 2^n <= (n+1)!. Equivalent, via the substitution n -> n - 1, to the more commonly stated \"n! >= 2^(n-1) for n >= 1\"; phrased with a shift by one to avoid Nat truncated subtraction entirely.",
+  "informal_proof_idea": "Induction on n. Base case n = 0: 2^0 = 1 <= 1! = 1 by norm_num. Successor case: given ih : 2^n <= (n+1)!, rewrite (n+1+1)! via Nat.factorial_succ to (n+1+1) * (n+1)! and 2^(n+1) via pow_succ to 2^n * 2, then nlinarith closes 2^n * 2 <= (n+1+1) * (n+1)! from ih together with Nat.factorial_pos (n+1) (needed so nlinarith can certify the (n+1)! >= 1 slack that makes the (n+2) multiplier dominate the factor of 2).",
+  "formal_statement_pp": "theorem factorial_ge_two_pow : ∀ n : ℕ, 2 ^ n ≤ Nat.factorial (n + 1)",
+  "proof_body_path": "lean/MathCorpus/Elementary/Induction/FactorialGeTwoPow.lean",
+  "proof_body_redacted": false,
+  "trust": {
+    "rung": 1,
+    "proof_authority": "lean_kernel",
+    "certificate_checker": "kernel_decide",
+    "encoding_required": false,
+    "encoding_soundness_status": "not_applicable",
+    "independent_review_status": "repo_reviewed",
+    "public_claim_class": "public_safe"
+  },
+  "training": {
+    "eligibility": "public_train",
+    "reason_codes": [
+      "public",
+      "non_benchmark",
+      "unredacted"
+    ],
+    "dedupe_cluster_id": "induction.factorial_ge_two_pow",
+    "template_family_id": "induction.exponential_growth_bounds",
+    "contamination_risk": "low",
+    "can_export_proof_body": true
+  },
+  "dependencies": {
+    "kits": [],
+    "tactic_tags": [
+      "induction",
+      "Nat.factorial_succ",
+      "pow_succ",
+      "nlinarith"
+    ],
+    "prerequisite_concepts": [
+      "induction",
+      "factorial",
+      "exponentiation",
+      "natural_number_order"
+    ]
+  },
+  "metrics": {
+    "loc": 4,
+    "tactic_count": 3
+  },
+  "artifacts": {
+    "public_files": [
+      "lean/MathCorpus/Elementary/Induction/FactorialGeTwoPow.lean"
+    ]
+  },
+  "review": {
+    "review_basis": "repo self-review; kernel-verified through the tracked proof-search loop",
+    "reviewer_status": "repo_reviewed"
+  },
+  "verification": {
+    "verifier": "proofsearch",
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "episode_id": "538ea8b6-6ad7-4a16-9e9b-bda5364ba942",
+    "outcome": "kernel_verified",
+    "kernel_verified": true,
+    "fidelity_status": "attested",
+    "step_count": 1,
+    "import_manifest_hash": "5dbda8f34f81e638ae9585dbd75ed0ea5f00b9609eecdbfb8367c83e0015233b",
+    "verified_at": "2026-07-08T03:17:40Z"
+  },
+  "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 538ea8b6), kernel_verified on the first Solve attempt. Cross-references packets/elementary/number_theory/factorial_pos.v1.json and factorial_le.v1.json (see CROSS_DOMAIN.md). Builds on the induction curriculum lane, the smallest domain in the corpus at the time of authoring.",
+  "hashes": {
+    "packet_sha256": "fb3f2413a56761243f088c2dfa6f82072464eaf962e74db5dd8e6c52d1d1bbd1",
+    "formal_statement_sha256": "e8a92874f9a4f19c7c1243acb2e84ef1e21fb7daedd1be1f9f61daf81e64218e",
+    "proof_body_sha256": "b9e225471f4d8cc044e6d43484cabd8d790221de5750b5aa4becb90ba9f6429f"
+  }
+}

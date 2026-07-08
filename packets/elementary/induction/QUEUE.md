@@ -21,20 +21,40 @@ over other elementary domains when otherwise unconstrained**, per
       `sq_nonneg x` as nlinarith hints). Uses `InequalityEstimateKit`
       (recorded in `CROSS_DOMAIN.md`); cross-references
       `packets/elementary/inequalities/`.
+- [x] `sum_evens` — `∑ i ∈ range n, (2*i+2) = n*(n+1)` (2, 4, ..., 2n) (D1,
+      L1). Authored 2026-07-08 via tracked episode
+      `7c564d42-9a98-4780-9d1c-3affd65958d6` (kernel_verified on the first
+      attempt: `induction n with | zero => simp | succ k ih => rw
+      [Finset.sum_range_succ, ih]; ring`). Reformulated from the queue's
+      `2*i = n*(n-1)` phrasing to the subtraction-free `2*(i+1) = n*(n+1)`
+      form (first n positive evens 2..2n) to avoid ℕ truncated-subtraction
+      noise in the successor step — mirrors `sum_odds`'s style. Needed an
+      explicit `problem_imports:
+      ["Mathlib.Algebra.BigOperators.Group.Finset.Basic"]` on
+      `problem_create`; the base dev-attestation manifest (Ring + NormNum
+      only) does not carry `Finset.sum`/`∑` notation, and `open scoped
+      BigOperators` no longer resolves under this pinned Mathlib rev
+      (namespace doesn't exist) — don't reuse that directive for future
+      Finset.sum targets in this domain.
+
+- [x] `factorial_ge_two_pow` — `2 ^ n <= (n + 1)!` for all `n` (D1, L1),
+      equivalent via `n -> n - 1` to the queue's original `n! >= 2^(n-1)`
+      for `n >= 1` phrasing, restated shifted-by-one to avoid ℕ truncated
+      subtraction. Authored 2026-07-08 via tracked episode
+      `538ea8b6-6ad7-4a16-9e9b-bda5364ba942` (kernel_verified on the first
+      attempt: `induction n with | zero => norm_num [Nat.factorial] | succ
+      n ih => rw [Nat.factorial_succ, pow_succ]; nlinarith [ih,
+      Nat.factorial_pos (n + 1)]`). Cross-referenced against
+      `packets/elementary/number_theory/factorial_pos.v1.json` /
+      `factorial_le.v1.json` in `CROSS_DOMAIN.md` (no direct proof-term
+      dependency, same subject matter).
 
 ## Next targets
 
-- [ ] `sum_evens` — `∑ i in range n, 2 * i = n * (n - 1)` (D0/D1, L0/L1).
-      The domain already has `sum_odds`; the evens companion is a natural,
-      cheap addition.
 - [ ] `geom_series_sum_induction` — closed form for `∑ i in range n, r ^ i`
       proved **by induction** (D1, L1) — distinct proof style from
       `packets/elementary/functions/geom_series_mul` (a factorization
       identity, not an inductive proof); cross-reference both once authored.
-- [ ] `factorial_ge_two_pow` — `n ! >= 2 ^ (n - 1)` for `n >= 1` (D1, L1).
-      Builds on `factorial_pos'` / `factorial_le'` already in
-      `packets/elementary/number_theory/`; record the cross-domain
-      dependency in `CROSS_DOMAIN.md` when authored.
 
 ## Backlog
 
