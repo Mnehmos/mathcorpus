@@ -2616,3 +2616,39 @@ plan. This prevents a future cycle from spending an episode budget
 expecting a quick transport and hitting a wall of missing infrastructure
 instead. No proof-search episode attempted (read-only review); no
 packet JSON touched. Commit scoped to only this cycle's own files.
+
+## Proposed update — frontier packet: Erdős #1052 companion infrastructure, part 2 (this agent, 2026-07-08, /loop continuation)
+
+Continued this agent's own prior-cycle `erdos_1052_proper_eq_erase`
+infrastructure. Startup this cycle: no bugs/triage; both v0.1 numeric
+release criteria remained comfortably exceeded (293 verified public + 26
+negative at the top of this cycle). Re-checked every elementary/negative
+queue — still fully drained.
+
+Added `packets/frontier/erdos/erdos_1052_not_dvd_div_ordproj.v1.json`:
+redeclares `uDiv`/`mem_uDiv` (SubmitModule submissions are self-contained
+per episode) and adds `ordProj_dvd_of_mem_uDiv` (a unitary divisor of `n`
+divisible by prime `p` is divisible by `n`'s full `p`-part) plus the root
+`not_dvd_div_ordProj` (removing that full `p`-part from a divisor leaves
+a `p`-free quotient). Produced via tracked episode
+`2d9c2f64-cbed-4832-b79d-d5521592e752` (problem_version
+`ac4911a9-a44e-47a0-8a4f-d1df1330bdd9`, dev-attested,
+`problem_imports: ["Mathlib"]`), `kernel_verified` on the FIRST
+`submit_module` attempt. Unlike the prior packet, neither of these two
+lemmas needed bullet-free rewriting at all (no `.`-bullet splits in the
+sibling source) — only the standard `have h := by tac1; tac2` ->
+`have h := (by tac1; tac2)` parenthesization fix (applied once, in
+`ordProj_dvd_of_mem_uDiv`'s `happ`).
+
+Still not the headline `even_of_isUnitaryPerfect` result:
+`filter_not_dvd_eq_uDiv_ordCompl` (an `Iff` bullet split, same fix pattern
+as the prior packet), `sum_uDiv_factor` (a `Finset.sum_bij'` 5-argument
+bijection with deeply NESTED bullets), and `sum_uDiv_even` (a
+`Finset.sum_involution` 4-argument involution) remain deferred — the
+latter two are the genuinely hard remaining pieces.
+
+Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
+0 errors) and hash-stamped; commit `aab21a8`, scoped to only these two new
+files. Full `packets/frontier/erdos/` revalidated clean at 10 packets, 0
+errors, 0 warnings; full corpus at 294 verified public + 26 negative
+(117.6% of the v0.1 public target) as of this update.
