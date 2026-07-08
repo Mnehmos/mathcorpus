@@ -1089,3 +1089,22 @@ coverage. Schema-validated (`validate_packets.py --check-hashes
 at 245 packets, 0 errors, 0 warnings as of this update (229 verified public
 + 16 negative per `corpus_stats.py`, 91.6% of the 250-packet v0.1 public
 target). Commit scoped to only this cycle's own files.
+
+## Proposed update — combinatorics elementary packet #11 (this agent, 2026-07-08, /loop continuation)
+
+Added `packets/elementary/combinatorics/card_bi_union_le.v1.json`:
+`(s.biUnion t).card <= ∑ i ∈ s, (t i).card` — the indexed-union
+generalization of the domain's existing `card_union_le'`. Proved directly
+via `Finset.card_biUnion_le`. Produced via tracked episode
+`e3c5ed4b-c31c-4b90-8598-5e18ac5575b3` (problem_version
+`6196c767-a884-4f69-bc31-bc9b1e1cdc38`, dev-attested,
+`problem_imports: ["Mathlib.Algebra.BigOperators.Group.Finset.Basic"]`),
+`kernel_verified` on the first `solve` attempt. This closed the last item
+in `packets/elementary/combinatorics/QUEUE.md`'s next-targets, so also
+added two fresh candidates: `card_sdiff_of_subset` (set-difference
+cardinality — verified the Mathlib lemma exists first) and a general
+(non-concrete) pigeonhole statement generalizing `pigeonhole_3_into_2`.
+Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
+0 errors) and hash-stamped; full corpus revalidated clean at 247 packets,
+0 errors, 0 warnings as of this update. This is this agent's 11th
+combinatorics elementary packet added across this session's /loop cycles.
