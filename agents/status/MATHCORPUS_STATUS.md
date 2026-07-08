@@ -3094,3 +3094,36 @@ Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
 0 errors, 0 warnings (302 verified public + 28 negative per
 `corpus_stats.py`, 120.8% of the 250-packet v0.1 public target). Commit
 scoped to only this cycle's own files.
+
+## Proposed update — inequalities elementary packet: general_amgm (this agent, 2026-07-08, /loop continuation)
+
+Startup this cycle: no bugs/triage; both v0.1 numeric release criteria
+remained comfortably exceeded. Swept every elementary domain's
+`QUEUE.md` — all genuinely drained, including this agent's own prior
+`erdos_1052` chain's next piece (`sum_uDiv_factor`, blocked on a 120s
+timeout, recorded in `packets/frontier/erdos/BLOCKERS.md`, deliberately
+not re-attempted blind this cycle). Reconsidered
+`packets/elementary/inequalities/QUEUE.md`'s deferred "General n-term
+AM-GM" backlog item (previously assumed to need new
+`InequalityEstimateKit` infrastructure) and checked via
+`mathlib_search_declarations` whether Mathlib already has this —
+it does: `Real.geom_mean_le_arith_mean_weighted`, the weighted AM-GM for
+Finsets.
+
+Added `packets/elementary/inequalities/general_amgm.v1.json`: for
+nonempty finite `s` and nonneg `z : ι → ℝ`, `(∏ z i)^(1/|s|) ≤ (∑ z
+i)/|s|`, derived by instantiating the weighted lemma with constant
+weights `1/|s|` and collapsing via `Real.finsetProd_rpow` +
+`Finset.mul_sum`. Produced via tracked episode
+`71fafcd9-0ab6-4498-b785-b8bd96d5dc5a` (problem_version
+`17158be0-69fc-4443-9b32-6b20dd3bc537`, dev-attested,
+`problem_imports: ["Mathlib"]`), `kernel_verified` on the second attempt
+(step 1 failed on the unqualified name — the lemma lives under the
+`Real` namespace in this Mathlib rev). Closes the backlog item outright:
+no new kit was needed, just the right existing Mathlib lemma.
+
+Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
+0 errors) and hash-stamped; commit `d4784ca`, scoped to only these two new
+files. Full `packets/elementary/inequalities/` revalidated clean at 30
+packets, 0 errors, 0 warnings; full corpus at 303 verified public + 28
+negative (121.2% of the v0.1 public target) as of this update.
