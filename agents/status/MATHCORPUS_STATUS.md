@@ -2033,3 +2033,30 @@ Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
 files. Full `packets/elementary/number_theory/` revalidated clean at 56
 packets, 0 errors, 0 warnings; full corpus at 269 verified public + 25
 negative (107.6% of the v0.1 public target) as of this update.
+
+## Proposed update — number_theory elementary packet: dvd_lcm_right (this agent, 2026-07-08, /loop continuation)
+
+Startup this cycle: no bugs blocking progress. Inequalities and induction
+(tied smallest, 25-26) both had empty queues/backlogs again. Moved to
+`number_theory`'s remaining open item — `dvd_lcm_right`, exactly the item
+a prior cycle's agent had deliberately left for "the next cycle" per the
+note immediately above (one-target-per-firing discipline).
+
+Added `packets/elementary/number_theory/dvd_lcm_right.v1.json`:
+`b ∣ Nat.lcm a b`, cited directly via `Nat.dvd_lcm_right`. Produced via a
+fresh tracked episode `b9c09daf-fb35-4808-9fbe-03045acb506a`
+(problem_version `617796e7-411c-4555-aea0-1998d3baab30`, dev-attested) —
+did not reuse the previously-registered but unattempted problem_version
+`741cbcaa-ec83-435b-96e2-6d4ff9ec8517` mentioned above, since a fresh
+`problem_create` was simpler than looking up and reusing a bare
+problem_version_id from a prior status note; both would have produced
+the same statement. `kernel_verified` on the first `solve` attempt.
+`theorem_name: dvd_lcm_right'` (trailing apostrophe) to avoid shadowing
+Mathlib's own `Nat.dvd_lcm_right`, matching the sibling `dvd_lcm_left'`
+convention. Closes the `gcd_*`/`lcm_*` family's last open item.
+
+Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
+0 errors) and hash-stamped. Also condensed
+`packets/elementary/number_theory/DASHBOARD.md` into summary form (same
+fix now applied across every elementary domain touched this session).
+Commit scoped to only this cycle's own files.

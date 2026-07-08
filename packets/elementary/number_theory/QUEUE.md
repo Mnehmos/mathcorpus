@@ -16,12 +16,13 @@ primality family), `lcm_comm`, `gcd_mul_lcm` (`Nat.gcd a b * Nat.lcm a b
 `f6352ddf-5a46-4adf-ac9a-4036cb887f47`, kernel_verified on the first
 attempt via `Nat.gcd_mul_lcm`), `even_sq`, `well_ordering` (the naturals'
 well-ordering principle — see this packet's `notes` for a bullet/
-`raw_lean_block` transport lesson).
+`raw_lean_block` transport lesson), `dvd_lcm_left'`/`dvd_lcm_right'`
+(`a ∣ Nat.lcm a b` / `b ∣ Nat.lcm a b`; trailing apostrophe avoids
+shadowing Mathlib's own `Nat.dvd_lcm_left`/`Nat.dvd_lcm_right`).
 
 ## Next targets
 
-- [ ] `dvd_lcm_left` / `dvd_lcm_right` — `a ∣ Nat.lcm a b` (D0, L0). Pairs
-      with `lcm_comm`.
+*(empty)*
 
 ## Backlog
 
