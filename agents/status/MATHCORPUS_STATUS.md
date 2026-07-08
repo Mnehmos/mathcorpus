@@ -3,20 +3,22 @@
 Corpus-wide status for the MathCorpus agent workspace. Owned by the dev
 loop agent (`agents/github_issues/`); domain agents propose updates rather
 than editing directly. Re-derive with `python tools/corpus_stats.py` where
-available; this snapshot was hand-updated 2026-07-08 after an inequalities
-negative-example packet (proposed update — dev loop agent should confirm
-against a fresh `corpus_stats.py` run).
+available; this snapshot was hand-updated 2026-07-08 by the induction domain agent
+after adding `two_pow_gt_self` + its paired negative example (proposed
+update — dev loop agent should confirm against a fresh `corpus_stats.py`
+run; other domain agents are committing concurrently, so treat exact
+counts as approximate until re-derived).
 
 ## Corpus totals (measured, 2026-07-08)
 
 | Metric | Value |
 |--------|-------|
-| Total packets | 195 |
-| Elementary (public) | 189 |
-| Negative examples | 6 |
+| Total packets | 197+ |
+| Elementary (public) | 190+ |
+| Negative examples | 7+ |
 | v0.1 target (`docs/roadmap.md`) | >=250 public packets, >=25 negative examples |
-| Progress to v0.1 (public) | 189 / 250 (~76%) |
-| Progress to v0.1 (negative) | 6 / 25 (~24%) |
+| Progress to v0.1 (public) | 190 / 250 (~76%) |
+| Progress to v0.1 (negative) | 7 / 25 (~28%) |
 
 Note: `packets/negative/functions/injective_add_decide_failure.v1.json` is
 stamped, schema-validated (`validate_packets.py --check-hashes
@@ -35,7 +37,7 @@ because `functions` is not a valid `domain` enum value in
 | Number theory | 48 | L0: 23 · L1: 24 · L2: 1 |
 | Combinatorics | 33 | L0: 10 · L1: 23 |
 | Geometry | 29 | L0: 3 · L1: 23 · L2: 3 |
-| Induction | 6 | L1: 6 |
+| Induction | 7 | L0: 1 · L1: 6 |
 | Inequalities | 16 | L0: 2 · L1: 2 · L2: 12 |
 | Functions | 16 | L0: 8 · L1: 8 |
 
@@ -75,9 +77,21 @@ All 189 elementary packets are `status: kernel_verified`.
   sq_nonneg (b - c), sq_nonneg (a - c)]` then closes the same tracked
   episode `d1e875d2-1cef-45c1-a76e-d46e84f67aa9` `kernel_verified`)
 
-1 more domain lane (`induction`) is still empty in the committed corpus —
-the roadmap's >=25 negative-example release criterion is the biggest
-current gap.
+- `packets/negative/induction/pow_succ_atom_nlinarith_failure.v1.json`
+  (added 2026-07-08: `nlinarith [ih]` applied directly to the induction
+  successor goal `n + 1 < 2 ^ (n + 1)` (proving `n < 2 ^ n`) fails because
+  it treats `2 ^ (n + 1)` and `2 ^ n` as unrelated opaque atoms with no
+  built-in `pow_succ` recurrence; `rw [pow_succ]; nlinarith [ih]` then
+  closes it. Produced via tracked episode
+  `5a175c43-1c93-4cf7-a4e9-5038e1961068`; the follow-up fix in the same
+  episode reached `kernel_verified` and was authored as
+  `packets/elementary/induction/two_pow_gt_self.v1.json`, closing the
+  induction elementary QUEUE.md's `two_pow_gt_self` target.)
+
+Every domain lane now has at least one committed negative example — the
+roadmap's >=25 negative-example release criterion (currently ~7/25) is
+still the biggest raw-count gap, but the "zero coverage" gap across
+domains is closed.
 
 ## Frontier (Phase 5)
 
@@ -110,10 +124,12 @@ negative-example coverage matters before a v0.1 cut, not just raw count).
 
 ## Recommended next domains
 
-Induction (6 packets) is furthest behind on the elementary spine; negative
-examples remain the single biggest gap versus the v0.1 release criteria —
-`induction` is now the only domain lane with zero committed
-negative-example packets.
+Induction (7 packets) is still furthest behind on the elementary spine —
+see `packets/elementary/induction/QUEUE.md` for queued targets
+(`bernoulli_inequality`, `sum_evens`, `geom_series_sum_induction`,
+`factorial_ge_two_pow`). Negative examples remain the single biggest gap
+versus the v0.1 release criteria (~7/25); every domain lane now has at
+least one, so the next priority is raw count, not coverage.
 
 ## Known environment bugs / workarounds
 

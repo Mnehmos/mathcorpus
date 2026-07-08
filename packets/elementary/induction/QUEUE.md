@@ -1,18 +1,25 @@
 # Queue — Induction (Elementary)
 
 Candidate packets to create or formalize next, roughly in priority order.
-**This domain is the smallest in the corpus (6 packets) — prioritize it
+**This domain is the smallest in the corpus (7 packets) — prioritize it
 over other elementary domains when otherwise unconstrained**, per
 `agents/status/MATHCORPUS_STATUS.md`.
+
+## Done
+
+- [x] `two_pow_gt_self` — `n < 2 ^ n` for all `n` (D0, L0). Authored
+      2026-07-08 via tracked episode `5a175c43-1c93-4cf7-a4e9-5038e1961068`
+      (kernel_verified: `induction n with | zero => norm_num | succ n ih =>
+      rw [pow_succ]; nlinarith [ih]`). The naive `nlinarith [ih]` attempt
+      (no `pow_succ` rewrite) kernel-failed first in the same episode and is
+      preserved as
+      `packets/negative/induction/pow_succ_atom_nlinarith_failure.v1.json`.
 
 ## Next targets
 
 - [ ] `bernoulli_inequality` — `(1 + x) ^ n >= 1 + n * x` for `x >= -1`
       (D1, L1). A textbook induction-by-tactic example; also a natural
       cross-domain link to `packets/elementary/inequalities/`.
-- [ ] `two_pow_gt_self` — `2 ^ n > n` for all `n` (D0, L0). One of the
-      simplest genuine induction proofs; good low-difficulty addition given
-      the domain's small size.
 - [ ] `sum_evens` — `∑ i in range n, 2 * i = n * (n - 1)` (D0/D1, L0/L1).
       The domain already has `sum_odds`; the evens companion is a natural,
       cheap addition.
