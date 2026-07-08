@@ -5,9 +5,6 @@ Checked against the 33 existing packets (2026-07-07) to avoid duplicates.
 
 ## Next targets
 
-- [ ] `card_powerset` — `(Finset.powerset s).card = 2 ^ s.card` (D1, L1).
-      A headline finite-combinatorics fact; currently nothing in this
-      domain touches `powerset` at all.
 - [ ] `choose_zero_right` / `choose_self` / `choose_symm` — basic binomial
       coefficient identities (D0/D1, L0/L1). The roadmap's "finite
       combinatorics basics" starter family names this explicitly; no

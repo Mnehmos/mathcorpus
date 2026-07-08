@@ -2,8 +2,8 @@
 
 | Metric | Value |
 |--------|-------|
-| Packets | 36 |
-| Level breakdown | L0_elementary: 10 · L1_proof_basics: 26 |
+| Packets | 38 |
+| Level breakdown | see individual packets — includes `card_union_not_additive.v1.json` (another concurrent agent's addition, commit `246ca69`) not itemized below |
 
 - `card_union_add_card_inter.v1.json` (added 2026-07-08) — inclusion-exclusion
   identity `(s ∪ t).card + (s ∩ t).card = s.card + t.card`; kernel-verified
@@ -20,6 +20,10 @@
   gap): 3 items into 2 boxes forces a repeated box, via
   `Finset.exists_ne_map_eq_of_card_lt_of_maps_to`; kernel-verified via
   episode `f2716b47-cc6b-4e6c-b791-1e153a4edf22`.
+- `card_powerset.v1.json` (added 2026-07-08) — the headline finite-
+  combinatorics fact `(Finset.powerset s).card = 2 ^ s.card`, the domain's
+  first packet to touch `powerset`; kernel-verified via episode
+  `53929392-6942-40dd-a25f-69379262bf28`.
 
 Last synced: 2026-07-08 — re-sync against
 `agents/status/MATHCORPUS_STATUS.md` and `python tools/corpus_stats.py`

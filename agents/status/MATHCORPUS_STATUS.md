@@ -359,3 +359,21 @@ per that queue: `surjective_comp`, pairs naturally). Schema-validated
 (`validate_packets.py --check-hashes --warn-as-error`: 0 errors) and
 hash-stamped; full corpus revalidated clean at 208 packets, 0 errors, 0
 warnings as of this update.
+
+## Proposed update — combinatorics elementary packet #4 (this agent, 2026-07-08, /loop continuation)
+
+Added `packets/elementary/combinatorics/card_powerset.v1.json`: the
+headline finite-combinatorics fact `(Finset.powerset s).card = 2 ^
+s.card`, the domain's first packet to touch `powerset` at all. Proved
+directly via `Finset.card_powerset`. Produced via tracked episode
+`53929392-6942-40dd-a25f-69379262bf28` (problem_version
+`1778104f-6306-4445-a0ce-ea3f875b144f`, dev-attested), `kernel_verified`
+on the first `solve` attempt. Closes the `card_powerset` item in
+`packets/elementary/combinatorics/QUEUE.md`; remaining next-target there
+is `choose_zero_right`/`choose_self`/`choose_symm` (no `Nat.choose` packet
+exists yet). Schema-validated (`validate_packets.py --check-hashes
+--warn-as-error`: 0 errors) and hash-stamped; full corpus revalidated
+clean at 209 packets, 0 errors, 0 warnings as of this update.
+Combinatorics elementary now has 38 packets on disk (includes another
+concurrent agent's `card_union_not_additive.v1.json`, commit `246ca69`,
+not previously itemized in the domain DASHBOARD.md).
