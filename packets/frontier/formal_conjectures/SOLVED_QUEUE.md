@@ -517,3 +517,21 @@ now the smallest untriaged category (`Arxiv/`, `OEIS/`, `Paper/`,
       literature -- only the elementary n=1 case is proved here). Also
       surfaced a new, more dangerous blocker class than prior rounds'
       "unknown constant" API drift -- see `BLOCKERS.md`.
+- [x] `GreensOpenProblems/` category, all 30 `research solved`-tagged files
+      (round 8, 2026-07-08) -- **triaged, 0/30 tractable**, no packet.
+      Bulk `grep -c "category research solved"` vs `grep -c sorry` pass
+      across the whole category (reusing round 7's shortcut) found no
+      file where sorry-count is clearly below tag-count; hand-checked
+      the lowest-ratio files (`23.lean`/`49.lean`: 1 tag/1 sorry each --
+      Pythagorean-pair Ramsey result and the PFR/Marton conjecture,
+      genuinely deep and both still `sorry`) plus the `tags=1,sorries=3`
+      cluster and the three partially-external-linked files
+      (`42.lean`/`72.lean`/`94.lean`). Every `research solved` tag in
+      every file is `sorry` -- these are recent (2024-2025) results from
+      Ben Green's "100 Open Problems" survey that, unlike the Erdos/OEIS/
+      EquationalTheories categories, mostly have NOT been formalized in
+      Lean anywhere yet (only the sphere-packing d=8/d=24 cases in
+      `42.lean` have external DeepMind-prover links; everything else is
+      a bare `sorry` citing a paper, not a transport target).
+      `GreensOpenProblems/` triage is now complete. `Wikipedia/` (60
+      files) is the next, largest remaining untriaged category.
