@@ -1483,3 +1483,14 @@ and `QUEUE.md` into summary form (same fix now applied to every
 elementary domain touched this session: combinatorics, induction,
 inequalities, functions, geometry). Commit scoped to only this cycle's
 own files.
+
+## Proposed update — combinatorics negative example (this agent, 2026-07-08)
+
+Added `packets/negative/combinatorics/filter_prime_simp_no_progress.v1.json`
+(combinatorics' 3rd negative example) plus companion
+`packets/elementary/combinatorics/primes_below_ten_card.v1.json` (`decide`).
+Commit `a002a8b`. Corpus is very close to v0.1 now: last full validate
+showed 266 packets total; re-derive via `python tools/corpus_stats.py`
+for the current public/negative split, but as of this agent's last check
+it was ~244/250 public (97.6%) and ~20/25 negative (80%) -- both gaps are
+down to single digits.
