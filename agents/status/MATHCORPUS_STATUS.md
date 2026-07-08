@@ -952,3 +952,37 @@ hypothesis already in context).
 Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
 0 errors) and hash-stamped. Commit scoped to only this packet's own files
 to avoid touching other agents' concurrent in-flight work.
+
+## Proposed update — functions elementary packet: monotone_comp (this agent, 2026-07-08, /loop continuation)
+
+Startup this cycle: no bugs/triage; fresh `python tools/corpus_stats.py`
+showed 226 verified public + 14 negative (240 files, 90.4% of the v0.1
+public target, 24 to go). Every negative-example domain lane now sits at
+exactly 2 (14/25 total) — raw count is the only remaining gap there, no
+domain has zero. Per this agent's literal priority order (bugs > zero-
+coverage negative examples > furthest-behind elementary domain >
+frontier), zero-coverage is fully resolved everywhere, so continued with
+elementary curriculum: induction's `QUEUE.md` (19 packets) was fully
+drained again (`prod_range_monotone`, `fib_sum_succ` landed since my last
+cycle); inequalities' `QUEUE.md` (20) also fully drained (only the
+deferred L2/L3 general-AM-GM item remains). Moved to `functions` (22),
+whose `QUEUE.md` backlog still named `monotone_comp` (composition of
+monotone functions) as open.
+
+Added `packets/elementary/functions/monotone_comp.v1.json`: for preordered
+`α, β, γ`, `f : α → β` and `g : β → γ` both monotone implies `g ∘ f` is
+monotone (`intro a b hab; exact hg (hf hab)`). Produced via tracked
+episode `c8b140d2-d2e3-4791-8237-0fa8c0f6d29d` (problem_version
+`8e96fdae-9053-49ea-80e0-936833b8d9b8`, dev-attested), `kernel_verified`
+on the first attempt — no import trouble this time (`Preorder`/`Monotone`
+resolve under the base Ring+NormNum manifest, unlike the real-number
+targets from two cycles ago). Completes the composition trio
+(`injective_comp`, `surjective_comp`, `monotone_comp`); closes the
+`monotone_comp` backlog item in `packets/elementary/functions/QUEUE.md`.
+
+Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
+0 errors) and hash-stamped; commit `1b82ee3`, scoped to only these two new
+files. Full `packets/elementary/functions/` revalidated clean at 23
+packets, 0 errors, 0 warnings as of this update. Remaining open item in
+that domain's `QUEUE.md`: `fixed_point_id`; remaining backlog: a concrete
+image/preimage identity.
