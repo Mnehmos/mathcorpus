@@ -1,5 +1,5 @@
 {
-  "packet_count": 160,
+  "packet_count": 190,
   "exact_file_duplicates": {},
   "canonical_theorem_duplicates": {},
   "family_clusters": {
@@ -16,9 +16,15 @@
       "elementary.algebra.square_of_difference.v1",
       "elementary.algebra.sum_of_cubes.v1"
     ],
+    "algebra.integral_domain": [
+      "elementary.algebra.mul_self_eq_zero.v1"
+    ],
     "algebra.power_basics": [
+      "elementary.algebra.one_pow.v1",
       "elementary.algebra.pow_one.v1",
-      "elementary.algebra.pow_zero.v1"
+      "elementary.algebra.pow_two.v1",
+      "elementary.algebra.pow_zero.v1",
+      "elementary.algebra.zero_pow_succ.v1"
     ],
     "algebra.ring_basics": [
       "elementary.algebra.add_assoc.v1",
@@ -42,6 +48,21 @@
       "elementary.algebra.zero_add.v1",
       "elementary.algebra.zero_sub.v1"
     ],
+    "algebra.sos_inequalities": [
+      "elementary.algebra.am_gm_half.v1",
+      "elementary.algebra.cubic_pos.v1",
+      "elementary.algebra.neg_two_ab_le.v1",
+      "elementary.algebra.quad_form_nonneg.v1",
+      "elementary.algebra.sq_sum_le.v1",
+      "elementary.algebra.x4_ge_2x2.v1"
+    ],
+    "combinatorics.finite_products": [
+      "elementary.combinatorics.prod_range_zero.v1"
+    ],
+    "combinatorics.finite_sums": [
+      "elementary.combinatorics.sum_empty.v1",
+      "elementary.combinatorics.sum_range_zero.v1"
+    ],
     "combinatorics.finset_card": [
       "elementary.combinatorics.card_insert_le.v1",
       "elementary.combinatorics.card_le_of_subset.v1",
@@ -49,6 +70,15 @@
       "elementary.combinatorics.card_singleton.v1",
       "elementary.combinatorics.card_union_le.v1",
       "elementary.combinatorics.sum_ones_card.v1"
+    ],
+    "combinatorics.finset_cardinality": [
+      "elementary.combinatorics.card_empty.v1"
+    ],
+    "combinatorics.finset_identities": [
+      "elementary.combinatorics.empty_inter.v1",
+      "elementary.combinatorics.empty_union.v1",
+      "elementary.combinatorics.inter_empty.v1",
+      "elementary.combinatorics.union_empty.v1"
     ],
     "combinatorics.finset_membership": [
       "elementary.combinatorics.mem_insert.v1",
@@ -110,6 +140,11 @@
     "geometry.automation_hazards": [
       "negative.geometry.angle_atoms.nlinarith_failure.v1"
     ],
+    "geometry.coordinate_basics": [
+      "elementary.geometry.centroid_x.v1",
+      "elementary.geometry.dist_sq_expand.v1",
+      "elementary.geometry.midpoint_between.v1"
+    ],
     "geometry.coordinate_distance": [
       "elementary.geometry.centroid_sum.v1",
       "elementary.geometry.dist_sq_symm.v1",
@@ -122,6 +157,12 @@
       "elementary.geometry.reflection_dist.v1",
       "elementary.geometry.section_formula_thirds.v1",
       "elementary.geometry.slope_cross_symm.v1"
+    ],
+    "geometry.inner_product_basics": [
+      "elementary.geometry.dot_distrib.v1"
+    ],
+    "geometry.line_slopes": [
+      "elementary.geometry.perp_slopes_comm.v1"
     ],
     "geometry.perpendicularity": [
       "elementary.geometry.dot_product_comm.v1",
@@ -178,6 +219,11 @@
       "elementary.number_theory.coprime_comm.v1",
       "elementary.number_theory.coprime_one_left.v1"
     ],
+    "number_theory.divisibility_basics": [
+      "elementary.number_theory.mod_self.v1",
+      "elementary.number_theory.mul_mod_right.v1",
+      "elementary.number_theory.zero_mod.v1"
+    ],
     "number_theory.divisibility_closure": [
       "elementary.number_theory.dvd_add.v1",
       "elementary.number_theory.dvd_mul.v1",
@@ -218,6 +264,11 @@
       "elementary.number_theory.two_mul_nat.v1",
       "elementary.number_theory.two_pow_pos.v1"
     ],
+    "number_theory.order_basics": [
+      "elementary.number_theory.lt_succ_iff.v1",
+      "elementary.number_theory.nat_pos_of_ne_zero.v1",
+      "elementary.number_theory.succ_le_iff.v1"
+    ],
     "number_theory.parity_closure": [
       "elementary.number_theory.emod_two.v1",
       "elementary.number_theory.even_add.v1",
@@ -226,6 +277,9 @@
       "elementary.number_theory.even_mul_succ_self.v1",
       "elementary.number_theory.even_or_odd.v1",
       "elementary.number_theory.odd_add_odd.v1"
+    ],
+    "number_theory.successor_basics": [
+      "elementary.number_theory.succ_ne_zero.v1"
     ]
   }
 }

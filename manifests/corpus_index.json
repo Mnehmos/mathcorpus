@@ -1,22 +1,22 @@
 {
-  "packet_count": 160,
+  "packet_count": 190,
   "by_domain": {
-    "algebra": 69,
-    "combinatorics": 25,
-    "geometry": 25,
-    "number_theory": 41
+    "algebra": 79,
+    "combinatorics": 33,
+    "geometry": 30,
+    "number_theory": 48
   },
   "by_level": {
-    "L0_elementary": 68,
-    "L1_proof_basics": 75,
-    "L2_olympiad": 17
+    "L0_elementary": 79,
+    "L2_olympiad": 23,
+    "L1_proof_basics": 88
   },
   "by_kind": {
-    "concept": 159,
+    "concept": 189,
     "negative_example": 1
   },
   "by_status": {
-    "kernel_verified": 159,
+    "kernel_verified": 189,
     "failed_attempt": 1
   },
   "packets": [
@@ -71,6 +71,16 @@
       "packet_sha256": "b88026e53c65bdd5dfbaf83b6e4e55b2d92d5f942f9223ac14d097a7d8de3309"
     },
     {
+      "packet_id": "elementary.algebra.am_gm_half.v1",
+      "title": "The product of two reals is at most the mean of their squares",
+      "domain": "algebra",
+      "level": "L2_olympiad",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "97c28b9a2c860206decd7146f0e386b2019f4b9a1819de2cfe414ba3008216bc"
+    },
+    {
       "packet_id": "elementary.algebra.binomial_cube.v1",
       "title": "Binomial cube",
       "domain": "algebra",
@@ -89,6 +99,16 @@
       "status": "kernel_verified",
       "eligibility": "public_train",
       "packet_sha256": "8b2e01526502c462610f22f95184ed510b68cd00feb86fb74b04885e78994dc9"
+    },
+    {
+      "packet_id": "elementary.algebra.cubic_pos.v1",
+      "title": "The quadratic a^2+a+1 is always positive",
+      "domain": "algebra",
+      "level": "L2_olympiad",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "d65b75b5c8411e2c4fb75a8fc72d1e23df710a73efcadde0438872c74d95a4e9"
     },
     {
       "packet_id": "elementary.algebra.diff_of_cubes.v1",
@@ -181,6 +201,16 @@
       "packet_sha256": "6318563ab52c1e20c453e18489cc32aee153dd02c7e4651c1da8229b43a08542"
     },
     {
+      "packet_id": "elementary.algebra.mul_self_eq_zero.v1",
+      "title": "A product of a real with itself is zero iff the real is zero",
+      "domain": "algebra",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "99d9599ec3490bd9eb5f7dc836b08caf9061725b92fa6b07f58edf9546b72f60"
+    },
+    {
       "packet_id": "elementary.algebra.mul_zero.v1",
       "title": "Anything times zero is zero",
       "domain": "algebra",
@@ -211,6 +241,16 @@
       "packet_sha256": "f982a9118c4040b1301798aa0f79c3f629f1c361a4190cd07e6de94294401cc8"
     },
     {
+      "packet_id": "elementary.algebra.neg_two_ab_le.v1",
+      "title": "Twice a product is at least the negation of the sum of squares",
+      "domain": "algebra",
+      "level": "L2_olympiad",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "fca497bbb4cd1520d3cead2f85039e129c2e5c155d117f49df4a50d08c3acbd9"
+    },
+    {
       "packet_id": "elementary.algebra.neg_zero.v1",
       "title": "Negation of zero",
       "domain": "algebra",
@@ -231,6 +271,16 @@
       "packet_sha256": "3614393abb45894970ee96607b59002dc2657ff9504656ddcd42aff1a81a4f1a"
     },
     {
+      "packet_id": "elementary.algebra.one_pow.v1",
+      "title": "One raised to any power is one",
+      "domain": "algebra",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "bd46f3cfb2fb0f520cbc4caae0a1678ffe7170cd5b02ca3811e01f260e555a76"
+    },
+    {
       "packet_id": "elementary.algebra.pow_one.v1",
       "title": "First power is the base",
       "domain": "algebra",
@@ -241,6 +291,16 @@
       "packet_sha256": "1bc52c959a17be20faf574fd837225939e5ada569377877622791f317e76f905"
     },
     {
+      "packet_id": "elementary.algebra.pow_two.v1",
+      "title": "The square is the product of a number with itself",
+      "domain": "algebra",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "609a5f699724bb07165f3fe1d357ac052a336741cb2cee344bd1e2b5f1bb4e53"
+    },
+    {
       "packet_id": "elementary.algebra.pow_zero.v1",
       "title": "Zeroth power is one",
       "domain": "algebra",
@@ -249,6 +309,26 @@
       "status": "kernel_verified",
       "eligibility": "public_train",
       "packet_sha256": "ae45c73f5d2566e35b5585cae1f672d1a248e568881399658372a9778672d31c"
+    },
+    {
+      "packet_id": "elementary.algebra.quad_form_nonneg.v1",
+      "title": "The form a^2 - ab + b^2 is nonnegative",
+      "domain": "algebra",
+      "level": "L2_olympiad",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "927d006360b6a1bf50c5057f16dcedc909d7494f205e5d8f225a9a5ea0db9fbe"
+    },
+    {
+      "packet_id": "elementary.algebra.sq_sum_le.v1",
+      "title": "The square of a sum is bounded by twice the sum of squares",
+      "domain": "algebra",
+      "level": "L2_olympiad",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "2b3ffebda3f10138ff6fb51e16d392992fab318abbd28d5ac320201b879b9628"
     },
     {
       "packet_id": "elementary.algebra.square_of_difference.v1",
@@ -311,6 +391,16 @@
       "packet_sha256": "7c51ea99456f72c53d4e32a3af7f49bc57637fb4ebdc21ed71952c587c5629f9"
     },
     {
+      "packet_id": "elementary.algebra.x4_ge_2x2.v1",
+      "title": "For every real x, 2x^2 ≤ x^4 + 1",
+      "domain": "algebra",
+      "level": "L2_olympiad",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "b706b8ac744e25d50952e6af2008c2dec39feac2eb807704dc95f0d6dd096593"
+    },
+    {
       "packet_id": "elementary.algebra.zero_add.v1",
       "title": "Zero is a left identity for addition",
       "domain": "algebra",
@@ -321,6 +411,16 @@
       "packet_sha256": "5d0006b0768f33192c9eda7558c9b35cd53487c601df04ac415a4e68fe30ad9c"
     },
     {
+      "packet_id": "elementary.algebra.zero_pow_succ.v1",
+      "title": "Zero to a positive power is zero",
+      "domain": "algebra",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "0384c24aa7641c0e23f2aca9d55f732bc2d3545cf2029fe5caef4c58ecacc4f9"
+    },
+    {
       "packet_id": "elementary.algebra.zero_sub.v1",
       "title": "Zero minus a",
       "domain": "algebra",
@@ -329,6 +429,16 @@
       "status": "kernel_verified",
       "eligibility": "public_train",
       "packet_sha256": "7476a28cf687ae6ac1140d6eb4d92c5373d842fb441a5a70195cee1939b8d6c9"
+    },
+    {
+      "packet_id": "elementary.combinatorics.card_empty.v1",
+      "title": "The empty finite set has cardinality zero",
+      "domain": "combinatorics",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "04c6a42d928891157c7581427bd08428e6e8a50020d89892c52f3c6d8d12e4d1"
     },
     {
       "packet_id": "elementary.combinatorics.card_insert_le.v1",
@@ -381,6 +491,16 @@
       "packet_sha256": "65d75a5e5146a05d57a278fc044117a085166fd779876ce16845fbd19a4eab38"
     },
     {
+      "packet_id": "elementary.combinatorics.empty_inter.v1",
+      "title": "Intersection with the empty set on the left is empty",
+      "domain": "combinatorics",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "b4584c6aac6d1674a2a160cb10f8744749ec23ae59b1231de91427e0eb29e60d"
+    },
+    {
       "packet_id": "elementary.combinatorics.empty_subset.v1",
       "title": "Empty set is a subset",
       "domain": "combinatorics",
@@ -389,6 +509,16 @@
       "status": "kernel_verified",
       "eligibility": "public_train",
       "packet_sha256": "e03355b9fda63d8a3274c2dc70b51eeb5ced7ef1716ceede5ad246d210077608"
+    },
+    {
+      "packet_id": "elementary.combinatorics.empty_union.v1",
+      "title": "The empty set is a left identity for union",
+      "domain": "combinatorics",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "530f029f96d340a9185a5aac1dc8b2cdebe76592bfa00fe6894cc204d765a11b"
     },
     {
       "packet_id": "elementary.combinatorics.filter_subset.v1",
@@ -409,6 +539,16 @@
       "status": "kernel_verified",
       "eligibility": "public_train",
       "packet_sha256": "62ae1a570c4c52f552425114357fc3cd6d4c40c1603c8394522dc8638bf3d881"
+    },
+    {
+      "packet_id": "elementary.combinatorics.inter_empty.v1",
+      "title": "Intersection with the empty set on the right is empty",
+      "domain": "combinatorics",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "d4438c68cf25756c6eb6de51f455e4eabb9744cd9c89cd4b3fea6127f068790d"
     },
     {
       "packet_id": "elementary.combinatorics.inter_self.v1",
@@ -501,6 +641,16 @@
       "packet_sha256": "c96c95956be68e333ca192fc03bd1b38d35052c29a4346653bfce268534e27ab"
     },
     {
+      "packet_id": "elementary.combinatorics.prod_range_zero.v1",
+      "title": "A product over an empty range is one",
+      "domain": "combinatorics",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "12711e4f4c4d0d9074ea3a4bdd7b8dfcfe20aff566aac8a9d025aec9a6a2da76"
+    },
+    {
       "packet_id": "elementary.combinatorics.subset_refl.v1",
       "title": "Subset is reflexive",
       "domain": "combinatorics",
@@ -531,6 +681,16 @@
       "packet_sha256": "c62133f35f69e881d746c0d9f79d2bbdb9c5119c3cc522a8201b9cb187c0da8b"
     },
     {
+      "packet_id": "elementary.combinatorics.sum_empty.v1",
+      "title": "A sum over the empty finite set is zero",
+      "domain": "combinatorics",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "1cb362343ae924c736072f4bfcf7b7d3be7d39b5d83fe1f0952e51af595dff5c"
+    },
+    {
       "packet_id": "elementary.combinatorics.sum_ones_card.v1",
       "title": "Summing 1 over a finite set counts its elements",
       "domain": "combinatorics",
@@ -551,6 +711,16 @@
       "packet_sha256": "b75dc5640ef5b8c3a5917a671a66e5e03ed32b2d51867cf3ff6f88f1dce47c30"
     },
     {
+      "packet_id": "elementary.combinatorics.sum_range_zero.v1",
+      "title": "A sum over an empty range is zero",
+      "domain": "combinatorics",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "9e70d8c835db78224affabd5a8d4a122c40f49fe808218719a0f64780adad182"
+    },
+    {
       "packet_id": "elementary.combinatorics.union_assoc.v1",
       "title": "Union is associative",
       "domain": "combinatorics",
@@ -569,6 +739,16 @@
       "status": "kernel_verified",
       "eligibility": "public_train",
       "packet_sha256": "774c0f7b8ab5530003f006e354a6af3148e81eac9dc9466139c404c792bca5da"
+    },
+    {
+      "packet_id": "elementary.combinatorics.union_empty.v1",
+      "title": "The empty set is a right identity for union",
+      "domain": "combinatorics",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "92aac73450f31cd8a234b752c3e7c26e0a9ca54939e7a629e79da0c086dffaf2"
     },
     {
       "packet_id": "elementary.combinatorics.union_self.v1",
@@ -761,6 +941,16 @@
       "packet_sha256": "5519fdb06bc2a4d9cebedeca77b9e2c25d3dd4c34d8f89b64bd1da1f67354ad1"
     },
     {
+      "packet_id": "elementary.geometry.centroid_x.v1",
+      "title": "Three times the centroid coordinate recovers the coordinate sum",
+      "domain": "geometry",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "75484af4e4dd9c5e64f38cfe9421a756ec7f912769be83ccf48c06b21455871e"
+    },
+    {
       "packet_id": "elementary.geometry.collinear_det.v1",
       "title": "Equal-slope collinearity vanishes the area determinant",
       "domain": "geometry",
@@ -779,6 +969,16 @@
       "status": "kernel_verified",
       "eligibility": "public_train",
       "packet_sha256": "6d006bd67941c926531a1abc48e394ea49fcec4d65f4cf83b61ff259cd635059"
+    },
+    {
+      "packet_id": "elementary.geometry.dist_sq_expand.v1",
+      "title": "Squared distance expands via the binomial formula",
+      "domain": "geometry",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "cfe329d97078fdda2fd6ae29508ee46b95735d8078780a4cdf1cf2402a4e31e8"
     },
     {
       "packet_id": "elementary.geometry.dist_sq_symm.v1",
@@ -811,6 +1011,16 @@
       "packet_sha256": "249cb7cd6394c1b179dc471c858582b21789eb773c1f89aa7b7a30e29bcb8261"
     },
     {
+      "packet_id": "elementary.geometry.dot_distrib.v1",
+      "title": "The dot product distributes over vector addition",
+      "domain": "geometry",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "2434f1e82dbe39613ff6dfa59557efd10fdf9fc47fec544a64a4c0846b83bca0"
+    },
+    {
       "packet_id": "elementary.geometry.dot_product_comm.v1",
       "title": "Dot product is commutative",
       "domain": "geometry",
@@ -839,6 +1049,16 @@
       "status": "kernel_verified",
       "eligibility": "public_train",
       "packet_sha256": "0782fd148d13f2cf03a605faa12f1cb5ccbe3b2f6babdc457902f8a5fe1614f0"
+    },
+    {
+      "packet_id": "elementary.geometry.midpoint_between.v1",
+      "title": "The midpoint is equidistant from both endpoints",
+      "domain": "geometry",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "1485aabb4cac94e9862ac98a6fcbe05ad10246937a4d3b4aa745c991f041dba7"
     },
     {
       "packet_id": "elementary.geometry.midpoint_double.v1",
@@ -889,6 +1109,16 @@
       "status": "kernel_verified",
       "eligibility": "public_train",
       "packet_sha256": "b8899e9332f2b5f030c680702b58b995b0aea90e0252f6e87f75b07cd20e42c4"
+    },
+    {
+      "packet_id": "elementary.geometry.perp_slopes_comm.v1",
+      "title": "The perpendicularity condition on slopes is symmetric",
+      "domain": "geometry",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "159004a0d52553bcceb3442aa502c082ee4ec6e8d9a3effb03cfb2ef59efebf6"
     },
     {
       "packet_id": "elementary.geometry.reflection_dist.v1",
@@ -1481,6 +1711,16 @@
       "packet_sha256": "bfc9502e3dd9377725ca490bcdceb03e459f4d370a3532e5f65e683d2ca71dc8"
     },
     {
+      "packet_id": "elementary.number_theory.lt_succ_iff.v1",
+      "title": "m < n+1 exactly when m ≤ n",
+      "domain": "number_theory",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "7995b4f72f01e5d7b9ec0c36e12bf0b900b22e9e3e5aa68320ed068cda4e2e1f"
+    },
+    {
       "packet_id": "elementary.number_theory.mod_lt.v1",
       "title": "Remainder is less than a positive modulus",
       "domain": "number_theory",
@@ -1489,6 +1729,16 @@
       "status": "kernel_verified",
       "eligibility": "public_train",
       "packet_sha256": "e66dce613f9f34f659fe7387e8057f1a17d065be731218471d94eb65c8ab082e"
+    },
+    {
+      "packet_id": "elementary.number_theory.mod_self.v1",
+      "title": "A number modulo itself is zero",
+      "domain": "number_theory",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "278aa61e59fe71e34fd946444665e8a044cf248e7c100eeb8c5b175c379f43d7"
     },
     {
       "packet_id": "elementary.number_theory.mul_div_cancel.v1",
@@ -1511,6 +1761,16 @@
       "packet_sha256": "79583b5e86c580a10ec08374ecff0e182dbd31bd1ddb8e2f832c1e17c7be6f8f"
     },
     {
+      "packet_id": "elementary.number_theory.mul_mod_right.v1",
+      "title": "A multiple of a is divisible by a",
+      "domain": "number_theory",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "8894e44228b96eaf9dba53e0ec81b7fb00516d2f4b80d9a7ada39ed9e58990fb"
+    },
+    {
       "packet_id": "elementary.number_theory.nat_abs_mul.v1",
       "title": "Natural absolute value is multiplicative",
       "domain": "number_theory",
@@ -1519,6 +1779,16 @@
       "status": "kernel_verified",
       "eligibility": "public_train",
       "packet_sha256": "9e80743d066c207bca1d41f211b39447b3e3af25e7614186e24b7b08aa3a94bd"
+    },
+    {
+      "packet_id": "elementary.number_theory.nat_pos_of_ne_zero.v1",
+      "title": "Any nonzero natural number is positive",
+      "domain": "number_theory",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "a2c2e679f986b9af73e31fc6d938e89b0ed330c6578b46d3a6b9687c6ae96423"
     },
     {
       "packet_id": "elementary.number_theory.odd_add_odd.v1",
@@ -1571,6 +1841,16 @@
       "packet_sha256": "f9ef7b7d05da5f6e2e878155accc57b338af463ccce43db33c2daa084cdc2204"
     },
     {
+      "packet_id": "elementary.number_theory.succ_le_iff.v1",
+      "title": "m+1 ≤ n exactly when m < n",
+      "domain": "number_theory",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "28cd760d5d58208dedb8b735e3a178334289982755eea73a297e1d8ba5fa60f6"
+    },
+    {
       "packet_id": "elementary.number_theory.succ_ne_self.v1",
       "title": "A successor is never equal to itself",
       "domain": "number_theory",
@@ -1579,6 +1859,16 @@
       "status": "kernel_verified",
       "eligibility": "public_train",
       "packet_sha256": "500e096db340d80240e21f02077da3be120cc2497d2889597c1885234d31ef18"
+    },
+    {
+      "packet_id": "elementary.number_theory.succ_ne_zero.v1",
+      "title": "A successor is never zero",
+      "domain": "number_theory",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "4340163b2c6ade0c12c678fd5ddba7289de4fc1a64a1e88c53651313e5ea1fbe"
     },
     {
       "packet_id": "elementary.number_theory.succ_pos.v1",
@@ -1609,6 +1899,16 @@
       "status": "kernel_verified",
       "eligibility": "public_train",
       "packet_sha256": "f6cab940f90b0f432451d4aefecf14499b24e6ad94d388f57799f45238fe3aac"
+    },
+    {
+      "packet_id": "elementary.number_theory.zero_mod.v1",
+      "title": "Zero modulo any number is zero",
+      "domain": "number_theory",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "99880d303d636161af41f7a3125003a52ee9aa537f3758b287303f1aa7477dd1"
     },
     {
       "packet_id": "negative.geometry.angle_atoms.nlinarith_failure.v1",

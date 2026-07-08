@@ -1,0 +1,99 @@
+{
+  "packet_id": "elementary.combinatorics.sum_empty.v1",
+  "packet_version": "1.0.0",
+  "title": "A sum over the empty finite set is zero",
+  "domain": "combinatorics",
+  "level": "L1_proof_basics",
+  "kind": "concept",
+  "status": "kernel_verified",
+  "difficulty_bin": "D1",
+  "lean_module": "MathCorpus.Elementary.Combinatorics.SumEmpty",
+  "theorem_name": "sum_empty",
+  "imports": [
+    "Mathlib"
+  ],
+  "toolchain": {
+    "lean_version": "leanprover/lean4:v4.32.0-rc1",
+    "mathlib_rev": "360da6fa66c1273b76b6b2d8c5666fd5ac2e3b56"
+  },
+  "source_provenance": {
+    "source_kind": "author_written",
+    "source_refs": [],
+    "authors": [
+      "The MathCorpus Authors"
+    ],
+    "copyright_holder": "The MathCorpus Authors",
+    "license_spdx": "Apache-2.0",
+    "license_content": "CC-BY-4.0",
+    "statement_fidelity": "author_written"
+  },
+  "informal_statement": "A sum over the empty finite set is zero.",
+  "informal_proof_idea": "There are no elements to sum, so the total is zero.",
+  "formal_statement_pp": "theorem sum_empty : ∀ (f : ℕ → ℕ), (∑ i ∈ (∅ : Finset ℕ), f i) = 0",
+  "proof_body_path": "lean/MathCorpus/Elementary/Combinatorics/SumEmpty.lean",
+  "proof_body_redacted": false,
+  "trust": {
+    "rung": 1,
+    "proof_authority": "lean_kernel",
+    "certificate_checker": "kernel_decide",
+    "encoding_required": false,
+    "encoding_soundness_status": "not_applicable",
+    "independent_review_status": "repo_reviewed",
+    "public_claim_class": "public_safe"
+  },
+  "training": {
+    "eligibility": "public_train",
+    "reason_codes": [
+      "public",
+      "non_benchmark",
+      "unredacted"
+    ],
+    "dedupe_cluster_id": "combinatorics.sum_empty",
+    "template_family_id": "combinatorics.finite_sums",
+    "contamination_risk": "low",
+    "can_export_proof_body": true
+  },
+  "dependencies": {
+    "kits": [
+      "core_combinatorics"
+    ],
+    "tactic_tags": [
+      "simp"
+    ],
+    "prerequisite_concepts": [
+      "finset",
+      "summation",
+      "empty_set"
+    ]
+  },
+  "metrics": {
+    "loc": 3,
+    "tactic_count": 1
+  },
+  "artifacts": {
+    "public_files": [
+      "lean/MathCorpus/Elementary/Combinatorics/SumEmpty.lean"
+    ]
+  },
+  "review": {
+    "review_basis": "repo self-review; kernel-verified through the tracked proof-search loop",
+    "reviewer_status": "repo_reviewed"
+  },
+  "verification": {
+    "verifier": "proofsearch",
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "episode_id": "522ea926-afb0-4f07-be00-1f16e16110cf",
+    "outcome": "kernel_verified",
+    "kernel_verified": true,
+    "fidelity_status": "attested",
+    "step_count": 1,
+    "import_manifest_hash": "aaf21893d520a78dee0787a1bcaf939ee6b922265ff670c272e2e1d450dd29a7",
+    "verified_at": "2026-07-08T00:47:00Z"
+  },
+  "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 522ea926).",
+  "hashes": {
+    "packet_sha256": "1cb362343ae924c736072f4bfcf7b7d3be7d39b5d83fe1f0952e51af595dff5c",
+    "formal_statement_sha256": "512a827cbc42dcbde7e4934df90f45a6f20ab5c6a6ee1cf35181f4f7fcd586c4",
+    "proof_body_sha256": "b360239d7e7c91727c922342e6510fa6314e18956f56e48da4d4348aca9517a2"
+  }
+}

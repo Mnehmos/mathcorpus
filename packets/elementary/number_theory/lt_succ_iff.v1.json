@@ -1,0 +1,99 @@
+{
+  "packet_id": "elementary.number_theory.lt_succ_iff.v1",
+  "packet_version": "1.0.0",
+  "title": "m < n+1 exactly when m ≤ n",
+  "domain": "number_theory",
+  "level": "L1_proof_basics",
+  "kind": "concept",
+  "status": "kernel_verified",
+  "difficulty_bin": "D1",
+  "lean_module": "MathCorpus.Elementary.NumberTheory.LtSuccIff",
+  "theorem_name": "lt_succ_iff",
+  "imports": [
+    "Mathlib"
+  ],
+  "toolchain": {
+    "lean_version": "leanprover/lean4:v4.32.0-rc1",
+    "mathlib_rev": "360da6fa66c1273b76b6b2d8c5666fd5ac2e3b56"
+  },
+  "source_provenance": {
+    "source_kind": "author_written",
+    "source_refs": [],
+    "authors": [
+      "The MathCorpus Authors"
+    ],
+    "copyright_holder": "The MathCorpus Authors",
+    "license_spdx": "Apache-2.0",
+    "license_content": "CC-BY-4.0",
+    "statement_fidelity": "author_written"
+  },
+  "informal_statement": "m < n+1 exactly when m ≤ n.",
+  "informal_proof_idea": "Strict inequality below a successor is non-strict inequality below the base.",
+  "formal_statement_pp": "theorem lt_succ_iff : ∀ (m n : ℕ), m < n + 1 ↔ m ≤ n",
+  "proof_body_path": "lean/MathCorpus/Elementary/NumberTheory/LtSuccIff.lean",
+  "proof_body_redacted": false,
+  "trust": {
+    "rung": 1,
+    "proof_authority": "lean_kernel",
+    "certificate_checker": "kernel_decide",
+    "encoding_required": false,
+    "encoding_soundness_status": "not_applicable",
+    "independent_review_status": "repo_reviewed",
+    "public_claim_class": "public_safe"
+  },
+  "training": {
+    "eligibility": "public_train",
+    "reason_codes": [
+      "public",
+      "non_benchmark",
+      "unredacted"
+    ],
+    "dedupe_cluster_id": "nat.lt_succ_iff",
+    "template_family_id": "number_theory.order_basics",
+    "contamination_risk": "low",
+    "can_export_proof_body": true
+  },
+  "dependencies": {
+    "kits": [
+      "core_number_theory"
+    ],
+    "tactic_tags": [
+      "exact"
+    ],
+    "prerequisite_concepts": [
+      "natural_numbers",
+      "successor",
+      "order"
+    ]
+  },
+  "metrics": {
+    "loc": 3,
+    "tactic_count": 1
+  },
+  "artifacts": {
+    "public_files": [
+      "lean/MathCorpus/Elementary/NumberTheory/LtSuccIff.lean"
+    ]
+  },
+  "review": {
+    "review_basis": "repo self-review; kernel-verified through the tracked proof-search loop",
+    "reviewer_status": "repo_reviewed"
+  },
+  "verification": {
+    "verifier": "proofsearch",
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "episode_id": "02dcd779-ce26-4d9e-a5c9-d3e1c3149cc3",
+    "outcome": "kernel_verified",
+    "kernel_verified": true,
+    "fidelity_status": "attested",
+    "step_count": 1,
+    "import_manifest_hash": "aaf21893d520a78dee0787a1bcaf939ee6b922265ff670c272e2e1d450dd29a7",
+    "verified_at": "2026-07-08T00:47:00Z"
+  },
+  "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 02dcd779).",
+  "hashes": {
+    "packet_sha256": "7995b4f72f01e5d7b9ec0c36e12bf0b900b22e9e3e5aa68320ed068cda4e2e1f",
+    "formal_statement_sha256": "d4e01680f5c30054246d6c660dc1989bf5c285d16be56cb7099207536ce66cd0",
+    "proof_body_sha256": "ef00ccfc9d75db5c68387601c338d01f3291dbfa23bc6155cbc3a57dc6a6af4a"
+  }
+}
