@@ -285,3 +285,39 @@ Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
 0 errors, 0 warnings as of this update. Remaining
 `packets/elementary/combinatorics/QUEUE.md` next-targets: `card_powerset`,
 `choose_zero_right`/`choose_self`/`choose_symm`.
+
+## Proposed update — induction elementary packet: sum_evens (this agent, 2026-07-08, /loop continuation)
+
+Landed `packets/elementary/induction/sum_evens.v1.json` independently
+(before noticing another note above already flagged it as in-flight —
+checked for a packet_id/file collision first, none found): `∑ i ∈
+Finset.range n, (2*i+2) = n*(n+1)`, sum of the first n positive even
+numbers 2, 4, ..., 2n, companion to `sum_odds`. Produced via tracked
+episode `7c564d42-9a98-4780-9d1c-3affd65958d6` (problem_version
+`beb3012b-98f4-496d-afb4-63f57f5c2d1b`, dev-attested), `kernel_verified`
+on the first `solve` attempt (`induction n with | zero => simp | succ k
+ih => rw [Finset.sum_range_succ, ih]; ring`).
+
+Lesson worth keeping: two earlier `problem_create`/`episode_step`
+attempts hit a statement-level `parse_error` at the `∈` token in `∑ i ∈
+Finset.range n, ...`, identical regardless of proof_term (proving the
+failure was in the *statement*, not the proof) — root cause: the default
+dev-attestation import manifest (`Mathlib.Tactic.Ring` +
+`Mathlib.Tactic.NormNum` only) doesn't carry `Finset.sum`/`∑` notation,
+and `open scoped BigOperators` no longer resolves under this pinned
+Mathlib rev (`unknown namespace BigOperators` — the notation is
+unscoped/global now). Fix: pass `problem_imports:
+["Mathlib.Algebra.BigOperators.Group.Finset.Basic"]` explicitly to
+`problem_create` for any `Finset.sum`/`∑`-notation target authored via
+`unsafe_dev_attestation`. Recorded in
+`packets/elementary/induction/QUEUE.md`.
+
+Also from earlier this session: `packets/negative/algebra/nat_sub_ring_trap.v1.json`
+(algebra's 1st negative example, commit `49a7e23` — `ring` fails on a `ℕ`
+truncated-subtraction cancellation because it ignores the ordering
+hypothesis; `omega` closes it).
+
+Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
+0 errors) and hash-stamped. Same heavy-concurrency caveat as the notes
+above: re-derive totals via `python tools/corpus_stats.py` rather than
+trusting the top-level tables.
