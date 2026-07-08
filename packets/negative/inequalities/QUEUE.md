@@ -11,10 +11,6 @@ pre-asserted facts.
       AM-GM is larger (e.g. tries `(a+b)/2 <= Real.sqrt (a*b)` instead of
       `>=`) and gets a genuine kernel rejection — captures a
       direction/sign-flip mistake rather than a tactic-strength mistake.
-- [ ] `linarith` (not `nlinarith`) attempted on a genuinely nonlinear
-      inequality (product term present) — captures "wrong automation
-      tactic entirely" vs. this lane's existing "right tactic, missing
-      hints" examples.
 - [ ] `polyrith`/`nlinarith` degree-mismatch: an inequality whose SOS
       certificate needs degree-4 terms that `nlinarith`'s default search
       depth doesn't reach (verify a concrete instance before adding).
@@ -40,3 +36,12 @@ pre-asserted facts.
       closes the same tracked episode `kernel_verified` as
       `packets/elementary/inequalities/nesbitt_three_var.v1.json`. episode
       `f300e689-9670-45f4-8454-47e4e80b73ac`.
+- [x] **bare `linarith` (not `nlinarith`) on a nonlinear inequality.**
+      `two_mul_le_add_sq_bare_linarith_failure.v1.json` — `linarith` on
+      `2*a*b <= a^2+b^2` fails outright (`kernel_fail`, "linarith failed to
+      find a contradiction") since it never multiplies hypotheses/squares
+      terms at all; `nlinarith [sq_nonneg (a - b)]` closes the same tracked
+      episode `kernel_verified`. episode
+      `8cbd4eff-8a4a-4c80-b0bb-49cfa0c7e181`. A distinct, more basic
+      failure class than this lane's other examples: wrong tactic
+      entirely, not merely missing hints.

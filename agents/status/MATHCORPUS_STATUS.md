@@ -1050,3 +1050,42 @@ dev-loop agent's attention if it recurs.
 Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
 0 errors) and hash-stamped. Commit scoped to only this packet's own files
 plus the `BUGS.md` entry.
+
+## Proposed update — inequalities negative example: bare linarith on a nonlinear goal (this agent, 2026-07-08, /loop continuation)
+
+Startup this cycle: no new bugs beyond the already-logged `episode_observe`
+UNIQUE-constraint issue (has a documented workaround, out of scope for a
+repo-tooling fix per `LOOP.md` priority-1's schema/hash/export/redaction
+framing — proofsearch MCP internals aren't this repo's code). Checked
+`packets/elementary/inequalities/QUEUE.md` and
+`packets/elementary/induction/QUEUE.md` (folder counts: induction 19,
+inequalities 21 — both smallest) — both fully saturated (empty
+next-targets/backlog) from heavy concurrent-agent activity this session.
+Per-domain negative-example counts were also already even (every domain at
+2, `number_theory` at 3) — no zero-coverage gap to fill. Picked the
+remaining open item in `packets/negative/inequalities/QUEUE.md`: bare
+`linarith` (not `nlinarith`) on a nonlinear goal, a "wrong tactic
+entirely" failure class distinct from this lane's existing "right tactic,
+missing hints" examples.
+
+Added `packets/negative/inequalities/two_mul_le_add_sq_bare_linarith_failure.v1.json`:
+reused the exact statement from the existing positive packet
+`packets/elementary/inequalities/two_mul_le_add_sq.v1.json` (`2*a*b <=
+a^2+b^2`) in a fresh, independent tracked episode
+`8cbd4eff-8a4a-4c80-b0bb-49cfa0c7e181` (problem_version
+`bf87bc24-926d-4f85-a3f7-adbb1c8f41f3`, dev-attested). Step 1, bare
+`linarith`, genuinely `kernel_fail`'d ("linarith failed to find a
+contradiction") since `linarith` never multiplies hypotheses or considers
+squares at all — categorically the wrong tool for any goal with a product
+or square of two variables, not merely under-hinted. Step 2, `nlinarith
+[sq_nonneg (a - b)]`, closed the same episode `kernel_verified`
+immediately.
+
+No new positive packet authored this cycle (the statement already has one);
+this is a standalone negative-example addition, which the roadmap's raw
+negative-example count (now 16/25) still needs regardless of per-domain
+coverage. Schema-validated (`validate_packets.py --check-hashes
+--warn-as-error`: 0 errors) and hash-stamped; full corpus revalidated clean
+at 245 packets, 0 errors, 0 warnings as of this update (229 verified public
++ 16 negative per `corpus_stats.py`, 91.6% of the 250-packet v0.1 public
+target). Commit scoped to only this cycle's own files.

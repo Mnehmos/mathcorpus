@@ -1,0 +1,65 @@
+{
+  "packet_id": "negative.inequalities.two_mul_le_add_sq_bare_linarith_failure.v1",
+  "packet_version": "1.0.0",
+  "title": "linarith (not nlinarith) fails outright on a nonlinear inequality",
+  "domain": "algebra",
+  "level": "L1_proof_basics",
+  "kind": "negative_example",
+  "status": "failed_attempt",
+  "difficulty_bin": "D1",
+  "source_provenance": {
+    "source_kind": "repo_original",
+    "source_refs": [
+      "packets/elementary/inequalities/two_mul_le_add_sq.v1.json"
+    ],
+    "authors": [
+      "The MathCorpus Authors"
+    ],
+    "copyright_holder": "The MathCorpus Authors",
+    "license_spdx": "Apache-2.0",
+    "license_content": "CC-BY-4.0",
+    "statement_fidelity": "author_written"
+  },
+  "informal_statement": "The two-variable AM-GM inequality `2*a*b <= a^2 + b^2`, attacked with bare `linarith` (not `nlinarith`) before `nlinarith [sq_nonneg (a - b)]` closed the same episode.",
+  "failure": {
+    "gap_category": "tactic_mismatch",
+    "sub_category": "linarith_on_nonlinear_goal",
+    "input_context_summary": "Goal `2 * a * b ≤ a ^ 2 + b ^ 2` over ℝ, no hypotheses beyond `a b : ℝ`.",
+    "attempt_summary": "Submitted `linarith` (not `nlinarith`) as the first solve action in a tracked episode. `linarith` only combines hypotheses and the goal *linearly*; it treats `a^2`, `b^2`, and `a*b` as unrelated opaque atoms and has no mechanism to multiply hypotheses together or square terms, so it cannot derive any relationship between them at all. The kernel returned 'linarith failed to find a contradiction'. The very next step in the same episode, `nlinarith [sq_nonneg (a - b)]`, closed it immediately — nlinarith's extra nonlinear-combination search (multiplying pairs of hypotheses) plus the explicit square hint is exactly what bare `linarith` categorically cannot do.",
+    "lesson": "`linarith` is a strictly linear decision procedure; reach for `nlinarith` (with `sq_nonneg`/product hints as needed) the moment a goal contains a product or square of two variables. This is a distinct, more basic failure mode than this lane's other examples (`nlinarith` failing from *missing hints*): here the tactic itself is categorically the wrong tool, not merely under-hinted."
+  },
+  "proof_body_redacted": false,
+  "trust": {
+    "rung": 0,
+    "proof_authority": "none",
+    "public_claim_class": "public_safe"
+  },
+  "training": {
+    "eligibility": "negative_example_only",
+    "reason_codes": [
+      "public",
+      "explicit_negative_label"
+    ],
+    "dedupe_cluster_id": "inequalities.two_mul_le_add_sq.failure_patterns",
+    "template_family_id": "inequalities.automation_hazards",
+    "contamination_risk": "low"
+  },
+  "dependencies": {
+    "kits": [
+      "InequalityEstimateKit"
+    ],
+    "tactic_tags": [
+      "linarith",
+      "nlinarith",
+      "sq_nonneg"
+    ],
+    "prerequisite_concepts": [
+      "square",
+      "amgm"
+    ]
+  },
+  "notes": "Captured via tracked proof-search episode 8cbd4eff-8a4a-4c80-b0bb-49cfa0c7e181 (problem_version bf87bc24-926d-4f85-a3f7-adbb1c8f41f3, environment_hash 9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d): step 1 (bare `linarith`) recorded kernel_fail with 'linarith failed to find a contradiction'; step 2 (`nlinarith [sq_nonneg (a - b)]`) closed the same episode kernel_verified. Same statement as the existing positive packet packets/elementary/inequalities/two_mul_le_add_sq.v1.json (a separate, earlier episode); this negative example fills the 'wrong tactic entirely' gap flagged in packets/negative/inequalities/QUEUE.md.",
+  "hashes": {
+    "packet_sha256": "e4c2952d0074cd5f5e0f2d2cbf95e40b516ca0d211ff59a5969de99420003dc1"
+  }
+}

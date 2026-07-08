@@ -2,7 +2,7 @@
 
 | Metric | Value |
 |--------|-------|
-| Packets | 2 |
+| Packets | 3 |
 | Level breakdown | n/a — negative examples are not leveled the same way; see `trust.rung: 0` |
 
 Packets:
@@ -18,6 +18,12 @@ Packets:
   recorded `kernel_fail` before clearing denominators (`div_add_div` ×2 +
   `le_div_iff₀`) closed it `kernel_verified` as
   `packets/elementary/inequalities/nesbitt_three_var.v1.json`.
+- `two_mul_le_add_sq_bare_linarith_failure.v1.json` — bare `linarith` (not
+  `nlinarith`) fails outright on `2*a*b <= a^2+b^2` since it never
+  multiplies hypotheses or considers squares; `nlinarith [sq_nonneg (a -
+  b)]` closes the same tracked episode (`8cbd4eff-8a4a-4c80-b0bb-49cfa0c7e181`)
+  `kernel_verified`. A distinct "wrong tactic entirely" failure class vs.
+  this lane's other "right tactic, missing hints" examples.
 
 Last synced: 2026-07-08 — re-sync against
 `agents/status/MATHCORPUS_STATUS.md` and `python tools/corpus_stats.py`
