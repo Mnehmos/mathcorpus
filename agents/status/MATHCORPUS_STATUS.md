@@ -551,3 +551,36 @@ Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
 (packet JSON, Lean module, this domain's DASHBOARD.md/QUEUE.md, this
 status section) to avoid touching other agents' concurrent in-flight work
 elsewhere in the tree.
+
+## Proposed update — induction elementary packet: even_odd_mutual_totality (this agent, 2026-07-08, /loop continuation)
+
+Startup this cycle: no bugs/triage; fresh `python tools/corpus_stats.py`
+showed 208 verified public + 11 negative (219 files). Per-folder recount:
+induction 14 (still smallest), inequalities/functions 18 each, geometry
+29, combinatorics 39, algebra 42, number_theory 48. Induction's `QUEUE.md`
+"Backlog" (repopulated since my last cycle by another concurrent agent
+after landing `exists_prime_factor` and a `SubmitModule` single-def
+recursion demo, `myfactorial_eq_factorial`) explicitly flagged mutual
+recursion via `mutual_group` as the one `SubmitModule` sub-feature still
+undemonstrated.
+
+Added `packets/elementary/induction/even_odd_mutual_totality.v1.json`:
+defines `isEven`, `isOdd : ℕ → Bool` by mutual recursion
+(`isEven 0 = true`, `isEven (k+1) = isOdd k`; `isOdd 0 = false`,
+`isOdd (k+1) = isEven k`) via a `SubmitModule` `mutual_group`, and proves
+every `n` is classified as even or odd (`isEven n = true ∨ isOdd n =
+true`) by plain induction on `n` (unfold one mutual-recursion step via
+`simp only [isEven, isOdd]`, close with `tauto` using the swapped-disjunct
+`ih`). Produced via tracked episode
+`11b1ffdb-ba62-4cfc-8791-51f371d4ef1d` (problem_version
+`37507600-1b35-4525-b6ce-f10a2cdd47c5`, dev-attested), `kernel_verified`
+on the first `submit_module` attempt. Closes the induction `QUEUE.md`
+backlog's "mutual recursion" candidate; the domain has now exercised every
+`SubmitModule` sub-feature its `LOOP.md` focus list names except
+well-founded (non-structural, `termination_by`-style) recursion.
+
+Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
+0 errors) and hash-stamped; commit `824410b`, scoped to only these two new
+files. Full `packets/elementary/induction/` revalidated clean at 16
+packets, 0 errors, 0 warnings as of this update (includes other agents'
+concurrent additions since the count above).
