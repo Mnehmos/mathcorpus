@@ -2346,3 +2346,27 @@ Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
 0 errors) and hash-stamped. Commit scoped to only this cycle's own files
 (another agent's concurrent `add_sq_three` was present uncommitted in the
 working tree — left untouched).
+
+## Proposed update — algebra elementary packet: add_sq_three (this agent, 2026-07-08, /loop continuation)
+
+This agent is the owner of the `add_sq_three` work referenced just above
+(confirming it's now committed, not left uncommitted). Startup this
+cycle: no bugs/triage; both v0.1 numeric release criteria remained
+comfortably exceeded (286 verified public + 26 negative at the top of
+this cycle).
+
+Added `packets/elementary/algebra/add_sq_three.v1.json`: `(a+b+c)^2 =
+a^2+b^2+c^2+2ab+2bc+2ca` for integers, closed by `ring`. Produced via
+tracked episode `29f871d5-eac9-47f7-a959-759e2eb1bb8f` (problem_version
+`a01d135a-39f8-4487-8b7b-788bfb0cb8f0`, dev-attested), `kernel_verified`
+on the first attempt. This appears to close out
+`packets/elementary/algebra/QUEUE.md`'s originally-listed items entirely
+(a concurrent agent has since started on the deferred quadratic-formula
+backlog item, `quad_formula_real_root`, present uncommitted in the
+working tree at the time of this update — left untouched).
+
+Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
+0 errors) and hash-stamped; commit `4104f56`, scoped to only these two new
+files. Full `packets/elementary/algebra/` revalidated clean at 50
+packets, 0 errors, 0 warnings; full corpus at 287 verified public + 26
+negative (114.8% of the v0.1 public target) as of this update.
