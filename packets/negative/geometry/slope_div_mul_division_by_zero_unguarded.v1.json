@@ -1,0 +1,71 @@
+{
+  "packet_id": "negative.geometry.slope_div_mul.division_by_zero_unguarded.v1",
+  "packet_version": "1.0.0",
+  "title": "False generalization: slope div-then-mul cancellation without x2 != x1",
+  "domain": "geometry",
+  "level": "L1_proof_basics",
+  "kind": "negative_example",
+  "status": "failed_attempt",
+  "difficulty_bin": "D1",
+  "source_provenance": {
+    "source_kind": "repo_original",
+    "source_refs": [],
+    "authors": [
+      "The MathCorpus Authors"
+    ],
+    "copyright_holder": "The MathCorpus Authors",
+    "license_spdx": "Apache-2.0",
+    "license_content": "CC-BY-4.0",
+    "statement_fidelity": "author_written"
+  },
+  "informal_statement": "A tempting but false generalization: that dividing then multiplying back by (x2 - x1) always recovers (y2 - y1) -- (y2 - y1) / (x2 - x1) * (x2 - x1) = y2 - y1 -- for arbitrary reals x1, y1, x2, y2. This is only true when x2 != x1; in Lean's Field, division by zero is defined as 0, so the unconditional statement is mathematically false, not merely hard to prove.",
+  "formal_statement_pp": "theorem root_theorem : ∀ x1 y1 x2 y2 : ℝ, (y2 - y1) / (x2 - x1) * (x2 - x1) = y2 - y1",
+  "failure": {
+    "gap_category": "false_generalization",
+    "sub_category": "division_by_zero_unguarded",
+    "input_context_summary": "Goal `(y2 - y1) / (x2 - x1) * (x2 - x1) = y2 - y1` after `intro x1 y1 x2 y2`.",
+    "attempt_summary": "Applied `field_simp` directly, the natural first instinct for a division-then-multiplication cancellation. `field_simp` correctly normalized the goal but left it unsolved (`unsolved_goals`, kernel_fail, ~15.8s): `(y2 - y1) * (x2 - x1) / (x2 - x1) = y2 - y1` -- it refuses to cancel the `(x2 - x1) / (x2 - x1)` factor to `1` without a `x2 ≠ x1` side condition, since doing so unconditionally would be unsound.",
+    "lesson": "field_simp is deliberately conservative about clearing denominators it cannot prove nonzero; it will not silently assume `x2 ≠ x1` to close a division-cancellation goal, and correctly so -- the unconditional claim is actually false: in Lean's Field convention division by zero returns 0, so at x1 = x2 the left side collapses to 0 regardless of y1, y2. The falseness is kernel-verified directly, not just inferred from one failed attempt: the companion packet elementary.geometry.slope_div_mul_not_always_cancel.v1 proves the negation via the explicit witness x1 = x2 = 0, y1 = 0, y2 = 5 (left side 0, right side 5). Any real slope-style identity that divides by a coordinate difference needs an explicit x2 ≠ x1 hypothesis (see the existing perp_slopes_comm packet for how this domain otherwise handles slope hypotheses) -- a genuinely different hazard class from this domain's tactic_mismatch examples (nlinarith timing out on angle atoms, ring ignoring a right-angle hypothesis)."
+  },
+  "proof_body_redacted": false,
+  "trust": {
+    "rung": 0,
+    "proof_authority": "none",
+    "public_claim_class": "public_safe"
+  },
+  "training": {
+    "eligibility": "negative_example_only",
+    "reason_codes": [
+      "public",
+      "explicit_negative_label"
+    ],
+    "dedupe_cluster_id": "geometry.slope_div_zero",
+    "template_family_id": "geometry.false_generalization_hazards",
+    "contamination_risk": "low"
+  },
+  "dependencies": {
+    "kits": [],
+    "tactic_tags": [
+      "field_simp",
+      "norm_num"
+    ],
+    "prerequisite_concepts": [
+      "slope",
+      "division_by_zero",
+      "field"
+    ]
+  },
+  "verification": {
+    "verifier": "proofsearch",
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "episode_id": "2409c443-59dd-40d6-8d7a-71ae56a395cf",
+    "import_manifest_hash": "aaf21893d520a78dee0787a1bcaf939ee6b922265ff670c272e2e1d450dd29a7",
+    "kernel_verified": false,
+    "fidelity_status": "attested",
+    "step_count": 2
+  },
+  "notes": "Produced via tracked proofsearch episode 2409c443-59dd-40d6-8d7a-71ae56a395cf (problem_version 3791a04a-3f9c-4682-917a-6d9207abdea7): `solve` with `intro x1 y1 x2 y2; field_simp` returned kernel_fail (unsolved_goals, the div-mul-cancel step correctly refused), then closed with `give_up`. The falseness of the claim is separately kernel-verified in the companion positive packet elementary.geometry.slope_div_mul_not_always_cancel.v1 (episode 9d78c78c-35de-4af4-89b8-bac682026fc1, outcome kernel_verified) via the explicit witness x1 = x2 = 0, y1 = 0, y2 = 5. Third negative example for the geometry domain, and the first false_generalization-category example there (vs. the existing tactic_mismatch examples angle_atoms_nlinarith_failure.v1 and pythagorean_bare_ring_no_hypothesis_failure.v1).",
+  "hashes": {
+    "packet_sha256": "b0d0596e482ffef2c49e8d72e4535b90de4fd767d648462cc770761c2828d0f6"
+  }
+}

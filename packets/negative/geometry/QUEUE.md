@@ -1,21 +1,13 @@
 # Queue — Geometry (Negative Examples)
 
-This domain has 2 negative packets now (`angle_atoms_nlinarith_failure.v1.json`,
-`pythagorean_bare_ring_no_hypothesis_failure.v1.json`). Add a **distinct**
+This domain has 3 negative packets now (`angle_atoms_nlinarith_failure.v1.json`,
+`pythagorean_bare_ring_no_hypothesis_failure.v1.json`,
+`slope_div_mul_division_by_zero_unguarded.v1.json`). Add a **distinct**
 failure category rather than a near-duplicate.
 
 ## Next targets
 
-- [ ] **Unguarded division by zero in a slope formula.** Attempt a slope
-      identity `(y2 - y1) / (x2 - x1) = ...` without the hypothesis
-      `x1 ≠ x2`. Expected failure mode: the statement is either false or
-      vacuously ill-typed at `x1 = x2` (division by zero returns `0` in
-      Lean's `Field`, which silently makes the "identity" false at that
-      point) — a genuinely different category from the existing
-      `nlinarith`-timeout example. gap_category: `false_generalization`,
-      sub_category: `division_by_zero_unguarded`. Note the existing
-      `perp_slopes_comm` packet for how the domain currently handles slope
-      hypotheses, to avoid contradicting it.
+*(empty — see Backlog)*
 
 ## Backlog
 
@@ -33,3 +25,11 @@ failure category rather than a near-duplicate.
       tracked episode `kernel_verified` as
       `packets/elementary/geometry/pythagorean_right_angle.v1.json`.
       episode `1ee45ae1-bde1-4cfa-bd4a-68261f9f8fb1`.
+- [x] **Unguarded division by zero in a slope formula.**
+      `slope_div_mul_division_by_zero_unguarded.v1.json` — `field_simp`
+      correctly leaves `(y2-y1)/(x2-x1)*(x2-x1) = y2-y1` unsolved (no
+      `x2 ≠ x1` hypothesis); falseness kernel-verified separately via
+      witness `x1=x2=0, y1=0, y2=5` in the companion positive packet
+      `elementary.geometry.slope_div_mul_not_always_cancel.v1`. Verified
+      live via tracked episodes `2409c443-...` (failed attempt) and
+      `9d78c78c-...` (kernel_verified disproof), 2026-07-08.
