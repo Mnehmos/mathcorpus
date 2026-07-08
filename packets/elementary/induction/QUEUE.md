@@ -138,6 +138,15 @@ inductive proof, distinct from `number_theory`'s bare-citation
       decomposition for any future "power/sequence is monotone in its
       index" target.
 
+- [x] `sum_fib_sq` — the classic Fibonacci sum-of-squares identity,
+      `sum_{i<=n} fib(i)^2 = fib(n)*fib(n+1)` (D1, L1). Authored
+      2026-07-08 via tracked episode
+      `452d7bbe-7c1c-4c77-aeac-7c7b9000578f` (kernel_verified on the
+      first attempt: `Finset.sum_range_succ` + `ih` + `Nat.fib_add_two`
+      + `ring`). Complements `fib_le_two_pow`/`fib_sum_succ`. Confirmed
+      via `mathlib_search_declarations` (no `fib_sq`/`fib_sum` hits) and
+      `grep -rl 'fib.*sq'` (no existing packet) before authoring.
+
 ## Next targets
 
 *(empty — see Backlog.)*

@@ -3668,3 +3668,33 @@ last cycle since this was dossier-only work). Full-corpus
 `validate_packets.py --check-hashes --warn-as-error`: 343 packets, 0
 errors/warnings. No blocking dev-toolchain bugs found in
 `agents/github_issues/{BUGS,TRIAGE}.md` this cycle.
+
+## Proposed update — induction: sum_fib_sq packet (this agent, 2026-07-08)
+
+Priority-3 elementary work this cycle (no blocking bugs; no zero-coverage
+negative lane; functions/induction/inequalities tied lowest at 32, all
+with vague backlogs). Checked inequalities for a fresh gap first (Schur
+degree 2 — a genuinely harder degree-4 SOS inequality with real risk of
+multiple failed `nlinarith` attempts) and decided against forcing it;
+checked induction instead and found a clean, well-known, currently-
+uncovered Fibonacci identity.
+
+Authored `sum_fib_sq`: the sum of squares of the first n+1 Fibonacci
+numbers equals fib(n)*fib(n+1) — a classic identity complementing the
+domain's existing `fib_le_two_pow` (growth bound) and `fib_sum_succ`
+(plain sum, not squares). Confirmed via `mathlib_search_declarations`
+that Mathlib has no `fib_sq`/`fib_sum` convenience lemma (genuine
+hand-derived induction, not a citation) and via grep that no existing
+packet duplicated this. Kernel-verified on the FIRST attempt (tracked
+episode `452d7bbe-7c1c-4c77-aeac-7c7b9000578f`): `Finset.sum_range_succ`
++ inductive hypothesis substitution + `Nat.fib_add_two` (the Fibonacci
+recurrence) + `ring`. Notably, the `n+1+1`-vs-`n+2` numeral-form issue
+that caused a real problem in last cycle's `two_pow_strictmono` did NOT
+recur here — `rw [Nat.fib_add_two]` matched fine, confirming that
+particular pitfall is `rw`-target-dependent, not universal.
+
+Authored `packets/elementary/induction/sum_fib_sq.v1.json` +
+`lean/MathCorpus/Elementary/Induction/SumFibSq.lean`, stamped hashes,
+validated clean (344 packets total, 0 errors, 0 warnings). Updated
+`DASHBOARD.md`/`QUEUE.md` in `packets/elementary/induction/`. Committed
+only this cycle's own files, pathspec-scoped.
