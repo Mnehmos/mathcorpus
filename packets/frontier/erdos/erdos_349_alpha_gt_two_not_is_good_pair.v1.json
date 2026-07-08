@@ -1,0 +1,108 @@
+{
+  "packet_id": "frontier.erdos.erdos_349_alpha_gt_two_not_is_good_pair.v1",
+  "packet_version": "1.0.0",
+  "title": "Erdős #349 assembly piece: α > 2 fails to be a good pair",
+  "domain": "frontier",
+  "level": "L7_frontier",
+  "kind": "theorem",
+  "status": "kernel_verified",
+  "difficulty_bin": "D5",
+  "lean_module": "MathCorpus.Frontier.Erdos.Erdos349AlphaGtTwoNotIsGoodPair",
+  "theorem_name": "erdos_349_alpha_gt_two_not_is_good_pair",
+  "imports": [
+    "Mathlib"
+  ],
+  "toolchain": {
+    "lean_version": "v4.32.0-rc1",
+    "mathlib_rev": "360da6fa66c1273b76b6b2d8c5666fd5ac2e3b56"
+  },
+  "source_provenance": {
+    "source_kind": "erdos_problems",
+    "source_refs": [
+      "ErdosProblems/erdos-349/proof/Erdos349_alpha_gt_two_not_isGoodPair.lean (sibling repo mnehmos.llm-driven-proof-search.environment)",
+      "https://www.erdosproblems.com/349"
+    ],
+    "authors": [
+      "The MathCorpus Authors"
+    ],
+    "copyright_holder": "The MathCorpus Authors",
+    "license_spdx": "Apache-2.0",
+    "license_content": "CC-BY-4.0",
+    "statement_fidelity": "canonical_statement_hash_match"
+  },
+  "informal_statement": "The fourth and final assembly piece for the integer_isGoodPair_iff characterization used toward Erdos Problem #349: if alpha > 2 (with t > 0), the pair (t, alpha) is NOT good -- it is false that eventually every integer k is a finite sum of distinct elements of the range of n |-> floor(t*alpha^n). This is a sublemma supporting the integer_isGoodPair_iff characterization, not a resolution of #349 itself (which asks, in general, for which real t, alpha the sequence floor(t*alpha^n) is additively complete -- still genuinely OPEN).",
+  "informal_proof_idea": "The sequence f(n) = floor(t*alpha^n) grows fast enough (since alpha > 2) that f(n+1) eventually exceeds S(n) + 2, where S(n) is the running partial sum of f(0..n). This creates an unreachable gap: S(n) + 1 cannot be a subset sum of {f(0), ..., f(n), f(n+1), ...} for infinitely many n, since any subset either stays bounded by S(n) (if it avoids f(n+1) and beyond) or overshoots to at least S(n)+2 (if it includes any term >= f(n+1), using monotonicity of f). This contradicts eventual representability of every sufficiently large integer.",
+  "formal_statement_pp": "theorem erdos_349_alpha_gt_two_not_is_good_pair : ∀ (t α : ℝ), 0 < t → 2 < α → ¬ (∀ᶠ k in Filter.atTop, k ∈ {n : ℤ | ∃ B : Finset ℤ, ↑B ⊆ Set.range (fun n : ℕ ↦ ⌊t * α ^ n⌋) ∧ n = ∑ i ∈ B, i})",
+  "proof_body_path": "lean/MathCorpus/Frontier/Erdos/Erdos349AlphaGtTwoNotIsGoodPair.lean",
+  "proof_body_redacted": false,
+  "trust": {
+    "rung": 1,
+    "proof_authority": "lean_kernel",
+    "certificate_checker": "kernel_decide",
+    "encoding_required": false,
+    "encoding_soundness_status": "not_applicable",
+    "independent_review_status": "repo_reviewed",
+    "public_claim_class": "public_safe"
+  },
+  "training": {
+    "eligibility": "quarantined",
+    "reason_codes": [
+      "open_problem_related",
+      "default_quarantine_pending_external_review",
+      "companion_result_not_open_problem"
+    ],
+    "dedupe_cluster_id": "frontier.erdos_349",
+    "template_family_id": "frontier.erdos_companion_results",
+    "open_problem_related": true,
+    "contamination_risk": "low",
+    "can_export_proof_body": true
+  },
+  "dependencies": {
+    "kits": [],
+    "tactic_tags": [
+      "Filter.Tendsto",
+      "Filter.frequently_atTop",
+      "geom_sum_eq",
+      "Finset.sum_image_le_of_nonneg",
+      "tendsto_pow_atTop_atTop_of_one_lt"
+    ],
+    "prerequisite_concepts": [
+      "floor_function",
+      "geometric_series",
+      "limit",
+      "monotonicity",
+      "eventually",
+      "frequently"
+    ]
+  },
+  "metrics": {
+    "loc": 118,
+    "tactic_count": 91
+  },
+  "artifacts": {
+    "public_files": [
+      "lean/MathCorpus/Frontier/Erdos/Erdos349AlphaGtTwoNotIsGoodPair.lean"
+    ]
+  },
+  "review": {
+    "review_basis": "repo self-review; kernel-verified through the tracked proof-search loop; root_statement_hash confirmed byte-identical to the upstream source hash cited in the sibling repo's own provenance comment",
+    "reviewer_status": "repo_reviewed",
+    "reviewed_at": "2026-07-08"
+  },
+  "verification": {
+    "verifier": "proofsearch",
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "episode_id": "65b19a8e-3034-4ffe-978a-2472ee4bead1",
+    "outcome": "kernel_verified",
+    "kernel_verified": true,
+    "fidelity_status": "attested",
+    "step_count": 1,
+    "import_manifest_hash": "aaf21893d520a78dee0787a1bcaf939ee6b922265ff670c272e2e1d450dd29a7"
+  },
+  "notes": "ANTI-OVERCLAIM: this packet proves only the last of four infrastructure sublemmas toward the integer_isGoodPair_iff characterization for Erdos #349's integer case -- it does not resolve #349's general open question. Proof authority: Lean kernel via the tracked proof-search loop (episode 65b19a8e, problem_version 50945aea-f5ce-48e7-8580-8117df80b70f), a single Solve step (proof_format raw_lean_block to preserve the bullet/case-split structure), kernel_verified on the FIRST attempt despite being the largest single-theorem proof transported in this corpus's frontier lane so far (118 LOC, 91 tactics, involving Filter.Tendsto/geometric series/field_simp over reals) -- notably the sibling repo's own tracked episode needed 3 attempts to reach the same result, and this repo hit a 60-second wall-clock timeout on a much smaller, related field_simp-bearing proof earlier this session (see BLOCKERS.md), so this success was not a given. root_statement_hash confirmed byte-identical to the hash cited in the sibling repo's own source comment. Independently re-verified in THIS environment's own pinned toolchain rather than treated as evidence merely because the sibling repo (F:\\Github\\mnehmos.llm-driven-proof-search.environment\\ErdosProblems\\erdos-349\\proof\\Erdos349_alpha_gt_two_not_isGoodPair.lean) already reports it kernel_verified there -- per this repo's evidence policy. training.eligibility: quarantined per the default-quarantine policy for open_problem_related packets pending real external review. Seventh packet in the frontier/erdos lane; 4/7 of the integer_isGoodPair_iff cluster now packetized (exists_finset_sum_two_pow, one_two_is_good_pair, alpha_le_one_not_is_good_pair, alpha_gt_two_not_is_good_pair). Remaining: int_coeff_ge_two_not_isGoodPair.lean (35 lines) and the culminating integer_isGoodPair_iff.lean (279 lines, the final assembly).",
+  "hashes": {
+    "packet_sha256": "48046f415b4174315bc93592e98ee37d61854d57ad5b360cf4d423b00fe98164",
+    "formal_statement_sha256": "032f8f3a717e1dbb8a666d19b319781a774fbd5e4aec5ee8f56f8da9a5ade881",
+    "proof_body_sha256": "878865ac0b130851e1946ccc42d04978531ca3106fd6f60a597ebae3a40526e4"
+  }
+}
