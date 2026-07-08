@@ -3443,3 +3443,62 @@ stamped hashes, validated clean (340 packets total, 0 errors, 0
 warnings). Updated `DASHBOARD.md`/`QUEUE.md` in
 `packets/elementary/inequalities/`. Committed only this cycle's own
 files, pathspec-scoped.
+
+## Proposed update — Erdős #1052: omega_odd_le_two_adic_add_one packetized (this agent, 2026-07-08, /loop continuation)
+
+Startup this cycle: found a concurrent agent had already packetized the
+`OEIS/34693.lean::exists_k_best_possible` result I had just kernel-verified
+in my own tracked episode (`2b7c538d`) moments earlier — theirs (episode
+`406c3860`, commit `98fa029`) landed first. Discarded my duplicate
+untracked Lean file rather than re-committing redundant work, then
+re-swept priority order fresh: elementary/negative queues still empty
+per two prior cycles' confirmation; `packets/frontier/erdos/
+COMPANION_RESULTS.md` explicitly flagged `omega_odd_le_two_adic_add_one`
+(the structural bound depending on the just-transported
+`sigmaStar_mul_of_coprime`) as the next priority target, so continued
+that lane.
+
+Source (`ErdosProblems/erdos-1052/proof/Erdos1052_sigmaStar_and_bounds.lean`,
+lines 246-364) needed a new strong-induction helper
+(`two_pow_card_primeFactors_dvd_sigmaStar`) plus the root bound. Spot-
+checked ~15 Mathlib lemma names via `mathlib_search_declarations` before
+attempting (established practice this session): confirmed
+`Nat.ordProj_mul_ordCompl_eq_self`/`Nat.coprime_ordCompl`/
+`Nat.primeFactors_prime_pow`/`Nat.primeFactors_mul`/
+`Nat.factorization_pow_self`/`Nat.factorization_eq_zero_of_not_dvd`/
+`Nat.prime_dvd_prime_iff_eq`/`Nat.factorization_eq_zero_iff` all exist;
+confirmed `Nat.Prime.dvd_iff_one_le_factorization` and
+`Nat.Prime.odd_of_ne_two` do NOT exist under this pinned rev and derived
+both facts from scratch instead. Reused the already-verified,
+already-flattener-safe proof text for `sigmaStar_mul_of_coprime`/
+`sigmaStar_prime_pow` verbatim from their own standalone packets rather
+than re-deriving the bullet-free rewrites from the sibling source again.
+
+Kernel-verified on the 3rd tracked-episode attempt (episode `c5be6f70`,
+problem_version `e34c46bd`). Attempt 1 kernel-failed immediately on
+`Finset` itself being unknown — the default `problem_create` import
+manifest is Ring+NormNum only; every prior SubmitModule packet in this
+corpus must already have passed `problem_imports: ["Mathlib"]` (yielding
+the standard `import_manifest_hash` `aaf21893...` seen on all of them)
+without that step ever being written down as a distinct lesson before
+now. Attempt 2 surfaced two more issues together: `Nat.even_iff_two_dvd`
+doesn't exist (unqualified `even_iff_two_dvd` does), and two `omega`
+calls failed because `omega` cannot reason about the opaque exponential
+`2^a` — a linear witness fact (`hseedk : ∃ k, 2^a = 2*k`) from the
+source had been accidentally dropped while rewriting for the flattener;
+restoring it fixed attempt 3.
+
+Authored `packets/frontier/erdos/erdos_1052_omega_odd_le_two_adic_add_one.v1.json`
++ `lean/MathCorpus/Frontier/Erdos/Erdos1052OmegaOddLeTwoAdicAddOne.lean`
+(`SubmitModule` with 2 defs + 6 re-transported helper theorems + 1 new
+strong-induction helper + root; `training.eligibility: quarantined`,
+ANTI-OVERCLAIM note distinguishing this structural bound from the still-
+open unitary-perfect-number finiteness question). Updated
+`packets/frontier/erdos/COMPANION_RESULTS.md` to record the result and
+retire the "priority target" flag — no further explicitly-flagged target
+remains in this lane as of this cycle. Stamped hashes; full-corpus
+`validate_packets.py --check-hashes --warn-as-error` confirms 340
+packets, 0 errors/warnings (`corpus_stats.py`: 312 verified public + 28
+negative, 124.8% of the 250-packet v0.1 public target). Committed only
+this cycle's own files, pathspec-scoped, in two commits (packet+lean,
+then the COMPANION_RESULTS.md update).
