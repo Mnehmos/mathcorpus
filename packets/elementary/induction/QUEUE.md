@@ -115,6 +115,21 @@ for very recent commits before re-populating.)*
       turned out strong enough despite `acc` not being generalized, so the
       intended failure never materialized.
 
+- [x] Fibonacci-style growth bound: hand-rolled `fib` via pair-encoding
+      recursion (`fibPair n = (fib n, fib (n+1))`, `Nat.rec` on pairs)
+      satisfies `fib n <= 2^n`. Authored 2026-07-08 as `fib_le_two_pow` via
+      tracked episode `11c5774d-6e4a-41f5-9a68-d8041146d59d`
+      (kernel_verified on the **second** `SubmitModule` attempt; the first
+      used `show` to jump to a `Prod.fst`/`Prod.snd`-reduced goal before
+      `omega`, which left `omega` looking at the un-reduced
+      `(fibPair (n+1)).2` atom and failed — fixed by adding an explicit
+      `fibPair_succ : fibPair (n+1) = (..) := rfl` lemma and using it as a
+      `simp` rewrite instead of `show`). Tactic-transport lesson: prefer an
+      explicit `rfl` unfolding lemma + `simp`/`rw` over `show` when a proof
+      needs a pair/tuple projection reduced before arithmetic automation
+      runs — `show`'s defeq check can silently accept a goal-swap without
+      actually normalizing the term `omega`/`nlinarith` will see.
+
 ## Backlog
 
 *(empty — repopulate from the domain-specific focus in `LOOP.md`:

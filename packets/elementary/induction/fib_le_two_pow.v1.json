@@ -1,0 +1,104 @@
+{
+  "packet_id": "elementary.induction.fib_le_two_pow.v1",
+  "packet_version": "1.0.0",
+  "title": "A hand-rolled Fibonacci sequence satisfies fib n <= 2^n",
+  "domain": "algebra",
+  "level": "L1_proof_basics",
+  "kind": "concept",
+  "status": "kernel_verified",
+  "difficulty_bin": "D2",
+  "lean_module": "MathCorpus.Elementary.Induction.FibLeTwoPow",
+  "theorem_name": "fib_le_two_pow",
+  "imports": [
+    "Mathlib"
+  ],
+  "toolchain": {
+    "lean_version": "v4.32.0-rc1",
+    "mathlib_rev": "360da6fa66c1273b76b6b2d8c5666fd5ac2e3b56"
+  },
+  "source_provenance": {
+    "source_kind": "author_written",
+    "source_refs": [],
+    "authors": [
+      "The MathCorpus Authors"
+    ],
+    "copyright_holder": "The MathCorpus Authors",
+    "license_spdx": "Apache-2.0",
+    "license_content": "CC-BY-4.0",
+    "statement_fidelity": "author_written"
+  },
+  "informal_statement": "Define a Fibonacci-style sequence fib from scratch (fib 0 = 0, fib 1 = 1, fib (n+2) = fib n + fib (n+1)), encoded via a pair-valued structural recursion fibPair n = (fib n, fib (n+1)); then fib n <= 2^n for every natural number n.",
+  "informal_proof_idea": "The genuine Fibonacci recurrence needs two prior values, which plain structural (Nat.rec) recursion doesn't give directly, so fibPair n = (fib n, fib (n+1)) is defined by ordinary 1-step Nat.rec on pairs: fibPair 0 = (0, 1), and fibPair (n+1) = (fibPair n).2, (fibPair n).1 + (fibPair n).2) -- proved as the rfl lemma fibPair_succ. The growth bound is proved on the strengthened pair invariant fibPair_le: both components of fibPair n are <= 2^n, by ordinary induction (zero case by decide, successor case rewrites via fibPair_succ and pow_succ then closes with omega treating 2^n as an opaque atom). fib n <= 2^n then follows by taking the first component.",
+  "formal_statement_pp": "theorem fib_le_two_pow (n : ℕ) : fib n ≤ 2 ^ n",
+  "proof_body_path": "lean/MathCorpus/Elementary/Induction/FibLeTwoPow.lean",
+  "proof_body_redacted": false,
+  "trust": {
+    "rung": 1,
+    "proof_authority": "lean_kernel",
+    "certificate_checker": "kernel_decide",
+    "encoding_required": false,
+    "encoding_soundness_status": "not_applicable",
+    "independent_review_status": "repo_reviewed",
+    "public_claim_class": "public_safe"
+  },
+  "training": {
+    "eligibility": "public_train",
+    "reason_codes": [
+      "public",
+      "non_benchmark",
+      "unredacted"
+    ],
+    "dedupe_cluster_id": "induction.fib_le_two_pow",
+    "template_family_id": "induction.recursion_via_submit_module",
+    "contamination_risk": "low",
+    "can_export_proof_body": true
+  },
+  "dependencies": {
+    "kits": [],
+    "tactic_tags": [
+      "Nat.rec",
+      "induction",
+      "simp",
+      "pow_succ",
+      "omega",
+      "decide"
+    ],
+    "prerequisite_concepts": [
+      "structural_recursion",
+      "pair_encoding",
+      "induction",
+      "growth_bound",
+      "exponentiation"
+    ]
+  },
+  "metrics": {
+    "loc": 15,
+    "tactic_count": 6
+  },
+  "artifacts": {
+    "public_files": [
+      "lean/MathCorpus/Elementary/Induction/FibLeTwoPow.lean"
+    ]
+  },
+  "review": {
+    "review_basis": "repo self-review; kernel-verified through the tracked proof-search loop",
+    "reviewer_status": "repo_reviewed"
+  },
+  "verification": {
+    "verifier": "proofsearch",
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "episode_id": "11c5774d-6e4a-41f5-9a68-d8041146d59d",
+    "outcome": "kernel_verified",
+    "kernel_verified": true,
+    "fidelity_status": "attested",
+    "import_manifest_hash": "81f378c9b9421031dae7ddd2e0272f6cbdf82ffb2971af1a936c1f0bc15097a2",
+    "step_count": 2,
+    "verified_at": "2026-07-08T04:17:10Z"
+  },
+  "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 11c5774d), kernel_verified on the second SubmitModule attempt (three helper declarations: fibPair, fib, fibPair_succ, plus the fibPair_le helper theorem and fib_le_two_pow root theorem). The first attempt used `show` to swap to a defeq-equal goal relying directly on Prod.fst/Prod.snd reduction before calling omega, which left omega looking at the un-reduced (fibPair (n+1)).2 atom instead of its constituents and failed with 'omega could not prove the goal'; replaced with an explicit fibPair_succ rfl lemma used as a simp rewrite rule, which reliably reduces the pair projections before omega runs -- kept as a documented tactic-transport lesson for future pair-encoded-recursion packets in this domain. Builds on the recursion techniques from myfactorial_eq_factorial.v1 (single helper def) and combines them with a genuine growth-bound induction, distinct from that packet and from exists_prime_factor.v1 (strong induction, no helper defs).",
+  "hashes": {
+    "packet_sha256": "8b9117dce2227f1203c621633a40b1c796868ceaa259a48a4e97b28667201a64",
+    "formal_statement_sha256": "78af058676e347c4542f2eb5bf996178bfed47166c492dcd6db319a2d1589338",
+    "proof_body_sha256": "9582e0aa3901e0aa28df2b907c73dab46c2e62bc08e24ad24cf62324b8ae8d1f"
+  }
+}
