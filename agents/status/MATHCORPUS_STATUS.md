@@ -3127,3 +3127,37 @@ Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
 files. Full `packets/elementary/inequalities/` revalidated clean at 30
 packets, 0 errors, 0 warnings; full corpus at 303 verified public + 28
 negative (121.2% of the v0.1 public target) as of this update.
+
+## Proposed update — induction: sum_consec_product packet (this agent, 2026-07-08)
+
+Priority-3 elementary work this cycle (no blocking bugs; no zero-coverage
+negative lane; functions/induction/inequalities were tied lowest at 30
+packets each, but functions' `QUEUE.md` explicitly states every focus
+topic already has multiple packets, and inequalities has a concurrent
+agent actively authoring its one remaining backlog item
+(`general_amgm`, seen in-flight as untracked files this cycle — left
+untouched). Induction's own `QUEUE.md` invites self-deriving a target
+from `LOOP.md`'s domain focus when the backlog is empty, same as last
+cycle's `exists_prime_factorization`.
+
+Picked the tetrahedral-number formula (sum of the first n triangular
+numbers, stated division-free as `3 * sum_{k<n} (k+1)*(k+2) =
+n*(n+1)*(n+2)`) — a genuine gap one rung above the domain's existing
+power sums (`gauss_sum`/`sum_squares`/`sum_cubes`, degrees 1-3) and
+`arith_seq_sum`'s general arithmetic series, using the same
+multiply-through-to-avoid-division trick `arith_seq_sum` already
+established in this domain. Confirmed via grep that no existing packet
+anywhere in the corpus covers triangular/tetrahedral numbers before
+authoring.
+
+Kernel-verified on the FIRST attempt (tracked episode
+`1db4baa6-e5da-4a20-956c-614b960aabcc`): plain induction, `Finset.sum_range_succ`
++ `Nat.mul_add` + substituting the inductive hypothesis + `ring`. No
+issues hit this time (a pleasant contrast to last cycle's 4-attempt
+`exists_prime_factorization`).
+
+Authored `packets/elementary/induction/sum_consec_product.v1.json` +
+`lean/MathCorpus/Elementary/Induction/SumConsecProduct.lean`, stamped
+hashes, validated clean (332 packets, 0 errors, 0 warnings). Updated
+`DASHBOARD.md`/`QUEUE.md` in `packets/elementary/induction/`. Committed
+only this cycle's own files, pathspec-scoped.

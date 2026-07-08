@@ -106,6 +106,19 @@ inductive proof, distinct from `number_theory`'s bare-citation
       wrap each `refine` goal in its own `·` bullet, even when the
       sub-tactics themselves have no nested bullets.
 
+- [x] `sum_consec_product` — tetrahedral-number formula, `3 * sum_{k<n}
+      (k+1)*(k+2) = n*(n+1)*(n+2)` (D1, L1). Authored 2026-07-08 via
+      tracked episode `1db4baa6-e5da-4a20-956c-614b960aabcc`
+      (kernel_verified on the first attempt: `Finset.sum_range_succ` +
+      `Nat.mul_add` + `ih` substitution + `ring`). Fills the "finite
+      sums" gap one rung above the domain's existing power sums
+      (`gauss_sum`/`sum_squares`/`sum_cubes`) and `arith_seq_sum`'s
+      general arithmetic series — the sum of the first n triangular
+      numbers, stated division-free via the same multiply-through trick
+      `arith_seq_sum` uses. Confirmed no prior packet duplicated this
+      (`grep -rl triangular\|tetrahedral packets/elementary/*/*.json`,
+      no hits) before authoring.
+
 ## Next targets
 
 *(empty — see Backlog.)*

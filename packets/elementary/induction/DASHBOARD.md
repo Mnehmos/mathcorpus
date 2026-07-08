@@ -35,6 +35,10 @@ n) — every prior packet inducted on a single variable. This cycle's
 `exists_prime_factorization` (D2, L1, episode `f53c8d62`): every n>=1 is
 a product of primes (existence half of FTA), strong induction via
 `Nat.minFac` — extends `exists_prime_factor`'s single-factor existence to
-a full factorization list.
+a full factorization list. And `sum_consec_product` (D1, L1, episode
+`1db4baa6`): the tetrahedral-number formula (sum of the first n
+triangular numbers), stated division-free as `3 * sum (k+1)*(k+2) =
+n*(n+1)*(n+2)` — the next rung above `gauss_sum`/`sum_squares`/
+`sum_cubes`'s power sums and `arith_seq_sum`'s general arithmetic series.
 
 Next targets: see `QUEUE.md`.
