@@ -377,3 +377,39 @@ clean at 209 packets, 0 errors, 0 warnings as of this update.
 Combinatorics elementary now has 38 packets on disk (includes another
 concurrent agent's `card_union_not_additive.v1.json`, commit `246ca69`,
 not previously itemized in the domain DASHBOARD.md).
+
+## Proposed update — inequalities elementary packet: am_gm_four_term (this agent, 2026-07-08, /loop continuation)
+
+Startup this cycle: no bugs/triage; `python tools/corpus_stats.py` showed
+200 verified public + 9 negative (209 files), all negative-example lanes
+still >=1 (raw count 9/25 remains the biggest gap but "zero coverage" is
+resolved everywhere). Direct file counts: induction 11 elementary packets
+but its own `QUEUE.md` "Next targets" section is now empty (multiple
+concurrent agents active there; remaining backlog item is gated on
+unauthored number_theory prerequisites) — so, per priority-3, moved to the
+next tier: `inequalities` (16) and `functions` (17, this agent's own prior
+addition). Picked `inequalities`.
+
+Added `packets/elementary/inequalities/am_gm_four_term.v1.json`:
+`a^4+b^4+c^4+d^4 >= 4*a*b*c*d` for all reals — the radical-free polynomial
+special case of four-term AM-GM (apply classical AM-GM to a^4,b^4,c^4,d^4),
+holding for all reals, not just nonnegative ones, via the SOS identity
+`a^4+b^4+c^4+d^4-4abcd = (a^2-b^2)^2+(c^2-d^2)^2+2(ab-cd)^2`. Produced via
+tracked episode `26c22232-4518-4edc-9c11-b63813cf670f` (problem_version
+`2a08df2e-2031-4d62-bb08-7123585f6a27`, dev-attested), `kernel_verified` on
+the first `solve` attempt (`nlinarith [sq_nonneg (a^2 - b^2), sq_nonneg
+(c^2 - d^2), sq_nonneg (a*b - c*d)]`). Deliberately avoided the classical
+`(a+b+c+d)/4 >= (abcd)^(1/4)` radical form, which needs `Real.sqrt`/`rpow`
+machinery beyond this cycle's scope. Completes the domain's AM-GM ladder
+(`am_gm_two`, `three_var_am_gm`, now `am_gm_four_term`); closes the
+`am_gm_four_term` item in `packets/elementary/inequalities/QUEUE.md`.
+
+Schema-validated in isolation (`validate_packets.py --check-hashes
+--warn-as-error packets/elementary/inequalities/am_gm_four_term.v1.json`:
+0 errors) and hash-stamped. Note: a full-corpus validate run at the same
+time showed 3 errors, all from another concurrent agent's in-flight,
+unstamped `nesbitt_three_var.v1.json` / `nesbitt_bare_nlinarith_division_failure.v1.json`
+(placeholder `0000...` hashes) — not this packet, not fixed here since
+it's presumably that agent's own in-progress work; whoever lands those
+should re-run `stamp_hashes.py` before committing. This agent's commit is
+scoped to only its own files to avoid touching that in-flight work.
