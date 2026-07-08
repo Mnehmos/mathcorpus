@@ -2945,3 +2945,64 @@ sum-over-filter helper that might sidestep the raw `sum_bij'`; (c) treat
 `Finset.sum_involution` argument) as a multi-session item, not a
 one-cycle retry target. No new packet this cycle — corpus count unchanged
 at 299 verified public + 28 negative (119.6% of the v0.1 public target).
+
+## Proposed update — induction: exists_prime_factorization packet (this agent, 2026-07-08)
+
+Priority-3 elementary work this cycle (no blocking bugs; no zero-coverage
+negative lane; all 7 elementary domains' `QUEUE.md` confirmed genuinely
+dry). Induction and inequalities were tied for lowest packet count (29
+each); induction's own `QUEUE.md`/`LOOP.md` explicitly invite
+repopulating the backlog from the domain's stated focus (strong
+induction, recursion, finite sums/products, factorials, powers) when
+empty, matching the same self-derived-target approach used for
+geometry's `apollonius_median` last cycle.
+
+Picked "every n>=1 is a product of primes" (existence half of the
+fundamental theorem of arithmetic) — a natural extension of the domain's
+existing `exists_prime_factor` (which only proves existence of A single
+prime factor) to a full factorization list, and a direct match for
+`LOOP.md`'s "strong induction" focus item. Proved via strong induction
+on the minimal prime factor (`Nat.minFac`).
+
+Took 4 tracked attempts to reach kernel_verified (episode
+`f53c8d62-b8ca-4c32-a697-bf17a76bcb58`), each hitting a distinct, now-
+documented issue: (1) binding the `1 <= n` hypothesis before calling
+`induction n using Nat.strong_induction_on`, combined with `rcases
+eq_or_lt_of_le hn`, produced a full 60-second timeout with zero
+diagnostic detail — deferring the hypothesis's `intro` to inside the
+induction case and replacing `eq_or_lt_of_le` with a plain `by_cases
+hn1 : n = 1` fixed it; (2) `rcases hq with rfl | hq` directly on a raw
+`List.Mem` hypothesis threw a confusing `subst` error blaming an
+unrelated `List ℕ`-typed equality — fixed by converting via
+`List.mem_cons.mp hq` to a plain `Or` before rcases-ing; (3) splitting a
+`refine ⟨_, ?_, ?_⟩`'s two goals via a flat, unbulleted sequence of
+tactics silently left the SECOND goal completely untouched with no
+tactic error reported at all (`unsolved_goals`, not a tactic failure) —
+fixed by wrapping each `refine` goal in its own single-level `·` bullet.
+All three are recorded in the packet's `notes` and in
+`packets/elementary/induction/QUEUE.md` for future proofs using
+`Nat.strong_induction_on` or multi-goal `refine` in this environment.
+
+Also hit a schema issue unrelated to the proof itself: `domain: "induction"`
+is not a valid enum value in `schema/packet.schema.json` (valid domains
+are `arithmetic, algebra, number_theory, combinatorics, analysis,
+real_analysis, geometry, topology, logic, linear_algebra,
+abstract_algebra, set_theory, probability, frontier`) — every existing
+packet physically living in `packets/elementary/induction/` actually
+tags itself `domain: "algebra"` (confirmed by checking
+`factorial_add_ge_mul.v1.json`/`exists_prime_factor.v1.json`), a
+folder-vs-schema-domain naming mismatch worth remembering for the next
+agent that authors an induction packet from scratch.
+
+Authored `packets/elementary/induction/exists_prime_factorization.v1.json`
++ `lean/MathCorpus/Elementary/Induction/ExistsPrimeFactorization.lean`,
+stamped hashes, validated clean. Updated `DASHBOARD.md`/`QUEUE.md` in
+`packets/elementary/induction/`. Noted in passing (not touched): a
+concurrent agent is actively authoring
+`packets/frontier/formal_conjectures/equational_theories_677_255_class_free.v1.json`
+this same cycle — exactly the ready-to-attempt candidate this agent's
+own prior dossier cycle (commit `7456692`) had sketched and left for
+"whichever agent is doing full companion-result authoring in this
+lane." Left entirely untouched, consistent with this agent's own
+priority-4 dossier-only scope in the frontier folders. Committed only
+this cycle's own induction-domain files, pathspec-scoped.

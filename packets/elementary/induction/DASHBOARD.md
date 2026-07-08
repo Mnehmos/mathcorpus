@@ -31,6 +31,10 @@ tactic script to avoid the flat-transport hazard. And
 `factorial_add_ge_mul` (D1, L1, episode
 `01e983b5-da63-4abc-8b55-2f6871c98c77`): `m! * n! <= (m+n)!`, this
 domain's first genuinely two-parameter induction (m held fixed, induct on
-n) — every prior packet inducted on a single variable.
+n) — every prior packet inducted on a single variable. This cycle's
+`exists_prime_factorization` (D2, L1, episode `f53c8d62`): every n>=1 is
+a product of primes (existence half of FTA), strong induction via
+`Nat.minFac` — extends `exists_prime_factor`'s single-factor existence to
+a full factorization list.
 
 Next targets: see `QUEUE.md`.

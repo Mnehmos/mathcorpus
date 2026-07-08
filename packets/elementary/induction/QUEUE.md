@@ -83,6 +83,29 @@ inductive proof, distinct from `number_theory`'s bare-citation
       domain's first genuinely two-parameter induction — every prior
       packet inducted on a single variable.
 
+- [x] `exists_prime_factorization` — every `n >= 1` is a product of primes,
+      existence half of FTA (D2, L1). Authored 2026-07-08 via tracked
+      episode `f53c8d62-b8ca-4c32-a697-bf17a76bcb58` (kernel_verified on
+      the 4th attempt), strong induction via `n.minFac`. Extends
+      `exists_prime_factor` (a single prime factor) to a full
+      factorization list. Three real lessons hit and recorded in the
+      packet's `notes` field: (1) binding the `1 <= n` hypothesis before
+      calling `induction n using Nat.strong_induction_on`, combined with
+      `rcases eq_or_lt_of_le hn`, produced a full 60s timeout with zero
+      diagnostic — deferring the hypothesis's `intro` to inside the
+      induction case, and replacing `eq_or_lt_of_le` with a plain
+      `by_cases hn1 : n = 1`, fixed it (unclear which of the two changes
+      was the actual cause — both are suspect for future
+      `Nat.strong_induction_on` proofs here); (2) `rcases hq with rfl|hq`
+      directly on a `List.Mem` hypothesis threw a confusing `subst`
+      error blaming a `List ℕ` equality — fix by converting via
+      `List.mem_cons.mp hq` to a plain `Or` first; (3) splitting a
+      `refine ⟨_, ?_, ?_⟩`'s two goals via flat sequential tactics
+      (no bullets) silently left the SECOND goal untouched with no
+      tactic error reported at all (category `unsolved_goals`) — always
+      wrap each `refine` goal in its own `·` bullet, even when the
+      sub-tactics themselves have no nested bullets.
+
 ## Next targets
 
 *(empty — see Backlog.)*
