@@ -20,12 +20,15 @@ well-ordering principle — see this packet's `notes` for a bullet/
 (`a ∣ Nat.lcm a b` / `b ∣ Nat.lcm a b`; trailing apostrophe avoids
 shadowing Mathlib's own `Nat.dvd_lcm_left`/`Nat.dvd_lcm_right`).
 
+and `bezout` (`∃ u v, gcd a b = a*u + b*v` for `a b : ℤ`, this domain's
+first `Int`-based gcd fact, tracked episode
+`5d1a3305-2713-49a8-abc3-8ca51930e6e0`, kernel_verified on the first
+attempt via `Int.gcdA`/`Int.gcdB`/`Int.gcd_eq_gcd_ab`).
+
 ## Next targets
 
 *(empty)*
 
 ## Backlog
 
-- [ ] Bezout-style: `gcd a b` expressible as an integer linear combination
-      of `a`, `b` (L2 — needs `Int`, more involved than the current
-      `Nat`-only coverage).
+*(empty)*

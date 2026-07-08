@@ -2400,3 +2400,26 @@ Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
 `corpus_stats.py`, 115.2% of the 250-packet v0.1 public target — both
 packet-count release criteria remain comfortably met). Commit scoped to
 only this cycle's own files.
+
+## Proposed update — number_theory elementary packet: bezout (this agent, 2026-07-08, /loop continuation)
+
+Startup this cycle: no bugs blocking progress. Inequalities (28) and
+induction (29) both had empty queues/backlogs again; functions (30) and
+combinatorics were also dry. Checked geometry's remaining backlog item
+(`law_of_sines`) but judged encoding "angle opposite a side" cleanly from
+bare coordinates a genuinely harder target than warranted for one cycle
+(same call as a prior cycle). Picked `number_theory`'s sole remaining
+backlog item instead: Bezout's identity over `Int`.
+
+Added `packets/elementary/number_theory/bezout.v1.json`: for every pair
+of integers `a, b`, `gcd(a,b)` is expressible as `a*u + b*v` for some
+integers `u, v`. Produced via tracked episode
+`5d1a3305-2713-49a8-abc3-8ca51930e6e0` (problem_version
+`84f130e6-84ef-4995-a112-ba1f8006fa5a`, dev-attested), `kernel_verified`
+on the first `solve` attempt (`⟨Int.gcdA a b, Int.gcdB a b,
+Int.gcd_eq_gcd_ab a b⟩`). This domain's first `Int`-based (rather than
+`Nat`-only) gcd fact; closes the last item in
+`packets/elementary/number_theory/QUEUE.md`.
+
+Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
+0 errors) and hash-stamped. Commit scoped to only this cycle's own files.
