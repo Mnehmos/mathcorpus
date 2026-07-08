@@ -3502,3 +3502,37 @@ packets, 0 errors/warnings (`corpus_stats.py`: 312 verified public + 28
 negative, 124.8% of the 250-packet v0.1 public target). Committed only
 this cycle's own files, pathspec-scoped, in two commits (packet+lean,
 then the COMPANION_RESULTS.md update).
+
+## Proposed update — induction: two_pow_strictmono packet (this agent, 2026-07-08)
+
+Priority-3 elementary work this cycle (no blocking bugs; no zero-coverage
+negative lane; induction was lowest-count at 31 packets, backlog vague
+"repopulate from focus"). Domain focus audit: induction/strong-
+induction/recursion/finite-sums/factorials/powers/inequalities-by-
+induction are all well covered; "monotonicity" was the weakest, with
+only `sum_range_monotone`/`prod_range_monotone` existing.
+
+Considered fib monotonicity first but `Nat.fib_mono` already exists as a
+trivial one-line Mathlib citation — less valuable as training content.
+Picked `two_pow_strictmono` instead (`n<m → 2^n<2^m`), which touches
+BOTH "monotonicity" and "powers" simultaneously and required genuine
+proof engineering, not a bare citation.
+
+Took 3 tracked attempts (episode `9416dbd4-a5a0-452a-a4bb-9eb4d20eda33`):
+(1) `Nat.pos_pow_of_pos` doesn't exist under that name — fixed with the
+general `pow_pos`; (2) after decomposing `m = n+k+1` via
+`Nat.exists_eq_add_of_lt` and `rw [pow_add]`, the rewrite split off the
+WRONG grouping — since `n+k+1` parses left-associatively as `(n+k)+1`,
+`pow_add` produced `2^(n+k)*2^1` rather than the intended
+`2^n*2^(k+1)`, leaving an unprovable goal. Sidestepped entirely on
+attempt 3 by proving `StrictMono (fun k => 2^k)` via
+`strictMono_nat_of_lt_succ`, which reduces to a single succ-step
+(`2^k < 2^(k+1)`, cleanly matched by `pow_succ`) with no exponent-
+splitting ambiguity — recorded as the preferred pattern for any future
+"sequence monotone in its index" target in this domain.
+
+Authored `packets/elementary/induction/two_pow_strictmono.v1.json` +
+`lean/MathCorpus/Elementary/Induction/TwoPowStrictMono.lean`, stamped
+hashes, validated clean (341 packets, 0 errors, 0 warnings). Updated
+`DASHBOARD.md`/`QUEUE.md` in `packets/elementary/induction/`. Committed
+only this cycle's own files, pathspec-scoped.

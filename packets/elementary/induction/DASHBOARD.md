@@ -40,5 +40,9 @@ a full factorization list. And `sum_consec_product` (D1, L1, episode
 triangular numbers), stated division-free as `3 * sum (k+1)*(k+2) =
 n*(n+1)*(n+2)` — the next rung above `gauss_sum`/`sum_squares`/
 `sum_cubes`'s power sums and `arith_seq_sum`'s general arithmetic series.
+This cycle's `two_pow_strictmono` (D1, L1, episode `9416dbd4`): `n < m`
+implies `2^n < 2^m`, filling this domain's weakest-covered focus item
+(monotonicity — previously only `sum_range_monotone`/`prod_range_monotone`
+existed) via `strictMono_nat_of_lt_succ`.
 
 Next targets: see `QUEUE.md`.

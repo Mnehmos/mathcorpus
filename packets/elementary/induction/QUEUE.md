@@ -119,6 +119,25 @@ inductive proof, distinct from `number_theory`'s bare-citation
       (`grep -rl triangular\|tetrahedral packets/elementary/*/*.json`,
       no hits) before authoring.
 
+- [x] `two_pow_strictmono` — `n < m` implies `2^n < 2^m` (D1, L1).
+      Authored 2026-07-08 via tracked episode
+      `9416dbd4-a5a0-452a-a4bb-9eb4d20eda33` (kernel_verified on the
+      third attempt, via `strictMono_nat_of_lt_succ` + `pow_succ` +
+      `omega`). Fills this domain's weakest-covered focus item,
+      monotonicity (previously only `sum_range_monotone`/
+      `prod_range_monotone`). Two real lessons: (1) `Nat.pos_pow_of_pos`
+      doesn't exist under that name — use the general `pow_pos`;
+      (2) after decomposing `m = n + k + 1` via `Nat.exists_eq_add_of_lt`
+      and `rw [pow_add]`, the rewrite split off the wrong grouping —
+      `n+k+1` parses left-associatively as `(n+k)+1`, so `pow_add`
+      produced `2^(n+k) * 2^1`, not the intended `2^n * 2^(k+1)`,
+      leaving an unprovable goal shape. Sidestepped entirely by proving
+      `StrictMono (fun k => 2^k)` via `strictMono_nat_of_lt_succ`, which
+      reduces to a single succ-step with no exponent-splitting ambiguity
+      at all — prefer this approach over manual `m = n + k + c`
+      decomposition for any future "power/sequence is monotone in its
+      index" target.
+
 ## Next targets
 
 *(empty — see Backlog.)*

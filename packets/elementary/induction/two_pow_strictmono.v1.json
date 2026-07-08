@@ -1,0 +1,100 @@
+{
+  "packet_id": "elementary.induction.two_pow_strictmono.v1",
+  "packet_version": "1.0.0",
+  "title": "Powers of 2 are strictly monotone in the exponent",
+  "domain": "algebra",
+  "level": "L1_proof_basics",
+  "kind": "concept",
+  "status": "kernel_verified",
+  "difficulty_bin": "D1",
+  "lean_module": "MathCorpus.Elementary.Induction.TwoPowStrictMono",
+  "theorem_name": "two_pow_strictMono",
+  "imports": [
+    "Mathlib"
+  ],
+  "toolchain": {
+    "lean_version": "v4.32.0-rc1",
+    "mathlib_rev": "360da6fa66c1273b76b6b2d8c5666fd5ac2e3b56"
+  },
+  "source_provenance": {
+    "source_kind": "author_written",
+    "source_refs": [],
+    "authors": [
+      "The MathCorpus Authors"
+    ],
+    "copyright_holder": "The MathCorpus Authors",
+    "license_spdx": "Apache-2.0",
+    "license_content": "CC-BY-4.0",
+    "statement_fidelity": "author_written"
+  },
+  "informal_statement": "If n < m then 2^n < 2^m -- powers of 2 are strictly increasing in the exponent.",
+  "informal_proof_idea": "Show the function k -> 2^k is StrictMono via strictMono_nat_of_lt_succ, which reduces to the single successor step 2^k < 2^(k+1): rewrite via pow_succ to 2^k < 2^k*2, closed by omega given 2^k > 0. Apply the resulting StrictMono fact to the hypothesis n < m.",
+  "formal_statement_pp": "theorem two_pow_strictMono (n m : ℕ) (h : n < m) : 2 ^ n < 2 ^ m",
+  "proof_body_path": "lean/MathCorpus/Elementary/Induction/TwoPowStrictMono.lean",
+  "proof_body_redacted": false,
+  "trust": {
+    "rung": 1,
+    "proof_authority": "lean_kernel",
+    "certificate_checker": "kernel_decide",
+    "encoding_required": false,
+    "encoding_soundness_status": "not_applicable",
+    "independent_review_status": "repo_reviewed",
+    "public_claim_class": "public_safe"
+  },
+  "training": {
+    "eligibility": "public_train",
+    "reason_codes": [
+      "public",
+      "non_benchmark",
+      "unredacted"
+    ],
+    "dedupe_cluster_id": "induction.two_pow_strictmono",
+    "template_family_id": "induction.monotonicity_from_succ_step",
+    "contamination_risk": "low",
+    "can_export_proof_body": true
+  },
+  "dependencies": {
+    "kits": [],
+    "tactic_tags": [
+      "strictMono_nat_of_lt_succ",
+      "pow_succ",
+      "pow_pos",
+      "omega"
+    ],
+    "prerequisite_concepts": [
+      "strict_monotonicity",
+      "powers",
+      "induction"
+    ]
+  },
+  "metrics": {
+    "loc": 8,
+    "tactic_count": 6
+  },
+  "artifacts": {
+    "public_files": [
+      "lean/MathCorpus/Elementary/Induction/TwoPowStrictMono.lean"
+    ]
+  },
+  "review": {
+    "review_basis": "repo self-review; kernel-verified through the tracked proof-search loop",
+    "reviewer_status": "repo_reviewed"
+  },
+  "verification": {
+    "verifier": "proofsearch",
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "episode_id": "9416dbd4-a5a0-452a-a4bb-9eb4d20eda33",
+    "outcome": "kernel_verified",
+    "kernel_verified": true,
+    "fidelity_status": "attested",
+    "import_manifest_hash": "aaf21893d520a78dee0787a1bcaf939ee6b922265ff670c272e2e1d450dd29a7",
+    "step_count": 3,
+    "verified_at": "2026-07-08T12:06:19Z"
+  },
+  "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 9416dbd4), kernel_verified on the third attempt. Fills this domain's weakest-covered focus item, monotonicity (previously only `sum_range_monotone`/`prod_range_monotone`), while also touching `powers`. First attempt used `Nat.pos_pow_of_pos`, which doesn't exist under that name (fixed with the general `pow_pos`). Second attempt's real lesson: after `obtain ⟨k, hk⟩ := Nat.exists_eq_add_of_lt h; subst hk`, the goal became `2^n < 2^(n+k+1)`, and `rw [pow_add]` split off the WRONG grouping -- since `n+k+1` parses left-associatively as `(n+k)+1`, `pow_add` rewrote it as `2^(n+k) * 2^1`, not the intended `2^n * 2^(k+1)` -- producing an unprovable goal shape. Sidestepped entirely by using `strictMono_nat_of_lt_succ` (reduces the claim to a single succ-step `2^k < 2^(k+1)`, cleanly matched by `pow_succ` with no exponent-splitting ambiguity) instead of manually decomposing `m` via `exists_eq_add_of_lt`.",
+  "hashes": {
+    "packet_sha256": "b5e6d74fa1e00c448f60337df227b6548d6254a1aebfb638b6abaf9a37992607",
+    "formal_statement_sha256": "6fb4c6980e518bd5b9dde92a4e4d3714e0623940118de6f696622ff61546cd39",
+    "proof_body_sha256": "fa469fa32c76f524396f6994284c0d15c30552f567fbb827a7de64332f7e51ad"
+  }
+}
