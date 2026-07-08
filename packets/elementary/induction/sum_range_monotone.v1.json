@@ -1,0 +1,102 @@
+{
+  "packet_id": "elementary.induction.sum_range_monotone.v1",
+  "packet_version": "1.0.0",
+  "title": "Partial sums of a nonnegative-valued sequence are monotone",
+  "domain": "algebra",
+  "level": "L1_proof_basics",
+  "kind": "concept",
+  "status": "kernel_verified",
+  "difficulty_bin": "D1",
+  "lean_module": "MathCorpus.Elementary.Induction.SumRangeMonotone",
+  "theorem_name": "sum_range_monotone",
+  "imports": [
+    "Mathlib"
+  ],
+  "toolchain": {
+    "lean_version": "v4.32.0-rc1",
+    "mathlib_rev": "360da6fa66c1273b76b6b2d8c5666fd5ac2e3b56"
+  },
+  "source_provenance": {
+    "source_kind": "author_written",
+    "source_refs": [],
+    "authors": [
+      "The MathCorpus Authors"
+    ],
+    "copyright_holder": "The MathCorpus Authors",
+    "license_spdx": "Apache-2.0",
+    "license_content": "CC-BY-4.0",
+    "statement_fidelity": "author_written"
+  },
+  "informal_statement": "For every function f : ℕ → ℕ and natural numbers n, k, the partial sum of f over range n is at most the partial sum of f over range (n + k): finite partial sums of a nonnegative-valued sequence are monotone in the upper bound.",
+  "informal_proof_idea": "Induction on k: the base case k = 0 is range n = range n. In the successor step, split off the new term f(n+k) with Finset.sum_range_succ; the inductive hypothesis gives the bound up to range (n+k), and adding the nonnegative term f(n+k) (automatic in ℕ via Nat.le_add_right) preserves the inequality.",
+  "formal_statement_pp": "theorem sum_range_monotone (f : ℕ → ℕ) (n k : ℕ) : (∑ i ∈ Finset.range n, f i) ≤ ∑ i ∈ Finset.range (n + k), f i",
+  "proof_body_path": "lean/MathCorpus/Elementary/Induction/SumRangeMonotone.lean",
+  "proof_body_redacted": false,
+  "trust": {
+    "rung": 1,
+    "proof_authority": "lean_kernel",
+    "certificate_checker": "kernel_decide",
+    "encoding_required": false,
+    "encoding_soundness_status": "not_applicable",
+    "independent_review_status": "repo_reviewed",
+    "public_claim_class": "public_safe"
+  },
+  "training": {
+    "eligibility": "public_train",
+    "reason_codes": [
+      "public",
+      "non_benchmark",
+      "unredacted"
+    ],
+    "dedupe_cluster_id": "induction.sum_range_monotone",
+    "template_family_id": "induction.monotonicity",
+    "contamination_risk": "low",
+    "can_export_proof_body": true
+  },
+  "dependencies": {
+    "kits": [
+      "RecurrenceGeneratingFunctionKit"
+    ],
+    "tactic_tags": [
+      "induction",
+      "Finset.sum_range_succ",
+      "le_trans",
+      "Nat.le_add_right"
+    ],
+    "prerequisite_concepts": [
+      "induction",
+      "finite_sum",
+      "monotonicity"
+    ]
+  },
+  "metrics": {
+    "loc": 5,
+    "tactic_count": 3
+  },
+  "artifacts": {
+    "public_files": [
+      "lean/MathCorpus/Elementary/Induction/SumRangeMonotone.lean"
+    ]
+  },
+  "review": {
+    "review_basis": "repo self-review; kernel-verified through the tracked proof-search loop",
+    "reviewer_status": "repo_reviewed"
+  },
+  "verification": {
+    "verifier": "proofsearch",
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "episode_id": "3280a193-bd9b-4189-a358-801911229181",
+    "outcome": "kernel_verified",
+    "kernel_verified": true,
+    "fidelity_status": "attested",
+    "import_manifest_hash": "30ab6302868b3f30ae2a3d1cb0218648f84eba4c0090864a3d2e34eaf98b922e",
+    "step_count": 1,
+    "verified_at": "2026-07-08T03:40:10Z"
+  },
+  "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 3280a193), kernel_verified on the first attempt. Fills the induction domain's stated 'monotonicity by induction' focus gap (packets/elementary/induction/LOOP.md) -- the only prior monotonicity-adjacent packet was two_pow_gt_self (a strict-inequality growth fact, not partial-sum monotonicity). General-purpose lemma: reusable as a building block for future partial-sum/series comparison packets.",
+  "hashes": {
+    "packet_sha256": "d962ea27cca79433e533f9d54678c93d993eac92889f1e4487f69416f4638c2d",
+    "formal_statement_sha256": "5c50be930886c2ec68069ffea8f401c37fba28976d46033df8c0119c816c30ba",
+    "proof_body_sha256": "f3e0624d87a918c981dc1e24675fb540cdd9351609e5db97ceeb38a6b3958641"
+  }
+}
