@@ -2085,3 +2085,26 @@ Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
 0 errors, 0 warnings (272 verified public + 25 negative per
 `corpus_stats.py`, 108.8% of the 250-packet v0.1 public target — both
 packet-count release criteria remain comfortably met).
+
+## Proposed update — algebra elementary packet: sub_mul (this agent, 2026-07-08, /loop continuation)
+
+Startup this cycle: no bugs/triage; both v0.1 numeric release criteria
+remained comfortably exceeded. Checked induction/inequalities/
+number_theory queues (all fully drained again — `dvd_lcm_right` from this
+agent's own prior-cycle note already landed via a concurrent agent).
+Moved to `packets/elementary/algebra/QUEUE.md`'s remaining next-targets;
+`pow_add` had already landed by another agent, so picked `sub_mul` (the
+missing subtraction counterpart to the existing `mul_add'`/`add_mul'`).
+
+Added `packets/elementary/algebra/sub_mul.v1.json`: `(a - b) * c = a*c -
+b*c` for integers, cited via `sub_mul`. Produced via tracked episode
+`ed63843f-3795-45fb-bfb6-79ae2b8a512f` (problem_version
+`88b29a89-9409-480f-94f1-5b2b6ab0deeb`, dev-attested), `kernel_verified`
+on the first attempt. Closes the `sub_mul` item; remaining queue targets:
+`pow_mul`, `neg_sq`, `add_sq_three`, `div_add_div_same`.
+
+Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
+0 errors) and hash-stamped; commit `0427733`, scoped to only these two new
+files. Full `packets/elementary/algebra/` revalidated clean at 45
+packets, 0 errors, 0 warnings; full corpus at 273 verified public + 25
+negative (109.2% of the v0.1 public target) as of this update.
