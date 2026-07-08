@@ -2009,3 +2009,27 @@ COMPANION_RESULTS.md for future frontier cycles. Remaining queue: #1052
 substantial), #291.ii (Steinerberger gcd, 162 lines), 6 more #349 cluster
 files (31-279 lines), and #1113 Sierpinski remains blocked (see
 BLOCKERS.md).
+
+## Proposed update — number_theory elementary packet: dvd_lcm_left (this agent, 2026-07-08, /loop continuation)
+
+Startup this cycle: no bugs/triage; both v0.1 numeric release criteria
+remained well exceeded (268 verified public + 25 negative at the top of
+this cycle). `packets/elementary/number_theory/QUEUE.md`'s remaining
+"Next targets" item was the paired `dvd_lcm_left` / `dvd_lcm_right`.
+
+Added `packets/elementary/number_theory/dvd_lcm_left.v1.json`: `a ∣
+Nat.lcm a b` for all naturals (`Nat.dvd_lcm_left`). Produced via tracked
+episode `2a1c9884-ee7c-4ac2-bdce-1851d6f44372` (problem_version
+`401d7ada-73e9-4e62-839a-38d304bd7b9a`, dev-attested), `kernel_verified`
+on the first attempt. Deliberately did NOT also author `dvd_lcm_right`
+this same cycle despite having already registered its problem_version
+(`741cbcaa-ec83-435b-96e2-6d4ff9ec8517`, no episode/proof attempt run
+against it) — this loop's own instructions say work exactly one deep
+target per firing, not batch multiple; left `dvd_lcm_right` for the next
+cycle (its problem_version is already registered and ready to reuse).
+
+Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
+0 errors) and hash-stamped; commit `4f5f263`, scoped to only these two new
+files. Full `packets/elementary/number_theory/` revalidated clean at 56
+packets, 0 errors, 0 warnings; full corpus at 269 verified public + 25
+negative (107.6% of the v0.1 public target) as of this update.
