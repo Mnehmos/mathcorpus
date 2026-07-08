@@ -2108,3 +2108,20 @@ Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
 files. Full `packets/elementary/algebra/` revalidated clean at 45
 packets, 0 errors, 0 warnings; full corpus at 273 verified public + 25
 negative (109.2% of the v0.1 public target) as of this update.
+
+## Proposed update — fourth frontier/erdos packet, largest module yet (this agent, 2026-07-08)
+
+Added `packets/frontier/erdos/erdos_291_infinite_gcd_gt_one.v1.json`
+(commit `e234834`, frontier lane now 4 packets). Steinerberger's
+gcd(a_n,L_n)>1 companion for Erdős #291 part (ii). Largest SubmitModule
+transported here so far (2 defs + 5 helper theorems + root, 8 items) --
+took 4 attempts to get right. Key finding, now documented in
+COMPANION_RESULTS.md: helper module items are ALWAYS forced through the
+flattener regardless of requested proof_format, so (1) every
+`have h := by tac1; tac2` followed by sibling tactics needs explicit
+parens `(by tac1; tac2)` or the flattener swallows the trailing tactics
+into the wrong scope, and (2) bullet-based case splits inside a helper
+must be rewritten bullet-free (Or.elim/.elim term-mode dispatch) since
+bullets don't survive forced flattening -- only the root theorem can use
+raw_lean_block to keep bullets. This generalizes the smaller lesson from
+the #494 packet and should make future multi-item modules much faster.
