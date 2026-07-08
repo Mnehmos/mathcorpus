@@ -350,10 +350,77 @@ replayed" pattern. `OEIS/` triage is now complete — do not re-check.
 - `WeaklyFirstCountable.lean` — 1 `research solved` theorem, `sorry`.
 - `ZagierMZV.lean` — 1 `research solved` theorem, `sorry`.
 
-**Round-6 verdict**: 0/12 `Paper/` files yield a one-cycle transportable
-win. `DeGiorgi_one` is genuinely proof-complete but infrastructure-heavy
-(flagged for a possible dedicated multi-cycle push, not a quick win — see
-`BLOCKERS.md`). `Paper/` triage is now complete — do not re-check.
+**Round-6 verdict (superseded, see correction below)**: 0/12 `Paper/` files
+yield a one-cycle transportable win. `DeGiorgi_one` is genuinely
+proof-complete but infrastructure-heavy (flagged for a possible dedicated
+multi-cycle push, not a quick win — see `BLOCKERS.md`). `Paper/` triage is
+now complete — do not re-check.
+
+### Round 6 correction (this agent, second pass, 2026-07-08)
+
+Re-examined `DeGiorgi_one` after the round-6 "infrastructure-heavy, not a
+one-cycle win" verdict above and found the same class of mistake round 2
+made on `Mathoverflow/75792.lean::complexity_five_pow` before round 3's
+`Magma` case corrected it: the round-6 writeup treated `IsBoundedSolution`
+(a `structure ... : Prop` with fields `regular`/`bounded`/`solution`) as
+blocking the *statement*, not just the proof, and concluded the structure
+"can't be erased via restatement the same way" as `Magma` because
+"the STRUCTURE ITSELF is part of `DeGiorgi_conclusion`'s definition." That
+reasoning doesn't actually hold: `IsBoundedSolution`'s three fields are
+independent `Prop`s about `u` (no dependent typing between them), so the
+structure unfolds *exactly* to `ContDiff ℝ 2 u ∧ (∃ C, ∀ x, |u x| ≤ C) ∧
+(∀ x, Δ u x + u x - u x^3 = 0)` with zero loss — a plain `∧`-chain, not a
+named `structure`, is definitionally/propositionally identical, and the
+destructuring pattern `⟨hu_sol, hu_deriv⟩` in the upstream proof works
+identically against either shape. This is the exact same "notational, not
+load-bearing" pattern round 3 found for `Magma` — round 6 just didn't
+apply the round-3 lesson to a `structure` used only in the *statement*
+rather than the proof.
+
+Rebuilt the statement fully inlined (`IsBoundedSolution`, `HasPositiveDeriv`,
+`HasHyperplaneLevelSets`, `DeGiorgi_conclusion`, and the upstream file's
+local `ℝ^n` notation all unfolded directly into one self-contained `Prop`
+over `EuclideanSpace ℝ (Fin 1)`) and ran it through `problem_create` ->
+`episode_create` -> `attempt_claim` -> `episode_step`. The upstream proof
+term worked essentially verbatim (`strictMono_of_deriv_pos`,
+`deriv_comp_const_add`, `Function.Injective.of_comp_right`,
+`AffineSubspace.coe_affineSpan_singleton`, `direction_affineSpan`,
+`EuclideanSpace.single` all resolved fine under this repo's pinned
+Mathlib — round 6's worry about unverified API turned out unfounded) after
+two fixes: (1) a NEW, more dangerous blocker class than prior rounds'
+"unknown constant" API drift — the first `problem_create` omitted
+`Mathlib.Analysis.Calculus.LineDeriv.Basic` from `problem_imports`, and
+Lean's `autoImplicit` silently accepted the unresolved `lineDeriv`
+identifier as an opaque auto-bound implicit variable in the REGISTERED
+ROOT STATEMENT rather than erroring — `problem_create` returned success
+with a statement that silently meant something different than intended;
+only caught because a later `unfold lineDeriv` tactic-level reference
+failed with "unknown identifier," which is what actually triggered
+re-examination (see `BLOCKERS.md` for the general lesson: a successful
+`problem_create` is NOT proof that every name in the statement resolved to
+what you intended — spot-check unusual names' modules are actually in
+`problem_imports`, don't just trust that unrecognized errors would
+surface); (2) the upstream proof's original indentation (2-space-indented,
+as it sits nested inside the sibling file's own theorem) needed
+re-flattening to start at column 0 for this environment's
+`raw_lean_block` transport. **Kernel-verified**, episode
+`fb137309-7985-4cb7-805e-6305ae6e1872`. Packetized as
+`frontier.formal_conjectures.degiorgi_conjecture_dim_one.v1`.
+
+**Corrected round-6 verdict**: 1/12 `Paper/` files yields a genuine,
+tractable, kernel-verified win (`DeGiorgi_one`, restated with all
+file-local predicates inlined) — `Paper/` triage remains complete, but the
+record now correctly reflects one packetized win rather than zero.
+**General lesson reinforced**: when a "research solved, no sorry"
+candidate's STATEMENT (not just its proof) needs a custom
+`structure`/`class`/`def` to state, check the same notational-vs-load-
+bearing question round 3 established for proofs — a Prop-valued structure
+with independent fields is *always* inlineable as a bare `∧` chain in the
+statement, regardless of how deep in the definition chain it sits
+(`DeGiorgi_conclusion` -> `IsBoundedSolution` here, two `def` layers deep).
+Don't stop at "the structure is part of the definition chain" — check
+whether the structure's own fields are mutually independent Props before
+concluding a restatement is infeasible.
 
 ### Not yet triaged
 
@@ -405,3 +472,18 @@ above).
       stray erroneous token (`delta` has no `and` combinator) — this
       packet's proof was built independently rather than trusting that
       script verbatim; see the packet's `notes` field.
+- [x] `Paper/DeGiorgi.lean::DeGiorgi_one` (see round 6 correction above) —
+      **packetized 2026-07-08**:
+      `packets/frontier/formal_conjectures/degiorgi_conjecture_dim_one.v1.json`,
+      episode `fb137309-7985-4cb7-805e-6305ae6e1872`, kernel_verified.
+      Corrects the initial round-6 "infrastructure-heavy, not a one-cycle
+      win" verdict: `IsBoundedSolution`/`HasPositiveDeriv`/
+      `HasHyperplaneLevelSets`/`DeGiorgi_conclusion` and the upstream `R^n`
+      notation were all inlined into one self-contained `Prop` over
+      `EuclideanSpace R (Fin 1)`; the upstream proof term worked
+      essentially verbatim. `training.eligibility: quarantined`;
+      `open_problem_related: true` (De Giorgi's conjecture as a whole
+      remains open in dimensions 4-8 in this corpus and in the
+      literature -- only the elementary n=1 case is proved here). Also
+      surfaced a new, more dangerous blocker class than prior rounds'
+      "unknown constant" API drift -- see `BLOCKERS.md`.
