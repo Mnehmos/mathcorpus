@@ -331,7 +331,17 @@ Mathlib before assuming a verbatim transport will compile — see
       episode `406c3860-6fcf-40b3-82a5-4a3a1726a89f`, kernel_verified.
       Restated via `Real.rpow` after the upstream `Real.nthRoot` failed
       to resolve — see `BLOCKERS.md` for the general API-drift lesson.
-- [ ] `OEIS/358684.lean::oeis_358684_conjecture_0` (see round 5 above) —
-      ready candidate for a future cycle, genuinely proof-complete, no
-      custom class/inductive, but larger (Fermat numbers, `padicValNat`,
-      `Nat.log2`) than a one-cycle single-witness proof.
+- [x] `OEIS/358684.lean::oeis_358684_conjecture_0` (see round 5 above) —
+      **packetized 2026-07-08**:
+      `packets/frontier/formal_conjectures/oeis_a358684_conjecture_0.v1.json`,
+      episode `8bf75cf7-35f9-4c10-8015-3a9411a6df52`, kernel_verified on
+      the third attempt after three repairs (unqualified `sub_le` ->
+      `Nat.sub_le`; `norm_num` can't discharge `fermatNumber n ≠ 1` for
+      symbolic `n`, needed `Nat.fermatNumber_ne_one`; needed an explicit
+      `intro n`). `a n` inlined as its closed form in the root statement
+      (no separate `def`, since `problem_create`'s statement must be
+      self-contained). Also noted: the upstream file's own proof for this
+      theorem opens with `delta fermatNumber and a`, which looks like a
+      stray erroneous token (`delta` has no `and` combinator) — this
+      packet's proof was built independently rather than trusting that
+      script verbatim; see the packet's `notes` field.

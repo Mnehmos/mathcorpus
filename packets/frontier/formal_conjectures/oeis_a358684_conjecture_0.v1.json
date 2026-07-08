@@ -1,0 +1,110 @@
+{
+  "packet_id": "frontier.formal_conjectures.oeis_a358684_conjecture_0.v1",
+  "packet_version": "1.0.0",
+  "title": "OEIS A358684: a 2-adic valuation bound on Fermat number factors",
+  "domain": "frontier",
+  "level": "L7_frontier",
+  "kind": "theorem",
+  "status": "kernel_verified",
+  "difficulty_bin": "D4",
+  "lean_module": "MathCorpus.Frontier.FormalConjectures.OeisA358684Conjecture0",
+  "theorem_name": "oeis_a358684_conjecture_0",
+  "imports": [
+    "Mathlib"
+  ],
+  "toolchain": {
+    "lean_version": "v4.32.0-rc1",
+    "mathlib_rev": "360da6fa66c1273b76b6b2d8c5666fd5ac2e3b56"
+  },
+  "source_provenance": {
+    "source_kind": "formal_conjectures",
+    "source_refs": [
+      "FormalConjectures/OEIS/358684.lean::oeis_358684_conjecture_0 (sibling repo mnehmos.llm-driven-proof-search.environment/formal-conjectures)",
+      "https://oeis.org/A358684",
+      "Lorenzo Sauras-Altuzarra, \"Some properties of the factors of Fermat numbers\", Art Discrete Appl. Math. (2022), Conjecture 3.4, https://doi.org/10.26493/2590-9770.1473.ec5"
+    ],
+    "authors": [
+      "The MathCorpus Authors"
+    ],
+    "copyright_holder": "The MathCorpus Authors",
+    "license_spdx": "Apache-2.0",
+    "license_content": "CC-BY-4.0",
+    "statement_fidelity": "adapted_with_review"
+  },
+  "informal_statement": "OEIS A358684 / Conjecture 3.4 (Sauras-Altuzarra 2022): let F n = 2^(2^n)+1 be the n-th Fermat number and P n = minFac(F n) its smallest prime factor. Then the 2-adic valuation of P n - 1 is at most 2^n - a n, where a n = 2^n - floor(log2(P n)) is the minimum k such that P n exceeds 2^(2^n - k). This packet inlines a n as its closed form directly in the statement rather than introducing it as a separate definition.",
+  "informal_proof_idea": "Since log2(P n) <= 2^n (P n <= F n < 2^(2^n+1)), rewrite 2^n - (2^n - log2(P n)) to log2(P n) via Nat.sub_sub_self. This splits into two goals: (1) padicValNat 2 (P n - 1) <= log2(P n), proved via the 2-adic valuation bound Nat.ordProj_le combined with P n - 1 <= P n - 1 (trivial) and P n != 1 (P n prime, hence > 1); (2) log2(P n) <= 2^n, proved by bounding P n < 2^(2^n+1) (since P n <= F n = 2^(2^n)+1 < 2^(2^n+1)) and taking logs.",
+  "formal_statement_pp": "theorem oeis_a358684_conjecture_0 : ∀ n : ℕ, padicValNat 2 (Nat.minFac (Nat.fermatNumber n) - 1) ≤ 2 ^ n - (2 ^ n - Nat.log2 (Nat.minFac (Nat.fermatNumber n)))",
+  "proof_body_path": "lean/MathCorpus/Frontier/FormalConjectures/OeisA358684Conjecture0.lean",
+  "proof_body_redacted": false,
+  "trust": {
+    "rung": 1,
+    "proof_authority": "lean_kernel",
+    "certificate_checker": "kernel_decide",
+    "encoding_required": false,
+    "encoding_soundness_status": "not_applicable",
+    "independent_review_status": "repo_reviewed",
+    "public_claim_class": "public_safe"
+  },
+  "training": {
+    "eligibility": "quarantined",
+    "reason_codes": [
+      "adapted_restatement_pending_review",
+      "default_quarantine_pending_external_review"
+    ],
+    "dedupe_cluster_id": "frontier.formal_conjectures.oeis_a358684",
+    "template_family_id": "frontier.formal_conjectures_companion_results",
+    "open_problem_related": false,
+    "contamination_risk": "low",
+    "can_export_proof_body": true
+  },
+  "dependencies": {
+    "kits": [],
+    "tactic_tags": [
+      "Nat.sub_sub_self",
+      "Nat.log2_eq_log_two",
+      "Nat.le_log_of_pow_le",
+      "Nat.ordProj_le",
+      "Nat.log_lt_of_lt_pow",
+      "Nat.minFac_prime",
+      "Nat.fermatNumber_ne_one",
+      "bound"
+    ],
+    "prerequisite_concepts": [
+      "fermat_number",
+      "smallest_prime_factor",
+      "padic_valuation",
+      "logarithm",
+      "case_split"
+    ]
+  },
+  "metrics": {
+    "loc": 13,
+    "tactic_count": 14
+  },
+  "artifacts": {
+    "public_files": [
+      "lean/MathCorpus/Frontier/FormalConjectures/OeisA358684Conjecture0.lean"
+    ]
+  },
+  "review": {
+    "review_basis": "repo self-review; kernel-verified through the tracked proof-search loop",
+    "reviewer_status": "repo_reviewed",
+    "reviewed_at": "2026-07-08"
+  },
+  "verification": {
+    "verifier": "proofsearch",
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "episode_id": "8bf75cf7-35f9-4c10-8015-3a9411a6df52",
+    "outcome": "kernel_verified",
+    "kernel_verified": true,
+    "fidelity_status": "attested",
+    "step_count": 3,
+    "import_manifest_hash": "aaf21893d520a78dee0787a1bcaf939ee6b922265ff670c272e2e1d450dd29a7"
+  },
+  "notes": "ANTI-OVERCLAIM: this is a RESTATEMENT of the upstream oeis_358684_conjecture_0 with `a n` inlined as its closed form (2^n - Nat.log2 (Nat.minFac (Nat.fermatNumber n))) rather than kept as a separate `def`, since the root statement registered via problem_create must be a self-contained Prop with no dependency on a not-yet-defined local definition -- mathematically identical, not a simplification (checked by hand: substituting the upstream def literally into the theorem statement). Also NOTE the upstream source file's proof for this theorem begins with the line `delta fermatNumber and a` which appears to contain a stray, likely-erroneous extra identifier `and` (delta does not take an `and` combinator) -- this packet's proof does not use `delta` at all (unnecessary once `a n` is already inlined) and was independently constructed/verified through this repo's own tracked proof-search loop rather than trusting the upstream tactic script verbatim, so this discrepancy does not affect this packet's correctness, only the note that the upstream file's exact proof script may not compile as literally written. Three repairs were needed versus attempting the upstream tactic sequence verbatim: (1) unqualified `sub_le` -> `Nat.sub_le` (SubmitModule/Solve gives no `open Nat` preamble, matching the established lesson from the #494 Erdos packet's `Finset.mapEmbedding` case); (2) `(by norm_num)` cannot discharge `Nat.fermatNumber n ≠ 1` for symbolic `n` (norm_num only evaluates literals) -- replaced with the general lemma `Nat.fermatNumber_ne_one`; (3) `intro n` needed at the start since the root statement is a bare `∀`-quantified Prop, not a theorem with `n` as a named argument the way the upstream file has it. Kernel-verified on the third attempt (episode 8bf75cf7-35f9-4c10-8015-3a9411a6df52, step 3). This is a genuinely solved OEIS/formal-conjectures literature companion result (Sauras-Altuzarra 2022, Conjecture 3.4), not an open problem -- the file's other theorem (`seven : a 7 = 73`) remains `sorry` upstream and is untouched by this packet. training.eligibility: quarantined per this session's conservative default for adapted/restated frontier packets pending real external review. Completes the OEIS/ round-5 triage's flagged future-cycle candidate (see packets/frontier/formal_conjectures/SOLVED_QUEUE.md).",
+  "hashes": {
+    "packet_sha256": "c4f2beb92d278cc055d8fc0d96600ad19eb40f7ffa8724ec142f282c9e776357",
+    "formal_statement_sha256": "204683b6a5d6f26f93fb5105fc16d65cfe1e68ab2bc29e5da3b85a978c5e1bb7",
+    "proof_body_sha256": "43d50656d6d21f91291db832e76ccde728725b2b4fb8673684473fa4bfce4f79"
+  }
+}
