@@ -26,16 +26,27 @@ Checked against the 29 existing packets (2026-07-07) to avoid duplicates.
       match this domain's convention (`midpoint_equidist`,
       `reflection_dist`); the domain's first circle-equation packet.
 
+## Done (continued)
+
+- [x] `reflection_over_x_axis` — coordinate reflection `(x, y) -> (x, -y)`
+      preserves squared distance to any point `(qx, 0)` on the x-axis (D0,
+      L0). Authored 2026-07-08 via tracked episode
+      `66dcb53d-d77c-4467-ad54-bdf0db0008a6` (kernel_verified: `ring`, an
+      unconditional polynomial identity once the axis point's y-coordinate
+      is fixed at 0 in the statement). A first `problem_create` without an
+      explicit `problem_imports: ["Mathlib"]` resolved to a bare
+      Ring+NormNum manifest and hit a spurious `HSub ℝ ℝ ?m` typeclass
+      failure on the identical tactic — a tooling/import-manifest artifact
+      (not a genuine tactic lesson), fixed by re-registering with the
+      standard `["Mathlib"]` import manifest used by every other packet in
+      this repo.
+
 ## Next targets
 
 - [ ] `right_triangle_area_half_base_height` — area of a right triangle via
       the two legs (D1, L1). `shoelace_identity` gives the general-triangle
       area formula; the right-triangle special case is a good, smaller
       companion.
-- [ ] `reflection_over_x_axis` — coordinate reflection `(x, y) -> (x, -y)`
-      preserves distance to any point on the axis (D0, L0). The existing
-      `reflection_dist` is more general/abstract; a concrete coordinate
-      instance is still missing and is a good D0 on-ramp.
 
 ## Backlog
 
