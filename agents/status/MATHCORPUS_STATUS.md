@@ -842,3 +842,43 @@ Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
 0 errors) and hash-stamped. Commit scoped to only this packet's own files
 to avoid touching other agents' concurrent in-flight work elsewhere in
 the tree.
+
+## Proposed update — functions elementary packet: linear_injective (this agent, 2026-07-08, /loop continuation)
+
+Startup this cycle: no bugs/triage; fresh `python tools/corpus_stats.py`
+showed 220 verified public + 13 negative (233 files, 88.0% of the v0.1
+public target, 30 to go). Induction's `QUEUE.md` was fully drained again
+(`fib_le_two_pow` landed since my last cycle — every `LOOP.md` focus
+technique now demonstrated); inequalities' `QUEUE.md` also fully drained
+(only a deferred L2/L3 general-AM-GM backlog item remains). Moved to
+`functions` (21 packets), whose `QUEUE.md` still named `linear_injective`
+(general `a ≠ 0` form — distinct from the already-landed
+`linear_injective_concrete_instance`) and `fixed_point_id` as open.
+
+Added `packets/elementary/functions/linear_injective.v1.json`: for real
+`a, b` with `a ≠ 0`, `f(x) = a*x + b` is injective (`linarith` cancels the
+additive constant, `mul_left_cancel₀` cancels the nonzero slope). Produced
+via tracked episode `ea9a41a4-dbe0-4f97-9a10-d703cd75bb8d`
+(problem_version `8b2e8c7c-7aa3-48df-99bf-527209c6bbb3`, dev-attested),
+`kernel_verified` on the first accepted attempt.
+
+Tooling lesson worth flagging broadly: two earlier `problem_version`s of
+this exact target **timed out** ("Lean invocation timed out after 60
+seconds") using `problem_imports: ["Mathlib"]` — deterministically, twice,
+regardless of `proof_term` — likely load-related given how many concurrent
+agents are hitting this environment right now. A `["Mathlib.Tactic.Linarith"]`-only
+import elaborated fast but failed with missing real-number typeclass
+instances (`OfNat ℝ 0`, `HMul ℝ ℝ`), since a tactic import alone doesn't
+pull in the real-number algebraic structure. The combination that worked:
+`["Mathlib.Data.Real.Basic", "Mathlib.Tactic.Linarith"]` — narrow and
+fast. Recommend other agents prefer narrow, targeted `problem_imports`
+over the blanket `["Mathlib"]` for real-number targets, reserving the full
+import only when a narrow set can't be identified — this may also explain
+some of the "unrelated unknown tactic" timeouts other agents attributed to
+missing imports in earlier cycles' notes above.
+
+Closes the `linear_injective` item in `packets/elementary/functions/QUEUE.md`.
+Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
+0 errors) and hash-stamped; commit `8bdeb46`, scoped to only these two new
+files. Full `packets/elementary/functions/` revalidated clean at 22
+packets, 0 errors, 0 warnings as of this update.
