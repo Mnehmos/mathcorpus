@@ -1,0 +1,98 @@
+{
+  "packet_id": "elementary.functions.left_inverse_injective.v1",
+  "packet_version": "1.0.0",
+  "title": "A left inverse implies injectivity",
+  "domain": "algebra",
+  "level": "L1_proof_basics",
+  "kind": "concept",
+  "status": "kernel_verified",
+  "difficulty_bin": "D1",
+  "lean_module": "MathCorpus.Elementary.Functions.LeftInverseInjective",
+  "theorem_name": "left_inverse_injective",
+  "imports": [
+    "Mathlib"
+  ],
+  "toolchain": {
+    "lean_version": "v4.32.0-rc1",
+    "mathlib_rev": "360da6fa66c1273b76b6b2d8c5666fd5ac2e3b56"
+  },
+  "source_provenance": {
+    "source_kind": "author_written",
+    "source_refs": [],
+    "authors": [
+      "The MathCorpus Authors"
+    ],
+    "copyright_holder": "The MathCorpus Authors",
+    "license_spdx": "Apache-2.0",
+    "license_content": "CC-BY-4.0",
+    "statement_fidelity": "author_written"
+  },
+  "informal_statement": "If g is a left inverse of f (g(f(x)) = x for all x), then f is injective.",
+  "informal_proof_idea": "Suppose f a = f b. Apply g to both sides to get g(f a) = g(f b), then rewrite both sides using the left-inverse equations g(f a) = a and g(f b) = b to conclude a = b.",
+  "formal_statement_pp": "theorem left_inverse_injective (α β : Type) (f : α → β) (g : β → α) (h : Function.LeftInverse g f) : Function.Injective f",
+  "proof_body_path": "lean/MathCorpus/Elementary/Functions/LeftInverseInjective.lean",
+  "proof_body_redacted": false,
+  "trust": {
+    "rung": 1,
+    "proof_authority": "lean_kernel",
+    "certificate_checker": "kernel_decide",
+    "encoding_required": false,
+    "encoding_soundness_status": "not_applicable",
+    "independent_review_status": "repo_reviewed",
+    "public_claim_class": "public_safe"
+  },
+  "training": {
+    "eligibility": "public_train",
+    "reason_codes": [
+      "public",
+      "non_benchmark",
+      "unredacted"
+    ],
+    "dedupe_cluster_id": "functions.left_inverse_injective",
+    "template_family_id": "functions.inverse_basics",
+    "contamination_risk": "low",
+    "can_export_proof_body": true
+  },
+  "dependencies": {
+    "kits": [],
+    "tactic_tags": [
+      "congrArg",
+      "Function.LeftInverse"
+    ],
+    "prerequisite_concepts": [
+      "left_inverse",
+      "injective",
+      "function_composition"
+    ]
+  },
+  "metrics": {
+    "loc": 4,
+    "tactic_count": 3
+  },
+  "artifacts": {
+    "public_files": [
+      "lean/MathCorpus/Elementary/Functions/LeftInverseInjective.lean"
+    ]
+  },
+  "review": {
+    "review_basis": "repo self-review; kernel-verified through the tracked proof-search loop",
+    "reviewer_status": "repo_reviewed"
+  },
+  "verification": {
+    "verifier": "proofsearch",
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "episode_id": "05445672-9c21-4748-ae0e-87e87b966198",
+    "outcome": "kernel_verified",
+    "kernel_verified": true,
+    "fidelity_status": "attested",
+    "import_manifest_hash": "aaf21893d520a78dee0787a1bcaf939ee6b922265ff670c272e2e1d450dd29a7",
+    "step_count": 1,
+    "verified_at": "2026-07-08T11:20:31Z"
+  },
+  "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 05445672), kernel_verified on the first attempt. This domain's `README.md` lists 'inverse' as an explicit focus item alongside injective/surjective/composition/monotone/fixed-point/image-preimage, but until this packet nothing in the domain touched `Function.LeftInverse`/`RightInverse` at all -- confirmed via `grep -rl LeftInverse\\|RightInverse packets/elementary/functions/*.json` (no hits) before authoring. Proved directly from the definition (`congrArg g hab` then rewriting via the two left-inverse equations) rather than citing a Mathlib convenience lemma by name, since `mathlib_search_declarations` results for `LeftInverse.injective` were noisy/ambiguous (many unrelated `injective` hits from other namespaces) -- the from-scratch two-line proof sidesteps needing to pin down the exact current Mathlib name. `general_amgm`/`am_hm_two`-style domain-tagged `algebra` per this folder's established convention (schema has no `functions` domain value).",
+  "hashes": {
+    "packet_sha256": "26b880c46692b02b572c5c87be1ef0daf82312075e957138f3ec282954209c6a",
+    "formal_statement_sha256": "bf75cedca6a4db6c8ac69596625525da171080ed7ad043a020bf5ffc0c0cfd28",
+    "proof_body_sha256": "4449b4f63c86b01489822fb93e3996a06b60239278d1a20b5e9c6d23b8ce0548"
+  }
+}

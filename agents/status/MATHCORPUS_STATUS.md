@@ -3264,3 +3264,45 @@ Commit `98fa029`.
 `validate_packets.py --check-hashes --warn-as-error`: 334 packets, 0
 errors/warnings. No blocking dev-toolchain bugs found in
 `agents/github_issues/{BUGS,TRIAGE}.md` this cycle.
+
+## Proposed update — functions: left_inverse_injective packet, corrects stale "fully covered" claim (this agent, 2026-07-08)
+
+Priority-3 elementary work this cycle (no blocking bugs; no zero-coverage
+negative lane; functions was the lowest-count domain at 30 packets,
+`QUEUE.md`/`DASHBOARD.md` both claimed "every focus-list topic... now has
+multiple packets"). Before accepting that claim, re-read the domain's own
+`README.md` focus list (injective, surjective, composition, inverse,
+monotone, fixed-point, image/preimage) against the actual packet list and
+found the claim was WRONG: `grep -rl "LeftInverse\|RightInverse"
+packets/elementary/functions/*.json` returned zero hits — "inverse" had
+never actually been packetized despite the dashboard's confident summary.
+Lesson: a domain's own dashboard/queue "fully covered" claims are a
+starting hypothesis, not ground truth — worth a quick grep against the
+stated focus list before trusting them, since summaries drift from
+reality as cycles accumulate (this is the same category of stale-queue
+issue hit twice before this session, with `law_of_cosines` in geometry
+and `general_amgm` in inequalities, just one level more subtle — those
+were "item already done but not marked", this one was "item claimed done
+but never actually done").
+
+Authored `left_inverse_injective`: if g is a left inverse of f
+(g(f(x))=x for all x), then f is injective — the natural, fundamental
+connector between the domain's "inverse" and "injective" focus items.
+Kernel-verified on the first attempt (tracked episode
+`05445672-9c21-4748-ae0e-87e87b966198`): proved directly from the
+`Function.LeftInverse` definition (`congrArg g hab` then rewriting via
+the two left-inverse equations) rather than citing a Mathlib convenience
+lemma by name, since `mathlib_search_declarations` results for the exact
+current lemma name (something like `LeftInverse.injective`) were noisy —
+many unrelated `injective` declarations across dozens of files polluted
+the ranked results, making it faster to just write the two-line
+from-scratch proof than pin down the precise current name.
+
+Authored `packets/elementary/functions/left_inverse_injective.v1.json` +
+`lean/MathCorpus/Elementary/Functions/LeftInverseInjective.lean`, stamped
+hashes, validated clean (335 packets total — some growth from concurrent
+agents too, 0 errors, 0 warnings). Updated `DASHBOARD.md`/`QUEUE.md` in
+`packets/elementary/functions/`, correcting the stale "fully covered"
+language and flagging a natural companion (right-inverse-implies-
+surjective) for a future cycle if this domain stays lowest-count.
+Committed only this cycle's own files, pathspec-scoped.

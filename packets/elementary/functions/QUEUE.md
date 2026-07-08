@@ -24,11 +24,30 @@ unconditional equality; tracked episode
 `6eaaf620-beae-4f46-82c5-7269ae10c876`, kernel_verified on the first
 attempt via `Set.image_inter_subset`).
 
+- [x] `left_inverse_injective` — a left inverse of f implies f is
+      injective (D1, L1). Authored 2026-07-08 via tracked episode
+      `05445672-9c21-4748-ae0e-87e87b966198` (kernel_verified on the
+      first attempt). **Corrects a stale claim in this file and in
+      `DASHBOARD.md`**: "every focus-list topic... has multiple packets"
+      was wrong — `inverse` had zero packets (confirmed via `grep -rl
+      LeftInverse\|RightInverse packets/elementary/functions/*.json`,
+      no hits, before authoring). Proved directly from the
+      `Function.LeftInverse` definition (`congrArg g hab` + rewrite)
+      rather than citing a Mathlib convenience lemma by name, since
+      `mathlib_search_declarations` results for the exact current
+      lemma name were ambiguous (many unrelated `injective` hits from
+      other namespaces polluted the search).
+
 ## Next targets
 
-*(empty — every focus-list topic from the domain's README now has
-multiple packets.)*
+*(empty — see Backlog.)*
 
 ## Backlog
 
-*(empty)*
+- [ ] A right-inverse-implies-surjective companion to
+      `left_inverse_injective` would complete the "inverse" focus pair
+      (mirroring `Function.RightInverse`/surjectivity) — natural next
+      pick if this domain is still lowest-count next cycle.
+- [ ] v0.1's numeric release criteria (>=250 public, >=25 negative) were
+      both met this session — remaining work here is for quality/balance,
+      not raw count.
