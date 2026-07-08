@@ -3,7 +3,7 @@
 Corpus-wide status for the MathCorpus agent workspace. Owned by the dev
 loop agent (`agents/github_issues/`); domain agents propose updates rather
 than editing directly. Re-derive with `python tools/corpus_stats.py` where
-available; this snapshot was hand-updated 2026-07-08 after a number_theory
+available; this snapshot was hand-updated 2026-07-08 after a functions
 negative-example packet (proposed update — dev loop agent should confirm
 against a fresh `corpus_stats.py` run).
 
@@ -11,20 +11,21 @@ against a fresh `corpus_stats.py` run).
 
 | Metric | Value |
 |--------|-------|
-| Total packets | 193 |
+| Total packets | 194 |
 | Elementary (public) | 189 |
-| Negative examples | 4 |
+| Negative examples | 5 |
 | v0.1 target (`docs/roadmap.md`) | >=250 public packets, >=25 negative examples |
 | Progress to v0.1 (public) | 189 / 250 (~76%) |
-| Progress to v0.1 (negative) | 4 / 25 (~16%) |
+| Progress to v0.1 (negative) | 5 / 25 (~20%) |
 
-Note: one more negative-example candidate was seen in the working tree
-but is **uncommitted and unstamped** at the time of this snapshot —
-`packets/negative/functions/injective_add_decide_failure.v1.json`
-(`hashes.packet_sha256` is a placeholder and its `domain` field says
-`algebra` while it lives under the `functions` folder) — apparently
-another agent's in-progress work. Do not count it until it's stamped,
-validated, and committed by its owning agent.
+Note: `packets/negative/functions/injective_add_decide_failure.v1.json` is
+stamped, schema-validated (`validate_packets.py --check-hashes
+--warn-as-error`: 0 errors), and committed (landed in commit `88b7dea`
+alongside the combinatorics packet, since it was staged when that commit
+ran) — count it. `domain: algebra` on that packet is intentional, not an
+error: it matches every other packet filed under the `functions` folder,
+because `functions` is not a valid `domain` enum value in
+`schema/packet.schema.json`.
 
 ## Elementary domain distribution (measured)
 
@@ -42,7 +43,7 @@ All 189 elementary packets are `status: kernel_verified`.
 
 ## Negative examples
 
-4 packets:
+5 packets:
 - `packets/negative/geometry/angle_atoms_nlinarith_failure.v1.json`
 - `packets/negative/algebra/nat_sub_ring_trap.v1.json` (added 2026-07-08:
   `ring` fails on a `ℕ` truncated-subtraction cancellation because it
@@ -61,10 +62,15 @@ All 189 elementary packets are `status: kernel_verified`.
   via `88 % (3 + -1)`; `norm_num` normalizes the divisor and closes it;
   produced via tracked episode `a0318540-bab0-4952-87f4-5f84129b5c3e`,
   reaching `kernel_verified` on the repair step)
+- `packets/negative/functions/injective_add_decide_failure.v1.json` (added
+  2026-07-08: `decide` fails to elaborate on `Function.Injective (fun n :
+  ℕ => n + 5)` — no `Decidable` instance exists for a `∀`-goal over an
+  infinite domain; produced via tracked episode
+  `2874844f-84d1-476e-92b9-5cfe043a88cf`, closed with `give_up`)
 
-3 more domain lanes (`functions`, `induction`, `inequalities`) are still
-empty in the committed corpus — the roadmap's >=25 negative-example
-release criterion is the biggest current gap.
+2 more domain lanes (`induction`, `inequalities`) are still empty in the
+committed corpus — the roadmap's >=25 negative-example release criterion
+is the biggest current gap.
 
 ## Frontier (Phase 5)
 
@@ -100,8 +106,7 @@ negative-example coverage matters before a v0.1 cut, not just raw count).
 Induction (6 packets) is furthest behind on the elementary spine; negative
 examples remain the single biggest gap versus the v0.1 release criteria —
 `induction` and `inequalities` still have zero committed negative-example
-packets (`functions` has one uncommitted/unstamped candidate in progress;
-see note above).
+packets.
 
 ## Known environment bugs / workarounds
 
