@@ -422,20 +422,50 @@ Don't stop at "the structure is part of the definition chain" — check
 whether the structure's own fields are mutually independent Props before
 concluding a restatement is infeasible.
 
+### Triaged this cycle, round 7 — `WrittenOnTheWallII/` (21 files, this agent, 2026-07-08)
+
+All 21 `research solved`-tagged files in this category are named
+`GraphConjectureN.lean` (graph-theory conjectures from the "Written on
+the Wall II" survey) and follow an unusually uniform shape: each file has
+exactly ONE `research solved`-tagged theorem, and in every single one of
+the 21 files that theorem's body is `sorry`. (Two files —
+`GraphConjecture31.lean`, `GraphConjecture34.lean` — showed a naive
+`grep -c sorry` count of 2 instead of 1; checked both by hand and
+confirmed the second hit is a prose mention of "sorry" inside a doc
+comment citing the literature source, e.g. "the formal proof is left as
+`sorry` pending a Lean port of Chung's argument" — not a second tactic
+occurrence. Their sanity-check `example`/`test` theorems are real
+one-liners like `Int.natCast_nonneg _`, not counted as `research solved`
+targets.)
+
+**Round-7 verdict**: 0/21 `WrittenOnTheWallII/` files yield a
+transportable win — every tagged theorem is a genuine `sorry` citing real
+external graph-theory literature (Chung's theorem, center/radius/degree
+bounds, etc.), no exceptions. `WrittenOnTheWallII/` triage is now
+complete — do not re-check. **Methodology note for future large,
+uniform-naming categories** (this is the first category surveyed this
+way rather than one file at a time): a bulk `grep -c "category research
+solved"` + `grep -c "sorry"` pass across every file first, spot-checking
+any file where the two counts don't match 1:1, is much faster than
+reading each file individually and caught the same result with far less
+effort — use this shortcut for `Wikipedia/`/`GreensOpenProblems/` too,
+which are large enough that per-file reading would be slow.
+
 ### Not yet triaged
 
-`Wikipedia/` (60 files), `GreensOpenProblems/` (30), `WrittenOnTheWallII/`
-(21) — a future cycle should continue this same triage (`grep -B1 -A3
-"category research solved"` per file, check for a bare `sorry` body vs. a
-real proof, check whether real proofs are self-contained vs.
-infrastructure-heavy — including whether custom types are needed just to
-STATE the theorem, not only to prove it — check whether a
-`class`/`structure` blocker is load-bearing or notational, and check
-whether unusual API names actually resolve under this repo's pinned
-Mathlib before assuming a verbatim transport will compile — see
-`BLOCKERS.md`). `WrittenOnTheWallII/` (21) is now the smallest untriaged
-category (`Arxiv/`, `OEIS/`, `Paper/` are all done, see rounds 4-6
-above).
+`Wikipedia/` (60 files), `GreensOpenProblems/` (30) — a future cycle
+should continue this same triage (`grep -B1 -A3 "category research
+solved"` per file, check for a bare `sorry` body vs. a real proof, check
+whether real proofs are self-contained vs. infrastructure-heavy —
+including whether custom types are needed just to STATE the theorem, not
+only to prove it — check whether a `class`/`structure` blocker is
+load-bearing or notational, and check whether unusual API names actually
+resolve under this repo's pinned Mathlib before assuming a verbatim
+transport will compile — see `BLOCKERS.md`). For these large categories,
+consider the bulk `grep -c` tag-vs-sorry-count shortcut from round 7
+above before reading files individually. `GreensOpenProblems/` (30) is
+now the smallest untriaged category (`Arxiv/`, `OEIS/`, `Paper/`,
+`WrittenOnTheWallII/` are all done, see rounds 4-7 above).
 
 ## Backlog
 
