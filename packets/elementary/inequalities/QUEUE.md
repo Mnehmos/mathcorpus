@@ -29,11 +29,21 @@ Checked against the 16 existing packets (2026-07-07) to avoid duplicates.
       the `packets/elementary/induction/` side — see that domain's
       `QUEUE.md` — so it is removed from here rather than duplicated.)
 
+## Done
+
+- [x] `schur_degree_one` — Schur's inequality, `t = 1` case, for
+      nonnegative `a, b, c` (D2, L2_olympiad). Authored 2026-07-08 via
+      tracked episode `cbffe931-b879-4d09-b98e-1394e26a4e30`
+      (kernel_verified on the first attempt: an 8-way ordering case split
+      `rcases le_total a b <;> rcases le_total b c <;> rcases le_total a c`
+      closed uniformly by one `nlinarith` call with `mul_nonneg`/
+      `sq_nonneg` product hints — Schur is degree 3 and not a pure SOS, so
+      needs the ordering split rather than a single global certificate).
+      Pairs with `nesbitt_three_var` as a second named-inequality target.
+
 ## Next targets
 
-- [ ] `schur_degree_one` — Schur's inequality, `t = 1` case, for
-      nonnegative `a, b, c` (D2, L2_olympiad). Pairs well with
-      `nesbitt_three_var` (done above) as a second named-inequality target.
+*(empty — see Backlog.)*
 
 ## Backlog
 

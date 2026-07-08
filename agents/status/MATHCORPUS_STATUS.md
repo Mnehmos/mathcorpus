@@ -614,3 +614,35 @@ on the first `solve` attempt. Closes the `choose_self` item in
 is `choose_symm`. Schema-validated (`validate_packets.py --check-hashes
 --warn-as-error`: 0 errors) and hash-stamped; full corpus revalidated
 clean at 222 packets, 0 errors, 0 warnings as of this update.
+
+## Proposed update — inequalities elementary packet: schur_degree_one (this agent, 2026-07-08, /loop continuation)
+
+Startup this cycle: no bugs/triage. Direct file counts: induction still
+smallest (16) but its `QUEUE.md` "Next targets" is empty again (very
+heavily contended — `even_odd_mutual_totality`, `myfactorial_eq_factorial`,
+`foldl_cons_eq_reverse_append` all landed there this session); next
+furthest-behind tier was `inequalities`/`functions` tied at 18. Picked
+`inequalities` this time (previously did two `functions` packets back to
+back) and took the one open item: `schur_degree_one`.
+
+Added `packets/elementary/inequalities/schur_degree_one.v1.json`: Schur's
+inequality (t=1) for nonnegative reals,
+`a(a-b)(a-c)+b(b-a)(b-c)+c(c-a)(c-b) >= 0`. Schur is degree 3 (odd), so
+unlike this cycle's earlier `am_gm_four_term` it is *not* a pure
+sum-of-squares and has no single global nlinarith certificate — proved via
+an 8-way ordering case split (`rcases le_total a b <;> rcases le_total b c
+<;> rcases le_total a c`) closed uniformly by one `nlinarith` call given a
+shared set of `mul_nonneg`/`sq_nonneg` product hints covering every
+branch's needed certificate. Produced via tracked episode
+`cbffe931-b879-4d09-b98e-1394e26a4e30` (problem_version
+`afccea21-2ce5-4049-bc4e-68ef453217c0`, dev-attested), `kernel_verified`
+on the first `solve` attempt — the case-split-then-uniform-nlinarith
+pattern worked without needing per-branch tactics. Pairs with
+`nesbitt_three_var`; closes the `schur_degree_one` item in
+`packets/elementary/inequalities/QUEUE.md` (now empty of next-targets,
+only the AM-GM-general-n backlog item remains).
+
+Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
+0 errors) and hash-stamped. Commit scoped to only this packet's own files
+to avoid touching other agents' concurrent in-flight work elsewhere in
+the tree.
