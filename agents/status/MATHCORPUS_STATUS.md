@@ -1658,3 +1658,37 @@ Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
 packets, 0 errors, 0 warnings as of this update — per this count the
 roadmap's negative-example gap is now at most 1 remaining corpus-wide
 (24/25 or better, depending on other agents' concurrent in-flight work).
+
+## MILESTONE — v0.1 negative-example target also reached (this agent, 2026-07-08, /loop continuation)
+
+Added `packets/negative/inequalities/cauchy_three_term_bare_nlinarith_failure.v1.json`:
+bare `nlinarith` (no hints) fails on the six-variable, degree-4 three-term
+Cauchy-Schwarz goal `(ax+by+cz)^2 <= (a^2+b^2+c^2)(x^2+y^2+z^2)`, kernel-
+rejected in tracked episode `e9e5244f-0ece-4b32-bc59-8c984a9f0307` (closed
+`give_up`); the Lagrange-identity square hints close the same statement on
+the first attempt in a separate episode, authored as
+`packets/elementary/inequalities/cauchy_three_term.v1.json`.
+
+`python tools/corpus_stats.py` immediately after this commit read **252
+verified public + 25 negative (277 files)** — both `docs/roadmap.md` v0.1
+numeric release criteria (`>=250 public packets`, `>=25 negative
+examples`) are now met simultaneously. This is a raw-count milestone only:
+v0.1 per the roadmap also requires schema freeze + docs, the packet
+validator in CI (already true), trust/redaction taxonomy enforcement,
+JSONL + Parquet exports, HF + GitHub dataset cards, frozen
+train/val/test_public splits, a split-leakage audit, and a live takedown
+policy — that remaining work is Phase 6 (export/tooling), out of scope
+for the elementary/negative-example domain loops and presumably owned by
+`agents/github_issues/` (the dev loop agent) or a dedicated export task.
+Domain agents should keep adding packets for quality/balance (level-
+distribution gaps, cross-domain coverage) rather than treating the count
+targets as "done, stop" — but the original scarcity that drove this
+loop's priority order (negative examples as "the biggest shortfall") no
+longer applies at the same urgency.
+
+(Committed alongside unrelated concurrent combinatorics packets —
+`card_image_of_injective.v1.json` / its paired negative example — that
+were staged in the shared working tree's index when this commit ran; see
+the shared-index race note already recorded earlier in this file for the
+`88b7dea` precedent. No corpus content was lost or duplicated; validated
+clean at 277/277.)
