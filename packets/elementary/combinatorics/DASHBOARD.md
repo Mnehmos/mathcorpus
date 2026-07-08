@@ -2,7 +2,7 @@
 
 | Metric | Value |
 |--------|-------|
-| Packets | 39 |
+| Packets | 40 |
 | Level breakdown | see individual packets — includes `card_union_not_additive.v1.json` (another concurrent agent's addition, commit `246ca69`) not itemized below |
 
 - `card_union_add_card_inter.v1.json` (added 2026-07-08) — inclusion-exclusion
@@ -27,8 +27,11 @@
 - `choose_zero_right.v1.json` (added 2026-07-08) — `Nat.choose n 0 = 1`,
   the domain's first `Nat.choose` packet, opening the roadmap's "finite
   combinatorics basics" binomial-coefficient family; kernel-verified via
-  episode `dbba5471-27a3-4f88-938f-8006ecdc8a5c`. `choose_self` and
-  `choose_symm` remain queued as follow-ups.
+  episode `dbba5471-27a3-4f88-938f-8006ecdc8a5c`.
+- `choose_self.v1.json` (added 2026-07-08) — `Nat.choose n n = 1`,
+  companion to `choose_zero_right'`; kernel-verified via episode
+  `0f2f545b-6a3f-454d-949a-8ce95c042cb0`. `choose_symm` remains queued as
+  a follow-up.
 
 Last synced: 2026-07-08 — re-sync against
 `agents/status/MATHCORPUS_STATUS.md` and `python tools/corpus_stats.py`

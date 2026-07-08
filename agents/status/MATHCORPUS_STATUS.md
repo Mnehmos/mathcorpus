@@ -600,3 +600,17 @@ the way: a multi-line `induction l with | ... => ... | ... => ...` block
 under `proof_format: raw_lean_block` mis-parsed; putting the whole
 `with |...|...`  case-split on one line under the default
 `flat_tactic_sequence` format worked.
+
+## Proposed update — combinatorics elementary packet #6 (this agent, 2026-07-08, /loop continuation)
+
+Added `packets/elementary/combinatorics/choose_self.v1.json`: `Nat.choose
+n n = 1`, companion to the previously-added `choose_zero_right'`. Proved
+directly via `Nat.choose_self`. Produced via tracked episode
+`0f2f545b-6a3f-454d-949a-8ce95c042cb0` (problem_version
+`5f135de9-4be8-4157-9926-41ba2b7335e5`, dev-attested,
+`problem_imports: ["Mathlib.Data.Nat.Choose.Basic"]`), `kernel_verified`
+on the first `solve` attempt. Closes the `choose_self` item in
+`packets/elementary/combinatorics/QUEUE.md`; remaining next-target there
+is `choose_symm`. Schema-validated (`validate_packets.py --check-hashes
+--warn-as-error`: 0 errors) and hash-stamped; full corpus revalidated
+clean at 222 packets, 0 errors, 0 warnings as of this update.

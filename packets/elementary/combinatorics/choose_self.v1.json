@@ -1,0 +1,97 @@
+{
+  "packet_id": "elementary.combinatorics.choose_self.v1",
+  "packet_version": "1.0.0",
+  "title": "Choosing all n items is always 1 way",
+  "domain": "combinatorics",
+  "level": "L0_elementary",
+  "kind": "concept",
+  "status": "kernel_verified",
+  "difficulty_bin": "D0",
+  "lean_module": "MathCorpus.Elementary.Combinatorics.ChooseSelf",
+  "theorem_name": "choose_self'",
+  "imports": [
+    "Mathlib"
+  ],
+  "toolchain": {
+    "lean_version": "v4.32.0-rc1",
+    "mathlib_rev": "360da6fa66c1273b76b6b2d8c5666fd5ac2e3b56"
+  },
+  "source_provenance": {
+    "source_kind": "author_written",
+    "source_refs": [],
+    "authors": [
+      "The MathCorpus Authors"
+    ],
+    "copyright_holder": "The MathCorpus Authors",
+    "license_spdx": "Apache-2.0",
+    "license_content": "CC-BY-4.0",
+    "statement_fidelity": "author_written"
+  },
+  "informal_statement": "The number of ways to choose all n items from n is always 1 — the full set is the unique n-element choice.",
+  "informal_proof_idea": "Directly `Nat.choose_self`.",
+  "formal_statement_pp": "theorem choose_self' (n : ℕ) : Nat.choose n n = 1",
+  "proof_body_path": "lean/MathCorpus/Elementary/Combinatorics/ChooseSelf.lean",
+  "proof_body_redacted": false,
+  "trust": {
+    "rung": 1,
+    "proof_authority": "lean_kernel",
+    "certificate_checker": "kernel_decide",
+    "encoding_required": false,
+    "encoding_soundness_status": "not_applicable",
+    "independent_review_status": "repo_reviewed",
+    "public_claim_class": "public_safe"
+  },
+  "training": {
+    "eligibility": "public_train",
+    "reason_codes": [
+      "public",
+      "non_benchmark",
+      "unredacted"
+    ],
+    "dedupe_cluster_id": "combinatorics.nat_choose_basics",
+    "template_family_id": "combinatorics.binomial_coefficient_identities",
+    "contamination_risk": "low",
+    "can_export_proof_body": true
+  },
+  "dependencies": {
+    "kits": [
+      "ExtremalCombinatoricsKit"
+    ],
+    "tactic_tags": [
+      "Nat.choose_self"
+    ],
+    "prerequisite_concepts": [
+      "binomial_coefficient",
+      "combination"
+    ]
+  },
+  "metrics": {
+    "loc": 3,
+    "tactic_count": 1
+  },
+  "artifacts": {
+    "public_files": [
+      "lean/MathCorpus/Elementary/Combinatorics/ChooseSelf.lean"
+    ]
+  },
+  "review": {
+    "review_basis": "repo self-review; kernel-verified through the tracked proof-search loop",
+    "reviewer_status": "repo_reviewed"
+  },
+  "verification": {
+    "verifier": "proofsearch",
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "episode_id": "0f2f545b-6a3f-454d-949a-8ce95c042cb0",
+    "outcome": "kernel_verified",
+    "kernel_verified": true,
+    "fidelity_status": "attested",
+    "step_count": 1,
+    "import_manifest_hash": "e97d5368a0ecf886208bd2a264564c7440ddbe03739eb2aad9b71e783fe902b9"
+  },
+  "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 0f2f545b). Companion to choose_zero_right'; choose_symm remains queued as a follow-up.",
+  "hashes": {
+    "packet_sha256": "de990944283d4fc706dab7013d173c00b3ca20c095c3a26c3906f9c2b5ec71d2",
+    "formal_statement_sha256": "e9c7184a5d7a336ff6e5c3fee8a73a8814ad66358034fabd2dfd906116256468",
+    "proof_body_sha256": "39445dfae70b82e97d684d551060078abb1f48a8625b11498bad4e04cb477afe"
+  }
+}
