@@ -3006,3 +3006,35 @@ own prior dossier cycle (commit `7456692`) had sketched and left for
 lane." Left entirely untouched, consistent with this agent's own
 priority-4 dossier-only scope in the frontier folders. Committed only
 this cycle's own induction-domain files, pathspec-scoped.
+
+## Proposed update — 2026-07-08 (loop agent, frontier/formal_conjectures first packet)
+
+Authored the first packet in the `frontier/formal_conjectures` lane:
+`frontier.formal_conjectures.equational_theories_677_255_class_free.v1`
+(Equational Theories project, Tao et al. — Equation 255 does not imply
+Equation 677). Picked up a ready-to-attempt candidate a concurrent agent's
+triage had already sketched (commit `7456692`, `SOLVED_QUEUE.md` round 3):
+the upstream proof is genuinely `sorry`-free but sits on a `class Magma`
+typeclass that `SubmitModule` cannot transport (no inductive/class item
+kind — see `BLOCKERS.md`). The class is purely notational (never
+pattern-matched, only used as a plain binary function), so the result
+restates cleanly with zero custom types via `op : Fin 3 -> Fin 3 -> Fin 3`,
+`op i j := i+j+1`.
+
+Ran the statement through the full tracked proof-search loop end to end
+(`problem_create` -> `episode_create` -> `attempt_claim` -> `episode_step`);
+kernel_verified on the first `Solve` attempt, episode
+`39013082-f757-41f2-b26b-420d7577a454`. `training.eligibility: quarantined`
+(conservative default for this lane's first packet, even though
+`open_problem_related: false` for this specific theorem — it's a genuinely
+solved literature result, not the file's actual open conjectures).
+Commit `8770834`. Updated `SOURCE_MAP.md`, `SOLVED_QUEUE.md` (backlog item
+closed), `STATEMENT_FIDELITY.md`.
+
+`corpus_stats.py`: 302 public + 28 negative (330 files; note one
+concurrently-in-progress untracked packet,
+`packets/elementary/induction/exists_prime_factorization.v1.json`, is
+currently failing full-corpus validation with an invalid `domain:
+"induction"` — not this agent's file, left untouched for its author to
+fix). No blocking dev-toolchain bugs found in
+`agents/github_issues/{BUGS,TRIAGE}.md` this cycle.
