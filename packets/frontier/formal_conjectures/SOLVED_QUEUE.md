@@ -236,8 +236,13 @@ now the smallest untriaged categories.
 - [ ] `HilbertProblems/` — triaged this cycle (see above); both files'
       `research solved` theorems are genuinely `sorry` and genuinely hard
       (5th/17th problems). Not a near-term target.
-- [ ] `EquationalTheories_677_255.lean`'s class-free restatement (see
-      round 3 above) — ready to attempt, concrete proof term already
-      sketched, just needs a tracked `problem_create`/`episode_step` pass
-      and packet authoring by whichever agent instance is doing full
-      companion-result work in this lane.
+- [x] `EquationalTheories_677_255.lean`'s class-free restatement (see
+      round 3 above) — **packetized 2026-07-08**:
+      `packets/frontier/formal_conjectures/equational_theories_677_255_class_free.v1.json`,
+      episode `39013082-f757-41f2-b26b-420d7577a454`, kernel_verified on
+      the first `Solve` attempt with the exact sketched proof term
+      (`refine ⟨fun i j => i + j + 1, fun x => by fin_cases x <;>
+      decide, ?_⟩; decide`). First packet authored in this lane.
+      `training.eligibility: quarantined` (conservative default, even
+      though `open_problem_related: false` for this specific theorem —
+      no established public_train precedent yet for this lane).

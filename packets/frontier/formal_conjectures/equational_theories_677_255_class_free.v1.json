@@ -1,0 +1,103 @@
+{
+  "packet_id": "frontier.formal_conjectures.equational_theories_677_255_class_free.v1",
+  "packet_version": "1.0.0",
+  "title": "Equational Theories: Equation 255 does not imply Equation 677 (class-free restatement)",
+  "domain": "frontier",
+  "level": "L7_frontier",
+  "kind": "theorem",
+  "status": "kernel_verified",
+  "difficulty_bin": "D2",
+  "lean_module": "MathCorpus.Frontier.FormalConjectures.EquationalTheories677NotImplies255ClassFree",
+  "theorem_name": "equational_theories_677_255_class_free",
+  "imports": [
+    "Mathlib"
+  ],
+  "toolchain": {
+    "lean_version": "v4.32.0-rc1",
+    "mathlib_rev": "360da6fa66c1273b76b6b2d8c5666fd5ac2e3b56"
+  },
+  "source_provenance": {
+    "source_kind": "formal_conjectures",
+    "source_refs": [
+      "FormalConjectures/Other/EquationalTheories_677_255.lean::Equation255_not_implies_Equation677 (sibling repo mnehmos.llm-driven-proof-search.environment/formal-conjectures)",
+      "https://teorth.github.io/equational_theories/implications/?677&finite"
+    ],
+    "authors": [
+      "The MathCorpus Authors"
+    ],
+    "copyright_holder": "The MathCorpus Authors",
+    "license_spdx": "Apache-2.0",
+    "license_content": "CC-BY-4.0",
+    "statement_fidelity": "adapted_with_review"
+  },
+  "informal_statement": "From the Equational Theories project (Tao et al.): Equation 255 (the identity x = ((x*x)*x)*x for a binary operation *) does not imply Equation 677 (the identity x = y*(x*((y*x)*y))). Restated class-free, avoiding the upstream `Magma` typeclass (which is purely notational sugar around a binary op that the proof never pattern-matches as a class): there exists a binary operation op on Fin 3 satisfying Equation 255 identically but not Equation 677.",
+  "informal_proof_idea": "Explicit finite witness: op i j = i + j + 1 (mod 3) on Fin 3, matching the upstream operation table [[1,2,0],[2,0,1],[0,1,2]]. Equation 255 holds by case-check on all 3 elements (fin_cases + decide); Equation 677 fails by direct decidable evaluation (decide finds a counterexample pair).",
+  "formal_statement_pp": "theorem equational_theories_677_255_class_free : ∃ op : Fin 3 → Fin 3 → Fin 3, (∀ x : Fin 3, x = op (op (op x x) x) x) ∧ ¬ (∀ x y : Fin 3, x = op y (op x (op (op y x) y)))",
+  "proof_body_path": "lean/MathCorpus/Frontier/FormalConjectures/EquationalTheories677NotImplies255ClassFree.lean",
+  "proof_body_redacted": false,
+  "trust": {
+    "rung": 1,
+    "proof_authority": "lean_kernel",
+    "certificate_checker": "kernel_decide",
+    "encoding_required": false,
+    "encoding_soundness_status": "not_applicable",
+    "independent_review_status": "repo_reviewed",
+    "public_claim_class": "public_safe"
+  },
+  "training": {
+    "eligibility": "quarantined",
+    "reason_codes": [
+      "adapted_restatement_pending_review",
+      "default_quarantine_pending_external_review",
+      "first_packet_in_lane_pending_process"
+    ],
+    "dedupe_cluster_id": "frontier.formal_conjectures.equational_theories_677_255",
+    "template_family_id": "frontier.formal_conjectures_companion_results",
+    "open_problem_related": false,
+    "contamination_risk": "low",
+    "can_export_proof_body": true
+  },
+  "dependencies": {
+    "kits": [],
+    "tactic_tags": [
+      "fin_cases",
+      "decide"
+    ],
+    "prerequisite_concepts": [
+      "binary_operation",
+      "finite_type",
+      "decidability",
+      "counterexample"
+    ]
+  },
+  "metrics": {
+    "loc": 6,
+    "tactic_count": 3
+  },
+  "artifacts": {
+    "public_files": [
+      "lean/MathCorpus/Frontier/FormalConjectures/EquationalTheories677NotImplies255ClassFree.lean"
+    ]
+  },
+  "review": {
+    "review_basis": "repo self-review; kernel-verified through the tracked proof-search loop",
+    "reviewer_status": "repo_reviewed",
+    "reviewed_at": "2026-07-08"
+  },
+  "verification": {
+    "verifier": "proofsearch",
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "episode_id": "39013082-f757-41f2-b26b-420d7577a454",
+    "outcome": "kernel_verified",
+    "kernel_verified": true,
+    "fidelity_status": "attested",
+    "step_count": 1,
+    "import_manifest_hash": "aaf21893d520a78dee0787a1bcaf939ee6b922265ff670c272e2e1d450dd29a7"
+  },
+  "notes": "ANTI-OVERCLAIM: this is a RESTATEMENT of the upstream Equation255_not_implies_Equation677 result avoiding the Magma typeclass layer, not a verbatim transport of the upstream proof term -- the upstream proof uses `class Magma (alpha) where op : alpha -> alpha -> alpha` plus `abbrev`s for Equation255/Equation677, which SubmitModule cannot transport (LeanModuleItem has no inductive/class/structure item kind; see packets/frontier/formal_conjectures/BLOCKERS.md). This packet's statement was checked by hand to be definitionally identical to the upstream one after unfolding Magma.op/Equation255/Equation677 (the class is purely notational sugar; the upstream proof never pattern-matches Magma as a class, only ever uses Magma.op as a plain function) -- this is a genuine, previously-solved literature result (Equational Theories project, Tao et al.), NOT an open problem, and this packet does not resolve or touch the file's actual open conjectures (Finite.Equation677_not_implies_Equation255, Finite.Equation677_implies_Equation255, still sorry upstream). Found via a concurrent agent's triage recorded in packets/frontier/formal_conjectures/SOLVED_QUEUE.md (round 3, commit 7456692) as a ready-to-attempt candidate; this packet executes that sketch through the tracked proof-search loop end to end (problem_create -> episode_create -> attempt_claim -> episode_step, kernel_verified on the first Solve attempt). training.eligibility: quarantined out of caution (consistent with this session's default-quarantine policy for adapted/restated frontier packets pending real external review), even though open_problem_related is false for this specific theorem -- first packet authored in the formal_conjectures lane, so no established public_train precedent exists yet for this lane's solved-upstream category.",
+  "hashes": {
+    "packet_sha256": "ee14110b4df9a3f9cfc08f153451a4b056e9f46cadd4bbc0e3e9399734491d2b",
+    "formal_statement_sha256": "aa21d04c6ddebc1616ce847dc491f24c46833696fce3bb8af520b031af802d1c",
+    "proof_body_sha256": "a2206c2caeefe17e3433674b3ff0850099542cd58e70b05f53f9c6520a044616"
+  }
+}
