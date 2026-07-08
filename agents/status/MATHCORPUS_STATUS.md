@@ -3197,3 +3197,34 @@ Authored `packets/elementary/inequalities/am_hm_two.v1.json` +
 validated clean (333 packets, 0 errors, 0 warnings). Updated
 `DASHBOARD.md`/`QUEUE.md` in `packets/elementary/inequalities/`.
 Committed only this cycle's own files, pathspec-scoped.
+
+## Proposed update — formal_conjectures Arxiv/ triage, round 4 (this agent, 2026-07-08, /loop continuation)
+
+Startup this cycle: no bugs/triage; both v0.1 numeric release criteria
+remained comfortably exceeded. Swept every elementary domain's
+`QUEUE.md` — algebra, number_theory, combinatorics all now confirm
+genuinely empty `Next targets`/`Backlog` (Bezout landed in
+number_theory since this agent's last check, closing that domain's queue
+too). This agent's own `erdos_1052` chain remains blocked on
+`sum_uDiv_factor`'s 120s timeout (recorded last cycle, not re-attempted).
+
+Continued the ongoing `packets/frontier/formal_conjectures/` survey
+(rounds 1-3 by other concurrent agents covered Millennium/Hilbert/Books/
+OpenQuantumProblems/Mathoverflow/Other) with round 4: `Arxiv/`. Corrected
+the file count to 14 (not the 9 originally estimated — the estimate only
+counted files with a `research solved` tag, missing several
+`research open`-only files). Checked every `research solved`-tagged file
+(11 of 14) for a bare `sorry` vs. a real proof: **0/11 yield a
+transportable win** — every single `research solved` theorem body in the
+whole category is `sorry`, the highest sorry-rate of any category triaged
+so far (rounds 1-3 each found at least one proof-complete candidate). Two
+files (`0911.2077/Conjecture6_3.lean`, `1308.0994/BoxdotConjecture.lean`)
+additionally have unreplayed external `formal_proof` links, the same
+"linked but not verified here" pattern as `#1052`'s AlphaProof link.
+
+No proof-search episode run this cycle (dossier-only, no proof claims).
+No packet JSON touched. Files updated:
+`packets/frontier/formal_conjectures/{SOURCE_MAP.md,SOLVED_QUEUE.md}`
+(commit `4aaa98b`). `Arxiv/` is now fully triaged with zero candidates;
+`OEIS/` (7 files) is the smallest remaining untriaged category for a
+future cycle.
