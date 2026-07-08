@@ -1,0 +1,106 @@
+{
+  "packet_id": "frontier.formal_conjectures.union_closed_sharpness.v1",
+  "packet_version": "1.0.0",
+  "title": "Union-closed sets conjecture: sharpness of the 1/2 constant",
+  "domain": "frontier",
+  "level": "L7_frontier",
+  "kind": "theorem",
+  "status": "kernel_verified",
+  "difficulty_bin": "D4",
+  "lean_module": "MathCorpus.Frontier.FormalConjectures.UnionClosedSharpness",
+  "theorem_name": "union_closed_sharpness",
+  "imports": [
+    "Mathlib"
+  ],
+  "toolchain": {
+    "lean_version": "v4.32.0-rc1",
+    "mathlib_rev": "360da6fa66c1273b76b6b2d8c5666fd5ac2e3b56"
+  },
+  "source_provenance": {
+    "source_kind": "formal_conjectures",
+    "source_refs": [
+      "FormalConjectures/Wikipedia/UnionClosed.lean::union_closed.variants.sharpness (sibling repo mnehmos.llm-driven-proof-search.environment/formal-conjectures)",
+      "https://en.wikipedia.org/wiki/Union-closed_sets_conjecture"
+    ],
+    "authors": [
+      "The MathCorpus Authors"
+    ],
+    "copyright_holder": "The MathCorpus Authors",
+    "license_spdx": "Apache-2.0",
+    "license_content": "CC-BY-4.0",
+    "statement_fidelity": "adapted_with_review"
+  },
+  "informal_statement": "The union-closed sets conjecture (Frankl's conjecture) asserts the constant 1/2: for every finite union-closed family A other than {empty set}, some element belongs to at least half of the sets in A. This packet proves the constant 1/2 is SHARP (cannot be improved): for any real c > 1/2, there is a union-closed family A (other than {empty set}) for which no element reaches a c-fraction of the sets. Witness: A = the powerset of the whole ambient type n; A is union-closed and not {empty set}, and every element i of n belongs to exactly half (2^(|n|-1) out of 2^|n|) of the sets in A, so no element's fraction can exceed 1/2 < c.",
+  "informal_proof_idea": "By contradiction: assume every union-closed A != {empty set} has some element reaching fraction c > 1/2. First dispose of the case where n is empty (only A = empty set exists, contradicting A != {empty set} vacuously through the existential). For nonempty n, apply the assumption to A = Finset.univ (all subsets of n), which is union-closed and has cardinality 2^|n| > 1, hence != {empty set}. Get a witness element i with c * 2^|n| <= |{x : i in x}|. Compute |{x : i in x}| exactly: the map x -> insert i x is a bijection from subsets of n \\ {i} onto {x : i in x} (injective since erase i recovers the original set; surjective since any x containing i equals insert i (x.erase i)), so |{x : i in x}| = 2^(|n|-1). Substituting, c * 2^|n| <= 2^(|n|-1) = 2^|n| / 2, i.e. c <= 1/2, contradicting c > 1/2.",
+  "formal_statement_pp": "theorem union_closed_sharpness : ∀ {n : Type*} [DecidableEq n] [Fintype n] (c : ℝ), 1 / 2 < c → ¬ (∀ A : Finset (Finset n), A ≠ ({∅} : Finset (Finset n)) → (∀ X ∈ A, ∀ Y ∈ A, X ∪ Y ∈ A) → ∃ i : n, c * (Finset.card A : ℝ) ≤ ((Finset.filter (fun x => i ∈ x) A).card : ℝ))",
+  "proof_body_path": "lean/MathCorpus/Frontier/FormalConjectures/UnionClosedSharpness.lean",
+  "proof_body_redacted": false,
+  "trust": {
+    "rung": 1,
+    "proof_authority": "lean_kernel",
+    "certificate_checker": "kernel_decide",
+    "encoding_required": false,
+    "encoding_soundness_status": "not_applicable",
+    "independent_review_status": "repo_reviewed",
+    "public_claim_class": "public_safe"
+  },
+  "training": {
+    "eligibility": "quarantined",
+    "reason_codes": [
+      "adapted_restatement_pending_review",
+      "default_quarantine_pending_external_review"
+    ],
+    "dedupe_cluster_id": "frontier.formal_conjectures.union_closed",
+    "template_family_id": "frontier.formal_conjectures_companion_results",
+    "open_problem_related": true,
+    "contamination_risk": "low",
+    "can_export_proof_body": true
+  },
+  "dependencies": {
+    "kits": [],
+    "tactic_tags": [
+      "Finset.card_image_of_injOn",
+      "Finset.card_powerset",
+      "pow_sub₀",
+      "gcongr",
+      "linear_combination"
+    ],
+    "prerequisite_concepts": [
+      "union_closed_family",
+      "powerset",
+      "finset_bijection",
+      "cardinality_bound",
+      "optimality"
+    ]
+  },
+  "metrics": {
+    "loc": 47,
+    "tactic_count": 30
+  },
+  "artifacts": {
+    "public_files": [
+      "lean/MathCorpus/Frontier/FormalConjectures/UnionClosedSharpness.lean"
+    ]
+  },
+  "review": {
+    "review_basis": "repo self-review; kernel-verified through the tracked proof-search loop",
+    "reviewer_status": "repo_reviewed",
+    "reviewed_at": "2026-07-08"
+  },
+  "verification": {
+    "verifier": "proofsearch",
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "episode_id": "d3e6c1ee-ddc3-49e6-b774-6e63e9f8db8e",
+    "outcome": "kernel_verified",
+    "kernel_verified": true,
+    "fidelity_status": "attested",
+    "step_count": 1,
+    "import_manifest_hash": "aaf21893d520a78dee0787a1bcaf939ee6b922265ff670c272e2e1d450dd29a7"
+  },
+  "notes": "ANTI-OVERCLAIM: this packet proves only that the constant 1/2 in the union-closed sets conjecture is sharp (cannot be replaced by any larger constant), not the conjecture itself, which remains open in general (the upstream file's own `union_closed` theorem for the general case is `sorry`/`research open`, and this corpus's best transported general bound is Yu 2023's ~0.38234 constant via a different, still-open-in-general theorem). Third and largest of `UnionClosed.lean`'s three proof-complete theorems transported this cycle/session (companions: `union_closed_singleton_mem.v1`, `union_closed_univ_card_two.v1` -- the latter authored independently by a concurrent agent in this same cycle). Restated (not verbatim) in the same two respects as its companions: the upstream `IsUnionClosed` abbrev is inlined directly as `∀ X ∈ A, ∀ Y ∈ A, X ∪ Y ∈ A`, and the upstream `#`/set-builder-filter notation (confirmed `scoped` behind `open Finset` by grepping the vendored Mathlib source) is spelled out as plain `Finset.card`/`Finset.filter` applications, plus the file-local helper `isUnionClosed_univ n` (used to show `Finset.univ` is union-closed) is inlined as a one-line anonymous proof `(by intro X _ Y _; exact Finset.mem_univ _)` at its single call site rather than transported as a separate helper theorem. Otherwise the proof term is essentially verbatim (only variable renames to avoid ambiguous repeated `this`/anonymous `have`s during manual transcription). Kernel-verified on the FIRST attempt (episode d3e6c1ee-ddc3-49e6-b774-6e63e9f8db8e) using `proof_format: raw_lean_block` to preserve the upstream proof's bullet structure exactly (two top-level bullets for the `isEmpty_or_nonempty` case split, plus a nested `constructor`/two-bullet split and a final unbulleted-continuation pattern inside the `hcardi` sub-proof, all copied verbatim). `training.eligibility: quarantined` per this session's default policy for adapted/restated frontier packets; `open_problem_related: true` since the underlying conjecture remains open in general.",
+  "hashes": {
+    "packet_sha256": "98f20038679d069827c67e98c0a637356287034e17a5ad4696d4003a5d79430f",
+    "formal_statement_sha256": "bf14dc3355c5c97c59a6647b64f772d43139419c1904f7c523d8ef66de0be90c",
+    "proof_body_sha256": "7b364f13cb8d981cd2d75de87cfc26e1dc10d7d9561ce9b4678ec01336ee59b1"
+  }
+}
