@@ -2303,3 +2303,46 @@ Only `Erdos349_alpha_gt_two_not_isGoodPair.lean` (159 lines, likely the
 4th and largest assembly piece) remains to complete the assembly-piece
 set; after that, `Erdos349_integer_isGoodPair_iff.lean` (279 lines, the
 culminating iff) becomes attemptable.
+
+## Proposed update — algebra elementary packet: quad_formula_real_root (this agent, 2026-07-08, /loop continuation)
+
+Startup this cycle: no bugs blocking progress. Induction and inequalities
+(tied smallest, 28 each) both had empty queues again. Checked geometry
+next (`law_of_sines` was the only open backlog item, but encoding
+"angle opposite a side" cleanly from bare coordinates — without more
+machinery than this domain's existing packets use — looked like a
+genuinely harder target than warranted for one cycle) and picked
+algebra's `quad_formula_real_root` backlog item instead: nonnegative
+discriminant implies a real root, building on the existing
+`quad_form_nonneg`.
+
+Added `packets/elementary/algebra/quad_formula_real_root.v1.json`.
+Produced via tracked episode `9435347e-fd20-4198-aa9c-7252a8499a93`
+(problem_version `a675545c-064c-4bae-920a-8ecb1af5ff2d`, dev-attested),
+`kernel_verified` on the third `solve` attempt. Genuine debugging
+sequence, not a transport hazard this time: (1) `nlinarith [hs]` alone
+couldn't expand the needed `(√D - b)(√D + b)` product after `field_simp`;
+(2) switched to `linear_combination hs` (the right tool for an equality
+goal that's a polynomial consequence of another equality) but hit `ring
+failed, ring expressions not equal` — `field_simp` had reordered one
+occurrence of the sqrt's argument (`b^2 - 4*a*c` vs `b^2 - a*4*c`), and
+`ring`/`linear_combination` cannot see through `Real.sqrt` to recognize
+the two resulting sqrt terms as the same atom even though their
+arguments are ring-equal; (3) fixed by `set`-ing the sqrt term to a plain
+variable *before* `field_simp`/`linear_combination`, so both tactics only
+ever see one opaque atom. General lesson worth remembering for any future
+`Real.sqrt`/`Real.exp`/etc.-involving algebra: `set` the transcendental
+subterm early, before any tactic that might resyntax its argument.
+
+While updating `packets/elementary/algebra/QUEUE.md`, found
+`div_add_div_same` already landed (commit `dbc6e6a`, noted above) but
+still listed as open — synced it. Also found the algebra backlog's
+"geometric series closed form" item is already effectively covered by
+`packets/elementary/induction/geom_series_sum_induction.v1.json` (ℤ) and
+`packets/elementary/functions/geom_series_mul.v1.json` (ℝ) — noted this
+in the queue rather than authoring a third near-duplicate.
+
+Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
+0 errors) and hash-stamped. Commit scoped to only this cycle's own files
+(another agent's concurrent `add_sq_three` was present uncommitted in the
+working tree — left untouched).

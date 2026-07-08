@@ -26,23 +26,37 @@ Checked against the 41 existing packets (2026-07-07) to avoid duplicates.
       2026-07-08 by a concurrent agent (commit `0427733`) — same sync fix
       as `neg_sq` above.
 
+- [x] `div_add_div_same` — `a / c + b / c = (a + b) / c` for a field (D0,
+      L0). Authored 2026-07-08 by a concurrent agent (commit `dbc6e6a`) —
+      this file hadn't been synced to reflect it until now; fixed to
+      prevent a duplicate re-proof attempt.
+
+- [x] `quad_formula_real_root` — nonnegative discriminant implies a real
+      root (L1, builds on `quad_form_nonneg`). Authored 2026-07-08 via
+      tracked episode `9435347e-fd20-4198-aa9c-7252a8499a93`
+      (kernel_verified on the third attempt: `nlinarith [hs]` couldn't
+      expand the needed product; `linear_combination hs` then failed with
+      a `ring`-can't-see-through-`Real.sqrt` atom mismatch after
+      `field_simp` reordered the sqrt's argument; fixed by `set`-ing the
+      sqrt term to a plain variable *before* `field_simp`/
+      `linear_combination` so both tactics only see one opaque atom — see
+      the packet's `notes`).
+
 ## Next targets
 
 - [ ] `add_sq_three` — `(a + b + c) ^ 2 = a^2+b^2+c^2+2ab+2bc+2ca` (D1, L1).
       Natural extension of `binomial_sq`; reusable for the geometry/
       inequalities three-variable families that already exist
       (`three_var_am_gm`, `three_var_sq_ge`).
-- [ ] `div_add_div_same` — `a / c + b / c = (a + b) / c` for a field (D0,
-      L0). No division-identity packet exists yet in this domain.
 - [ ] `pow_succ'` — `x ^ (n + 1) = x ^ n * x` (D0, L0). Small but reusable
       in induction proofs (see `packets/elementary/induction/QUEUE.md`).
 
 ## Backlog
 
-- [ ] Quadratic formula discriminant nonneg -> real root existence (L1/L2,
-      builds on `quad_form_nonneg`).
-- [ ] Sum of a finite geometric series, closed form (L1/L2) — pairs with
-      `functions/geom_series_mul` (factorization identity) and the induction
-      backlog's inductive proof of the same fact; author whichever proof
-      style is more natural first, cross-reference the other in
-      `CROSS_DOMAIN.md`.
+- [ ] Sum of a finite geometric series, closed form — already effectively
+      covered elsewhere in the corpus:
+      `packets/elementary/induction/geom_series_sum_induction.v1.json`
+      (over ℤ) and `packets/elementary/functions/geom_series_mul.v1.json`
+      (over ℝ) both prove `(∑ i ∈ range n, r^i) * (r - 1) = r^n - 1`. Only
+      author an `algebra`-domain version if a genuinely different proof
+      style or statement shape is wanted; otherwise this item is done.
