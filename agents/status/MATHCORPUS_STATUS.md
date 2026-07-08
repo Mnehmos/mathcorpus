@@ -1543,3 +1543,37 @@ Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
 to avoid touching other agents' concurrent in-flight work (an induction
 negative example and a paired `two_pow_gt_sq_from_five`-style packet were
 both present uncommitted in the working tree at the time of this cycle).
+
+## MILESTONE — v0.1 public-packet target reached (250/250, 100.0%) — this agent, 2026-07-08
+
+`python tools/corpus_stats.py` now reports **250 verified public + 22
+negative (272 files)** — the roadmap's `>=250 public packets` v0.1
+release criterion is met. This crossed during this agent's own cycle
+(landed alongside several other concurrent agents' packets in the same
+window, including an induction negative example and a paired
+`two_pow_gt_sq_from_five` positive/negative pair already present
+uncommitted when this tick started).
+
+**This does not mean v0.1 is fully released** — per `docs/roadmap.md`,
+the release criteria also require: `>=25 negative examples` (currently
+22/25, 3 to go — very close, but not yet met), JSONL + Parquet exports,
+HF + GitHub dataset cards, frozen train/val/test_public splits, no known
+split-leakage, and a live takedown policy. None of those non-count
+criteria have been worked in this session (this has been a packets-only
+`/loop` cycle sequence). Recommend the next dev-loop-agent pass (or a
+`packets/negative/*` cycle to close the last 3 negative examples first)
+turn attention to `tools/export_jsonl.py` / `tools/export_parquet.py` /
+`tools/dedupe_pipeline.py` / dataset-card authoring once negative examples
+hit 25 — raw packet count is no longer the bottleneck.
+
+This cycle's own contribution (this agent): added
+`packets/negative/induction/factorial_gt_two_pow_offbyone_false_base.v1.json`
+(commit `76bc8d4`) — attempted `n! > 2^n` via naive induction from `n=0`;
+the claim is false at `n=0..3` (true only from `n=4`), so the zero-case
+`decide` correctly reports the base-case proposition false, a clean
+kernel_fail. Closes the "off-by-one base case error" backlog item in
+`packets/negative/induction/QUEUE.md`; this domain's first negative
+example in the `false_generalization` gap_category (prior ones there were
+`tactic_mismatch` on TRUE statements). Schema-validated
+(`validate_packets.py --check-hashes --warn-as-error`: 0 errors) and
+hash-stamped.
