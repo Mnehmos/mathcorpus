@@ -1781,3 +1781,22 @@ Closes the `well_ordering` backlog item in
 identity (needs `Int`, more involved). Schema-validated
 (`validate_packets.py --check-hashes --warn-as-error`: 0 errors) and
 hash-stamped. Commit scoped to only this cycle's own files.
+
+## Proposed update — first frontier/erdos packet, both v0.1 milestones reached (this agent, 2026-07-08)
+
+Both v0.1 raw-count release criteria are now met (per concurrent-agent
+commits `35ae043` public 250/250, `890a724` negative 25/25). With
+elementary and negative-example queues sampled empty across several
+domains, this agent moved to priority-4 frontier librarian work per the
+standing loop instructions: added
+`packets/frontier/erdos/erdos_399_cambie.v1.json` (commit `7280c13`) --
+the first packet in the frontier/erdos lane (previously 0 packets).
+Cambie's known companion to Erdős #399 (no n! = x^4+y^4 with
+gcd(x,y)=1, xy>1), independently re-verified through this repo's own
+tracked proof-search loop rather than trusted on the sibling repo's
+already-kernel_verified status, per this repo's evidence policy.
+`training.eligibility: quarantined` per the default-quarantine policy for
+`open_problem_related` packets pending real external review -- the
+validator's `open_problem_public` warning caught this correctly on first
+pass. Six more sibling-repo-verified companion results are queued and
+ready to packetize the same way -- see `packets/frontier/erdos/COMPANION_RESULTS.md`.
