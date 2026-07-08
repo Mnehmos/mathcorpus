@@ -52,6 +52,15 @@ Checked against the 16 existing packets (2026-07-07) to avoid duplicates.
       this domain was 15/19 `L2_olympiad` with only 2 `L0_elementary`
       packets before this one.
 
+- [x] `abs_add_three` — `|a+b+c| <= |a|+|b|+|c|` (D0, L0), the three-term
+      extension of `abs_add_le`. Authored 2026-07-08 via tracked episode
+      `00c6c1c7-af24-448f-bb93-1e1944e1791a` (kernel_verified on the
+      second attempt in the episode: the first cited a nonexistent
+      `abs_add` lemma name; switched to the same `abs_cases`-based
+      16-branch case split `abs_add_le` uses, closed uniformly by
+      `nlinarith`). Picked fresh after "Next targets"/"Backlog" were both
+      empty this cycle.
+
 ## Next targets
 
 *(empty — see Backlog.)*

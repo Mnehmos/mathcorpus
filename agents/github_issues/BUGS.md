@@ -2,4 +2,4 @@
 
 | Issue | Summary | Affects (tool/schema/CI) | Status | Notes |
 |-------|---------|------------------------------|--------|-------|
-|       |         |                              |        |       |
+| (untracked) | `episode_observe` intermittently throws `UNIQUE constraint failed: action_requests.episode_id, action_requests.episode_revision` instead of returning the current observation, breaking the documented claim-recovery path ("call episode_observe and retry" after a `stale_revision`/`currently claimed` error) | proofsearch MCP server | open | Hit 2026-07-08 on episode `00c6c1c7-af24-448f-bb93-1e1944e1791a` after an `episode_step` with a wrong `expected_revision` returned `stale_revision`. `episode_observe` failed the same way on two retries. Workaround that worked: skip `episode_observe` entirely and re-call `attempt_claim` with the *same* `idempotency_key` used for the original (now-stuck) claim — this revived the claim per the tool's documented idempotent-claim-recovery behavior and let the next `episode_step` (with the correct `expected_revision`) go through normally. |

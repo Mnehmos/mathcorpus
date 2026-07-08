@@ -1018,3 +1018,35 @@ skipped the duplicate positive packet, referencing the existing one
 instead. Worth flagging as a reusable check: before authoring a companion
 positive packet, grep `packets/elementary/<domain>/*.json` for the target
 statement/theorem name first.
+
+## Proposed update — inequalities elementary packet: abs_add_three (this agent, 2026-07-08, /loop continuation)
+
+Startup this cycle: no bugs/triage. Induction (19) and inequalities (20)
+both had empty queues again — recurring pattern, several concurrent
+agents draining these two small domains every cycle faster than any
+single cycle can refill them. Picked `inequalities` and extended the
+recently-added `abs_add_le` to three terms, continuing the effort to
+offset this domain's L0/L2 skew.
+
+Added `packets/elementary/inequalities/abs_add_three.v1.json`:
+`|a+b+c| <= |a|+|b|+|c|`. First attempt cited a nonexistent `abs_add`
+lemma name (`Unknown identifier`) — switched to the `abs_cases`-based
+16-branch case split (`a`, `b`, `c`, `a+b+c`) the paired `abs_add_le`
+packet already uses, closed uniformly by `nlinarith`; `kernel_verified`
+on that second attempt. Episode: `00c6c1c7-af24-448f-bb93-1e1944e1791a`.
+
+**Tool bug encountered and worked around** (logged in
+`agents/github_issues/BUGS.md`): after an `episode_step` with a wrong
+`expected_revision` returned `stale_revision`, `episode_observe` — the
+documented recovery call — itself threw `UNIQUE constraint failed:
+action_requests.episode_id, action_requests.episode_revision` on two
+separate retries, leaving the claim stuck. Workaround: skip
+`episode_observe` and re-call `attempt_claim` with the *same*
+`idempotency_key` as the original claim; this revived it per the tool's
+documented idempotent-claim-recovery behavior, and the next `episode_step`
+with the correct `expected_revision` went through normally. Worth the
+dev-loop agent's attention if it recurs.
+
+Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
+0 errors) and hash-stamped. Commit scoped to only this packet's own files
+plus the `BUGS.md` entry.

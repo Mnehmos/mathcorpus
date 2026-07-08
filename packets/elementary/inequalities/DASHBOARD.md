@@ -2,8 +2,8 @@
 
 | Metric | Value |
 |--------|-------|
-| Packets | 20 |
-| Level breakdown | L0_elementary: 3 · L1_proof_basics: 2 · L2_olympiad: 15 |
+| Packets | 21 |
+| Level breakdown | L0_elementary: 4 · L1_proof_basics: 2 · L2_olympiad: 15 |
 
 Last synced: 2026-07-08 — added `nesbitt_three_var` (D2, L2, episode
 `f300e689-9670-45f4-8454-47e4e80b73ac`): the named olympiad inequality
@@ -26,7 +26,10 @@ genuinely elementary absolute-value packet, deliberately picked to offset
 the domain's L2_olympiad skew (15 of 19 packets before this one). Needed
 `Mathlib.Data.Real.Basic` in `problem_imports` alongside
 `Mathlib.Algebra.Order.Group.Abs`; the latter alone is missing ℝ's own
-ring/lattice/order instances. Re-sync against
+ring/lattice/order instances. Also added `abs_add_three` (D0, L0, episode
+`00c6c1c7-af24-448f-bb93-1e1944e1791a`): the three-term extension
+`|a+b+c| <= |a|+|b|+|c|`, proved by the same `abs_cases`-based case-split
+technique (16 branches, `nlinarith` uniformly). Re-sync against
 `agents/status/MATHCORPUS_STATUS.md` and `python tools/corpus_stats.py`
 after adding packets.
 
