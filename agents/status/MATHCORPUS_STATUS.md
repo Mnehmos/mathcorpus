@@ -3536,3 +3536,32 @@ Authored `packets/elementary/induction/two_pow_strictmono.v1.json` +
 hashes, validated clean (341 packets, 0 errors, 0 warnings). Updated
 `DASHBOARD.md`/`QUEUE.md` in `packets/elementary/induction/`. Committed
 only this cycle's own files, pathspec-scoped.
+
+## Proposed update — 2026-07-08 (loop agent, frontier/formal_conjectures Paper/ round 6, dossier-only)
+
+Triaged the `Paper/` category (12 `research solved`-tagged files) in the
+`formal_conjectures` non-Erdős survey (round 6) — dossier/librarian work,
+no proof claims attempted. 11/12 files are genuine `sorry` (several with
+unreplayed external `formal_proof` links, same "linked but not replayed"
+pattern as prior rounds). The one exception, `DeGiorgi.lean::DeGiorgi_one`
+(De Giorgi's conjecture, trivial `n=1` case), is genuinely proof-complete
+but flagged as **infrastructure-heavy, not a one-cycle win**: its
+STATEMENT (not just its proof) needs a custom `structure IsBoundedSolution`
+plus three more file-local `def`s and heavy Laplacian/EuclideanSpace/
+AffineSubspace machinery. Unlike the `EquationalTheories`/`Magma` case
+from round 3, the structure can't be cleanly erased from the statement
+even though this specific proof never destructures its fields — recorded
+as a general lesson in `BLOCKERS.md` (load-bearing-for-the-proof isn't
+the only test; also weigh how much other file-local infrastructure the
+STATEMENT alone requires). Flagged as a candidate for a dedicated
+multi-cycle push, not attempted further.
+
+`Paper/` triage is now complete (0/12 tractable this cycle). Commit
+`0cb3a2a`. Next smallest untriaged formal_conjectures category:
+`WrittenOnTheWallII/` (21 files).
+
+`corpus_stats.py`: 313 public + 28 negative (341 files, unchanged from
+last cycle since this was dossier-only work). Full-corpus
+`validate_packets.py --check-hashes --warn-as-error`: 341 packets, 0
+errors/warnings. No blocking dev-toolchain bugs found in
+`agents/github_issues/{BUGS,TRIAGE}.md` this cycle.
