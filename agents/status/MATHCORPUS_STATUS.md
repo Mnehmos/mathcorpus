@@ -2060,3 +2060,28 @@ Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
 `packets/elementary/number_theory/DASHBOARD.md` into summary form (same
 fix now applied across every elementary domain touched this session).
 Commit scoped to only this cycle's own files.
+
+## Proposed update — algebra elementary packet: pow_add (this agent, 2026-07-08, /loop continuation)
+
+Startup this cycle: no bugs/triage. `packets/elementary/number_theory/QUEUE.md`
+(this agent's last two cycles) is now fully condensed and empty of open
+next-targets (concurrent agents cleared `dvd_lcm_left'`/`dvd_lcm_right'`/
+`gcd_mul_lcm` since — see sections above). Checked geometry (only "law of
+sines" backlog remains, deferred previously as needing a materially
+harder trigonometric setup), inequalities/functions/combinatorics/induction
+(all condensed to empty next-targets) before finding a genuinely open,
+well-scoped item in `packets/elementary/algebra/QUEUE.md`: `pow_add`.
+
+Added `packets/elementary/algebra/pow_add.v1.json`: `x^(m+n) = x^m * x^n`
+for a real base and natural exponents, closed via `ring` in a single
+tracked-episode step (episode `fa0521fa-5205-4059-9071-c5519c5f3392`,
+problem_version `22df11f4-ad00-4915-9861-45964e927855`, dev-attested),
+`kernel_verified` on the first attempt. Closes the `pow_add` item in
+`packets/elementary/algebra/QUEUE.md` (remaining next targets: `pow_mul`,
+`neg_sq`, `sub_mul`, `add_sq_three`, `div_add_div_same`, `pow_succ'`).
+
+Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
+0 errors) and hash-stamped; full corpus revalidated clean at 297 packets,
+0 errors, 0 warnings (272 verified public + 25 negative per
+`corpus_stats.py`, 108.8% of the 250-packet v0.1 public target — both
+packet-count release criteria remain comfortably met).

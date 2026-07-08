@@ -3,13 +3,16 @@
 Candidate packets to create or formalize next, roughly in priority order.
 Checked against the 41 existing packets (2026-07-07) to avoid duplicates.
 
+## Done (this cycle)
+
+- [x] `pow_add` — `x ^ (m + n) = x ^ m * x ^ n` (D0, L0). Authored
+      2026-07-08 via tracked episode `fa0521fa-5205-4059-9071-c5519c5f3392`
+      (kernel_verified on the first attempt: `ring`).
+
 ## Next targets
 
-- [ ] `pow_add` — `x ^ (m + n) = x ^ m * x ^ n` (D0, L0). Reusable exponent
-      law, currently missing despite `pow_two`/`pow_one'`/`pow_zero'`
-      already present.
 - [ ] `pow_mul` — `x ^ (m * n) = (x ^ m) ^ n` (D0, L0). Pairs with
-      `pow_add`.
+      `pow_add` (done, see above).
 - [ ] `neg_sq` — `(-a) ^ 2 = a ^ 2` (D0, L0). Natural companion to
       `mul_neg'`/`neg_neg'`/`pow_two`, currently missing as its own named
       packet.
