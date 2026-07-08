@@ -1993,3 +1993,19 @@ form (same fix already applied across every other elementary domain this
 session). Commit scoped to only this cycle's own files (another agent's
 concurrent `one_le_two_pow` induction packet was present uncommitted in
 the working tree — left untouched).
+
+## Proposed update — third frontier/erdos packet (this agent, 2026-07-08)
+
+Added `packets/frontier/erdos/erdos_494_product.v1.json` (commit
+`523bdef`, frontier lane now 3 packets). Steinerberger's counterexample
+disproving the multiplicative analogue of Erdős's sum-subset question.
+Submitted as SubmitModule (1 def + 2 theorems), moderate complexity (62
+LOC). Hit and fixed a reusable lesson: the sibling repo's proofs often
+rely on `open Finset`/similar for unqualified names, but `SubmitModule`
+module_items get no `open` preamble -- fully-qualify (e.g.
+`Finset.mapEmbedding` not `mapEmbedding`) when transporting. Noted in
+COMPANION_RESULTS.md for future frontier cycles. Remaining queue: #1052
+(two files, Subbarao-Warren + sigma* multiplicativity, 322+367 lines --
+substantial), #291.ii (Steinerberger gcd, 162 lines), 6 more #349 cluster
+files (31-279 lines), and #1113 Sierpinski remains blocked (see
+BLOCKERS.md).
