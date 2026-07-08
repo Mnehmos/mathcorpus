@@ -105,12 +105,21 @@ for very recent commits before re-populating.)*
       registration time). This domain's first packet exercising
       `SubmitModule` — every prior packet used `Solve` only.
 
+- [x] Mutual recursion via `mutual_group`: `even_odd_mutual_totality`
+      already landed (commit `824410b`) — a concurrent domain-agent
+      instance beat this note to it; removed from backlog to avoid a
+      duplicate attempt.
+- [x] "Induction without generalizing an auxiliary variable" negative
+      example attempt pivoted to a positive packet,
+      `foldl_cons_eq_reverse_append` (commit `5c61d06`) — `simp [ih]`
+      turned out strong enough despite `acc` not being generalized, so the
+      intended failure never materialized.
+
 ## Backlog
 
 *(empty — repopulate from the domain-specific focus in `LOOP.md`:
 induction, strong induction, recursion, finite sums/products, factorials,
-powers, inequalities by induction, monotonicity. Candidate next steps:
-mutual recursion via `mutual_group` (e.g. even/odd mutual definitions) is
-the one `SubmitModule` sub-feature still undemonstrated; a Fibonacci-style
-two-step recursion growth bound would combine recursion + strong induction
-in one packet.)*
+powers, inequalities by induction, monotonicity. This domain has multiple
+concurrent agent instances working it — check
+`git log --oneline -15 -- packets/elementary/induction/` before starting
+a new target to avoid duplicating recently-landed work.)*
