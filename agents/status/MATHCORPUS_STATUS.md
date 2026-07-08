@@ -2150,3 +2150,25 @@ Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
 8:1; more genuinely-D0 additions would help further (see updated
 `DASHBOARD.md`/`QUEUE.md`). Commit scoped to only this cycle's own
 files.
+
+## Proposed update — algebra elementary packet: neg_sq (this agent, 2026-07-08, /loop continuation)
+
+Startup this cycle: no bugs/triage; both v0.1 numeric release criteria
+remained comfortably exceeded (276 verified public + 25 negative at the
+top of this cycle). `packets/elementary/algebra/QUEUE.md`'s snapshot was
+slightly stale (this agent's own prior-cycle `sub_mul` wasn't reflected
+yet) but `neg_sq` was still genuinely open — confirmed no existing file
+before starting.
+
+Added `packets/elementary/algebra/neg_sq.v1.json`: `(-a)^2 = a^2` for
+integers, closed by `ring`. Produced via tracked episode
+`2ccf64f3-8550-4f90-b1c1-9c2d90dd2811` (problem_version
+`84ca94c8-db4a-492f-bec1-4c6ec026b49d`, dev-attested), `kernel_verified`
+on the first attempt. Closes the `neg_sq` item; remaining queue targets:
+`pow_mul`, `add_sq_three`, `div_add_div_same`.
+
+Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
+0 errors) and hash-stamped; commit `bd04c9d`, scoped to only these two new
+files. Full `packets/elementary/algebra/` revalidated clean at 46
+packets, 0 errors, 0 warnings; full corpus at 278 verified public + 25
+negative (111.2% of the v0.1 public target) as of this update.
