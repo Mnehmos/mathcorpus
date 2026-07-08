@@ -297,18 +297,78 @@ the other (`358684`) flagged as a ready candidate for a future cycle. The
 remaining 5 are either genuine `sorry` or the "linked external proof, not
 replayed" pattern. `OEIS/` triage is now complete — do not re-check.
 
+### Triaged this cycle, round 6 — `Paper/` (12 files, this agent, 2026-07-08)
+
+- `CasasAlvero.lean` — 3 `research solved` theorems, all `sorry` (one
+  additionally has an external `formal_proof` link, "linked but not
+  replayed" pattern).
+- `ClaudesCycles.lean` — 2 `research solved` theorems, both `sorry` (one
+  with an external `formal_proof` link).
+- `ConjugacyClassSizes.lean` — 1 `research solved` theorem, `sorry`.
+- `DeGiorgi.lean` — 4 `research solved` theorems (`DeGiorgi_ge_nine`,
+  `DeGiorgi_one`, `DeGiorgi_two`, `DeGiorgi_three`). **`DeGiorgi_one` is
+  the round's only genuinely proof-complete theorem** (real ~15-line
+  tactic proof, no `sorry`) — but it's **infrastructure-heavy**, matching
+  the round-1 `OpenQuantumProblems/` verdict rather than the Erdős-lane
+  quick-win pattern: proving `DeGiorgi_conclusion 1` requires the
+  STATEMENT itself (not just the proof) to reference a custom
+  `structure IsBoundedSolution` (fields `regular`/`bounded`/`solution`)
+  plus three more file-local `def`s (`HasPositiveDeriv`,
+  `HasHyperplaneLevelSets`, `DeGiorgi_conclusion`) and heavy Mathlib
+  machinery (`Δ`/Laplacian notation, `EuclideanSpace`, `AffineSubspace`,
+  `lineDeriv`). Unlike the `EquationalTheories`/`Magma` case, the
+  structure here can't be "erased via restatement" the same way: even
+  though `DeGiorgi_one`'s proof never destructures `IsBoundedSolution`'s
+  fields (only `HasPositiveDeriv` is actually used), the STRUCTURE ITSELF
+  is part of `DeGiorgi_conclusion`'s definition, which the root statement
+  must reference to be a faithful copy of the actual conjecture — not
+  a `SubmitModule` blocker in the narrow sense (all three custom `def`s
+  ARE transportable as `def` items in principle, and `IsBoundedSolution`
+  being all-Prop-fields COULD in principle be inlined as a bare `And`
+  chain instead of a named `structure`), but a much larger transport
+  lift than a one-cycle target given the amount of supporting API
+  (`strictMono_of_deriv_pos`, `deriv_comp_const_add`,
+  `AffineSubspace.coe_affineSpan_singleton`, `preimage_image_eq`, plus
+  `aesop`/`grind` automation whose behavior isn't yet verified under this
+  repo's pinned Mathlib). The other 3 theorems (`ge_nine`, `two`,
+  `three`) are genuine `sorry` (real hard PDE/geometric-measure-theory
+  content regardless).
+- `DegreeSequencesTriangleFree.lean` — 5 `research solved`
+  theorems/defs, all `sorry`.
+- `Gourevitch.lean` — 1 `research solved` theorem (a hypergeometric
+  series identity for `32/π³`), `sorry`.
+- `LatinSquare.lean` — 2 `research solved` theorems, both `sorry` (one
+  also has an `answer(sorry)` placeholder pattern).
+- `MonochromaticQuantumGraph.lean` — many `research solved` theorems, ALL
+  `sorry`; most also carry external `formal_proof` links (DeepMind prover
+  agent proofs, "linked but not replayed" pattern, same as `#1052`'s
+  AlphaProof link).
+- `Rupert.lean` — 1 `research solved` theorem, `sorry` (external
+  `formal_proof` link).
+- `VoronovskajaTypeFormula.lean` — 1 `research solved` theorem
+  (`bernstein_operators`), `sorry`.
+- `WeaklyFirstCountable.lean` — 1 `research solved` theorem, `sorry`.
+- `ZagierMZV.lean` — 1 `research solved` theorem, `sorry`.
+
+**Round-6 verdict**: 0/12 `Paper/` files yield a one-cycle transportable
+win. `DeGiorgi_one` is genuinely proof-complete but infrastructure-heavy
+(flagged for a possible dedicated multi-cycle push, not a quick win — see
+`BLOCKERS.md`). `Paper/` triage is now complete — do not re-check.
+
 ### Not yet triaged
 
 `Wikipedia/` (60 files), `GreensOpenProblems/` (30), `WrittenOnTheWallII/`
-(21), `Paper/` (12) — a future cycle should continue this same triage
-(`grep -B1 -A3 "category research solved"` per file, check for a bare
-`sorry` body vs. a real proof, check whether real proofs are
-self-contained vs. infrastructure-heavy, check whether a
+(21) — a future cycle should continue this same triage (`grep -B1 -A3
+"category research solved"` per file, check for a bare `sorry` body vs. a
+real proof, check whether real proofs are self-contained vs.
+infrastructure-heavy — including whether custom types are needed just to
+STATE the theorem, not only to prove it — check whether a
 `class`/`structure` blocker is load-bearing or notational, and check
 whether unusual API names actually resolve under this repo's pinned
 Mathlib before assuming a verbatim transport will compile — see
-`BLOCKERS.md`). `Paper/` (12) is now the smallest untriaged category
-(`Arxiv/` and `OEIS/` are both done, see rounds 4-5 above).
+`BLOCKERS.md`). `WrittenOnTheWallII/` (21) is now the smallest untriaged
+category (`Arxiv/`, `OEIS/`, `Paper/` are all done, see rounds 4-6
+above).
 
 ## Backlog
 
