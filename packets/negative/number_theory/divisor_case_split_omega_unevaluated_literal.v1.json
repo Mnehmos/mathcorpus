@@ -1,0 +1,57 @@
+{
+  "packet_id": "negative.number_theory.divisor_case_split.omega_unevaluated_literal.v1",
+  "packet_version": "1.0.0",
+  "title": "omega fails on a divisibility goal with an unreduced literal divisor",
+  "domain": "number_theory",
+  "level": "L1_proof_basics",
+  "kind": "negative_example",
+  "status": "failed_attempt",
+  "difficulty_bin": "D1",
+  "source_provenance": {
+    "source_kind": "repo_original",
+    "source_refs": [],
+    "authors": [
+      "The MathCorpus Authors"
+    ],
+    "copyright_holder": "The MathCorpus Authors",
+    "license_spdx": "Apache-2.0",
+    "license_content": "CC-BY-4.0",
+    "statement_fidelity": "author_written"
+  },
+  "informal_statement": "A sub-obligation from case-splitting a divisor-search problem (\"for which integers k with -2 <= k <= 2 does (k + 3) divide 88?\"): after substituting k = -1, the goal is the unreduced literal expression (3 + (-1) : ℤ) ∣ 88 rather than the simplified (2 : ℤ) ∣ 88.",
+  "failure": {
+    "gap_category": "tactic_mismatch",
+    "sub_category": "omega_on_unevaluated_divisor",
+    "input_context_summary": "Goal was `(3 + (-1) : ℤ) ∣ 88`, the literal-but-unreduced divisor expression left behind by a case split (e.g. interval_cases) that substitutes a numeral into a compound divisor without normalizing the arithmetic first.",
+    "attempt_summary": "Applied `omega` directly on the divisibility goal, expecting it to discharge an obviously-true numeric fact. The Lean kernel rejected it: omega reported it could not prove the goal, citing a possible counterexample via `a := 88 % (3 + -1)` — omega does not normalize the compound divisor expression before reasoning about `%`/`∣`. Repairing with `norm_num` (which normalizes `3 + (-1)` to `2` and then checks `2 ∣ 88`) reached `kernel_verified` in the same tracked episode.",
+    "lesson": "omega can fail on `∣` goals whose divisor is a literal-valued but syntactically unreduced expression (e.g. left over from interval_cases substitution); normalize the divisor with norm_num (or call norm_num directly) before or instead of omega."
+  },
+  "proof_body_redacted": false,
+  "trust": {
+    "rung": 0,
+    "proof_authority": "none",
+    "public_claim_class": "public_safe"
+  },
+  "training": {
+    "eligibility": "negative_example_only",
+    "reason_codes": [
+      "public",
+      "explicit_negative_label"
+    ],
+    "dedupe_cluster_id": "nt.divisibility.failure_patterns",
+    "template_family_id": "number_theory.automation_hazards",
+    "contamination_risk": "low"
+  },
+  "dependencies": {
+    "kits": [],
+    "tactic_tags": [
+      "omega",
+      "norm_num",
+      "Dvd.dvd"
+    ]
+  },
+  "notes": "Reproduced live via a tracked proof-search episode (dev-attested problem, episode outcome kernel_verified after repair): the `omega` Solve attempt was rejected with diagnostic \"omega could not prove the goal: a possible counterexample may satisfy the constraints a >= 1 where a := 88 % (3 + -1)\"; the follow-up `norm_num` Solve attempt on the same obligation reached kernel_verified. Matches the omega-and-divisibility hazard documented in docs/proofsearch-integration.md.",
+  "hashes": {
+    "packet_sha256": "3da9abd92b85bd5f8c799b3010bbf4fb52237e1e57a74c926b42048aae7b0cc9"
+  }
+}
