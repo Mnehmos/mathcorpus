@@ -74,6 +74,20 @@ Min/max family: `avg_between_min_max` (`min a b <= (a+b)/2 <= max a b`),
       to the general case, mirroring `general_amgm`'s prior extension of
       the AM-GM ladder.
 
+- [x] `general_qm_am` — the general n-term QM-AM inequality (squared-sum
+      form), `(∑ i∈s, f i)^2 <= |s| * ∑ i∈s, (f i)^2` (L2, D1). Authored
+      2026-07-08 via tracked episode
+      `0916c5cb-12e1-4e81-921e-82791b72684f` (kernel_verified on the
+      second attempt: a direct citation of Mathlib's
+      `sq_sum_le_card_mul_sum_sq`). Extends `qm_am_bound`/
+      `three_var_qm_am_bound`'s fixed small arities, completing the same
+      general-ladder pattern as `general_amgm`/`general_cauchy_schwarz`.
+      First attempt tried the namespaced `Finset.sq_sum_le_card_mul_sum_sq`
+      (matching the file it's declared in, `Chebyshev.lean`) and failed
+      with "unknown constant" — the lemma is NOT actually under the
+      `Finset` namespace; the bare name worked. Don't assume a
+      Finset-indexed lemma lives in the `Finset` namespace.
+
 ## Next targets
 
 *(empty — see Backlog.)*

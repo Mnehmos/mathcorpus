@@ -3734,3 +3734,39 @@ the next, largest remaining untriaged category. No packet authored this
 cycle (dossier-only, no proof-search episode run) — full corpus
 unchanged at 344 packets, 0 errors/warnings per the last packet-authoring
 cycle's validation.
+
+## Proposed update — inequalities: general_qm_am packet (this agent, 2026-07-08)
+
+Priority-3 elementary work this cycle (no blocking bugs; no zero-coverage
+negative lane; inequalities/functions tied lowest at 32 packets, both
+with dry backlogs). Functions reconfirmed fully covered per its own
+QUEUE.md; inequalities' concrete named-inequality options were largely
+exhausted at safe difficulty (Schur degree 2 was considered and rejected
+as too risky, a degree-4 SOS inequality with real chance of repeated
+`nlinarith` failure).
+
+Instead spotted that the domain's "general_X" ladder-extension pattern
+(fixed-arity named inequality -> general n-term/Finset case, already
+done for AM-GM via `general_amgm` and Cauchy-Schwarz via
+`general_cauchy_schwarz`) had one more natural instance: QM-AM.
+`qm_am_bound`/`three_var_qm_am_bound` only cover 2/3-term cases. Found
+Mathlib's exact general lemma (`sq_sum_le_card_mul_sum_sq`, the
+Cauchy-Schwarz-against-constant-1-vector squared-sum bound) and
+authored `general_qm_am`: `(∑f_i)^2 <= |s|*(∑f_i^2)` over an arbitrary
+Finset. Kernel-verified on the second attempt (tracked episode
+`0916c5cb-12e1-4e81-921e-82791b72684f`) — first attempt used the
+namespaced `Finset.sq_sum_le_card_mul_sum_sq` (matching the file it's
+declared in, `Mathlib/Algebra/Order/Chebyshev.lean`) and failed with
+"unknown constant"; the lemma turned out NOT to live under the `Finset`
+namespace despite operating on `Finset.sum` — the bare name worked
+immediately. Recorded as a general lesson: a Finset-indexed lemma isn't
+always declared inside the `Finset` namespace.
+
+This closes out the domain's "general_X" ladder pattern for now (AM-GM,
+Cauchy-Schwarz, QM-AM all have general Finset forms).
+
+Authored `packets/elementary/inequalities/general_qm_am.v1.json` +
+`lean/MathCorpus/Elementary/Inequalities/GeneralQmAm.lean`, stamped
+hashes, validated clean (345 packets total, 0 errors, 0 warnings).
+Updated `DASHBOARD.md`/`QUEUE.md` in `packets/elementary/inequalities/`.
+Committed only this cycle's own files, pathspec-scoped.

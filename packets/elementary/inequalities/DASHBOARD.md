@@ -2,8 +2,8 @@
 
 | Metric | Value |
 |--------|-------|
-| Packets | 32 |
-| Level breakdown | L0_elementary: 6 · L1_proof_basics: 8 · L2_olympiad: 18 |
+| Packets | 33 |
+| Level breakdown | L0_elementary: 6 · L1_proof_basics: 8 · L2_olympiad: 19 |
 
 Per-packet detail lives in each packet's own `verification.episode_id`
 and in `git log -- packets/elementary/inequalities/`; re-condensed this
@@ -28,6 +28,11 @@ n-term Cauchy-Schwarz over an arbitrary `Finset`, extending
 `cauchy_two_term`/`cauchy_three_term`'s fixed small arities the same way
 `general_amgm` extended the AM-GM ladder — a direct citation of
 Mathlib's `Finset.sum_mul_sq_le_sq_mul_sq`, found via
-`mathlib_search_declarations` before writing any proof attempt.
+`mathlib_search_declarations` before writing any proof attempt. And this
+cycle's `general_qm_am` (L2, D1, episode `0916c5cb`): the general n-term
+QM-AM inequality (squared-sum form), `(∑f_i)^2 <= |s|*(∑f_i^2)`,
+extending `qm_am_bound`/`three_var_qm_am_bound` the same way — via
+Mathlib's `sq_sum_le_card_mul_sum_sq` (notably NOT under the `Finset`
+namespace despite indexing a `Finset.sum`).
 
 Next targets: see `QUEUE.md`.
