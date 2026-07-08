@@ -1950,3 +1950,22 @@ packet), which resolved cleanly. Closes the `prime_dvd_mul` item; commit
 Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
 0 errors) and hash-stamped. Full corpus at 264 verified public + 25
 negative (105.6% of the v0.1 public target) as of this update.
+
+## Proposed update — number_theory elementary packet: not_prime_one (this agent, 2026-07-08, /loop continuation)
+
+Added `packets/elementary/number_theory/not_prime_one.v1.json`: `¬
+Nat.Prime 1`, closed via `norm_num` in a single tracked-episode step
+(episode `ec66cf9d-8d79-4e2c-9178-e016e854a709`, problem_version
+`851ba6da-4cb6-4bca-b138-b2a0534b497f`, dev-attested), `kernel_verified`
+on the first attempt. Pairs with this agent's earlier `prime_two.v1`;
+closes the `not_prime_one` item in
+`packets/elementary/number_theory/QUEUE.md`. Found that `prime_dvd_mul`
+had already been landed by a concurrent agent (commit `7cc9f60`, see the
+section immediately above) — synced the domain's `QUEUE.md` to reflect it
+rather than duplicating.
+
+Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
+0 errors) and hash-stamped; full corpus revalidated clean at 290 packets,
+0 errors, 0 warnings (265 verified public + 25 negative per
+`corpus_stats.py`, 106.0% of the 250-packet v0.1 public target — both
+packet-count release criteria remain comfortably met).

@@ -10,13 +10,18 @@ Checked against the 48 existing packets (2026-07-07) to avoid duplicates.
 - [ ] `gcd_mul_lcm` — `Nat.gcd a b * Nat.lcm a b = a * b` (D1, L1). The
       classic identity tying the two families together; good reusable
       lemma for the `core_algebra`/`ring_automation` kits.
-- [ ] `not_prime_one` — `¬ Nat.Prime 1` (D0, L0). Pairs with `prime_two`
-      (done, see below).
-- [ ] `prime_dvd_mul` — `p.Prime -> (p ∣ a * b <-> p ∣ a ∨ p ∣ b)` (D1,
-      L1). The single most reusable primality lemma for later divisibility
-      work; natural next step after `prime_two`.
 
 ## Done (this cycle)
+
+- [x] `not_prime_one` — `¬ Nat.Prime 1` (D0, L0). Authored 2026-07-08 via
+      tracked episode `ec66cf9d-8d79-4e2c-9178-e016e854a709`
+      (kernel_verified on the first attempt: `norm_num`). Pairs with
+      `prime_two`.
+
+- [x] `prime_dvd_mul` — `p.Prime -> (p ∣ a * b <-> p ∣ a ∨ p ∣ b)` (D1,
+      L1). Authored 2026-07-08 by a concurrent agent (commit `7cc9f60`) —
+      this file hadn't been synced to reflect it until now; fixed to
+      prevent a duplicate re-proof attempt.
 
 - [x] `lcm_comm` — `Nat.lcm a b = Nat.lcm b a` (D0, L0). Authored
       2026-07-08 by a concurrent agent (commit `ab325b5`) — this file
