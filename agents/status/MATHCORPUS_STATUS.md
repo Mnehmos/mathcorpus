@@ -2237,3 +2237,33 @@ packets, 0 errors, 0 warnings (280 verified public + 26 negative per
 `corpus_stats.py`, 112.0% of the 250-packet v0.1 public target — both
 packet-count release criteria remain comfortably met, negative examples
 now at 26/25).
+
+## Proposed update — functions elementary packet: image_inter_subset (this agent, 2026-07-08, /loop continuation)
+
+Startup this cycle: no bugs blocking progress. Induction and inequalities
+(tied smallest, 28 each) both had empty queues again (another agent had
+`max_add_le` in flight uncommitted in `inequalities` — left untouched).
+Moved to `functions`, which had one flagged candidate: `image_inter`, the
+image-of-an-intersection companion to `image_union`/`preimage_inter`.
+The domain's own queue note warned the naive equality version is false in
+general (needs `f` injective) and would need either an injectivity
+caveat or a counterexample-based negative example — sidestepped that by
+authoring the always-true *subset* statement instead (the standard
+Mathlib-aligned formulation), which is a clean, unconditional, genuinely
+useful lemma on its own.
+
+Added `packets/elementary/functions/image_inter_subset.v1.json`:
+`f '' (s ∩ t) ⊆ f '' s ∩ f '' t`, cited directly via
+`Set.image_inter_subset` (confirmed to exist first via
+`mathlib_search_declarations`). Produced via tracked episode
+`6eaaf620-beae-4f46-82c5-7269ae10c876` (problem_version
+`d8f2142a-f843-4fe2-ba5c-f914b3c4630d`, dev-attested), `kernel_verified`
+on the first `solve` attempt. Closes the `image_inter` item; the
+domain's image/preimage focus area is now: `image_union`,
+`preimage_inter`, `image_inter_subset`.
+
+Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
+0 errors) and hash-stamped. Also re-condensed
+`packets/elementary/functions/DASHBOARD.md`/`QUEUE.md`, which had grown
+long again since the last condensing pass. Commit scoped to only this
+cycle's own files.
