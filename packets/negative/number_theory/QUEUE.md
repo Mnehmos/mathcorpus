@@ -6,11 +6,6 @@ hypotheses to verify via a real tracked episode, not pre-asserted facts.
 
 ## Next targets
 
-- [ ] **omega on a gcd-divisibility goal.** Attempt `omega` directly on
-      `Nat.gcd a b ∣ a`. Expected failure mode: `omega` has no theory of
-      `Nat.gcd` and cannot see the goal as linear arithmetic at all; the
-      fix is `Nat.gcd_dvd_left`. gap_category: `tactic_mismatch`,
-      sub_category: `omega_on_gcd_dvd_goals`.
 - [ ] **decide on an unbounded primality-style claim.** Attempt
       `decide`/`native_decide` on a statement quantified over all `n`
       (e.g. "no `n` makes some divisibility pattern hold") rather than a
@@ -38,6 +33,10 @@ hypotheses to verify via a real tracked episode, not pre-asserted facts.
       natural-but-wrong first attempt on a curriculum-standard parity
       lemma; a follow-up positive `elementary` packet for the correct
       case-split proof is still open (not attempted this cycle).
+- [x] `gcd_dvd_omega_no_gcd_theory.v1` — `omega` on `Nat.gcd a b ∣ a`;
+      omega has zero theory of `Nat.gcd`, a total gap rather than a
+      normalization issue. Verified live via tracked episode
+      `e92f1fe2-eedb-48d5-94c8-9695aa253fed` (2026-07-08).
 
 Update this file after every completed packet (remove the item) and
 whenever a new candidate is identified (add it, with a one-line reason it's
