@@ -3,73 +3,30 @@
 Candidate packets to create or formalize next, roughly in priority order.
 Checked against the 16 existing packets (2026-07-07) to avoid duplicates.
 
-## Done
+Per-packet history lives in each packet's own `verification.episode_id`
+and in `git log -- packets/elementary/inequalities/`; this file's "Done"
+list previously grew an unbounded, repeatedly-headered bullet list
+(matching the same growth pattern already fixed in the induction and
+combinatorics dashboards this session) and has been condensed here.
 
-- [x] `am_gm_four_term` — `a^4+b^4+c^4+d^4 >= 4*a*b*c*d` for all reals
-      (D2, L2_olympiad). Authored 2026-07-08 via tracked episode
-      `26c22232-4518-4edc-9c11-b63813cf670f` (kernel_verified on the first
-      attempt: `nlinarith [sq_nonneg (a^2 - b^2), sq_nonneg (c^2 - d^2),
-      sq_nonneg (a*b - c*d)]`). Deliberately phrased as the radical-free
-      polynomial special case (fourth powers) rather than the classical
-      `(a+b+c+d)/4 >= (abcd)^(1/4)` form, which needs `Real.sqrt`/`rpow`
-      machinery not attempted this cycle. Completes the AM-GM ladder
-      alongside `am_gm_two` and `three_var_am_gm`.
+## Done (condensed)
 
-## Done
+Named-inequality ladder (`L2_olympiad`): `am_gm_four_term`,
+`nesbitt_three_var` (paired negative example:
+`nesbitt_bare_nlinarith_division_failure.v1`), `schur_degree_one`.
 
-- [x] `nesbitt_three_var` — `a/(b+c) + b/(a+c) + c/(a+b) >= 3/2` for
-      positive `a, b, c` (D2, L2_olympiad). Authored 2026-07-08 via tracked
-      episode `f300e689-9670-45f4-8454-47e4e80b73ac` (kernel_verified:
-      clear denominators via `div_add_div` ×2 + `le_div_iff₀`, then
-      `nlinarith` with the three pairwise-square hints and positivity of
-      the pairwise products). A bare-`nlinarith`-on-the-raw-division-goal
-      attempt kernel-failed first in the same episode and is preserved as
-      `packets/negative/inequalities/nesbitt_bare_nlinarith_division_failure.v1.json`.
-      (Note: `bernoulli_inequality` was independently claimed and landed on
-      the `packets/elementary/induction/` side — see that domain's
-      `QUEUE.md` — so it is removed from here rather than duplicated.)
+Absolute-value basics (`L0`/`L1`, added to offset the domain's
+`L2_olympiad` skew): `abs_add_le`, `abs_add_three`, `abs_sub_le` (metric
+triangle inequality), `abs_abs_sub_abs_le` (full doubly-absolute reverse
+triangle inequality, strengthening the one-sided `reverse_triangle`).
 
-## Done
-
-- [x] `schur_degree_one` — Schur's inequality, `t = 1` case, for
-      nonnegative `a, b, c` (D2, L2_olympiad). Authored 2026-07-08 via
-      tracked episode `cbffe931-b879-4d09-b98e-1394e26a4e30`
-      (kernel_verified on the first attempt: an 8-way ordering case split
-      `rcases le_total a b <;> rcases le_total b c <;> rcases le_total a c`
-      closed uniformly by one `nlinarith` call with `mul_nonneg`/
-      `sq_nonneg` product hints — Schur is degree 3 and not a pure SOS, so
-      needs the ordering split rather than a single global certificate).
-      Pairs with `nesbitt_three_var` as a second named-inequality target.
-
-## Done
-
-- [x] `abs_add_le` — `|a + b| <= |a| + |b|` for reals (D0, L0). Authored
-      2026-07-08 via tracked episode
-      `0c084674-3e97-422a-bff1-f5c906e0bc78` (kernel_verified on the first
-      attempt after fixing a missing `Mathlib.Data.Real.Basic` import:
-      8-way sign case split via `abs_cases` on `a`, `b`, `a + b`, closed
-      uniformly by `nlinarith`). Deliberately picked to add L0 coverage —
-      this domain was 15/19 `L2_olympiad` with only 2 `L0_elementary`
-      packets before this one.
-
-- [x] `abs_add_three` — `|a+b+c| <= |a|+|b|+|c|` (D0, L0), the three-term
-      extension of `abs_add_le`. Authored 2026-07-08 via tracked episode
-      `00c6c1c7-af24-448f-bb93-1e1944e1791a` (kernel_verified on the
-      second attempt in the episode: the first cited a nonexistent
-      `abs_add` lemma name; switched to the same `abs_cases`-based
-      16-branch case split `abs_add_le` uses, closed uniformly by
-      `nlinarith`). Picked fresh after "Next targets"/"Backlog" were both
-      empty this cycle.
-
-- [x] `abs_sub_le` — `|a - c| <= |a - b| + |b - c|` (D1, L1), the
-      metric-distance triangle inequality (distinct from the additive
-      `abs_add_le`/`abs_add_three` and from `reverse_triangle`). Authored
-      2026-07-08 via tracked episode
-      `a7e193b6-76fc-4f94-8f67-2b6150691653` (kernel_verified on the first
-      attempt: `abs_cases` on `a-b`, `b-c`, `a-c` (8 branches), closed
-      uniformly by plain `linarith` since every branch is purely linear).
-      Picked to continue offsetting this domain's `L1_proof_basics`
-      coverage gap (2 of 21 packets before this one).
+- [x] `abs_abs_sub_abs_le` — `| |a| - |b| | <= |a - b|` (D0, L0), the full
+      reverse triangle inequality. Authored 2026-07-08 via tracked episode
+      `e036f4e8-cc8b-4387-96fe-78263bfabd2d` (kernel_verified on the first
+      attempt: `abs_cases` on `a`, `b`, `a - b`, and `|a| - |b|` (16
+      branches), closed uniformly by `nlinarith`). Strengthens
+      `reverse_triangle.v1` (which only proves the one-sided
+      `|a| - |b| <= |a - b|`) to the doubly-absolute form.
 
 ## Next targets
 
