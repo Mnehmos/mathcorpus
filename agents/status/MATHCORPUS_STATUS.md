@@ -2538,3 +2538,15 @@ Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
 files. Full `packets/frontier/erdos/` revalidated clean at 8 packets, 0
 errors, 0 warnings; full corpus at 291 verified public + 26 negative
 (116.4% of the v0.1 public target) as of this update.
+
+## Proposed update — eighth frontier/erdos packet (this agent, 2026-07-08)
+
+Added `packets/frontier/erdos/erdos_349_int_coeff_ge_two_not_is_good_pair.v1.json`
+(commit `3c8f696`). Frontier lane now has ~9 packets total (this agent's 8
+plus one concurrent #1052 packet landed mid-cycle -- see git log for
+`cd5fe12`). 5/7 of the #349 integer_isGoodPair_iff cluster now packetized;
+only the culminating 279-line integer_isGoodPair_iff.lean assembly
+remains. Avoided colliding with the concurrent agent's #1052 sigmaStar
+infrastructure work (flagged as their priority target in
+COMPANION_RESULTS.md/SOURCE_REVIEW.md) by picking a different, smaller
+#349 target instead this cycle.
