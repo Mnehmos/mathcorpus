@@ -220,16 +220,48 @@ at "blocked" — check whether the class is *load-bearing* for the proof
 can often be restated as a bare function argument with zero mathematical
 loss, turning a hard blocker into a two-line rewrite.
 
+### Triaged this cycle, round 4 — `Arxiv/` (14 files, this agent, 2026-07-08)
+
+Corrected the file count: `Arxiv/` actually has 14 files (13 problem
+folders, one — `2602.05192/` — with two), not the 9 estimated by the
+original grep-for-tag-count survey (that count only found files with
+`research solved`; `Arxiv/` also has several `research open`-only files
+not counted there). Checked every file with >=1 `research solved` tag
+(11 of the 14):
+
+**Result: 0/11 files yield a transportable win. Every single `research
+solved` theorem body across the whole category is `sorry`** — the
+highest sorry-rate of any category triaged so far (rounds 1-3 each found
+at least one proof-complete candidate). Specifically:
+- `1609.08688/sIncreasingrTuples.lean` (Gowers-Long s-increasing r-tuples):
+  4 `research solved` theorems, all `sorry` (real analytic-combinatorics
+  bounds).
+- `2208.14736/ZariskiCancellation.lean`: 3 `research solved` variants,
+  all `sorry` (algebraic geometry).
+- `2602.05192/FirstProof4.lean`: 3 `research solved` theorems, all
+  `sorry` (one with an unreplayed external `formal_proof` link).
+- `2602.05192/FirstProof6.lean`, `math.0110202/BanachMazurRotation.lean`,
+  `2504.17644/Margulis.lean`, `2303.01089/FurstenbergTimesPTimesQ.lean`:
+  1 `research solved` theorem each, all `sorry`.
+- `0911.2077/Conjecture6_3.lean`, `1308.0994/BoxdotConjecture.lean`: 1
+  `research solved` theorem each, both with unreplayed external
+  `formal_proof` links AND `sorry` in this file (same pattern as
+  `#1052`'s AlphaProof link / `Books/BorweinSineSeries.lean`).
+
+**Round-4 verdict**: `Arxiv/` is now fully triaged and confirmed to have
+**zero** tractable candidates — do not re-check this category. Full
+detail per-file in `SOURCE_MAP.md`.
+
 ### Not yet triaged
 
 `Wikipedia/` (60 files), `GreensOpenProblems/` (30), `WrittenOnTheWallII/`
-(21), `Paper/` (12), `OEIS/` (7), `Arxiv/` (9) — a future cycle should
-continue this same triage (`grep -B1 -A3 "category research solved"` per
-file, check for a bare `sorry` body vs. a real proof, check whether real
-proofs are self-contained vs. infrastructure-heavy, check whether a
+(21), `Paper/` (12), `OEIS/` (7) — a future cycle should continue this
+same triage (`grep -B1 -A3 "category research solved"` per file, check
+for a bare `sorry` body vs. a real proof, check whether real proofs are
+self-contained vs. infrastructure-heavy, check whether a
 `class`/`structure` blocker is load-bearing or notational before writing
-a candidate off — see `BLOCKERS.md`). `Arxiv/` (9) and `OEIS/` (7) are
-now the smallest untriaged categories.
+a candidate off — see `BLOCKERS.md`). `OEIS/` (7) is now the smallest
+untriaged category (`Arxiv/` is done, see round 4 above).
 
 ## Backlog
 
