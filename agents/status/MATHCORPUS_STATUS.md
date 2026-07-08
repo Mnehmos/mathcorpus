@@ -1752,3 +1752,32 @@ Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
 files. Full `packets/elementary/geometry/` revalidated clean at 35
 packets, 0 errors, 0 warnings; full corpus at 254 verified public + 25
 negative (101.6% of the v0.1 public target) as of this update.
+
+## Proposed update — number_theory elementary packet: well_ordering (this agent, 2026-07-08, /loop continuation)
+
+Startup this cycle: no bugs blocking progress; both v0.1 numeric release
+criteria remain met (confirmed by two prior milestone notes above).
+Induction and inequalities (tied smallest, 24 each) both had genuinely
+empty `QUEUE.md` next-targets *and* backlogs again — no invented target
+attempted. Picked `number_theory`'s ready backlog item instead:
+well-ordering of the naturals, foundational but not yet present.
+
+Added `packets/elementary/number_theory/well_ordering.v1.json`: every
+nonempty `Set ℕ` has a least element. Produced via tracked episode
+`96e95cc1-bdbf-41b7-b71d-cadd6ed1109a` (problem_version
+`3e45015b-93de-48df-93b7-fd2ef402da93`, dev-attested), `kernel_verified`
+on the second `solve` attempt — the first used `Nat.strong_induction_on`
++ `by_cases`/bulleted case split under the default `flat_tactic_sequence`
+transport and kernel-failed (the bullets lost their case-block
+association, a hazard also hit on `id_bijective`/`image_union` in
+`packets/elementary/functions/`); resubmitting the identical script under
+`proof_format: raw_lean_block` fixed it. Reinforces the growing pattern:
+whenever a tactic proof genuinely needs nested `·` bullets (not just a
+`<;>`-chained uniform close), prefer `raw_lean_block` from the start
+rather than discovering the flat-transport failure first.
+
+Closes the `well_ordering` backlog item in
+`packets/elementary/number_theory/QUEUE.md`; remaining backlog: Bezout's
+identity (needs `Int`, more involved). Schema-validated
+(`validate_packets.py --check-hashes --warn-as-error`: 0 errors) and
+hash-stamped. Commit scoped to only this cycle's own files.

@@ -27,10 +27,19 @@ Checked against the 48 existing packets (2026-07-07) to avoid duplicates.
       classic "n even iff n^2 even" fact used in the standard irrationality
       proof pattern.
 
+## Done (this cycle)
+
+- [x] `well_ordering` — every nonempty `Set ℕ` has a least element (D1,
+      L1). Authored 2026-07-08 via tracked episode
+      `96e95cc1-bdbf-41b7-b71d-cadd6ed1109a` (kernel_verified on the
+      second attempt: `Nat.strong_induction_on` + `by_cases`/`push_neg`;
+      the first attempt used the identical script under the default
+      `flat_tactic_sequence` transport and kernel-failed on a bullet
+      case-block hazard, fixed by resubmitting under
+      `proof_format: raw_lean_block`).
+
 ## Backlog
 
 - [ ] Bezout-style: `gcd a b` expressible as an integer linear combination
       of `a`, `b` (L2 — needs `Int`, more involved than the current
       `Nat`-only coverage).
-- [ ] Well-ordering: every nonempty set of naturals has a least element
-      (L1/L2, foundational but not yet present).
