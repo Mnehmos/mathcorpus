@@ -2652,3 +2652,19 @@ Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
 files. Full `packets/frontier/erdos/` revalidated clean at 10 packets, 0
 errors, 0 warnings; full corpus at 294 verified public + 26 negative
 (117.6% of the v0.1 public target) as of this update.
+
+## Proposed update — MILESTONE: #349 cluster complete via culminating packet (this agent, 2026-07-08)
+
+Added `packets/frontier/erdos/erdos_349_integer_is_good_pair_iff.v1.json`
+(commit `312dc1c`). This is the culminating theorem for Erdős #349's
+integer characterization: for positive integers t, alpha, (t,alpha) is
+good iff t=1 and alpha=2. By far the largest proof transported in this
+lane (280 LOC/~210 tactics), combining all four previously-packetized
+sublemmas re-embedded as local haves. Kernel-verified on the FIRST
+attempt -- the strategy of debugging each piece as its own standalone
+packet first, then re-assembling the already-working tactic scripts, is
+worth repeating for any future large multi-lemma culminating target.
+This closes out the #349 cluster (6/7 files packetized; the 7th is a
+trivial corpus-shape wrapper). Frontier lane now at 9 packets from this
+agent alone this session, plus several more from a concurrent agent
+working #1052 in parallel.
