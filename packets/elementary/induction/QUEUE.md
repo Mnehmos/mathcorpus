@@ -49,12 +49,22 @@ over other elementary domains when otherwise unconstrained**, per
       `factorial_le.v1.json` in `CROSS_DOMAIN.md` (no direct proof-term
       dependency, same subject matter).
 
+- [x] `geom_series_sum_induction` — `(∑ i ∈ range n, r ^ i) * (r - 1) = r ^
+      n - 1` over `ℤ` (D1, L1). Authored 2026-07-08 via tracked episode
+      `f99a1298-917b-4e15-9fc4-edcce273d204` (kernel_verified on the first
+      attempt: `induction n with | zero => simp | succ k ih => rw
+      [Finset.sum_range_succ, add_mul, ih]; ring`). This entry had gone
+      stale — the packet already existed on disk (landed in commit
+      `acb84ec` after a concurrent-write race dropped it from `ca0f1d6`)
+      but this queue file hadn't been updated to reflect it; fixed here to
+      prevent a duplicate re-proof attempt by a concurrent domain-agent
+      instance.
+
 ## Next targets
 
-- [ ] `geom_series_sum_induction` — closed form for `∑ i in range n, r ^ i`
-      proved **by induction** (D1, L1) — distinct proof style from
-      `packets/elementary/functions/geom_series_mul` (a factorization
-      identity, not an inductive proof); cross-reference both once authored.
+*(empty — see Backlog; this domain has multiple concurrent agent
+instances working it, so check `git log -- packets/elementary/induction/`
+for very recent commits before re-populating.)*
 
 ## Backlog
 
