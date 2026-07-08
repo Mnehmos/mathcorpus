@@ -24,12 +24,13 @@ triangle inequality, strengthening the one-sided `reverse_triangle`).
 Power-mean extension: `three_var_qm_am_bound` (extends `qm_am_bound`,
 two-term case, to three variables).
 
-- [x] `avg_between_min_max` — `min a b <= (a+b)/2 <= max a b` (D0, L0).
-      Authored 2026-07-08 via tracked episode
-      `c5bd7202-10dc-4618-bbe8-d3d0ce8cd06f` (kernel_verified on the first
-      attempt: `le_total` case split, `min_eq_left`/`min_eq_right`/
-      `max_eq_left`/`max_eq_right`, closed by `linarith`). This domain's
-      first min/max packet.
+Min/max family: `avg_between_min_max` (`min a b <= (a+b)/2 <= max a b`).
+
+- [x] `min_add_min_le` — `min a c + min b d <= min (a+b) (c+d)` (D1, L1),
+      i.e. min is superadditive. Authored 2026-07-08 via tracked episode
+      `c1fdb760-3290-4537-945f-aff544b803a5` (kernel_verified on the first
+      attempt: `le_min`, `min_le_left`/`min_le_right`, closed by
+      `linarith`).
 
 ## Next targets
 

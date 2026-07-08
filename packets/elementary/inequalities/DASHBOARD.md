@@ -2,8 +2,8 @@
 
 | Metric | Value |
 |--------|-------|
-| Packets | 26 |
-| Level breakdown | L0_elementary: 6 · L1_proof_basics: 4 · L2_olympiad: 16 |
+| Packets | 27 |
+| Level breakdown | L0_elementary: 6 · L1_proof_basics: 5 · L2_olympiad: 16 |
 
 Per-packet detail lives in each packet's own `verification.episode_id`
 and in `git log -- packets/elementary/inequalities/`; re-condensed this
@@ -13,8 +13,10 @@ toward `L2_olympiad` named inequalities (AM-GM ladder, Nesbitt, Schur,
 Cauchy-Schwarz); recent cycles have deliberately added `L0`/`L1` content
 to offset that: absolute-value basics (`abs_add_le`, `abs_add_three`,
 `abs_sub_le`, `abs_abs_sub_abs_le`), power-mean extensions
-(`three_var_qm_am_bound`), and this cycle's `avg_between_min_max` (D0, L0,
-episode `c5bd7202-10dc-4618-bbe8-d3d0ce8cd06f`: `min a b <= (a+b)/2 <=
-max a b`) — this domain's first min/max packet.
+(`three_var_qm_am_bound`), and a growing min/max family:
+`avg_between_min_max` (`min a b <= (a+b)/2 <= max a b`) and this cycle's
+`min_add_min_le` (D1, L1, episode
+`c1fdb760-3290-4537-945f-aff544b803a5`: `min a c + min b d <= min (a+b)
+(c+d)`, i.e. min is superadditive).
 
 Next targets: see `QUEUE.md`.
