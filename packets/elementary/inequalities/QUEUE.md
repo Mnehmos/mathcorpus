@@ -41,6 +41,17 @@ Checked against the 16 existing packets (2026-07-07) to avoid duplicates.
       needs the ordering split rather than a single global certificate).
       Pairs with `nesbitt_three_var` as a second named-inequality target.
 
+## Done
+
+- [x] `abs_add_le` — `|a + b| <= |a| + |b|` for reals (D0, L0). Authored
+      2026-07-08 via tracked episode
+      `0c084674-3e97-422a-bff1-f5c906e0bc78` (kernel_verified on the first
+      attempt after fixing a missing `Mathlib.Data.Real.Basic` import:
+      8-way sign case split via `abs_cases` on `a`, `b`, `a + b`, closed
+      uniformly by `nlinarith`). Deliberately picked to add L0 coverage —
+      this domain was 15/19 `L2_olympiad` with only 2 `L0_elementary`
+      packets before this one.
+
 ## Next targets
 
 *(empty — see Backlog.)*
