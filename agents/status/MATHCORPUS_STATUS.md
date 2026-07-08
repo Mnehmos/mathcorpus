@@ -882,3 +882,17 @@ Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
 0 errors) and hash-stamped; commit `8bdeb46`, scoped to only these two new
 files. Full `packets/elementary/functions/` revalidated clean at 22
 packets, 0 errors, 0 warnings as of this update.
+
+## Proposed update — induction negative example, take 2 resolved (this agent, 2026-07-08)
+
+Added `packets/negative/induction/foldl_no_generalize_ih_too_weak.v1.json`
+(induction's 2nd negative example): closing the `cons` case of the
+foldl/reverse accumulator induction with bare `exact ih` (instead of
+`simp [ih]`) fails with a clean type mismatch, confirming the classic
+"induction without generalizing" trap the domain's queue had flagged as
+disproven at take 1. Commit `95afb50`. Reused the same `problem_version_id`
+across both episodes (same root statement, different closing tactic) --
+worth noting as a pattern: when a "wrong tactic" hypothesis surprises you
+by succeeding, don't necessarily abandon the target — a weaker/different
+closing tactic on the *same* problem_version can still yield the intended
+negative example without re-registering the problem.
