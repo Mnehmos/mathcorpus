@@ -1,0 +1,105 @@
+{
+  "packet_id": "frontier.formal_conjectures.union_closed_singleton_mem.v1",
+  "packet_version": "1.0.0",
+  "title": "Union-closed sets conjecture: the 'contains a singleton' special case",
+  "domain": "frontier",
+  "level": "L7_frontier",
+  "kind": "theorem",
+  "status": "kernel_verified",
+  "difficulty_bin": "D3",
+  "lean_module": "MathCorpus.Frontier.FormalConjectures.UnionClosedSingletonMem",
+  "theorem_name": "union_closed_singleton_mem",
+  "imports": [
+    "Mathlib"
+  ],
+  "toolchain": {
+    "lean_version": "v4.32.0-rc1",
+    "mathlib_rev": "360da6fa66c1273b76b6b2d8c5666fd5ac2e3b56"
+  },
+  "source_provenance": {
+    "source_kind": "formal_conjectures",
+    "source_refs": [
+      "FormalConjectures/Wikipedia/UnionClosed.lean::union_closed.variants.singleton_mem (sibling repo mnehmos.llm-driven-proof-search.environment/formal-conjectures)",
+      "https://en.wikipedia.org/wiki/Union-closed_sets_conjecture"
+    ],
+    "authors": [
+      "The MathCorpus Authors"
+    ],
+    "copyright_holder": "The MathCorpus Authors",
+    "license_spdx": "Apache-2.0",
+    "license_content": "CC-BY-4.0",
+    "statement_fidelity": "adapted_with_review"
+  },
+  "informal_statement": "The union-closed sets conjecture (Frankl's conjecture): for every finite union-closed family of sets A (other than {empty set}), there exists an element belonging to at least half of the sets in A. This remains open in general. This packet proves the special case where A contains some singleton {i}: then i itself is a witness for the >=1/2 bound. Splits A into B (members not containing i) and C (members containing i); shows 'insert i' injects B into C using union-closedness applied to each member of B together with the witness singleton {i}, giving card(B) <= card(C), hence card(C) >= card(A)/2.",
+  "informal_proof_idea": "Let B = {x in A : i not in x}, C = {x in A : i in x}. The map x -> insert i x sends B into C (since A is union-closed and {i} in A, x union {i} = insert i x is in A, and it contains i) and is injective (erase i on both sides of an equality insert i x = insert i y recovers x = y using x.erase i = x, y.erase i = y since i is not in x or y). Hence card B <= card C via Finset.card_le_card_of_injOn. Since card C + card B = card A (partition of A by membership of i), card A <= 2 * card C, i.e. (1/2) * card A <= card C.",
+  "formal_statement_pp": "theorem union_closed_singleton_mem : ∀ {n : Type*} [DecidableEq n] {A : Finset (Finset n)}, (∀ X ∈ A, ∀ Y ∈ A, X ∪ Y ∈ A) → ∀ (i : n), {i} ∈ A → ∃ i, (1 / 2 : ℚ) * (Finset.card A) ≤ Finset.card (Finset.filter (fun x => i ∈ x) A)",
+  "proof_body_path": "lean/MathCorpus/Frontier/FormalConjectures/UnionClosedSingletonMem.lean",
+  "proof_body_redacted": false,
+  "trust": {
+    "rung": 1,
+    "proof_authority": "lean_kernel",
+    "certificate_checker": "kernel_decide",
+    "encoding_required": false,
+    "encoding_soundness_status": "not_applicable",
+    "independent_review_status": "repo_reviewed",
+    "public_claim_class": "public_safe"
+  },
+  "training": {
+    "eligibility": "quarantined",
+    "reason_codes": [
+      "adapted_restatement_pending_review",
+      "default_quarantine_pending_external_review"
+    ],
+    "dedupe_cluster_id": "frontier.formal_conjectures.union_closed",
+    "template_family_id": "frontier.formal_conjectures_companion_results",
+    "open_problem_related": true,
+    "contamination_risk": "low",
+    "can_export_proof_body": true
+  },
+  "dependencies": {
+    "kits": [],
+    "tactic_tags": [
+      "Finset.card_le_card_of_injOn",
+      "Finset.card_filter_add_card_filter_not",
+      "Set.InjOn",
+      "Set.MapsTo",
+      "cancel_denoms"
+    ],
+    "prerequisite_concepts": [
+      "union_closed_family",
+      "finset_injection",
+      "finset_partition",
+      "cardinality_bound"
+    ]
+  },
+  "metrics": {
+    "loc": 24,
+    "tactic_count": 15
+  },
+  "artifacts": {
+    "public_files": [
+      "lean/MathCorpus/Frontier/FormalConjectures/UnionClosedSingletonMem.lean"
+    ]
+  },
+  "review": {
+    "review_basis": "repo self-review; kernel-verified through the tracked proof-search loop",
+    "reviewer_status": "repo_reviewed",
+    "reviewed_at": "2026-07-08"
+  },
+  "verification": {
+    "verifier": "proofsearch",
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "episode_id": "ff2e3924-a37c-44aa-9c0d-b60e3bf4e81f",
+    "outcome": "kernel_verified",
+    "kernel_verified": true,
+    "fidelity_status": "attested",
+    "step_count": 1,
+    "import_manifest_hash": "aaf21893d520a78dee0787a1bcaf939ee6b922265ff670c272e2e1d450dd29a7"
+  },
+  "notes": "ANTI-OVERCLAIM: this packet proves only the 'A contains a singleton' special case of the union-closed sets conjecture, not the conjecture in general (open in this corpus and in the literature -- the upstream file's own `union_closed` theorem for the general case is `sorry`/`research open`, and the best known general bound is Yu 2023's ~0.38234 constant, not the conjectured 1/2). Found during round 8's `Wikipedia/` bulk-grep triage: `UnionClosed.lean` (tags=6, sorries=5) had sorries strictly less than tags, flagging at least one solved theorem as sorry-free -- confirmed 3 of the 6 tagged theorems are genuinely proof-complete (`univ_card_two`, `singleton_mem`, `sharpness`); this packet transports `singleton_mem` (the other two are candidates for future cycles). Restated (not verbatim) in two respects: (1) the upstream file's `IsUnionClosed` is a transparent Prop `abbrev`, inlined directly as `∀ X ∈ A, ∀ Y ∈ A, X ∪ Y ∈ A` rather than re-declared as a def, since it carries no information beyond that formula; (2) the upstream proof's `#A`/`{x ∈ A | i ∈ x}` notations are `scoped` behind `open Finset` (confirmed by grepping the vendored Mathlib source directly for `scoped prefix ... \"#\"`), which `SubmitModule` items cannot include, so both were spelled out as plain `Finset.card`/`Finset.filter` applications -- the proof term is otherwise verbatim and required no tactic-level changes. Kernel-verified on the FIRST attempt (episode ff2e3924-a37c-44aa-9c0d-b60e3bf4e81f), using `proof_format: raw_lean_block` for this root theorem since the proof is a genuinely sequential, bullet-free multi-`have` script needing no rewriting for the flattener. `training.eligibility: quarantined` per this session's default policy for adapted/restated frontier packets; `open_problem_related: true` since this is one special case of a conjecture that remains fully open in general.",
+  "hashes": {
+    "packet_sha256": "f8b6831e00598247386cfa7cc09d4e2d9a1aceff3d878e1be68a171055f4be36",
+    "formal_statement_sha256": "9073582b9c42267ab2d51c28a6075eff88a3f59ff2b0fadd397c366653f16308",
+    "proof_body_sha256": "cf1655a8114201935782bcaa141f18d721b753b9fa7d562aec0b0d93740c4769"
+  }
+}
