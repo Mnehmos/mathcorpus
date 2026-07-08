@@ -1,0 +1,101 @@
+{
+  "packet_id": "elementary.induction.arith_seq_sum.v1",
+  "packet_version": "1.0.0",
+  "title": "General arithmetic-sequence sum formula",
+  "domain": "algebra",
+  "level": "L1_proof_basics",
+  "kind": "concept",
+  "status": "kernel_verified",
+  "difficulty_bin": "D1",
+  "lean_module": "MathCorpus.Elementary.Induction.ArithSeqSum",
+  "theorem_name": "arith_seq_sum",
+  "imports": [
+    "Mathlib"
+  ],
+  "toolchain": {
+    "lean_version": "v4.32.0-rc1",
+    "mathlib_rev": "360da6fa66c1273b76b6b2d8c5666fd5ac2e3b56"
+  },
+  "source_provenance": {
+    "source_kind": "author_written",
+    "source_refs": [],
+    "authors": [
+      "The MathCorpus Authors"
+    ],
+    "copyright_holder": "The MathCorpus Authors",
+    "license_spdx": "Apache-2.0",
+    "license_content": "CC-BY-4.0",
+    "statement_fidelity": "author_written"
+  },
+  "informal_statement": "For an arithmetic sequence starting at a with common difference d, twice the sum of the first n terms equals n * (2a + (n-1)*d) -- the general arithmetic-series formula.",
+  "informal_proof_idea": "Induction on n: the base case n = 0 is the empty sum equalling 0 * (2a + (-1)*d) = 0. In the successor step, split off the last term a + n*d with Finset.sum_range_succ, distribute the *2 via add_mul, apply the inductive hypothesis, then push_cast (to align the ℕ->ℤ casts of n and n+1) and ring close the resulting polynomial identity.",
+  "formal_statement_pp": "theorem arith_seq_sum (a d : ℤ) (n : ℕ) : (∑ i ∈ Finset.range n, (a + (i : ℤ) * d)) * 2 = (n : ℤ) * (2 * a + ((n : ℤ) - 1) * d)",
+  "proof_body_path": "lean/MathCorpus/Elementary/Induction/ArithSeqSum.lean",
+  "proof_body_redacted": false,
+  "trust": {
+    "rung": 1,
+    "proof_authority": "lean_kernel",
+    "certificate_checker": "kernel_decide",
+    "encoding_required": false,
+    "encoding_soundness_status": "not_applicable",
+    "independent_review_status": "repo_reviewed",
+    "public_claim_class": "public_safe"
+  },
+  "training": {
+    "eligibility": "public_train",
+    "reason_codes": [
+      "public",
+      "non_benchmark",
+      "unredacted"
+    ],
+    "dedupe_cluster_id": "induction.arith_seq_sum",
+    "template_family_id": "induction.arithmetic_series",
+    "contamination_risk": "low",
+    "can_export_proof_body": true
+  },
+  "dependencies": {
+    "kits": [],
+    "tactic_tags": [
+      "induction",
+      "Finset.sum_range_succ",
+      "add_mul",
+      "push_cast",
+      "ring"
+    ],
+    "prerequisite_concepts": [
+      "induction",
+      "finite_sum",
+      "arithmetic_sequence"
+    ]
+  },
+  "metrics": {
+    "loc": 3,
+    "tactic_count": 1
+  },
+  "artifacts": {
+    "public_files": [
+      "lean/MathCorpus/Elementary/Induction/ArithSeqSum.lean"
+    ]
+  },
+  "review": {
+    "review_basis": "repo self-review; kernel-verified through the tracked proof-search loop",
+    "reviewer_status": "repo_reviewed"
+  },
+  "verification": {
+    "verifier": "proofsearch",
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "episode_id": "b6ef7a97-8dc3-4d6c-b031-d31806c8cb53",
+    "outcome": "kernel_verified",
+    "kernel_verified": true,
+    "fidelity_status": "attested",
+    "step_count": 1,
+    "import_manifest_hash": "30ab6302868b3f30ae2a3d1cb0218648f84eba4c0090864a3d2e34eaf98b922e",
+    "verified_at": "2026-07-08T05:56:15Z"
+  },
+  "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode b6ef7a97), kernel_verified on the first attempt. Generalizes three of the domain's existing closed-form sum packets into a single reusable lemma: gauss_sum is the a=0, d=1 case; sum_odds is a=1, d=2; sum_evens is a=2, d=2. Stated over ℤ (rather than ℕ) so (n-1) can go negative at n=0 without truncation, matching the domain's established pattern (geom_series_sum_induction, telescoping_sum) of picking an ordered ring where the natural algebra holds cleanly.",
+  "hashes": {
+    "packet_sha256": "21156aaef2f2acb19e73200abfff8eba081157ec9eb2dc57e23a219eeb77dfdb",
+    "formal_statement_sha256": "f722d562b809e936493a959e9ebbc1c8a48f2feae55d9dd44b3d6a741e305711",
+    "proof_body_sha256": "ff52b80e634b02789f11e31a418e356f33e953267673170aca9443f91c47a5a8"
+  }
+}

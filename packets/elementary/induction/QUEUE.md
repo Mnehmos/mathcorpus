@@ -1,180 +1,59 @@
 # Queue — Induction (Elementary)
 
 Candidate packets to create or formalize next, roughly in priority order.
-**This domain is the smallest in the corpus (8 packets) — prioritize it
-over other elementary domains when otherwise unconstrained**, per
-`agents/status/MATHCORPUS_STATUS.md`.
+**This domain has repeatedly been the smallest in the corpus** — prioritize
+it over other elementary domains when otherwise unconstrained, per
+`agents/status/MATHCORPUS_STATUS.md` — though check current per-domain
+counts before assuming that's still true, since multiple concurrent agent
+instances work this domain every cycle.
 
-## Done
+Per-packet history (episode IDs, tactic scripts, lessons learned) lives in
+each packet's own `verification.episode_id`/`notes` fields and in
+`git log -- packets/elementary/induction/`; this file previously grew an
+unbounded, repeatedly-headered "Done" list and has been condensed here
+(same cleanup already applied to this domain's `DASHBOARD.md` and to the
+inequalities/combinatorics domains this session).
 
-- [x] `two_pow_gt_self` — `n < 2 ^ n` for all `n` (D0, L0). Authored
-      2026-07-08 via tracked episode `5a175c43-1c93-4cf7-a4e9-5038e1961068`
-      (kernel_verified: `induction n with | zero => norm_num | succ n ih =>
-      rw [pow_succ]; nlinarith [ih]`). The naive `nlinarith [ih]` attempt
-      (no `pow_succ` rewrite) kernel-failed first in the same episode and is
-      preserved as
-      `packets/negative/induction/pow_succ_atom_nlinarith_failure.v1.json`.
-- [x] `bernoulli_inequality` — `1 + n*x <= (1+x)^n` for `x >= -1` (D1, L1).
-      Authored 2026-07-08 via tracked episode
-      `344364cb-791a-4e8a-9f5e-be0cc95210de` (kernel_verified on the first
-      attempt: `induction n`, `mul_le_mul_of_nonneg_right ih hx'` +
-      `sq_nonneg x` as nlinarith hints). Uses `InequalityEstimateKit`
-      (recorded in `CROSS_DOMAIN.md`); cross-references
-      `packets/elementary/inequalities/`.
-- [x] `sum_evens` — `∑ i ∈ range n, (2*i+2) = n*(n+1)` (2, 4, ..., 2n) (D1,
-      L1). Authored 2026-07-08 via tracked episode
-      `7c564d42-9a98-4780-9d1c-3affd65958d6` (kernel_verified on the first
-      attempt: `induction n with | zero => simp | succ k ih => rw
-      [Finset.sum_range_succ, ih]; ring`). Reformulated from the queue's
-      `2*i = n*(n-1)` phrasing to the subtraction-free `2*(i+1) = n*(n+1)`
-      form (first n positive evens 2..2n) to avoid ℕ truncated-subtraction
-      noise in the successor step — mirrors `sum_odds`'s style. Needed an
-      explicit `problem_imports:
-      ["Mathlib.Algebra.BigOperators.Group.Finset.Basic"]` on
-      `problem_create`; the base dev-attestation manifest (Ring + NormNum
-      only) does not carry `Finset.sum`/`∑` notation, and `open scoped
-      BigOperators` no longer resolves under this pinned Mathlib rev
-      (namespace doesn't exist) — don't reuse that directive for future
-      Finset.sum targets in this domain.
+## Done (condensed)
 
-- [x] `factorial_ge_two_pow` — `2 ^ n <= (n + 1)!` for all `n` (D1, L1),
-      equivalent via `n -> n - 1` to the queue's original `n! >= 2^(n-1)`
-      for `n >= 1` phrasing, restated shifted-by-one to avoid ℕ truncated
-      subtraction. Authored 2026-07-08 via tracked episode
-      `538ea8b6-6ad7-4a16-9e9b-bda5364ba942` (kernel_verified on the first
-      attempt: `induction n with | zero => norm_num [Nat.factorial] | succ
-      n ih => rw [Nat.factorial_succ, pow_succ]; nlinarith [ih,
-      Nat.factorial_pos (n + 1)]`). Cross-referenced against
-      `packets/elementary/number_theory/factorial_pos.v1.json` /
-      `factorial_le.v1.json` in `CROSS_DOMAIN.md` (no direct proof-term
-      dependency, same subject matter).
+Closed-form finite sums/products (`Finset.sum_range_succ` /
+`Finset.prod_range_succ` + `ring`/`omega`): `gauss_sum`, `sum_odds`,
+`sum_evens`, `sum_squares`, `sum_cubes`, `sum_range_succ`,
+`prod_range_succ`, `geom_series_sum_induction`, `fib_sum_succ`.
 
-- [x] `geom_series_sum_induction` — `(∑ i ∈ range n, r ^ i) * (r - 1) = r ^
-      n - 1` over `ℤ` (D1, L1). Authored 2026-07-08 via tracked episode
-      `f99a1298-917b-4e15-9fc4-edcce273d204` (kernel_verified on the first
-      attempt: `induction n with | zero => simp | succ k ih => rw
-      [Finset.sum_range_succ, add_mul, ih]; ring`). This entry had gone
-      stale — the packet already existed on disk (landed in commit
-      `acb84ec` after a concurrent-write race dropped it from `ca0f1d6`)
-      but this queue file hadn't been updated to reflect it; fixed here to
-      prevent a duplicate re-proof attempt by a concurrent domain-agent
-      instance.
+General reusable lemmas (distinct from the specific closed forms above):
+`telescoping_sum` (the general telescoping principle), `arith_seq_sum`
+(the general arithmetic-series formula, generalizing `gauss_sum`/
+`sum_odds`/`sum_evens`).
+
+Monotonicity: `sum_range_monotone`, `prod_range_monotone` (its product
+sibling).
+
+Inequalities by induction / powers: `two_pow_gt_self`, `bernoulli_inequality`,
+`factorial_ge_two_pow`, `fib_le_two_pow` (growth bound on a hand-rolled
+pair-encoded Fibonacci).
+
+Strong induction: `exists_prime_factor` (every `n >= 2` has a prime
+factor).
+
+Recursion via `SubmitModule` (every technique in `LOOP.md`'s focus list is
+now demonstrated): structural (`myfactorial_eq_factorial`), mutual
+(`even_odd_mutual_totality`), well-founded/non-structural
+(`mygcd_wellfounded`, `euclid_gcd_eq_gcd` — the latter strengthens the
+former's base-case-only result to full correctness against `Nat.gcd`; see
+that packet's `notes` for the `WellFoundedLT.fix`/`Nat.strongRecOn`
+unfolding lesson, since neither reduces by `rfl`).
+
+Lists: `foldl_cons_eq_reverse_append` (originally attempted as a negative
+example for "induction without generalizing an auxiliary variable" —
+`simp [ih]` turned out strong enough despite `acc` not being generalized,
+so it became a positive packet instead; see
+`packets/negative/induction/` for a version of that failure mode that
+*did* reproduce).
 
 ## Next targets
 
-*(empty — see Backlog; this domain has multiple concurrent agent
-instances working it, so check `git log -- packets/elementary/induction/`
-for very recent commits before re-populating.)*
-
-- [x] `foldl_cons_eq_reverse_append` — `l.foldl (fun a x => x :: a) acc =
-      l.reverse ++ acc` for `l acc : List ℕ` (D1, L1). Authored 2026-07-08
-      via tracked episode `0ab12a3b-a0fb-4981-b6fe-63628a4f6fb6`
-      (kernel_verified: `intro l acc; induction l with | nil => simp |
-      cons x xs ih => simp [ih]`). Originally attempted as the negative
-      example queued in `packets/negative/induction/QUEUE.md` for
-      "induction without generalizing an auxiliary variable" — `simp [ih]`
-      turned out strong enough to close it despite `acc` not being
-      generalized, so the hypothesis was false and this became a positive
-      packet instead (queue corrected to suggest a weaker closing tactic
-      for a real attempt at that failure mode).
-
-## Done (continued)
-
-- [x] Strong induction example: every `n >= 2` has a prime factor. Authored
-      2026-07-08 as `exists_prime_factor` via tracked episode
-      `ac1ea7d4-4b1a-406e-8c2a-e209d5cd03d5` (kernel_verified on the first
-      attempt: `Nat.strong_induction_on`, case split on `n.Prime`,
-      `Nat.exists_dvd_of_not_prime2` for the non-prime branch, `dvd_trans`
-      to close). Proved directly against Mathlib's primality API rather
-      than waiting on the number_theory domain's `prime_two` /
-      `not_prime_one` packets — those were a suggested narrative ordering,
-      not a real Lean dependency (`Nat.Prime` and its lemmas already exist
-      in Mathlib regardless of whether those trivial packets are
-      authored). This is the domain's first packet using genuine strong
-      induction (`Nat.strong_induction_on`) rather than plain
-      `induction n with zero | succ`.
-
-- [x] Recursion via `SubmitModule`: hand-rolled `myFactorial` (helper `def`
-      via `Nat.rec`) proved equal to `Nat.factorial`. Authored 2026-07-08
-      as `myfactorial_eq_factorial` via tracked episode
-      `99b8de59-4ed4-4fa8-b0cd-0d966b9ba800` (kernel_verified on the first
-      attempt, submitted as a `SubmitModule` action — one helper `def` +
-      root theorem — rather than a single `Solve` tactic block; confirmed
-      `problem_create` hash-matches the root statement syntactically, so a
-      root statement may reference a helper name that doesn't exist yet at
-      registration time). This domain's first packet exercising
-      `SubmitModule` — every prior packet used `Solve` only.
-
-- [x] Mutual recursion via `mutual_group`: `even_odd_mutual_totality`
-      already landed (commit `824410b`) — a concurrent domain-agent
-      instance beat this note to it; removed from backlog to avoid a
-      duplicate attempt.
-- [x] "Induction without generalizing an auxiliary variable" negative
-      example attempt pivoted to a positive packet,
-      `foldl_cons_eq_reverse_append` (commit `5c61d06`) — `simp [ih]`
-      turned out strong enough despite `acc` not being generalized, so the
-      intended failure never materialized.
-
-- [x] Fibonacci-style growth bound: hand-rolled `fib` via pair-encoding
-      recursion (`fibPair n = (fib n, fib (n+1))`, `Nat.rec` on pairs)
-      satisfies `fib n <= 2^n`. Authored 2026-07-08 as `fib_le_two_pow` via
-      tracked episode `11c5774d-6e4a-41f5-9a68-d8041146d59d`
-      (kernel_verified on the **second** `SubmitModule` attempt; the first
-      used `show` to jump to a `Prod.fst`/`Prod.snd`-reduced goal before
-      `omega`, which left `omega` looking at the un-reduced
-      `(fibPair (n+1)).2` atom and failed — fixed by adding an explicit
-      `fibPair_succ : fibPair (n+1) = (..) := rfl` lemma and using it as a
-      `simp` rewrite instead of `show`). Tactic-transport lesson: prefer an
-      explicit `rfl` unfolding lemma + `simp`/`rw` over `show` when a proof
-      needs a pair/tuple projection reduced before arithmetic automation
-      runs — `show`'s defeq check can silently accept a goal-swap without
-      actually normalizing the term `omega`/`nlinarith` will see.
-
-- [x] `prod_range_monotone` — partial products of a `>=1`-valued sequence
-      are monotone in the upper bound (mirrors `sum_range_monotone`, which
-      only needs `>=0`, automatic in ℕ). Authored 2026-07-08 via tracked
-      episode `5918401a-b5cd-492f-96f9-1bcbf785885e` (kernel_verified on
-      the first attempt: `induction k`, `Finset.prod_range_succ`,
-      `le_mul_of_one_le_right`). Sibling of `sum_range_monotone.v1`, not a
-      cross-domain dependency, so not recorded in `CROSS_DOMAIN.md`.
-
-- [x] `fib_sum_succ` — `(∑ i ∈ range n, Nat.fib i) + 1 = Nat.fib (n + 1)`
-      (D1, L1). Authored 2026-07-08 via tracked episode
-      `fe47cf48-95d4-4fbc-a25a-7b089b11b0e6` (kernel_verified on the first
-      attempt: `Finset.sum_range_succ`, `Nat.fib_add_two`, `omega`).
-      Distinct from `fib_le_two_pow` (a growth-rate bound on a hand-rolled
-      fib via `SubmitModule`): this uses Mathlib's `Nat.fib` directly and
-      proves an exact partial-sum identity. Picked fresh after both
-      "Next targets" and "Backlog" were empty this cycle.
-
-## Backlog
-
-- [x] `telescoping_sum` — `∑ i ∈ range n, (a (i+1) - a i) = a n - a 0` for
-      `a : ℕ → ℤ` (D1, L1). Authored 2026-07-08 via tracked episode
-      `10b7c24b-f611-404a-8193-62b74b80b344` (kernel_verified on the first
-      attempt: `induction n with | zero => simp | succ n ih => rw
-      [Finset.sum_range_succ, ih]; ring`). Deliberately picked as the
-      general telescoping principle itself, distinct from the domain's
-      existing closed-form sum packets (`sum_odds`, `sum_evens`,
-      `sum_squares`, `sum_cubes`, `gauss_sum`, `geom_series_sum_induction`),
-      which are all specific instances rather than the general mechanism.
-
-- [x] Well-founded (non-structural) recursion via `SubmitModule`: two
-      independent packets now cover this. `mygcd_wellfounded` (concurrent
-      agent, episode `7e36dbd3`) defines `myGcd` via `Nat.strongRecOn` and
-      proves the base case `myGcd a 0 = a` only. `euclid_gcd_eq_gcd` (this
-      agent, episode `a4a2a972`) defines a *separately-named* `euclidGcd`
-      via `WellFoundedLT.fix` (renamed from an initial `myGcd` attempt,
-      episode `d83a52a3`, after discovering the name collision with the
-      concurrent packet above) and proves full correctness,
-      `euclidGcd b a = Nat.gcd b a`, by strong induction — strengthens the
-      base-case-only result to the real theorem. Key lesson for future
-      `WellFoundedLT.fix`/`Nat.strongRecOn` attempts in this domain: neither
-      reduces by `rfl`; use `unfold <name>; rw [WellFoundedLT.fix_eq]` (or
-      `simp [<name>, Nat.strongRecOn_eq]`) instead, and when rewriting with
-      a lemma like `Nat.gcd_rec` that could match either side of a goal,
-      instantiate its arguments explicitly to control which occurrence it
-      rewrites.
+*(empty — see Backlog.)*
 
 ## Backlog
 
