@@ -63,6 +63,17 @@ Min/max family: `avg_between_min_max` (`min a b <= (a+b)/2 <= max a b`),
       for the GroupWithZero-generalized lemma family) —
       `mathlib_search_declarations` surfaced the current name.
 
+- [x] `general_cauchy_schwarz` — the general n-term Cauchy-Schwarz
+      inequality over an arbitrary `Finset`, `(∑ i∈s, a i*b i)^2 <=
+      (∑ i∈s, (a i)^2) * (∑ i∈s, (b i)^2)` (L2, D1). Authored 2026-07-08
+      via tracked episode `fcb86396-6102-463a-91e3-726bf4f96594`
+      (kernel_verified on the first attempt: a direct citation of
+      Mathlib's `Finset.sum_mul_sq_le_sq_mul_sq`, found via
+      `mathlib_search_declarations` before writing any proof attempt).
+      Extends `cauchy_two_term`/`cauchy_three_term`'s fixed small arities
+      to the general case, mirroring `general_amgm`'s prior extension of
+      the AM-GM ladder.
+
 ## Next targets
 
 *(empty — see Backlog.)*

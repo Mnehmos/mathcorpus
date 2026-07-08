@@ -3411,3 +3411,35 @@ packetized: A34693 last cycle, A358684 this cycle). Commit `df614af`.
 errors/warnings. No blocking dev-toolchain bugs found in
 `agents/github_issues/{BUGS,TRIAGE}.md` this cycle. Next untriaged
 formal_conjectures category: `Paper/` (12 files, smallest remaining).
+
+## Proposed update — inequalities: general_cauchy_schwarz packet (this agent, 2026-07-08)
+
+Priority-3 elementary work this cycle (no blocking bugs; no zero-coverage
+negative lane; induction/inequalities tied lowest at 31 packets each,
+both with only vague "repopulate from LOOP.md focus" backlog notes).
+Checked induction first for a fresh gap (fib monotonicity, binary
+representation via strong induction) but `mathlib_search_declarations`
+showed `Nat.fib_mono` already exists as a one-line Mathlib citation,
+less valuable as a "genuine induction" training example than the
+domain's usual hand-rolled proofs, and other candidates felt marginal —
+pivoted to inequalities instead.
+
+Noticed the domain already has a "general_amgm" precedent: extending a
+fixed-arity named-inequality ladder (`am_gm_two`/`am_gm_four_term`/
+`three_var_am_gm`) to the general n-term/Finset case. The domain's
+Cauchy-Schwarz family (`cauchy_two_term`, `cauchy_three_term`) had the
+exact same fixed-arity-only gap. Found Mathlib's actual general Cauchy-
+Schwarz lemma (`Finset.sum_mul_sq_le_sq_mul_sq`) via
+`mathlib_search_declarations` before writing anything, then authored
+`general_cauchy_schwarz`: `(∑ a_i*b_i)^2 <= (∑ a_i^2)*(∑ b_i^2)` over an
+arbitrary `Finset`. Kernel-verified on the FIRST attempt (tracked
+episode `fcb86396-6102-463a-91e3-726bf4f96594`) — a single `exact`
+citation, no false starts, since the lemma name was confirmed before
+attempting.
+
+Authored `packets/elementary/inequalities/general_cauchy_schwarz.v1.json`
++ `lean/MathCorpus/Elementary/Inequalities/GeneralCauchySchwarz.lean`,
+stamped hashes, validated clean (340 packets total, 0 errors, 0
+warnings). Updated `DASHBOARD.md`/`QUEUE.md` in
+`packets/elementary/inequalities/`. Committed only this cycle's own
+files, pathspec-scoped.
