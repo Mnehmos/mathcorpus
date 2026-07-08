@@ -1,0 +1,98 @@
+{
+  "packet_id": "elementary.inequalities.cauchy_three_term.v1",
+  "packet_version": "1.0.0",
+  "title": "Cauchy-Schwarz inequality, three-term case",
+  "domain": "algebra",
+  "level": "L2_olympiad",
+  "kind": "concept",
+  "status": "kernel_verified",
+  "difficulty_bin": "D2",
+  "lean_module": "MathCorpus.Elementary.Inequalities.CauchyThreeTerm",
+  "theorem_name": "cauchy_three_term",
+  "imports": [
+    "Mathlib"
+  ],
+  "toolchain": {
+    "lean_version": "v4.32.0-rc1",
+    "mathlib_rev": "360da6fa66c1273b76b6b2d8c5666fd5ac2e3b56"
+  },
+  "source_provenance": {
+    "source_kind": "author_written",
+    "source_refs": [],
+    "authors": [
+      "The MathCorpus Authors"
+    ],
+    "copyright_holder": "The MathCorpus Authors",
+    "license_spdx": "Apache-2.0",
+    "license_content": "CC-BY-4.0",
+    "statement_fidelity": "author_written"
+  },
+  "informal_statement": "For all reals a, b, c, x, y, z: (a*x + b*y + c*z)^2 <= (a^2+b^2+c^2)*(x^2+y^2+z^2) -- the three-term Cauchy-Schwarz inequality.",
+  "informal_proof_idea": "Lagrange's identity: (a^2+b^2+c^2)(x^2+y^2+z^2) - (ax+by+cz)^2 = (ay-bx)^2 + (az-cx)^2 + (bz-cy)^2, a sum of three squares, hence nonnegative. nlinarith verifies the resulting degree-4 polynomial identity directly once given the three square terms as hints.",
+  "formal_statement_pp": "theorem cauchy_three_term (a b c x y z : ℝ) : (a * x + b * y + c * z) ^ 2 ≤ (a ^ 2 + b ^ 2 + c ^ 2) * (x ^ 2 + y ^ 2 + z ^ 2)",
+  "proof_body_path": "lean/MathCorpus/Elementary/Inequalities/CauchyThreeTerm.lean",
+  "proof_body_redacted": false,
+  "trust": {
+    "rung": 1,
+    "proof_authority": "lean_kernel",
+    "certificate_checker": "kernel_decide",
+    "encoding_required": false,
+    "encoding_soundness_status": "not_applicable",
+    "independent_review_status": "repo_reviewed",
+    "public_claim_class": "public_safe"
+  },
+  "training": {
+    "eligibility": "public_train",
+    "reason_codes": [
+      "public",
+      "non_benchmark",
+      "unredacted"
+    ],
+    "dedupe_cluster_id": "inequalities.cauchy_three_term",
+    "template_family_id": "inequalities.cauchy_schwarz_ladder",
+    "contamination_risk": "low",
+    "can_export_proof_body": true
+  },
+  "dependencies": {
+    "kits": [],
+    "tactic_tags": [
+      "nlinarith",
+      "sq_nonneg"
+    ],
+    "prerequisite_concepts": [
+      "cauchy_schwarz",
+      "sum_of_squares",
+      "lagrange_identity"
+    ]
+  },
+  "metrics": {
+    "loc": 3,
+    "tactic_count": 1
+  },
+  "artifacts": {
+    "public_files": [
+      "lean/MathCorpus/Elementary/Inequalities/CauchyThreeTerm.lean"
+    ]
+  },
+  "review": {
+    "review_basis": "repo self-review; kernel-verified through the tracked proof-search loop",
+    "reviewer_status": "repo_reviewed"
+  },
+  "verification": {
+    "verifier": "proofsearch",
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "episode_id": "3e12e9cc-d08e-45e5-90ef-02c63889deec",
+    "outcome": "kernel_verified",
+    "kernel_verified": true,
+    "fidelity_status": "attested",
+    "step_count": 1,
+    "import_manifest_hash": "641f8d8d8937250da6295303edf3130bba456da7afbfb4eddc2efa972f48106b",
+    "verified_at": "2026-07-08T06:15:20Z"
+  },
+  "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 3e12e9cc), kernel_verified on the first attempt. Extends cauchy_two_term.v1 (the two-term case) by one more variable pair, mirroring how the domain's AM-GM ladder was built up from 2 to 3 to 4 terms.",
+  "hashes": {
+    "packet_sha256": "c5cc7683094cfd2fcc5c6329289da9fca5436c8426f7a094a989d7b3b1a354cf",
+    "formal_statement_sha256": "483b560993c9add62d988e2187545e3af7078da15a16e978efbadd322bc429d9",
+    "proof_body_sha256": "34ea0fc6f7eb552fbef456cc155108f119fbaf6c894aa39a6d0c90c408f8fb93"
+  }
+}

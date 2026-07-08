@@ -13,20 +13,19 @@ combinatorics dashboards this session) and has been condensed here.
 
 Named-inequality ladder (`L2_olympiad`): `am_gm_four_term`,
 `nesbitt_three_var` (paired negative example:
-`nesbitt_bare_nlinarith_division_failure.v1`), `schur_degree_one`.
+`nesbitt_bare_nlinarith_division_failure.v1`), `schur_degree_one`,
+`cauchy_three_term` (extends `cauchy_two_term` by one variable pair).
 
 Absolute-value basics (`L0`/`L1`, added to offset the domain's
 `L2_olympiad` skew): `abs_add_le`, `abs_add_three`, `abs_sub_le` (metric
 triangle inequality), `abs_abs_sub_abs_le` (full doubly-absolute reverse
 triangle inequality, strengthening the one-sided `reverse_triangle`).
 
-- [x] `abs_abs_sub_abs_le` — `| |a| - |b| | <= |a - b|` (D0, L0), the full
-      reverse triangle inequality. Authored 2026-07-08 via tracked episode
-      `e036f4e8-cc8b-4387-96fe-78263bfabd2d` (kernel_verified on the first
-      attempt: `abs_cases` on `a`, `b`, `a - b`, and `|a| - |b|` (16
-      branches), closed uniformly by `nlinarith`). Strengthens
-      `reverse_triangle.v1` (which only proves the one-sided
-      `|a| - |b| <= |a - b|`) to the doubly-absolute form.
+- [x] `cauchy_three_term` — `(ax+by+cz)^2 <= (a^2+b^2+c^2)*(x^2+y^2+z^2)`
+      (D2, L2). Authored 2026-07-08 via tracked episode
+      `3e12e9cc-d08e-45e5-90ef-02c63889deec` (kernel_verified on the first
+      attempt: `nlinarith [sq_nonneg (a*y-b*x), sq_nonneg (a*z-c*x),
+      sq_nonneg (b*z-c*y)]`, the Lagrange-identity SOS decomposition).
 
 ## Next targets
 

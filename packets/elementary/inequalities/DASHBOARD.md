@@ -2,8 +2,8 @@
 
 | Metric | Value |
 |--------|-------|
-| Packets | 23 |
-| Level breakdown | L0_elementary: 5 · L1_proof_basics: 3 · L2_olympiad: 15 |
+| Packets | 24 |
+| Level breakdown | L0_elementary: 5 · L1_proof_basics: 3 · L2_olympiad: 16 |
 
 Per-packet detail lives in each packet's own `verification.episode_id`
 and in `git log -- packets/elementary/inequalities/`; this file
@@ -13,7 +13,11 @@ dashboards this session). Highlights: this domain started heavily skewed
 toward `L2_olympiad` named inequalities (AM-GM ladder, Nesbitt, Schur);
 recent cycles have been deliberately adding `L0`/`L1` absolute-value
 basics (`abs_add_le`, `abs_add_three`, `abs_sub_le` the metric-distance
-triangle inequality, and this cycle's `abs_abs_sub_abs_le`, the full
-doubly-absolute reverse triangle inequality) to offset that skew.
+triangle inequality, `abs_abs_sub_abs_le` the full doubly-absolute
+reverse triangle inequality) to offset that skew. Also added this cycle:
+`cauchy_three_term` (D2, L2, episode
+`3e12e9cc-d08e-45e5-90ef-02c63889deec`), extending `cauchy_two_term` by
+one more variable pair via the Lagrange-identity SOS hints, mirroring how
+the AM-GM ladder was built up from 2 to 3 to 4 terms.
 
 Next targets: see `QUEUE.md`.
