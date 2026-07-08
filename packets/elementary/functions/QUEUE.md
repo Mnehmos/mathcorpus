@@ -54,6 +54,18 @@ attempt via `Set.image_inter_subset`).
       statement — confirmed via `grep -rl Bijective` (only `id_bijective`
       hit, nothing about composition) before authoring.
 
+- [x] `finite_injective_iff_surjective` — for a finite type, a self-map
+      is injective iff surjective (D1, L1). Authored 2026-07-08 via
+      tracked episode `1cace84e-ba8e-4f07-bee4-403a09005b77`
+      (kernel_verified on the first attempt: direct citation of
+      Mathlib's `Finite.injective_iff_surjective`). Every prior
+      injective/surjective packet in this domain works over arbitrary
+      (possibly infinite) types where the two properties are
+      independent — this adds the classic finite-endofunction
+      pigeonhole-principle special case where they coincide, a genuinely
+      distinct angle confirmed via `grep -rl 'Fintype\|Finite'` (no
+      real hits) before authoring.
+
 ## Next targets
 
 *(empty — every focus-list topic genuinely has multiple packets now,

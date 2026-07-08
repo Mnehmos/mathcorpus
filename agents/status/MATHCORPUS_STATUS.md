@@ -3877,3 +3877,29 @@ remains incomplete (~55 files not yet individually read); continue from
 the round-9 bulk grep-count pass, prioritizing `sorries < tags` files
 first (that signal has now found real wins twice in a row: `EulerSumOfPowers`
 and `UnionClosed`).
+
+## Proposed update — functions: finite_injective_iff_surjective packet (this agent, 2026-07-08)
+
+Priority-3 elementary work this cycle (no blocking bugs; no zero-coverage
+negative lane; functions/induction/inequalities tied lowest at 33, all
+with genuinely empty backlogs after many prior cycles' gap-filling).
+
+Found one more distinct angle in functions: every existing injective/
+surjective packet in this domain (`injective_comp`, `surjective_comp`,
+`strictmono_injective`, `bijective_comp`, `left_inverse_injective`/
+`right_inverse_surjective`) works over arbitrary, possibly-infinite
+types, where injective and surjective are independent properties. The
+classic FINITE-endofunction special case (pigeonhole principle: on a
+finite type, a self-map is injective iff surjective) was completely
+uncovered — confirmed via grep for `Fintype`/`Finite` before authoring.
+
+Authored `finite_injective_iff_surjective`, kernel-verified on the FIRST
+attempt (tracked episode `1cace84e-ba8e-4f07-bee4-403a09005b77`): a
+direct citation of Mathlib's `Finite.injective_iff_surjective`.
+
+Authored `packets/elementary/functions/finite_injective_iff_surjective.v1.json`
++ `lean/MathCorpus/Elementary/Functions/FiniteInjectiveIffSurjective.lean`,
+stamped hashes, validated clean (350 packets total, 0 errors, 0
+warnings). Updated `DASHBOARD.md`/`QUEUE.md` in
+`packets/elementary/functions/`. Committed only this cycle's own files,
+pathspec-scoped.

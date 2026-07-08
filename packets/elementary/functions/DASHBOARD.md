@@ -2,7 +2,7 @@
 
 | Metric | Value |
 |--------|-------|
-| Packets | 33+ (this domain has multiple concurrent agent instances committing to it every cycle — re-derive the exact count via `python tools/corpus_stats.py` or `git log -- packets/elementary/functions/` rather than trusting this number) |
+| Packets | 34+ (this domain has multiple concurrent agent instances committing to it every cycle — re-derive the exact count via `python tools/corpus_stats.py` or `git log -- packets/elementary/functions/` rather than trusting this number) |
 | Level breakdown | roughly even split between L0_elementary and L1_proof_basics |
 
 Per-packet detail lives in each packet's own `verification.episode_id`
@@ -22,9 +22,13 @@ satisfies `f (g b) = b` directly from the definition, no rewriting
 needed). A prior cycle's dashboard claimed "every focus topic" was
 covered before `inverse` actually had any packets — re-verify claims
 like that against a grep of the actual files, not just the prose here.
-And this cycle's `bijective_comp` (D0, L1, episode `0b5fbe31`): the
+`bijective_comp` (D0, L1, episode `0b5fbe31`): the
 composition of two bijective functions is bijective, completing the
 `injective_comp`/`surjective_comp` pair with the combined `Bijective`
-statement.
+statement. And this cycle's `finite_injective_iff_surjective` (D1, L1,
+episode `1cace84e`): the pigeonhole-principle special case where a
+FINITE self-map's injectivity and surjectivity coincide — every other
+injective/surjective packet in this domain works over arbitrary
+(possibly infinite) types where the two are independent.
 
 Next targets: see `QUEUE.md`.
