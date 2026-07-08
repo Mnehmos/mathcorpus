@@ -1,0 +1,75 @@
+{
+  "packet_id": "negative.combinatorics.card_union_no_disjoint.false_generalization.v1",
+  "packet_version": "1.0.0",
+  "title": "False generalization: Finset.card_union without a disjointness hypothesis",
+  "domain": "combinatorics",
+  "level": "L1_proof_basics",
+  "kind": "negative_example",
+  "status": "failed_attempt",
+  "difficulty_bin": "D1",
+  "source_provenance": {
+    "source_kind": "repo_original",
+    "source_refs": [],
+    "authors": [
+      "The MathCorpus Authors"
+    ],
+    "copyright_holder": "The MathCorpus Authors",
+    "license_spdx": "Apache-2.0",
+    "license_content": "CC-BY-4.0",
+    "statement_fidelity": "author_written"
+  },
+  "informal_statement": "A tempting but false generalization: that Finset union cardinality is unconditionally additive, (s ∪ t).card = s.card + t.card, for arbitrary finite sets s, t : Finset ℕ. This is only true when s and t are disjoint (Finset.card_union_of_disjoint); the unconditional statement is mathematically false, not merely hard to prove.",
+  "formal_statement_pp": "theorem root_theorem : ∀ s t : Finset ℕ, (s ∪ t).card = s.card + t.card",
+  "failure": {
+    "gap_category": "false_generalization",
+    "sub_category": "missing_disjointness_hypothesis",
+    "input_context_summary": "Goal `∀ s t : Finset ℕ, (s ∪ t).card = s.card + t.card` after `intro s t`, i.e. `(s ∪ t).card = s.card + t.card` over `Finset ℕ`.",
+    "attempt_summary": "Applied `simp` directly, the natural first instinct for what looks like a basic cardinality identity. `simp` made no progress (kernel_fail / tactic_failure) — there is no valid simp-normal-form proof because the statement is false in general, not merely outside simp's reach.",
+    "lesson": "Unlike a tactic-mismatch negative example, no tactic can close this goal because the goal itself is false: (s ∪ t).card = s.card + t.card only holds when Disjoint s t (Finset.card_union_of_disjoint); in general the correct identity is the inclusion-exclusion form (s ∪ t).card + (s ∩ t).card = s.card + t.card (see the paired tactic-mismatch example negative.combinatorics.finset_card_atoms.omega_failure.v1). The falseness is kernel-verified directly, not just inferred from one failed attempt: the companion packet elementary.combinatorics.card_union_not_additive.v1 proves ¬(∀ s t : Finset ℕ, (s ∪ t).card = s.card + t.card) via the explicit witness s = t = {0}, where (s ∪ t).card = 1 but s.card + t.card = 2."
+  },
+  "proof_body_redacted": false,
+  "trust": {
+    "rung": 0,
+    "proof_authority": "none",
+    "public_claim_class": "public_safe"
+  },
+  "training": {
+    "eligibility": "negative_example_only",
+    "reason_codes": [
+      "public",
+      "explicit_negative_label"
+    ],
+    "dedupe_cluster_id": "combinatorics.card_union_disjoint",
+    "template_family_id": "combinatorics.false_generalization_hazards",
+    "contamination_risk": "low"
+  },
+  "dependencies": {
+    "kits": [
+      "ExtremalCombinatoricsKit"
+    ],
+    "tactic_tags": [
+      "simp",
+      "Finset.card",
+      "Finset.card_union_of_disjoint"
+    ],
+    "prerequisite_concepts": [
+      "finite_set",
+      "cardinality",
+      "union",
+      "disjointness"
+    ]
+  },
+  "verification": {
+    "verifier": "proofsearch",
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "episode_id": "2e76ae52-d1eb-49e5-be37-230bb2ffad61",
+    "import_manifest_hash": "9bcbf693553e0e2efdb421fcec33c3cc5f71fcc7ea63883b4184635f5df699c2",
+    "kernel_verified": false,
+    "fidelity_status": "attested",
+    "step_count": 2
+  },
+  "notes": "Produced via tracked proofsearch episode 2e76ae52-d1eb-49e5-be37-230bb2ffad61 (problem_version 90d40a30-293b-4ad9-820b-ba2d938f1f94): a `solve` step with `intro s t; simp` returned kernel_fail (`simp made no progress`), then closed with `give_up`. A first attempt at the same problem_create call omitted the `Mathlib.Data.Finset.Card` import and hit an unrelated unknown-identifier elaboration error (episode 8281b9c7, closed without counting as a proof-search lesson) -- corrected by declaring problem_imports explicitly before this episode. The falseness of the claim is separately kernel-verified in the companion positive packet elementary.combinatorics.card_union_not_additive.v1 (episode f2bb04ed-af84-4d4c-a1ac-c1f953ffea51, outcome kernel_verified) via the explicit witness s = t = {0}. Second negative example for the combinatorics domain, and the first false_generalization-category example (vs. the existing tactic_mismatch example negative.combinatorics.finset_card_atoms.omega_failure.v1).",
+  "hashes": {
+    "packet_sha256": "8761c279b28b813477ed1d03c8695ba503475f8d1b5ab96bb8dab1c69ec4436d"
+  }
+}
