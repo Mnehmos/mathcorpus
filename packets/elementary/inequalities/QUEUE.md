@@ -21,12 +21,15 @@ Absolute-value basics (`L0`/`L1`, added to offset the domain's
 triangle inequality), `abs_abs_sub_abs_le` (full doubly-absolute reverse
 triangle inequality, strengthening the one-sided `reverse_triangle`).
 
-- [x] `three_var_qm_am_bound` — `(a+b+c)^2 <= 3*(a^2+b^2+c^2)` (D1, L1).
+Power-mean extension: `three_var_qm_am_bound` (extends `qm_am_bound`,
+two-term case, to three variables).
+
+- [x] `avg_between_min_max` — `min a b <= (a+b)/2 <= max a b` (D0, L0).
       Authored 2026-07-08 via tracked episode
-      `15f8194a-40b6-4b82-bd46-be391c5063d6` (kernel_verified on the first
-      attempt: `nlinarith [sq_nonneg (a-b), sq_nonneg (b-c),
-      sq_nonneg (a-c)]`). Extends `qm_am_bound` (two-term case) to three
-      variables, mirroring the AM-GM/Cauchy-Schwarz ladder pattern.
+      `c5bd7202-10dc-4618-bbe8-d3d0ce8cd06f` (kernel_verified on the first
+      attempt: `le_total` case split, `min_eq_left`/`min_eq_right`/
+      `max_eq_left`/`max_eq_right`, closed by `linarith`). This domain's
+      first min/max packet.
 
 ## Next targets
 
