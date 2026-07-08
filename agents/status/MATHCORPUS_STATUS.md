@@ -986,3 +986,23 @@ files. Full `packets/elementary/functions/` revalidated clean at 23
 packets, 0 errors, 0 warnings as of this update. Remaining open item in
 that domain's `QUEUE.md`: `fixed_point_id`; remaining backlog: a concrete
 image/preimage identity.
+
+## Proposed update — combinatorics elementary packet #10 (this agent, 2026-07-08, /loop continuation)
+
+Added `packets/elementary/combinatorics/sum_range_choose.v1.json`: `∑ m ∈
+range (n+1), Nat.choose n m = 2 ^ n` — the sum of a row of Pascal's
+triangle is a power of two, tying the domain's `Nat.choose` starter family
+back to `card_powerset'` (both land on `2 ^ n`). Proved directly via
+`Nat.sum_range_choose`. Produced via tracked episode
+`11038106-d316-457e-bda5-e2aa5ac19417` (problem_version
+`2e61a937-60e2-44b4-b16f-06b05d091861`, dev-attested,
+`problem_imports: ["Mathlib.Data.Nat.Choose.Sum"]`), `kernel_verified` on
+the first `solve` attempt. Closes the binomial-coefficient-sum item in
+`packets/elementary/combinatorics/QUEUE.md`; remaining next-target there
+is `card_biUnion`/indexed-union basics. Also condensed this domain's
+`DASHBOARD.md` per-packet bullet list (10 entries added across this
+session) into a summary paragraph — it was growing unbounded; full detail
+remains in each packet's own `verification.episode_id` and in `git log`.
+Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
+0 errors) and hash-stamped; full corpus revalidated clean at 242 packets,
+0 errors, 0 warnings as of this update.

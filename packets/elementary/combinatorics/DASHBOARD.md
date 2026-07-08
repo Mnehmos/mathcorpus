@@ -2,49 +2,21 @@
 
 | Metric | Value |
 |--------|-------|
-| Packets | 43 |
+| Packets | 44 |
 | Level breakdown | see individual packets — includes `card_union_not_additive.v1.json` (another concurrent agent's addition, commit `246ca69`) not itemized below |
 
-- `card_union_add_card_inter.v1.json` (added 2026-07-08) — inclusion-exclusion
-  identity `(s ∪ t).card + (s ∩ t).card = s.card + t.card`; kernel-verified
-  via episode `23c3ba16-1c40-44bb-ad33-12dd9f01fe60`. Fills the gap flagged
-  by the paired negative example
-  `packets/negative/combinatorics/finset_card_atoms_omega_failure.v1.json`.
-- `disjoint_union_card.v1.json` (added 2026-07-08) — equality companion to
-  `card_union_le'`: `Disjoint s t → (s ∪ t).card = s.card + t.card`; kernel-
-  verified via episode `c0c34f8f-f08d-4b4c-a698-29d26328546b`. Sets up the
-  "false without disjointness" negative-example candidate still queued in
-  `packets/negative/combinatorics/QUEUE.md`.
-- `pigeonhole_3_into_2.v1.json` (added 2026-07-08) — the domain's first
-  pigeonhole-principle packet (`README.md`'s largest documented focus
-  gap): 3 items into 2 boxes forces a repeated box, via
-  `Finset.exists_ne_map_eq_of_card_lt_of_maps_to`; kernel-verified via
-  episode `f2716b47-cc6b-4e6c-b791-1e153a4edf22`.
-- `card_powerset.v1.json` (added 2026-07-08) — the headline finite-
-  combinatorics fact `(Finset.powerset s).card = 2 ^ s.card`, the domain's
-  first packet to touch `powerset`; kernel-verified via episode
-  `53929392-6942-40dd-a25f-69379262bf28`.
-- `choose_zero_right.v1.json` (added 2026-07-08) — `Nat.choose n 0 = 1`,
-  the domain's first `Nat.choose` packet, opening the roadmap's "finite
-  combinatorics basics" binomial-coefficient family; kernel-verified via
-  episode `dbba5471-27a3-4f88-938f-8006ecdc8a5c`.
-- `choose_self.v1.json` (added 2026-07-08) — `Nat.choose n n = 1`,
-  companion to `choose_zero_right'`; kernel-verified via episode
-  `0f2f545b-6a3f-454d-949a-8ce95c042cb0`.
-- `choose_symm.v1.json` (added 2026-07-08) — binomial coefficient symmetry
-  `Nat.choose n k = Nat.choose n (n - k)` for `k <= n`; kernel-verified via
-  episode `2478c40d-0003-42ae-a1b9-343a7f150531`. Completes the roadmap's
-  `Nat.choose` starter family (`choose_zero_right'`/`choose_self'`/
-  `choose_symm'`).
-- `card_image_le.v1.json` (added 2026-07-08) — `(s.image f).card <=
-  s.card`; kernel-verified via episode
-  `56d41a21-a9b7-419f-828c-7fd4658197d1`. Closes the backlog-promoted
-  `card_image_le` item.
-- `choose_succ_succ.v1.json` (added 2026-07-08) — Pascal's rule
-  `Nat.choose (n+1) (k+1) = Nat.choose n k + Nat.choose n (k+1)`;
-  kernel-verified via episode `53ff8716-d93a-45df-a9e9-9ab544112cce`.
-  Promoted the binomial-coefficient-sum identity from backlog and added a
-  `card_biUnion` candidate as new next-targets.
+Additions this session (2026-07-08, all kernel-verified via the tracked
+proof-search loop, one `solve` step each unless noted):
+`card_union_add_card_inter'` (inclusion-exclusion identity, pairs with the
+domain's first negative example), `disjoint_union_card'` (equality
+companion to `card_union_le'`), `pigeonhole_3_into_2` (domain's first
+pigeonhole packet), `card_powerset'` (domain's first `powerset` packet),
+the `Nat.choose` starter family `choose_zero_right'`/`choose_self'`/
+`choose_symm'`, `card_image_le'`, `choose_succ_succ''` (Pascal's rule),
+and `sum_range_choose'` (binomial-sum-is-2^n, ties `Nat.choose` back to
+`card_powerset'`). Full episode IDs are in each packet's own
+`verification.episode_id` field — see `git log` for this file for prior
+per-packet detail if needed.
 
 Last synced: 2026-07-08 — re-sync against
 `agents/status/MATHCORPUS_STATUS.md` and `python tools/corpus_stats.py`
