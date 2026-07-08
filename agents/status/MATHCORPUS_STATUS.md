@@ -3806,3 +3806,31 @@ continue from the round-9 bulk grep-count pass rather than re-running it.
 `validate_packets.py --check-hashes --warn-as-error`: 347 packets, 0
 errors/warnings. No blocking dev-toolchain bugs found in
 `agents/github_issues/{BUGS,TRIAGE}.md` this cycle.
+
+## Proposed update — functions: bijective_comp packet (this agent, 2026-07-08)
+
+Priority-3 elementary work this cycle (no blocking bugs; no zero-coverage
+negative lane; functions was lowest-count at 32 packets). Domain's own
+claim of "every focus topic covered" (verified true last cycle for the
+README's stated focus list) still held, but a grep for `Bijective`
+turned up only `id_bijective` — the domain has `injective_comp` and
+`surjective_comp` separately but never combined them into the paired
+`Bijective` statement, a natural, adjacent gap just outside the literal
+README wording.
+
+Authored `bijective_comp`: composition of two bijective functions is
+bijective. Kernel-verified on the FIRST attempt (tracked episode
+`0b5fbe31-1b22-4719-8026-460d827dbfc7`): paired
+`Function.Injective.comp`/`Function.Surjective.comp` for each half of
+the `Bijective` hypotheses via an anonymous constructor, rather than
+searching for a possibly-differently-named `Function.Bijective.comp`
+convenience lemma — recent cycles' repeated experience with
+`mathlib_search_declarations` returning noisy generic `comp` matches
+(dozens of unrelated namespaces share the name) made deriving directly
+from the definition the faster, safer bet.
+
+Authored `packets/elementary/functions/bijective_comp.v1.json` +
+`lean/MathCorpus/Elementary/Functions/BijectiveComp.lean`, stamped
+hashes, validated clean (348 packets total, 0 errors, 0 warnings).
+Updated `DASHBOARD.md`/`QUEUE.md` in `packets/elementary/functions/`.
+Committed only this cycle's own files, pathspec-scoped.

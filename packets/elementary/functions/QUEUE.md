@@ -45,6 +45,15 @@ attempt via `Set.image_inter_subset`).
       Completes the "inverse" focus pair alongside `left_inverse_injective`
       — this was exactly the backlog item left last cycle for this pickup.
 
+- [x] `bijective_comp` — the composition of two bijective functions is
+      bijective (D0, L1). Authored 2026-07-08 via tracked episode
+      `0b5fbe31-1b22-4719-8026-460d827dbfc7` (kernel_verified on the
+      first attempt: pairing `Function.Injective.comp`/
+      `Function.Surjective.comp` for each half). Completes
+      `injective_comp`/`surjective_comp` with the combined `Bijective`
+      statement — confirmed via `grep -rl Bijective` (only `id_bijective`
+      hit, nothing about composition) before authoring.
+
 ## Next targets
 
 *(empty — every focus-list topic genuinely has multiple packets now,
