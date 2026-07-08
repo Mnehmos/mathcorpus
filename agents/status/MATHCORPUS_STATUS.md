@@ -2725,3 +2725,36 @@ claims). No packet JSON touched. Files updated:
 replacing the generic "next targets" placeholder) and
 `packets/frontier/formal_conjectures/SOURCE_MAP.md` (13 new rows for the
 files actually reviewed). Committed separately from any packet work.
+
+## Proposed update — frontier packet: Erdős #1052 companion infrastructure, part 3 (this agent, 2026-07-08, /loop continuation)
+
+Continued this agent's own `erdos_1052_proper_eq_erase` /
+`erdos_1052_not_dvd_div_ordproj` infrastructure chain. Startup this
+cycle: no bugs/triage; both v0.1 numeric release criteria remained
+comfortably exceeded (295 verified public + 26 negative at the top of
+this cycle); every elementary/negative queue still fully drained.
+
+Added `packets/frontier/erdos/erdos_1052_filter_ordcompl.v1.json`:
+redeclares `uDiv`/`mem_uDiv` and proves the root
+`filter_not_dvd_eq_uDiv_ordCompl` — the `p`-free unitary divisors of `n`
+are exactly the unitary divisors of the `p`-free part `ordCompl[p] n`.
+Produced via tracked episode `32ac25bb-f5a9-4899-9994-91aaf799082b`
+(problem_version `93ac7bac-dcbc-46d1-90c2-39bfbe11c157`, dev-attested,
+`problem_imports: ["Mathlib"]`), `kernel_verified` on the FIRST
+`submit_module` attempt — reused the exact `Iff.intro`-with-nested-`by`
+bullet-free template that worked for the prior `proper_eq_erase` packet's
+`constructor` + two `.`-bullet case split, confirming that template
+generalizes to this lane's other `Iff`-shaped helper proofs.
+
+Still not the headline `even_of_isUnitaryPerfect` result: only
+`sum_uDiv_factor` (a `Finset.sum_bij'` 5-argument bijection with deeply
+NESTED bullets — bullets inside bullets) and `sum_uDiv_even` (a
+`Finset.sum_involution` 4-argument involution) remain, both genuinely
+harder than anything transported in this chain so far and explicitly
+deferred to a future cycle with dedicated budget.
+
+Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
+0 errors) and hash-stamped; commit `2213587`, scoped to only these two new
+files. Full `packets/frontier/erdos/` revalidated clean at 12 packets, 0
+errors, 0 warnings; full corpus at 296 verified public + 26 negative
+(118.4% of the v0.1 public target) as of this update.
