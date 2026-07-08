@@ -2,14 +2,33 @@
 
 Candidate packets to create or formalize next, roughly in priority order.
 
+**Focus/content gap note:** this domain's `README.md` focus is "injective,
+surjective, composition, inverse, monotone, fixed point basics, image/
+preimage" but all 16 existing packets are actually `abs`/`max`/`min`
+identity lemmas — none of the stated focus topics have a packet yet. Treat
+the items below as higher priority than another `abs`/`max`/`min` variant.
+
 ## Next targets
 
-- [ ]
+- [ ] `injective_comp` — the composition of two injective functions is
+      injective (D1, L1). The single most foundational missing packet for
+      this domain's stated focus.
+- [ ] `surjective_comp` — the composition of two surjective functions is
+      surjective (D1, L1). Pairs with `injective_comp`.
+- [ ] `linear_injective` — `f x = a * x + b` is injective when `a ≠ 0`
+      (D0/D1, L0/L1). Concrete, elementary worked example rather than an
+      abstract composition lemma — good on-ramp packet.
+- [ ] `strictMono_injective` — a strictly monotone function is injective
+      (D1, L1). Connects the "monotone" and "injective" parts of the
+      domain's stated focus directly.
+- [ ] `id_bijective` — the identity function is bijective (D0, L0). Cheap,
+      foundational, currently missing.
+- [ ] `fixed_point_id` — every point is a fixed point of `id`; `id x = x`
+      as a fixed-point-basics statement (D0, L0).
 
 ## Backlog
 
-- [ ]
-
-Update this file after every completed packet (remove the item) and
-whenever a new candidate is identified (add it, with a one-line reason it's
-useful).
+- [ ] `monotone_comp` — composition of two monotone functions is monotone
+      (L1).
+- [ ] A concrete image/preimage identity, e.g. `f '' (s ∪ t) = f '' s ∪ f
+      '' t` (L1/L2).

@@ -1,27 +1,26 @@
 # Queue — Algebra (Negative Examples)
 
-Candidate packets to create or formalize next, roughly in priority order.
+Negative examples are the biggest shortfall vs. the v0.1 release criteria
+(~1/25 corpus-wide) — prioritize this lane highly. Candidates below are
+hypotheses to verify via a real tracked episode, not pre-asserted facts.
 
 ## Next targets
 
-- [ ] `field_simp`-skipped division identity: attacking a `Field`/`ℝ`
-      equation containing bare division with `ring` before clearing
-      denominators, illustrating when `ring` alone suffices vs. when
-      `field_simp` is needed first (only if a genuine failure case exists —
-      `ring` does normalize `DivisionRing` division formally in many cases,
-      so verify via a tracked episode before assuming it fails).
-- [ ] `nlinarith`/`positivity` mismatch on a goal requiring case-split on
-      sign (e.g. an inequality that's false without a hypothesis bound).
+- [ ] **nlinarith without an SOS hint on a two-variable square bound.**
+      Attempt `nlinarith` (no hints) directly on `a^2 + b^2 >= 2*a*b`.
+      Expected failure mode: `nlinarith` cannot synthesize the
+      `sq_nonneg (a - b)` auxiliary term on its own and fails/times out;
+      the fix is `nlinarith [sq_nonneg (a - b)]`. gap_category:
+      `tactic_mismatch`, sub_category: `nlinarith_missing_sos_hint`.
+- [ ] **ring on a division identity without field_simp.** Attempt `ring`
+      directly on a goal mixing `/` in a way that needs clearing
+      denominators first (verify what actually happens under our pinned
+      Mathlib — `ring` may already normalize simple field division; if it
+      succeeds, this is not a valid negative example and should be dropped
+      from the queue rather than forced).
 
 ## Backlog
 
-- [ ]
-
-## Done
-
-- [x] `nat_sub_ring_trap.v1` — `ring` on `ℕ` truncated subtraction with an
-      unused hypothesis (2026-07-08).
-
-Update this file after every completed packet (remove the item) and
-whenever a new candidate is identified (add it, with a one-line reason it's
-useful).
+- [ ] A `decide`/`norm_num` timeout on a goal disguised as decidable but
+      actually requiring unbounded search (verify a concrete instance
+      exists before adding).
