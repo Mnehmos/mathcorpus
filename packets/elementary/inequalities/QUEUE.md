@@ -61,6 +61,16 @@ Checked against the 16 existing packets (2026-07-07) to avoid duplicates.
       `nlinarith`). Picked fresh after "Next targets"/"Backlog" were both
       empty this cycle.
 
+- [x] `abs_sub_le` — `|a - c| <= |a - b| + |b - c|` (D1, L1), the
+      metric-distance triangle inequality (distinct from the additive
+      `abs_add_le`/`abs_add_three` and from `reverse_triangle`). Authored
+      2026-07-08 via tracked episode
+      `a7e193b6-76fc-4f94-8f67-2b6150691653` (kernel_verified on the first
+      attempt: `abs_cases` on `a-b`, `b-c`, `a-c` (8 branches), closed
+      uniformly by plain `linarith` since every branch is purely linear).
+      Picked to continue offsetting this domain's `L1_proof_basics`
+      coverage gap (2 of 21 packets before this one).
+
 ## Next targets
 
 *(empty — see Backlog.)*

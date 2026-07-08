@@ -1226,3 +1226,35 @@ general (non-concrete) pigeonhole statement generalizing
 revalidated clean at 252 packets, 0 errors, 0 warnings as of this update
 (per `corpus_stats.py`: 235 verified public + 17 negative, corpus crossed
 the roadmap's 250-file mark last cycle per another agent's note).
+
+## Proposed update — inequalities elementary packet: abs_sub_le (this agent, 2026-07-08, /loop continuation)
+
+Startup this cycle: no bugs blocking progress (the logged `episode_observe`
+bug has a documented workaround); negative examples still the biggest raw
+gap (17/25, 68%) but every domain lane already has coverage, so priority-2
+doesn't select a target. Elementary is close to the v0.1 public target
+(235/250, 94%). Direct file counts: inequalities (21) and induction (22)
+both had empty `QUEUE.md` "Next targets" again. Picked `inequalities` and,
+rather than the deferred/complex `InequalityEstimateKit`-gated backlog
+item (general n-term AM-GM), added a fresh L1 item to continue offsetting
+this domain's persistent L2_olympiad skew (15/21 packets before this
+cycle, only 2 L1_proof_basics).
+
+Added `packets/elementary/inequalities/abs_sub_le.v1.json`: the
+metric-distance triangle inequality `|a-c| <= |a-b| + |b-c|`, distinct
+from the already-authored additive `abs_add_le`/`abs_add_three` and from
+`reverse_triangle`. Produced via tracked episode
+`a7e193b6-76fc-4f94-8f67-2b6150691653` (problem_version
+`7011eabc-b512-43e7-b708-51132ff20102`, dev-attested), `kernel_verified`
+on the first `solve` attempt (`abs_cases` on `a-b`, `b-c`, `a-c` — 8
+branches — closed uniformly by plain `linarith`, since every branch is
+purely linear once the absolute values unfold, unlike the `nlinarith`
+needed for the additive forms).
+
+Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
+0 errors) and hash-stamped. Also condensed
+`packets/elementary/inequalities/DASHBOARD.md`'s growing per-packet
+bullet list into a summary paragraph (same fix already applied to the
+combinatorics and induction dashboards this session — worth generalizing
+into a standing convention rather than re-discovering it per domain).
+Commit scoped to only this cycle's own files.
