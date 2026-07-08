@@ -2267,3 +2267,27 @@ Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
 `packets/elementary/functions/DASHBOARD.md`/`QUEUE.md`, which had grown
 long again since the last condensing pass. Commit scoped to only this
 cycle's own files.
+
+## Proposed update — algebra elementary packet: div_add_div_same (this agent, 2026-07-08, /loop continuation)
+
+Startup this cycle: no bugs/triage; both v0.1 numeric release criteria
+remained comfortably exceeded (282 verified public + 26 negative at the
+top of this cycle). `packets/elementary/algebra/QUEUE.md`'s `pow_mul` had
+already landed via a concurrent agent; picked the remaining
+`div_add_div_same` — no division-identity packet existed in this domain.
+
+Added `packets/elementary/algebra/div_add_div_same.v1.json`: `a/c + b/c =
+(a+b)/c` for reals, closed by `ring`. Produced via tracked episode
+`cd6b4dc2-2049-4ea3-b5a0-b611938d7b1d` (problem_version
+`63937d82-0d46-40d2-ba01-37c0d5ceb991`, dev-attested), `kernel_verified`
+on the second attempt — the first tried citing an identifier named
+`div_add_div_same` directly, which isn't in scope under this pinned
+Mathlib rev; `ring` closed it directly instead (handles the field-division
+junk-value convention at `c = 0` automatically). Closes the
+`div_add_div_same` item; remaining queue target: `add_sq_three`.
+
+Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
+0 errors) and hash-stamped; commit `dbc6e6a`, scoped to only these two new
+files. Full `packets/elementary/algebra/` revalidated clean at 48
+packets, 0 errors, 0 warnings; full corpus at 283 verified public + 26
+negative (113.2% of the v0.1 public target) as of this update.
