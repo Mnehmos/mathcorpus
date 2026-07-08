@@ -44,10 +44,17 @@ the items below as higher priority than another `abs`/`max`/`min` variant.
 ## Next targets
 
 - [ ] `linear_injective` — `f x = a * x + b` is injective when `a ≠ 0`
-      (D0/D1, L0/L1). Concrete, elementary worked example rather than an
-      abstract composition lemma — good on-ramp packet. (Note: another
-      concurrent agent appears to be working this already — check
-      `git log` before starting a duplicate attempt.)
+      (D0/D1, L0/L1), the general parametrized form. NOT yet landed —
+      what landed instead is a *concrete* instance,
+      `elementary.functions.linear_injective_concrete_instance.v1`
+      (`fun n : ℕ => 3 * n + 7`, episode `9c3f7163-...`), deliberately
+      renamed away from the `linear_injective` packet_id this queue entry
+      reserves, to leave room for the general `a ≠ 0` version here without
+      a collision. The concrete instance was originally attempted as the
+      negative example "simp-unfold on Function.Injective leaves an open
+      goal" and turned out to kernel-verify outright — see
+      `packets/negative/functions/QUEUE.md` for the corrected (quadratic)
+      version of that negative example.
 - [ ] `strictMono_injective` — a strictly monotone function is injective
       (D1, L1). Connects the "monotone" and "injective" parts of the
       domain's stated focus directly. (Note: another concurrent agent

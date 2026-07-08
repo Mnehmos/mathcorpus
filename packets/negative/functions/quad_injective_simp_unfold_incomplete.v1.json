@@ -1,0 +1,71 @@
+{
+  "packet_id": "negative.functions.quad_injective.simp_unfold_incomplete.v1",
+  "packet_version": "1.0.0",
+  "title": "simp-unfold on Function.Injective leaves a quadratic goal open",
+  "domain": "algebra",
+  "level": "L1_proof_basics",
+  "kind": "negative_example",
+  "status": "failed_attempt",
+  "difficulty_bin": "D1",
+  "source_provenance": {
+    "source_kind": "repo_original",
+    "source_refs": [],
+    "authors": [
+      "The MathCorpus Authors"
+    ],
+    "copyright_holder": "The MathCorpus Authors",
+    "license_spdx": "Apache-2.0",
+    "license_content": "CC-BY-4.0",
+    "statement_fidelity": "author_written"
+  },
+  "informal_statement": "The function n |-> n^2 + n on natural numbers is injective, attacked by `simp [Function.Injective]` alone instead of `intro a b h` followed by algebra/case analysis.",
+  "formal_statement_pp": "theorem root_theorem : Function.Injective (fun n : ℕ => n ^ 2 + n)",
+  "failure": {
+    "gap_category": "tactic_mismatch",
+    "sub_category": "simp_unfold_injective_incomplete",
+    "input_context_summary": "Goal `Function.Injective (fun n : ℕ => n ^ 2 + n)`.",
+    "attempt_summary": "Applied `simp [Function.Injective]` alone. `simp` correctly unfolds `Function.Injective` to `∀ ⦃a₁ a₂ : ℕ⦄, a₁ ^ 2 + a₁ = a₂ ^ 2 + a₂ → a₁ = a₂` but cannot discharge the resulting quadratic implication on its own (kernel_fail / unsolved_goals, ~14.1s) -- `a₁^2+a₁ = a₂^2+a₂` factors to `(a₁-a₂)(a₁+a₂+1)=0`, which needs case analysis (trichotomy or a monotonicity argument) that simp's default rewrite set does not perform.",
+    "lesson": "`simp [Function.Injective]` reliably unfolds the injectivity definition, but only closes the remaining implication when it reduces to something simp's arithmetic-cancellation lemmas can cancel directly (e.g. a *linear* equation like `3*a+7 = 3*b+7`, see the companion packet elementary.functions.linear_injective_concrete_instance.v1, where the same bare `simp [Function.Injective]` attempt DID kernel-verify). A quadratic (or otherwise non-cancellable) equation needs an explicit `intro a b h` plus case analysis or a strict-monotonicity lemma; simp does not invent that case split on its own. This pairs two outcomes of the same tactic against two goal shapes to show precisely where the boundary is, rather than asserting 'simp fails on Function.Injective' as a blanket claim."
+  },
+  "proof_body_redacted": false,
+  "trust": {
+    "rung": 0,
+    "proof_authority": "none",
+    "public_claim_class": "public_safe"
+  },
+  "training": {
+    "eligibility": "negative_example_only",
+    "reason_codes": [
+      "public",
+      "explicit_negative_label"
+    ],
+    "dedupe_cluster_id": "functions.injective_simp_boundary",
+    "template_family_id": "functions.automation_hazards",
+    "contamination_risk": "low"
+  },
+  "dependencies": {
+    "kits": [],
+    "tactic_tags": [
+      "simp",
+      "Function.Injective"
+    ],
+    "prerequisite_concepts": [
+      "function",
+      "injectivity",
+      "quadratic"
+    ]
+  },
+  "verification": {
+    "verifier": "proofsearch",
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "episode_id": "6ae6dffb-77c7-4873-9d7a-be0dd4bf03b8",
+    "import_manifest_hash": "aaf21893d520a78dee0787a1bcaf939ee6b922265ff670c272e2e1d450dd29a7",
+    "kernel_verified": false,
+    "fidelity_status": "attested",
+    "step_count": 2
+  },
+  "notes": "Produced via tracked proofsearch episode 6ae6dffb-77c7-4873-9d7a-be0dd4bf03b8 (problem_version d9bde708-345e-4265-a5e9-657bbb2c3936): `solve` with `simp [Function.Injective]` returned kernel_fail (unsolved_goals, the quadratic implication left open), then closed with `give_up`. A companion attempt at the same lesson on a linear function (`fun n : ℕ => 3 * n + 7`, episode 9c3f7163-1f67-476e-805c-ca041ca93bfe) turned out to kernel_verify on the very first step -- authored as the positive packet elementary.functions.linear_injective_concrete_instance.v1 instead. Second negative example for the functions domain, alongside injective_add_decide_failure.v1. No repair/fix step attempted for the quadratic case this cycle (a follow-up proof via trichotomy or StrictMono.injective is a queued next target).",
+  "hashes": {
+    "packet_sha256": "b599bc01d1b9e4a8e08a47ffd1001eb99607679fe88ac514f099a414125f1e91"
+  }
+}
