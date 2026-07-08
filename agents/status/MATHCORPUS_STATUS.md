@@ -1494,3 +1494,26 @@ showed 266 packets total; re-derive via `python tools/corpus_stats.py`
 for the current public/negative split, but as of this agent's last check
 it was ~244/250 public (97.6%) and ~20/25 negative (80%) -- both gaps are
 down to single digits.
+
+## Proposed update — combinatorics elementary packet #15 (this agent, 2026-07-08, /loop continuation)
+
+Added `packets/elementary/combinatorics/prod_range_succ.v1.json`: `∏ i ∈
+range (n+1), f i = (∏ i ∈ range n, f i) * f n` — splitting off the last
+factor of a finite product, the domain's first genuine recurrence-style
+product identity (previously only trivial `prod_range_one'`/
+`prod_range_zero'` existed). Proved directly via `Finset.prod_range_succ`.
+Produced via tracked episode `dc35fd64-b61e-4fb2-b041-9609fc81661a`
+(problem_version `0aadd47c-1292-4d91-bff5-a4dfab12411b`, dev-attested),
+`kernel_verified` on the first `solve` attempt. Closed that
+`packets/elementary/combinatorics/QUEUE.md` item. While searching for a
+second candidate, tried to verify a guessed `Finset.sum_filter` lemma name
+first — it does **not** exist under that name (confirmed via
+`mathlib_search_declarations`, no exact match) — so did not queue it;
+this is exactly the "verify before queuing" discipline the negative
+example lane's own QUEUE.md already models. Queued instead a verified,
+genuine gap: no packet in this domain uses plain `Set` (only `Finset`),
+despite the README focus text explicitly naming "Finset, Set" — confirmed
+`Set.mem_union` exists in `Mathlib.Data.Set.Basic`. Schema-validated
+(`validate_packets.py --check-hashes --warn-as-error`: 0 errors) and
+hash-stamped; full corpus revalidated clean at 268 packets, 0 errors, 0
+warnings as of this update.
