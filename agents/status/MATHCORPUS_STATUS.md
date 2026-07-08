@@ -1517,3 +1517,29 @@ despite the README focus text explicitly naming "Finset, Set" — confirmed
 (`validate_packets.py --check-hashes --warn-as-error`: 0 errors) and
 hash-stamped; full corpus revalidated clean at 268 packets, 0 errors, 0
 warnings as of this update.
+
+## Proposed update — functions elementary packet: strictmono_comp (this agent, 2026-07-08, /loop continuation)
+
+Startup this cycle: no bugs blocking progress. `python tools/corpus_stats.py`
+showed 248 verified public + 20 negative (268 files) — 99.2% of the v0.1
+public target (only ~2 more elementary packets needed at the time of the
+check; other agents' concurrent in-flight commits may have already closed
+that gap by the time this lands). Induction (23) and inequalities (24)
+both had genuinely empty `QUEUE.md` next-targets again. Moved to
+`functions` (26), whose own queue note suggested "a second monotone-family
+lemma beyond `monotone_comp`/`strictMono_injective`."
+
+Added `packets/elementary/functions/strictmono_comp.v1.json`: the
+composition of two strictly monotone functions (between preorders) is
+strictly monotone. Produced via tracked episode
+`21aeb6a1-40c0-485b-8bee-abf5530eb0c5` (problem_version
+`3f3663c7-5fba-406d-b3e6-e402463d0113`, dev-attested), `kernel_verified`
+on the first `solve` attempt (`intro α β γ _ _ _ f g hf hg a b hab; exact
+hg (hf hab)`). Completes the monotone-family cluster
+(`monotone_comp`, `strictmono_injective`, `strictmono_comp`).
+
+Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
+0 errors) and hash-stamped. Commit scoped to only this cycle's own files
+to avoid touching other agents' concurrent in-flight work (an induction
+negative example and a paired `two_pow_gt_sq_from_five`-style packet were
+both present uncommitted in the working tree at the time of this cycle).
