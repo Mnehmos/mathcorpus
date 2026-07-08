@@ -2440,3 +2440,51 @@ four pieces exist (will likely need a large SubmitModule referencing them
 as in-scope lemmas -- or re-deriving them inline if cross-problem lemma
 references aren't supported). Remaining untouched queue: #1052 (2 large
 files), #1113 (blocked, see BLOCKERS.md), and int_coeff_ge_two (35 lines).
+
+## Proposed update — frontier/erdos dossier work: #1052 source review (this agent, 2026-07-08, /loop continuation)
+
+Startup this cycle: no bugs blocking progress; every elementary domain's
+`QUEUE.md` was genuinely dry (only deferred/complex backlog items like
+`law_of_sines`, general-n AM-GM remained, each explicitly flagged as
+needing more infrastructure than one cycle warrants) and no negative-
+example domain had zero coverage — so, per priority order, moved to
+priority-4 frontier work. This loop's own instructions frame priority-4
+as **dossier-building, not new proof claims** (distinct from — and more
+conservative than — `packets/frontier/erdos/LOOP.md`'s own broader
+proof-transport mandate that other concurrent agents have been running
+this session), so this cycle did source-review/librarian work rather
+than attempting a new tracked proof-search episode.
+
+Read `packets/frontier/erdos/{OPEN_PROBLEMS,COMPANION_RESULTS,
+PARTIAL_RESULTS,BLOCKERS,SOURCE_REVIEW}.md`, then the sibling repo's
+`ErdosProblems/erdos-1052/proof/Erdos1052_sigmaStar_and_bounds.lean` in
+full for the theorem `PARTIAL_RESULTS.md` had already flagged as a
+"candidate standalone packet once source-reviewed" but never actually
+reviewed: `omega_odd_le_two_adic_add_one` (for a unitary-perfect
+`2^a * m` with `m` odd, `m.primeFactors.card <= a + 1`).
+
+Findings written to `packets/frontier/erdos/SOURCE_REVIEW.md` (detailed
+notes) plus updates to `PARTIAL_RESULTS.md` and `COMPANION_RESULTS.md`:
+(1) the Lean-proved content is exactly the counting bound above, sound
+and matching `attack-plan.md`'s M3 sketch; (2) the "forces a real 6th
+unitary perfect number to be divisible by 2^8" consequence additionally
+needs Wall's 1988 theorem, which is cited but **not formalized anywhere**
+in this stack — a future packet's `informal_statement` must state only
+the Lean-proved bound, with the Wall-theorem consequence confined to
+`notes` and clearly marked external/unformalized (an anti-overclaim
+check this lane's own conventions require); (3) the theorem's actual
+Lean dependency chain is `sigmaStar_mul_of_coprime` ->
+`sigmaStar_prime_pow` -> `two_pow_card_primeFactors_dvd_sigmaStar` ->
+`omega_odd_le_two_adic_add_one`, all in the same sibling file — the
+first of these is exactly `COMPANION_RESULTS.md`'s long-standing
+"General σ* multiplicativity" row (also `(none yet)` packetized), so
+**that infrastructure should land as its own packet first**, closing
+that row, before `omega_odd_le_two_adic_add_one` is attempted on top of
+it; (4) transport will need a genuine multi-lemma `SubmitModule` with
+several bullet-heavy helpers needing bullet-free rewrites (this lane's
+own `#291.ii`/`#494` precedent: ~4 attempts each for smaller modules) —
+flagged as **not a one-cycle target**, so no proof-search episode was
+attempted this cycle.
+
+No packet JSON touched; only the three dossier markdown files. Commit
+scoped to only this cycle's own files.
