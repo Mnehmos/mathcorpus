@@ -2,8 +2,8 @@
 
 | Metric | Value |
 |--------|-------|
-| Packets | 2 |
-| Level breakdown | L0_elementary: 1, L1_proof_basics: 1 — see `trust.rung: 0` |
+| Packets | 4 |
+| Level breakdown | L0_elementary: 2, L1_proof_basics: 2 — see `trust.rung: 0` |
 
 Packets:
 
@@ -19,6 +19,24 @@ Packets:
   `nlinarith` -> kernel_fail, step 2 with the SOS hint -> kernel_verified,
   authored as the companion positive packet
   `elementary.algebra.sq_sum_ge_two_mul.v1`).
+- `frac_sum_bare_ring_missing_field_simp.v1.json` — bare `ring` (no
+  `field_simp`) fails on `1/a + 1/b = (a+b)/(a*b)` for nonzero a, b
+  (`unsolved_goals`, un-cancelled `a * a⁻¹`/`b * b⁻¹` residual); `ring`
+  has no mechanism to use the nonzero hypotheses. Tracked via proofsearch
+  episode `580850dc-88c1-464d-8b21-d4d02a1f3631` (step 1 bare `ring` ->
+  kernel_fail, step 2 `field_simp; ring` -> kernel_verified, authored as
+  the companion positive packet
+  `elementary.algebra.sum_reciprocals_eq_sum_over_product.v1`). Resolves
+  the domain's queued "ring on a division identity without field_simp"
+  candidate.
+- `div_mul_cancel_bare_ring_no_hypothesis_failure.v1.json` — bare `ring`
+  fails on `a / b * b = a` for nonzero `b`, reducing to the un-cancelled
+  residual `a * b * b⁻¹ = a`; `field_simp` closes it. Tracked via
+  proofsearch episode `e292756d-c2f5-4bf4-a211-8b827e3751d4` (step 1 bare
+  `ring` -> kernel_fail, step 2 `field_simp` -> kernel_verified). A second,
+  independently-landed instance of the same ring-ignores-hypotheses lesson
+  as `frac_sum_bare_ring_missing_field_simp.v1.json` above, on a distinct
+  concrete statement.
 
 Last synced: 2026-07-08 — re-sync against
 `agents/status/MATHCORPUS_STATUS.md` and `python tools/corpus_stats.py`
