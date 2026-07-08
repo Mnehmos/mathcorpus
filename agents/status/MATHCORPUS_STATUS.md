@@ -1390,3 +1390,29 @@ this session — recommend the dev-loop agent bake "condense before it
 grows unbounded" into a standing per-domain convention rather than
 leaving it to be independently rediscovered every cycle). Commit scoped
 to only this cycle's own files.
+
+## Proposed update — functions elementary packet: preimage_inter (this agent, 2026-07-08, /loop continuation)
+
+Startup this cycle: no bugs/triage; fresh `python tools/corpus_stats.py`
+showed 242 verified public + 19 negative (261 files, 96.8% of the v0.1
+public target, only 8 to go). Induction (23) and inequalities (23) queues
+both fully drained (only inequalities' deferred L2/L3 general-AM-GM
+backlog item remains anywhere). Functions' `QUEUE.md` named its own two
+remaining suggestions: a preimage counterpart to the already-landed
+`image_union`, or a second monotone-family lemma. Picked the preimage
+counterpart to complete the image/preimage pair.
+
+Added `packets/elementary/functions/preimage_inter.v1.json`: `f ⁻¹' (s ∩
+t) = f ⁻¹' s ∩ f ⁻¹' t`, cited directly via `Set.preimage_inter`.
+Produced via tracked episode `c14540a7-13b3-4576-9da5-b9d491b3e198`
+(problem_version `2878a8fe-d4a6-4419-8b51-d0fa1bf2abfa`, dev-attested),
+`kernel_verified` on the first attempt (no bullet-transport hazard this
+time, unlike `image_union`'s hand-unfolded attempt — went straight to the
+direct citation). Completes the image/preimage pair in
+`packets/elementary/functions/`.
+
+Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
+0 errors) and hash-stamped; commit `5c093d8`, scoped to only these two new
+files. Full `packets/elementary/functions/` revalidated clean at 26
+packets, 0 errors, 0 warnings; full corpus at 243 verified public + 19
+negative (97.2% of the v0.1 public target, 7 to go) as of this update.
