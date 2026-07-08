@@ -321,3 +321,41 @@ Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
 0 errors) and hash-stamped. Same heavy-concurrency caveat as the notes
 above: re-derive totals via `python tools/corpus_stats.py` rather than
 trusting the top-level tables.
+
+## Proposed update — functions elementary packet: injective_comp (this agent, 2026-07-08, /loop continuation)
+
+Startup this cycle found: no bugs/triage items, every negative-example
+domain lane already has >=1 packet (so priority-2's "zero coverage"
+condition no longer applies anywhere), and `python tools/corpus_stats.py`
+showed 198 verified public + 9 negative (207 files). Induction's own
+`QUEUE.md` had only one open next-target (`geom_series_sum_induction`,
+already in-flight uncommitted from another agent) plus a backlog item
+explicitly gated on unauthored number_theory prerequisites — so, per
+priority-3 ("furthest-behind domain"), moved to the next-smallest tier:
+`inequalities` and `functions` tied at 16 packets each. Picked
+`functions` because its `QUEUE.md` flags a real, explicit content gap:
+all 16 existing packets are `abs`/`max`/`min` identities despite the
+domain's stated README focus (injective/surjective/composition/inverse/
+monotone/fixed-point basics) having zero packets.
+
+Added `packets/elementary/functions/injective_comp.v1.json`: the
+composition of two injective functions is injective, proved by directly
+unfolding `Function.Injective` (`apply hf; apply hg; exact hab`) rather
+than one-line-citing `Function.Injective.comp`, for instructional value.
+Produced via tracked episode `ab41c15c-582d-481c-967c-c9daa8439bac`
+(problem_version `574d8400-d226-480b-8965-1bdef6390eb6`, dev-attested),
+`kernel_verified` on the second `solve` attempt — the first failed on a
+binder-arity slip (root statement has three implicit type variables
+`{α β γ}` that also need `intro`ing before the value/hypothesis args;
+first attempt's `intro` list was three short). Not packaged as a
+negative-example packet: a miscounted-binders slip isn't a tactic-mismatch
+or automation hazard with independent training value the way the corpus's
+existing `pow_succ`/`omega` negative examples are — recorded in the
+packet's own `notes` field instead for trajectory honesty.
+
+This is the first packet on `functions`' stated focus topics; closes the
+`injective_comp` item in `packets/elementary/functions/QUEUE.md` (next up
+per that queue: `surjective_comp`, pairs naturally). Schema-validated
+(`validate_packets.py --check-hashes --warn-as-error`: 0 errors) and
+hash-stamped; full corpus revalidated clean at 208 packets, 0 errors, 0
+warnings as of this update.

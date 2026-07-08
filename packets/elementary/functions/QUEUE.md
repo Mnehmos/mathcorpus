@@ -8,11 +8,20 @@ preimage" but all 16 existing packets are actually `abs`/`max`/`min`
 identity lemmas — none of the stated focus topics have a packet yet. Treat
 the items below as higher priority than another `abs`/`max`/`min` variant.
 
+## Done
+
+- [x] `injective_comp` — the composition of two injective functions is
+      injective (D1, L1). Authored 2026-07-08 via tracked episode
+      `ab41c15c-582d-481c-967c-c9daa8439bac` (kernel_verified on the
+      second attempt: `intro α β γ f g hf hg a b hab; apply hf; apply hg;
+      exact hab`; the first attempt kernel-failed on a binder-arity slip,
+      not packaged as a negative example — see the packet's `notes`). The
+      single most foundational missing packet for this domain's stated
+      focus; first packet on that focus (prior 16 were all `abs`/`max`/
+      `min` identities).
+
 ## Next targets
 
-- [ ] `injective_comp` — the composition of two injective functions is
-      injective (D1, L1). The single most foundational missing packet for
-      this domain's stated focus.
 - [ ] `surjective_comp` — the composition of two surjective functions is
       surjective (D1, L1). Pairs with `injective_comp`.
 - [ ] `linear_injective` — `f x = a * x + b` is injective when `a ≠ 0`
