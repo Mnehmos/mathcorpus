@@ -1006,3 +1006,15 @@ remains in each packet's own `verification.episode_id` and in `git log`.
 Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
 0 errors) and hash-stamped; full corpus revalidated clean at 242 packets,
 0 errors, 0 warnings as of this update.
+
+## Proposed update — number_theory negative example (this agent, 2026-07-08)
+
+Added `packets/negative/number_theory/gcd_dvd_omega_no_gcd_theory.v1.json`
+(number_theory's 3rd negative example): `omega` fails on `Nat.gcd a b | a`
+with zero theory of `Nat.gcd` at all. Commit `7e9377f`. Note: the repair
+step's theorem (`Nat.gcd_dvd_left a b`) already existed in the corpus as
+`elementary.number_theory.gcd_dvd_left.v1` -- checked before authoring and
+skipped the duplicate positive packet, referencing the existing one
+instead. Worth flagging as a reusable check: before authoring a companion
+positive packet, grep `packets/elementary/<domain>/*.json` for the target
+statement/theorem name first.
