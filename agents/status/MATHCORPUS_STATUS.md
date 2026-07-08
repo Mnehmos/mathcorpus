@@ -1889,3 +1889,18 @@ noted the sync gap) to prevent a third agent re-attempting it.
 
 Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
 0 errors) and hash-stamped. Commit scoped to only this cycle's own files.
+
+## Proposed update — second frontier/erdos packet (this agent, 2026-07-08)
+
+Added `packets/frontier/erdos/erdos_349_exists_finset_sum_two_pow.v1.json`
+(commit `f495978`, frontier lane now 2 packets). Sublemma for #349's
+integer_isGoodPair_iff cluster; root_statement_hash confirmed byte-
+identical to upstream. Also recorded a real, actionable blocker: #1113
+Sierpinski's sibling-repo proof needs `set_option maxHeartbeats 4000000`,
+which SubmitModule forbids clients from setting -- do not re-attempt it
+without a workaround (see BLOCKERS.md). Remaining companion-result queue
+candidates: #1052 (Subbarao-Warren, unitary perfect numbers even; also a
+separate #1052 sigma* multiplicativity infrastructure lemma), #291.ii
+(Steinerberger gcd), #494 (Steinerberger product counterexample, ~88
+lines, moderate complexity via Finset ℂ/primitive roots), and 6 more
+files in the #349 cluster (31-279 lines each).
