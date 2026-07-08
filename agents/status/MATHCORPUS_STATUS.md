@@ -1209,3 +1209,20 @@ correctness. Schema-validated (`validate_packets.py --check-hashes
 a summary paragraph (same growing-unbounded problem another agent already
 fixed in the combinatorics dashboard this session). Commit scoped to only
 this cycle's own files.
+
+## Proposed update — combinatorics elementary packet #12 (this agent, 2026-07-08, /loop continuation)
+
+Added `packets/elementary/combinatorics/card_sdiff_of_subset.v1.json`:
+`t <= s -> (s \ t).card = s.card - t.card` — the domain's first
+set-difference cardinality packet, alongside its existing union/
+intersection family. Proved directly via `Finset.card_sdiff_of_subset`.
+Produced via tracked episode `236baad7-7206-4e5b-9eb1-e9ad0c8e8e35`
+(problem_version `83f0da2d-2160-44d2-af80-b2c046d48810`, dev-attested),
+`kernel_verified` on the first `solve` attempt. Closes that item in
+`packets/elementary/combinatorics/QUEUE.md`; remaining next-target is a
+general (non-concrete) pigeonhole statement generalizing
+`pigeonhole_3_into_2`. Schema-validated (`validate_packets.py
+--check-hashes --warn-as-error`: 0 errors) and hash-stamped; full corpus
+revalidated clean at 252 packets, 0 errors, 0 warnings as of this update
+(per `corpus_stats.py`: 235 verified public + 17 negative, corpus crossed
+the roadmap's 250-file mark last cycle per another agent's note).
