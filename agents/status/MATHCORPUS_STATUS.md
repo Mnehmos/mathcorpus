@@ -460,3 +460,16 @@ count pending a fresh `python tools/corpus_stats.py` re-derive given
 ongoing concurrent commits) — raw count remains the biggest gap versus the
 v0.1 release criteria; every domain lane has had >=1 negative example for
 several cycles now.
+
+## Proposed update — algebra negative example (this agent, 2026-07-08)
+
+Added `packets/negative/algebra/sq_sum_bare_nlinarith_missing_sos_hint.v1.json`
+(algebra's 2nd negative example) plus companion
+`packets/elementary/algebra/sq_sum_ge_two_mul.v1.json` (kernel-verified
+`a^2 + b^2 >= 2ab` via `nlinarith [sq_nonneg (a - b)]`). Commit `6805462`.
+Tooling note worth folding into a shared doc: `problem_create`'s default
+import manifest (base Ring+NormNum only) does not include `nlinarith` or
+real-number support — pass `problem_imports=["Mathlib"]` for any target
+using `nlinarith`/`ℝ`, or it fails with an unrelated "unknown tactic"
+error that looks like a proof-search lesson but isn't. Hit this twice now
+(once for `Finset` last cycle, once for `nlinarith`/`ℝ` this cycle).
