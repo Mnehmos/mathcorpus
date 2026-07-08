@@ -1,0 +1,56 @@
+{
+  "packet_id": "negative.algebra.div_mul_cancel_bare_ring_no_hypothesis_failure.v1",
+  "packet_version": "1.0.0",
+  "title": "ring fails on a division-cancellation identity despite a true nonzero hypothesis",
+  "domain": "algebra",
+  "level": "L0_elementary",
+  "kind": "negative_example",
+  "status": "failed_attempt",
+  "difficulty_bin": "D0",
+  "source_provenance": {
+    "source_kind": "repo_original",
+    "source_refs": [],
+    "authors": [
+      "The MathCorpus Authors"
+    ],
+    "copyright_holder": "The MathCorpus Authors",
+    "license_spdx": "Apache-2.0",
+    "license_content": "CC-BY-4.0",
+    "statement_fidelity": "author_written"
+  },
+  "informal_statement": "For real a and nonzero real b, the goal `a / b * b = a` attacked by `ring` alone, ignoring the hypothesis `b ≠ 0`.",
+  "failure": {
+    "gap_category": "tactic_mismatch",
+    "sub_category": "ring_on_hypothesis_dependent_division_identity",
+    "input_context_summary": "Goal `a / b * b = a` over `a b : ℝ` with hypothesis `hb : b ≠ 0` in context after `intro a b hb`.",
+    "attempt_summary": "Applied `ring` directly. `ring` normalizes `a / b` to `a * b⁻¹` and reduces the goal to `a * b * b⁻¹ = a`, but `b * b⁻¹ = 1` is a field cancellation fact that only holds given `b ≠ 0` — it is not a ring-axiom-level identity, and `ring` never consults hypotheses. The kernel rejected the step with `unsolved goals: a * b * b⁻¹ = a`. Tracked via proofsearch episode e292756d-c2f5-4bf4-a211-8b827e3751d4, step 1, kernel_fail, diagnostic category `unsolved_goals`. The same episode then closed the obligation on step 2 with `field_simp`, which does consult the `b ≠ 0` hypothesis to justify the cancellation, reaching `kernel_verified`.",
+    "lesson": "`ring` proves unconditional (semi)ring identities only; any goal whose truth depends on a nonzero/side-condition hypothesis (division cancellation, inverse simplification) needs a tactic that consults context, such as `field_simp` or an explicit cancellation lemma applied to the hypothesis. Treat `ring` leaving a residual `x * x⁻¹` (or similar) term as a signal to check for an unused nonzero hypothesis, not evidence the goal is unprovable."
+  },
+  "proof_body_redacted": false,
+  "trust": {
+    "rung": 0,
+    "proof_authority": "none",
+    "public_claim_class": "public_safe"
+  },
+  "training": {
+    "eligibility": "negative_example_only",
+    "reason_codes": [
+      "public",
+      "explicit_negative_label"
+    ],
+    "dedupe_cluster_id": "algebra.div_mul_cancel.failure_patterns",
+    "template_family_id": "algebra.automation_hazards",
+    "contamination_risk": "low"
+  },
+  "dependencies": {
+    "kits": [],
+    "tactic_tags": [
+      "ring",
+      "field_simp"
+    ]
+  },
+  "notes": "Produced through the tracked proof-search MCP loop: problem_version_id a87737c1-a4b9-47f4-ad1b-750d0f797928, episode_id e292756d-c2f5-4bf4-a211-8b827e3751d4 (unsafe_dev_attestation dev mode, environment_hash 9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d). Step 1 (`ring`) recorded kernel_fail; step 2 (`field_simp`) recorded kernel_verified, terminating the episode with outcome kernel_verified / root_proved. Labeled non-proof-bearing training data (rung 0); this packet documents the failed step only, not the episode's eventual success. Fills the algebra negative-example lane's queued 'ring on a division identity without field_simp' item in packets/negative/algebra/QUEUE.md.",
+  "hashes": {
+    "packet_sha256": "f743c428ac315faaa599fa85dd1f5794054fc3e5ca34ec27022dfcec9771b255"
+  }
+}
