@@ -60,6 +60,12 @@ zero | succ` gives a vacuous, unusable inductive hypothesis at the `n = 4`
 boundary — resolves `packets/negative/induction/QUEUE.md`'s "off-by-one
 base case error" backlog item).
 
+Level-distribution fixes: `one_le_two_pow` (D0, L0, `1 <= 2^n`) and
+`factorial_pos_induction` (D0, L0, `0 < n!` — a genuine self-contained
+inductive proof, distinct from `number_theory`'s bare-citation
+`factorial_pos`), narrowing the domain's original 24:1
+`L1_proof_basics`:`L0_elementary` skew to roughly 8:1.
+
 ## Next targets
 
 *(empty — see Backlog.)*
@@ -68,13 +74,10 @@ base case error" backlog item).
 
 *(empty — repopulate from the domain-specific focus in `LOOP.md`:
 induction, strong induction, recursion, finite sums/products, factorials,
-powers, inequalities by induction, monotonicity. `one_le_two_pow` (D0, L0,
-`1 <= 2^n`, episode `5a603590-f54f-4eca-8fbe-d5340aa69929`) started
-offsetting the domain's 24:1 `L1_proof_basics`:`L0_elementary` skew —
-more genuinely-D0 additions would help further. v0.1's numeric release
-criteria (>=250 public, >=25 negative) were both met this session —
-remaining work here is for quality/balance (level-distribution gaps,
-fresh techniques), not raw count. This domain has multiple concurrent
-agent instances working it — check
+powers, inequalities by induction, monotonicity. More genuinely-D0
+additions would further narrow the level skew (see `DASHBOARD.md`). v0.1's
+numeric release criteria (>=250 public, >=25 negative) were both met this
+session — remaining work here is for quality/balance, not raw count. This
+domain has multiple concurrent agent instances working it — check
 `git log --oneline -15 -- packets/elementary/induction/` before starting
 a new target to avoid duplicating recently-landed work.)*

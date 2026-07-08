@@ -2125,3 +2125,28 @@ must be rewritten bullet-free (Or.elim/.elim term-mode dispatch) since
 bullets don't survive forced flattening -- only the root theorem can use
 raw_lean_block to keep bullets. This generalizes the smaller lesson from
 the #494 packet and should make future multi-item modules much faster.
+
+## Proposed update — induction elementary packet: factorial_pos_induction (this agent, 2026-07-08, /loop continuation)
+
+Startup this cycle: no bugs blocking progress. Induction and inequalities
+(tied smallest, 26 each) both had empty `QUEUE.md` next-targets/backlogs
+again — but induction's own notes flagged a real, still-unaddressed
+quality gap: a 24:1 `L1_proof_basics`:`L0_elementary` level skew (only
+`two_pow_gt_self` and `one_le_two_pow` were `L0` before this cycle).
+Picked a fresh, genuinely-D0 induction target to continue narrowing it,
+rather than moving to a different domain.
+
+Added `packets/elementary/induction/factorial_pos_induction.v1.json`:
+`0 < n!`, proved by a genuine self-contained induction (base case `0! =
+1`, successor case via `Nat.factorial_succ` + `Nat.mul_pos`) — distinct
+from `packets/elementary/number_theory/factorial_pos.v1`, which is a
+bare `Nat.factorial_pos` citation with no inductive content. Produced via
+tracked episode `d6963e91-cc3b-4c20-85ca-de8257294ba2` (problem_version
+`0f8460fb-115e-4b6f-8e36-efcc62c22568`, dev-attested), `kernel_verified`
+on the first `solve` attempt.
+
+Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
+0 errors) and hash-stamped. Narrows the domain's L0/L1 skew to roughly
+8:1; more genuinely-D0 additions would help further (see updated
+`DASHBOARD.md`/`QUEUE.md`). Commit scoped to only this cycle's own
+files.
