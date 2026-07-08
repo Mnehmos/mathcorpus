@@ -21,11 +21,12 @@ Absolute-value basics (`L0`/`L1`, added to offset the domain's
 triangle inequality), `abs_abs_sub_abs_le` (full doubly-absolute reverse
 triangle inequality, strengthening the one-sided `reverse_triangle`).
 
-- [x] `cauchy_three_term` — `(ax+by+cz)^2 <= (a^2+b^2+c^2)*(x^2+y^2+z^2)`
-      (D2, L2). Authored 2026-07-08 via tracked episode
-      `3e12e9cc-d08e-45e5-90ef-02c63889deec` (kernel_verified on the first
-      attempt: `nlinarith [sq_nonneg (a*y-b*x), sq_nonneg (a*z-c*x),
-      sq_nonneg (b*z-c*y)]`, the Lagrange-identity SOS decomposition).
+- [x] `three_var_qm_am_bound` — `(a+b+c)^2 <= 3*(a^2+b^2+c^2)` (D1, L1).
+      Authored 2026-07-08 via tracked episode
+      `15f8194a-40b6-4b82-bd46-be391c5063d6` (kernel_verified on the first
+      attempt: `nlinarith [sq_nonneg (a-b), sq_nonneg (b-c),
+      sq_nonneg (a-c)]`). Extends `qm_am_bound` (two-term case) to three
+      variables, mirroring the AM-GM/Cauchy-Schwarz ladder pattern.
 
 ## Next targets
 
@@ -35,3 +36,6 @@ triangle inequality, strengthening the one-sided `reverse_triangle`).
 
 - [ ] General `n`-term AM-GM (L2/L3 — likely needs `InequalityEstimateKit`;
       defer until the 2/3/4-term ladder above is in place).
+- [ ] v0.1's numeric release criteria (>=250 public, >=25 negative) were
+      both met this session — remaining work here is for quality/balance
+      (level-distribution gaps, fresh techniques), not raw count.
