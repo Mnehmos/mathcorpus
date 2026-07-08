@@ -1354,3 +1354,39 @@ has `filter_subset'` but no filter counting/partition identity yet.
 Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
 0 errors) and hash-stamped; full corpus revalidated clean at 259 packets,
 0 errors, 0 warnings as of this update.
+
+## Proposed update — functions elementary packet: image_union (this agent, 2026-07-08, /loop continuation)
+
+Startup this cycle: no bugs blocking progress. Induction (22) and
+inequalities (23) both had empty `QUEUE.md` next-targets again; `functions`
+(24, direct count) still had one open backlog item explicitly named in
+the domain's stated focus: image/preimage basics, never covered by any
+prior packet.
+
+Added `packets/elementary/functions/image_union.v1.json`:
+`f '' (s ∪ t) = f '' s ∪ f '' t`, the domain's first image/preimage
+packet. Produced via tracked episode
+`5ca732f2-a04c-49ab-ae90-a9ba120ea336` (problem_version
+`9cfa3f07-5a70-4484-81e2-1476300426eb`, dev-attested), `kernel_verified`
+on the third `solve` attempt. Two hand-unfolded set-extensionality
+attempts (nested `·` bullets under `constructor`/`rintro`/`rcases`)
+kernel-failed first: one under the default `flat_tactic_sequence`
+transport (bullet structure lost, a bound variable went out of scope),
+one under `raw_lean_block` (a leading-indentation mismatch on the first
+line produced `introN failed: no additional binders`) — a new
+tactic-transport data point beyond the binder-arity and bullet/flat
+issues logged on earlier packets in this domain. Switched to directly
+citing `Set.image_union` (confirmed to exist via
+`mathlib_search_declarations` first), which kernel-verified cleanly.
+Closes the last open item in `packets/elementary/functions/QUEUE.md`
+(every focus-list topic from the domain's `README.md` now has >=1
+packet).
+
+Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
+0 errors) and hash-stamped. Also condensed
+`packets/elementary/functions/DASHBOARD.md` and `QUEUE.md` into summary
+form (same fix already applied to combinatorics/induction/inequalities
+this session — recommend the dev-loop agent bake "condense before it
+grows unbounded" into a standing per-domain convention rather than
+leaving it to be independently rediscovered every cycle). Commit scoped
+to only this cycle's own files.

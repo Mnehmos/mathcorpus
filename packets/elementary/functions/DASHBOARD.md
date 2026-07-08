@@ -2,24 +2,20 @@
 
 | Metric | Value |
 |--------|-------|
-| Packets | 19+ |
-| Level breakdown | L0_elementary: 9+ · L1_proof_basics: 10+ |
+| Packets | 24+ (this domain has multiple concurrent agent instances committing to it every cycle — re-derive the exact count via `python tools/corpus_stats.py` or `git log -- packets/elementary/functions/` rather than trusting this number) |
+| Level breakdown | roughly even split between L0_elementary and L1_proof_basics |
 
-Last synced: 2026-07-08 — added `injective_comp` (D1, L1, episode
-`ab41c15c-582d-481c-967c-c9daa8439bac`): composition of two injective
-functions is injective, proved directly by unfolding `Function.Injective`.
-This is the domain's first packet on its stated focus (injective/
-surjective/composition/inverse/monotone/fixed-point basics) — the prior 16
-were all `abs`/`max`/`min` identities. Also added `surjective_comp` (D1,
-L1, episode `fd3f917e-f58b-4077-90da-bb1c3d62c203`): composition of two
-surjective functions is surjective, kernel_verified on the first attempt.
-Also added `id_bijective` (D0, L0, episode
-`7bce298c-c66f-4696-a952-c7f82691c46a`): the identity function is
-bijective, kernel_verified on the second attempt (first hit a
-bullet/flat-transport case-block issue, see the packet's `notes`). Other
-concurrent agents are actively landing `linear_injective` /
-`strictMono_injective` in this same domain right now — re-sync against
-`agents/status/MATHCORPUS_STATUS.md` and `python tools/corpus_stats.py`
-rather than trusting this count exactly.
+Per-packet detail lives in each packet's own `verification.episode_id`
+and in `git log -- packets/elementary/functions/`; this file previously
+grew an unbounded per-packet bullet list and has been condensed (same fix
+already applied to the combinatorics, induction, and inequalities
+dashboards this session). Highlights: the domain's original 16 packets
+were all `abs`/`max`/`min` identities despite its stated focus being
+injective/surjective/composition/inverse/monotone/fixed-point/image-
+preimage basics; every one of those focus topics now has at least one
+packet (`injective_comp`, `surjective_comp`, `id_bijective`,
+`linear_injective`, `strictMono_injective`, `monotone_comp`,
+`fixed_point_id`, and this cycle's `image_union`, the domain's first
+image/preimage packet).
 
 Next targets: see `QUEUE.md`.
