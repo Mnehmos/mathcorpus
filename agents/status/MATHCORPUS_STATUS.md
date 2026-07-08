@@ -2291,3 +2291,15 @@ Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
 files. Full `packets/elementary/algebra/` revalidated clean at 48
 packets, 0 errors, 0 warnings; full corpus at 283 verified public + 26
 negative (113.2% of the v0.1 public target) as of this update.
+
+## Proposed update — sixth frontier/erdos packet (this agent, 2026-07-08)
+
+Added `packets/frontier/erdos/erdos_349_alpha_le_one_not_is_good_pair.v1.json`
+(commit `2fa52c6`, frontier lane now 6 packets, 3/7 of the #349
+integer_isGoodPair_iff cluster, and 3/4 of that cluster's four assembly
+pieces). Single Solve step, kernel_verified on first attempt, no
+division/field_simp so it avoided the wall-clock timeout hit earlier.
+Only `Erdos349_alpha_gt_two_not_isGoodPair.lean` (159 lines, likely the
+4th and largest assembly piece) remains to complete the assembly-piece
+set; after that, `Erdos349_integer_isGoodPair_iff.lean` (279 lines, the
+culminating iff) becomes attemptable.
