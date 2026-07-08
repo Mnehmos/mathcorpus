@@ -2860,3 +2860,57 @@ packets, 0 errors/warnings. `corpus_stats.py`: 299 public / 28 negative
 `packets/negative/number_theory/{QUEUE,DASHBOARD}.md` (queue item closed,
 packet count 3->4). No blocking dev-toolchain bugs found in
 `agents/github_issues/{BUGS,TRIAGE}.md` this cycle.
+
+## Proposed update — dossier: formal_conjectures survey round 3, Other/ (this agent, 2026-07-08)
+
+Priority-4 dossier work (no blocking bugs; no zero-coverage negative
+lane; re-checked all 7 elementary domains' `QUEUE.md` fresh this cycle —
+every one is now genuinely empty of concrete ready items, including
+geometry after landing `apollonius_median` last cycle). A concurrent
+agent had extended my prior `formal_conjectures` survey with a round-2
+triage of `Mathoverflow/` (commit `981662d`), finding one genuine
+complete-proof candidate (`complexity_five_pow`) blocked by a new,
+general finding: `SubmitModule`'s `LeanModuleItem` schema has no
+`inductive`/`structure` item kind, so any candidate depending on a
+custom inductive type cannot be transported regardless of proof-body
+completeness. Recorded in `BLOCKERS.md`.
+
+Continued the same triage with round 3: `Other/` (5 files, the next-
+smallest untriaged category). Four files are genuinely hard, out-of-
+scope original mathematics (`BeaverMathOlympiad.lean`'s Busy-Beaver-
+adjacent sequences, `SchurTruncatedExponential.lean`'s Galois-group
+computation, `SuffixPrefixAvoidance.lean`'s isoperimetric bound,
+`VCDimConvex.lean`'s VC-dimension results — all `sorry`).
+
+The fifth, `EquationalTheories_677_255.lean` (from the real, active
+"Equational Theories" project, Tao et al.), has two genuinely proof-
+complete `research solved` theorems
+(`Equation255_not_implies_Equation677`, `Finite.` variant) via an
+explicit `Fin 3` magma counterexample. Superficially hit the SAME
+inductive/structure blocker as round 2's `complexity_five_pow` (the
+witnesses are `Magma G` class instances) — but on closer reading,
+`Magma`/`Equation255`/`Equation677` are pure notational wrappers (a
+`class` with one function field, `abbrev`s unfolding to plain
+quantified equalities over that function) that the actual proof never
+pattern-matches as a class. Verified the result restates with ZERO
+custom types: `∃ op : Fin 3 → Fin 3 → Fin 3, (∀ x, x = op(op(op x x)x)x)
+∧ ¬∀ x y, x = op y (op x (op (op y x) y))`, with `op i j := i+j+1`
+(checked by hand against the upstream operation table — all 9 entries
+match). This is a genuinely ready-to-attempt candidate, unblocked,
+sketched in full in `SOLVED_QUEUE.md`.
+
+Generalized this into a reusable lesson in `BLOCKERS.md`: when a
+candidate hits the `class`/`structure`/`inductive`-item-kind limitation,
+check whether the class is *load-bearing* (proof pattern-matches its
+constructors, as `Reachable` was) or *purely notational* (thin wrapper
+over a function/data type, as `Magma` is) before writing it off — only
+the load-bearing case is a hard stop.
+
+No proof-search episode run this cycle (dossier-only per this agent's
+standing priority-4 scope; packet authoring for the `Equation255`
+restatement is left for a future cycle or a concurrent agent already
+doing full companion-result authoring in this lane, consistent with this
+session's established interpretation). No packet JSON touched. Files
+updated: `packets/frontier/formal_conjectures/{SOLVED_QUEUE.md,
+SOURCE_MAP.md,BLOCKERS.md}`. `Arxiv/` (9 files) and `OEIS/` (7 files) are
+now the smallest untriaged categories for a future round.

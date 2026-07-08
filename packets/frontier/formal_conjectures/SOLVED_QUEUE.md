@@ -131,21 +131,113 @@ are `sorry` needing either external-proof replay or original geometric/
 algebraic construction work. Do not re-triage `Mathoverflow/` from
 scratch; this round's findings are final for the current file set.
 
+### Triaged this cycle, round 3 — `Other/` (5 files, this agent, 2026-07-08)
+
+- `BeaverMathOlympiad.lean::beaver_math_olympiad_problem_3`, `_problem_4`
+  — both `sorry` (Busy-Beaver-adjacent number-theoretic dynamics over a
+  recursive sequence with `padicValNat`). Real, hard, original content.
+  Out of scope.
+- `SchurTruncatedExponential.lean::schur_truncatedExp_galoisGroup_equiv`
+  — `sorry` (Galois group of the truncated exponential's minimal
+  polynomial is `A_n`/`S_n` depending on `n mod 4`). Genuine Galois
+  theory. Out of scope.
+- `SuffixPrefixAvoidance.lean::suffix_prefix_avoidance_bound` (the exact
+  isoperimetric bound) and `_weaker_bound` (a `ℚ`-valued corollary with a
+  `formal_proof` link to this same upstream file, i.e. still the
+  "linked but not replayed here" pattern) — **both `sorry`**. Out of
+  scope.
+- `VCDimConvex.lean` — the three `research solved` lemmas shown
+  (`hasAddVCDimAtMost_three_of_convex_r2`,
+  `exists_infinite_convex_r3_shatters`,
+  `exists_convex_rn_add_two_vc_n_forall_not_hasAddVCNDimAtMost`) are all
+  `sorry`. Genuine VC-dimension/convexity results. Out of scope.
+- `EquationalTheories_677_255.lean` — **the round's actual find.** Of its
+  three `research solved` theorems, two are genuinely proof-complete, no
+  `sorry`: `Equation255_not_implies_Equation677` and
+  `Finite.Equation255_not_implies_Equation677` (the third,
+  `Equation677_not_implies_Equation255`, is `sorry`). Both proven ones use
+  the SAME explicit finite witness — a `Fin 3` magma with operation table
+  `![![1,2,0],![2,0,1],![0,1,2]]` — checked by `fin_cases`/`decide`. This
+  is from the real, actively-maintained "Equational Theories" project
+  (Terence Tao et al., teorth.github.io/equational_theories), a genuinely
+  solved literature result, not a conjecture.
+
+  **Naively blocked the same way as `Mathoverflow/75792.lean` last
+  round**: the witnesses are instances of a `class Magma (α : Type) where
+  op : α → α → α`, and `class`/`structure` declarations are exactly the
+  "custom inductive-shaped item" `SubmitModule` cannot transport (see
+  `BLOCKERS.md`'s general finding from round 2).
+
+  **But this one has a real workaround, unlike `complexity_five_pow`**:
+  `Magma`/`Equation255`/`Equation677` are trivial wrappers — `Equation255
+  G := ∀ x, x = ((x◇x)◇x)◇x` and `Equation677 G := ∀ x y, x = y◇(x◇((y◇x)◇y))`
+  are plain `abbrev`s over `Magma.op`, not genuine structure the way
+  `Reachable`'s inductive proof-term structure was load-bearing for
+  `complexity_five_pow`. The class layer here is purely notational sugar
+  around a binary function — nothing in the *proof* (`fin_cases <;> rfl`
+  / `of_decide_eq_false rfl`) actually depends on `Magma` being a
+  typeclass rather than a bare function argument. **The whole result
+  restates cleanly with zero custom types**, using only `Fin 3 → Fin 3 →
+  Fin 3` and closed-form arithmetic (the table above is exactly
+  `op i j = i + j + 1` in `Fin 3`, i.e. `i,j ↦ i+j+1 (mod 3)` — verified
+  by hand against all 9 table entries):
+
+  ```
+  theorem equation255_not_implies_equation677 :
+      ∃ op : Fin 3 → Fin 3 → Fin 3,
+        (∀ x : Fin 3, x = op (op (op x x) x) x) ∧
+        ¬ (∀ x y : Fin 3, x = op y (op x (op (op y x) y))) := by
+    refine ⟨fun i j => i + j + 1, fun x => by fin_cases x <;> decide, ?_⟩
+    decide
+  ```
+
+  (The `Finite.` variant adds nothing new once the type is already the
+  concrete `Fin 3`, so a single un-classed theorem covers both upstream
+  results.) This is a **ready-to-attempt candidate for a future cycle**
+  (or for whichever concurrent agent instance is doing full companion-
+  result packet authoring in this lane, per that folder's own broader
+  `LOOP.md` — this agent's standing instructions keep this specific
+  survey to dossier-only, not packet authoring). Anti-overclaim note for
+  whoever attempts it: this is a **restatement avoiding the class layer**,
+  not a verbatim transport of the upstream proof term — say so explicitly
+  in `source_provenance`/`notes` (`statement_fidelity` should probably be
+  `adapted_with_review`, not a straight match), since the upstream
+  `root_statement_hash` machinery would not match a class-free restatement
+  even though the mathematical content is identical.
+
+**Round-3 verdict**: 1/5 `Other/` files yields a genuine, tractable,
+currently-unblocked candidate (`EquationalTheories_677_255`'s witness,
+restated class-free) — the first one this whole survey has found that
+isn't stopped by either "still sorry", "infrastructure-heavy", or the
+inductive-type `SubmitModule` blocker. The other 4 are real, hard,
+out-of-scope original mathematics.
+
+**General lesson for future triage rounds**: when a candidate is blocked
+by the `class`/`structure`/`inductive`-item-kind limitation, don't stop
+at "blocked" — check whether the class is *load-bearing* for the proof
+(as `Reachable`'s inductive constructors were) or *purely notational*
+(as `Magma` is here). A notational class over a `Fin n`/finite carrier
+can often be restated as a bare function argument with zero mathematical
+loss, turning a hard blocker into a two-line rewrite.
+
 ### Not yet triaged
 
 `Wikipedia/` (60 files), `GreensOpenProblems/` (30), `WrittenOnTheWallII/`
-(21), `Paper/` (12), `OEIS/` (7), `Arxiv/` (9), `Other/` (5) — a future
-cycle should continue this same triage (`grep -B1 -A3 "category research
-solved"` per file, check for a bare `sorry` body vs. a real proof, check
-whether real proofs are self-contained vs. infrastructure-heavy, AND
-(new this round) check whether the proof depends on a custom `inductive`/
-`structure` declaration before investing further time — see `BLOCKERS.md`).
-`Other/` is now the smallest untriaged category (5 files) and the natural
-next pick.
+(21), `Paper/` (12), `OEIS/` (7), `Arxiv/` (9) — a future cycle should
+continue this same triage (`grep -B1 -A3 "category research solved"` per
+file, check for a bare `sorry` body vs. a real proof, check whether real
+proofs are self-contained vs. infrastructure-heavy, check whether a
+`class`/`structure` blocker is load-bearing or notational before writing
+a candidate off — see `BLOCKERS.md`). `Arxiv/` (9) and `OEIS/` (7) are
+now the smallest untriaged categories.
 
 ## Backlog
 
 - [ ] `HilbertProblems/` — triaged this cycle (see above); both files'
       `research solved` theorems are genuinely `sorry` and genuinely hard
       (5th/17th problems). Not a near-term target.
-- [ ] `Other/` (5 files) — next natural triage pick, untouched.
+- [ ] `EquationalTheories_677_255.lean`'s class-free restatement (see
+      round 3 above) — ready to attempt, concrete proof term already
+      sketched, just needs a tracked `problem_create`/`episode_step` pass
+      and packet authoring by whichever agent instance is doing full
+      companion-result work in this lane.
