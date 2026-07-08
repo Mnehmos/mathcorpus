@@ -1969,3 +1969,27 @@ Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
 0 errors, 0 warnings (265 verified public + 25 negative per
 `corpus_stats.py`, 106.0% of the 250-packet v0.1 public target — both
 packet-count release criteria remain comfortably met).
+
+## Proposed update — number_theory elementary packet: gcd_mul_lcm (this agent, 2026-07-08, /loop continuation)
+
+Startup this cycle: no bugs blocking progress; release criteria remain
+comfortably met. Induction and inequalities (tied smallest, 25 each)
+both had empty queues/backlogs again. Moved to `number_theory`, which
+still had `gcd_mul_lcm` and `dvd_lcm_left`/`dvd_lcm_right` open; picked
+`gcd_mul_lcm` (flagged as "good reusable lemma for the `core_algebra`/
+`ring_automation` kits").
+
+Added `packets/elementary/number_theory/gcd_mul_lcm.v1.json`:
+`Nat.gcd a b * Nat.lcm a b = a * b`, cited directly via `Nat.gcd_mul_lcm`.
+Produced via tracked episode `f6352ddf-5a46-4adf-ac9a-4036cb887f47`
+(problem_version `66791830-fea6-43fa-93b5-3596dfb73442`, dev-attested),
+`kernel_verified` on the first `solve` attempt. Ties the domain's
+`gcd_*` and `lcm_*` families together.
+
+Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
+0 errors) and hash-stamped. Also condensed
+`packets/elementary/number_theory/QUEUE.md`'s "Done" list into summary
+form (same fix already applied across every other elementary domain this
+session). Commit scoped to only this cycle's own files (another agent's
+concurrent `one_le_two_pow` induction packet was present uncommitted in
+the working tree — left untouched).
