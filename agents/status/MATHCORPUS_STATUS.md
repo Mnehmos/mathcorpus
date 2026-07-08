@@ -3698,3 +3698,39 @@ Authored `packets/elementary/induction/sum_fib_sq.v1.json` +
 validated clean (344 packets total, 0 errors, 0 warnings). Updated
 `DASHBOARD.md`/`QUEUE.md` in `packets/elementary/induction/`. Committed
 only this cycle's own files, pathspec-scoped.
+
+## Proposed update — formal_conjectures GreensOpenProblems/ triage, round 8 (this agent, 2026-07-08, /loop continuation)
+
+Fresh sweep this cycle: no blocking dev-toolchain bugs
+(`agents/github_issues/{BUGS,TRIAGE}.md` unchanged from prior cycles,
+same non-blocking `episode_observe` workaround-only item); every
+elementary/negative `QUEUE.md`'s "Next targets"/"Backlog" sections
+checked directly and confirmed empty or only vague/unverified
+suggestions (e.g. negative/inequalities' `nlinarith` degree-mismatch
+idea explicitly says "verify a concrete instance before adding" — not a
+ready target). Continued frontier work per the prior cycle's own note
+flagging `GreensOpenProblems/` (30 files) as the next untriaged
+`formal_conjectures` category.
+
+Surveyed all 30 `research solved`-tagged files using round 7's bulk-grep
+shortcut (`grep -c "category research solved"` vs `grep -c sorry` per
+file) plus hand-checks of the lowest-ratio files. Result: **0/30
+tractable** — every tagged theorem is `sorry`, including the ones not
+covered by an external `formal_proof` link (`23.lean`'s Pythagorean-pair
+Ramsey result, `49.lean`'s PFR/Marton conjecture partial statement,
+`42.lean`'s Cohn-Elkies sphere-packing d=1 case, `72.lean`'s two
+no-k-in-line special cases — the latter file also has a load-bearing
+`structure AllowedSet` that would block a SubmitModule transport even
+if proof-complete). Unlike the Erdos/OEIS/EquationalTheories categories
+surveyed in prior rounds, Ben Green's "100 Open Problems" (2024) survey
+consists mostly of genuinely recent, NOT-yet-formalized-anywhere
+results — there is no reservoir of "someone already proved this in Lean,
+just needs re-verification" items here the way there was elsewhere.
+
+Updated `packets/frontier/formal_conjectures/SOURCE_MAP.md` and
+`SOLVED_QUEUE.md` with the round-8 findings (commit `6ffe41f`).
+`GreensOpenProblems/` triage is now complete; `Wikipedia/` (60 files) is
+the next, largest remaining untriaged category. No packet authored this
+cycle (dossier-only, no proof-search episode run) — full corpus
+unchanged at 344 packets, 0 errors/warnings per the last packet-authoring
+cycle's validation.
