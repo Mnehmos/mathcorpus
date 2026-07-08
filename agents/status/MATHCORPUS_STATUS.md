@@ -1154,3 +1154,14 @@ well-founded) is now demonstrated in this domain. Schema-validated
 hash-stamped; commit `12cc467`, scoped to only these two new files. Full
 `packets/elementary/induction/` revalidated clean at 21 packets, 0
 errors, 0 warnings as of this update.
+
+## Proposed update — geometry false_generalization negative example (this agent, 2026-07-08)
+
+Added `packets/negative/geometry/slope_div_mul_division_by_zero_unguarded.v1.json`
+(geometry's 3rd negative example, 1st false_generalization) plus companion
+`packets/elementary/geometry/slope_div_mul_not_always_cancel.v1.json` — a
+kernel-verified disproof of the unconditional div-then-mul cancellation
+claim via witness x1=x2=0, y1=0, y2=5. Commit `4631802`. Corpus crossed
+250 total packets this cycle (233 verified public / 17 negative) --
+approaching but not yet at the v0.1 release criteria (>=250 public,
+>=25 negative); public is at 93%, negative at 68%.
