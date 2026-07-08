@@ -15,12 +15,19 @@ Checked against the 29 existing packets (2026-07-07) to avoid duplicates.
       `packets/negative/geometry/pythagorean_bare_ring_no_hypothesis_failure.v1.json`.
       Fills the curriculum-notable Pythagorean-theorem gap.
 
+## Done (continued)
+
+- [x] `circle_point_dist_eq_radius` — the cosine/sine parametrization
+      `(cx + r*cos(theta), cy + r*sin(theta))` has squared distance `r^2`
+      from the center `(cx, cy)` (D0, L0). Authored 2026-07-08 via tracked
+      episode `d3dedd8a-5919-404f-baf4-3952a49bb159` (kernel_verified on
+      the first attempt: `Real.sin_sq_add_cos_sq θ` + `nlinarith [h]`).
+      Phrased with squared distance (not `dist p c = r` / `Real.sqrt`) to
+      match this domain's convention (`midpoint_equidist`,
+      `reflection_dist`); the domain's first circle-equation packet.
+
 ## Next targets
 
-- [ ] `circle_point_dist_eq_radius` — a point on a circle of center `c` and
-      radius `r` satisfies `dist p c = r` (D0, L0). No circle-equation
-      packet exists yet; pairs naturally with the existing
-      `midpoint_equidist`.
 - [ ] `right_triangle_area_half_base_height` — area of a right triangle via
       the two legs (D1, L1). `shoelace_identity` gives the general-triangle
       area formula; the right-triangle special case is a good, smaller

@@ -1,0 +1,98 @@
+{
+  "packet_id": "elementary.geometry.circle_point_dist_eq_radius.v1",
+  "packet_version": "1.0.0",
+  "title": "Cosine/sine parametrization lies on the circle",
+  "domain": "geometry",
+  "level": "L0_elementary",
+  "kind": "concept",
+  "status": "kernel_verified",
+  "difficulty_bin": "D0",
+  "lean_module": "MathCorpus.Elementary.Geometry.CirclePointDistEqRadius",
+  "theorem_name": "circle_point_dist_eq_radius",
+  "imports": [
+    "Mathlib"
+  ],
+  "toolchain": {
+    "lean_version": "v4.32.0-rc1",
+    "mathlib_rev": "360da6fa66c1273b76b6b2d8c5666fd5ac2e3b56"
+  },
+  "source_provenance": {
+    "source_kind": "author_written",
+    "source_refs": [],
+    "authors": [
+      "The MathCorpus Authors"
+    ],
+    "copyright_holder": "The MathCorpus Authors",
+    "license_spdx": "Apache-2.0",
+    "license_content": "CC-BY-4.0",
+    "statement_fidelity": "author_written"
+  },
+  "informal_statement": "The point (cx + r*cos(theta), cy + r*sin(theta)) has squared distance r^2 from the center (cx, cy), for every real angle theta. This is the standard cosine/sine parametrization of a circle of center (cx, cy) and radius r.",
+  "informal_proof_idea": "Expand the squared-distance expression: (r*cos(theta))^2 + (r*sin(theta))^2 = r^2*(cos(theta)^2 + sin(theta)^2) = r^2*1 = r^2, using the Pythagorean trig identity sin^2 + cos^2 = 1 (Real.sin_sq_add_cos_sq).",
+  "formal_statement_pp": "theorem circle_point_dist_eq_radius : ∀ (cx cy r θ : ℝ), (cx + r * Real.cos θ - cx) ^ 2 + (cy + r * Real.sin θ - cy) ^ 2 = r ^ 2",
+  "proof_body_path": "lean/MathCorpus/Elementary/Geometry/CirclePointDistEqRadius.lean",
+  "proof_body_redacted": false,
+  "trust": {
+    "rung": 1,
+    "proof_authority": "lean_kernel",
+    "certificate_checker": "kernel_decide",
+    "encoding_required": false,
+    "encoding_soundness_status": "not_applicable",
+    "independent_review_status": "repo_reviewed",
+    "public_claim_class": "public_safe"
+  },
+  "training": {
+    "eligibility": "public_train",
+    "reason_codes": [
+      "public",
+      "non_benchmark",
+      "unredacted"
+    ],
+    "dedupe_cluster_id": "geometry.circle_point_dist_eq_radius",
+    "template_family_id": "geometry.coordinate_distance_basics",
+    "contamination_risk": "low",
+    "can_export_proof_body": true
+  },
+  "dependencies": {
+    "kits": [],
+    "tactic_tags": [
+      "nlinarith",
+      "Real.sin_sq_add_cos_sq"
+    ],
+    "prerequisite_concepts": [
+      "circle_equation",
+      "trig_pythagorean_identity",
+      "squared_distance"
+    ]
+  },
+  "metrics": {
+    "loc": 3,
+    "tactic_count": 3
+  },
+  "artifacts": {
+    "public_files": [
+      "lean/MathCorpus/Elementary/Geometry/CirclePointDistEqRadius.lean"
+    ]
+  },
+  "review": {
+    "review_basis": "repo self-review; kernel-verified through the tracked proof-search loop",
+    "reviewer_status": "repo_reviewed"
+  },
+  "verification": {
+    "verifier": "proofsearch",
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "episode_id": "d3dedd8a-5919-404f-baf4-3952a49bb159",
+    "outcome": "kernel_verified",
+    "kernel_verified": true,
+    "fidelity_status": "attested",
+    "step_count": 1,
+    "import_manifest_hash": "9a344177062fd55a6320b30a59c95110ab4434e3b7de2f43a40aa1a869b7cf6b",
+    "verified_at": "2026-07-08T04:35:52Z"
+  },
+  "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode d3dedd8a), kernel_verified on the first Solve attempt. Fills the circle_point_dist_eq_radius gap in packets/elementary/geometry/QUEUE.md (no circle-equation packet existed before this); pairs naturally with the existing midpoint_equidist. Phrased as the cosine/sine parametrization (rather than 'point p with dist p c = r') to stay consistent with this domain's squared-distance convention (avoids Real.sqrt, matching midpoint_equidist and reflection_dist) while still being a genuine, non-trivial circle fact rather than a restatement of the defining equation.",
+  "hashes": {
+    "packet_sha256": "2db7a6e6c688459bb44d645f2abcb4ff98cc9463b1c4d6dae73b96812d2916a3",
+    "formal_statement_sha256": "e2ea6ff5f4354e374754c6737704958da30b24db3552dd1e6e32c2d4745f7af8",
+    "proof_body_sha256": "49b60539d5e92266bba37d42e31357e33f18c81a9aa6b3bd78fe871e4f4b0641"
+  }
+}

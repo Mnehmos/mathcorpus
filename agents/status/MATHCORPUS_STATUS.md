@@ -810,3 +810,35 @@ remaining next-target there is `choose_succ_succ` (Pascal's rule).
 Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
 0 errors) and hash-stamped; full corpus revalidated clean at 232 packets,
 0 errors, 0 warnings as of this update.
+
+## Proposed update — geometry elementary packet: circle_point_dist_eq_radius (this agent, 2026-07-08, /loop continuation)
+
+Startup this cycle: no bugs/triage. Direct file counts: induction (17)
+and inequalities (19) both had genuinely empty `QUEUE.md` "Next targets"
+(and empty/backlog-only Backlog) — every focus-list item repeatedly gets
+claimed by concurrent agents faster than a fresh cycle can act on it. Per
+priority-3, moved to the next tier: `geometry` (30), which still had open
+queue items.
+
+Added `packets/elementary/geometry/circle_point_dist_eq_radius.v1.json`:
+the cosine/sine parametrization `(cx + r*cos θ, cy + r*sin θ)` has squared
+distance `r^2` from the center `(cx, cy)`, for every angle `θ`. This
+domain's first circle-equation packet at all. Produced via tracked episode
+`d3dedd8a-5919-404f-baf4-3952a49bb159` (problem_version
+`c89c25e3-76d3-457d-8e06-82bded241297`, dev-attested,
+`problem_imports: ["Mathlib.Analysis.Complex.Trigonometric"]` for
+`Real.sin_sq_add_cos_sq`), `kernel_verified` on the first `solve` attempt
+(`have h := Real.sin_sq_add_cos_sq θ; nlinarith [h]`). Deliberately
+phrased with squared distance rather than the queue's literal
+`dist p c = r` wording, to stay consistent with this domain's existing
+convention of avoiding `Real.sqrt` (`midpoint_equidist`, `reflection_dist`
+do the same) while still proving something genuinely circle-shaped rather
+than restating the defining equation on a single point. Closes the
+`circle_point_dist_eq_radius` item in
+`packets/elementary/geometry/QUEUE.md`; remaining next-targets there:
+`right_triangle_area_half_base_height`, `reflection_over_x_axis`.
+
+Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
+0 errors) and hash-stamped. Commit scoped to only this packet's own files
+to avoid touching other agents' concurrent in-flight work elsewhere in
+the tree.
