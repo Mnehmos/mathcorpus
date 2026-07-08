@@ -29,10 +29,11 @@ hypotheses to verify via a real tracked episode, not pre-asserted facts.
       `n ^ 2 % 2 = n % 2`; treats `n ^ 2` as an opaque nonlinear atom and
       fails deterministically (`kernel_fail`/`tactic_failure`). Verified
       live via tracked episode `7381250f-097a-4151-b5ba-0e80303ff42e`
-      (2026-07-08). Not identified in a prior queue pass — picked as a
-      natural-but-wrong first attempt on a curriculum-standard parity
-      lemma; a follow-up positive `elementary` packet for the correct
-      case-split proof is still open (not attempted this cycle).
+      (2026-07-08). Follow-up positive packet now landed: `rcases
+      Nat.even_or_odd n with ⟨k, rfl⟩ | ⟨k, rfl⟩ <;> ring_nf <;> omega`
+      kernel-verified in tracked episode
+      `d656e3da-c561-40fc-ad33-ba04213fb8ff` and authored as
+      `packets/elementary/number_theory/sq_mod_two_eq_self_mod_two.v1.json`.
 - [x] `gcd_dvd_omega_no_gcd_theory.v1` — `omega` on `Nat.gcd a b ∣ a`;
       omega has zero theory of `Nat.gcd`, a total gap rather than a
       normalization issue. Verified live via tracked episode

@@ -1,0 +1,100 @@
+{
+  "packet_id": "elementary.number_theory.sq_mod_two_eq_self_mod_two.v1",
+  "packet_version": "1.0.0",
+  "title": "Squares preserve parity",
+  "domain": "number_theory",
+  "level": "L1_proof_basics",
+  "kind": "concept",
+  "status": "kernel_verified",
+  "difficulty_bin": "D1",
+  "lean_module": "MathCorpus.Elementary.NumberTheory.SqModTwoEqSelfModTwo",
+  "theorem_name": "sq_mod_two_eq_self_mod_two",
+  "imports": [
+    "Mathlib"
+  ],
+  "toolchain": {
+    "lean_version": "v4.32.0-rc1",
+    "mathlib_rev": "360da6fa66c1273b76b6b2d8c5666fd5ac2e3b56"
+  },
+  "source_provenance": {
+    "source_kind": "author_written",
+    "source_refs": [],
+    "authors": [
+      "The MathCorpus Authors"
+    ],
+    "copyright_holder": "The MathCorpus Authors",
+    "license_spdx": "Apache-2.0",
+    "license_content": "CC-BY-4.0",
+    "statement_fidelity": "author_written"
+  },
+  "informal_statement": "For every natural number n, n^2 and n have the same remainder mod 2 (the same parity): n^2 % 2 = n % 2.",
+  "informal_proof_idea": "Case-split on the parity of n via Nat.even_or_odd (n = 2k or n = 2k+1), then ring_nf to expand n^2 and omega to close the resulting linear arithmetic goal. A bare omega attempt on the un-split goal fails first (see the paired negative example negative.number_theory.sq_parity.omega_nonlinear_failure.v1): omega cannot relate the opaque atom n^2 back to n without the case split.",
+  "formal_statement_pp": "theorem sq_mod_two_eq_self_mod_two (n : ℕ) : n ^ 2 % 2 = n % 2",
+  "proof_body_path": "lean/MathCorpus/Elementary/NumberTheory/SqModTwoEqSelfModTwo.lean",
+  "proof_body_redacted": false,
+  "trust": {
+    "rung": 1,
+    "proof_authority": "lean_kernel",
+    "certificate_checker": "kernel_decide",
+    "encoding_required": false,
+    "encoding_soundness_status": "not_applicable",
+    "independent_review_status": "repo_reviewed",
+    "public_claim_class": "public_safe"
+  },
+  "training": {
+    "eligibility": "public_train",
+    "reason_codes": [
+      "public",
+      "non_benchmark",
+      "unredacted"
+    ],
+    "dedupe_cluster_id": "number_theory.sq_mod_two_eq_self_mod_two",
+    "template_family_id": "number_theory.parity_basics",
+    "contamination_risk": "low",
+    "can_export_proof_body": true
+  },
+  "dependencies": {
+    "kits": [
+      "elementary_number_theory"
+    ],
+    "tactic_tags": [
+      "Nat.even_or_odd",
+      "ring_nf",
+      "omega"
+    ],
+    "prerequisite_concepts": [
+      "parity",
+      "modular_arithmetic"
+    ]
+  },
+  "metrics": {
+    "loc": 2,
+    "tactic_count": 3
+  },
+  "artifacts": {
+    "public_files": [
+      "lean/MathCorpus/Elementary/NumberTheory/SqModTwoEqSelfModTwo.lean"
+    ]
+  },
+  "review": {
+    "review_basis": "repo self-review; kernel-verified through the tracked proof-search loop",
+    "reviewer_status": "repo_reviewed"
+  },
+  "verification": {
+    "verifier": "proofsearch",
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "episode_id": "d656e3da-c561-40fc-ad33-ba04213fb8ff",
+    "outcome": "kernel_verified",
+    "kernel_verified": true,
+    "fidelity_status": "attested",
+    "step_count": 1,
+    "import_manifest_hash": "aaf21893d520a78dee0787a1bcaf939ee6b922265ff670c272e2e1d450dd29a7",
+    "verified_at": "2026-07-08T09:32:15Z"
+  },
+  "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode d656e3da), kernel_verified on the first attempt. Fills the follow-up positive packet gap flagged in packets/negative/number_theory/QUEUE.md's sq_parity_omega_nonlinear_failure entry: the correct case-split proof for the curriculum-standard parity-of-squares lemma whose bare-omega attempt is already preserved as negative.number_theory.sq_parity.omega_nonlinear_failure.v1.",
+  "hashes": {
+    "packet_sha256": "6fce1e05b29b2c19784aaf135ced9a2acf93006c66f6fbb650b7fe393d9453c9",
+    "formal_statement_sha256": "e8de3d988433ae18a488b7a68629d095b11701882683f0816ff1c8d8ecfe238b",
+    "proof_body_sha256": "18a833c9a8746740c4f3347de3bac29ee5872a9db7c9fc414980b23e90e081f5"
+  }
+}

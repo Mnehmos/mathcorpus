@@ -25,6 +25,13 @@ first `Int`-based gcd fact, tracked episode
 `5d1a3305-2713-49a8-abc3-8ca51930e6e0`, kernel_verified on the first
 attempt via `Int.gcdA`/`Int.gcdB`/`Int.gcd_eq_gcd_ab`).
 
+and `sq_mod_two_eq_self_mod_two` (`n^2 % 2 = n % 2`, tracked episode
+`d656e3da-c561-40fc-ad33-ba04213fb8ff`, kernel_verified on the first
+attempt via `Nat.even_or_odd` case split + `ring_nf`/`omega`) — the
+follow-up positive packet for
+`packets/negative/number_theory/QUEUE.md`'s `sq_parity_omega_nonlinear_failure`
+entry, which had flagged this as still open.
+
 ## Next targets
 
 *(empty)*

@@ -2550,3 +2550,34 @@ remains. Avoided colliding with the concurrent agent's #1052 sigmaStar
 infrastructure work (flagged as their priority target in
 COMPANION_RESULTS.md/SOURCE_REVIEW.md) by picking a different, smaller
 #349 target instead this cycle.
+
+## Proposed update — number_theory elementary packet: sq_mod_two_eq_self_mod_two (this agent, 2026-07-08, /loop continuation)
+
+Startup this cycle: no bugs/triage. Checked every elementary domain's
+`QUEUE.md` fresh — all "Next targets" sections were empty
+(algebra/number_theory/combinatorics/induction/inequalities/functions),
+except geometry's "law of sines" backlog item, which this agent has
+twice now assessed as needing a materially harder trigonometric setup
+than this corpus's coordinate-proof convention supports cheaply (relating
+two vertex angles via cross-product-based sine definitions) — deferred
+again rather than forcing a risky attempt. Checked negative-example
+queues instead and found a genuine, well-specified, previously-flagged
+gap: `packets/negative/number_theory/QUEUE.md`'s
+`sq_parity_omega_nonlinear_failure` entry explicitly noted its follow-up
+positive packet (the correct case-split proof) was "still open (not
+attempted this cycle)" from an earlier agent.
+
+Added `packets/elementary/number_theory/sq_mod_two_eq_self_mod_two.v1.json`:
+`n^2 % 2 = n % 2` for all naturals n, closed via `Nat.even_or_odd` case
+split + `ring_nf`/`omega` in a single tracked-episode step (episode
+`d656e3da-c561-40fc-ad33-ba04213fb8ff`, problem_version
+`2340dad3-c687-4a68-8fa7-3e3293e8a213`, dev-attested), `kernel_verified`
+on the first attempt. Closes the standing gap between this domain's
+negative example (bare `omega` fails on the un-split goal) and its
+correct positive companion.
+
+Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
+0 errors) and hash-stamped; full corpus revalidated clean at 319 packets,
+0 errors, 0 warnings (293 verified public + 26 negative per
+`corpus_stats.py`, 117.2% of the 250-packet v0.1 public target). Commit
+scoped to only this cycle's own files.
