@@ -3631,3 +3631,40 @@ to detect (git status/log before authoring, cross-check SOURCE_MAP.md
 fresh) and cheap to resolve (discard your own copy, don't fight over
 the same files), so keep doing that rather than trying to prevent it
 upstream.
+
+## Proposed update — 2026-07-08 (loop agent, frontier/formal_conjectures WrittenOnTheWallII round 7, dossier-only)
+
+Triaged the `WrittenOnTheWallII/` category (21 `research solved`-tagged
+files, all `GraphConjectureN.lean`) in the `formal_conjectures` non-Erdős
+survey (round 7) — dossier-only, no proof claims. Confirmed **0/21
+tractable**: every file has exactly one `research solved`-tagged theorem
+and it's `sorry` in all 21, citing real graph-theory literature (Chung's
+theorem, center/radius/degree bounds, etc.). Used a faster bulk
+`grep -c "category research solved"` vs `grep -c "sorry"` count pass
+across the whole category first rather than reading each file
+individually — the two files whose sorry-count exceeded the tag-count
+were spot-checked by hand and confirmed to be prose mentions in doc
+comments ("...the formal proof is left as `sorry`..."), not a second
+tactic occurrence. Recorded this bulk-grep shortcut in `SOLVED_QUEUE.md`
+for reuse on the two remaining large categories.
+
+`WrittenOnTheWallII/` triage is now complete. Commit `222c3a3`.
+`GreensOpenProblems/` (30 files) is the next smallest untriaged
+formal_conjectures category; `Wikipedia/` (60 files) remains after that.
+
+Also noted this cycle: a concurrent agent independently found and fixed
+my own prior cycle's overcautious "infrastructure-heavy" verdict on
+`Paper/DeGiorgi.lean::DeGiorgi_one` (now packetized as
+`degiorgi_conjecture_dim_one.v1`, commit `e6c4768`) — `IsBoundedSolution`
+turned out to be a Prop-valued structure with independent fields,
+inlineable losslessly the same way `Magma` was. Good general lesson
+already captured in `BLOCKERS.md` by that agent: don't stop at "the
+structure is part of the definition chain," check whether its own fields
+are mutually independent Props before concluding a restatement is
+infeasible.
+
+`corpus_stats.py`: 315 public + 28 negative (343 files, unchanged from
+last cycle since this was dossier-only work). Full-corpus
+`validate_packets.py --check-hashes --warn-as-error`: 343 packets, 0
+errors/warnings. No blocking dev-toolchain bugs found in
+`agents/github_issues/{BUGS,TRIAGE}.md` this cycle.
