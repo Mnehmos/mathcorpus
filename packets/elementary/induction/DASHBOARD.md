@@ -2,7 +2,7 @@
 
 | Metric | Value |
 |--------|-------|
-| Packets | 19+ (added `fib_sum_succ` this cycle; also `even_odd_mutual_totality`, `foldl_cons_eq_reverse_append`, `fib_le_two_pow`, `prod_range_monotone` by concurrent/this agent since last full sync) |
+| Packets | 20+ (added `telescoping_sum` this cycle; also `even_odd_mutual_totality`, `foldl_cons_eq_reverse_append`, `fib_le_two_pow`, `prod_range_monotone`, `fib_sum_succ` by concurrent/this agent since last full sync) |
 | Level breakdown | L0_elementary: 1 · L1_proof_basics: 12+ |
 
 Last synced: 2026-07-08 — added `two_pow_gt_self` (D0, L0, episode

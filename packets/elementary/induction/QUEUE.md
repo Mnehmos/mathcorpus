@@ -149,6 +149,28 @@ for very recent commits before re-populating.)*
 
 ## Backlog
 
+- [x] `telescoping_sum` — `∑ i ∈ range n, (a (i+1) - a i) = a n - a 0` for
+      `a : ℕ → ℤ` (D1, L1). Authored 2026-07-08 via tracked episode
+      `10b7c24b-f611-404a-8193-62b74b80b344` (kernel_verified on the first
+      attempt: `induction n with | zero => simp | succ n ih => rw
+      [Finset.sum_range_succ, ih]; ring`). Deliberately picked as the
+      general telescoping principle itself, distinct from the domain's
+      existing closed-form sum packets (`sum_odds`, `sum_evens`,
+      `sum_squares`, `sum_cubes`, `gauss_sum`, `geom_series_sum_induction`),
+      which are all specific instances rather than the general mechanism.
+
+- [ ] Well-founded (non-structural) recursion via `SubmitModule`: every
+      recursion packet so far (`myfactorial_eq_factorial`, `fib_le_two_pow`,
+      `even_odd_mutual_totality`) uses plain structural `Nat.rec`, not a
+      genuinely decreasing-measure recursion (e.g. Euclidean `gcd` via
+      `a % b`). `SubmitModule`'s `def` items are expression-only (no
+      `termination_by`/`decreasing_by`), so this needs an explicit
+      `Nat.strongRecOn`/`WellFounded.fix` term — deferred as non-trivial to
+      get right in one attempt; a future cycle should budget for a few
+      failed tries or fall back to a negative example if it doesn't land.
+
+## Backlog
+
 *(empty — repopulate from the domain-specific focus in `LOOP.md`:
 induction, strong induction, recursion, finite sums/products, factorials,
 powers, inequalities by induction, monotonicity. This domain has multiple
