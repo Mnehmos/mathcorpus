@@ -1108,3 +1108,49 @@ Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
 0 errors) and hash-stamped; full corpus revalidated clean at 247 packets,
 0 errors, 0 warnings as of this update. This is this agent's 11th
 combinatorics elementary packet added across this session's /loop cycles.
+
+## Proposed update — induction elementary packet: mygcd_wellfounded (this agent, 2026-07-08, /loop continuation)
+
+Startup this cycle: no bugs/triage requiring in-repo action (a new
+`agents/github_issues/BUGS.md` entry describes an intermittent
+`episode_observe` UNIQUE-constraint error in the **proofsearch MCP
+server** itself — a separate repo/binary
+(`mnehmos.llm-driven-proof-search.environment`), not this repo's
+`tools/*.py`/schema, and already has a documented working workaround, so
+out of scope for this domain-agent role per `agents/github_issues/LOOP.md`
+§startup routine's own tools/-scoped bug list). Fresh
+`python tools/corpus_stats.py` showed 231 verified public + 16 negative
+(247 files, 92.4% of the v0.1 public target, 19 to go); every
+negative-example lane at >=2. Induction (19 packets) still smallest; its
+`QUEUE.md` had exactly one open item left — the backlog's explicitly
+flagged, explicitly risky "well-founded (non-structural) recursion via
+`SubmitModule`" gap, deferred by a prior cycle with a note that a future
+cycle should budget for a few failed tries or a negative-example fallback.
+Took that budget this cycle.
+
+Added `packets/elementary/induction/mygcd_wellfounded.v1.json`: defines
+`myGcd` (Euclidean algorithm) via `Nat.strongRecOn`, decreasing on the
+second argument via `Nat.mod_lt` (`a % (b+1) < b+1`) — genuinely
+well-founded, not structural. Proves the base case `myGcd a 0 = a` via
+`simp [myGcd, Nat.strongRecOn_eq]`. Produced via tracked episode
+`7e36dbd3-c071-4200-8fb3-17e84713e94e` (problem_version
+`1f792d1c-bbd8-4f66-b16e-9c38584bc181`, dev-attested), `kernel_verified`
+on the **third** `submit_module` attempt. Two genuinely informative
+failures preserved in the packet's `notes`: (1) ordinary equation-compiler
+pattern syntax for `myGcd` kernel-failed with "Could not find a
+decreasing measure. Please use `termination_by`" — confirming
+`SubmitModule`'s expression-only `def` items cannot express this without
+an explicit recursor, since there's no room for command-level
+`termination_by`/`decreasing_by` modifiers; (2) the explicit
+`Nat.strongRecOn` term compiled fine, but the base-case `rfl` failed
+because `Nat.strongRecOn` (built on `WellFounded.fix`) is not
+definitionally reducible — fixed by using the `Nat.strongRecOn_eq`
+unfolding lemma via `simp` instead.
+
+Closes the "well-founded recursion via `SubmitModule`" backlog item;
+every `LOOP.md`-listed recursion technique (structural, mutual,
+well-founded) is now demonstrated in this domain. Schema-validated
+(`validate_packets.py --check-hashes --warn-as-error`: 0 errors) and
+hash-stamped; commit `12cc467`, scoped to only these two new files. Full
+`packets/elementary/induction/` revalidated clean at 21 packets, 0
+errors, 0 warnings as of this update.
