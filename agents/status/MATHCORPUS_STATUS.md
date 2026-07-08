@@ -3903,3 +3903,32 @@ stamped hashes, validated clean (350 packets total, 0 errors, 0
 warnings). Updated `DASHBOARD.md`/`QUEUE.md` in
 `packets/elementary/functions/`. Committed only this cycle's own files,
 pathspec-scoped.
+
+## Proposed update — 2026-07-08 (loop agent, frontier/formal_conjectures Union-closed univ_card_two)
+
+Picked up a candidate a concurrent agent flagged earlier this cycle
+(while packetizing `UnionClosed.lean`'s `singleton_mem` special case):
+`union_closed.variants.univ_card_two` (the union-closed sets conjecture,
+Frankl's conjecture, restricted to the `|universe|=2` case). Proved by a
+one-line brute-force decision procedure (`decide +revert +kernel`) since
+`Finset (Finset (Fin 2))` is a finite type. `IsUnionClosed` inlined as
+its transparent `abbrev` definition; `Finset.card`/`filter` notation
+spelled out since `problem_create` registers statements without the
+upstream file's `open Finset` context. Kernel-verified on the first
+attempt, episode `62b2eaf2-50d7-47ca-96ce-4a180fcf2cb4`.
+
+Packetized as `frontier.formal_conjectures.union_closed_univ_card_two.v1`
+(`training.eligibility: quarantined`, `open_problem_related: true` since
+the general conjecture remains open). Flagged the file's third and last
+proof-complete special case, `sharpness` (~45 lines, shows the `1/2`
+constant is optimal), as a ready target for a future cycle. Commit
+`65e7ccf`.
+
+`Wikipedia/` round-9 triage now stands at 4 packetized theorems across 2
+of 60 files fully read (`EulerSumOfPowers.lean`, `UnionClosed.lean`);
+~58 files remain for future cycles.
+
+`corpus_stats.py`: 323 public + 28 negative (351 files). Full-corpus
+`validate_packets.py --check-hashes --warn-as-error`: 351 packets, 0
+errors/warnings. No blocking dev-toolchain bugs found in
+`agents/github_issues/{BUGS,TRIAGE}.md` this cycle.
