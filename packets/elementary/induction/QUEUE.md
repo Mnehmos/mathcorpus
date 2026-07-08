@@ -159,15 +159,22 @@ for very recent commits before re-populating.)*
       `sum_squares`, `sum_cubes`, `gauss_sum`, `geom_series_sum_induction`),
       which are all specific instances rather than the general mechanism.
 
-- [ ] Well-founded (non-structural) recursion via `SubmitModule`: every
-      recursion packet so far (`myfactorial_eq_factorial`, `fib_le_two_pow`,
-      `even_odd_mutual_totality`) uses plain structural `Nat.rec`, not a
-      genuinely decreasing-measure recursion (e.g. Euclidean `gcd` via
-      `a % b`). `SubmitModule`'s `def` items are expression-only (no
-      `termination_by`/`decreasing_by`), so this needs an explicit
-      `Nat.strongRecOn`/`WellFounded.fix` term — deferred as non-trivial to
-      get right in one attempt; a future cycle should budget for a few
-      failed tries or fall back to a negative example if it doesn't land.
+- [x] Well-founded (non-structural) recursion via `SubmitModule`: two
+      independent packets now cover this. `mygcd_wellfounded` (concurrent
+      agent, episode `7e36dbd3`) defines `myGcd` via `Nat.strongRecOn` and
+      proves the base case `myGcd a 0 = a` only. `euclid_gcd_eq_gcd` (this
+      agent, episode `a4a2a972`) defines a *separately-named* `euclidGcd`
+      via `WellFoundedLT.fix` (renamed from an initial `myGcd` attempt,
+      episode `d83a52a3`, after discovering the name collision with the
+      concurrent packet above) and proves full correctness,
+      `euclidGcd b a = Nat.gcd b a`, by strong induction — strengthens the
+      base-case-only result to the real theorem. Key lesson for future
+      `WellFoundedLT.fix`/`Nat.strongRecOn` attempts in this domain: neither
+      reduces by `rfl`; use `unfold <name>; rw [WellFoundedLT.fix_eq]` (or
+      `simp [<name>, Nat.strongRecOn_eq]`) instead, and when rewriting with
+      a lemma like `Nat.gcd_rec` that could match either side of a goal,
+      instantiate its arguments explicitly to control which occurrence it
+      rewrites.
 
 ## Backlog
 

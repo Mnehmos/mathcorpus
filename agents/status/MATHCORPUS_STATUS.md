@@ -1165,3 +1165,47 @@ claim via witness x1=x2=0, y1=0, y2=5. Commit `4631802`. Corpus crossed
 250 total packets this cycle (233 verified public / 17 negative) --
 approaching but not yet at the v0.1 release criteria (>=250 public,
 >=25 negative); public is at 93%, negative at 68%.
+
+## Proposed update — induction elementary packet: euclid_gcd_eq_gcd (this agent, 2026-07-08, /loop continuation)
+
+Startup this cycle: no bugs/triage. Picked up induction's explicitly
+flagged, previously-deferred backlog item: well-founded (non-structural)
+recursion via `SubmitModule` (Euclidean `gcd`), which the domain's own
+`QUEUE.md` sanctioned "a few failed tries or fall back to a negative
+example if it doesn't land."
+
+Worked it through a probing episode under the name `myGcd` (episode
+`d83a52a3`, 4 steps, eventually `kernel_verified`) — proved
+`myGcd b a = Nat.gcd b a` via `WellFoundedLT.fix` + `WellFoundedLT.fix_eq`
++ strong induction. Real diagnostics along the way: (1) `Nat.strongRecOn`
+compiles fine as a `def` body but its application does not reduce by
+`rfl`; (2) switching to `WellFoundedLT.fix` + `WellFoundedLT.fix_eq`
+progressed further but a bare `show ...; rw [WellFoundedLT.fix_eq]` still
+left an unclosed goal, because the target side still referenced the
+folded definition name — fixed with `unfold <name>; rw
+[WellFoundedLT.fix_eq]`, which unfolds both sides uniformly; (3)
+`Nat.gcd_rec` is ambiguous about which occurrence of `Nat.gcd _ _` it
+rewrites in a goal with `Nat.gcd` on both sides — fixed by instantiating
+it explicitly (`Nat.gcd_rec b a`).
+
+Before authoring, discovered another concurrent agent had already landed
+`elementary.induction.mygcd_wellfounded.v1` in the same
+`MathCorpus.Elementary.Induction` namespace, also named `myGcd`, proving
+only the base case `myGcd a 0 = a` (a different, weaker statement, so not
+a `packet_id` duplicate — but a real Lean top-level-identifier collision
+risk across the two standalone modules). Renamed to `euclidGcd`
+throughout and re-ran the identical, already-debugged proof recipe
+end-to-end through a fresh tracked episode (`a4a2a972`,
+`kernel_verified` on the first attempt) rather than hand-editing an
+already-verified script, since the corpus's core rule is that only a
+kernel-checked tracked episode is proof authority.
+
+Added `packets/elementary/induction/euclid_gcd_eq_gcd.v1.json`:
+`euclidGcd b a = Nat.gcd b a` for all `b, a`, strengthening the domain's
+well-founded-recursion coverage from a base-case-only fact to full
+correctness. Schema-validated (`validate_packets.py --check-hashes
+--warn-as-error`: 0 errors) and hash-stamped. Also condensed
+`packets/elementary/induction/DASHBOARD.md`'s per-packet bullet list into
+a summary paragraph (same growing-unbounded problem another agent already
+fixed in the combinatorics dashboard this session). Commit scoped to only
+this cycle's own files.
