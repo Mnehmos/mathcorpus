@@ -1,0 +1,97 @@
+{
+  "packet_id": "elementary.functions.preimage_inter.v1",
+  "packet_version": "1.0.0",
+  "title": "Preimage of an intersection is the intersection of preimages",
+  "domain": "algebra",
+  "level": "L1_proof_basics",
+  "kind": "concept",
+  "status": "kernel_verified",
+  "difficulty_bin": "D1",
+  "lean_module": "MathCorpus.Elementary.Functions.PreimageInter",
+  "theorem_name": "preimage_inter",
+  "imports": [
+    "Mathlib"
+  ],
+  "toolchain": {
+    "lean_version": "v4.32.0-rc1",
+    "mathlib_rev": "360da6fa66c1273b76b6b2d8c5666fd5ac2e3b56"
+  },
+  "source_provenance": {
+    "source_kind": "author_written",
+    "source_refs": [],
+    "authors": [
+      "The MathCorpus Authors"
+    ],
+    "copyright_holder": "The MathCorpus Authors",
+    "license_spdx": "Apache-2.0",
+    "license_content": "CC-BY-4.0",
+    "statement_fidelity": "author_written"
+  },
+  "informal_statement": "For every function f : alpha -> beta and sets s, t : Set beta: the preimage of the intersection f^-1(s inter t) equals the intersection of the preimages f^-1(s) inter f^-1(t).",
+  "informal_proof_idea": "Cited directly via Mathlib's Set.preimage_inter. Preimage counterpart to the already-landed image_union packet.",
+  "formal_statement_pp": "theorem preimage_inter {α β : Type*} (f : α → β) (s t : Set β) : f ⁻¹' (s ∩ t) = f ⁻¹' s ∩ f ⁻¹' t",
+  "proof_body_path": "lean/MathCorpus/Elementary/Functions/PreimageInter.lean",
+  "proof_body_redacted": false,
+  "trust": {
+    "rung": 1,
+    "proof_authority": "lean_kernel",
+    "certificate_checker": "kernel_decide",
+    "encoding_required": false,
+    "encoding_soundness_status": "not_applicable",
+    "independent_review_status": "repo_reviewed",
+    "public_claim_class": "public_safe"
+  },
+  "training": {
+    "eligibility": "public_train",
+    "reason_codes": [
+      "public",
+      "non_benchmark",
+      "unredacted"
+    ],
+    "dedupe_cluster_id": "functions.preimage_inter",
+    "template_family_id": "functions.image_preimage_basics",
+    "contamination_risk": "low",
+    "can_export_proof_body": true
+  },
+  "dependencies": {
+    "kits": [],
+    "tactic_tags": [
+      "Set.preimage_inter",
+      "Set.preimage"
+    ],
+    "prerequisite_concepts": [
+      "preimage",
+      "set_intersection"
+    ]
+  },
+  "metrics": {
+    "loc": 2,
+    "tactic_count": 1
+  },
+  "artifacts": {
+    "public_files": [
+      "lean/MathCorpus/Elementary/Functions/PreimageInter.lean"
+    ]
+  },
+  "review": {
+    "review_basis": "repo self-review; kernel-verified through the tracked proof-search loop",
+    "reviewer_status": "repo_reviewed"
+  },
+  "verification": {
+    "verifier": "proofsearch",
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "episode_id": "c14540a7-13b3-4576-9da5-b9d491b3e198",
+    "outcome": "kernel_verified",
+    "kernel_verified": true,
+    "fidelity_status": "attested",
+    "import_manifest_hash": "409c28561ce51f049ff6d835330b5f8d9a9b1c943db488280748901a8181d3b7",
+    "step_count": 1,
+    "verified_at": "2026-07-08T06:02:20Z"
+  },
+  "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode c14540a7), kernel_verified on the first attempt. Preimage counterpart to packets/elementary/functions/image_union.v1.json; closes the QUEUE.md-suggested 'preimage counterpart to image_union' candidate, completing the image/preimage pair.",
+  "hashes": {
+    "packet_sha256": "06b33088a93b95b9d3aef3ccf934e99b4e015fb6d8aefb2283aa4d6edd954bc3",
+    "formal_statement_sha256": "a7d7c92675c0436af9a51c4148675b10e822d4f5792d897036ccb5dd1f07f350",
+    "proof_body_sha256": "ed2b197f01619642a4edb15726c5e4645a08f906c77e81b2cfe44fac3313a15e"
+  }
+}
