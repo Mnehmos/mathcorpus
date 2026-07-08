@@ -5,10 +5,12 @@ Checked against the 33 existing packets (2026-07-07) to avoid duplicates.
 
 ## Next targets
 
-- [ ] `choose_zero_right` / `choose_self` / `choose_symm` — basic binomial
-      coefficient identities (D0/D1, L0/L1). The roadmap's "finite
-      combinatorics basics" starter family names this explicitly; no
-      `Nat.choose` packet exists yet in the corpus at all.
+- [ ] `choose_self` — `Nat.choose n n = 1` (D0, L0). Companion to the now-
+      committed `choose_zero_right`.
+- [ ] `choose_symm` — `Nat.choose n k = Nat.choose n (n - k)` for `k <= n`
+      (D1, L1). The roadmap's "finite combinatorics basics" starter family
+      names this explicitly.
+
 ## Backlog
 
 - [ ] `card_image_le` — `(s.image f).card <= s.card` (L1).

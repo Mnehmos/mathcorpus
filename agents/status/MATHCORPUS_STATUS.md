@@ -504,3 +504,20 @@ hash-stamped; commit `f8ffa2e`, scoped to only these two new files to
 avoid touching other agents' in-flight work in this heavily-contended
 domain. Recursion via `SubmitModule` remains this domain's one
 undemonstrated technique family for a future cycle.
+
+## Proposed update — combinatorics elementary packet #5 (this agent, 2026-07-08, /loop continuation)
+
+Added `packets/elementary/combinatorics/choose_zero_right.v1.json`:
+`Nat.choose n 0 = 1`, the domain's first `Nat.choose` packet at all,
+opening the roadmap's "finite combinatorics basics" binomial-coefficient
+starter family. Proved directly via `Nat.choose_zero_right`. Produced via
+tracked episode `dbba5471-27a3-4f88-938f-8006ecdc8a5c` (problem_version
+`f74dbb40-2f04-4a1f-8be4-dac059057c46`, dev-attested,
+`problem_imports: ["Mathlib.Data.Nat.Choose.Basic"]`), `kernel_verified`
+on the first `solve` attempt. Narrowed the combined
+`choose_zero_right`/`choose_self`/`choose_symm` QUEUE.md item into two
+explicit remaining targets (`choose_self`, `choose_symm`) rather than
+closing it outright, since only one of the three was done this cycle.
+Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
+0 errors) and hash-stamped; full corpus revalidated clean at 217 packets,
+0 errors, 0 warnings as of this update.
