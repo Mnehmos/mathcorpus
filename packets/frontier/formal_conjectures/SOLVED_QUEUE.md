@@ -91,19 +91,61 @@ win** — flag as a real candidate for a dedicated multi-cycle push if the
 quantum-information infrastructure is ever wanted in this corpus, not as
 a quick Lane-1-style transport.
 
+### Triaged this cycle, round 2 — `Mathoverflow/` (5 files, this agent, 2026-07-08)
+
+- `10799.lean::mathoverflow_10799` — tagged `research solved` (the
+  original Kahn-Kalai "missing lemma" conjecture is **false** without an
+  extra hypothesis, counterexample by Shlomo Perles) and links a
+  `formal_proof` URL, but the theorem body in this file is still `sorry`
+  — same "linked but not replayed here" pattern as `#1052`'s AlphaProof
+  link and `Books/BorweinSineSeries.lean`. Also has ~9 supporting `def`s
+  (`μ`, `μFamily`, `boundaryCount`, `edgeBoundary`, `IsOptimal`, ...) that
+  would need transporting regardless. Not a quick win.
+- `235893.lean::mathoverflow_235893` — the actual open question is
+  `sorry` (as expected, tagged `research open`); the file's `research
+  solved` companion `mathoverflow_260589` (a connected bijection
+  `ℝ → ℝ²` whose inverse isn't connected) is ALSO `sorry`. No win here.
+- `34145.lean` — the two `research solved` unit-square rectangle-packing
+  results (`rectangles_pack_square_133_div_132`,
+  `rectangles_pack_square_501_div_500`) are both `sorry`, citing external
+  papers' packing constructions (ScienceDirect links) that would need
+  original geometric formalization to reproduce. Not a transport target.
+- `486451.lean` — both `research solved` semiring/maximal-ideal
+  existence results are `sorry`; the second cites a named
+  algorithmically-found example (Žužić–Firsching monoid algebra) that
+  would need its own construction formalized from scratch.
+- `75792.lean::complexity_five_pow` — **genuinely `sorry`-free, a real
+  complete proof** (disproves `‖5^n‖ = 5n` at `n=6` via an explicit
+  29-`1`s expression for `5^6`), the first non-Erdős candidate found this
+  survey that actually matches the Erdős-lane win pattern. **Blocked
+  anyway**: it and its dependency chain are built on a custom `inductive
+  Reachable` type, which `SubmitModule` cannot transport (no inductive
+  item kind) — see `BLOCKERS.md` for the full writeup. The file's other
+  `research solved` theorem, `complexity_three_pow` (Selfridge's actual
+  `‖3^n‖=3n` proof), is `sorry` regardless.
+
+**Round-2 verdict**: 0/5 `Mathoverflow/` files yield a transportable win
+this cycle — one (`complexity_five_pow`) is a genuine complete proof but
+hits a new, general blocker class (custom `inductive` types); the rest
+are `sorry` needing either external-proof replay or original geometric/
+algebraic construction work. Do not re-triage `Mathoverflow/` from
+scratch; this round's findings are final for the current file set.
+
 ### Not yet triaged
 
 `Wikipedia/` (60 files), `GreensOpenProblems/` (30), `WrittenOnTheWallII/`
-(21), `Paper/` (12), `OEIS/` (7), `Arxiv/` (9), `Mathoverflow/` (5),
-`Other/` (5) — a future cycle should continue this same triage
-(`grep -B1 -A3 "category research solved"` per file, check for a bare
-`sorry` body vs. a real proof, and check whether the real proofs are
-self-contained or infrastructure-heavy) rather than re-starting from
-scratch. `Mathoverflow/` and `Other/` are the smallest untriaged
-categories and a natural next pick (5 files each).
+(21), `Paper/` (12), `OEIS/` (7), `Arxiv/` (9), `Other/` (5) — a future
+cycle should continue this same triage (`grep -B1 -A3 "category research
+solved"` per file, check for a bare `sorry` body vs. a real proof, check
+whether real proofs are self-contained vs. infrastructure-heavy, AND
+(new this round) check whether the proof depends on a custom `inductive`/
+`structure` declaration before investing further time — see `BLOCKERS.md`).
+`Other/` is now the smallest untriaged category (5 files) and the natural
+next pick.
 
 ## Backlog
 
 - [ ] `HilbertProblems/` — triaged this cycle (see above); both files'
       `research solved` theorems are genuinely `sorry` and genuinely hard
       (5th/17th problems). Not a near-term target.
+- [ ] `Other/` (5 files) — next natural triage pick, untouched.
