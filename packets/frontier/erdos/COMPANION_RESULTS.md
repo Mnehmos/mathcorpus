@@ -12,7 +12,7 @@ the sibling repo (`F:\Github\mnehmos.llm-driven-proof-search.environment\ErdosPr
 | `integer_isGoodPair_iff` cluster (7 thms) | #349 | kernel_verified | `ErdosProblems/erdos-349/proof/` | (none yet) |
 | Subbarao–Warren: unitary perfect numbers are even | #1052 | kernel_verified | `ErdosProblems/erdos-1052/proof/` | (none yet) |
 | Steinerberger: `gcd(aₙ,Lₙ)>1` infinitely often | #291 (part ii) | kernel_verified | `ErdosProblems/erdos-291/proof/` | (none yet) |
-| Cambie: no `n! = x⁴+y⁴` with `gcd(x,y)=1`, `xy>1` | #399 | kernel_verified | `ErdosProblems/erdos-399/proof/` | (none yet) |
+| Cambie: no `n! = x⁴+y⁴` with `gcd(x,y)=1`, `xy>1` | #399 | kernel_verified | `ErdosProblems/erdos-399/proof/` | `frontier.erdos.erdos_399_cambie.v1` (2026-07-08, episode `d2aaae74-a8c1-406a-a196-ce132e64307e`, re-verified independently in this repo's own pinned toolchain; `training.eligibility: quarantined` per default-quarantine policy for `open_problem_related` packets pending external review) |
 | Steinerberger counterexample: product version false | #494 | kernel_verified | `ErdosProblems/erdos-494/proof/` | (none yet) |
 | Sierpiński (1960): infinitely many Sierpiński numbers | #1113 | kernel_verified, no native_decide | `ErdosProblems/erdos-1113/proof/` | (none yet) |
 | General `σ*` multiplicativity (not in Mathlib before this work) | #1052 (infrastructure) | kernel_verified | `ErdosProblems/erdos-1052/` | (none yet) |

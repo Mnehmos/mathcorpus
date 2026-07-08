@@ -1,0 +1,107 @@
+{
+  "packet_id": "frontier.erdos.erdos_399_cambie.v1",
+  "packet_version": "1.0.0",
+  "title": "Erdős #399 companion (Cambie): no n! = x^4 + y^4 with gcd(x,y)=1, xy>1",
+  "domain": "frontier",
+  "level": "L7_frontier",
+  "kind": "theorem",
+  "status": "kernel_verified",
+  "difficulty_bin": "D3",
+  "lean_module": "MathCorpus.Frontier.Erdos.Erdos399Cambie",
+  "theorem_name": "erdos_399_cambie",
+  "imports": [
+    "Mathlib"
+  ],
+  "toolchain": {
+    "lean_version": "v4.32.0-rc1",
+    "mathlib_rev": "360da6fa66c1273b76b6b2d8c5666fd5ac2e3b56"
+  },
+  "source_provenance": {
+    "source_kind": "erdos_problems",
+    "source_refs": [
+      "ErdosProblems/erdos-399/proof/Erdos399_cambie.lean (sibling repo mnehmos.llm-driven-proof-search.environment)",
+      "https://www.erdosproblems.com/399"
+    ],
+    "authors": [
+      "The MathCorpus Authors"
+    ],
+    "copyright_holder": "The MathCorpus Authors",
+    "license_spdx": "Apache-2.0",
+    "license_content": "CC-BY-4.0",
+    "statement_fidelity": "adapted_with_review"
+  },
+  "informal_statement": "A known companion result to Erdos Problem #399, attributed to Cambie: there is no solution to n! = x^4 + y^4 with gcd(x,y) = 1 and x*y > 1. This does NOT resolve Erdos #399 itself (which asks about n! = x^k +/- y^k for xy>1, k>2 in general; the headline question already has a known non-solution-free answer via Barfield's 10! = 48^4 - 36^4, which is a different, unrelated construction from this companion).",
+  "informal_proof_idea": "Mod-8 argument. Fourth powers mod 8 detect parity (a^4 % 8 = a % 2). If gcd(x,y)=1 then x,y are not both even, so x^4+y^4 is 1 or 2 mod 8, never 0. For n>=4, 8 | n!, contradicting the mod-8 residue. For n<=3, n! <= 6 while xy>1 forces x^4+y^4 >= 17. Either way n! != x^4+y^4.",
+  "formal_statement_pp": "theorem erdos_399_cambie (n x y : ℕ) (hxy : Nat.Coprime x y) (h1 : 1 < x * y) : Nat.factorial n ≠ x ^ 4 + y ^ 4",
+  "proof_body_path": "lean/MathCorpus/Frontier/Erdos/Erdos399Cambie.lean",
+  "proof_body_redacted": false,
+  "trust": {
+    "rung": 1,
+    "proof_authority": "lean_kernel",
+    "certificate_checker": "kernel_decide",
+    "encoding_required": false,
+    "encoding_soundness_status": "not_applicable",
+    "independent_review_status": "repo_reviewed",
+    "public_claim_class": "public_safe"
+  },
+  "training": {
+    "eligibility": "quarantined",
+    "reason_codes": [
+      "open_problem_related",
+      "default_quarantine_pending_external_review",
+      "companion_result_not_open_problem"
+    ],
+    "dedupe_cluster_id": "frontier.erdos_399",
+    "template_family_id": "frontier.erdos_companion_results",
+    "open_problem_related": true,
+    "contamination_risk": "low",
+    "can_export_proof_body": true
+  },
+  "dependencies": {
+    "kits": [],
+    "tactic_tags": [
+      "omega",
+      "interval_cases",
+      "decide",
+      "Nat.pow_mod",
+      "Nat.factorial_dvd_factorial"
+    ],
+    "prerequisite_concepts": [
+      "factorial",
+      "coprimality",
+      "modular_arithmetic",
+      "fourth_power",
+      "parity"
+    ]
+  },
+  "metrics": {
+    "loc": 42,
+    "tactic_count": 26
+  },
+  "artifacts": {
+    "public_files": [
+      "lean/MathCorpus/Frontier/Erdos/Erdos399Cambie.lean"
+    ]
+  },
+  "review": {
+    "review_basis": "repo self-review; kernel-verified through the tracked proof-search loop; statement cross-checked against the sibling repo's already-kernel_verified proof of the same result",
+    "reviewer_status": "repo_reviewed",
+    "reviewed_at": "2026-07-08"
+  },
+  "verification": {
+    "verifier": "proofsearch",
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "episode_id": "d2aaae74-a8c1-406a-a196-ce132e64307e",
+    "outcome": "kernel_verified",
+    "kernel_verified": true,
+    "fidelity_status": "attested",
+    "step_count": 1,
+    "import_manifest_hash": "aaf21893d520a78dee0787a1bcaf939ee6b922265ff670c272e2e1d450dd29a7"
+  },
+  "notes": "ANTI-OVERCLAIM: this packet proves only a known COMPANION result to Erdos #399, not Erdos #399 itself. Erdos #399 (n! = x^k +/- y^k, xy>1, k>2) is already known to be NOT solution-free in general via Barfield's construction 10! = 48^4 - 36^4 (unrelated to this proof). This packet's theorem is the narrower Cambie companion (no n! = x^4+y^4 with gcd(x,y)=1, xy>1) and makes no claim about the general problem. Proof authority: Lean kernel via the tracked proof-search loop (episode d2aaae74, problem_version 8ee2e559-41dd-4bd6-ad6b-df16125a0966), submitted as a SubmitModule (helper theorem pow4_mod8 + root theorem erdos_399_cambie), kernel_verified on the first submission after one transport-format retry (root_theorem.proof_format=raw_lean_block was required to preserve the bullet/case-split structure; the first attempt used the postfix '!' factorial notation and hit an unrelated parser ambiguity between '!' and '≠' in the SubmitModule file-assembly context -- switched to the unambiguous Nat.factorial spelling, which resolved it cleanly). Independently re-verified in THIS environment's own pinned toolchain (Lean v4.32.0-rc1, mathlib 360da6fa) rather than treated as evidence merely because the sibling repo (F:\\Github\\mnehmos.llm-driven-proof-search.environment\\ErdosProblems\\erdos-399\\proof\\Erdos399_cambie.lean) already reports it kernel_verified there -- per this repo's evidence policy (docs/proofsearch-integration.md), a proof checked some other way is a candidate, not evidence, until this pinned kernel checks it inside a tracked episode. First packet in the frontier/erdos lane (previously 0 packets, Phase 5 not started). training.eligibility is quarantined by default (not public_train) per the roadmap's conservative-import/default-quarantine policy for open_problem_related packets -- this is a companion result, not a solved open problem, but it has not gone through a formal external review (fidelity_status remains 'attested', not 'verified'), so it stays quarantined until that review happens.",
+  "hashes": {
+    "packet_sha256": "1a3573b9a9ebe3e57d47964a0d9e8aa019a50aa9548743f2e171f5bb6c3828ff",
+    "formal_statement_sha256": "d463d124f7d1ad4511c29e19edf345ea0c7a9b939e9d63e2e37183d422ffbf13",
+    "proof_body_sha256": "4cd4e8c25e1e582c45b86b990b1754e4368c447efbc5c15931b3734a111a8237"
+  }
+}
