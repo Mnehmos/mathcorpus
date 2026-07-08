@@ -1336,3 +1336,21 @@ BUGS.md's logged `episode_observe` UNIQUE-constraint bug has a documented
 workaround and is not blocking -- left untouched rather than attempting a
 fix outside this repo's own tooling (it's in the external proofsearch MCP
 server).
+
+## Proposed update — combinatorics elementary packet #13 (this agent, 2026-07-08, /loop continuation)
+
+Added `packets/elementary/combinatorics/pigeonhole_general.v1.json`: the
+general (non-concrete) pigeonhole principle — for arbitrary `s t : Finset
+ℕ` with `t.card < s.card` and `f` mapping `s` into `t`, some two distinct
+elements of `s` collide under `f`. Proved directly via
+`Finset.exists_ne_map_eq_of_card_lt_of_maps_to`, the same lemma the
+existing concrete `pigeonhole_3_into_2` instance specializes. Produced via
+tracked episode `d9b60f62-3d2a-4c1e-b222-737c11f4855d` (problem_version
+`6602d267-ce39-45ed-aa9c-1ab58a73bfd4`, dev-attested), `kernel_verified`
+on the first `solve` attempt. Closed `packets/elementary/combinatorics/QUEUE.md`'s
+last remaining item; added a new `card_filter_add_card_filter_not`
+candidate (verified the declaration exists in Mathlib first) — the domain
+has `filter_subset'` but no filter counting/partition identity yet.
+Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
+0 errors) and hash-stamped; full corpus revalidated clean at 259 packets,
+0 errors, 0 warnings as of this update.

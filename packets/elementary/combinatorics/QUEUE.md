@@ -5,10 +5,10 @@ Checked against the 33 existing packets (2026-07-07) to avoid duplicates.
 
 ## Next targets
 
-- [ ] A general (non-concrete) pigeonhole statement, e.g.
-      `t.card < s.card -> exists f-collision` for arbitrary `s t : Finset
-      ℕ` and `f : ℕ -> ℕ` with `MapsTo` — generalizes the existing concrete
-      `pigeonhole_3_into_2` instance.
+- [ ] `card_filter_add_card_filter_not` — `(s.filter p).card + (s.filter
+      (fun a => ¬ p a)).card = s.card` (D1, L1). Verified this exact
+      declaration exists in Mathlib. The domain has `filter_subset'` but
+      no counting/partition identity for filters yet.
 
 ## Backlog
 

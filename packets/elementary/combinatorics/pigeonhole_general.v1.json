@@ -1,0 +1,99 @@
+{
+  "packet_id": "elementary.combinatorics.pigeonhole_general.v1",
+  "packet_version": "1.0.0",
+  "title": "The pigeonhole principle, general form",
+  "domain": "combinatorics",
+  "level": "L1_proof_basics",
+  "kind": "concept",
+  "status": "kernel_verified",
+  "difficulty_bin": "D1",
+  "lean_module": "MathCorpus.Elementary.Combinatorics.PigeonholeGeneral",
+  "theorem_name": "pigeonhole_general",
+  "imports": [
+    "Mathlib"
+  ],
+  "toolchain": {
+    "lean_version": "v4.32.0-rc1",
+    "mathlib_rev": "360da6fa66c1273b76b6b2d8c5666fd5ac2e3b56"
+  },
+  "source_provenance": {
+    "source_kind": "author_written",
+    "source_refs": [],
+    "authors": [
+      "The MathCorpus Authors"
+    ],
+    "copyright_holder": "The MathCorpus Authors",
+    "license_spdx": "Apache-2.0",
+    "license_content": "CC-BY-4.0",
+    "statement_fidelity": "author_written"
+  },
+  "informal_statement": "General pigeonhole principle: if s and t are finite sets of naturals with t strictly smaller than s, and f maps every element of s into t, then some two distinct elements of s collide under f.",
+  "informal_proof_idea": "Directly `Finset.exists_ne_map_eq_of_card_lt_of_maps_to`, the same lemma the concrete `pigeonhole_3_into_2` instance specializes.",
+  "formal_statement_pp": "theorem pigeonhole_general (s t : Finset ℕ) (f : ℕ → ℕ) (hc : t.card < s.card) (hf : ∀ a ∈ s, f a ∈ t) : ∃ x ∈ s, ∃ y ∈ s, x ≠ y ∧ f x = f y",
+  "proof_body_path": "lean/MathCorpus/Elementary/Combinatorics/PigeonholeGeneral.lean",
+  "proof_body_redacted": false,
+  "trust": {
+    "rung": 1,
+    "proof_authority": "lean_kernel",
+    "certificate_checker": "kernel_decide",
+    "encoding_required": false,
+    "encoding_soundness_status": "not_applicable",
+    "independent_review_status": "repo_reviewed",
+    "public_claim_class": "public_safe"
+  },
+  "training": {
+    "eligibility": "public_train",
+    "reason_codes": [
+      "public",
+      "non_benchmark",
+      "unredacted"
+    ],
+    "dedupe_cluster_id": "combinatorics.pigeonhole",
+    "template_family_id": "combinatorics.pigeonhole_basics",
+    "contamination_risk": "low",
+    "can_export_proof_body": true
+  },
+  "dependencies": {
+    "kits": [
+      "ExtremalCombinatoricsKit"
+    ],
+    "tactic_tags": [
+      "Finset.exists_ne_map_eq_of_card_lt_of_maps_to"
+    ],
+    "prerequisite_concepts": [
+      "finite_set",
+      "cardinality",
+      "pigeonhole_principle",
+      "function"
+    ]
+  },
+  "metrics": {
+    "loc": 3,
+    "tactic_count": 1
+  },
+  "artifacts": {
+    "public_files": [
+      "lean/MathCorpus/Elementary/Combinatorics/PigeonholeGeneral.lean"
+    ]
+  },
+  "review": {
+    "review_basis": "repo self-review; kernel-verified through the tracked proof-search loop",
+    "reviewer_status": "repo_reviewed"
+  },
+  "verification": {
+    "verifier": "proofsearch",
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "episode_id": "d9b60f62-3d2a-4c1e-b222-737c11f4855d",
+    "outcome": "kernel_verified",
+    "kernel_verified": true,
+    "fidelity_status": "attested",
+    "step_count": 1,
+    "import_manifest_hash": "9bcbf693553e0e2efdb421fcec33c3cc5f71fcc7ea63883b4184635f5df699c2"
+  },
+  "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode d9b60f62). Generalizes the domain's existing concrete pigeonhole_3_into_2 instance to arbitrary finite sets and cardinalities; closes packets/elementary/combinatorics/QUEUE.md's last remaining item.",
+  "hashes": {
+    "packet_sha256": "93fff951e2fe15fa00a6e6e2018809db08833ca37e948a23bab3eb8fda351cc0",
+    "formal_statement_sha256": "bef7adde8ebcec977a4a64b5d29a07e8d5264e2428065dacecbfca2b8ff78f28",
+    "proof_body_sha256": "77a5bc0f58fa989f765bd577567750ebf13c91f42c38d95ea89abf1d44c05740"
+  }
+}
