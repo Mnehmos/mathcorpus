@@ -2,7 +2,7 @@
 
 | Metric | Value |
 |--------|-------|
-| Packets | 28+ (this domain has multiple concurrent agent instances committing to it every cycle — re-derive the exact count via `python tools/corpus_stats.py` or `git log -- packets/elementary/induction/` rather than trusting this number) |
+| Packets | 29+ (this domain has multiple concurrent agent instances committing to it every cycle — re-derive the exact count via `python tools/corpus_stats.py` or `git log -- packets/elementary/induction/` rather than trusting this number) |
 | Level breakdown | L0_elementary: 3 (`two_pow_gt_self`, `one_le_two_pow`, `factorial_pos_induction`) · rest `L1_proof_basics` |
 
 Per-packet detail lives in each packet's own `verification.episode_id`
@@ -27,6 +27,10 @@ continue offsetting that. Also added `prod_range_pos` (D1, L1, episode
 `bdbcc4ba-515a-4841-bd7c-e17a73f82152`): the product of positive terms
 over a range is positive, a general reusable lemma complementing
 `prod_range_succ`/`prod_range_monotone`; deliberately bullet-free in its
-tactic script to avoid the flat-transport hazard.
+tactic script to avoid the flat-transport hazard. And
+`factorial_add_ge_mul` (D1, L1, episode
+`01e983b5-da63-4abc-8b55-2f6871c98c77`): `m! * n! <= (m+n)!`, this
+domain's first genuinely two-parameter induction (m held fixed, induct on
+n) — every prior packet inducted on a single variable.
 
 Next targets: see `QUEUE.md`.

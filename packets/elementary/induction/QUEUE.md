@@ -75,6 +75,14 @@ inductive proof, distinct from `number_theory`'s bare-citation
       flat-transport hazard). Complements `prod_range_succ`/
       `prod_range_monotone`.
 
+- [x] `factorial_add_ge_mul` — `m! * n! <= (m+n)!` (D1, L1). Authored
+      2026-07-08 via tracked episode
+      `01e983b5-da63-4abc-8b55-2f6871c98c77` (kernel_verified on the first
+      attempt: fix `m`, induct on `n`; `Nat.factorial_succ` rewrites,
+      `Nat.mul_le_mul_left` to scale the IH, `nlinarith` to close). This
+      domain's first genuinely two-parameter induction — every prior
+      packet inducted on a single variable.
+
 ## Next targets
 
 *(empty — see Backlog.)*
