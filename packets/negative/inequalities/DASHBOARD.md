@@ -2,7 +2,7 @@
 
 | Metric | Value |
 |--------|-------|
-| Packets | 4 |
+| Packets | 5 |
 | Level breakdown | n/a — negative examples are not leveled the same way; see `trust.rung: 0` |
 
 Packets:
@@ -31,6 +31,13 @@ Packets:
   The Lagrange-identity square hints close the same statement on the first
   attempt in a separate episode, authored as
   `packets/elementary/inequalities/cauchy_three_term.v1.json`.
+- `amgm_wrong_direction_bare_nlinarith_failure.v1.json` — this lane's
+  first `false_generalization` example: `nlinarith` (correct-direction
+  hints) fails on the flipped claim `(a+b)/2 <= sqrt(a*b)` because the
+  claim itself is false, not merely under-hinted; closed with `give_up`.
+  Falseness kernel-verified separately via witness `a=1, b=9` in the
+  companion positive packet
+  `elementary.inequalities.amgm_wrong_direction_counterexample.v1`.
 
 Last synced: 2026-07-08 — re-sync against
 `agents/status/MATHCORPUS_STATUS.md` and `python tools/corpus_stats.py`

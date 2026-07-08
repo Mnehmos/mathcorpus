@@ -1,0 +1,100 @@
+{
+  "packet_id": "elementary.inequalities.amgm_wrong_direction_counterexample.v1",
+  "packet_version": "1.0.0",
+  "title": "AM-GM flipped-direction counterexample",
+  "domain": "algebra",
+  "level": "L1_proof_basics",
+  "kind": "concept",
+  "status": "kernel_verified",
+  "difficulty_bin": "D1",
+  "lean_module": "MathCorpus.Elementary.Inequalities.AmGmWrongDirectionCounterexample",
+  "theorem_name": "amgm_wrong_direction_counterexample",
+  "imports": [
+    "Mathlib"
+  ],
+  "toolchain": {
+    "lean_version": "v4.32.0-rc1",
+    "mathlib_rev": "360da6fa66c1273b76b6b2d8c5666fd5ac2e3b56"
+  },
+  "source_provenance": {
+    "source_kind": "author_written",
+    "source_refs": [],
+    "authors": [
+      "The MathCorpus Authors"
+    ],
+    "copyright_holder": "The MathCorpus Authors",
+    "license_spdx": "Apache-2.0",
+    "license_content": "CC-BY-4.0",
+    "statement_fidelity": "author_written"
+  },
+  "informal_statement": "The flipped-direction claim '(a+b)/2 <= sqrt(a*b)' for positive reals (AM-GM actually says '>=') is false in general: a=1, b=9 gives (1+9)/2 = 5 > 3 = sqrt(1*9).",
+  "informal_proof_idea": "Witness a=1, b=9; rewrite 1*9 as 3^2 and apply Real.sqrt_sq, then norm_num closes the numeric inequality 5 > 3. Companion to the negative example negative.inequalities.amgm_wrong_direction_bare_nlinarith_failure.v1, which shows a natural nlinarith attempt on the flipped statement genuinely fails (as it must, since the statement is false).",
+  "formal_statement_pp": "theorem amgm_wrong_direction_counterexample : ∃ (a b : ℝ), a > 0 ∧ b > 0 ∧ (a + b) / 2 > Real.sqrt (a * b)",
+  "proof_body_path": "lean/MathCorpus/Elementary/Inequalities/AmGmWrongDirectionCounterexample.lean",
+  "proof_body_redacted": false,
+  "trust": {
+    "rung": 1,
+    "proof_authority": "lean_kernel",
+    "certificate_checker": "kernel_decide",
+    "encoding_required": false,
+    "encoding_soundness_status": "not_applicable",
+    "independent_review_status": "repo_reviewed",
+    "public_claim_class": "public_safe"
+  },
+  "training": {
+    "eligibility": "public_train",
+    "reason_codes": [
+      "public",
+      "non_benchmark",
+      "unredacted"
+    ],
+    "dedupe_cluster_id": "inequalities.amgm_wrong_direction",
+    "template_family_id": "inequalities.false_generalization_hazards",
+    "contamination_risk": "low",
+    "can_export_proof_body": true
+  },
+  "dependencies": {
+    "kits": [
+      "InequalityEstimateKit"
+    ],
+    "tactic_tags": [
+      "Real.sqrt_sq",
+      "norm_num"
+    ],
+    "prerequisite_concepts": [
+      "amgm",
+      "sqrt",
+      "counterexample"
+    ]
+  },
+  "metrics": {
+    "loc": 4,
+    "tactic_count": 3
+  },
+  "artifacts": {
+    "public_files": [
+      "lean/MathCorpus/Elementary/Inequalities/AmGmWrongDirectionCounterexample.lean"
+    ]
+  },
+  "review": {
+    "review_basis": "repo self-review; kernel-verified through the tracked proof-search loop",
+    "reviewer_status": "repo_reviewed"
+  },
+  "verification": {
+    "verifier": "proofsearch",
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "episode_id": "5c239fdd-ef5b-440d-b070-16de9d7d95c0",
+    "outcome": "kernel_verified",
+    "kernel_verified": true,
+    "fidelity_status": "attested",
+    "step_count": 1,
+    "import_manifest_hash": "aaf21893d520a78dee0787a1bcaf939ee6b922265ff670c272e2e1d450dd29a7",
+    "verified_at": "2026-07-08T10:04:35Z"
+  },
+  "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 5c239fdd). Falseness of the flipped AM-GM direction is kernel-verified directly via this explicit witness, complementing the failed universal-claim attempt preserved as negative.inequalities.amgm_wrong_direction_bare_nlinarith_failure.v1 (a separate episode, ade3dee6). Resolves the queued 'AM-GM in the wrong direction' candidate in packets/negative/inequalities/QUEUE.md.",
+  "hashes": {
+    "packet_sha256": "63650c211db9c4dd8f8f0f933197e1e8e79961d4a006eb98a8b375907d385f94",
+    "formal_statement_sha256": "0621cfd66b32707b87be84dd635d43cb82947eaecee73c567b0b5ad5f069809d",
+    "proof_body_sha256": "fd6f87606dc6b0d39b7b8219d1327c56b6906b30e08b830a60c3b2aeb18db0f9"
+  }
+}

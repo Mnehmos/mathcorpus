@@ -7,10 +7,6 @@ pre-asserted facts.
 
 ## Next targets
 
-- [ ] AM-GM in the wrong direction: an attempt that mixes up which side of
-      AM-GM is larger (e.g. tries `(a+b)/2 <= Real.sqrt (a*b)` instead of
-      `>=`) and gets a genuine kernel rejection — captures a
-      direction/sign-flip mistake rather than a tactic-strength mistake.
 - [ ] `polyrith`/`nlinarith` degree-mismatch: an inequality whose SOS
       certificate needs degree-4 terms that `nlinarith`'s default search
       depth doesn't reach (verify a concrete instance before adding).
@@ -45,3 +41,15 @@ pre-asserted facts.
       `8cbd4eff-8a4a-4c80-b0bb-49cfa0c7e181`. A distinct, more basic
       failure class than this lane's other examples: wrong tactic
       entirely, not merely missing hints.
+- [x] **AM-GM in the wrong direction (false_generalization).**
+      `amgm_wrong_direction_bare_nlinarith_failure.v1.json` — `nlinarith`
+      with the correct-direction hint set on the flipped claim `(a+b)/2
+      <= sqrt(a*b)` fails (`kernel_fail`, "linarith failed to find a
+      contradiction") because the claim is genuinely false, not merely
+      under-hinted; closed with `give_up`. episode
+      `ade3dee6-5a63-4a59-bf1a-0ec4e86c89aa`. Falseness kernel-verified
+      separately via witness `a=1, b=9` in the companion positive packet
+      `elementary.inequalities.amgm_wrong_direction_counterexample.v1`
+      (episode `5c239fdd-ef5b-440d-b070-16de9d7d95c0`). This lane's first
+      `false_generalization`-category example (prior examples here were
+      `tactic_mismatch` on true statements).

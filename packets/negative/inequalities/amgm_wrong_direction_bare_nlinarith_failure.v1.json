@@ -1,0 +1,65 @@
+{
+  "packet_id": "negative.inequalities.amgm_wrong_direction_bare_nlinarith_failure.v1",
+  "packet_version": "1.0.0",
+  "title": "False generalization: AM-GM with the inequality direction flipped",
+  "domain": "algebra",
+  "level": "L1_proof_basics",
+  "kind": "negative_example",
+  "status": "failed_attempt",
+  "difficulty_bin": "D1",
+  "source_provenance": {
+    "source_kind": "repo_original",
+    "source_refs": [
+      "packets/elementary/inequalities/amgm_wrong_direction_counterexample.v1.json"
+    ],
+    "authors": [
+      "The MathCorpus Authors"
+    ],
+    "copyright_holder": "The MathCorpus Authors",
+    "license_spdx": "Apache-2.0",
+    "license_content": "CC-BY-4.0",
+    "statement_fidelity": "author_written"
+  },
+  "informal_statement": "A tempting but false generalization: AM-GM with the inequality direction flipped -- for positive reals a, b, (a+b)/2 <= sqrt(a*b) -- attacked with the same nlinarith hint terms that close the correct-direction statement.",
+  "failure": {
+    "gap_category": "false_generalization",
+    "sub_category": "amgm_direction_flip",
+    "input_context_summary": "Goal `(a + b) / 2 ≤ Real.sqrt (a * b)` over ℝ with `a > 0`, `b > 0` after `intro a b ha hb`.",
+    "attempt_summary": "Applied `nlinarith [Real.sq_sqrt (mul_nonneg ha.le hb.le), Real.sqrt_nonneg (a*b), sq_nonneg (a-b)]` -- the same hint terms that close the correct-direction AM-GM inequality `sqrt(a*b) <= (a+b)/2`. The kernel rejected the step with 'linarith failed to find a contradiction', because the goal as stated is actually false (e.g. a=1, b=9 gives (1+9)/2 = 5 > 3 = sqrt(9)), not merely under-hinted. Tracked via proofsearch episode ade3dee6-5a63-4a59-bf1a-0ec4e86c89aa, step 1, kernel_fail; step 2 closed with `give_up` since the root claim as stated cannot be fixed by any tactic choice.",
+    "lesson": "Before reaching for nlinarith hints on an inequality, double-check the direction against the actual theorem (AM-GM: arithmetic mean >= geometric mean, not <=). A failed nlinarith attempt on a flipped-direction inequality is not evidence the tactic needs more hints -- it may be evidence the *statement* is false. The falseness here is kernel-verified directly via an explicit witness in the companion positive packet elementary.inequalities.amgm_wrong_direction_counterexample.v1 (a=1, b=9)."
+  },
+  "proof_body_redacted": false,
+  "trust": {
+    "rung": 0,
+    "proof_authority": "none",
+    "public_claim_class": "public_safe"
+  },
+  "training": {
+    "eligibility": "negative_example_only",
+    "reason_codes": [
+      "public",
+      "explicit_negative_label"
+    ],
+    "dedupe_cluster_id": "inequalities.amgm_wrong_direction.failure_patterns",
+    "template_family_id": "inequalities.false_generalization_hazards",
+    "contamination_risk": "low"
+  },
+  "dependencies": {
+    "kits": [
+      "InequalityEstimateKit"
+    ],
+    "tactic_tags": [
+      "nlinarith",
+      "Real.sq_sqrt",
+      "Real.sqrt_nonneg"
+    ],
+    "prerequisite_concepts": [
+      "amgm",
+      "sqrt"
+    ]
+  },
+  "notes": "Captured via tracked proof-search episode ade3dee6-5a63-4a59-bf1a-0ec4e86c89aa (problem_version a8fe23b5-9971-436b-b3d1-0241ba29d49c, environment_hash 9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d): step 1 (nlinarith with the correct-direction hint set) recorded kernel_fail with 'linarith failed to find a contradiction'; step 2 closed with give_up since the root claim is genuinely false. Falseness separately kernel-verified via the explicit witness a=1, b=9 in the companion positive packet elementary.inequalities.amgm_wrong_direction_counterexample.v1 (a distinct episode, 5c239fdd). Resolves the 'AM-GM in the wrong direction' candidate in packets/negative/inequalities/QUEUE.md. This is the inequalities lane's first false_generalization-category example (prior examples there were tactic_mismatch on true statements).",
+  "hashes": {
+    "packet_sha256": "d81785a9da0d937174cbcabc1112c00d5066ecb72dc84a1ecd9b7fbd597e5e35"
+  }
+}

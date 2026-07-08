@@ -2758,3 +2758,42 @@ Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
 files. Full `packets/frontier/erdos/` revalidated clean at 12 packets, 0
 errors, 0 warnings; full corpus at 296 verified public + 26 negative
 (118.4% of the v0.1 public target) as of this update.
+
+## Proposed update — inequalities false_generalization pair: amgm_wrong_direction (this agent, 2026-07-08, /loop continuation)
+
+Startup this cycle: no bugs/triage. Swept every elementary domain's
+`QUEUE.md` fresh — all "Next targets" sections empty except geometry's
+"law of sines" (deferred again, same reasoning as prior cycles: needs a
+materially harder cross-product-based angle setup than this corpus's
+coordinate-proof convention supports cheaply). Checked negative-example
+queues instead and found two genuinely open items:
+`packets/negative/inequalities/QUEUE.md`'s "AM-GM in the wrong direction"
+and `packets/negative/number_theory/QUEUE.md`'s "decide on an unbounded
+primality-style claim". Picked the former.
+
+Ran two tracked episodes. First, the false universal claim `(a+b)/2 <=
+sqrt(a*b)` for positive a, b (AM-GM with the direction flipped), attacked
+with the same `nlinarith` hint set that closes the correct-direction
+statement: genuinely `kernel_fail`'d ("linarith failed to find a
+contradiction") since the claim is actually false, not merely
+under-hinted; closed with `give_up` (episode
+`ade3dee6-5a63-4a59-bf1a-0ec4e86c89aa`, problem_version
+`a8fe23b5-9971-436b-b3d1-0241ba29d49c`). Preserved as
+`packets/negative/inequalities/amgm_wrong_direction_bare_nlinarith_failure.v1.json`
+— this lane's first `false_generalization`-category example (prior
+examples there were all `tactic_mismatch` on true statements).
+
+Second, kernel-verified the falseness directly via an explicit witness
+(a=1, b=9: (1+9)/2=5 > 3=sqrt(9)), rewriting `1*9` as `3^2` and applying
+`Real.sqrt_sq` (episode `5c239fdd-ef5b-440d-b070-16de9d7d95c0`,
+problem_version `87c5b497-625c-4acb-82ef-5c4f857c6c9a`), `kernel_verified`
+on the first attempt. Authored as
+`packets/elementary/inequalities/amgm_wrong_direction_counterexample.v1.json`.
+Together these resolve the queued "AM-GM in the wrong direction"
+candidate.
+
+Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
+0 errors each) and hash-stamped; full corpus revalidated clean at 324
+packets, 0 errors, 0 warnings (297 verified public + 27 negative per
+`corpus_stats.py`, 118.8% of the 250-packet v0.1 public target). Commit
+scoped to only this cycle's own files.

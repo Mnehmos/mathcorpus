@@ -34,6 +34,16 @@ Min/max family: `avg_between_min_max` (`min a b <= (a+b)/2 <= max a b`),
       attempt: `max_le`, `le_max_left`/`le_max_right`, closed by
       `linarith`).
 
+- [x] `amgm_wrong_direction_counterexample` — explicit disproof (witness
+      a=1, b=9) that the flipped AM-GM direction `(a+b)/2 <= sqrt(a*b)`
+      is false in general. Authored 2026-07-08 via tracked episode
+      `5c239fdd-ef5b-440d-b070-16de9d7d95c0` (kernel_verified on the first
+      attempt). Paired negative example
+      `negative.inequalities.amgm_wrong_direction_bare_nlinarith_failure.v1`
+      (episode `ade3dee6-5a63-4a59-bf1a-0ec4e86c89aa`) resolves the
+      queued "AM-GM in the wrong direction" candidate in
+      `packets/negative/inequalities/QUEUE.md`.
+
 ## Next targets
 
 *(empty — see Backlog.)*
