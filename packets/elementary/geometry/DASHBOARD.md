@@ -2,19 +2,21 @@
 
 | Metric | Value |
 |--------|-------|
-| Packets | 32 |
-| Level breakdown | L0_elementary: 5 · L1_proof_basics: 24 · L2_olympiad: 3 |
+| Packets | 34 |
+| Level breakdown | L0_elementary: 5 · L1_proof_basics: 26 · L2_olympiad: 3 |
 
-Last synced: 2026-07-08 — added `reflection_over_x_axis` (D0, L0, episode
-`66dcb53d-d77c-4467-ad54-bdf0db0008a6`): coordinate reflection `(x,y) ->
-(x,-y)` preserves squared distance to any point on the x-axis, via `ring`.
-Also present from concurrent/earlier work this session:
-`pythagorean_right_angle` (episode `1ee45ae1-bde1-4cfa-bd4a-68261f9f8fb1`,
-paired negative example
-`packets/negative/geometry/pythagorean_bare_ring_no_hypothesis_failure.v1.json`)
-and `circle_point_dist_eq_radius` (episode
-`d3dedd8a-5919-404f-baf4-3952a49bb159`). Re-sync against
-`agents/status/MATHCORPUS_STATUS.md` and `python tools/corpus_stats.py`
-after adding packets.
+Per-packet detail lives in each packet's own `verification.episode_id`
+and in `git log -- packets/elementary/geometry/`; this file previously
+grew an unbounded per-packet bullet list and has been condensed (same fix
+already applied across combinatorics/induction/inequalities/functions
+this session). Highlights: `pythagorean_right_angle` (paired negative
+example `pythagorean_bare_ring_no_hypothesis_failure`),
+`circle_point_dist_eq_radius` (the domain's first circle-equation
+packet), `reflection_over_x_axis`, and this cycle's
+`right_triangle_area_half_base_height` (squared-form area-via-base-and-
+height for a right triangle, via the Lagrange identity). This domain
+consistently avoids `Real.sqrt` in favor of squared-distance formulas
+(see `midpoint_equidist`, `reflection_dist`) — follow that convention for
+new area/distance/circle packets.
 
 Next targets: see `QUEUE.md`.

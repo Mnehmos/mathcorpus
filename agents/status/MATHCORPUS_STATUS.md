@@ -1441,3 +1441,45 @@ remaining gap versus the domain's README focus list. Schema-validated
 (`validate_packets.py --check-hashes --warn-as-error`: 0 errors) and
 hash-stamped; full corpus revalidated clean at 263 packets, 0 errors, 0
 warnings as of this update.
+
+## Proposed update — geometry elementary packet: right_triangle_area_half_base_height (this agent, 2026-07-08, /loop continuation)
+
+Startup this cycle: no bugs blocking progress. `python tools/corpus_stats.py`
+showed 244 verified public + 19 negative (263 files) — 97.6% of the
+v0.1 public target (only 6 more elementary packets needed) and 76% of
+the negative-example target (6 more needed there too). Direct file
+counts: induction and inequalities tied smallest at 23, both with
+genuinely empty `QUEUE.md` next-targets yet again this cycle. Moved to
+the next domain in line, `geometry` (33), which had one concrete open
+item: `right_triangle_area_half_base_height`.
+
+Added `packets/elementary/geometry/right_triangle_area_half_base_height.v1.json`:
+for a right angle at vertex B, the square of twice the shoelace
+signed-area term equals the product of the two legs' squared lengths —
+the squared form of Area = (1/2)*base*height, via the unconditional
+Lagrange identity `|u|^2|v|^2 - (u.v)^2 = (cross u v)^2` specialized to
+the right-angle case. Produced via tracked episode
+`db18efdb-8e8d-4b70-a150-f6f0cade1c3c` (problem_version
+`30cd2f41-69a7-40a6-9aa9-76d956a63002`, dev-attested), `kernel_verified`
+on the first `solve` attempt in that episode, via `linear_combination`.
+
+Notable slip along the way: an earlier problem_version (episode
+`3c3b1994`) named the y-coordinate of vertex B `by` — colliding with
+Lean's `by` tactic-block keyword. The root statement itself registered
+without error (problem_create only hashes the text), but the proof term
+hit a hard parse error (`unexpected token 'by'; expected ')'`) the moment
+it tried to `intro`/reference that variable. Abandoned via `give_up` and
+retried with the variable renamed to `by1`. Worth flagging as a general
+lesson for future geometry/algebra packets using short single-letter-ish
+coordinate names: avoid `by`, and probably also `at`, `from`, `do`, `in`,
+`fun`, `have`, `show`, `then`, `else` as bare identifiers.
+
+Closes the last open item in `packets/elementary/geometry/QUEUE.md` (only
+the `Backlog`-tier law of cosines/sines remain, both flagged as
+`GeometryAngleKit`-dependent future work). Schema-validated
+(`validate_packets.py --check-hashes --warn-as-error`: 0 errors) and
+hash-stamped. Also condensed `packets/elementary/geometry/DASHBOARD.md`
+and `QUEUE.md` into summary form (same fix now applied to every
+elementary domain touched this session: combinatorics, induction,
+inequalities, functions, geometry). Commit scoped to only this cycle's
+own files.

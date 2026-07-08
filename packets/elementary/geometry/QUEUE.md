@@ -1,52 +1,29 @@
 # Queue — Geometry (Elementary)
 
 Candidate packets to create or formalize next, roughly in priority order.
-Checked against the 29 existing packets (2026-07-07) to avoid duplicates.
 
-## Done
+Per-packet history lives in each packet's own `verification.episode_id`
+and in `git log -- packets/elementary/geometry/`; this file's "Done"
+list previously grew an unbounded, repeatedly-headered bullet list
+(matching the same growth pattern already fixed elsewhere this session)
+and has been condensed here.
 
-- [x] `pythagorean_right_angle` — for a right angle at `B`, squared
-      distance A-to-C equals squared distance A-to-B plus squared distance
-      B-to-C (D1, L1). Authored 2026-07-08 via tracked episode
-      `1ee45ae1-bde1-4cfa-bd4a-68261f9f8fb1` (kernel_verified:
-      `nlinarith [h]` from the right-angle dot-product hypothesis). A bare
-      `ring` attempt kernel-failed first in the same episode (ring cannot
-      use hypotheses) and is preserved as
-      `packets/negative/geometry/pythagorean_bare_ring_no_hypothesis_failure.v1.json`.
-      Fills the curriculum-notable Pythagorean-theorem gap.
+## Done (condensed)
 
-## Done (continued)
-
-- [x] `circle_point_dist_eq_radius` — the cosine/sine parametrization
-      `(cx + r*cos(theta), cy + r*sin(theta))` has squared distance `r^2`
-      from the center `(cx, cy)` (D0, L0). Authored 2026-07-08 via tracked
-      episode `d3dedd8a-5919-404f-baf4-3952a49bb159` (kernel_verified on
-      the first attempt: `Real.sin_sq_add_cos_sq θ` + `nlinarith [h]`).
-      Phrased with squared distance (not `dist p c = r` / `Real.sqrt`) to
-      match this domain's convention (`midpoint_equidist`,
-      `reflection_dist`); the domain's first circle-equation packet.
-
-## Done (continued)
-
-- [x] `reflection_over_x_axis` — coordinate reflection `(x, y) -> (x, -y)`
-      preserves squared distance to any point `(qx, 0)` on the x-axis (D0,
-      L0). Authored 2026-07-08 via tracked episode
-      `66dcb53d-d77c-4467-ad54-bdf0db0008a6` (kernel_verified: `ring`, an
-      unconditional polynomial identity once the axis point's y-coordinate
-      is fixed at 0 in the statement). A first `problem_create` without an
-      explicit `problem_imports: ["Mathlib"]` resolved to a bare
-      Ring+NormNum manifest and hit a spurious `HSub ℝ ℝ ?m` typeclass
-      failure on the identical tactic — a tooling/import-manifest artifact
-      (not a genuine tactic lesson), fixed by re-registering with the
-      standard `["Mathlib"]` import manifest used by every other packet in
-      this repo.
+`pythagorean_right_angle` (paired negative example:
+`pythagorean_bare_ring_no_hypothesis_failure` — bare `ring` can't use
+hypotheses, `nlinarith [h]` closes it), `circle_point_dist_eq_radius`
+(the domain's first circle-equation packet, cosine/sine parametrization),
+`reflection_over_x_axis`, `right_triangle_area_half_base_height` — squared
+form of Area = (1/2)*base*height via the Lagrange identity
+(`linear_combination`); note: an initial attempt used `by` as a
+y-coordinate variable name and collided with Lean's `by` keyword, causing
+a parse error in the proof term despite the root statement registering
+fine — renamed to `by1` and retried.
 
 ## Next targets
 
-- [ ] `right_triangle_area_half_base_height` — area of a right triangle via
-      the two legs (D1, L1). `shoelace_identity` gives the general-triangle
-      area formula; the right-triangle special case is a good, smaller
-      companion.
+*(empty — see Backlog.)*
 
 ## Backlog
 

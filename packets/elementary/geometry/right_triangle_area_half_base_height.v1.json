@@ -1,0 +1,99 @@
+{
+  "packet_id": "elementary.geometry.right_triangle_area_half_base_height.v1",
+  "packet_version": "1.0.0",
+  "title": "Right-triangle area via base and height (squared form)",
+  "domain": "geometry",
+  "level": "L1_proof_basics",
+  "kind": "concept",
+  "status": "kernel_verified",
+  "difficulty_bin": "D1",
+  "lean_module": "MathCorpus.Elementary.Geometry.RightTriangleAreaHalfBaseHeight",
+  "theorem_name": "right_triangle_area_half_base_height",
+  "imports": [
+    "Mathlib"
+  ],
+  "toolchain": {
+    "lean_version": "v4.32.0-rc1",
+    "mathlib_rev": "360da6fa66c1273b76b6b2d8c5666fd5ac2e3b56"
+  },
+  "source_provenance": {
+    "source_kind": "author_written",
+    "source_refs": [],
+    "authors": [
+      "The MathCorpus Authors"
+    ],
+    "copyright_holder": "The MathCorpus Authors",
+    "license_spdx": "Apache-2.0",
+    "license_content": "CC-BY-4.0",
+    "statement_fidelity": "author_written"
+  },
+  "informal_statement": "For a triangle with vertices A, B, C where the angle at B is a right angle (the dot product of BA and BC is zero), the square of twice the signed area (the shoelace cross-product term) equals the product of the squared leg lengths |BA|^2 * |BC|^2. This is the squared form of Area = (1/2) * base * height for a right triangle, phrased without Real.sqrt.",
+  "informal_proof_idea": "Unconditionally (the Lagrange identity), |u|^2*|v|^2 - (u.v)^2 = (cross u v)^2 for plane vectors u, v. Specializing u = BA, v = BC with the right-angle hypothesis u.v = 0 gives (cross u v)^2 = |u|^2*|v|^2 directly. Proved via `linear_combination` with the hypothesis scaled by the (negated) dot-product expression, since goal-minus-hypothesis-combination reduces to a pure ring identity.",
+  "formal_statement_pp": "theorem right_triangle_area_half_base_height (ax ay bx by1 cx cy : ℝ) (h : (ax - bx) * (cx - bx) + (ay - by1) * (cy - by1) = 0) : ((ax - bx) * (cy - by1) - (cx - bx) * (ay - by1)) ^ 2 = ((ax - bx) ^ 2 + (ay - by1) ^ 2) * ((cx - bx) ^ 2 + (cy - by1) ^ 2)",
+  "proof_body_path": "lean/MathCorpus/Elementary/Geometry/RightTriangleAreaHalfBaseHeight.lean",
+  "proof_body_redacted": false,
+  "trust": {
+    "rung": 1,
+    "proof_authority": "lean_kernel",
+    "certificate_checker": "kernel_decide",
+    "encoding_required": false,
+    "encoding_soundness_status": "not_applicable",
+    "independent_review_status": "repo_reviewed",
+    "public_claim_class": "public_safe"
+  },
+  "training": {
+    "eligibility": "public_train",
+    "reason_codes": [
+      "public",
+      "non_benchmark",
+      "unredacted"
+    ],
+    "dedupe_cluster_id": "geometry.right_triangle_area_half_base_height",
+    "template_family_id": "geometry.coordinate_area_basics",
+    "contamination_risk": "low",
+    "can_export_proof_body": true
+  },
+  "dependencies": {
+    "kits": [],
+    "tactic_tags": [
+      "linear_combination"
+    ],
+    "prerequisite_concepts": [
+      "triangle_area",
+      "shoelace_formula",
+      "right_angle",
+      "dot_product",
+      "lagrange_identity"
+    ]
+  },
+  "metrics": {
+    "loc": 1,
+    "tactic_count": 1
+  },
+  "artifacts": {
+    "public_files": [
+      "lean/MathCorpus/Elementary/Geometry/RightTriangleAreaHalfBaseHeight.lean"
+    ]
+  },
+  "review": {
+    "review_basis": "repo self-review; kernel-verified through the tracked proof-search loop",
+    "reviewer_status": "repo_reviewed"
+  },
+  "verification": {
+    "verifier": "proofsearch",
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "episode_id": "db18efdb-8e8d-4b70-a150-f6f0cade1c3c",
+    "outcome": "kernel_verified",
+    "kernel_verified": true,
+    "fidelity_status": "attested",
+    "step_count": 1,
+    "import_manifest_hash": "aa26b0129904c0f17185efb549b06c1401eb0b882cbd968fd48caffde6a0470c",
+    "verified_at": "2026-07-08T06:06:56Z"
+  },
+  "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode db18efdb, kernel_verified on the first solve attempt in that episode). An earlier problem_version (episode 3c3b1994) used `by` as the y-coordinate variable name for vertex B, colliding with Lean's `by` tactic-block keyword and producing a parse error (`unexpected token 'by'`) in the proof term despite the root statement itself registering without error; abandoned via give_up and retried with the variable renamed to `by1`. Closes the `right_triangle_area_half_base_height` item in packets/elementary/geometry/QUEUE.md.",
+  "hashes": {
+    "packet_sha256": "b8a4ae076bf473eead8a57fbfc1a878daeb67715148498d1d74a1624659871ec",
+    "formal_statement_sha256": "fb4f05a0681251bf8472db98a4e2dae9bba536e00292734a4dedc1e8dfc1518e",
+    "proof_body_sha256": "9b26d456f366ee587431aa54a2d5ffa6a11bcbe2ffa12f8f914a6f443c52d6d4"
+  }
+}
