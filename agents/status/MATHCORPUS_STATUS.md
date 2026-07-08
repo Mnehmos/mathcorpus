@@ -712,3 +712,33 @@ now that the basics family is done. Schema-validated
 hash-stamped; full corpus revalidated clean at 227 packets, 0 errors, 0
 warnings as of this update. Commit scoped to only this cycle's own files
 (another agent has induction files staged concurrently).
+
+## Proposed update — functions elementary packet: strictmono_injective (this agent, 2026-07-08, /loop continuation)
+
+Startup this cycle: no bugs/triage; fresh `python tools/corpus_stats.py`
+showed 213 verified public + 12 negative (225 files, 85.2% of the v0.1
+public target). Per-folder recount: induction 16 (still smallest, but its
+own `QUEUE.md` "Next targets" and "Backlog" are both explicitly empty —
+every focus-list technique from `LOOP.md` is now demonstrated, including
+mutual recursion via `even_odd_mutual_totality` from this agent's prior
+cycle). Moved to the next tier: `functions` (18) and `inequalities` (19).
+Picked `functions` — its `QUEUE.md` still names four open items
+(`linear_injective`, `strictMono_injective`, `id_bijective`,
+`fixed_point_id`) on the domain's stated focus.
+
+Added `packets/elementary/functions/strictmono_injective.v1.json`: for
+`α` linearly ordered, `β` preordered, `f : α → β`, `StrictMono f →
+Function.Injective f`, proved directly via `lt_trichotomy` (not citing
+Mathlib's `StrictMono.injective`, for instructional value — mirrors the
+`injective_comp` packet's choice). Produced via tracked episode
+`aef62b6e-d395-4b6e-83f1-35f2019a8851` (problem_version
+`c3c85dbe-b075-489a-8b6c-c238230c5dfb`, dev-attested), `kernel_verified`
+on the first `solve` attempt. Closes the `strictMono_injective` item in
+`packets/elementary/functions/QUEUE.md` — explicitly connects the domain's
+"monotone" and "injective" stated focus topics for the first time.
+
+Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
+0 errors) and hash-stamped; commit `5688a4c`, scoped to only these two new
+files (another concurrent agent has `linear_injective` staged
+uncommitted). Full `packets/elementary/functions/` revalidated clean at 20
+packets, 0 errors, 0 warnings as of this update.
