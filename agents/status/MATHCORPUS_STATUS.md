@@ -1416,3 +1416,28 @@ Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
 files. Full `packets/elementary/functions/` revalidated clean at 26
 packets, 0 errors, 0 warnings; full corpus at 243 verified public + 19
 negative (97.2% of the v0.1 public target, 7 to go) as of this update.
+
+## Proposed update — combinatorics elementary packet #14 (this agent, 2026-07-08, /loop continuation)
+
+Added `packets/elementary/combinatorics/card_filter_partition.v1.json`:
+`(s.filter (fun a => a % 2 = 0)).card + (s.filter (fun a => ¬ (a % 2 =
+0))).card = s.card` — a predicate (evenness, as a concrete instance) and
+its negation partition a finite set's cardinality. Proved via
+`Finset.card_filter_add_card_filter_not`. Produced via tracked episode
+`5229559a-e7cd-468f-bdea-6f64506ccc1e` (problem_version
+`c763beb6-5c08-4397-bea1-234fbd678296`, dev-attested), `kernel_verified`
+on the third `solve` attempt — the first two mis-guessed the lemma's
+argument order/arity (`Finset.card_filter_add_card_filter_not` takes only
+the predicate explicitly; the `Finset` argument is inferred from the
+goal), hitting `type_mismatch`/`parse_error` `kernel_fail`s before a
+single-underscore application succeeded; recorded in the packet's own
+`notes` rather than split into a separate negative example, since it's an
+argument-arity slip rather than an automation/tactic-mismatch hazard with
+independent training value. Closed
+`packets/elementary/combinatorics/QUEUE.md`'s `card_filter_add_card_filter_not`
+item; added a new `Finset.sum`/`Finset.prod` candidate (verified
+`prod_range_succ` exists in Mathlib first) now that it's the only
+remaining gap versus the domain's README focus list. Schema-validated
+(`validate_packets.py --check-hashes --warn-as-error`: 0 errors) and
+hash-stamped; full corpus revalidated clean at 263 packets, 0 errors, 0
+warnings as of this update.
