@@ -1,0 +1,102 @@
+{
+  "packet_id": "elementary.induction.exists_prime_factor.v1",
+  "packet_version": "1.0.0",
+  "title": "Every n >= 2 has a prime factor, by strong induction",
+  "domain": "algebra",
+  "level": "L1_proof_basics",
+  "kind": "concept",
+  "status": "kernel_verified",
+  "difficulty_bin": "D1",
+  "lean_module": "MathCorpus.Elementary.Induction.ExistsPrimeFactor",
+  "theorem_name": "exists_prime_factor",
+  "imports": [
+    "Mathlib"
+  ],
+  "toolchain": {
+    "lean_version": "v4.32.0-rc1",
+    "mathlib_rev": "360da6fa66c1273b76b6b2d8c5666fd5ac2e3b56"
+  },
+  "source_provenance": {
+    "source_kind": "author_written",
+    "source_refs": [],
+    "authors": [
+      "The MathCorpus Authors"
+    ],
+    "copyright_holder": "The MathCorpus Authors",
+    "license_spdx": "Apache-2.0",
+    "license_content": "CC-BY-4.0",
+    "statement_fidelity": "author_written"
+  },
+  "informal_statement": "Every natural number n >= 2 has a prime factor: there exists a prime p dividing n.",
+  "informal_proof_idea": "Strong induction on n via Nat.strong_induction_on. If n is prime, take p = n (dvd_refl). Otherwise n has a nontrivial divisor m with 2 <= m < n (Nat.exists_dvd_of_not_prime2); the strong induction hypothesis applied to m (which is strictly smaller and still >= 2) gives a prime p dividing m, and p ∣ m ∣ n gives p ∣ n by transitivity.",
+  "formal_statement_pp": "theorem exists_prime_factor (n : ℕ) (hn : 2 ≤ n) : ∃ p, Nat.Prime p ∧ p ∣ n",
+  "proof_body_path": "lean/MathCorpus/Elementary/Induction/ExistsPrimeFactor.lean",
+  "proof_body_redacted": false,
+  "trust": {
+    "rung": 1,
+    "proof_authority": "lean_kernel",
+    "certificate_checker": "kernel_decide",
+    "encoding_required": false,
+    "encoding_soundness_status": "not_applicable",
+    "independent_review_status": "repo_reviewed",
+    "public_claim_class": "public_safe"
+  },
+  "training": {
+    "eligibility": "public_train",
+    "reason_codes": [
+      "public",
+      "non_benchmark",
+      "unredacted"
+    ],
+    "dedupe_cluster_id": "induction.exists_prime_factor",
+    "template_family_id": "induction.strong_induction_basics",
+    "contamination_risk": "low",
+    "can_export_proof_body": true
+  },
+  "dependencies": {
+    "kits": [],
+    "tactic_tags": [
+      "strong_induction",
+      "Nat.strong_induction_on",
+      "by_cases",
+      "Nat.exists_dvd_of_not_prime2",
+      "dvd_trans"
+    ],
+    "prerequisite_concepts": [
+      "strong_induction",
+      "primality",
+      "divisibility",
+      "well_founded_recursion"
+    ]
+  },
+  "metrics": {
+    "loc": 3,
+    "tactic_count": 1
+  },
+  "artifacts": {
+    "public_files": [
+      "lean/MathCorpus/Elementary/Induction/ExistsPrimeFactor.lean"
+    ]
+  },
+  "review": {
+    "review_basis": "repo self-review; kernel-verified through the tracked proof-search loop",
+    "reviewer_status": "repo_reviewed"
+  },
+  "verification": {
+    "verifier": "proofsearch",
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "episode_id": "ac1ea7d4-4b1a-406e-8c2a-e209d5cd03d5",
+    "outcome": "kernel_verified",
+    "kernel_verified": true,
+    "fidelity_status": "attested",
+    "step_count": 1,
+    "import_manifest_hash": "8c1272c3bea536f8d4ba46afce317b5ced6c0e559c27da5eef3c12b3afc9c236",
+    "verified_at": "2026-07-08T03:36:30Z"
+  },
+  "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode ac1ea7d4), kernel_verified on the first attempt. The packet's Lean file states n and hn as explicit theorem parameters (not a bare `intro n; intro hn` inside the tactic block, since the proof-search environment's root obligation is always a headerless `∀`-statement); this exact tactic-state form (`intro n hn` before `induction n using Nat.strong_induction_on`, confirming the induction tactic auto-reverts/reintroduces the dependent hypothesis hn) was independently kernel-verified in this episode before being packaged, per docs/proofsearch-integration.md (a prior episode f9e06b9b verified the `intro n; induction n; (case) intro hn` ordering instead, which is not the form used in the packaged file, hence the re-check). This domain's first genuine strong-induction packet (`Nat.strong_induction_on`) — every prior induction packet used plain `induction n with zero | succ`. Related to (but not proof-term-dependent on) the number_theory domain's queued `prime_two` / `not_prime_one` packets and Mathlib's own `Nat.exists_prime_and_dvd`, which this proof deliberately does not cite directly so the strong-induction technique is the one actually exercised.",
+  "hashes": {
+    "packet_sha256": "2883776c52be32fb6ac304318f4f175f5a974ed2b98cd927fbf0804f76413adf",
+    "formal_statement_sha256": "35fa3e2122e7161bf7f3cd35dfb68c9535e7645a03f4d18bcf3dadee7ad4e466",
+    "proof_body_sha256": "3aed936ce15d7fdea1988e01c8b6813d649550b92818f8902e905f6d7835d375"
+  }
+}

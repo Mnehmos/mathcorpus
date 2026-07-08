@@ -66,8 +66,26 @@ over other elementary domains when otherwise unconstrained**, per
 instances working it, so check `git log -- packets/elementary/induction/`
 for very recent commits before re-populating.)*
 
+## Done (continued)
+
+- [x] Strong induction example: every `n >= 2` has a prime factor. Authored
+      2026-07-08 as `exists_prime_factor` via tracked episode
+      `ac1ea7d4-4b1a-406e-8c2a-e209d5cd03d5` (kernel_verified on the first
+      attempt: `Nat.strong_induction_on`, case split on `n.Prime`,
+      `Nat.exists_dvd_of_not_prime2` for the non-prime branch, `dvd_trans`
+      to close). Proved directly against Mathlib's primality API rather
+      than waiting on the number_theory domain's `prime_two` /
+      `not_prime_one` packets — those were a suggested narrative ordering,
+      not a real Lean dependency (`Nat.Prime` and its lemmas already exist
+      in Mathlib regardless of whether those trivial packets are
+      authored). This is the domain's first packet using genuine strong
+      induction (`Nat.strong_induction_on`) rather than plain
+      `induction n with zero | succ`.
+
 ## Backlog
 
-- [ ] Strong induction example: every `n >= 2` has a prime factor (L1/L2 —
-      ties to the number_theory domain's planned `prime_two` /
-      `not_prime_one` packets; author those first).
+*(empty — repopulate from the domain-specific focus in `LOOP.md`:
+induction, strong induction, recursion, finite sums/products, factorials,
+powers, inequalities by induction, monotonicity. Recursion / well-founded
+recursion via `SubmitModule` is the one technique family this domain
+still hasn't demonstrated.)*
