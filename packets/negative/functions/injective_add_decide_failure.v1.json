@@ -1,0 +1,64 @@
+{
+  "packet_id": "negative.functions.injective_add.decide_failure.v1",
+  "packet_version": "1.0.0",
+  "title": "decide fails on an injectivity goal over an infinite domain",
+  "domain": "algebra",
+  "level": "L1_proof_basics",
+  "kind": "negative_example",
+  "status": "failed_attempt",
+  "difficulty_bin": "D1",
+  "source_provenance": {
+    "source_kind": "repo_original",
+    "source_refs": [],
+    "authors": [
+      "The MathCorpus Authors"
+    ],
+    "copyright_holder": "The MathCorpus Authors",
+    "license_spdx": "Apache-2.0",
+    "license_content": "CC-BY-4.0",
+    "statement_fidelity": "author_written"
+  },
+  "informal_statement": "A goal `Function.Injective (fun n : ℕ => n + 5)` attacked by `decide` instead of unfolding injectivity by hand.",
+  "failure": {
+    "gap_category": "tactic_mismatch",
+    "sub_category": "decide_on_infinite_domain",
+    "input_context_summary": "Goal was `Function.Injective (fun n : ℕ => n + 5)`, an elementary injectivity fact over the infinite type ℕ.",
+    "attempt_summary": "Applied `decide` directly to the injectivity goal, expecting it to close the way `decide` closes small finite-domain propositions. Lean failed to elaborate the tactic: 'failed to synthesize Decidable (Function.Injective fun n => n + 5)'.",
+    "lesson": "`decide` needs a global `Decidable` instance for the whole proposition, not just its atoms. A `∀`-statement over an infinite domain (`Function.Injective f` on ℕ or ℤ) has no such instance and will never get one; unfold it by hand (`intro a b h`) and close it with a real tactic (e.g. `omega`, `simpa`) instead of reaching for `decide`."
+  },
+  "proof_body_redacted": false,
+  "trust": {
+    "rung": 0,
+    "proof_authority": "none",
+    "public_claim_class": "public_safe"
+  },
+  "training": {
+    "eligibility": "negative_example_only",
+    "reason_codes": [
+      "public",
+      "explicit_negative_label"
+    ],
+    "dedupe_cluster_id": "functions.injective.failure_patterns",
+    "template_family_id": "functions.automation_hazards",
+    "contamination_risk": "low"
+  },
+  "dependencies": {
+    "kits": [],
+    "tactic_tags": [
+      "decide",
+      "Function.Injective"
+    ]
+  },
+  "verification": {
+    "verifier": "proofsearch",
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "episode_id": "2874844f-84d1-476e-92b9-5cfe043a88cf",
+    "kernel_verified": false,
+    "fidelity_status": "attested",
+    "step_count": 2
+  },
+  "notes": "Tracked via proofsearch episode 2874844f-84d1-476e-92b9-5cfe043a88cf: step 1 attempted `decide` and hit a kernel_fail diagnostic ('failed to synthesize Decidable (Function.Injective fun n => n + 5)'); step 2 gave_up, closing the episode honestly rather than pasting in a side-channel fix. Illustrative v0.1 negative example. Labeled non-proof-bearing training data (rung 0).",
+  "hashes": {
+    "packet_sha256": "5e0e3d93ef4cbb4ce94e997466b5e6527615ed42cca4f52366725ae4e3310836"
+  }
+}

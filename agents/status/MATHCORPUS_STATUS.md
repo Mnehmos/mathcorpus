@@ -3,7 +3,7 @@
 Corpus-wide status for the MathCorpus agent workspace. Owned by the dev
 loop agent (`agents/github_issues/`); domain agents propose updates rather
 than editing directly. Re-derive with `python tools/corpus_stats.py` where
-available; this snapshot was hand-updated 2026-07-08 after one algebra
+available; this snapshot was hand-updated 2026-07-08 after a combinatorics
 negative-example packet (proposed update — dev loop agent should confirm
 against a fresh `corpus_stats.py` run).
 
@@ -11,20 +11,19 @@ against a fresh `corpus_stats.py` run).
 
 | Metric | Value |
 |--------|-------|
-| Total packets | 191 |
+| Total packets | 192 |
 | Elementary (public) | 189 |
-| Negative examples | 2 |
+| Negative examples | 3 |
 | v0.1 target (`docs/roadmap.md`) | >=250 public packets, >=25 negative examples |
 | Progress to v0.1 (public) | 189 / 250 (~76%) |
-| Progress to v0.1 (negative) | 2 / 25 (~8%) |
+| Progress to v0.1 (negative) | 3 / 25 (~12%) |
 
-Note: a third negative-example candidate,
-`packets/negative/functions/injective_add_decide_failure.v1.json`, is
-present in the working tree but **uncommitted and unstamped**
-(`hashes.packet_sha256` is a placeholder, and its `domain` field says
-`algebra` while it lives under the `functions` folder) — it looks like another
-agent's in-progress work. Do not count it until it's stamped, validated, and
-committed by its owning agent.
+Note: two more negative-example candidates were seen in the working tree
+but are **uncommitted and unstamped** at the time of this snapshot —
+`packets/negative/functions/injective_add_decide_failure.v1.json` and
+`packets/negative/number_theory/divisor_case_split_omega_unevaluated_literal.v1.json`
+— apparently other agents' in-progress work. Do not count them until
+they're stamped, validated, and committed by their owning agents.
 
 ## Elementary domain distribution (measured)
 
@@ -42,15 +41,22 @@ All 189 elementary packets are `status: kernel_verified`.
 
 ## Negative examples
 
-2 packets:
+3 packets:
 - `packets/negative/geometry/angle_atoms_nlinarith_failure.v1.json`
 - `packets/negative/algebra/nat_sub_ring_trap.v1.json` (added 2026-07-08:
   `ring` fails on a `ℕ` truncated-subtraction cancellation because it
   ignores the ordering hypothesis; `omega` closes it)
+- `packets/negative/combinatorics/finset_card_atoms_omega_failure.v1.json`
+  (added 2026-07-08: `omega` applied directly to the four `Finset.card`
+  atoms in the inclusion-exclusion identity `(s ∪ t).card + (s ∩ t).card =
+  s.card + t.card` reports a spurious counterexample, since it has no
+  built-in knowledge of the Finset union/intersection cardinality
+  relationship; produced via tracked episode
+  `29b897d0-2c51-4a9b-8bb4-5f781b0a753c`, closed with `give_up`)
 
-5 more domain lanes (`combinatorics`, `functions`, `induction`,
-`inequalities`, `number_theory`) are still empty — the roadmap's >=25
-negative-example release criterion is the biggest current gap.
+4 more domain lanes (`functions`, `induction`, `inequalities`,
+`number_theory`) are still empty in the committed corpus — the roadmap's
+>=25 negative-example release criterion is the biggest current gap.
 
 ## Frontier (Phase 5)
 
@@ -85,9 +91,9 @@ negative-example coverage matters before a v0.1 cut, not just raw count).
 
 Induction (6 packets) is furthest behind on the elementary spine; negative
 examples remain the single biggest gap versus the v0.1 release criteria —
-`combinatorics`, `induction`, `inequalities`, and `number_theory` still
-have zero negative-example packets (`functions` has one uncommitted/
-unstamped candidate in progress; see note above).
+`induction`, `inequalities`, and `number_theory` still have zero committed
+negative-example packets (`functions` and `number_theory` each have one
+uncommitted/unstamped candidate in progress; see note above).
 
 ## Known environment bugs / workarounds
 

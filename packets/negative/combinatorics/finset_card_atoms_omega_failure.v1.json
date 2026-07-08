@@ -1,0 +1,73 @@
+{
+  "packet_id": "negative.combinatorics.finset_card_atoms.omega_failure.v1",
+  "packet_version": "1.0.0",
+  "title": "omega fails on raw Finset.card atoms without inclusion-exclusion bridging",
+  "domain": "combinatorics",
+  "level": "L1_proof_basics",
+  "kind": "negative_example",
+  "status": "failed_attempt",
+  "difficulty_bin": "D1",
+  "source_provenance": {
+    "source_kind": "repo_original",
+    "source_refs": [],
+    "authors": [
+      "The MathCorpus Authors"
+    ],
+    "copyright_holder": "The MathCorpus Authors",
+    "license_spdx": "Apache-2.0",
+    "license_content": "CC-BY-4.0",
+    "statement_fidelity": "author_written"
+  },
+  "informal_statement": "A goal proving `(s ∪ t).card + (s ∩ t).card = s.card + t.card` for `s t : Finset ℕ`, attacked by `omega` directly on the four `Finset.card` atoms instead of first invoking the union/intersection cardinality identity.",
+  "failure": {
+    "gap_category": "tactic_mismatch",
+    "sub_category": "linear_arith_on_opaque_finset_card_atoms",
+    "input_context_summary": "Goal was the inclusion-exclusion cardinality identity `(s ∪ t).card + (s ∩ t).card = s.card + t.card` over `Finset ℕ`.",
+    "attempt_summary": "Applied `omega` directly after `intro s t` without bridging through `Finset.card_union_add_card_inter`. `omega` treated `s.card`, `t.card`, `(s ∪ t).card`, and `(s ∩ t).card` as four independent, unconstrained natural-number atoms and reported a spurious counterexample (`a + b - c - d ≥ 1` for `a := s.card`, `b := t.card`, `c := (s ∪ t).card`, `d := (s ∩ t).card`), since it has no built-in knowledge of the Finset union/intersection cardinality relationship between them.",
+    "lesson": "Bridge Finset cardinality identities (e.g. `Finset.card_union_add_card_inter`) into scalar equations before invoking `omega`/`nlinarith`; these tactics only see linear relations they are told about and cannot derive combinatorial identities between distinct `Finset.card` atoms on their own."
+  },
+  "proof_body_redacted": false,
+  "trust": {
+    "rung": 0,
+    "proof_authority": "none",
+    "public_claim_class": "public_safe"
+  },
+  "training": {
+    "eligibility": "negative_example_only",
+    "reason_codes": [
+      "public",
+      "explicit_negative_label"
+    ],
+    "dedupe_cluster_id": "combinatorics.card_identity.failure_patterns",
+    "template_family_id": "combinatorics.automation_hazards",
+    "contamination_risk": "low"
+  },
+  "dependencies": {
+    "kits": [
+      "ExtremalCombinatoricsKit"
+    ],
+    "tactic_tags": [
+      "omega",
+      "Finset.card",
+      "Finset.card_union_add_card_inter"
+    ],
+    "prerequisite_concepts": [
+      "finite_set",
+      "cardinality",
+      "union",
+      "intersection"
+    ]
+  },
+  "verification": {
+    "verifier": "proofsearch",
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "episode_id": "29b897d0-2c51-4a9b-8bb4-5f781b0a753c",
+    "fidelity_status": "attested",
+    "import_manifest_hash": "9bcbf693553e0e2efdb421fcec33c3cc5f71fcc7ea63883b4184635f5df699c2",
+    "step_count": 2
+  },
+  "notes": "Produced through the tracked proof-search MCP loop (problem 84eaf4f4-21db-4e02-986c-bb78aae7e931, episode 29b897d0-2c51-4a9b-8bb4-5f781b0a753c): a `solve` step with `intro s t; omega` returned a kernel_fail with the `omega` tactic-failure diagnostic quoted in `failure.attempt_summary`, then the episode was closed with `give_up`. First v0.1 negative example for the combinatorics domain (previously 0).",
+  "hashes": {
+    "packet_sha256": "5b646c82776f1bd22fd2a9114e611a29c0c9042db4c49308f630a17a3b762a1b"
+  }
+}
