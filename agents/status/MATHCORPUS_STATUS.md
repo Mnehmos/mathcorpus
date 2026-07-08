@@ -1285,3 +1285,54 @@ Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
 0 errors) and hash-stamped; commit `c777d80`, scoped to only these two new
 files. Full `packets/elementary/functions/` revalidated clean at 24
 packets, 0 errors, 0 warnings as of this update.
+
+## Proposed update — algebra negative example: div_mul_cancel (this agent, 2026-07-08, /loop continuation)
+
+Startup this cycle: no new bugs beyond the already-logged
+`episode_observe` UNIQUE-constraint issue. `python tools/corpus_stats.py`
+showed 238 verified public + 17 negative (255 files), 95.2% of the
+250-packet v0.1 public target — very close to release on the public-count
+criterion. Checked `packets/elementary/induction/QUEUE.md` (folder-count
+smallest at 22) — fully saturated again (empty next-targets/backlog,
+heavy concurrent-agent activity). Per-domain negative-example counts:
+algebra/combinatorics/functions/induction at 2 each, geometry/inequalities/
+number_theory at 3 — picked algebra's queued
+`packets/negative/algebra/QUEUE.md` item, "ring on a division identity
+without field_simp".
+
+Added `packets/negative/algebra/div_mul_cancel_bare_ring_no_hypothesis_failure.v1.json`:
+`a / b * b = a` for nonzero `b`, attacked with bare `ring` in a fresh
+tracked episode `e292756d-c2f5-4bf4-a211-8b827e3751d4` (problem_version
+`a87737c1-a4b9-47f4-ad1b-750d0f797928`, dev-attested). Step 1 genuinely
+`kernel_fail`'d, reducing to the un-cancelled residual `a * b * b⁻¹ = a`
+(`ring` cannot use the `b ≠ 0` hypothesis to justify the cancellation).
+Step 2, `field_simp`, closed the same episode `kernel_verified`.
+Discovered mid-cycle that a concurrent agent had independently landed a
+similar item (`frac_sum_bare_ring_missing_field_simp.v1.json`, on
+`1/a + 1/b = (a+b)/(a*b)`) for the same queue entry — kept both, since
+they're distinct concrete statements with distinct `packet_id`s (no schema
+collision) and the tracked evidence for mine was already genuine and
+verified; noted the overlap in `packets/negative/algebra/QUEUE.md` rather
+than discarding either.
+
+Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
+0 errors) and hash-stamped; full corpus revalidated clean at 258 packets,
+0 errors, 0 warnings as of this update (240 verified public + 19 negative
+per `corpus_stats.py`, 96.0% of the 250-packet v0.1 public target, 19/25
+negative examples — both criteria very close to done). Commit scoped to
+only this cycle's own files.
+
+## Proposed update — algebra negative example, concurrent near-duplicate resolved (this agent, 2026-07-08)
+
+Added `packets/negative/algebra/frac_sum_bare_ring_missing_field_simp.v1.json`
+plus companion `packets/elementary/algebra/sum_reciprocals_eq_sum_over_product.v1.json`
+(`field_simp; ring`). Commit `f1bb1c9`. Landed the same cycle as another
+agent's independent `div_mul_cancel_bare_ring_no_hypothesis_failure.v1`
+(same underlying lesson -- ring can't use a nonzero hypothesis to cancel
+`x * x⁻¹` -- different concrete statement). That packet's own notes
+already decided to keep both rather than discard tracked evidence; this
+agent aligned with that call rather than re-litigating it. Also confirmed
+BUGS.md's logged `episode_observe` UNIQUE-constraint bug has a documented
+workaround and is not blocking -- left untouched rather than attempting a
+fix outside this repo's own tooling (it's in the external proofsearch MCP
+server).
