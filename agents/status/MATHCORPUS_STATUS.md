@@ -2172,3 +2172,25 @@ Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
 files. Full `packets/elementary/algebra/` revalidated clean at 46
 packets, 0 errors, 0 warnings; full corpus at 278 verified public + 25
 negative (111.2% of the v0.1 public target) as of this update.
+
+## Proposed update — induction elementary packet: prod_range_pos (this agent, 2026-07-08, /loop continuation)
+
+Startup this cycle: no bugs blocking progress. Induction and inequalities
+(tied smallest, 27 each) both had empty queues/backlogs again. Stayed in
+`induction` (per its own notes: more general-lemma / level-balance work
+is still welcome even with an empty explicit queue) and added a fresh
+general reusable lemma.
+
+Added `packets/elementary/induction/prod_range_pos.v1.json`: the product
+of positive terms over a `Finset.range` is positive, complementing the
+domain's existing `prod_range_succ`/`prod_range_monotone`. Produced via
+tracked episode `bdbcc4ba-515a-4841-bd7c-e17a73f82152` (problem_version
+`53ffc576-1cca-4d26-b0f2-2125fe3b025c`, dev-attested), `kernel_verified`
+on the first `solve` attempt — deliberately wrote the case split as
+`| zero => ... | succ k ih => ...` with no nested `·` bullets, to avoid
+the flat_tactic_sequence transport hazard that has repeatedly hit bulleted
+proofs elsewhere in this corpus (`id_bijective`, `image_union`,
+`well_ordering`).
+
+Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
+0 errors) and hash-stamped. Commit scoped to only this cycle's own files.

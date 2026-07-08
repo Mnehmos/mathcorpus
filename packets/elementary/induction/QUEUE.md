@@ -66,6 +66,15 @@ inductive proof, distinct from `number_theory`'s bare-citation
 `factorial_pos`), narrowing the domain's original 24:1
 `L1_proof_basics`:`L0_elementary` skew to roughly 8:1.
 
+## Done (this cycle)
+
+- [x] `prod_range_pos` — the product of positive terms over a range is
+      positive (D1, L1). Authored 2026-07-08 via tracked episode
+      `bdbcc4ba-515a-4841-bd7c-e17a73f82152` (kernel_verified on the
+      first attempt, deliberately bullet-free to avoid the
+      flat-transport hazard). Complements `prod_range_succ`/
+      `prod_range_monotone`.
+
 ## Next targets
 
 *(empty — see Backlog.)*
