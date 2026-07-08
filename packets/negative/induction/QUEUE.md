@@ -6,21 +6,7 @@ hypotheses to verify via a real tracked episode, not pre-asserted facts.
 
 ## Next targets
 
-- [ ] **induction without generalizing an auxiliary variable, take 2.**
-      The obvious instance -- `l.foldl (fun a x => x :: a) acc = l.reverse
-      ++ acc` proved by `induction l` (acc fixed, not generalized), closing
-      each case with `simp [ih]` -- was tried live via tracked episode
-      `0ab12a3b-a0fb-4981-b6fe-63628a4f6fb6` and it actually
-      **kernel_verified**: `simp` is strong enough to bridge the
-      accumulator shift on its own, so this specific hypothesis is false
-      and was authored as a positive packet instead
-      (`elementary.induction.foldl_cons_eq_reverse_append.v1`). To get a
-      genuine failure, close with a *weaker* tactic that can't rewrite
-      through the accumulator mismatch on its own -- e.g. `rfl` or `exact
-      ih` alone in the `cons` case (expect the IH's fixed `acc` to not
-      unify with the goal's `x :: acc`) -- rather than `simp [ih]`.
-      gap_category: `tactic_mismatch`, sub_category:
-      `induction_without_generalizing`.
+*(empty — see Backlog)*
 
 ## Backlog
 
@@ -28,3 +14,16 @@ hypotheses to verify via a real tracked episode, not pre-asserted facts.
       `n = 0` for a statement that's only true from `n = 1` or `n = 2`
       onward (verify a concrete false-at-the-boundary instance before
       adding — this must be a real gap, not a fixable base-case tweak).
+
+## Done
+
+- [x] **induction without generalizing an auxiliary variable, take 2.**
+      `foldl_no_generalize_ih_too_weak.v1.json` — same root statement as
+      the positive packet `foldl_cons_eq_reverse_append.v1`
+      (`l.foldl (fun a x => x :: a) acc = l.reverse ++ acc`), but closing
+      the `cons` case with bare `exact ih` (instead of `simp [ih]`) fails
+      with a clean type mismatch: `ih`'s fixed `acc` doesn't unify with
+      the goal's `x :: acc`. Verified live via tracked episode
+      `d5057978-41c6-4686-b360-a0947d8a518e`, 2026-07-08. Take 1
+      (`simp [ih]`) is documented in the companion positive packet's
+      notes as the false-hypothesis case.
