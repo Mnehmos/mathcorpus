@@ -60,13 +60,22 @@ base case error" backlog item).
 
 ## Next targets
 
-*(empty — see Backlog.)*
+- [x] `odd_part_decomposition` — every positive `n` is `2^k * m` for odd
+      `m` (D1, L1). Authored 2026-07-08 via tracked episode
+      `ce2bb257-0a1a-4596-a401-f9da247175d8` (kernel_verified on the first
+      attempt: `Nat.strong_induction_on`, `Nat.even_or_odd` case split,
+      recurse on the halved value). Second genuine strong-induction
+      packet in this domain — an existential construction, distinct in
+      flavor from `exists_prime_factor`'s divisor-search.
 
 ## Backlog
 
 *(empty — repopulate from the domain-specific focus in `LOOP.md`:
 induction, strong induction, recursion, finite sums/products, factorials,
-powers, inequalities by induction, monotonicity. This domain has multiple
+powers, inequalities by induction, monotonicity. Note: v0.1's numeric
+release criteria (>=250 public, >=25 negative) were both met this
+session — remaining work here is for quality/balance (level-distribution
+gaps, fresh techniques), not raw count. This domain has multiple
 concurrent agent instances working it — check
 `git log --oneline -15 -- packets/elementary/induction/` before starting
 a new target to avoid duplicating recently-landed work.)*
