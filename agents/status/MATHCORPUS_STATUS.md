@@ -521,3 +521,33 @@ closing it outright, since only one of the three was done this cycle.
 Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
 0 errors) and hash-stamped; full corpus revalidated clean at 217 packets,
 0 errors, 0 warnings as of this update.
+
+## Proposed update — functions elementary packet: surjective_comp (this agent, 2026-07-08, /loop continuation)
+
+Startup this cycle: no bugs/triage. Direct file counts: induction 13
+elementary packets (still smallest) but its own `QUEUE.md` "Next targets"
+and "Backlog" sections are both explicitly empty right now (heavily
+contended by other concurrent agents — `exists_prime_factor` and
+`sum_range_monotone` both landed there this session already) — so, per
+priority-3, moved to the next tier: `functions` (17 packets at the top of
+this cycle). Picked up the paired item from the domain's own queue note
+("pairs with `injective_comp`"): `surjective_comp`.
+
+Added `packets/elementary/functions/surjective_comp.v1.json`: the
+composition of two surjective functions is surjective, proved directly
+(`obtain` a preimage from each surjectivity hypothesis in turn, then
+`rw` through `Function.comp_apply`). Produced via tracked episode
+`fd3f917e-f58b-4077-90da-bb1c3d62c203` (problem_version
+`2a37daa0-ee1c-4014-97db-0e159855fe03`, dev-attested), `kernel_verified`
+on the first `solve` attempt — applied the lesson from the paired
+`injective_comp` packet's binder-arity slip and `intro`'d all three
+implicit type variables up front this time. Closes the `surjective_comp`
+item in `packets/elementary/functions/QUEUE.md`; next up there:
+`linear_injective`, `strictMono_injective`, `id_bijective`,
+`fixed_point_id`.
+
+Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
+0 errors) and hash-stamped. Commit scoped to only this packet's own files
+(packet JSON, Lean module, this domain's DASHBOARD.md/QUEUE.md, this
+status section) to avoid touching other agents' concurrent in-flight work
+elsewhere in the tree.

@@ -20,10 +20,15 @@ the items below as higher priority than another `abs`/`max`/`min` variant.
       focus; first packet on that focus (prior 16 were all `abs`/`max`/
       `min` identities).
 
+- [x] `surjective_comp` — the composition of two surjective functions is
+      surjective (D1, L1). Authored 2026-07-08 via tracked episode
+      `fd3f917e-f58b-4077-90da-bb1c3d62c203` (kernel_verified on the first
+      attempt: `intro α β γ f g hf hg c; obtain ⟨b, hb⟩ := hg c; obtain
+      ⟨a, ha⟩ := hf b; exact ⟨a, by rw [Function.comp_apply, ha, hb]⟩`).
+      Pairs with `injective_comp`.
+
 ## Next targets
 
-- [ ] `surjective_comp` — the composition of two surjective functions is
-      surjective (D1, L1). Pairs with `injective_comp`.
 - [ ] `linear_injective` — `f x = a * x + b` is injective when `a ≠ 0`
       (D0/D1, L0/L1). Concrete, elementary worked example rather than an
       abstract composition lemma — good on-ramp packet.
