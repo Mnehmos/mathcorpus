@@ -1,5 +1,5 @@
 {
-  "packet_count": 146,
+  "packet_count": 160,
   "exact_file_duplicates": {},
   "canonical_theorem_duplicates": {},
   "family_clusters": {
@@ -61,12 +61,15 @@
       "elementary.combinatorics.empty_subset.v1",
       "elementary.combinatorics.filter_subset.v1",
       "elementary.combinatorics.inter_comm.v1",
+      "elementary.combinatorics.inter_self.v1",
       "elementary.combinatorics.inter_subset_left.v1",
       "elementary.combinatorics.inter_subset_right.v1",
       "elementary.combinatorics.subset_refl.v1",
       "elementary.combinatorics.subset_union_left.v1",
+      "elementary.combinatorics.subset_union_right.v1",
       "elementary.combinatorics.union_assoc.v1",
-      "elementary.combinatorics.union_comm.v1"
+      "elementary.combinatorics.union_comm.v1",
+      "elementary.combinatorics.union_self.v1"
     ],
     "combinatorics.finset_sum": [
       "elementary.combinatorics.prod_range_one.v1",
@@ -116,6 +119,7 @@
       "elementary.geometry.midpoint_equidist.v1",
       "elementary.geometry.midpoint_symm.v1",
       "elementary.geometry.parallelogram_law.v1",
+      "elementary.geometry.reflection_dist.v1",
       "elementary.geometry.section_formula_thirds.v1",
       "elementary.geometry.slope_cross_symm.v1"
     ],
@@ -134,15 +138,23 @@
       "elementary.induction.sum_odds.v1",
       "elementary.induction.sum_squares.v1"
     ],
+    "induction.finite_sum_recursion": [
+      "elementary.induction.prod_range_succ.v1",
+      "elementary.induction.sum_range_succ.v1"
+    ],
     "inequalities.amgm_reciprocal": [
       "elementary.inequalities.add_one_div_ge_two.v1"
     ],
     "inequalities.amgm_two_var": [
       "elementary.inequalities.am_gm_two.v1",
+      "elementary.inequalities.four_mul_le_add_sq.v1",
       "elementary.inequalities.two_mul_le_add_sq.v1"
     ],
     "inequalities.cauchy_schwarz": [
       "elementary.inequalities.cauchy_two_term.v1"
+    ],
+    "inequalities.discriminant": [
+      "elementary.inequalities.quad_pos.v1"
     ],
     "inequalities.positivity": [
       "elementary.inequalities.mul_pos.v1"
@@ -156,6 +168,7 @@
       "elementary.inequalities.three_sq_bound.v1",
       "elementary.inequalities.three_var_am_gm.v1",
       "elementary.inequalities.three_var_sq_ge.v1",
+      "elementary.inequalities.two_a_le_sq_add_one.v1",
       "elementary.inequalities.two_sq_prod_le.v1"
     ],
     "inequalities.triangle": [
@@ -170,6 +183,7 @@
       "elementary.number_theory.dvd_mul.v1",
       "elementary.number_theory.dvd_mul_left.v1",
       "elementary.number_theory.dvd_refl.v1",
+      "elementary.number_theory.dvd_sub.v1",
       "elementary.number_theory.dvd_trans.v1",
       "elementary.number_theory.dvd_zero.v1",
       "elementary.number_theory.one_dvd.v1"
@@ -191,13 +205,17 @@
     "number_theory.nat_basics": [
       "elementary.number_theory.factorial_le.v1",
       "elementary.number_theory.factorial_pos.v1",
+      "elementary.number_theory.le_of_lt_succ.v1",
+      "elementary.number_theory.lt_irrefl.v1",
       "elementary.number_theory.mod_lt.v1",
       "elementary.number_theory.mul_div_cancel.v1",
+      "elementary.number_theory.nat_abs_mul.v1",
       "elementary.number_theory.one_le_iff_ne_zero.v1",
       "elementary.number_theory.pow_le_pow_left.v1",
       "elementary.number_theory.sub_add_cancel.v1",
       "elementary.number_theory.succ_ne_self.v1",
       "elementary.number_theory.succ_pos.v1",
+      "elementary.number_theory.two_mul_nat.v1",
       "elementary.number_theory.two_pow_pos.v1"
     ],
     "number_theory.parity_closure": [

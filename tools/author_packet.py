@@ -47,10 +47,14 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import sys
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
+
+# Must match schema/packet.schema.json's packet_id pattern (lowercase, dot/underscore).
+PACKET_ID_RE = re.compile(r"^[a-z0-9]+([._][a-z0-9]+)*\.v[0-9]+$")
 
 def render_lean(spec: dict) -> str:
     opens = spec.get("opens", [])
@@ -183,6 +187,13 @@ def main() -> int:
     batch = json.loads(Path(args.spec).read_text(encoding="utf-8"))
     toolchain = batch["toolchain"]
     env_hash = batch["environment_hash"]
+
+    for spec in batch["packets"]:
+        pid = spec["packet_id"]
+        if not PACKET_ID_RE.match(pid):
+            print(f"ERROR: packet_id '{pid}' is not lowercase-dotted "
+                  f"(pattern {PACKET_ID_RE.pattern}); fix it before generating.", file=sys.stderr)
+            return 2
 
     n = 0
     for spec in batch["packets"]:

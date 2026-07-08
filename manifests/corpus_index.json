@@ -1,22 +1,22 @@
 {
-  "packet_count": 146,
+  "packet_count": 160,
   "by_domain": {
-    "algebra": 64,
-    "combinatorics": 22,
-    "geometry": 24,
-    "number_theory": 36
+    "algebra": 69,
+    "combinatorics": 25,
+    "geometry": 25,
+    "number_theory": 41
   },
   "by_level": {
-    "L0_elementary": 64,
-    "L1_proof_basics": 68,
-    "L2_olympiad": 14
+    "L0_elementary": 68,
+    "L1_proof_basics": 75,
+    "L2_olympiad": 17
   },
   "by_kind": {
-    "concept": 145,
+    "concept": 159,
     "negative_example": 1
   },
   "by_status": {
-    "kernel_verified": 145,
+    "kernel_verified": 159,
     "failed_attempt": 1
   },
   "packets": [
@@ -411,6 +411,16 @@
       "packet_sha256": "62ae1a570c4c52f552425114357fc3cd6d4c40c1603c8394522dc8638bf3d881"
     },
     {
+      "packet_id": "elementary.combinatorics.inter_self.v1",
+      "title": "Intersection with itself is idempotent",
+      "domain": "combinatorics",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "b8e43c2cc0a7672049f1c79028dbc5bece0e70e56bfad551589b7d84702617d6"
+    },
+    {
       "packet_id": "elementary.combinatorics.inter_subset_left.v1",
       "title": "Intersection is a subset",
       "domain": "combinatorics",
@@ -511,6 +521,16 @@
       "packet_sha256": "63b169ac0ceeb6363317ba1be88fbab7ff1ae8eb485af9d6bd11954e8bfc15c8"
     },
     {
+      "packet_id": "elementary.combinatorics.subset_union_right.v1",
+      "title": "Right operand is a subset of the union",
+      "domain": "combinatorics",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "c62133f35f69e881d746c0d9f79d2bbdb9c5119c3cc522a8201b9cb187c0da8b"
+    },
+    {
       "packet_id": "elementary.combinatorics.sum_ones_card.v1",
       "title": "Summing 1 over a finite set counts its elements",
       "domain": "combinatorics",
@@ -549,6 +569,16 @@
       "status": "kernel_verified",
       "eligibility": "public_train",
       "packet_sha256": "774c0f7b8ab5530003f006e354a6af3148e81eac9dc9466139c404c792bca5da"
+    },
+    {
+      "packet_id": "elementary.combinatorics.union_self.v1",
+      "title": "Union with itself is idempotent",
+      "domain": "combinatorics",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "b6220ccc5493eae2be4a1b54b09c747223e6c6afef2b45af9376f349442870a1"
     },
     {
       "packet_id": "elementary.functions.abs_abs.v1",
@@ -861,6 +891,16 @@
       "packet_sha256": "b8899e9332f2b5f030c680702b58b995b0aea90e0252f6e87f75b07cd20e42c4"
     },
     {
+      "packet_id": "elementary.geometry.reflection_dist.v1",
+      "title": "Reflection through the origin preserves squared distance",
+      "domain": "geometry",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "4549b2396f46329e2cf6d50a5a16f67f6cd00d9c09f3b9586ebb2cc0d8073fa9"
+    },
+    {
       "packet_id": "elementary.geometry.reflex_angle.v1",
       "title": "An angle plus its reflex is a full turn",
       "domain": "geometry",
@@ -951,6 +991,16 @@
       "packet_sha256": "16eb73f60f7916db7e93a120a56bc722041fa5c151b8308eaa424bcc2899e695"
     },
     {
+      "packet_id": "elementary.induction.prod_range_succ.v1",
+      "title": "Recursion for range products",
+      "domain": "algebra",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "b08f0795c5fec4e33c3ff9d14c65bcd5e9ad3cebc241fe3836e05324a042f24a"
+    },
+    {
       "packet_id": "elementary.induction.sum_cubes.v1",
       "title": "Sum of the first n cubes",
       "domain": "algebra",
@@ -969,6 +1019,16 @@
       "status": "kernel_verified",
       "eligibility": "public_train",
       "packet_sha256": "350bc8216c837ba0b84fca276b7a22ea208aed82c8d0b9ba85b79c5b55587581"
+    },
+    {
+      "packet_id": "elementary.induction.sum_range_succ.v1",
+      "title": "Recursion for range sums",
+      "domain": "algebra",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "78b9e7c1e3e6651a1092759526eea5e0e0f3e28d924c447268c20ab9ead5b967"
     },
     {
       "packet_id": "elementary.induction.sum_squares.v1",
@@ -1011,6 +1071,16 @@
       "packet_sha256": "d954d1b08a7fa4c9e5b393582eb939f452058e00d63e0e7c83c842d6c14bc8de"
     },
     {
+      "packet_id": "elementary.inequalities.four_mul_le_add_sq.v1",
+      "title": "4ab ≤ (a+b)²",
+      "domain": "algebra",
+      "level": "L2_olympiad",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "31afc98273d1f08c115ae96639a2713c4def7fe9c4057bc98ac794fcbf327092"
+    },
+    {
       "packet_id": "elementary.inequalities.mul_pos.v1",
       "title": "Product of positives is positive",
       "domain": "algebra",
@@ -1039,6 +1109,16 @@
       "status": "kernel_verified",
       "eligibility": "public_train",
       "packet_sha256": "406250d18be5f627a28c0e3f1f6b17b21a7143119364a1795564c6f454ed6b94"
+    },
+    {
+      "packet_id": "elementary.inequalities.quad_pos.v1",
+      "title": "x² - x + 1 is always positive",
+      "domain": "algebra",
+      "level": "L2_olympiad",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "82eb6f38feec5780f61e87a0b5c46461a6c64caeb8fa488a525d289705d95e28"
     },
     {
       "packet_id": "elementary.inequalities.reverse_triangle.v1",
@@ -1089,6 +1169,16 @@
       "status": "kernel_verified",
       "eligibility": "public_train",
       "packet_sha256": "f4d8116e9fcf12da3846162b9517260c3a0a1c0c8e84560aed127171f712c672"
+    },
+    {
+      "packet_id": "elementary.inequalities.two_a_le_sq_add_one.v1",
+      "title": "2a ≤ a² + 1",
+      "domain": "algebra",
+      "level": "L2_olympiad",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "6cf3a455e46f19865a3f5c4923546ba06f268c8d27079e3318a259e6f6cc6d92"
     },
     {
       "packet_id": "elementary.inequalities.two_mul_le_add_sq.v1",
@@ -1189,6 +1279,16 @@
       "status": "kernel_verified",
       "eligibility": "public_train",
       "packet_sha256": "d7ed8fae0d8078e7adb14a4e72b672134ead3cf3f45c17233d927d5d088efd6e"
+    },
+    {
+      "packet_id": "elementary.number_theory.dvd_sub.v1",
+      "title": "A common divisor divides the difference",
+      "domain": "number_theory",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "aeaeb9ac012b3135b63cdb3d4c1d54ba0eeb73e62cb2af6ea61db4f2f8827dec"
     },
     {
       "packet_id": "elementary.number_theory.dvd_trans.v1",
@@ -1361,6 +1461,26 @@
       "packet_sha256": "2aa799ae6b0c18b65c7e22e0dc00b58e65b3e0a56b521a3d6cb31ede4e661d6c"
     },
     {
+      "packet_id": "elementary.number_theory.le_of_lt_succ.v1",
+      "title": "Less than a successor means at most",
+      "domain": "number_theory",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "d4923d0ab956347e9aa4f32290be71347cb086db58acba01f67dea3178ab9a46"
+    },
+    {
+      "packet_id": "elementary.number_theory.lt_irrefl.v1",
+      "title": "Strict less-than is irreflexive",
+      "domain": "number_theory",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "bfc9502e3dd9377725ca490bcdceb03e459f4d370a3532e5f65e683d2ca71dc8"
+    },
+    {
       "packet_id": "elementary.number_theory.mod_lt.v1",
       "title": "Remainder is less than a positive modulus",
       "domain": "number_theory",
@@ -1389,6 +1509,16 @@
       "status": "kernel_verified",
       "eligibility": "public_train",
       "packet_sha256": "79583b5e86c580a10ec08374ecff0e182dbd31bd1ddb8e2f832c1e17c7be6f8f"
+    },
+    {
+      "packet_id": "elementary.number_theory.nat_abs_mul.v1",
+      "title": "Natural absolute value is multiplicative",
+      "domain": "number_theory",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "9e80743d066c207bca1d41f211b39447b3e3af25e7614186e24b7b08aa3a94bd"
     },
     {
       "packet_id": "elementary.number_theory.odd_add_odd.v1",
@@ -1459,6 +1589,16 @@
       "status": "kernel_verified",
       "eligibility": "public_train",
       "packet_sha256": "0afabe1e3c4b13d364f692a41ea9cc51039599783299d9be2687934377d376be"
+    },
+    {
+      "packet_id": "elementary.number_theory.two_mul_nat.v1",
+      "title": "Two times n is n plus n",
+      "domain": "number_theory",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "360dff6da3c764e96bc05f3a22324355fcc377fe7ffc9c15285a59cfa506e984"
     },
     {
       "packet_id": "elementary.number_theory.two_pow_pos.v1",
