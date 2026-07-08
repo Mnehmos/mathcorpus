@@ -1,0 +1,96 @@
+{
+  "packet_id": "elementary.number_theory.dvd_lcm_left.v1",
+  "packet_version": "1.0.0",
+  "title": "a divides lcm(a, b)",
+  "domain": "number_theory",
+  "level": "L0_elementary",
+  "kind": "concept",
+  "status": "kernel_verified",
+  "difficulty_bin": "D0",
+  "lean_module": "MathCorpus.Elementary.NumberTheory.DvdLcmLeft",
+  "theorem_name": "dvd_lcm_left'",
+  "imports": [
+    "Mathlib"
+  ],
+  "toolchain": {
+    "lean_version": "v4.32.0-rc1",
+    "mathlib_rev": "360da6fa66c1273b76b6b2d8c5666fd5ac2e3b56"
+  },
+  "source_provenance": {
+    "source_kind": "author_written",
+    "source_refs": [],
+    "authors": [
+      "The MathCorpus Authors"
+    ],
+    "copyright_holder": "The MathCorpus Authors",
+    "license_spdx": "Apache-2.0",
+    "license_content": "CC-BY-4.0",
+    "statement_fidelity": "author_written"
+  },
+  "informal_statement": "For all naturals a, b: a divides the least common multiple of a and b.",
+  "informal_proof_idea": "Directly `Nat.dvd_lcm_left`.",
+  "formal_statement_pp": "theorem dvd_lcm_left' (a b : ℕ) : a ∣ Nat.lcm a b",
+  "proof_body_path": "lean/MathCorpus/Elementary/NumberTheory/DvdLcmLeft.lean",
+  "proof_body_redacted": false,
+  "trust": {
+    "rung": 1,
+    "proof_authority": "lean_kernel",
+    "certificate_checker": "kernel_decide",
+    "encoding_required": false,
+    "encoding_soundness_status": "not_applicable",
+    "independent_review_status": "repo_reviewed",
+    "public_claim_class": "public_safe"
+  },
+  "training": {
+    "eligibility": "public_train",
+    "reason_codes": [
+      "public",
+      "non_benchmark",
+      "unredacted"
+    ],
+    "dedupe_cluster_id": "number_theory.dvd_lcm_left",
+    "template_family_id": "number_theory.gcd_lcm_basics",
+    "contamination_risk": "low",
+    "can_export_proof_body": true
+  },
+  "dependencies": {
+    "kits": [],
+    "tactic_tags": [
+      "Nat.dvd_lcm_left"
+    ],
+    "prerequisite_concepts": [
+      "lcm",
+      "divisibility"
+    ]
+  },
+  "metrics": {
+    "loc": 1,
+    "tactic_count": 1
+  },
+  "artifacts": {
+    "public_files": [
+      "lean/MathCorpus/Elementary/NumberTheory/DvdLcmLeft.lean"
+    ]
+  },
+  "review": {
+    "review_basis": "repo self-review; kernel-verified through the tracked proof-search loop",
+    "reviewer_status": "repo_reviewed"
+  },
+  "verification": {
+    "verifier": "proofsearch",
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "episode_id": "2a1c9884-ee7c-4ac2-bdce-1851d6f44372",
+    "outcome": "kernel_verified",
+    "kernel_verified": true,
+    "fidelity_status": "attested",
+    "import_manifest_hash": "409c28561ce51f049ff6d835330b5f8d9a9b1c943db488280748901a8181d3b7",
+    "step_count": 1,
+    "verified_at": "2026-07-08T07:39:52Z"
+  },
+  "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 2a1c9884), kernel_verified on the first attempt. Closes the dvd_lcm_left half of the paired dvd_lcm_left/dvd_lcm_right item in packets/elementary/number_theory/QUEUE.md; dvd_lcm_right deliberately left for a future cycle rather than batching both in one pass.",
+  "hashes": {
+    "packet_sha256": "4feef8b5e7057e7e4c3164ed5dd0744f1c3f6a110b033db4195cc00638103f12",
+    "formal_statement_sha256": "f3fa7438c773c3184e9aaa20f4e25a2e3ce1d3215015cc32facd98144bd1c4d5",
+    "proof_body_sha256": "ba8a067c3935d8c56f1f3360fc51e52e03b1eb8384709167b5e39e8416a900bd"
+  }
+}
