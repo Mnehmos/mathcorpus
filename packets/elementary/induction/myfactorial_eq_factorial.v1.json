@@ -1,0 +1,102 @@
+{
+  "packet_id": "elementary.induction.myfactorial_eq_factorial.v1",
+  "packet_version": "1.0.0",
+  "title": "A hand-rolled factorial via structural recursion equals Nat.factorial",
+  "domain": "algebra",
+  "level": "L1_proof_basics",
+  "kind": "concept",
+  "status": "kernel_verified",
+  "difficulty_bin": "D1",
+  "lean_module": "MathCorpus.Elementary.Induction.MyFactorialEqFactorial",
+  "theorem_name": "myFactorial_eq_factorial",
+  "imports": [
+    "Mathlib"
+  ],
+  "toolchain": {
+    "lean_version": "v4.32.0-rc1",
+    "mathlib_rev": "360da6fa66c1273b76b6b2d8c5666fd5ac2e3b56"
+  },
+  "source_provenance": {
+    "source_kind": "author_written",
+    "source_refs": [],
+    "authors": [
+      "The MathCorpus Authors"
+    ],
+    "copyright_holder": "The MathCorpus Authors",
+    "license_spdx": "Apache-2.0",
+    "license_content": "CC-BY-4.0",
+    "statement_fidelity": "author_written"
+  },
+  "informal_statement": "Define myFactorial via explicit structural recursion on Nat.rec (independent of Mathlib's Nat.factorial); for every natural number n, myFactorial n equals Nat.factorial n.",
+  "informal_proof_idea": "myFactorial is defined as fun n => Nat.rec 1 (fun k ih => (k + 1) * ih) n -- a from-scratch structural recursion mirroring Nat.factorial's own defining equations, submitted as a helper `def` alongside the root theorem via the proof-search environment's SubmitModule action (rather than an existing Mathlib definition). The equality with Nat.factorial is then proved by ordinary induction: the zero case is rfl (both sides reduce to 1), and the successor case uses that myFactorial (n+1) reduces definitionally (via Nat.rec's iota rule) to (n+1) * myFactorial n, matched against Nat.factorial_succ and closed with the inductive hypothesis.",
+  "formal_statement_pp": "theorem myFactorial_eq_factorial (n : ℕ) : myFactorial n = Nat.factorial n",
+  "proof_body_path": "lean/MathCorpus/Elementary/Induction/MyFactorialEqFactorial.lean",
+  "proof_body_redacted": false,
+  "trust": {
+    "rung": 1,
+    "proof_authority": "lean_kernel",
+    "certificate_checker": "kernel_decide",
+    "encoding_required": false,
+    "encoding_soundness_status": "not_applicable",
+    "independent_review_status": "repo_reviewed",
+    "public_claim_class": "public_safe"
+  },
+  "training": {
+    "eligibility": "public_train",
+    "reason_codes": [
+      "public",
+      "non_benchmark",
+      "unredacted"
+    ],
+    "dedupe_cluster_id": "induction.myfactorial_eq_factorial",
+    "template_family_id": "induction.recursion_via_submit_module",
+    "contamination_risk": "low",
+    "can_export_proof_body": true
+  },
+  "dependencies": {
+    "kits": [],
+    "tactic_tags": [
+      "Nat.rec",
+      "induction",
+      "Nat.factorial_succ",
+      "show",
+      "rfl"
+    ],
+    "prerequisite_concepts": [
+      "structural_recursion",
+      "factorial",
+      "induction",
+      "definitional_equality"
+    ]
+  },
+  "metrics": {
+    "loc": 8,
+    "tactic_count": 4
+  },
+  "artifacts": {
+    "public_files": [
+      "lean/MathCorpus/Elementary/Induction/MyFactorialEqFactorial.lean"
+    ]
+  },
+  "review": {
+    "review_basis": "repo self-review; kernel-verified through the tracked proof-search loop",
+    "reviewer_status": "repo_reviewed"
+  },
+  "verification": {
+    "verifier": "proofsearch",
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "episode_id": "99b8de59-4ed4-4fa8-b0cd-0d966b9ba800",
+    "outcome": "kernel_verified",
+    "kernel_verified": true,
+    "fidelity_status": "attested",
+    "import_manifest_hash": "fbe9734ea615857d43ffa3bc8831a7d9963a2338f3d685d53fff1e42dd067968",
+    "step_count": 1,
+    "verified_at": "2026-07-08T03:56:25Z"
+  },
+  "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 99b8de59), kernel_verified on the first attempt via a SubmitModule action (one helper `def myFactorial` + the root theorem), not a single Solve tactic block. This is the induction domain's first packet produced via SubmitModule -- every prior packet used Solve only, so recursion / helper-definition authoring was previously undemonstrated in this domain. The packaged Lean file states `n` as an explicit theorem parameter (dropping the tracked episode's leading `intro n`), matching this repo's established convention that a theorem header's explicit binders are already in scope before the tactic block starts, identical to the post-`intro` state.",
+  "hashes": {
+    "packet_sha256": "b665b1259ca6cf7c8b073a307f31ebf00237f1b7a51a78d3d035039aad079fdd",
+    "formal_statement_sha256": "13b5f8e9a43d144280cc4bd02d9f86d48c25e069f78ca3ffa3f5ffd4b9d18766",
+    "proof_body_sha256": "0ea1ca368d2fe7793fb09030063e60ce491a1479584544ae11a80ebf84ed12ac"
+  }
+}

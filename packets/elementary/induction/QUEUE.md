@@ -82,10 +82,23 @@ for very recent commits before re-populating.)*
       induction (`Nat.strong_induction_on`) rather than plain
       `induction n with zero | succ`.
 
+- [x] Recursion via `SubmitModule`: hand-rolled `myFactorial` (helper `def`
+      via `Nat.rec`) proved equal to `Nat.factorial`. Authored 2026-07-08
+      as `myfactorial_eq_factorial` via tracked episode
+      `99b8de59-4ed4-4fa8-b0cd-0d966b9ba800` (kernel_verified on the first
+      attempt, submitted as a `SubmitModule` action — one helper `def` +
+      root theorem — rather than a single `Solve` tactic block; confirmed
+      `problem_create` hash-matches the root statement syntactically, so a
+      root statement may reference a helper name that doesn't exist yet at
+      registration time). This domain's first packet exercising
+      `SubmitModule` — every prior packet used `Solve` only.
+
 ## Backlog
 
 *(empty — repopulate from the domain-specific focus in `LOOP.md`:
 induction, strong induction, recursion, finite sums/products, factorials,
-powers, inequalities by induction, monotonicity. Recursion / well-founded
-recursion via `SubmitModule` is the one technique family this domain
-still hasn't demonstrated.)*
+powers, inequalities by induction, monotonicity. Candidate next steps:
+mutual recursion via `mutual_group` (e.g. even/odd mutual definitions) is
+the one `SubmitModule` sub-feature still undemonstrated; a Fibonacci-style
+two-step recursion growth bound would combine recursion + strong induction
+in one packet.)*
