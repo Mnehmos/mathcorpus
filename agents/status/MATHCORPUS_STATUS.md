@@ -3161,3 +3161,39 @@ Authored `packets/elementary/induction/sum_consec_product.v1.json` +
 hashes, validated clean (332 packets, 0 errors, 0 warnings). Updated
 `DASHBOARD.md`/`QUEUE.md` in `packets/elementary/induction/`. Committed
 only this cycle's own files, pathspec-scoped.
+
+## Proposed update — inequalities: am_hm_two packet + stale-queue fix (this agent, 2026-07-08)
+
+Priority-3 elementary work this cycle (no blocking bugs; no zero-coverage
+negative lane; functions/inequalities/induction were the lowest three
+domains). Functions' `QUEUE.md` explicitly states every focus-list topic
+is already covered — confirmed genuinely dry, skipped. Inequalities'
+`QUEUE.md` still listed "General n-term AM-GM" as an open backlog item,
+but a concurrent agent had already landed it this session
+(`general_amgm.v1`, episode `71fafcd9-0ab6-4498-b785-b8bd96d5dc5a`,
+commit `d4784ca`) — the same stale-queue pattern hit with geometry's
+`law_of_cosines` two cycles ago. Reconciled `QUEUE.md` to mark it done.
+
+With the queue now genuinely empty, self-derived a fresh target from the
+domain's power-mean focus: this corpus already has `qm_am_bound`/
+`three_var_qm_am_bound` (QM-AM) and `am_gm_two`/`am_gm_four_term`/
+`three_var_am_gm`/`general_amgm` (AM-GM), completing most of the
+QM >= AM >= GM >= HM chain — but nothing for AM-HM. Confirmed via grep
+(no "harmonic" hits anywhere in `packets/elementary/inequalities/`)
+before authoring `am_hm_two`: `2/(1/a+1/b) <= (a+b)/2` for positive a, b.
+
+Took 2 tracked attempts (episode `62654695-cd9d-4331-9466-55ad49a5c5f3`):
+the first used `div_le_div_iff`, which doesn't exist under that bare
+name in this Mathlib revision — it's been renamed `div_le_div_iff₀` as
+part of a broader GroupWithZero-generalization naming pattern (sibling
+names like `div_le_div_iff_of_pos_left` exist too).
+`mathlib_search_declarations` surfaced the correct current name
+immediately, and the proof (`div_add_div` + `div_div_eq_mul_div` +
+`div_le_div_iff₀` + `nlinarith [sq_nonneg (a-b)]`) went through on the
+second attempt.
+
+Authored `packets/elementary/inequalities/am_hm_two.v1.json` +
+`lean/MathCorpus/Elementary/Inequalities/AmHmTwo.lean`, stamped hashes,
+validated clean (333 packets, 0 errors, 0 warnings). Updated
+`DASHBOARD.md`/`QUEUE.md` in `packets/elementary/inequalities/`.
+Committed only this cycle's own files, pathspec-scoped.

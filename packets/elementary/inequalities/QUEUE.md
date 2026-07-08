@@ -44,14 +44,35 @@ Min/max family: `avg_between_min_max` (`min a b <= (a+b)/2 <= max a b`),
       queued "AM-GM in the wrong direction" candidate in
       `packets/negative/inequalities/QUEUE.md`.
 
+- [x] `general_amgm` — the general unweighted n-term AM-GM inequality
+      over an arbitrary nonempty `Finset`, `(∏ i ∈ s, z i)^(s.card⁻¹) <=
+      (∑ i ∈ s, z i) / s.card` (L2/L3). Landed by a concurrent agent
+      instance (2026-07-08, episode `71fafcd9-0ab6-4498-b785-b8bd96d5dc5a`,
+      commit `d4784ca`) — this backlog item is now done; this file just
+      hadn't been updated to reflect it yet.
+
+- [x] `am_hm_two` — the AM-HM inequality (two-term case), `2/(1/a+1/b) <=
+      (a+b)/2` (D1, L1). Authored 2026-07-08 via tracked episode
+      `62654695-cd9d-4331-9466-55ad49a5c5f3` (kernel_verified on the
+      second attempt). Completes the domain's power-mean chain (QM >= AM
+      >= GM >= HM) — `qm_am_bound` covers QM-AM, `am_gm_two`/
+      `general_amgm` cover AM-GM, and this was the missing AM-HM link;
+      confirmed via `grep -rl harmonic` (no prior hits) before authoring.
+      First attempt used `div_le_div_iff`, which no longer exists under
+      that bare name in this Mathlib revision (renamed `div_le_div_iff₀`
+      for the GroupWithZero-generalized lemma family) —
+      `mathlib_search_declarations` surfaced the current name.
+
 ## Next targets
 
 *(empty — see Backlog.)*
 
 ## Backlog
 
-- [ ] General `n`-term AM-GM (L2/L3 — likely needs `InequalityEstimateKit`;
-      defer until the 2/3/4-term ladder above is in place).
-- [ ] v0.1's numeric release criteria (>=250 public, >=25 negative) were
-      both met this session — remaining work here is for quality/balance
-      (level-distribution gaps, fresh techniques), not raw count.
+*(empty — repopulate from `LOOP.md`'s domain focus: named inequalities,
+absolute value, min/max, power means, AM-GM/Cauchy/Schur family members
+not yet covered. v0.1's numeric release criteria (>=250 public, >=25
+negative) were both met this session — remaining work here is for
+quality/balance, not raw count. Check `git log --oneline -15 --
+packets/elementary/inequalities/` before starting a new target, since
+concurrent agents work this domain too.)*
