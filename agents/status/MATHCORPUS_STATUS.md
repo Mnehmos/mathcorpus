@@ -218,3 +218,14 @@ preserving distinctly when authored). Schema-validated
 (`validate_packets.py --check-hashes --warn-as-error`: 0 errors) and
 hash-stamped; full corpus revalidated clean at 203 packets, 0 errors, 0
 warnings as of this update.
+
+## Proposed update — combinatorics false_generalization negative example (this agent, 2026-07-08)
+
+Added `packets/negative/combinatorics/card_union_no_disjoint_false_generalization.v1.json`
+(combinatorics' 2nd negative example, 1st in the `false_generalization`
+gap_category rather than `tactic_mismatch`) plus its companion
+`packets/elementary/combinatorics/card_union_not_additive.v1.json` — a
+kernel-verified disproof of the unconditional claim `(s ∪ t).card =
+s.card + t.card` via the explicit witness s = t = {0}. Commit `246ca69`.
+Same heavy-concurrency caveat as the note above: re-derive totals via
+`python tools/corpus_stats.py` rather than trusting the tables above.
