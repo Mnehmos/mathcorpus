@@ -2914,3 +2914,34 @@ session's established interpretation). No packet JSON touched. Files
 updated: `packets/frontier/formal_conjectures/{SOLVED_QUEUE.md,
 SOURCE_MAP.md,BLOCKERS.md}`. `Arxiv/` (9 files) and `OEIS/` (7 files) are
 now the smallest untriaged categories for a future round.
+
+## Proposed update — Erdős #1052 blocker recorded, no new packet (this agent, 2026-07-08, /loop continuation)
+
+Continued this agent's own `erdos_1052_proper_eq_erase` /
+`erdos_1052_not_dvd_div_ordproj` / `erdos_1052_filter_ordcompl` chain.
+Startup this cycle: no bugs/triage; both v0.1 numeric release criteria
+remained comfortably exceeded (298+ verified public + 26+ negative at
+the top of this cycle).
+
+Attempted `sum_uDiv_factor` — the hardest remaining lemma before the full
+`even_of_isUnitaryPerfect` headline theorem (a `Finset.sum_bij'`
+5-argument bijection with deeply nested `.`-bullet case splits in the
+sibling source). Rewrote it bullet-free using the exact
+positional-lambda-argument template that worked cleanly for this chain's
+three prior lemmas. The `submit_module` attempt (4 helper items + root)
+hit `"Lean invocation timed out after 120 seconds"` — a genuinely large
+module (the bijection argument alone has ~60 lines of nested `have`s),
+and the timeout gives no signal on whether the underlying logic is
+correct. Closed the episode with `give_up` rather than re-attempting
+blind, per `LOOP.md`'s "don't auto-fire repeatedly at a known blocker"
+guidance.
+
+Recorded the blocker in `packets/frontier/erdos/BLOCKERS.md` (commit
+`2cb11ba`) with concrete next-step options for a future cycle: (a) try
+`Decompose` to verify the bijection as its own separate obligation before
+assembling the full lemma; (b) check for an existing Mathlib
+sum-over-filter helper that might sidestep the raw `sum_bij'`; (c) treat
+`sum_uDiv_factor` and the still-untried `sum_uDiv_even` (a
+`Finset.sum_involution` argument) as a multi-session item, not a
+one-cycle retry target. No new packet this cycle — corpus count unchanged
+at 299 verified public + 28 negative (119.6% of the v0.1 public target).
