@@ -34,7 +34,9 @@ Inequalities by induction / powers: `two_pow_gt_self`, `bernoulli_inequality`,
 pair-encoded Fibonacci).
 
 Strong induction: `exists_prime_factor` (every `n >= 2` has a prime
-factor).
+factor, via divisor-search) and `odd_part_decomposition` (every positive
+`n` is `2^k * m` for odd `m`, via existential construction on parity —
+a distinct strong-induction flavor from `exists_prime_factor`'s).
 
 Recursion via `SubmitModule` (every technique in `LOOP.md`'s focus list is
 now demonstrated): structural (`myfactorial_eq_factorial`), mutual
@@ -60,22 +62,19 @@ base case error" backlog item).
 
 ## Next targets
 
-- [x] `odd_part_decomposition` — every positive `n` is `2^k * m` for odd
-      `m` (D1, L1). Authored 2026-07-08 via tracked episode
-      `ce2bb257-0a1a-4596-a401-f9da247175d8` (kernel_verified on the first
-      attempt: `Nat.strong_induction_on`, `Nat.even_or_odd` case split,
-      recurse on the halved value). Second genuine strong-induction
-      packet in this domain — an existential construction, distinct in
-      flavor from `exists_prime_factor`'s divisor-search.
+*(empty — see Backlog.)*
 
 ## Backlog
 
 *(empty — repopulate from the domain-specific focus in `LOOP.md`:
 induction, strong induction, recursion, finite sums/products, factorials,
-powers, inequalities by induction, monotonicity. Note: v0.1's numeric
-release criteria (>=250 public, >=25 negative) were both met this
-session — remaining work here is for quality/balance (level-distribution
-gaps, fresh techniques), not raw count. This domain has multiple
-concurrent agent instances working it — check
+powers, inequalities by induction, monotonicity. `one_le_two_pow` (D0, L0,
+`1 <= 2^n`, episode `5a603590-f54f-4eca-8fbe-d5340aa69929`) started
+offsetting the domain's 24:1 `L1_proof_basics`:`L0_elementary` skew —
+more genuinely-D0 additions would help further. v0.1's numeric release
+criteria (>=250 public, >=25 negative) were both met this session —
+remaining work here is for quality/balance (level-distribution gaps,
+fresh techniques), not raw count. This domain has multiple concurrent
+agent instances working it — check
 `git log --oneline -15 -- packets/elementary/induction/` before starting
 a new target to avoid duplicating recently-landed work.)*
