@@ -2,7 +2,7 @@
 
 | Metric | Value |
 |--------|-------|
-| Packets | 42 |
+| Packets | 43 |
 | Level breakdown | see individual packets — includes `card_union_not_additive.v1.json` (another concurrent agent's addition, commit `246ca69`) not itemized below |
 
 - `card_union_add_card_inter.v1.json` (added 2026-07-08) — inclusion-exclusion
@@ -39,7 +39,12 @@
 - `card_image_le.v1.json` (added 2026-07-08) — `(s.image f).card <=
   s.card`; kernel-verified via episode
   `56d41a21-a9b7-419f-828c-7fd4658197d1`. Closes the backlog-promoted
-  `card_image_le` item; `choose_succ_succ` (Pascal's rule) remains queued.
+  `card_image_le` item.
+- `choose_succ_succ.v1.json` (added 2026-07-08) — Pascal's rule
+  `Nat.choose (n+1) (k+1) = Nat.choose n k + Nat.choose n (k+1)`;
+  kernel-verified via episode `53ff8716-d93a-45df-a9e9-9ab544112cce`.
+  Promoted the binomial-coefficient-sum identity from backlog and added a
+  `card_biUnion` candidate as new next-targets.
 
 Last synced: 2026-07-08 — re-sync against
 `agents/status/MATHCORPUS_STATUS.md` and `python tools/corpus_stats.py`

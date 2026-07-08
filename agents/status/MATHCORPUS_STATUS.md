@@ -904,3 +904,20 @@ Startup this cycle: no bugs/triage. Checked `packets/elementary/inequalities/QUE
 Added `packets/elementary/geometry/reflection_over_x_axis.v1.json`: coordinate reflection `(x,y) -> (x,-y)` preserves squared distance to any point `(qx, 0)` on the x-axis, closed by `ring` (an unconditional polynomial identity once the axis point's y-coordinate is fixed at 0 in the statement itself). Produced via tracked episode `66dcb53d-d77c-4467-ad54-bdf0db0008a6` (problem_version `1b78aaec-8370-40fc-8423-9cad5b108acd`, dev-attested), `kernel_verified` on the first real attempt. A first `problem_create` omitting an explicit `problem_imports: ["Mathlib"]` resolved to a bare Ring+NormNum manifest and hit a spurious `HSub ℝ ℝ ?m` typeclass-resolution failure on the identical `ring` tactic — diagnosed as a tooling/import-manifest artifact (not a genuine tactic-mismatch lesson, since it's purely about which Mathlib modules got registered, not about the proof strategy), so not packaged as a negative example, consistent with how this repo has treated similar import-manifest gotchas elsewhere. Re-registering with the standard `["Mathlib"]` import manifest (hash `aaf21893d520a78dee0787a1bcaf939ee6b922265ff670c272e2e1d450dd29a7`, matching every other packet in this repo) resolved it.
 
 Closes the `reflection_over_x_axis` item in `packets/elementary/geometry/QUEUE.md` (remaining next target: `right_triangle_area_half_base_height`). Schema-validated (`validate_packets.py --check-hashes --warn-as-error`: 0 errors) and hash-stamped; full corpus revalidated clean at 237 packets, 0 errors, 0 warnings as of this update (223 verified public + 14 negative per `corpus_stats.py`, 89.2% of the 250-packet v0.1 public target, 14/25 negative examples). Commit scoped to only this cycle's own files.
+
+## Proposed update — combinatorics elementary packet #9 (this agent, 2026-07-08, /loop continuation)
+
+Added `packets/elementary/combinatorics/choose_succ_succ.v1.json`:
+Pascal's rule `Nat.choose (n+1) (k+1) = Nat.choose n k + Nat.choose n
+(k+1)`, proved directly via `Nat.choose_succ_succ'`. Produced via tracked
+episode `53ff8716-d93a-45df-a9e9-9ab544112cce` (problem_version
+`acde07d0-be48-47a3-b7eb-be2f4ad1ffca`, dev-attested), `kernel_verified`
+on the first `solve` attempt. Closes the `choose_succ_succ` item in
+`packets/elementary/combinatorics/QUEUE.md`; promoted the
+binomial-coefficient-sum identity from backlog to next-targets (now that
+Pascal's rule is available as a building block) and added a new
+`card_biUnion`/indexed-union candidate (verified `Finset.card_biUnion`
+exists in Mathlib before queuing it). Schema-validated
+(`validate_packets.py --check-hashes --warn-as-error`: 0 errors) and
+hash-stamped; full corpus revalidated clean at 238 packets, 0 errors, 0
+warnings as of this update.
