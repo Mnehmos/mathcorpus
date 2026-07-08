@@ -252,16 +252,63 @@ at least one proof-complete candidate). Specifically:
 **zero** tractable candidates — do not re-check this category. Full
 detail per-file in `SOURCE_MAP.md`.
 
+### Triaged this cycle, round 5 — `OEIS/` (7 files, this agent, 2026-07-08)
+
+- `34693.lean::exists_k_best_possible` — **genuinely proof-complete, a
+  real win**: disproves the candidate upper bound `1 + n^0.74` for A34693
+  via witness `n=19`. Self-contained (no custom `def`/`class`/`inductive`
+  dependency at all — pure `Real`/`Nat.Prime` arithmetic). **Packetized**
+  as `frontier.formal_conjectures.oeis_a34693_exists_k_best_possible.v1`
+  — but hit a NEW blocker class first: the upstream proof term's
+  `Real.nthRoot` doesn't resolve under this repo's pinned Mathlib
+  revision at all (`kernel_fail`, "Unknown constant `Real.nthRoot`");
+  `mathlib_search_declarations` confirmed this environment's own
+  `nthRoot` is a different, Nat-valued function. Restated the goal via
+  `Real.rpow` directly (`n ^ (74/100 : ℝ)`, mathematically identical to
+  `nthRoot 100 n ^ 74` for `n ≥ 0`) and re-derived the same bound through
+  `Real.rpow_natCast`/`Real.rpow_mul`/`pow_le_pow_iff_left₀` instead of
+  the upstream `nthRoot`-unfolding lemmas — kernel_verified on the second
+  attempt (episode `406c3860-6fcf-40b3-82a5-4a3a1726a89f`; see
+  `BLOCKERS.md` for the full general lesson on cross-Mathlib-revision API
+  drift between the sibling checkout and this repo).
+- `358684.lean::oeis_358684_conjecture_0` — **also genuinely
+  proof-complete**, no custom class/inductive (only file-local `def`s `a`
+  and `a'`, both plain `def`s so transportable via `SubmitModule` in
+  principle). Not attempted this cycle — noticeably larger and more
+  involved (Fermat numbers, `padicValNat`, `Nat.log2`, several supporting
+  lemmas) than `34693`'s single-witness proof, and this cycle's target
+  budget was already spent on `34693`. **Flagged as a ready candidate for
+  a future cycle** (would need `SubmitModule` with `a`/`a'` as `def`
+  items plus the root theorem, and a check of whether ITS proof also
+  references any Mathlib API that doesn't resolve here).
+- `357513.lean`, `6697.lean`, `80170.lean`, `87719.lean` — all four
+  `research solved` theorems have an external `formal_proof` link AND a
+  `sorry` body in this file (same "linked but not replayed" pattern as
+  `#1052`'s AlphaProof link / `Books/BorweinSineSeries.lean` / several
+  `Arxiv/` round-4 files). Not tractable without replaying the linked
+  external proof.
+- `63880.lean::exists_primitive_of_a` — genuine `sorry`, needs an
+  original primitive-term-decomposition argument. Out of scope.
+
+**Round-5 verdict**: 2/7 `OEIS/` files are genuinely proof-complete
+(`34693`, `358684`); one (`34693`) packetized this cycle after resolving
+a new cross-Mathlib-revision API-drift blocker class (see `BLOCKERS.md`),
+the other (`358684`) flagged as a ready candidate for a future cycle. The
+remaining 5 are either genuine `sorry` or the "linked external proof, not
+replayed" pattern. `OEIS/` triage is now complete — do not re-check.
+
 ### Not yet triaged
 
 `Wikipedia/` (60 files), `GreensOpenProblems/` (30), `WrittenOnTheWallII/`
-(21), `Paper/` (12), `OEIS/` (7) — a future cycle should continue this
-same triage (`grep -B1 -A3 "category research solved"` per file, check
-for a bare `sorry` body vs. a real proof, check whether real proofs are
+(21), `Paper/` (12) — a future cycle should continue this same triage
+(`grep -B1 -A3 "category research solved"` per file, check for a bare
+`sorry` body vs. a real proof, check whether real proofs are
 self-contained vs. infrastructure-heavy, check whether a
-`class`/`structure` blocker is load-bearing or notational before writing
-a candidate off — see `BLOCKERS.md`). `OEIS/` (7) is now the smallest
-untriaged category (`Arxiv/` is done, see round 4 above).
+`class`/`structure` blocker is load-bearing or notational, and check
+whether unusual API names actually resolve under this repo's pinned
+Mathlib before assuming a verbatim transport will compile — see
+`BLOCKERS.md`). `Paper/` (12) is now the smallest untriaged category
+(`Arxiv/` and `OEIS/` are both done, see rounds 4-5 above).
 
 ## Backlog
 
@@ -278,3 +325,13 @@ untriaged category (`Arxiv/` is done, see round 4 above).
       `training.eligibility: quarantined` (conservative default, even
       though `open_problem_related: false` for this specific theorem —
       no established public_train precedent yet for this lane).
+- [x] `OEIS/34693.lean::exists_k_best_possible` (see round 5 above) —
+      **packetized 2026-07-08**:
+      `packets/frontier/formal_conjectures/oeis_a34693_exists_k_best_possible.v1.json`,
+      episode `406c3860-6fcf-40b3-82a5-4a3a1726a89f`, kernel_verified.
+      Restated via `Real.rpow` after the upstream `Real.nthRoot` failed
+      to resolve — see `BLOCKERS.md` for the general API-drift lesson.
+- [ ] `OEIS/358684.lean::oeis_358684_conjecture_0` (see round 5 above) —
+      ready candidate for a future cycle, genuinely proof-complete, no
+      custom class/inductive, but larger (Fermat numbers, `padicValNat`,
+      `Nat.log2`) than a one-cycle single-witness proof.
