@@ -2,7 +2,7 @@
 
 | Metric | Value |
 |--------|-------|
-| Packets | 18+ (added `even_odd_mutual_totality`, `foldl_cons_eq_reverse_append`, `fib_le_two_pow`, `prod_range_monotone` by concurrent/this agent since last full sync) |
+| Packets | 19+ (added `fib_sum_succ` this cycle; also `even_odd_mutual_totality`, `foldl_cons_eq_reverse_append`, `fib_le_two_pow`, `prod_range_monotone` by concurrent/this agent since last full sync) |
 | Level breakdown | L0_elementary: 1 · L1_proof_basics: 12+ |
 
 Last synced: 2026-07-08 — added `two_pow_gt_self` (D0, L0, episode
@@ -23,7 +23,12 @@ using the `SubmitModule` action rather than `Solve`), and
 `0ab12a3b-a0fb-4981-b6fe-63628a4f6fb6`: accumulator-passing `foldl` equals
 `reverse ++ acc`; originally attempted as a negative example for
 "induction without generalizing" but `simp [ih]` closed it anyway, so
-authored as a positive packet instead). Other domain-agent
+authored as a positive packet instead). Also added `fib_sum_succ` (D1, L1,
+episode `fe47cf48-95d4-4fbc-a25a-7b089b11b0e6`: `(sum_{i<n} fib i) + 1 =
+fib(n+1)`, kernel_verified on the first attempt via `Finset.sum_range_succ`
++ `Nat.fib_add_two` + `omega`; distinct from `fib_le_two_pow`, which
+bounds a hand-rolled fib rather than proving an exact identity on
+Mathlib's `Nat.fib`). Other domain-agent
 instances are committing to this folder concurrently — re-sync against
 `agents/status/MATHCORPUS_STATUS.md` and `python tools/corpus_stats.py`
 after adding packets rather than trusting this count exactly.

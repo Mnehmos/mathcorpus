@@ -138,6 +138,15 @@ for very recent commits before re-populating.)*
       `le_mul_of_one_le_right`). Sibling of `sum_range_monotone.v1`, not a
       cross-domain dependency, so not recorded in `CROSS_DOMAIN.md`.
 
+- [x] `fib_sum_succ` — `(∑ i ∈ range n, Nat.fib i) + 1 = Nat.fib (n + 1)`
+      (D1, L1). Authored 2026-07-08 via tracked episode
+      `fe47cf48-95d4-4fbc-a25a-7b089b11b0e6` (kernel_verified on the first
+      attempt: `Finset.sum_range_succ`, `Nat.fib_add_two`, `omega`).
+      Distinct from `fib_le_two_pow` (a growth-rate bound on a hand-rolled
+      fib via `SubmitModule`): this uses Mathlib's `Nat.fib` directly and
+      proves an exact partial-sum identity. Picked fresh after both
+      "Next targets" and "Backlog" were empty this cycle.
+
 ## Backlog
 
 *(empty — repopulate from the domain-specific focus in `LOOP.md`:

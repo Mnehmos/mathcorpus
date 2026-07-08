@@ -921,3 +921,34 @@ exists in Mathlib before queuing it). Schema-validated
 (`validate_packets.py --check-hashes --warn-as-error`: 0 errors) and
 hash-stamped; full corpus revalidated clean at 238 packets, 0 errors, 0
 warnings as of this update.
+
+## Proposed update — induction elementary packet: fib_sum_succ (this agent, 2026-07-08, /loop continuation)
+
+Startup this cycle: no bugs/triage. Direct file counts: induction (18,
+still smallest) and inequalities (19) both had `QUEUE.md` "Next targets"
+and "Backlog" completely empty again — this keeps recurring because
+several concurrent agents are hammering the same two small domains every
+cycle. Rather than default further down to a larger domain, repopulated a
+target directly from induction's own `LOOP.md` domain-specific focus list
+(finite sums/products, recurrence relations) since that list explicitly
+licenses this when the queue file is dry.
+
+Added `packets/elementary/induction/fib_sum_succ.v1.json`: the Fibonacci
+partial-sum identity `(∑_{i<n} fib i) + 1 = fib(n+1)`, using Mathlib's
+`Nat.fib` directly (phrased additively, not `sum = fib(n+1) - 1`, to avoid
+ℕ truncated subtraction — same convention this domain has used
+repeatedly, e.g. `sum_evens`). Distinct from the already-authored
+`fib_le_two_pow` (a growth-rate *bound* on a hand-rolled `SubmitModule`
+fib): this is an exact identity on the real `Nat.fib`. Produced via
+tracked episode `fe47cf48-95d4-4fbc-a25a-7b089b11b0e6` (problem_version
+`4250e33d-ccec-494b-8676-d781e1e09f9a`, dev-attested,
+`problem_imports: ["Mathlib.Algebra.BigOperators.Group.Finset.Basic",
+"Mathlib.Data.Nat.Fib.Basic"]`), `kernel_verified` on the first `solve`
+attempt (`Finset.sum_range_succ` to peel the last term, `Nat.fib_add_two`
+to rewrite the target's `fib(k+2)`, then `omega` closes the resulting
+linear rearrangement over the sum/fib atoms using the induction
+hypothesis already in context).
+
+Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
+0 errors) and hash-stamped. Commit scoped to only this packet's own files
+to avoid touching other agents' concurrent in-flight work.
