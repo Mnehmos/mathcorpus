@@ -27,16 +27,32 @@ the items below as higher priority than another `abs`/`max`/`min` variant.
       ⟨a, ha⟩ := hf b; exact ⟨a, by rw [Function.comp_apply, ha, hb]⟩`).
       Pairs with `injective_comp`.
 
+- [x] `id_bijective` — the identity function is bijective (D0, L0).
+      Authored 2026-07-08 via tracked episode
+      `7bce298c-c66f-4696-a952-c7f82691c46a` (kernel_verified on the
+      second attempt: `intro α; exact ⟨fun a b hab => hab, fun b => ⟨b,
+      rfl⟩⟩`; the first attempt used a bulleted `constructor; · ...; ·
+      ...` tactic proof that lost its case-block structure under the
+      default `flat_tactic_sequence` transport, leaving a variable out of
+      scope — fixed by switching to a bullet-free term-mode proof, not
+      packaged as a separate negative example, see the packet's `notes`).
+      Picked after another concurrent agent had already claimed
+      `linear_injective` and `strictMono_injective` from this queue
+      (check `git log -- packets/elementary/functions/` for their current
+      status before re-claiming either).
+
 ## Next targets
 
 - [ ] `linear_injective` — `f x = a * x + b` is injective when `a ≠ 0`
       (D0/D1, L0/L1). Concrete, elementary worked example rather than an
-      abstract composition lemma — good on-ramp packet.
+      abstract composition lemma — good on-ramp packet. (Note: another
+      concurrent agent appears to be working this already — check
+      `git log` before starting a duplicate attempt.)
 - [ ] `strictMono_injective` — a strictly monotone function is injective
       (D1, L1). Connects the "monotone" and "injective" parts of the
-      domain's stated focus directly.
-- [ ] `id_bijective` — the identity function is bijective (D0, L0). Cheap,
-      foundational, currently missing.
+      domain's stated focus directly. (Note: another concurrent agent
+      appears to have already landed this — check `git log` before
+      starting a duplicate attempt.)
 - [ ] `fixed_point_id` — every point is a fixed point of `id`; `id x = x`
       as a fixed-point-basics statement (D0, L0).
 

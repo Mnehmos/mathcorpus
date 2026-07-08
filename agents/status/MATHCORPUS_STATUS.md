@@ -742,3 +742,41 @@ Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
 files (another concurrent agent has `linear_injective` staged
 uncommitted). Full `packets/elementary/functions/` revalidated clean at 20
 packets, 0 errors, 0 warnings as of this update.
+
+## Proposed update — functions elementary packet: id_bijective (this agent, 2026-07-08, /loop continuation)
+
+Startup this cycle: no bugs/triage. Went to pick up `strictMono_injective`
+from `packets/elementary/functions/QUEUE.md` (induction, still smallest,
+had an empty queue again) and proved it independently via tracked episode
+`a87d8f34-baef-4887-b0b6-ec74909fee9a` (`kernel_verified` on the first
+attempt: `lt_trichotomy` case split, `(hf h).ne` in the two strict cases)
+— but on checking the working tree before authoring, found another
+concurrent agent had already landed both `strictMono_injective` (commit
+`5688a4c`, episode `aef62b6e...`) and `linear_injective` (staged
+uncommitted) from the same queue. Discarded the redundant packet-authoring
+step (the tracked episode itself is still valid data, just unused) and
+picked the one remaining open item instead: `id_bijective`.
+
+Added `packets/elementary/functions/id_bijective.v1.json`: the identity
+function is bijective, for every type `α`. Produced via tracked episode
+`7bce298c-c66f-4696-a952-c7f82691c46a` (problem_version
+`6c3f11cb-da21-44fe-b6de-13700b4a6d7d`, dev-attested), `kernel_verified` on
+the second `solve` attempt — the first used a bulleted `constructor;
+· ...; · ...` tactic proof that lost its case-block structure under the
+default `flat_tactic_sequence` transport (diagnostic: `hab` bound by the
+first case's `intro` was reported "Unknown identifier" in what should have
+been the same bullet — a transport hazard distinct from the `injective_comp`
+binder-arity slip and the `raw_lean_block`/`show` issue noted elsewhere in
+this domain's cycles); fixed by switching to a single-line, bullet-free
+term-mode proof (`exact ⟨fun a b hab => hab, fun b => ⟨b, rfl⟩⟩`). Not
+packaged as a separate negative example (an authoring/transport slip, not
+an independent tactic-mismatch lesson) — recorded in the packet's own
+`notes` instead. Closes the `id_bijective` item in
+`packets/elementary/functions/QUEUE.md`; only `fixed_point_id` remains
+open there (`linear_injective`/`strictMono_injective` marked with
+git-log-check notes to prevent a third agent re-duplicating them).
+
+Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
+0 errors) and hash-stamped. Commit scoped to only this packet's own files
+to avoid touching `linear_injective` (still another agent's uncommitted
+work) or any other concurrent in-flight change.
