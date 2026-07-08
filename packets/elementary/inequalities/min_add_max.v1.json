@@ -1,0 +1,101 @@
+{
+  "packet_id": "elementary.inequalities.min_add_max.v1",
+  "packet_version": "1.0.0",
+  "title": "min plus max equals the sum",
+  "domain": "algebra",
+  "level": "L1_proof_basics",
+  "kind": "concept",
+  "status": "kernel_verified",
+  "difficulty_bin": "D0",
+  "lean_module": "MathCorpus.Elementary.Inequalities.MinAddMax",
+  "theorem_name": "min_add_max",
+  "imports": [
+    "Mathlib"
+  ],
+  "toolchain": {
+    "lean_version": "v4.32.0-rc1",
+    "mathlib_rev": "360da6fa66c1273b76b6b2d8c5666fd5ac2e3b56"
+  },
+  "source_provenance": {
+    "source_kind": "author_written",
+    "source_refs": [],
+    "authors": [
+      "The MathCorpus Authors"
+    ],
+    "copyright_holder": "The MathCorpus Authors",
+    "license_spdx": "Apache-2.0",
+    "license_content": "CC-BY-4.0",
+    "statement_fidelity": "author_written"
+  },
+  "informal_statement": "min(a,b) + max(a,b) = a + b -- the classic min/max complementary identity.",
+  "informal_proof_idea": "Case split on a <= b or b <= a. In each case, min and max resolve to a or b explicitly (min_eq_left/min_eq_right, max_eq_left/max_eq_right), reducing the goal to a trivial sum equality.",
+  "formal_statement_pp": "theorem min_add_max (a b : ℝ) : min a b + max a b = a + b",
+  "proof_body_path": "lean/MathCorpus/Elementary/Inequalities/MinAddMax.lean",
+  "proof_body_redacted": false,
+  "trust": {
+    "rung": 1,
+    "proof_authority": "lean_kernel",
+    "certificate_checker": "kernel_decide",
+    "encoding_required": false,
+    "encoding_soundness_status": "not_applicable",
+    "independent_review_status": "repo_reviewed",
+    "public_claim_class": "public_safe"
+  },
+  "training": {
+    "eligibility": "public_train",
+    "reason_codes": [
+      "public",
+      "non_benchmark",
+      "unredacted"
+    ],
+    "dedupe_cluster_id": "inequalities.min_add_max",
+    "template_family_id": "inequalities.min_max_family",
+    "contamination_risk": "low",
+    "can_export_proof_body": true
+  },
+  "dependencies": {
+    "kits": [],
+    "tactic_tags": [
+      "le_total",
+      "min_eq_left",
+      "max_eq_right",
+      "min_eq_right",
+      "max_eq_left"
+    ],
+    "prerequisite_concepts": [
+      "min",
+      "max",
+      "case_split"
+    ]
+  },
+  "metrics": {
+    "loc": 5,
+    "tactic_count": 3
+  },
+  "artifacts": {
+    "public_files": [
+      "lean/MathCorpus/Elementary/Inequalities/MinAddMax.lean"
+    ]
+  },
+  "review": {
+    "review_basis": "repo self-review; kernel-verified through the tracked proof-search loop",
+    "reviewer_status": "repo_reviewed"
+  },
+  "verification": {
+    "verifier": "proofsearch",
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "episode_id": "5c58440d-825e-472c-b1ab-f9fa491ebfe5",
+    "outcome": "kernel_verified",
+    "kernel_verified": true,
+    "fidelity_status": "attested",
+    "import_manifest_hash": "aaf21893d520a78dee0787a1bcaf939ee6b922265ff670c272e2e1d450dd29a7",
+    "step_count": 2,
+    "verified_at": "2026-07-08T13:36:15Z"
+  },
+  "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 5c58440d), kernel_verified on the second attempt. The domain's existing min/max family (`avg_between_min_max`, `min_add_min_le`, `max_add_le`) are all strict INEQUALITIES; this adds the exact complementary EQUALITY, min(a,b)+max(a,b)=a+b, confirmed via `mathlib_search_declarations` (no `min_add_max`/`max_add_min` hits) and grep of the packet corpus to have no prior duplicate. First attempt used bare `simp [min_eq_left h, max_eq_right h]` for both branches, which left a trivial `b + a = a + b` unsolved in the second branch (simp didn't auto-apply commutativity here) -- fixed by using `rw` instead of `simp` and appending `ring` to close the residual commutativity goal in that branch.",
+  "hashes": {
+    "packet_sha256": "03f94d101efa1c295ad41476906b2c3d248b214218765bca9ad74a6dedf2e0fa",
+    "formal_statement_sha256": "257b85e95141b93a04ca1583fb8e7fb7c712bd4c2dfccbaa26655b903886ee5c",
+    "proof_body_sha256": "2617d40dee70d1e09d879fe0c742045c0087861eb540e517c4b60936cc4420e4"
+  }
+}

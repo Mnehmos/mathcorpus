@@ -2,8 +2,8 @@
 
 | Metric | Value |
 |--------|-------|
-| Packets | 33 |
-| Level breakdown | L0_elementary: 6 · L1_proof_basics: 8 · L2_olympiad: 19 |
+| Packets | 34 |
+| Level breakdown | L0_elementary: 6 · L1_proof_basics: 9 · L2_olympiad: 19 |
 
 Per-packet detail lives in each packet's own `verification.episode_id`
 and in `git log -- packets/elementary/inequalities/`; re-condensed this
@@ -33,6 +33,10 @@ cycle's `general_qm_am` (L2, D1, episode `0916c5cb`): the general n-term
 QM-AM inequality (squared-sum form), `(∑f_i)^2 <= |s|*(∑f_i^2)`,
 extending `qm_am_bound`/`three_var_qm_am_bound` the same way — via
 Mathlib's `sq_sum_le_card_mul_sum_sq` (notably NOT under the `Finset`
-namespace despite indexing a `Finset.sum`).
+namespace despite indexing a `Finset.sum`). And this cycle's
+`min_add_max` (D0, L1, episode `5c58440d`): the classic complementary
+EQUALITY `min(a,b)+max(a,b)=a+b`, distinct from the min/max family's
+existing strict inequalities (`avg_between_min_max`, `min_add_min_le`,
+`max_add_le`).
 
 Next targets: see `QUEUE.md`.

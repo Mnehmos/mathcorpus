@@ -88,6 +88,19 @@ Min/max family: `avg_between_min_max` (`min a b <= (a+b)/2 <= max a b`),
       `Finset` namespace; the bare name worked. Don't assume a
       Finset-indexed lemma lives in the `Finset` namespace.
 
+- [x] `min_add_max` — the classic complementary equality
+      `min(a,b)+max(a,b)=a+b` (D0, L1). Authored 2026-07-08 via tracked
+      episode `5c58440d-825e-472c-b1ab-f9fa491ebfe5` (kernel_verified on
+      the second attempt: `le_total` case split + `min_eq_left`/
+      `max_eq_right` or `min_eq_right`/`max_eq_left`). Distinct from the
+      domain's existing min/max INEQUALITIES (`avg_between_min_max`,
+      `min_add_min_le`, `max_add_le`) — confirmed via
+      `mathlib_search_declarations` (no `min_add_max`/`max_add_min` hits)
+      before authoring. First attempt used `simp` for both case-split
+      branches, which left a trivial `b+a=a+b` unsolved in one branch —
+      switched to `rw` + a trailing `ring` to close the residual
+      commutativity goal.
+
 ## Next targets
 
 *(empty — see Backlog.)*

@@ -3975,3 +3975,29 @@ particular file entirely. Full corpus: `validate_packets.py
 250-packet v0.1 public target). `Wikipedia/` round 9 overall: 5
 packetized theorems across 2 of 60 files fully read; ~58 files remain
 for future cycles, continuing from the round-9 bulk grep-count pass.
+
+## Proposed update — inequalities: min_add_max packet (this agent, 2026-07-08)
+
+Priority-3 elementary work this cycle (no blocking bugs; no zero-coverage
+negative lane; induction/inequalities tied lowest at 33 packets, both
+with genuinely empty backlogs after many prior cycles of gap-filling).
+
+Found one more genuine gap in inequalities' well-developed min/max
+family: `avg_between_min_max`/`min_add_min_le`/`max_add_le` are all
+strict INEQUALITIES, but the classic complementary EQUALITY,
+min(a,b)+max(a,b)=a+b, was never packetized. Confirmed via
+`mathlib_search_declarations` (no `min_add_max`/`max_add_min` hits) that
+this needed a genuine hand-derived proof, not a citation.
+
+Took 2 tracked attempts (episode `5c58440d-825e-472c-b1ab-f9fa491ebfe5`):
+case split on `le_total a b`, resolving `min`/`max` via `min_eq_left`/
+`max_eq_right` (or the symmetric pair) in each branch. First attempt used
+bare `simp` for both branches, which left a trivial `b+a=a+b` unsolved in
+one branch (simp didn't auto-commute here) — fixed by switching to `rw`
+with a trailing `ring` to close the residual commutativity goal.
+
+Authored `packets/elementary/inequalities/min_add_max.v1.json` +
+`lean/MathCorpus/Elementary/Inequalities/MinAddMax.lean`, stamped hashes,
+validated clean (353 packets total, 0 errors, 0 warnings). Updated
+`DASHBOARD.md`/`QUEUE.md` in `packets/elementary/inequalities/`.
+Committed only this cycle's own files, pathspec-scoped.
