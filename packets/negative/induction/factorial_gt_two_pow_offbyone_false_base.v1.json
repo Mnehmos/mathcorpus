@@ -1,0 +1,74 @@
+{
+  "packet_id": "negative.induction.factorial_gt_two_pow.offbyone_false_base.v1",
+  "packet_version": "1.0.0",
+  "title": "n! > 2^n is false at n=0..3; naive induction-from-zero cannot start",
+  "domain": "algebra",
+  "level": "L1_proof_basics",
+  "kind": "negative_example",
+  "status": "failed_attempt",
+  "difficulty_bin": "D1",
+  "source_provenance": {
+    "source_kind": "repo_original",
+    "source_refs": [],
+    "authors": [
+      "The MathCorpus Authors"
+    ],
+    "copyright_holder": "The MathCorpus Authors",
+    "license_spdx": "Apache-2.0",
+    "license_content": "CC-BY-4.0",
+    "statement_fidelity": "author_written"
+  },
+  "informal_statement": "The universally-quantified claim `n! > 2^n` for all natural n, attempted by ordinary induction starting at n = 0. The claim is only true from n = 4 onward (24 > 16); it is false at n=0 (1>1), n=1 (1>2), n=2 (2>4), and n=3 (6>8).",
+  "formal_statement_pp": "theorem root_theorem : ∀ n : ℕ, Nat.factorial n > 2 ^ n",
+  "failure": {
+    "gap_category": "false_generalization",
+    "sub_category": "offbyone_base_case",
+    "input_context_summary": "Goal after `intro n; induction n with | zero => ...`: the zero case reduces to the concrete numeral goal `Nat.factorial 0 > 2 ^ 0`, i.e. `1 > 1`.",
+    "attempt_summary": "Closed the zero case with `decide`. Lean reported the proposition is FALSE (`Tactic decide proved that the proposition Nat.factorial 0 > 2 ^ 0 is false`) -- a clean, deterministic kernel_fail, not a tactic-strength issue. No later case was even reached.",
+    "lesson": "The universal statement `n! > 2^n` is simply false for n in {0,1,2,3} -- the threshold where factorial overtakes the exponential is n=4, not n=0. Starting an induction proof at n=0 (the default for `induction n`) presupposes the base case holds at the domain's natural starting point; when the real claim only holds from some later n0 onward, no tactic can rescue the n=0 case because the goal there is actually false, not merely hard. The honest fix is to restate the theorem with an explicit hypothesis `n >= 4` (matched by a base case at n=4, e.g. via `Nat.le_induction`), not to hunt for a stronger closing tactic -- this differs from the domain's other negative examples (e.g. foldl_no_generalize_ih_too_weak), where the ROOT STATEMENT is true and only the specific proof route was too weak."
+  },
+  "proof_body_redacted": false,
+  "trust": {
+    "rung": 0,
+    "proof_authority": "none",
+    "public_claim_class": "public_safe"
+  },
+  "training": {
+    "eligibility": "negative_example_only",
+    "reason_codes": [
+      "public",
+      "explicit_negative_label"
+    ],
+    "dedupe_cluster_id": "induction.factorial_vs_two_pow_threshold",
+    "template_family_id": "induction.offbyone_base_case_hazards",
+    "contamination_risk": "low"
+  },
+  "dependencies": {
+    "kits": [],
+    "tactic_tags": [
+      "induction",
+      "decide",
+      "Nat.factorial",
+      "Nat.le_induction"
+    ],
+    "prerequisite_concepts": [
+      "induction",
+      "base_case",
+      "factorial",
+      "exponential_growth"
+    ]
+  },
+  "verification": {
+    "verifier": "proofsearch",
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "episode_id": "6d3b476b-3b18-4720-9df5-c1db029dd6b5",
+    "import_manifest_hash": "409c28561ce51f049ff6d835330b5f8d9a9b1c943db488280748901a8181d3b7",
+    "kernel_verified": false,
+    "fidelity_status": "attested",
+    "step_count": 2
+  },
+  "notes": "Produced via tracked proofsearch episode 6d3b476b-3b18-4720-9df5-c1db029dd6b5 (problem_version 018512af-6b51-4959-9c0b-1dee8c64df10, dev-attested): step 1, `intro n; induction n with | zero => decide | succ n ih => sorry`, kernel-failed at the zero case exactly as predicted (decide proved the base-case proposition false); step 2 closed with `give_up` since the root statement is genuinely false as universally quantified, not repairable by a different tactic. Closes the 'off-by-one base case error' backlog item in packets/negative/induction/QUEUE.md -- this domain's first negative example in the false_generalization gap_category (distinct from the tactic_mismatch category used by pow_succ_atom_nlinarith_failure.v1 and foldl_no_generalize_ih_too_weak.v1, where the root statements were true). Contrasts with the domain's positive packets factorial_ge_two_pow.v1 (2^n <= (n+1)!, true for all n by a one-index shift) and fib_le_two_pow.v1, both of which sidestep exactly this threshold trap via careful restatement.",
+  "hashes": {
+    "packet_sha256": "743d80298681b292d7d752c4e2780b33caaf71de0b6248cb47684257591e7516"
+  }
+}
