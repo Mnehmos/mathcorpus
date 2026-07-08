@@ -1,0 +1,64 @@
+{
+  "packet_id": "negative.inequalities.three_var_sq_bare_nlinarith_failure.v1",
+  "packet_version": "1.0.0",
+  "title": "Bare nlinarith fails on the three-variable square inequality",
+  "domain": "algebra",
+  "level": "L2_olympiad",
+  "kind": "negative_example",
+  "status": "failed_attempt",
+  "difficulty_bin": "D2",
+  "source_provenance": {
+    "source_kind": "repo_original",
+    "source_refs": [
+      "packets/elementary/inequalities/three_var_sq_ge.v1.json"
+    ],
+    "authors": [
+      "The MathCorpus Authors"
+    ],
+    "copyright_holder": "The MathCorpus Authors",
+    "license_spdx": "Apache-2.0",
+    "license_content": "CC-BY-4.0",
+    "statement_fidelity": "author_written"
+  },
+  "informal_statement": "For all real a, b, c: a^2 + b^2 + c^2 ≥ ab + bc + ca, first attacked with bare `nlinarith` (no hint terms) before a hinted retry closed the episode.",
+  "failure": {
+    "gap_category": "tactic_mismatch",
+    "sub_category": "nlinarith_missing_hint_terms",
+    "input_context_summary": "Goal `a ^ 2 + b ^ 2 + c ^ 2 ≥ a * b + b * c + c * a` over ℝ, no hypotheses beyond `a b c : ℝ`.",
+    "attempt_summary": "Submitted `nlinarith` with no hint terms as the first solve action in a tracked episode. The tactic's default Positivstellensatz search could not synthesize the needed `(a-b)^2`, `(b-c)^2`, `(a-c)^2` witnesses and the kernel returned `linarith failed to find a contradiction`. A second step in the same episode submitted `nlinarith [sq_nonneg (a - b), sq_nonneg (b - c), sq_nonneg (a - c)]`, which the kernel verified, closing the episode `kernel_verified`.",
+    "lesson": "nlinarith does not invent square-nonnegativity witnesses for symmetric polynomial inequalities on its own; supply `sq_nonneg` hint terms for the relevant pairwise differences before invoking it."
+  },
+  "proof_body_redacted": false,
+  "trust": {
+    "rung": 0,
+    "proof_authority": "none",
+    "public_claim_class": "public_safe"
+  },
+  "training": {
+    "eligibility": "negative_example_only",
+    "reason_codes": [
+      "public",
+      "explicit_negative_label"
+    ],
+    "dedupe_cluster_id": "inequalities.three_var_sq.failure_patterns",
+    "template_family_id": "inequalities.automation_hazards",
+    "contamination_risk": "low"
+  },
+  "dependencies": {
+    "kits": [
+      "InequalityEstimateKit"
+    ],
+    "tactic_tags": [
+      "nlinarith",
+      "sq_nonneg"
+    ],
+    "prerequisite_concepts": [
+      "square",
+      "sum_of_squares"
+    ]
+  },
+  "notes": "Captured via tracked proof-search episode d1e875d2-1cef-45c1-a76e-d46e84f67aa9 (problem_version c444ea07-e576-4d0b-91fe-79e814c2d02b, environment_hash 9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d): step 1 (bare nlinarith) recorded kernel_fail with 'linarith failed to find a contradiction'; step 2 (nlinarith with sq_nonneg hints) closed the episode kernel_verified. Sibling positive packet packets/elementary/inequalities/three_var_sq_ge.v1.json proves the same statement from a separate, earlier episode (2d093daf-b16c-4212-9209-4af2fcd7b799) that never recorded a failed first attempt; this packet fills that gap as tracked evidence.",
+  "hashes": {
+    "packet_sha256": "e768308ab58b6dca23ea2d45022525835cc195818712297a61385c3a6087b81f"
+  }
+}

@@ -3,7 +3,7 @@
 Corpus-wide status for the MathCorpus agent workspace. Owned by the dev
 loop agent (`agents/github_issues/`); domain agents propose updates rather
 than editing directly. Re-derive with `python tools/corpus_stats.py` where
-available; this snapshot was hand-updated 2026-07-08 after a functions
+available; this snapshot was hand-updated 2026-07-08 after an inequalities
 negative-example packet (proposed update — dev loop agent should confirm
 against a fresh `corpus_stats.py` run).
 
@@ -11,12 +11,12 @@ against a fresh `corpus_stats.py` run).
 
 | Metric | Value |
 |--------|-------|
-| Total packets | 194 |
+| Total packets | 195 |
 | Elementary (public) | 189 |
-| Negative examples | 5 |
+| Negative examples | 6 |
 | v0.1 target (`docs/roadmap.md`) | >=250 public packets, >=25 negative examples |
 | Progress to v0.1 (public) | 189 / 250 (~76%) |
-| Progress to v0.1 (negative) | 5 / 25 (~20%) |
+| Progress to v0.1 (negative) | 6 / 25 (~24%) |
 
 Note: `packets/negative/functions/injective_add_decide_failure.v1.json` is
 stamped, schema-validated (`validate_packets.py --check-hashes
@@ -67,10 +67,17 @@ All 189 elementary packets are `status: kernel_verified`.
   ℕ => n + 5)` — no `Decidable` instance exists for a `∀`-goal over an
   infinite domain; produced via tracked episode
   `2874844f-84d1-476e-92b9-5cfe043a88cf`, closed with `give_up`)
+- `packets/negative/inequalities/three_var_sq_bare_nlinarith_failure.v1.json`
+  (added 2026-07-08: bare `nlinarith` — no hint terms — fails on
+  `a^2+b^2+c^2 >= a*b+b*c+c*a` over ℝ with `linarith failed to find a
+  contradiction`, since it doesn't synthesize the needed `sq_nonneg (a-b)`
+  /`(b-c)`/`(a-c)` witnesses on its own; `nlinarith [sq_nonneg (a - b),
+  sq_nonneg (b - c), sq_nonneg (a - c)]` then closes the same tracked
+  episode `d1e875d2-1cef-45c1-a76e-d46e84f67aa9` `kernel_verified`)
 
-2 more domain lanes (`induction`, `inequalities`) are still empty in the
-committed corpus — the roadmap's >=25 negative-example release criterion
-is the biggest current gap.
+1 more domain lane (`induction`) is still empty in the committed corpus —
+the roadmap's >=25 negative-example release criterion is the biggest
+current gap.
 
 ## Frontier (Phase 5)
 
@@ -96,7 +103,7 @@ job is disabled (`if: false`) pending a pinned toolchain/mathlib rev.
 
 ## Current target
 
-Close the negative-example gap (1 -> 25) and continue elementary bulk
+Close the negative-example gap (6 -> 25) and continue elementary bulk
 (189 -> 250) per `docs/roadmap.md` Phase 2/6 prioritization
 ("Redaction and benchmark quarantine before public release" means
 negative-example coverage matters before a v0.1 cut, not just raw count).
@@ -105,8 +112,8 @@ negative-example coverage matters before a v0.1 cut, not just raw count).
 
 Induction (6 packets) is furthest behind on the elementary spine; negative
 examples remain the single biggest gap versus the v0.1 release criteria —
-`induction` and `inequalities` still have zero committed negative-example
-packets.
+`induction` is now the only domain lane with zero committed
+negative-example packets.
 
 ## Known environment bugs / workarounds
 
