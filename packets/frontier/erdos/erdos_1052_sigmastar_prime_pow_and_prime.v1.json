@@ -1,0 +1,106 @@
+{
+  "packet_id": "frontier.erdos.erdos_1052_sigmastar_prime_pow_and_prime.v1",
+  "packet_version": "1.0.0",
+  "title": "Erdős #1052 companion infrastructure: σ* on prime powers and primes",
+  "domain": "frontier",
+  "level": "L7_frontier",
+  "kind": "theorem",
+  "status": "kernel_verified",
+  "difficulty_bin": "D2",
+  "lean_module": "MathCorpus.Frontier.Erdos.Erdos1052SigmaStarPrimePowAndPrime",
+  "theorem_name": "sigmaStar_prime",
+  "imports": [
+    "Mathlib"
+  ],
+  "toolchain": {
+    "lean_version": "v4.32.0-rc1",
+    "mathlib_rev": "360da6fa66c1273b76b6b2d8c5666fd5ac2e3b56"
+  },
+  "source_provenance": {
+    "source_kind": "erdos_problems",
+    "source_refs": [
+      "ErdosProblems/erdos-1052/proof/Erdos1052_sigmaStar_and_bounds.lean (sibling repo mnehmos.llm-driven-proof-search.environment)",
+      "https://www.erdosproblems.com/1052"
+    ],
+    "authors": [
+      "The MathCorpus Authors"
+    ],
+    "copyright_holder": "The MathCorpus Authors",
+    "license_spdx": "Apache-2.0",
+    "license_content": "CC-BY-4.0",
+    "statement_fidelity": "adapted_with_review"
+  },
+  "informal_statement": "Erdos #1052 (open): are there finitely many unitary perfect numbers? This packet proves only bounded companion infrastructure toward the known (Subbarao-Warren 1966) result that unitary perfect numbers are even -- NOT the open problem itself. Defines uDiv n (unitary divisors of n) and sigmaStar n (the sum of unitary divisors), and proves sigmaStar (p^e) = p^e + 1 for prime p and e >= 1, specializing to sigmaStar p = p + 1 for e = 1. Does NOT include the general multiplicativity theorem sigmaStar_mul_of_coprime (sigmaStar(m*n) = sigmaStar(m)*sigmaStar(n) for coprime m, n) or the structural bound omega_odd_le_two_adic_add_one that depends on it -- both deferred to a future cycle (see notes), and NOT the full even_of_isUnitaryPerfect headline theorem (which additionally needs a Finset.sum_bij' bijection and a Finset.sum_involution argument, also deferred, tracked in this file's companion packets erdos_1052_proper_eq_erase.v1 / erdos_1052_not_dvd_div_ordproj.v1 / erdos_1052_filter_ordcompl.v1).",
+  "informal_proof_idea": "uDiv n is n's divisors filtered by coprimality of d and n/d; mem_uDiv is a direct unfolding via simp. sigmaStar n sums over uDiv n. sigmaStar_prime_pow shows uDiv (p^e) = {1, p^e} by case-splitting on a divisor's exponent k (0 gives d=1; 0<k<e leads to a contradiction since p would then divide gcd(p^k, p^e/p^k) = 1; k=e gives d=p^e), then sums the two-element set. sigmaStar_prime specializes to e=1.",
+  "formal_statement_pp": "theorem sigmaStar_prime : ∀ {p : ℕ}, p.Prime → sigmaStar p = p + 1",
+  "proof_body_path": "lean/MathCorpus/Frontier/Erdos/Erdos1052SigmaStarPrimePowAndPrime.lean",
+  "proof_body_redacted": false,
+  "trust": {
+    "rung": 1,
+    "proof_authority": "lean_kernel",
+    "certificate_checker": "kernel_decide",
+    "encoding_required": false,
+    "encoding_soundness_status": "not_applicable",
+    "independent_review_status": "repo_reviewed",
+    "public_claim_class": "public_safe"
+  },
+  "training": {
+    "eligibility": "quarantined",
+    "reason_codes": [
+      "open_problem_related",
+      "default_quarantine_pending_external_review",
+      "companion_result_not_open_problem"
+    ],
+    "dedupe_cluster_id": "frontier.erdos_1052",
+    "template_family_id": "frontier.erdos_companion_results",
+    "open_problem_related": true,
+    "contamination_risk": "low",
+    "can_export_proof_body": true
+  },
+  "dependencies": {
+    "kits": [],
+    "tactic_tags": [
+      "Finset.filter",
+      "Nat.dvd_prime_pow",
+      "Finset.sum_insert",
+      "Nat.dvd_gcd"
+    ],
+    "prerequisite_concepts": [
+      "unitary_divisor",
+      "sigma_star",
+      "prime_power",
+      "divisibility"
+    ]
+  },
+  "metrics": {
+    "loc": 65,
+    "tactic_count": 30
+  },
+  "artifacts": {
+    "public_files": [
+      "lean/MathCorpus/Frontier/Erdos/Erdos1052SigmaStarPrimePowAndPrime.lean"
+    ]
+  },
+  "review": {
+    "review_basis": "repo self-review; kernel-verified through the tracked proof-search loop; statement cross-checked against the sibling repo's already-kernel_verified proof of the same result",
+    "reviewer_status": "repo_reviewed",
+    "reviewed_at": "2026-07-08"
+  },
+  "verification": {
+    "verifier": "proofsearch",
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "episode_id": "0eb1d5e8-4af9-4980-930c-52979b3e5cc9",
+    "outcome": "kernel_verified",
+    "kernel_verified": true,
+    "fidelity_status": "attested",
+    "step_count": 1,
+    "import_manifest_hash": "aaf21893d520a78dee0787a1bcaf939ee6b922265ff670c272e2e1d450dd29a7",
+    "verified_at": "2026-07-08T10:44:34Z"
+  },
+  "notes": "ANTI-OVERCLAIM: this packet proves only bounded companion infrastructure (sigma-star's value on prime powers and primes), not Erdos #1052 itself (genuinely OPEN), and not the general sigmaStar_mul_of_coprime multiplicativity theorem or the omega_odd_le_two_adic_add_one structural bound that depends on it -- both present, already kernel_verified, in the sibling repo's source file, but deferred here since sigmaStar_mul_of_coprime's proof (a 5-branch Finset.sum_nbij' with nested `.`-bullet case splits) is a substantially bigger bullet-free rewrite than this cycle's scope; a future cycle should attempt it, recording any blocker in packets/frontier/erdos/BLOCKERS.md rather than re-discovering this scoping decision from scratch. Proof authority: Lean kernel via the tracked proof-search loop (episode 0eb1d5e8, problem_version ae154ca2-2f0a-4000-9324-bf3ef48af1e4), submitted as a SubmitModule (2 defs uDiv/sigmaStar + 2 helper theorems mem_uDiv/sigmaStar_prime_pow + root theorem sigmaStar_prime), kernel_verified on the FIRST attempt. sigmaStar_prime_pow's original sibling-repo proof used nested `.`-bullet case splits (constructor; two bulleted branches, one further split by rcases); rewritten entirely bullet-free (bare sequential tactics per branch, since Lean processes unbulleted goals left-to-right and each branch's tactics fully close their own goal before the next begins) plus proactive parenthesization of every `have h := by tac1; tac2` followed by sibling tactics (issue #67's flattened-sequence trap) -- no other mathematical content changed from the sibling source. Independently re-verified in THIS environment's own pinned toolchain rather than treated as evidence merely because the sibling repo (F:\\Github\\mnehmos.llm-driven-proof-search.environment\\ErdosProblems\\erdos-1052\\proof\\Erdos1052_sigmaStar_and_bounds.lean) already reports it kernel_verified there -- per this repo's evidence policy. training.eligibility: quarantined per the default-quarantine policy for open_problem_related packets pending real external review (same policy as this lane's other packets).",
+  "hashes": {
+    "packet_sha256": "b995d94b8e5dddcaa0cbad1b3b6b395244999ae57a772977aef734c44a21bb07",
+    "formal_statement_sha256": "3c1b90a7dd19ac590d508343082147d627ba7b5c0e133984707cc223fcdb33f0",
+    "proof_body_sha256": "d6101178610d1fd21c02da0a72855a1e80dac5b2072db4e284cf29e3b5c398d0"
+  }
+}

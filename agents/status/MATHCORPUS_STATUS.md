@@ -3038,3 +3038,59 @@ currently failing full-corpus validation with an invalid `domain:
 "induction"` — not this agent's file, left untouched for its author to
 fix). No blocking dev-toolchain bugs found in
 `agents/github_issues/{BUGS,TRIAGE}.md` this cycle.
+
+## Proposed update — priority-4 pivot to frontier: erdos_1052_sigmastar_prime_pow_and_prime (this agent, 2026-07-08, /loop continuation)
+
+Startup this cycle: swept every elementary domain's `QUEUE.md` and every
+negative-example lane's `QUEUE.md` fresh — all genuinely empty of open
+next-targets (geometry's "law of sines" now has a detailed, explicit
+deferral note from another agent confirming this agent's own prior
+assessment: needs `InnerProductGeometry.angle`-based infrastructure not
+used anywhere else in the domain, not a same-cycle pickup;
+number_theory's "decide on unbounded primality" negative-example item was
+also closed by a concurrent agent this cycle). Per this loop's priority-4
+fallback ("if elementary/negative queues are genuinely empty or blocked,
+do dossier-building... in packets/frontier/erdos/"), pivoted to frontier
+work for the first time this session.
+
+Read `packets/frontier/erdos/COMPANION_RESULTS.md`, which flagged a
+concurrent agent's source-reviewed **priority target**: general `σ*`
+(unitary-divisor-sum) multiplicativity infrastructure
+(`sigmaStar_mul_of_coprime`, `sigmaStar_prime_pow`, `sigmaStar_prime`),
+needed to unblock the `omega_odd_le_two_adic_add_one` structural bound
+toward Erdős #1052 (genuinely open: are there finitely many unitary
+perfect numbers?). Delegated to a subagent with a deliberately bounded
+scope: transport ONLY the two prime/prime-power special cases
+(`sigmaStar_prime_pow`, `sigmaStar_prime`, plus their `uDiv`/`sigmaStar`/
+`mem_uDiv` dependencies), explicitly excluding `sigmaStar_mul_of_coprime`
+(a 5-branch `Finset.sum_nbij'` with nested bullet case splits — a
+substantially bigger bullet-free rewrite job) and
+`omega_odd_le_two_adic_add_one` (which depends on it), matching this
+lane's established incremental-transport practice (see
+`erdos_1052_proper_eq_erase.v1`'s own notes on the same pattern).
+
+Added `packets/frontier/erdos/erdos_1052_sigmastar_prime_pow_and_prime.v1.json`:
+`SubmitModule` with 2 defs (`uDiv`, `sigmaStar`) + 2 helper theorems
+(`mem_uDiv`, `sigmaStar_prime_pow`) + root theorem `sigmaStar_prime`,
+kernel_verified on the FIRST attempt (episode
+`0eb1d5e8-4af9-4980-930c-52979b3e5cc9`, problem_version
+`ae154ca2-2f0a-4000-9324-bf3ef48af1e4`, dev-attested), independently
+re-verified in this repo's own pinned toolchain rather than trusted from
+the sibling repo's already-kernel_verified status. `training.eligibility:
+quarantined` per the default-quarantine policy for `open_problem_related`
+packets, matching every other packet in this lane. The sibling source's
+`sigmaStar_prime_pow` proof used nested `.`-bullet case splits; rewritten
+entirely bullet-free (bare sequential tactics per branch) plus proactive
+parenthesization of every `have h := by tac1; tac2` followed by sibling
+tactics (issue #67's flattened-sequence trap) — no other mathematical
+content changed from the sibling source. Updated
+`packets/frontier/erdos/COMPANION_RESULTS.md`'s row to reflect the
+packetized pieces and re-flag `sigmaStar_mul_of_coprime` +
+`omega_odd_le_two_adic_add_one` as the still-open priority target for a
+future cycle.
+
+Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
+0 errors) and hash-stamped; full corpus revalidated clean at 330 packets,
+0 errors, 0 warnings (302 verified public + 28 negative per
+`corpus_stats.py`, 120.8% of the 250-packet v0.1 public target). Commit
+scoped to only this cycle's own files.
