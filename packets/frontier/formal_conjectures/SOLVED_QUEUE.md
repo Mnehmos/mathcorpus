@@ -479,33 +479,55 @@ one tagged theorem is genuinely proof-complete:
   `SixStandardDeviations.lean`) turned out to have their single/matching
   sorry belong to the actual `research solved` theorem itself — no
   further wins found among the small-count files.
+- **`UnionClosed.lean` (tags=6, sorries=5) — a second real win, found by
+  a concurrent agent continuing this same round.** The union-closed sets
+  conjecture (Frankl's conjecture) file has THREE genuinely proof-complete
+  special cases: `singleton_mem` (packetized by that agent as
+  `frontier.formal_conjectures.union_closed_singleton_mem.v1`, episode
+  `ff2e3924-a37c-44aa-9c0d-b60e3bf4e81f`), `univ_card_two` (packetized
+  this cycle, this agent, as
+  `frontier.formal_conjectures.union_closed_univ_card_two.v1`, episode
+  `62b2eaf2-50d7-47ca-96ce-4a180fcf2cb4`, a one-line `decide +revert
+  +kernel` brute-force proof for the `|universe|=2` case), and
+  `sharpness` (still flagged, not yet packetized — the largest of the
+  three at ~45 lines, showing the `1/2` constant is optimal). The
+  upstream `IsUnionClosed` predicate is a transparent `abbrev`, not a
+  load-bearing custom type, so both packetized proofs inline it directly
+  with zero transport friction.
 
-**Round-9 verdict**: 2 genuinely proof-complete theorems found and
-packetized out of 60 files (in one file, `EulerSumOfPowers.lean`) — the
-first `Wikipedia/`-category win. The remaining ~59 files were not read
-individually this cycle (60 files is large; the two packetized results
-already fill this cycle's one-target budget) — **`Wikipedia/` triage is
-NOT yet complete**, unlike prior rounds. A future cycle should continue
-reading the remaining files (skip `EulerSumOfPowers.lean`, already done),
+**Round-9 verdict**: 4 genuinely proof-complete theorems found and
+packetized so far out of 60 files (2 in `EulerSumOfPowers.lean`, 2 in
+`UnionClosed.lean`) — plus one more flagged (`sharpness`) not yet
+attempted. The remaining ~58 files were not read individually this round
+(60 files is large) — **`Wikipedia/` triage is NOT yet complete**, unlike
+prior rounds. A future cycle should continue reading the remaining files
+(skip `EulerSumOfPowers.lean` and `UnionClosed.lean`, both done/flagged),
 prioritizing any other `sorries < tags` candidates from the initial bulk
-count first.
+count first, or pick up `sharpness` as a ready target.
 
 ### Not yet triaged
 
-`Wikipedia/` (60 files, 1 of 60 fully read — see round 9 above; 59
-remain), `GreensOpenProblems/` (30, triaged round 8, 0/30 tractable) — a
-future cycle should continue the `Wikipedia/` read-through (`grep -B1 -A3
-"category research solved"` per file, check for a bare `sorry` body vs. a
-real proof, check whether real proofs are self-contained vs.
-infrastructure-heavy — including whether custom types are needed just to
-STATE the theorem, not only to prove it — check whether a
-`class`/`structure` blocker is load-bearing or notational, and check
-whether unusual API names actually resolve under this repo's pinned
-Mathlib before assuming a verbatim transport will compile — see
-`BLOCKERS.md`). Start from the round-9 bulk grep-count pass's remaining
-candidates rather than re-running it from scratch.
+`Wikipedia/` (60 files, 2 of 60 fully read — `EulerSumOfPowers.lean` and
+`UnionClosed.lean`, see round 9 above; ~58 remain), `GreensOpenProblems/`
+(30, triaged round 8, 0/30 tractable) — a future cycle should continue
+the `Wikipedia/` read-through (`grep -B1 -A3 "category research solved"`
+per file, check for a bare `sorry` body vs. a real proof, check whether
+real proofs are self-contained vs. infrastructure-heavy — including
+whether custom types are needed just to STATE the theorem, not only to
+prove it — check whether a `class`/`structure` blocker is load-bearing or
+notational, and check whether unusual API names actually resolve under
+this repo's pinned Mathlib before assuming a verbatim transport will
+compile — see `BLOCKERS.md`). Start from the round-9 bulk grep-count
+pass's remaining candidates rather than re-running it from scratch.
 
 ## Backlog
+
+- [ ] `Wikipedia/UnionClosed.lean::union_closed.variants.sharpness` (see
+      round 9 above) — ready candidate for a future cycle, genuinely
+      proof-complete, no custom class/inductive, but the largest of the
+      file's three special cases (~45 lines, shows the `1/2` constant in
+      the union-closed sets conjecture is optimal — cannot be replaced
+      by any larger constant).
 
 - [ ] `HilbertProblems/` — triaged this cycle (see above); both files'
       `research solved` theorems are genuinely `sorry` and genuinely hard
