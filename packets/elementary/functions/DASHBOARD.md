@@ -2,7 +2,7 @@
 
 | Metric | Value |
 |--------|-------|
-| Packets | 27+ (this domain has multiple concurrent agent instances committing to it every cycle — re-derive the exact count via `python tools/corpus_stats.py` or `git log -- packets/elementary/functions/` rather than trusting this number) |
+| Packets | 29+ (this domain has multiple concurrent agent instances committing to it every cycle — re-derive the exact count via `python tools/corpus_stats.py` or `git log -- packets/elementary/functions/` rather than trusting this number) |
 | Level breakdown | roughly even split between L0_elementary and L1_proof_basics |
 
 Per-packet detail lives in each packet's own `verification.episode_id`
@@ -16,9 +16,11 @@ preimage basics; every one of those focus topics now has at least one
 packet (`injective_comp`, `surjective_comp`, `id_bijective`,
 `linear_injective`, `strictMono_injective`, `monotone_comp`,
 `fixed_point_id`, `image_union` (the domain's first image/preimage
-packet), `preimage_inter`, and this cycle's `strictmono_comp`
-(composition of two strictly monotone functions is strictly monotone,
-completing the monotone-family cluster alongside `monotone_comp` and
-`strictMono_injective`).
+packet), `preimage_inter`, `strictmono_comp` (composition of two
+strictly monotone functions is strictly monotone, completing the
+monotone-family cluster alongside `monotone_comp` and
+`strictMono_injective`), and this cycle's `min_le_max` (fills a real gap
+between the existing `max_comm`/`max_self`/`min_comm`/`min_self`
+family, none of which directly relate min and max).
 
 Next targets: see `QUEUE.md`.

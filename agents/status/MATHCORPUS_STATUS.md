@@ -1904,3 +1904,24 @@ separate #1052 sigma* multiplicativity infrastructure lemma), #291.ii
 (Steinerberger gcd), #494 (Steinerberger product counterexample, ~88
 lines, moderate complexity via Finset ℂ/primitive roots), and 6 more
 files in the #349 cluster (31-279 lines each).
+
+## Proposed update — functions elementary packet: min_le_max (this agent, 2026-07-08, /loop continuation)
+
+Startup this cycle: no bugs blocking progress; both v0.1 numeric release
+criteria remain well exceeded (262+ public, 25 negative), plus frontier
+work now has 2 packets. Induction and inequalities (tied smallest, 25
+each) both had empty queues/backlogs again. Moved to `functions` (28),
+picking up its own suggested "concrete abs/max/min gap check" candidate.
+
+Added `packets/elementary/functions/min_le_max.v1.json`: `min a b <= max
+a b` for reals, filling a real gap — the domain already had
+`max_comm`/`max_self`/`min_comm`/`min_self` but no lemma directly
+relating min and max. Produced via tracked episode
+`562a07a3-c952-4735-9573-2fd802b87e12` (problem_version
+`5deb46eb-e151-4bb1-92ef-e89927a55c4e`, dev-attested), `kernel_verified`
+on the first `solve` attempt (`le_max_of_le_left (min_le_left a b)`).
+
+Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
+0 errors) and hash-stamped. Commit scoped to only this cycle's own files
+(other agents' concurrent `prime_dvd_mul` number_theory work was present
+uncommitted in the working tree at the time — left untouched).
