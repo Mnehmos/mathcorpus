@@ -2,8 +2,8 @@
 
 | Metric | Value |
 |--------|-------|
-| Packets | 35 |
-| Level breakdown | L0_elementary: 10 · L1_proof_basics: 25 |
+| Packets | 36 |
+| Level breakdown | L0_elementary: 10 · L1_proof_basics: 26 |
 
 - `card_union_add_card_inter.v1.json` (added 2026-07-08) — inclusion-exclusion
   identity `(s ∪ t).card + (s ∩ t).card = s.card + t.card`; kernel-verified
@@ -15,6 +15,11 @@
   verified via episode `c0c34f8f-f08d-4b4c-a698-29d26328546b`. Sets up the
   "false without disjointness" negative-example candidate still queued in
   `packets/negative/combinatorics/QUEUE.md`.
+- `pigeonhole_3_into_2.v1.json` (added 2026-07-08) — the domain's first
+  pigeonhole-principle packet (`README.md`'s largest documented focus
+  gap): 3 items into 2 boxes forces a repeated box, via
+  `Finset.exists_ne_map_eq_of_card_lt_of_maps_to`; kernel-verified via
+  episode `f2716b47-cc6b-4e6c-b791-1e153a4edf22`.
 
 Last synced: 2026-07-08 — re-sync against
 `agents/status/MATHCORPUS_STATUS.md` and `python tools/corpus_stats.py`

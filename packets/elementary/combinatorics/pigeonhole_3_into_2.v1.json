@@ -1,0 +1,100 @@
+{
+  "packet_id": "elementary.combinatorics.pigeonhole_3_into_2.v1",
+  "packet_version": "1.0.0",
+  "title": "Pigeonhole: 3 items into 2 boxes forces a repeated box",
+  "domain": "combinatorics",
+  "level": "L1_proof_basics",
+  "kind": "concept",
+  "status": "kernel_verified",
+  "difficulty_bin": "D1",
+  "lean_module": "MathCorpus.Elementary.Combinatorics.Pigeonhole3Into2",
+  "theorem_name": "pigeonhole_3_into_2",
+  "imports": [
+    "Mathlib"
+  ],
+  "toolchain": {
+    "lean_version": "v4.32.0-rc1",
+    "mathlib_rev": "360da6fa66c1273b76b6b2d8c5666fd5ac2e3b56"
+  },
+  "source_provenance": {
+    "source_kind": "author_written",
+    "source_refs": [],
+    "authors": [
+      "The MathCorpus Authors"
+    ],
+    "copyright_holder": "The MathCorpus Authors",
+    "license_spdx": "Apache-2.0",
+    "license_content": "CC-BY-4.0",
+    "statement_fidelity": "author_written"
+  },
+  "informal_statement": "If 3 items are each placed into one of 2 boxes (modeled as a function from {0,1,2} into {0,1}), some two distinct items land in the same box — the pigeonhole principle's simplest concrete instance.",
+  "informal_proof_idea": "Directly `Finset.exists_ne_map_eq_of_card_lt_of_maps_to`, discharging the cardinality comparison `(Finset.range 2).card < (Finset.range 3).card` by `decide`.",
+  "formal_statement_pp": "theorem pigeonhole_3_into_2 (f : ℕ → ℕ) (hf : ∀ a ∈ Finset.range 3, f a ∈ Finset.range 2) : ∃ x ∈ Finset.range 3, ∃ y ∈ Finset.range 3, x ≠ y ∧ f x = f y",
+  "proof_body_path": "lean/MathCorpus/Elementary/Combinatorics/Pigeonhole3Into2.lean",
+  "proof_body_redacted": false,
+  "trust": {
+    "rung": 1,
+    "proof_authority": "lean_kernel",
+    "certificate_checker": "kernel_decide",
+    "encoding_required": false,
+    "encoding_soundness_status": "not_applicable",
+    "independent_review_status": "repo_reviewed",
+    "public_claim_class": "public_safe"
+  },
+  "training": {
+    "eligibility": "public_train",
+    "reason_codes": [
+      "public",
+      "non_benchmark",
+      "unredacted"
+    ],
+    "dedupe_cluster_id": "combinatorics.pigeonhole",
+    "template_family_id": "combinatorics.pigeonhole_basics",
+    "contamination_risk": "low",
+    "can_export_proof_body": true
+  },
+  "dependencies": {
+    "kits": [
+      "ExtremalCombinatoricsKit"
+    ],
+    "tactic_tags": [
+      "Finset.exists_ne_map_eq_of_card_lt_of_maps_to",
+      "decide"
+    ],
+    "prerequisite_concepts": [
+      "finite_set",
+      "cardinality",
+      "pigeonhole_principle",
+      "function"
+    ]
+  },
+  "metrics": {
+    "loc": 3,
+    "tactic_count": 1
+  },
+  "artifacts": {
+    "public_files": [
+      "lean/MathCorpus/Elementary/Combinatorics/Pigeonhole3Into2.lean"
+    ]
+  },
+  "review": {
+    "review_basis": "repo self-review; kernel-verified through the tracked proof-search loop",
+    "reviewer_status": "repo_reviewed"
+  },
+  "verification": {
+    "verifier": "proofsearch",
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "episode_id": "f2716b47-cc6b-4e6c-b791-1e153a4edf22",
+    "outcome": "kernel_verified",
+    "kernel_verified": true,
+    "fidelity_status": "attested",
+    "step_count": 1,
+    "import_manifest_hash": "9bcbf693553e0e2efdb421fcec33c3cc5f71fcc7ea63883b4184635f5df699c2"
+  },
+  "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode f2716b47). Closes the domain's largest documented focus/content gap: the README names pigeonhole-style basics explicitly, but no packet covered it until now.",
+  "hashes": {
+    "packet_sha256": "84bf7e83f9fb81d633b5b493b1ba98d80c9bbf2ae2ba00e60aeb76885619e668",
+    "formal_statement_sha256": "fa88ec2be84e807c6873bc95b0c90f918614d84e0ad38db4a317b10846630499",
+    "proof_body_sha256": "31c3ac256e308e21a431870b63196f037c8a4034d627e8c326bc8b3c9bde71bd"
+  }
+}

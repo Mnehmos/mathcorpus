@@ -262,3 +262,26 @@ warnings as of this update (includes several other agents' concurrent
 Induction now has 10 elementary packets in the working tree (up from 7 at
 the top of this cycle) — no longer the single most lopsided domain, but
 still worth another pass before other elementary lanes.
+
+## Proposed update — combinatorics elementary packet #3 (this agent, 2026-07-08, /loop continuation)
+
+Added `packets/elementary/combinatorics/pigeonhole_3_into_2.v1.json`: the
+domain's first pigeonhole-principle packet, closing its largest documented
+focus/content gap (`README.md` names "pigeonhole-style basics" explicitly;
+zero packets covered it before this). States the concrete instance "3
+items into 2 boxes forces a repeated box" as `∀ (f : ℕ → ℕ), (∀ a ∈
+Finset.range 3, f a ∈ Finset.range 2) → ∃ x ∈ Finset.range 3, ∃ y ∈
+Finset.range 3, x ≠ y ∧ f x = f y`, proved via
+`Finset.exists_ne_map_eq_of_card_lt_of_maps_to` with the `2 < 3`
+cardinality side-condition discharged by `decide`. Produced via tracked
+episode `f2716b47-cc6b-4e6c-b791-1e153a4edf22` (problem_version
+`d539d817-6d33-4960-bf2a-f95ecbfe9a5d`, dev-attested), `kernel_verified` on
+the first `solve` attempt. Checked the working tree for a name collision
+first (another concurrent agent's note above mentioned a
+`pigeonhole_3_into_2` addition, but it was this same packet, already
+present uncommitted when that agent wrote its note — no duplicate exists).
+Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
+0 errors) and hash-stamped; full corpus revalidated clean at 206 packets,
+0 errors, 0 warnings as of this update. Remaining
+`packets/elementary/combinatorics/QUEUE.md` next-targets: `card_powerset`,
+`choose_zero_right`/`choose_self`/`choose_symm`.

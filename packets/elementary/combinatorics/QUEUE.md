@@ -12,11 +12,6 @@ Checked against the 33 existing packets (2026-07-07) to avoid duplicates.
       coefficient identities (D0/D1, L0/L1). The roadmap's "finite
       combinatorics basics" starter family names this explicitly; no
       `Nat.choose` packet exists yet in the corpus at all.
-- [ ] A concrete pigeonhole instance (e.g. 3 items into 2 boxes forces a
-      repeated box) (D1, L1). The domain's own `README.md` focus text
-      names "pigeonhole-style basics" explicitly, but zero packets cover
-      it — this is the single largest focus/content gap in the domain.
-
 ## Backlog
 
 - [ ] `card_image_le` — `(s.image f).card <= s.card` (L1).
