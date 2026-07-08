@@ -2668,3 +2668,60 @@ This closes out the #349 cluster (6/7 files packetized; the 7th is a
 trivial corpus-shape wrapper). Frontier lane now at 9 packets from this
 agent alone this session, plus several more from a concurrent agent
 working #1052 in parallel.
+
+## Proposed update — dossier: formal_conjectures survey pilot (this agent, 2026-07-08)
+
+Priority-4 dossier work (elementary queues confirmed dry across
+induction/inequalities/functions; no blocking bugs; the #1052 σ*
+multiplicativity infrastructure chain I flagged in a prior cycle is
+being actively worked by a different concurrent agent, so I avoided
+duplicating it and picked a fresh target instead).
+
+`packets/frontier/formal_conjectures/` had been completely untouched all
+session — every tracking file (`SOURCE_MAP.md`, `STATEMENT_FIDELITY.md`,
+`OPEN_QUEUE.md`, `SOLVED_QUEUE.md`, `PROOF_ATTEMPTS.md`, `BLOCKERS.md`)
+was still empty scaffolding. `SOLVED_QUEUE.md`'s own "Next targets"
+section explicitly called for a survey of the sibling `formal-conjectures`
+checkout's non-Erdős categories for `research solved`-tagged statements
+shipped as bare `sorry` — the same discovery pattern that produced the
+Erdős-lane companion-result wins earlier this session. No survey had
+been done yet, so I ran it.
+
+Grepped all 16 non-Erdős top-level categories for
+`@[category research solved ...]` tags (160 files total across the
+checkout) and fully hand-triaged the six smallest (12 files: `Books/`,
+`HilbertProblems/`, `LittProblems/`, `Millenium/`, `OptimizationConstants/`,
+`OpenQuantumProblems/`) as a bounded pilot, deferring the eight large
+categories (`Wikipedia/` 60, `GreensOpenProblems/` 30,
+`WrittenOnTheWallII/` 21, `Paper/` 12, `Arxiv/` 9, `OEIS/` 7,
+`Mathoverflow/` 5, `Other/` 5) to future cycles.
+
+Findings (full detail in `packets/frontier/formal_conjectures/SOLVED_QUEUE.md`
+and `SOURCE_MAP.md`): most of the 12 files are genuinely `sorry` for hard
+original mathematics (Poincaré conjecture, Hilbert's 5th/17th problems,
+Bugeaud Hausdorff-dimension results, an equidistribution claim, an
+Eisenstein-integrality claim, named-paper numeric bounds) — correctly
+out of scope. Two files (`OpenQuantumProblems/13.lean` and `35.lean`)
+contain several already-fully-proven `research solved` theorems
+(`ame_2_exists`, `ame_3_exists`, `ame_2_2_exists`, `ame_3_2_exists`,
+`mutuallyUnbiasedBases_dim2`) with explicit, complete proofs — the
+pattern that would normally mean an easy transport win. Checked their
+dependency chains before flagging them as a real target (the same
+anti-overclaim discipline applied to the #470 correction last cycle) and
+found they sit on ~500 lines of file-local custom quantum-state
+infrastructure (`BlochVec`, `EuclideanSpace ℂ (Config n d)`,
+`mkStateVector`, MUB machinery) rather than pure Mathlib, unlike every
+Erdős-lane win this session. Recorded as a real but NOT one-cycle
+candidate — would need a dedicated multi-cycle push to also transport
+the supporting API. One file (`Books/BorweinSineSeries.lean`) has a
+`research solved` tag pointing to an external `formal_proof` link not yet
+replayed in this environment, structurally identical to the #1052
+AlphaProof-link situation — flagged as unverified pending that read, not
+claimed either way.
+
+No proof-search episodes run this cycle (dossier-only work, no proof
+claims). No packet JSON touched. Files updated:
+`packets/frontier/formal_conjectures/SOLVED_QUEUE.md` (survey findings,
+replacing the generic "next targets" placeholder) and
+`packets/frontier/formal_conjectures/SOURCE_MAP.md` (13 new rows for the
+files actually reviewed). Committed separately from any packet work.
