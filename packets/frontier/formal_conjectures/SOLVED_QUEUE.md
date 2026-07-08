@@ -451,21 +451,59 @@ reading each file individually and caught the same result with far less
 effort — use this shortcut for `Wikipedia/`/`GreensOpenProblems/` too,
 which are large enough that per-file reading would be slow.
 
+### Triaged this cycle, round 9 — `Wikipedia/` (60 files, this agent, 2026-07-08)
+
+Ran the bulk `grep -c "category research solved"` vs `grep -c "sorry"`
+count pass across all 60 files first (per the round-7/8 shortcut). Most
+files show `sorries >= tags` (consistent with genuine `sorry`s, possibly
+inflated by prose mentions like round 7's false positives) — but two
+files stood out with `sorries < tags`, a guaranteed signal that at least
+one tagged theorem is genuinely proof-complete:
+
+- **`EulerSumOfPowers.lean` (tags=2, sorries=1) — a real win.** Read the
+  full file: the `research open` theorem (the general k>=6 conjecture)
+  is `sorry`, but BOTH `research solved` theorems —
+  `eulers_sum_of_powers_conjecture.false_for_k4` and `.false_for_k5` —
+  are genuinely `sorry`-free, self-contained proofs disproving Euler's
+  sum of powers conjecture for k=4 (Roger Frye's 1988 counterexample,
+  95800^4+217519^4+414560^4=422481^4) and k=5 (Lander-Parkin's 1966
+  counterexample, 27^5+84^5+110^5+133^5=144^5). No custom types, only
+  `push_neg`/`norm_num`/`decide` — exactly the Erdos-lane win pattern.
+  **Packetized both** as `frontier.formal_conjectures.euler_sum_of_powers_false_for_k4.v1`
+  (episode `67410574-3463-4255-b72a-b4f1b430e410`) and `.false_for_k5.v1`
+  (episode `9ca64991-f41a-41c4-9045-c3f056b0eee4`), each kernel_verified
+  on the FIRST attempt with the upstream proof term transported
+  essentially verbatim.
+- Every other `sorries < tags` or `sorries == tags` candidate spot-checked
+  this round (`GromovPolynomialGrowth.lean`, `ModularityConjecture.lean`,
+  `SixStandardDeviations.lean`) turned out to have their single/matching
+  sorry belong to the actual `research solved` theorem itself — no
+  further wins found among the small-count files.
+
+**Round-9 verdict**: 2 genuinely proof-complete theorems found and
+packetized out of 60 files (in one file, `EulerSumOfPowers.lean`) — the
+first `Wikipedia/`-category win. The remaining ~59 files were not read
+individually this cycle (60 files is large; the two packetized results
+already fill this cycle's one-target budget) — **`Wikipedia/` triage is
+NOT yet complete**, unlike prior rounds. A future cycle should continue
+reading the remaining files (skip `EulerSumOfPowers.lean`, already done),
+prioritizing any other `sorries < tags` candidates from the initial bulk
+count first.
+
 ### Not yet triaged
 
-`Wikipedia/` (60 files), `GreensOpenProblems/` (30) — a future cycle
-should continue this same triage (`grep -B1 -A3 "category research
-solved"` per file, check for a bare `sorry` body vs. a real proof, check
-whether real proofs are self-contained vs. infrastructure-heavy —
-including whether custom types are needed just to STATE the theorem, not
-only to prove it — check whether a `class`/`structure` blocker is
-load-bearing or notational, and check whether unusual API names actually
-resolve under this repo's pinned Mathlib before assuming a verbatim
-transport will compile — see `BLOCKERS.md`). For these large categories,
-consider the bulk `grep -c` tag-vs-sorry-count shortcut from round 7
-above before reading files individually. `GreensOpenProblems/` (30) is
-now the smallest untriaged category (`Arxiv/`, `OEIS/`, `Paper/`,
-`WrittenOnTheWallII/` are all done, see rounds 4-7 above).
+`Wikipedia/` (60 files, 1 of 60 fully read — see round 9 above; 59
+remain), `GreensOpenProblems/` (30, triaged round 8, 0/30 tractable) — a
+future cycle should continue the `Wikipedia/` read-through (`grep -B1 -A3
+"category research solved"` per file, check for a bare `sorry` body vs. a
+real proof, check whether real proofs are self-contained vs.
+infrastructure-heavy — including whether custom types are needed just to
+STATE the theorem, not only to prove it — check whether a
+`class`/`structure` blocker is load-bearing or notational, and check
+whether unusual API names actually resolve under this repo's pinned
+Mathlib before assuming a verbatim transport will compile — see
+`BLOCKERS.md`). Start from the round-9 bulk grep-count pass's remaining
+candidates rather than re-running it from scratch.
 
 ## Backlog
 
