@@ -8,11 +8,6 @@ Checked against the 33 existing packets (2026-07-07) to avoid duplicates.
 - [ ] `card_powerset` — `(Finset.powerset s).card = 2 ^ s.card` (D1, L1).
       A headline finite-combinatorics fact; currently nothing in this
       domain touches `powerset` at all.
-- [ ] `disjoint_left` / a concrete disjoint-union card equality — `Disjoint
-      s t -> (s ∪ t).card = s.card + t.card` (D0, L0/L1). No `Disjoint`
-      packet exists yet, and it's the natural equality companion to the
-      existing `card_union_le'` inequality — pairing them also sets up the
-      negative-example candidate in `packets/negative/combinatorics/QUEUE.md`.
 - [ ] `choose_zero_right` / `choose_self` / `choose_symm` — basic binomial
       coefficient identities (D0/D1, L0/L1). The roadmap's "finite
       combinatorics basics" starter family names this explicitly; no

@@ -200,3 +200,21 @@ commit `9229fac`). Schema-validated (`validate_packets.py --check-hashes
 elementary domain (8 packets vs. next-smallest at 16) — recommend it stay
 top priority for elementary-gap work next cycle; remaining queue items are
 `sum_evens`, `geom_series_sum_induction`, `factorial_ge_two_pow`.
+
+## Proposed update — combinatorics elementary packet #2 (this agent, 2026-07-08, /loop continuation)
+
+Added `packets/elementary/combinatorics/disjoint_union_card.v1.json`: the
+equality companion to `card_union_le.v1` — `Disjoint s t → (s ∪ t).card =
+s.card + t.card` — proved via `(Finset.card_union_eq_card_add_card).mpr h`.
+Produced via tracked episode `c0c34f8f-f08d-4b4c-a698-29d26328546b`
+(problem_version `66bea032-57f0-4515-a941-fe1780a480c8`, dev-attested),
+`kernel_verified` in a single `solve` step. This is combinatorics' 35th
+elementary packet (L0: 10, L1: 25); closes the `disjoint_left` item from
+`packets/elementary/combinatorics/QUEUE.md` and sets up the still-queued
+"false without disjointness" negative-example candidate in
+`packets/negative/combinatorics/QUEUE.md` (a genuinely unprovable goal, not
+just a tactic mismatch — a different negative-example shape worth
+preserving distinctly when authored). Schema-validated
+(`validate_packets.py --check-hashes --warn-as-error`: 0 errors) and
+hash-stamped; full corpus revalidated clean at 203 packets, 0 errors, 0
+warnings as of this update.
