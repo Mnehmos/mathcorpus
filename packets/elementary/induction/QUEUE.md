@@ -66,6 +66,18 @@ over other elementary domains when otherwise unconstrained**, per
 instances working it, so check `git log -- packets/elementary/induction/`
 for very recent commits before re-populating.)*
 
+- [x] `foldl_cons_eq_reverse_append` — `l.foldl (fun a x => x :: a) acc =
+      l.reverse ++ acc` for `l acc : List ℕ` (D1, L1). Authored 2026-07-08
+      via tracked episode `0ab12a3b-a0fb-4981-b6fe-63628a4f6fb6`
+      (kernel_verified: `intro l acc; induction l with | nil => simp |
+      cons x xs ih => simp [ih]`). Originally attempted as the negative
+      example queued in `packets/negative/induction/QUEUE.md` for
+      "induction without generalizing an auxiliary variable" — `simp [ih]`
+      turned out strong enough to close it despite `acc` not being
+      generalized, so the hypothesis was false and this became a positive
+      packet instead (queue corrected to suggest a weaker closing tactic
+      for a real attempt at that failure mode).
+
 ## Done (continued)
 
 - [x] Strong induction example: every `n >= 2` has a prime factor. Authored

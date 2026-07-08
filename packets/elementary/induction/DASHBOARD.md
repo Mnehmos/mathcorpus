@@ -15,10 +15,15 @@ the first attempt), `sum_evens` (D1, L1, episode
 kernel_verified on the first attempt), and `exists_prime_factor` (D1, L1,
 episode `ac1ea7d4-4b1a-406e-8c2a-e209d5cd03d5`: every `n >= 2` has a prime
 factor, via `Nat.strong_induction_on` — this domain's first genuine
-strong-induction packet), and `myfactorial_eq_factorial` (D1, L1, episode
+strong-induction packet), `myfactorial_eq_factorial` (D1, L1, episode
 `99b8de59-4ed4-4fa8-b0cd-0d966b9ba800`: hand-rolled `myFactorial` via
 `Nat.rec` proved equal to `Nat.factorial` — this domain's first packet
-using the `SubmitModule` action rather than `Solve`). Other domain-agent
+using the `SubmitModule` action rather than `Solve`), and
+`foldl_cons_eq_reverse_append` (D1, L1, episode
+`0ab12a3b-a0fb-4981-b6fe-63628a4f6fb6`: accumulator-passing `foldl` equals
+`reverse ++ acc`; originally attempted as a negative example for
+"induction without generalizing" but `simp [ih]` closed it anyway, so
+authored as a positive packet instead). Other domain-agent
 instances are committing to this folder concurrently — re-sync against
 `agents/status/MATHCORPUS_STATUS.md` and `python tools/corpus_stats.py`
 after adding packets rather than trusting this count exactly.
