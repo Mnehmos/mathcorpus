@@ -2,7 +2,7 @@
 
 | Metric | Value |
 |--------|-------|
-| Packets | 51 |
+| Packets | 52+ |
 | Level breakdown | see individual packets — includes `card_union_not_additive.v1.json` and `primes_below_ten_card.v1.json` (other concurrent agents' additions) not itemized below |
 
 Additions this session (2026-07-08, all kernel-verified via the tracked
@@ -22,9 +22,11 @@ generalization of `pigeonhole_3_into_2`), `card_filter_partition`
 genuine recurrence-style product identity, beyond the trivial
 `prod_range_one'`/`prod_range_zero'`), and `card_image_of_injective'`
 (companion to a paired negative example — bare `omega` cannot use a
-`Function.Injective` hypothesis). Full episode IDs are in each packet's own
-`verification.episode_id` field — see `git log` for this file for prior
-per-packet detail if needed.
+`Function.Injective` hypothesis), and `set_mem_union` (the domain's first
+plain-`Set`, non-`Finset` packet — every prior packet used `Finset` only,
+despite the README focus text naming both "Finset, Set"). Full episode
+IDs are in each packet's own `verification.episode_id` field — see
+`git log` for this file for prior per-packet detail if needed.
 
 Last synced: 2026-07-08 — re-sync against
 `agents/status/MATHCORPUS_STATUS.md` and `python tools/corpus_stats.py`

@@ -1,15 +1,19 @@
 # Queue — Combinatorics (Elementary)
 
 Candidate packets to create or formalize next, roughly in priority order.
-Checked against the 33 existing packets (2026-07-07) to avoid duplicates.
+
+## Done (this cycle)
+
+- [x] `set_mem_union` — `a ∈ s ∪ t ↔ a ∈ s ∨ a ∈ t` for `Set` (D0, L0).
+      Authored 2026-07-08 via tracked episode
+      `d5cb1cff-dba3-418a-8e99-ffecba1d3000` (kernel_verified on the first
+      attempt: `exact Set.mem_union a s t`). The domain's first plain-`Set`
+      (non-`Finset`) packet, closing the gap the README focus text
+      ("Finset, Set") had flagged but no prior packet covered.
 
 ## Next targets
 
-- [ ] A plain `Set` (not `Finset`) membership/union lemma, e.g.
-      `Set.mem_union` (verified exists in `Mathlib.Data.Set.Basic`) —
-      every packet in this domain uses `Finset` only, despite the README
-      focus text explicitly naming "Finset, Set". No `Set`-typed packet
-      exists here yet.
+*(empty)*
 
 ## Backlog
 

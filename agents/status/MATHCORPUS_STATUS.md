@@ -1692,3 +1692,31 @@ were staged in the shared working tree's index when this commit ran; see
 the shared-index race note already recorded earlier in this file for the
 `88b7dea` precedent. No corpus content was lost or duplicated; validated
 clean at 277/277.)
+
+## Proposed update — combinatorics elementary packet: set_mem_union (this agent, 2026-07-08, /loop continuation)
+
+Startup this cycle: no bugs blocking progress; confirmed (per the
+milestone note immediately above) that both v0.1 numeric release criteria
+are now met. Induction and inequalities (tied smallest, 24 each) both had
+genuinely empty `QUEUE.md` *and* empty `Backlog` — no invented target
+attempted this cycle since several other domains had concrete,
+already-verified-to-exist backlog items instead. Picked `combinatorics`'
+one ready backlog item: a plain `Set` (not `Finset`) lemma, filling a real
+README-stated-focus gap ("Finset, Set") that no prior packet in the
+domain had covered.
+
+Added `packets/elementary/combinatorics/set_mem_union.v1.json`:
+`a ∈ s ∪ t ↔ a ∈ s ∨ a ∈ t` for `Set α`, cited directly via
+`Set.mem_union`. Produced via tracked episode
+`d5cb1cff-dba3-418a-8e99-ffecba1d3000` (problem_version
+`f0e70f0f-0a36-48c2-97d3-a7a9bfe240f1`, dev-attested), `kernel_verified`
+on the first `solve` attempt. Closes the domain's `Set`-vs-`Finset`
+README gap and the corresponding `QUEUE.md` item.
+
+Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
+0 errors) and hash-stamped. Now that both raw-count v0.1 targets are met,
+this cycle's target selection leaned toward closing a named quality/focus
+gap (per this file's own guidance above: "keep adding packets for
+quality/balance... rather than treating the count targets as 'done,
+stop'") rather than just any available domain-furthest-behind item.
+Commit scoped to only this cycle's own files.
