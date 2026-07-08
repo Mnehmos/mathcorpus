@@ -1,0 +1,108 @@
+{
+  "packet_id": "frontier.erdos.erdos_1052_omega_odd_le_two_adic_add_one.v1",
+  "packet_version": "1.0.0",
+  "title": "Erdős #1052 companion infrastructure: odd-prime-factor-count structural bound",
+  "domain": "frontier",
+  "level": "L7_frontier",
+  "kind": "theorem",
+  "status": "kernel_verified",
+  "difficulty_bin": "D3",
+  "lean_module": "MathCorpus.Frontier.Erdos.Erdos1052OmegaOddLeTwoAdicAddOne",
+  "theorem_name": "omega_odd_le_two_adic_add_one",
+  "imports": [
+    "Mathlib"
+  ],
+  "toolchain": {
+    "lean_version": "v4.32.0-rc1",
+    "mathlib_rev": "360da6fa66c1273b76b6b2d8c5666fd5ac2e3b56"
+  },
+  "source_provenance": {
+    "source_kind": "erdos_problems",
+    "source_refs": [
+      "ErdosProblems/erdos-1052/proof/Erdos1052_sigmaStar_and_bounds.lean (sibling repo mnehmos.llm-driven-proof-search.environment)",
+      "https://www.erdosproblems.com/1052"
+    ],
+    "authors": [
+      "The MathCorpus Authors"
+    ],
+    "copyright_holder": "The MathCorpus Authors",
+    "license_spdx": "Apache-2.0",
+    "license_content": "CC-BY-4.0",
+    "statement_fidelity": "adapted_with_review"
+  },
+  "informal_statement": "Erdos #1052 (open): are there finitely many unitary perfect numbers? This packet proves only bounded companion infrastructure -- NOT the open problem itself. Headline bound: if 2^a * m (m odd, a >= 1) is a unitary perfect number (sigmaStar(2^a*m) = 2*(2^a*m)), then m has at most a+1 distinct odd prime factors. Combined with Wall's 1988 theorem (>= 9 odd prime factors needed for a sixth unitary perfect number), this would force a >= 8 for any sixth unitary perfect number -- it narrows the search space, it does NOT resolve the open finiteness question, and it is NOT the full Subbarao-Warren even_of_isUnitaryPerfect headline theorem either. Depends on a new supporting lemma, two_pow_card_primeFactors_dvd_sigmaStar (2^(card of odd prime factors of m) divides sigmaStar m for odd m), proved by strong induction, and on the already-transported sigmaStar_mul_of_coprime/sigmaStar_prime_pow companion results (re-embedded here since SubmitModule namespaces are self-contained).",
+  "informal_proof_idea": "two_pow_card_primeFactors_dvd_sigmaStar: strong induction on m. Base case m=1 is trivial (sigmaStar 1 = 1, card = 0). Inductive step: let p = m.minFac (odd, since m is odd), e = m.factorization p, m' = ordCompl[p] m (so m = p^e * m', m' < m, m' odd, coprime to p). By IH, 2^(card of m'.primeFactors) | sigmaStar m'. Since m.primeFactors = insert p m'.primeFactors (card one more), and sigmaStar m = (p^e+1) * sigmaStar m' (multiplicativity + prime-power case), and p^e+1 is even (p odd), factor out the 2 to get 2^(card+1) | sigmaStar m. Root theorem: from sigmaStar(2^a*m) = 2*(2^a*m) and multiplicativity, sigmaStar(2^a) * sigmaStar m = 2^(a+1)*m, i.e. (2^a+1)*sigmaStar m = 2^(a+1)*m. Compare 2-adic valuations (Nat.factorization) of both sides: LHS's 2-adic valuation is exactly that of sigmaStar m (since 2^a+1 is odd), RHS's is exactly a+1 (since m is odd) -- so (sigmaStar m).factorization 2 = a+1. Combined with two_pow_card_primeFactors_dvd_sigmaStar (2^(card) | sigmaStar m, hence card <= the 2-adic valuation of sigmaStar m), conclude card <= a+1.",
+  "formal_statement_pp": "theorem omega_odd_le_two_adic_add_one (a m : ℕ) (hm_odd : Odd m) (ha : 0 < a) (hperfect : sigmaStar (2 ^ a * m) = 2 * (2 ^ a * m)) : m.primeFactors.card ≤ a + 1",
+  "proof_body_path": "lean/MathCorpus/Frontier/Erdos/Erdos1052OmegaOddLeTwoAdicAddOne.lean",
+  "proof_body_redacted": false,
+  "trust": {
+    "rung": 1,
+    "proof_authority": "lean_kernel",
+    "certificate_checker": "kernel_decide",
+    "encoding_required": false,
+    "encoding_soundness_status": "not_applicable",
+    "independent_review_status": "repo_reviewed",
+    "public_claim_class": "public_safe"
+  },
+  "training": {
+    "eligibility": "quarantined",
+    "reason_codes": [
+      "open_problem_related",
+      "default_quarantine_pending_external_review",
+      "companion_result_not_open_problem"
+    ],
+    "dedupe_cluster_id": "frontier.erdos_1052",
+    "template_family_id": "frontier.erdos_companion_results",
+    "open_problem_related": true,
+    "contamination_risk": "low",
+    "can_export_proof_body": true
+  },
+  "dependencies": {
+    "kits": [],
+    "tactic_tags": [
+      "Nat.strong_induction_on",
+      "Nat.ordProj_mul_ordCompl_eq_self",
+      "Nat.factorization_mul",
+      "Nat.Prime.pow_dvd_iff_le_factorization",
+      "Nat.primeFactors_mul"
+    ],
+    "prerequisite_concepts": [
+      "unitary_divisor",
+      "sigma_star",
+      "strong_induction",
+      "prime_factorization",
+      "two_adic_valuation"
+    ]
+  },
+  "metrics": {
+    "loc": 200,
+    "tactic_count": 95
+  },
+  "artifacts": {
+    "public_files": [
+      "lean/MathCorpus/Frontier/Erdos/Erdos1052OmegaOddLeTwoAdicAddOne.lean"
+    ]
+  },
+  "review": {
+    "review_basis": "repo self-review; kernel-verified through the tracked proof-search loop; statement cross-checked against the sibling repo's already-kernel_verified proof of the same result",
+    "reviewer_status": "repo_reviewed",
+    "reviewed_at": "2026-07-08"
+  },
+  "verification": {
+    "verifier": "proofsearch",
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "episode_id": "c5be6f70-38b7-4a82-bf74-756eebc4dd21",
+    "outcome": "kernel_verified",
+    "kernel_verified": true,
+    "fidelity_status": "attested",
+    "step_count": 3,
+    "import_manifest_hash": "aaf21893d520a78dee0787a1bcaf939ee6b922265ff670c272e2e1d450dd29a7",
+    "verified_at": "2026-07-08T11:48:05Z"
+  },
+  "notes": "ANTI-OVERCLAIM: this packet proves only bounded companion infrastructure (a structural bound narrowing the search space for unitary perfect numbers), not Erdos #1052 itself (genuinely OPEN: are there finitely many unitary perfect numbers?) and not the full Subbarao-Warren even_of_isUnitaryPerfect headline theorem. Proof authority: Lean kernel via the tracked proof-search loop (episode c5be6f70, problem_version e34c46bd-65c0-41de-8b32-6c78c7d8c220), submitted as a SubmitModule (2 defs uDiv/sigmaStar + 6 helper theorems mem_uDiv/split_dvd_mul/quot_mul_quot/gcd_mul_left_eq/sigmaStar_mul_of_coprime/sigmaStar_prime_pow, all re-transported verbatim from the already-verified companion packets since a SubmitModule namespace is self-contained, plus a new helper two_pow_card_primeFactors_dvd_sigmaStar + root theorem omega_odd_le_two_adic_add_one), kernel_verified on the 3rd attempt. Attempt 1 kernel-failed with 'Finset unknown' -- the problem_version's default import manifest is only Ring+NormNum, not full Mathlib; fixed by re-registering with problem_imports: [\"Mathlib\"] (yielding import_manifest_hash aaf21893..., matching every other packet in this corpus -- confirms this is the standard fix, not something prior cycles had silently gotten right by luck). Attempt 2 kernel-failed on two independent issues surfaced together: (1) `Nat.even_iff_two_dvd` doesn't exist under that qualification -- the lemma is the unqualified `even_iff_two_dvd` (lives in Mathlib.Algebra.Ring.Parity, not the Nat namespace); (2) two `omega` calls (for `hodd_seed`/`hnot2m`, proving 2 doesn't divide `2^a+1` resp. `m`) failed because omega cannot reason about the exponential `2^a` on its own -- the source's own `hseedk : ∃ k, 2^a = 2*k` (giving omega a linear witness) and `hmmod := Nat.odd_iff.mp hm_odd` facts had been accidentally dropped while restructuring the proof for the SubmitModule flattener; restored both and attempt 3 went through. Two new Mathlib names were confirmed to exist under this pinned rev via mathlib_search_declarations spot-checks before submission (`Nat.ordProj_mul_ordCompl_eq_self`, `Nat.coprime_ordCompl`, `Nat.primeFactors_prime_pow`, `Nat.primeFactors_mul`, `Nat.factorization_pow_self`, `Nat.factorization_eq_zero_of_not_dvd`, `Nat.prime_dvd_prime_iff_eq`, `Nat.factorization_eq_zero_iff`) while two names from the sibling source (`Nat.Prime.dvd_iff_one_le_factorization`, `Nat.Prime.odd_of_ne_two`) were confirmed ABSENT and replaced with from-scratch derivations using `Nat.factorization_eq_zero_iff` and `Nat.prime_dvd_prime_iff_eq` respectively -- consistent with this session's recurring cross-Mathlib-revision API-drift lesson (see BLOCKERS.md), here affecting an erdos_problems-sourced file rather than a formal_conjectures one. The sibling source's `rcases ... with rfl | hm1` immediately followed by a single closing `· simp [...]` then falling through unbulleted to the second case (rather than two full bullets) was kept bullet-free by simply dropping the lone `·` -- Lean applies the next tactic to the first remaining goal regardless, so this pattern was already flattener-safe without rewriting, matching the same trick used in the already-verified `quot_mul_quot` helper. The `induction m using Nat.strong_induction_on with | _ m ih =>` case-syntax form was avoided in favor of `induction' m using Nat.strong_induction_on with m ih` (Mathlib's induction' tactic) specifically because the `with | case =>` syntax's scope-termination under the SubmitModule flattener's newline-insensitive semicolon-joining was an untested risk this cycle preferred not to take. training.eligibility: quarantined per the default-quarantine policy for open_problem_related packets, matching every other packet in this lane. `COMPANION_RESULTS.md` updated to record this result; no further explicitly-flagged priority target remains in that file for this lane as of this cycle.",
+  "hashes": {
+    "packet_sha256": "c152f142f11c189df7988afe7b1d57cc2ea1d3bab883b5a1e883d9b1cdfc8ab4",
+    "formal_statement_sha256": "591cb2334f17167d125d32a15028453440975d2cedc7aa0275c8e3b588a206aa",
+    "proof_body_sha256": "9a5f76e452b82864edb97e14cc5cc442fcc8692844f9a4a2b88bba88c4695f02"
+  }
+}
