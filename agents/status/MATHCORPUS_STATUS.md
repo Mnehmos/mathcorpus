@@ -473,3 +473,34 @@ real-number support — pass `problem_imports=["Mathlib"]` for any target
 using `nlinarith`/`ℝ`, or it fails with an unrelated "unknown tactic"
 error that looks like a proof-search lesson but isn't. Hit this twice now
 (once for `Finset` last cycle, once for `nlinarith`/`ℝ` this cycle).
+
+## Proposed update — induction elementary packet: sum_range_monotone (this agent, 2026-07-08, /loop continuation)
+
+Startup this cycle: no bugs/triage; fresh `python tools/corpus_stats.py` +
+per-folder recount showed 203 verified public + 10 negative (213 files),
+every negative-example lane still >=1. Per-folder elementary counts:
+induction 12 (still smallest — `sum_evens`, `bernoulli_inequality`,
+`factorial_ge_two_pow`, `geom_series_sum_induction`, `exists_prime_factor`
+all landed by concurrent agents since this session's earlier induction
+cycle), functions 17, inequalities 18, geometry 29, combinatorics 38,
+algebra 41, number_theory 48. Induction's own `QUEUE.md` "Next targets"
+and "Backlog" sections were both empty (fully drained by concurrent
+agents) but flagged two undemonstrated technique families from `LOOP.md`'s
+domain focus: well-founded recursion via `SubmitModule`, and
+monotonicity. Picked monotonicity as lower-risk for one cycle.
+
+Added `packets/elementary/induction/sum_range_monotone.v1.json`: for
+`f : ℕ → ℕ` and `n k : ℕ`, `(∑ i ∈ range n, f i) ≤ ∑ i ∈ range (n + k), f
+i` — finite partial sums of a nonnegative-valued sequence are monotone in
+the upper bound. Proved by induction on `k` (`Finset.sum_range_succ` +
+`le_trans` + `Nat.le_add_right`), general-purpose and reusable as a
+building block for future partial-sum/series comparison packets. Produced
+via tracked episode `3280a193-bd9b-4189-a358-801911229181` (problem_version
+`da2a7a4e-581c-46a9-9147-1a29c04a6ecc`, dev-attested,
+`problem_imports: ["Mathlib.Algebra.BigOperators.Group.Finset.Basic"]`),
+`kernel_verified` on the first `solve` attempt. Schema-validated
+(`validate_packets.py --check-hashes --warn-as-error`: 0 errors) and
+hash-stamped; commit `f8ffa2e`, scoped to only these two new files to
+avoid touching other agents' in-flight work in this heavily-contended
+domain. Recursion via `SubmitModule` remains this domain's one
+undemonstrated technique family for a future cycle.
