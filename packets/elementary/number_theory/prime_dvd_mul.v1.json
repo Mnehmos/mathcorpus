@@ -1,0 +1,97 @@
+{
+  "packet_id": "elementary.number_theory.prime_dvd_mul.v1",
+  "packet_version": "1.0.0",
+  "title": "A prime divides a product iff it divides a factor",
+  "domain": "number_theory",
+  "level": "L1_proof_basics",
+  "kind": "concept",
+  "status": "kernel_verified",
+  "difficulty_bin": "D1",
+  "lean_module": "MathCorpus.Elementary.NumberTheory.PrimeDvdMul",
+  "theorem_name": "prime_dvd_mul",
+  "imports": [
+    "Mathlib"
+  ],
+  "toolchain": {
+    "lean_version": "v4.32.0-rc1",
+    "mathlib_rev": "360da6fa66c1273b76b6b2d8c5666fd5ac2e3b56"
+  },
+  "source_provenance": {
+    "source_kind": "author_written",
+    "source_refs": [],
+    "authors": [
+      "The MathCorpus Authors"
+    ],
+    "copyright_holder": "The MathCorpus Authors",
+    "license_spdx": "Apache-2.0",
+    "license_content": "CC-BY-4.0",
+    "statement_fidelity": "author_written"
+  },
+  "informal_statement": "If p is prime, then p divides a*b if and only if p divides a or p divides b.",
+  "informal_proof_idea": "Nat.Prime coerces to the general Prime typeclass (hp.prime); cite Prime.dvd_mul directly.",
+  "formal_statement_pp": "theorem prime_dvd_mul (p a b : ℕ) (hp : p.Prime) : p ∣ a * b ↔ p ∣ a ∨ p ∣ b",
+  "proof_body_path": "lean/MathCorpus/Elementary/NumberTheory/PrimeDvdMul.lean",
+  "proof_body_redacted": false,
+  "trust": {
+    "rung": 1,
+    "proof_authority": "lean_kernel",
+    "certificate_checker": "kernel_decide",
+    "encoding_required": false,
+    "encoding_soundness_status": "not_applicable",
+    "independent_review_status": "repo_reviewed",
+    "public_claim_class": "public_safe"
+  },
+  "training": {
+    "eligibility": "public_train",
+    "reason_codes": [
+      "public",
+      "non_benchmark",
+      "unredacted"
+    ],
+    "dedupe_cluster_id": "number_theory.prime_dvd_mul",
+    "template_family_id": "number_theory.primality_basics",
+    "contamination_risk": "low",
+    "can_export_proof_body": true
+  },
+  "dependencies": {
+    "kits": [],
+    "tactic_tags": [
+      "Nat.Prime",
+      "Prime.dvd_mul"
+    ],
+    "prerequisite_concepts": [
+      "prime_number",
+      "divisibility"
+    ]
+  },
+  "metrics": {
+    "loc": 2,
+    "tactic_count": 1
+  },
+  "artifacts": {
+    "public_files": [
+      "lean/MathCorpus/Elementary/NumberTheory/PrimeDvdMul.lean"
+    ]
+  },
+  "review": {
+    "review_basis": "repo self-review; kernel-verified through the tracked proof-search loop",
+    "reviewer_status": "repo_reviewed"
+  },
+  "verification": {
+    "verifier": "proofsearch",
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "episode_id": "b42295d9-b384-4458-844a-ddb1115bc8d3",
+    "outcome": "kernel_verified",
+    "kernel_verified": true,
+    "fidelity_status": "attested",
+    "import_manifest_hash": "aaf21893d520a78dee0787a1bcaf939ee6b922265ff670c272e2e1d450dd29a7",
+    "step_count": 1,
+    "verified_at": "2026-07-08T07:20:47Z"
+  },
+  "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode b42295d9), kernel_verified on the first accepted attempt. A prior problem_version using the default Ring+NormNum-only import manifest kernel-failed with 'the environment does not contain Nat.Prime' -- Nat.Prime isn't available under that narrow manifest; switched to problem_imports: [\"Mathlib\"] (matching this domain's prime_two packet), which worked cleanly. Closes the prime_dvd_mul item in packets/elementary/number_theory/QUEUE.md, flagged there as 'the single most reusable primality lemma for later divisibility work'.",
+  "hashes": {
+    "packet_sha256": "03a76b92a18e5bfe6714a4aba70f86b9e0557c85a5647d70028ec0ac24e903d7",
+    "formal_statement_sha256": "65f2289b52e2e4f881d62d3b9038f29bfbbea3f462af549592ac3e80c370837d",
+    "proof_body_sha256": "99434c9900096a79460d2d76c0fd9694d30dd7c0603810638fff7f7364434e36"
+  }
+}
