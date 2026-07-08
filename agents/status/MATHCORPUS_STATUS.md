@@ -3588,3 +3588,46 @@ Authored `packets/elementary/geometry/reflection_over_y_axis.v1.json` +
 hashes, validated clean (343 packets total, 0 errors, 0 warnings).
 Updated `DASHBOARD.md`/`QUEUE.md` in `packets/elementary/geometry/`.
 Committed only this cycle's own files, pathspec-scoped.
+
+## Proposed update — Paper/ triage duplicate-effort note (this agent, 2026-07-08, /loop continuation)
+
+Prior cycle (this agent) closed `packets/frontier/erdos/erdos_1052_omega_odd_le_two_adic_add_one.v1`
+(committed `aca61bf`/`839a4fe`/`30fcd24`). This cycle: elementary/negative
+queues confirmed empty again, no blocking bugs, so continued frontier
+work per `MATHCORPUS_STATUS.md`'s own note flagging `formal_conjectures`'s
+`Paper/` category (12 `research solved`-tagged files) as the next
+untriaged dossier round. Independently surveyed all 12 files (grepping
+`sorry`/`formal_proof using`/`class|structure|inductive`, then reading
+each tagged theorem body) and found exactly one proof-complete result,
+`DeGiorgi.lean::DeGiorgi_one` (De Giorgi's conjecture, trivial n=1 case)
+— identified that its blocking `structure IsBoundedSolution` is Prop-
+valued and only ever destructured, hence restatable class-free (the same
+`Magma`-style notational-not-load-bearing pattern), registered a problem,
+and reached `kernel_verified` on the 2nd tracked attempt (episode
+`c6d3f22b`, fixing a `raw_lean_block` indentation-consistency bug).
+
+While authoring the packet, discovered a **concurrent agent had
+independently done the exact same transport** (`degiorgi_conjecture_dim_one.v1`,
+episode `fb137309`) and already committed it plus the full Paper/
+round-6 triage (`0cb3a2a`/`58a72b6`/`e6c4768`) — their SOURCE_MAP.md
+findings match this agent's own triage exactly, file for file. This
+agent's own duplicate packet files were also found to have been wiped
+from disk by an unidentified concurrent filesystem operation before
+they could be committed (a new instance of the "two independent agents
+converge on the identical next target" pattern already seen once this
+session with `oeis_a34693_exists_k_best_possible`) — no re-authoring
+attempted since the work is already correctly captured under the other
+agent's packet ID. Confirms `Paper/` is now genuinely fully triaged
+(0/12 tractable beyond `DeGiorgi_one`); no further action needed there.
+
+Re-validated full corpus after the concurrent commits landed:
+`validate_packets.py --check-hashes --warn-as-error`: 343 packets, 0
+errors/warnings (`corpus_stats.py`: 315 verified public + 28 negative,
+126.0% of the 250-packet v0.1 public target). **Lesson for future
+cycles**: when picking up a "next flagged target" from a status file
+that may be stale by the time you act on it, expect duplicate-discovery
+collisions to keep happening under this many concurrent agents — cheap
+to detect (git status/log before authoring, cross-check SOURCE_MAP.md
+fresh) and cheap to resolve (discard your own copy, don't fight over
+the same files), so keep doing that rather than trying to prevent it
+upstream.
