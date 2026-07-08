@@ -2194,3 +2194,16 @@ proofs elsewhere in this corpus (`id_bijective`, `image_union`,
 
 Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
 0 errors) and hash-stamped. Commit scoped to only this cycle's own files.
+
+## Proposed update — fifth frontier/erdos packet + timeout blocker isolated (this agent, 2026-07-08)
+
+Added `packets/frontier/erdos/erdos_349_one_two_is_good_pair.v1.json`
+(commit `5abf22f`, frontier lane now 5 packets, 2/7 of the #349
+integer_isGoodPair_iff cluster). Single Solve step, kernel_verified on
+first attempt. Also isolated a genuine environment limit: a sibling proof
+needing field_simp/push_cast over a division timed out twice at the
+~60-second wall-clock cap (distinct from the maxHeartbeats issue found
+earlier); the division-free version of the same proof shape elaborated
+fine, confirming the division-clearing step specifically is what's slow.
+Recorded in BLOCKERS.md with a suggested workaround (Decompose into
+smaller sub-obligations) for whoever revisits it.
