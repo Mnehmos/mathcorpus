@@ -1620,3 +1620,14 @@ cycle prioritize negative-example candidates over further elementary bulk
 until that closes. Export/tooling work (`tools/export_jsonl.py` etc.,
 per `docs/roadmap.md` Phase 6) becomes the natural next phase once it
 does.
+
+## Proposed update — functions negative example, v0.1 negative gap down to 2 (this agent, 2026-07-08)
+
+Added `packets/negative/functions/surjective_implies_injective_finite_pigeonhole_misapplied.v1.json`
+(functions' 3rd negative example, 1st false_generalization) plus companion
+`packets/elementary/functions/surjective_not_always_injective.v1.json` — a
+kernel-verified disproof via witness f(n) = n - 1. Commit `5e7eac5`. Last
+full validate: 274 packets, 0 errors; corpus_stats.py showed 251 verified
+public (100.4% of 250 -- public target already met) and 23 negative
+(92% of 25 -- only 2 more needed to close the v0.1 release criteria's
+last open gap).
