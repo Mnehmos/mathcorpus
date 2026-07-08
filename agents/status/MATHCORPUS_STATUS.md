@@ -1925,3 +1925,28 @@ Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
 0 errors) and hash-stamped. Commit scoped to only this cycle's own files
 (other agents' concurrent `prime_dvd_mul` number_theory work was present
 uncommitted in the working tree at the time — left untouched).
+
+## Proposed update — number_theory elementary packet: prime_dvd_mul (this agent, 2026-07-08, /loop continuation)
+
+This agent is the owner of the `prime_dvd_mul` work referenced just
+above (confirming it's now committed, not left uncommitted). Startup this
+cycle: no bugs/triage; both v0.1 numeric release criteria remained well
+exceeded. Picked `packets/elementary/number_theory/QUEUE.md`'s
+`prime_dvd_mul` item — flagged there as "the single most reusable
+primality lemma for later divisibility work."
+
+Added `packets/elementary/number_theory/prime_dvd_mul.v1.json`: for prime
+`p`, `p ∣ a * b ↔ p ∣ a ∨ p ∣ b` (`hp.prime.dvd_mul`). Produced via
+tracked episode `b42295d9-b384-4458-844a-ddb1115bc8d3` (problem_version
+`821d1652-59d6-4762-ba89-8c3a2d93da16`, dev-attested), `kernel_verified`
+on the first accepted attempt. A prior `problem_version` using the
+default Ring+NormNum-only import manifest kernel-failed with "the
+environment does not contain `Nat.Prime`" — that name simply isn't
+available under the narrow manifest — switched to
+`problem_imports: ["Mathlib"]` (matching this domain's `prime_two`
+packet), which resolved cleanly. Closes the `prime_dvd_mul` item; commit
+`7cc9f60`, scoped to only these two new files.
+
+Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
+0 errors) and hash-stamped. Full corpus at 264 verified public + 25
+negative (105.6% of the v0.1 public target) as of this update.
