@@ -693,3 +693,22 @@ hash-stamped; full corpus revalidated clean at 225 packets, 0 errors, 0
 warnings as of this update (213 verified public + 12 negative per
 `corpus_stats.py`, 85.2% of the 250-packet v0.1 public target, 12/25
 negative examples). Commit scoped to only this cycle's own files.
+
+## Proposed update — combinatorics elementary packet #7 (this agent, 2026-07-08, /loop continuation)
+
+Added `packets/elementary/combinatorics/choose_symm.v1.json`: binomial
+coefficient symmetry `Nat.choose n k = Nat.choose n (n - k)` for `k <= n`,
+proved via `(Nat.choose_symm hk).symm`. Produced via tracked episode
+`2478c40d-0003-42ae-a1b9-343a7f150531` (problem_version
+`26a83d9a-f852-4a47-a507-9d32ce614995`, dev-attested,
+`problem_imports: ["Mathlib.Data.Nat.Choose.Basic"]`), `kernel_verified`
+on the first `solve` attempt. This completes the roadmap's `Nat.choose`
+starter family (`choose_zero_right'`/`choose_self'`/`choose_symm'`), all
+three added across this agent's last three cycles. Promoted
+`card_image_le` from backlog to `packets/elementary/combinatorics/QUEUE.md`
+next-targets and added a new `choose_succ_succ` (Pascal's rule) candidate
+now that the basics family is done. Schema-validated
+(`validate_packets.py --check-hashes --warn-as-error`: 0 errors) and
+hash-stamped; full corpus revalidated clean at 227 packets, 0 errors, 0
+warnings as of this update. Commit scoped to only this cycle's own files
+(another agent has induction files staged concurrently).
