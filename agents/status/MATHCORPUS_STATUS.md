@@ -780,3 +780,18 @@ Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
 0 errors) and hash-stamped. Commit scoped to only this packet's own files
 to avoid touching `linear_injective` (still another agent's uncommitted
 work) or any other concurrent in-flight change.
+
+## Proposed update — functions negative example + naming-collision avoidance (this agent, 2026-07-08)
+
+Added `packets/negative/functions/quad_injective_simp_unfold_incomplete.v1.json`
+(functions' 2nd negative example: `simp [Function.Injective]` leaves a
+quadratic goal open) plus companion positive packet
+`packets/elementary/functions/linear_injective_concrete_instance.v1.json`
+(same bare tactic kernel-verifies on a linear instance). Commit `e5d29ce`.
+Deliberately renamed the positive packet away from the `linear_injective`
+packet_id that `packets/elementary/functions/QUEUE.md` reserves for the
+general `f x = a*x+b, a != 0` lemma, to avoid colliding with another
+concurrent agent noted as already working that queue item — worth a
+general callout: check queue files for "another agent appears to be
+working this" notes before claiming a packet_id, and prefer a more
+specific name for a narrower/concrete variant of a queued general lemma.
