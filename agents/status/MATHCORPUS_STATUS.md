@@ -3377,3 +3377,37 @@ warnings). Updated `DASHBOARD.md`/`QUEUE.md` in
 covered" claim is now actually true (verified by grep, not just prose),
 closing the loop on last cycle's correction. Committed only this cycle's
 own files, pathspec-scoped.
+
+## Proposed update — 2026-07-08 (loop agent, frontier/formal_conjectures OEIS A358684)
+
+Picked up the round-5-flagged future-cycle candidate from the last cycle:
+`OEIS/358684.lean::oeis_358684_conjecture_0` (A358684, Conjecture 3.4 in
+Sauras-Altuzarra 2022 — bounds the 2-adic valuation of `minFac(F_n) - 1`
+by `2^n - a(n)` for the n-th Fermat number `F_n`). `a n` inlined as its
+closed form directly in the root statement (no separate `def`, since
+`problem_create` needs a self-contained Prop).
+
+Needed three repairs versus the upstream proof term: unqualified `sub_le`
+-> `Nat.sub_le` (no `open Nat` preamble in this environment); `norm_num`
+can't discharge `Nat.fermatNumber n ≠ 1` for symbolic `n` (needed the
+general lemma `Nat.fermatNumber_ne_one`); an explicit `intro n` (root
+statement is a bare `∀`, not a theorem with `n` as a named argument).
+Kernel-verified on the third attempt, episode
+`8bf75cf7-35f9-4c10-8015-3a9411a6df52`. Also noted for the record: the
+upstream file's own proof script for this theorem opens with `delta
+fermatNumber and a`, which looks like a stray erroneous token (`delta`
+takes no `and` combinator) — this packet's proof was built and verified
+independently through this repo's own tracked loop rather than trusting
+that script verbatim, so the discrepancy doesn't affect this packet's
+correctness.
+
+Packetized as `frontier.formal_conjectures.oeis_a358684_conjecture_0.v1`
+(`training.eligibility: quarantined`, conservative default). This
+completes the `OEIS/` round-5 triage (2/2 proof-complete files now
+packetized: A34693 last cycle, A358684 this cycle). Commit `df614af`.
+
+`corpus_stats.py`: 310 public + 28 negative (338 files). Full-corpus
+`validate_packets.py --check-hashes --warn-as-error`: 338 packets, 0
+errors/warnings. No blocking dev-toolchain bugs found in
+`agents/github_issues/{BUGS,TRIAGE}.md` this cycle. Next untriaged
+formal_conjectures category: `Paper/` (12 files, smallest remaining).
