@@ -1258,3 +1258,30 @@ bullet list into a summary paragraph (same fix already applied to the
 combinatorics and induction dashboards this session — worth generalizing
 into a standing convention rather than re-discovering it per domain).
 Commit scoped to only this cycle's own files.
+
+## Proposed update — functions elementary packet: fixed_point_id (this agent, 2026-07-08, /loop continuation)
+
+Startup this cycle: no new bugs/triage requiring in-repo action; fresh
+`python tools/corpus_stats.py` showed 237 verified public + 17 negative
+(254 files, 94.8% of the v0.1 public target, only 13 to go). Induction's
+`QUEUE.md` (22 packets) drained again — a concurrent agent independently
+strengthened the well-founded-recursion demo to full correctness
+(`euclid_gcd_eq_gcd` alongside this agent's own prior-cycle
+`mygcd_wellfounded`, both preserved as distinct packets). Moved to
+`functions` (23), whose `QUEUE.md` still named `fixed_point_id` as the
+last open item on its stated "fixed point basics" focus.
+
+Added `packets/elementary/functions/fixed_point_id.v1.json`: `id x = x`
+for all `x` (`rfl`). Produced via tracked episode
+`3952d582-bed1-445c-8826-f676342e25d3` (problem_version
+`611e8581-2b92-4d5d-9661-bf737436d1d0`, dev-attested), `kernel_verified`
+on the first attempt. Closes `fixed_point_id` in
+`packets/elementary/functions/QUEUE.md`; every named focus topic in that
+domain's `README.md` (injective, surjective, composition, monotone,
+fixed-point) now has at least one packet. Remaining open backlog item
+there: a concrete image/preimage identity.
+
+Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
+0 errors) and hash-stamped; commit `c777d80`, scoped to only these two new
+files. Full `packets/elementary/functions/` revalidated clean at 24
+packets, 0 errors, 0 warnings as of this update.
