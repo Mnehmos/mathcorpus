@@ -5,18 +5,16 @@
 | Packets | 49+ (multiple concurrent agent instances committing every cycle — re-derive via `python tools/corpus_stats.py`) |
 | Level breakdown | mostly L0_elementary, some L1_proof_basics/L2_olympiad |
 
-Last synced: 2026-07-08 — added `pow_mul` (D0, L0, episode
-`13c20f38-d366-44f6-95be-95d9216d102d`): `x^(m*n) = (x^m)^n` via `exact
-pow_mul x m n`, after a bare `ring` attempt genuinely timed out (paired
-negative example `pow_mul_ring_timeout_failure`). Also present:
-`pow_add` (D0, L0, episode `fa0521fa-5205-4059-9071-c5519c5f3392`):
-`x^(m+n) = x^m * x^n` via `ring`; `neg_sq`, `sub_mul`, `div_add_div_same`
-(concurrent agents). Also added `quad_formula_real_root` (D1, L1, episode
-`9435347e-fd20-4198-aa9c-7252a8499a93`): nonnegative discriminant implies
-a real root, kernel_verified on the third attempt after a `Real.sqrt`
-atom-mismatch lesson (see the packet's `notes` — `set` the sqrt term to a
-plain variable before `field_simp`/`linear_combination`). Re-sync against
-`agents/status/MATHCORPUS_STATUS.md` and `python tools/corpus_stats.py`
-after adding packets.
+Last synced: 2026-07-08 — added `pow_succ'` (D0, L0, episode
+`869150c9-d993-498d-94d3-d6f4c94cfd30`): `x^(n+1) = x^n * x` via `ring`,
+small but reusable in induction successor-case proofs — this closes the
+domain's `QUEUE.md` "Next targets" list entirely for now (`add_sq_three`
+landed independently via a concurrent agent moments before this cycle's
+own duplicate attempt was caught pre-authoring). Also present: `pow_mul`
+(episode `13c20f38-d366-44f6-95be-95d9216d102d`, paired negative example
+`pow_mul_ring_timeout_failure`), `pow_add`, `neg_sq`, `sub_mul`,
+`div_add_div_same`, `quad_formula_real_root` (concurrent agents +
+earlier this session). Re-sync against `agents/status/MATHCORPUS_STATUS.md`
+and `python tools/corpus_stats.py` after adding packets.
 
 Next targets: see `QUEUE.md`.

@@ -42,14 +42,24 @@ Checked against the 41 existing packets (2026-07-07) to avoid duplicates.
       `linear_combination` so both tactics only see one opaque atom — see
       the packet's `notes`).
 
+- [x] `add_sq_three` — `(a + b + c) ^ 2 = a^2+b^2+c^2+2ab+2bc+2ca` (D1, L1).
+      Authored 2026-07-08 by a concurrent agent (commit landing
+      `elementary.algebra.add_sq_three.v1`) — this agent independently
+      kernel-verified the identical statement in a separate tracked
+      episode (`a3bdf47a-6539-438d-bc19-bdeaa8f53d85`) moments later but
+      found the packet already existed on disk; not duplicated.
+
+- [x] `pow_succ'` — `x ^ (n + 1) = x ^ n * x` (D0, L0). Authored
+      2026-07-08 via tracked episode `869150c9-d993-498d-94d3-d6f4c94cfd30`
+      (kernel_verified on the first attempt: `ring`). Small but reusable
+      in induction successor-case proofs.
+
 ## Next targets
 
-- [ ] `add_sq_three` — `(a + b + c) ^ 2 = a^2+b^2+c^2+2ab+2bc+2ca` (D1, L1).
-      Natural extension of `binomial_sq`; reusable for the geometry/
-      inequalities three-variable families that already exist
-      (`three_var_am_gm`, `three_var_sq_ge`).
-- [ ] `pow_succ'` — `x ^ (n + 1) = x ^ n * x` (D0, L0). Small but reusable
-      in induction proofs (see `packets/elementary/induction/QUEUE.md`).
+*(empty — this cycle's items were the last two open in this file.
+Re-derive fresh targets from `git log --oneline -15 --
+packets/elementary/algebra/` before assuming this stays empty, given
+heavy concurrent-agent activity on this domain.)*
 
 ## Backlog
 

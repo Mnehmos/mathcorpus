@@ -2370,3 +2370,33 @@ Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
 files. Full `packets/elementary/algebra/` revalidated clean at 50
 packets, 0 errors, 0 warnings; full corpus at 287 verified public + 26
 negative (114.8% of the v0.1 public target) as of this update.
+
+## Proposed update — algebra elementary packet: pow_succ' (this agent, 2026-07-08, /loop continuation)
+
+Startup this cycle: no bugs/triage. Picked up `packets/elementary/algebra/QUEUE.md`'s
+last two open items, `add_sq_three` and `pow_succ'`. Ran a tracked episode
+for `add_sq_three` (episode `a3bdf47a-6539-438d-bc19-bdeaa8f53d85`,
+`kernel_verified` on the first attempt via `ring`) but, before authoring a
+packet, discovered a concurrent agent had already landed
+`elementary.algebra.add_sq_three.v1` with the identical statement moments
+earlier — did not duplicate; that episode's evidence is real but simply
+didn't become a packet.
+
+Picked `pow_succ'` instead: `x^(n+1) = x^n * x` for a real base and
+natural exponent, closed via `ring` in a single tracked-episode step
+(episode `869150c9-d993-498d-94d3-d6f4c94cfd30`, problem_version
+`a48b82a2-33df-4e01-85d3-62c67267f188`, dev-attested), `kernel_verified`
+on the first attempt. Named `pow_succ.v1` at the packet/file level per
+this repo's convention of dropping the trailing apostrophe from
+identifiers-with-primes in packet_ids (matching `dvd_lcm_left'`/
+`dvd_lcm_right'` -> `dvd_lcm_left.v1`/`dvd_lcm_right.v1`) while keeping
+the apostrophe in the actual Lean `theorem_name`. This empties
+`packets/elementary/algebra/QUEUE.md`'s "Next targets" section entirely
+for now.
+
+Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
+0 errors) and hash-stamped; full corpus revalidated clean at 314 packets,
+0 errors, 0 warnings (288 verified public + 26 negative per
+`corpus_stats.py`, 115.2% of the 250-packet v0.1 public target — both
+packet-count release criteria remain comfortably met). Commit scoped to
+only this cycle's own files.
