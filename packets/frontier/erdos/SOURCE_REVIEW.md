@@ -4,6 +4,7 @@
 |--------|------------------|----------|------|---------|
 | `ErdosProblems/erdos-399/proof/Erdos399_cambie.lean` (sibling repo) + `erdosproblems.com/399` | Cambie's companion (no `n! = x⁴+y⁴` with `gcd(x,y)=1`, `xy>1`) is correctly attributed and distinct from Erdős #399's own headline question (already answered non-solution-free via Barfield's `10! = 48⁴−36⁴`, an unrelated construction) | this agent (self-review) | 2026-07-08 | Statement and attribution check out against the sibling repo's docstring; proof independently re-verified through this repo's own tracked proof-search loop (episode `d2aaae74-a8c1-406a-a196-ce132e64307e`, `kernel_verified`) rather than trusted on the sibling repo's say-so. Self-review only — not an external/independent reviewer, hence `training.eligibility: quarantined` on the packet pending real external review. |
 | `ErdosProblems/erdos-1052/proof/Erdos1052_sigmaStar_and_bounds.lean::omega_odd_le_two_adic_add_one` (sibling repo) + `evidence.md`'s Wall citation | The `PARTIAL_RESULTS.md`-flagged "candidate standalone packet once source-reviewed": for a unitary-perfect `2^a * m` (`m` odd, `a >= 1`), `m.primeFactors.card <= a + 1`, framed in the docstring as "combined with Wall's 1988 theorem forces `a >= 8` for a 6th unitary perfect number" | this agent (self-review; not yet re-verified through this repo's own tracked proof-search loop) | 2026-07-08 | See detailed notes below. |
+| `formal-conjectures/FormalConjectures/ErdosProblems/470.lean::erdos_470.variants.weird_pos_density` + `FormalConjecturesForMathlib/Data/Set/Density.lean` | `docs/erdos/bounty-board.md`'s Lane 1 claim that this is an "immediate win" (a `research solved`-tagged `sorry` just needing transport, like the other Lane 1 items) | this agent (self-review) | 2026-07-08 | **Corrected, not confirmed** — see detailed notes below. |
 
 ## Detailed notes — `omega_odd_le_two_adic_add_one` (2026-07-08)
 
@@ -64,3 +65,41 @@ not yet re-verified through this repo's own tracked proof-search loop
 `sigmaStar_mul_of_coprime`/`sigmaStar_prime_pow` infrastructure lands
 first, and only with the anti-overclaim phrasing above. `PARTIAL_RESULTS.md`
 updated accordingly.
+
+## Detailed notes — `erdos_470.variants.weird_pos_density` (2026-07-08)
+
+Read the actual source file
+(`formal-conjectures/FormalConjectures/ErdosProblems/470.lean`) rather
+than trusting the bounty-board's Lane-1 characterization. Found the
+`weird_pos_density` theorem is genuinely `@[category research solved]`
+with a bare `sorry` body — so far this matches the "solved-with-`sorry`"
+pattern. But checking it against the OTHER Lane 1 items this session
+(`#1052`'s `even_of_isUnitaryPerfect`, `#291.ii`, `#349`'s cluster,
+`#399`, `#494`) reveals a real difference: every one of those had an
+*actual existing Lean proof* sitting in the sibling
+`mnehmos.llm-driven-proof-search.environment` repo's own
+`ErdosProblems/erdos-*/proof/` folders (someone had already done the
+mathematical work; the MathCorpus task was transport/re-verification).
+
+`weird_pos_density` has **no such proof anywhere** in either repo — the
+`formal-conjectures` upstream file itself is the only place the
+statement exists, and it's `sorry`. Checked its dependency,
+`Set.HasPosDensity` (`FormalConjecturesForMathlib/Data/Set/Density.lean`):
+it unfolds to an asymptotic `liminf`-style claim built on
+`Set.partialDensity` (`(S ∩ A ∩ Iio b).ncard / (A ∩ Iio b).ncard` as
+`b -> atTop`), i.e. genuine analytic/asymptotic machinery, not a finite
+computation. The actual Benkoski–Erdős 1974 proof that weird numbers
+have positive density is a real analytic-number-theory result (density
+estimates on abundancy-index distributions), not a short formalization
+exercise. Nothing here is close to a "quick pass@1 transport" the way
+the other Lane 1 items were.
+
+**Conclusion**: the bounty-board's "immediate win" framing for this
+specific item is a miscategorization (plausibly because the file *looks*
+identical in shape — `research solved` + `sorry` — to the genuinely
+easy transport targets, without checking whether a Lean proof exists to
+transport). Corrected in `COMPANION_RESULTS.md`. This is **not**
+recommended as a MathCorpus frontier target without a dedicated,
+separately-scoped attack plan (likely multi-session, closer to this
+lane's #672/#9 marathon items than to a one-cycle companion result).
+No proof-search episode was attempted — this was a read-only review.

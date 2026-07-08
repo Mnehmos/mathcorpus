@@ -2581,3 +2581,38 @@ Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
 0 errors, 0 warnings (293 verified public + 26 negative per
 `corpus_stats.py`, 117.2% of the 250-packet v0.1 public target). Commit
 scoped to only this cycle's own files.
+
+## Proposed update — frontier/erdos dossier work: correcting #470's "immediate win" mischaracterization (this agent, 2026-07-08, /loop continuation)
+
+Startup this cycle: no bugs blocking progress; every elementary domain's
+`QUEUE.md` remained genuinely dry (re-checked `induction`/`inequalities`/
+`functions` fresh — no ready items) and no negative-example domain had
+zero coverage, so stayed in priority-4 frontier dossier work (this
+loop's own instructions frame priority-4 as source-review/librarian
+work, not new proof-search episodes — see the prior cycle's note on why
+this is more conservative than `packets/frontier/erdos/LOOP.md`'s own
+broader mandate). Read `COMPANION_RESULTS.md`'s remaining untouched Lane
+1 item — `#470 erdos_470.variants.weird_pos_density`, framed as a "good
+next companion-result target" / "immediate win" — and actually opened
+its source file rather than trusting the framing.
+
+Finding: **the "immediate win" characterization is wrong for this
+specific item.** Every other Lane 1 item this session (#1052's
+`even_of_isUnitaryPerfect`, #291.ii, #349's cluster, #399, #494) had an
+*actual existing Lean proof* in the sibling repo's `ErdosProblems/`
+folders — `sorry` in the corpus, but genuinely solved and transportable.
+`weird_pos_density` has no such proof anywhere; it's the *only* place
+the statement exists, and it needs an original formalization of
+Benkoski–Erdős's 1974 analytic-density argument, built on
+`Set.HasPosDensity` (an asymptotic `liminf`/`partialDensity` construction
+in `FormalConjecturesForMathlib/Data/Set/Density.lean`, itself real
+analytic machinery, not a finite computation). Scope is closer to this
+lane's #672/#9 "multi-session marathon" items than a one-cycle transport.
+
+Corrected `packets/frontier/erdos/COMPANION_RESULTS.md`'s Lane 1 note and
+added detailed findings to `SOURCE_REVIEW.md`, explicitly flagging this
+as **not recommended** without a dedicated, separately-scoped attack
+plan. This prevents a future cycle from spending an episode budget
+expecting a quick transport and hitting a wall of missing infrastructure
+instead. No proof-search episode attempted (read-only review); no
+packet JSON touched. Commit scoped to only this cycle's own files.

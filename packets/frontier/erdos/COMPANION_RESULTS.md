@@ -21,5 +21,21 @@ Also worth tracking from `docs/erdos/bounty-board.md`'s Lane 1 ("solved-with-`so
 
 - `#470 erdos_470.variants.weird_pos_density` — weird numbers have positive
   density (Benkoski–Erdős 1974); ships as `sorry` in the corpus, no attempt
-  made yet. Good next companion-result target before it's a MathCorpus
-  packet.
+  made yet. **Correction (this agent, source-reviewed 2026-07-08, see
+  `SOURCE_REVIEW.md`): this is NOT actually a Lane-1-style "immediate
+  win."** Every other Lane 1 item this session (#1052's evenness proof,
+  #291.ii, #349, #399, #494) was a `sorry` for a result someone had
+  *already proved in Lean somewhere* — pure transport/re-verification
+  work. `weird_pos_density` has no existing Lean proof anywhere to
+  transport; it would need an original formalization of a genuine
+  analytic-number-theory density argument (Benkoski–Erdős's actual 1974
+  proof), built on `Set.HasPosDensity` (asymptotic `liminf` of
+  `Set.partialDensity`, defined in
+  `FormalConjecturesForMathlib/Data/Set/Density.lean` — itself nontrivial
+  machinery) plus real facts about the distribution of abundant/weird
+  numbers. Scope is closer to this lane's #672/#9 "multi-session
+  marathon" targets than to a one-cycle companion-result transport.
+  **Do not pick this up expecting a quick win** — if attempted, it needs
+  its own dedicated attack-plan entry in `OPEN_PROBLEMS.md`-adjacent
+  tracking first, scoping the actual density-estimate mathematics before
+  any Lean is written.
