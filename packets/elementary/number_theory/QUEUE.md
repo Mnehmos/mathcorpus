@@ -15,10 +15,8 @@ Checked against the 48 existing packets (2026-07-07) to avoid duplicates.
 - [ ] `gcd_mul_lcm` — `Nat.gcd a b * Nat.lcm a b = a * b` (D1, L1). The
       classic identity tying the two families together; good reusable
       lemma for the `core_algebra`/`ring_automation` kits.
-- [ ] `prime_two` — `Nat.Prime 2` (D0, L0). The domain has `even_or_odd'`
-      and extensive `coprime_*`/`gcd_*` coverage but **no primality
-      packets at all** — no `Nat.Prime` fact exists yet.
-- [ ] `not_prime_one` — `¬ Nat.Prime 1` (D0, L0). Pairs with `prime_two`.
+- [ ] `not_prime_one` — `¬ Nat.Prime 1` (D0, L0). Pairs with `prime_two`
+      (done, see below).
 - [ ] `prime_dvd_mul` — `p.Prime -> (p ∣ a * b <-> p ∣ a ∨ p ∣ b)` (D1,
       L1). The single most reusable primality lemma for later divisibility
       work; natural next step after `prime_two`.
@@ -28,6 +26,12 @@ Checked against the 48 existing packets (2026-07-07) to avoid duplicates.
       proof pattern.
 
 ## Done (this cycle)
+
+- [x] `prime_two` — `Nat.Prime 2` (D0, L0). Authored 2026-07-08 via
+      tracked episode `86b4db53-554e-4887-a579-adfc290a0cb5`
+      (kernel_verified on the first attempt: `norm_num`). The domain's
+      first primality (`Nat.Prime`) fact — closes the previously-flagged
+      "no primality packets at all" gap.
 
 - [x] `well_ordering` — every nonempty `Set ℕ` has a least element (D1,
       L1). Authored 2026-07-08 via tracked episode

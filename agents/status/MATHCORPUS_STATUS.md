@@ -1800,3 +1800,37 @@ already-kernel_verified status, per this repo's evidence policy.
 validator's `open_problem_public` warning caught this correctly on first
 pass. Six more sibling-repo-verified companion results are queued and
 ready to packetize the same way -- see `packets/frontier/erdos/COMPANION_RESULTS.md`.
+
+## Proposed update — number_theory elementary packet: prime_two (this agent, 2026-07-08, /loop continuation)
+
+Startup this cycle found both v0.1 packet-count release criteria already
+met (255 verified public + 25 negative at cycle start, since risen
+further via concurrent agents). Checked geometry's `QUEUE.md` (this
+agent's most recent domain) — only backlog item left was "Law of sines",
+which needs a materially harder trigonometric setup than the corpus's
+established coordinate-style proofs (relating two angles' sines via two
+independent area expressions) and risked an over-scoped attempt for one
+cycle; deferred rather than forcing it. Checked `number_theory` instead,
+which had an explicitly flagged, well-scoped, uncontested gap: `prime_two`
+— `Nat.Prime 2` — "no primality packets at all" despite extensive
+`coprime_*`/`gcd_*`/`even_or_odd` coverage.
+
+Added `packets/elementary/number_theory/prime_two.v1.json`: `Nat.Prime 2`,
+closed via `norm_num` in a single tracked-episode step (episode
+`86b4db53-554e-4887-a579-adfc290a0cb5`, problem_version
+`ccdaf1f3-c193-4540-8c0f-26037fbb2d11`, dev-attested), `kernel_verified`
+on the first attempt — no genuine failure to preserve as a negative
+example this cycle (the tactic just worked). This domain's first
+primality fact; closes the `prime_two` item in
+`packets/elementary/number_theory/QUEUE.md` (next up: `not_prime_one`,
+which pairs with it, then `prime_dvd_mul`).
+
+Schema-validated (`validate_packets.py --check-hashes --warn-as-error`:
+0 errors) and hash-stamped; full corpus revalidated clean at 282+ packets
+(concurrent commits landing throughout), 0 errors, 0 warnings. Both v0.1
+packet-count release criteria remain met; per `python tools/corpus_stats.py`
+this cycle: 258 verified public + 25 negative (283 files), 103.2% of the
+250-packet public target. A concurrent agent has begun Phase 5 frontier
+work (`packets/frontier/erdos/`, see the section immediately above) now
+that elementary/negative-example priorities are largely saturated —
+consistent with this loop's priority-4 fallback.
