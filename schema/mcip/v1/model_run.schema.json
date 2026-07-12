@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Mnehmos/mathcorpus/schema/mcip/v1/model_run.schema.json",
+  "title": "MCIP ModelRun v1",
+  "description": "One model's evaluation run against a packet under a pinned evaluation suite/policy version. Model-related: carries model_config_hash and redaction-aware public_metadata.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "record_type", "record_id", "packet_id", "environment_hash",
+    "created_at", "trust_status", "export_eligibility", "record_hash",
+    "evaluation_suite_version", "policy_version", "model_family", "model_version", "model_config_hash"
+  ],
+  "properties": {
+    "schema_version": { "$ref": "_defs.schema.json#/$defs/mcip_version" },
+    "record_type": { "const": "model_run" },
+    "record_id": { "$ref": "_defs.schema.json#/$defs/record_id" },
+    "packet_id": { "$ref": "_defs.schema.json#/$defs/packet_id" },
+    "environment_hash": { "type": "string", "minLength": 1 },
+    "artifact_hashes": { "$ref": "_defs.schema.json#/$defs/artifact_hashes" },
+    "created_at": { "$ref": "_defs.schema.json#/$defs/iso_timestamp" },
+    "trust_status": { "$ref": "_defs.schema.json#/$defs/trust_status" },
+    "export_eligibility": { "$ref": "_defs.schema.json#/$defs/export_eligibility" },
+    "record_hash": { "$ref": "_defs.schema.json#/$defs/sha256" },
+    "evaluation_suite_version": { "type": "string", "minLength": 1 },
+    "policy_version": { "type": "string", "minLength": 1 },
+    "model_family": { "type": "string", "minLength": 1 },
+    "model_version": { "type": "string", "minLength": 1 },
+    "model_config_hash": { "$ref": "_defs.schema.json#/$defs/sha256" },
+    "episode_count": { "type": "integer", "minimum": 0 },
+    "seeds": { "type": "array", "items": { "type": "integer" } },
+    "first_attempt_pass_rate": { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
+    "eventual_pass_rate": { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
+    "attempts_to_pass_distribution": {
+      "type": "object",
+      "description": "Histogram keyed by attempt-count bucket (as a string, e.g. '1', '2', '3+') -> count.",
+      "additionalProperties": { "type": "number", "minimum": 0 }
+    },
+    "tokens": { "type": ["integer", "null"], "minimum": 0 },
+    "cost": { "type": ["number", "null"], "minimum": 0 },
+    "wall_time_ms": { "type": ["number", "null"], "minimum": 0 },
+    "lean_cpu_time_ms": { "type": ["number", "null"], "minimum": 0 },
+    "failure_category_distribution": {
+      "type": "object",
+      "additionalProperties": { "type": "number", "minimum": 0 }
+    },
+    "public_metadata": { "$ref": "_defs.schema.json#/$defs/public_metadata" }
+  }
+}

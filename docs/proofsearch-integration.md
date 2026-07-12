@@ -54,6 +54,19 @@ When an obligation reaches `kernel_verified` (or a certificate reaches `certifie
    non-proof-bearing training data. See the geometry `nlinarith` sample.
 5. Run `tools/stamp_hashes.py` then `tools/validate_packets.py`.
 
+## Interchange format (MCIP)
+
+Steps 4/5 above are currently manual (`author_packet.py` batch specs). The
+**MathCorpus Interchange Protocol** (`schema/mcip/v1/`, see
+[`../schema/mcip/v1/README.md`](../schema/mcip/v1/README.md)) defines the versioned record
+types — `AttemptRecord`, `NegativeExample`, `RepairTrajectory`, `DependencyManifest`,
+`ProofVariant`/`ProofProfile`, `ModelRun`/`EmpiricalDifficultyAggregate` — that a
+proof-search export can emit so this extraction stops being manual. MCIP records are child
+evidence only; they never replace the packet schema's own trust/training fields, and an
+import can never retroactively grant proof authority. The importer that consumes MCIP
+bundles into packets is tracked separately (issue #6) — today, `tools/validate_mcip.py` can
+already validate an MCIP bundle standalone.
+
 ## Benchmark mode
 
 A frozen benchmark run (e.g. PutnamBench) is a different mode. Public reports of benchmark

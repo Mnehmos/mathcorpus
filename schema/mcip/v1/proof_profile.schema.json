@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Mnehmos/mathcorpus/schema/mcip/v1/proof_profile.schema.json",
+  "title": "MCIP ProofProfile v1",
+  "description": "Classifies the proof strategy of one proof variant along a fixed vocabulary, so packets are queryable by proof shape rather than only by tactics text.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "record_type", "record_id", "packet_id", "environment_hash",
+    "created_at", "trust_status", "export_eligibility", "record_hash",
+    "proof_variant_id", "primary_proof_class"
+  ],
+  "properties": {
+    "schema_version": { "$ref": "_defs.schema.json#/$defs/mcip_version" },
+    "record_type": { "const": "proof_profile" },
+    "record_id": { "$ref": "_defs.schema.json#/$defs/record_id" },
+    "packet_id": { "$ref": "_defs.schema.json#/$defs/packet_id" },
+    "environment_hash": { "type": "string", "minLength": 1 },
+    "artifact_hashes": { "$ref": "_defs.schema.json#/$defs/artifact_hashes" },
+    "created_at": { "$ref": "_defs.schema.json#/$defs/iso_timestamp" },
+    "trust_status": { "$ref": "_defs.schema.json#/$defs/trust_status" },
+    "export_eligibility": { "$ref": "_defs.schema.json#/$defs/export_eligibility" },
+    "record_hash": { "$ref": "_defs.schema.json#/$defs/sha256" },
+    "proof_variant_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "record_id of the ProofVariant this profile describes."
+    },
+    "primary_proof_class": { "$ref": "#/$defs/proof_class" },
+    "secondary_proof_classes": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/proof_class" },
+      "uniqueItems": true
+    },
+    "automation_level": {
+      "type": "string",
+      "enum": ["none", "assisted", "semi_automated", "fully_automated"],
+      "description": "none: fully hand-planned. assisted: automation closes individual goals. semi_automated: automation drives most of the proof under a human/model plan. fully_automated: search/automation found the whole proof."
+    },
+    "retrieval_depth": { "type": "integer", "minimum": 0 },
+    "planning_depth": { "type": "integer", "minimum": 0 },
+    "branch_count": { "type": "integer", "minimum": 0 },
+    "dependency_composition_depth": { "type": "integer", "minimum": 0 },
+    "uses_witness_invention": { "type": "boolean" },
+    "uses_induction": { "type": "boolean" },
+    "uses_contradiction": { "type": "boolean" },
+    "uses_case_analysis": { "type": "boolean" }
+  },
+  "$defs": {
+    "proof_class": {
+      "type": "string",
+      "enum": [
+        "theorem_lookup",
+        "normalization",
+        "arithmetic_automation",
+        "induction",
+        "witness_construction",
+        "case_analysis",
+        "multi_lemma_composition"
+      ]
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Mnehmos/mathcorpus/schema/mcip/v1/proof_variant.schema.json",
+  "title": "MCIP ProofVariant v1",
+  "description": "One proof of a packet's statement in a specific style (canonical, shortest, pedagogical, restricted, interactive, alternate_model). Adding variants never mutates the packet's canonical proof identity.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "record_type", "record_id", "packet_id", "environment_hash",
+    "created_at", "trust_status", "export_eligibility", "record_hash",
+    "formal_statement_sha256", "variant_style", "proof_body_redacted", "source"
+  ],
+  "properties": {
+    "schema_version": { "$ref": "_defs.schema.json#/$defs/mcip_version" },
+    "record_type": { "const": "proof_variant" },
+    "record_id": { "$ref": "_defs.schema.json#/$defs/record_id" },
+    "packet_id": { "$ref": "_defs.schema.json#/$defs/packet_id" },
+    "environment_hash": { "type": "string", "minLength": 1 },
+    "artifact_hashes": { "$ref": "_defs.schema.json#/$defs/artifact_hashes" },
+    "created_at": { "$ref": "_defs.schema.json#/$defs/iso_timestamp" },
+    "trust_status": { "$ref": "_defs.schema.json#/$defs/trust_status" },
+    "export_eligibility": { "$ref": "_defs.schema.json#/$defs/export_eligibility" },
+    "record_hash": { "$ref": "_defs.schema.json#/$defs/sha256" },
+    "formal_statement_sha256": { "$ref": "_defs.schema.json#/$defs/sha256_or_null" },
+    "variant_style": {
+      "type": "string",
+      "enum": ["canonical", "shortest", "pedagogical", "restricted", "interactive", "alternate_model"]
+    },
+    "proof_body_sha256": { "$ref": "_defs.schema.json#/$defs/sha256_or_null" },
+    "proof_body_redacted": { "type": "boolean" },
+    "tactic_count": { "type": ["integer", "null"], "minimum": 0 },
+    "proof_length": { "type": ["integer", "null"], "minimum": 0 },
+    "restriction_profile_id": { "type": ["string", "null"] },
+    "restriction_profile_hash": { "$ref": "_defs.schema.json#/$defs/sha256_or_null" },
+    "proof_profile_id": { "type": ["string", "null"] },
+    "model_run_id": { "type": ["string", "null"] },
+    "source": {
+      "type": "string",
+      "enum": ["human_authored", "proof_search", "imported"]
+    }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "variant_style": { "const": "restricted" } } },
+      "then": { "required": ["restriction_profile_id", "restriction_profile_hash"] }
+    }
+  ]
+}

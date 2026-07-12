@@ -1,0 +1,84 @@
+{
+  "mcip_version": "1.0.0",
+  "bundle_id": "fixture.failed_attempt.v1",
+  "created_at": "2026-07-11T00:00:00Z",
+  "producer": "llm-driven-proof-search",
+  "records": [
+    {
+      "schema_version": "1.0.0",
+      "record_type": "packet_identity",
+      "record_id": "pi.failed_example.1",
+      "packet_id": "elementary.algebra.add_assoc.v1",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "created_at": "2026-07-11T00:00:00Z",
+      "trust_status": "candidate_unverified",
+      "export_eligibility": "restricted",
+      "packet_version": "1.0.0",
+      "formal_statement_sha256": null,
+      "status": "failed_attempt",
+      "record_hash": "a3e1cff7cd86bfd987cb2790a6907d0386f8ae7e7ce2118dadbc6fc0bf057278"
+    },
+    {
+      "schema_version": "1.0.0",
+      "record_type": "attempt_record",
+      "record_id": "ar.failed_example.1",
+      "packet_id": "elementary.algebra.add_assoc.v1",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "created_at": "2026-07-11T00:00:00Z",
+      "trust_status": "tracked_episode",
+      "export_eligibility": "restricted",
+      "proof_variant_id": null,
+      "episode_id": "8b1c9e2a-1111-4a11-9a11-111111111111",
+      "outcome": "failed",
+      "diagnostic_category": "unsolved_goals",
+      "diagnostics": [
+        {
+          "category": "unsolved_goals",
+          "message": "unsolved goals",
+          "source_span": "line 4, col 2",
+          "goals": [
+            "⊢ a + b = b + a"
+          ],
+          "local_context": [
+            "a b : ℤ"
+          ],
+          "unsolved_goals": [
+            "⊢ a + b = b + a"
+          ]
+        }
+      ],
+      "tokens": 220,
+      "cost": 0.0016,
+      "wall_time_ms": 430.0,
+      "lean_cpu_time_ms": 95.0,
+      "model_run_id": "mr.proofsearch.2026_07",
+      "model_config_hash": "4758564a6444ab6a4e46d3604a1bcf8cb9d4004ce83994967d687bc74837922a",
+      "prompt_hash": "0913e61aa76b9cde7bae5dd27c678ae6b097d07220a373e9733c699f302839ec",
+      "context_hash": "837dd97e7d589dead902ba51845c61640343f9e6a20885f4a733c940781c6043",
+      "public_metadata": {
+        "summary": "Tried `rfl`, did not close the commutativity goal."
+      },
+      "record_hash": "20f671f5758941996d986240c0e652b3a00e943e7479daa1f9018f2a408538e5"
+    },
+    {
+      "schema_version": "1.0.0",
+      "record_type": "negative_example",
+      "record_id": "ne.failed_example.1",
+      "packet_id": "elementary.algebra.add_assoc.v1",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "created_at": "2026-07-11T00:00:00Z",
+      "trust_status": "tracked_episode",
+      "export_eligibility": "restricted",
+      "attempt_id": "ar.failed_example.1",
+      "origin": "organic",
+      "diagnostic_category": "unsolved_goals",
+      "candidate_source_ref": "proofsearch://trajectories/8b1c9e2a-1111-4a11-9a11-111111111111",
+      "proof_authority": "none",
+      "can_export_metadata": true,
+      "can_export_proof_text": false,
+      "can_export_diagnostics": true,
+      "can_export_model_identity": false,
+      "record_hash": "15717498416e3404a58c76917a32b1701050fb8047722a9fa6223111040de693"
+    }
+  ]
+}

@@ -28,6 +28,9 @@ jobs:
       - name: Schema + policy validation (warnings fail CI)
         run: python tools/validate_packets.py packets/ --check-hashes --warn-as-error
 
+      - name: MCIP conformance fixtures (schema + hashes)
+        run: python tools/validate_mcip.py schema/mcip/v1/fixtures/ --check-hashes --warn-as-error
+
       - name: Build manifests
         run: |
           python tools/build_manifests.py packets/ --out manifests/

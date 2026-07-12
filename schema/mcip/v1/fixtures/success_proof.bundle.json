@@ -1,0 +1,153 @@
+{
+  "mcip_version": "1.0.0",
+  "bundle_id": "fixture.success_proof.v1",
+  "created_at": "2026-07-11T00:00:00Z",
+  "producer": "llm-driven-proof-search",
+  "records": [
+    {
+      "schema_version": "1.0.0",
+      "record_type": "packet_identity",
+      "record_id": "pi.add_assoc.1",
+      "packet_id": "elementary.algebra.add_assoc.v1",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "created_at": "2026-07-11T00:00:00Z",
+      "trust_status": "kernel_verified",
+      "export_eligibility": "public",
+      "packet_version": "1.0.0",
+      "formal_statement_sha256": "b90182e61b67b4c1f0c7706c0265f96a2db4ffd7cbf629202d37f4adb1f503f7",
+      "lean_module": "MathCorpus.Elementary.Algebra.AddAssoc",
+      "theorem_name": "add_assoc'",
+      "toolchain": {
+        "lean_version": "v4.32.0-rc1",
+        "mathlib_rev": "360da6fa66c1273b76b6b2d8c5666fd5ac2e3b56"
+      },
+      "status": "kernel_verified",
+      "record_hash": "8e6148f38e473a8c67f17e91d20c66e2d2c2a844c0daa88b99df6ab354b586a8"
+    },
+    {
+      "schema_version": "1.0.0",
+      "record_type": "proof_variant",
+      "record_id": "pv.add_assoc.canonical",
+      "packet_id": "elementary.algebra.add_assoc.v1",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "created_at": "2026-07-11T00:00:00Z",
+      "trust_status": "kernel_verified",
+      "export_eligibility": "public",
+      "formal_statement_sha256": "b90182e61b67b4c1f0c7706c0265f96a2db4ffd7cbf629202d37f4adb1f503f7",
+      "variant_style": "canonical",
+      "proof_body_sha256": "026b6eb3172b58ed7960add0e6fb5845ad162ea88e2f41a6b27ee83dfdb597a0",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "restriction_profile_id": null,
+      "restriction_profile_hash": null,
+      "proof_profile_id": "pp.add_assoc.canonical",
+      "model_run_id": null,
+      "source": "proof_search",
+      "record_hash": "ad8276146f5d8c01a59421c711f442d995111a79fd3f86a32d9988470b8d0742"
+    },
+    {
+      "schema_version": "1.0.0",
+      "record_type": "proof_profile",
+      "record_id": "pp.add_assoc.canonical",
+      "packet_id": "elementary.algebra.add_assoc.v1",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "created_at": "2026-07-11T00:00:00Z",
+      "trust_status": "kernel_verified",
+      "export_eligibility": "public",
+      "proof_variant_id": "pv.add_assoc.canonical",
+      "primary_proof_class": "theorem_lookup",
+      "secondary_proof_classes": [],
+      "automation_level": "fully_automated",
+      "retrieval_depth": 1,
+      "planning_depth": 0,
+      "branch_count": 0,
+      "dependency_composition_depth": 1,
+      "uses_witness_invention": false,
+      "uses_induction": false,
+      "uses_contradiction": false,
+      "uses_case_analysis": false,
+      "record_hash": "601c97a61c9833259f4bd585cb6218ab854e3a808703f6e6ef2217052e376b85"
+    },
+    {
+      "schema_version": "1.0.0",
+      "record_type": "dependency_manifest",
+      "record_id": "dm.add_assoc",
+      "packet_id": "elementary.algebra.add_assoc.v1",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "created_at": "2026-07-11T00:00:00Z",
+      "trust_status": "kernel_verified",
+      "export_eligibility": "public",
+      "proof_variant_id": "pv.add_assoc.canonical",
+      "declared_theorem_deps": [
+        "Mathlib.add_assoc"
+      ],
+      "used_theorem_deps": [
+        "Mathlib.add_assoc"
+      ],
+      "obligation_deps": [],
+      "verified_module_item_deps": [
+        "Mathlib.add_assoc"
+      ],
+      "transitive_dependency_count": 1,
+      "transitive_dependency_depth": 1,
+      "retrieval_candidates": [
+        "Mathlib.add_assoc",
+        "Mathlib.add_comm"
+      ],
+      "retrieved_unused_candidates": [
+        "Mathlib.add_comm"
+      ],
+      "kits": [
+        "core_algebra"
+      ],
+      "tactic_tags": [
+        "add_assoc"
+      ],
+      "prerequisite_concepts": [
+        "addition",
+        "associativity"
+      ],
+      "claim_sources": [
+        {
+          "dependency_id": "Mathlib.add_assoc",
+          "category": "used",
+          "source": "verifier_export"
+        },
+        {
+          "dependency_id": "Mathlib.add_comm",
+          "category": "retrieved_unused",
+          "source": "proof_search_import"
+        }
+      ],
+      "record_hash": "365be88dedec8c3e49cc8ee2e5a8c508dadb4039179c707429a7e6b70543b264"
+    },
+    {
+      "schema_version": "1.0.0",
+      "record_type": "attempt_record",
+      "record_id": "ar.add_assoc.1",
+      "packet_id": "elementary.algebra.add_assoc.v1",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "created_at": "2026-07-11T00:00:00Z",
+      "trust_status": "kernel_verified",
+      "export_eligibility": "public",
+      "proof_variant_id": "pv.add_assoc.canonical",
+      "episode_id": "d3dd664a-0cf1-4eb8-b538-4db8d6db4420",
+      "outcome": "succeeded",
+      "diagnostic_category": null,
+      "diagnostics": [],
+      "tokens": 412,
+      "cost": 0.0031,
+      "wall_time_ms": 890.0,
+      "lean_cpu_time_ms": 210.0,
+      "model_run_id": "mr.proofsearch.2026_07",
+      "model_config_hash": "4758564a6444ab6a4e46d3604a1bcf8cb9d4004ce83994967d687bc74837922a",
+      "prompt_hash": "ae23d7826e84f0d6412f8ed67b990a04f7226c85de482d5c35a9d348f065090d",
+      "context_hash": "a09670fea508636eb0cc004d73483f659691b09dcdef8dd88e226c19222568e3",
+      "public_metadata": {
+        "summary": "Closed by a single retrieved lemma."
+      },
+      "record_hash": "621dc40fb6743013a786c5c1d76b6ec3e88b649fd721231cd375f3f7db2ad505"
+    }
+  ]
+}

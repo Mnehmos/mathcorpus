@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Mnehmos/mathcorpus/schema/mcip/v1/empirical_difficulty_aggregate.schema.json",
+  "title": "MCIP EmpiricalDifficultyAggregate v1",
+  "description": "Difficulty observed empirically across one or more ModelRun records, kept separate from the packet's author-assigned difficulty_bin. Never overwrites author-assigned difficulty; consumers reconcile the two explicitly.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "record_type", "record_id", "packet_id", "environment_hash",
+    "created_at", "trust_status", "export_eligibility", "record_hash",
+    "model_run_ids", "observed_difficulty_score", "calibrated_difficulty_bin",
+    "evaluation_suite_version", "policy_version"
+  ],
+  "properties": {
+    "schema_version": { "$ref": "_defs.schema.json#/$defs/mcip_version" },
+    "record_type": { "const": "empirical_difficulty_aggregate" },
+    "record_id": { "$ref": "_defs.schema.json#/$defs/record_id" },
+    "packet_id": { "$ref": "_defs.schema.json#/$defs/packet_id" },
+    "environment_hash": { "type": "string", "minLength": 1 },
+    "artifact_hashes": { "$ref": "_defs.schema.json#/$defs/artifact_hashes" },
+    "created_at": { "$ref": "_defs.schema.json#/$defs/iso_timestamp" },
+    "trust_status": { "$ref": "_defs.schema.json#/$defs/trust_status" },
+    "export_eligibility": { "$ref": "_defs.schema.json#/$defs/export_eligibility" },
+    "record_hash": { "$ref": "_defs.schema.json#/$defs/sha256" },
+    "model_run_ids": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string", "minLength": 1 },
+      "uniqueItems": true,
+      "description": "record_id values of the ModelRun records this aggregate was reproducibly computed from."
+    },
+    "observed_difficulty_score": { "type": "number" },
+    "calibrated_difficulty_bin": { "$ref": "_defs.schema.json#/$defs/difficulty_bin" },
+    "author_difficulty_bin": {
+      "oneOf": [
+        { "$ref": "_defs.schema.json#/$defs/difficulty_bin" },
+        { "type": "null" }
+      ],
+      "description": "Echo of the packet's author-assigned difficulty_bin at aggregation time, for comparison only. This record must never be used to silently overwrite it."
+    },
+    "evaluation_suite_version": { "type": "string", "minLength": 1 },
+    "policy_version": { "type": "string", "minLength": 1 },
+    "model_config_hash": { "$ref": "_defs.schema.json#/$defs/sha256_or_null" },
+    "public_metadata": { "$ref": "_defs.schema.json#/$defs/public_metadata" }
+  }
+}

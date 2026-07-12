@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Mnehmos/mathcorpus/schema/mcip/v1/dependency_manifest.schema.json",
+  "title": "MCIP DependencyManifest v1",
+  "description": "Declared, retrieved, and actually-used theorem/dependency evidence for one packet, distinguishing what was claimed from what a verifier-backed record shows was used.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "record_type", "record_id", "packet_id", "environment_hash",
+    "created_at", "trust_status", "export_eligibility", "record_hash"
+  ],
+  "properties": {
+    "schema_version": { "$ref": "_defs.schema.json#/$defs/mcip_version" },
+    "record_type": { "const": "dependency_manifest" },
+    "record_id": { "$ref": "_defs.schema.json#/$defs/record_id" },
+    "packet_id": { "$ref": "_defs.schema.json#/$defs/packet_id" },
+    "environment_hash": { "type": "string", "minLength": 1 },
+    "artifact_hashes": { "$ref": "_defs.schema.json#/$defs/artifact_hashes" },
+    "created_at": { "$ref": "_defs.schema.json#/$defs/iso_timestamp" },
+    "trust_status": { "$ref": "_defs.schema.json#/$defs/trust_status" },
+    "export_eligibility": { "$ref": "_defs.schema.json#/$defs/export_eligibility" },
+    "record_hash": { "$ref": "_defs.schema.json#/$defs/sha256" },
+    "proof_variant_id": { "type": ["string", "null"] },
+    "declared_theorem_deps": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+    "used_theorem_deps": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+    "obligation_deps": {
+      "type": "array",
+      "items": { "type": "string" },
+      "uniqueItems": true,
+      "description": "Proof Search obligation dependencies (sub-goals discharged as separate obligations)."
+    },
+    "verified_module_item_deps": {
+      "type": "array",
+      "items": { "type": "string" },
+      "uniqueItems": true,
+      "description": "Dependencies confirmed present in the kernel-checked module, not just cited."
+    },
+    "transitive_dependency_count": { "type": ["integer", "null"], "minimum": 0 },
+    "transitive_dependency_depth": { "type": ["integer", "null"], "minimum": 0 },
+    "retrieval_candidates": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+    "retrieved_unused_candidates": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+    "kits": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+    "tactic_tags": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+    "prerequisite_concepts": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+    "claim_sources": {
+      "type": "array",
+      "description": "Per-claim provenance: which mechanism asserted a given dependency belongs in a given category.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["dependency_id", "category", "source"],
+        "properties": {
+          "dependency_id": { "type": "string", "minLength": 1 },
+          "category": {
+            "type": "string",
+            "enum": [
+              "declared", "used", "obligation", "verified_module_item",
+              "retrieval_candidate", "retrieved_unused"
+            ]
+          },
+          "source": {
+            "type": "string",
+            "enum": ["manual", "proof_search_import", "verifier_export"]
+          }
+        }
+      }
+    }
+  }
+}

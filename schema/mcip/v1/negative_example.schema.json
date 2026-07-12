@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Mnehmos/mathcorpus/schema/mcip/v1/negative_example.schema.json",
+  "title": "MCIP NegativeExample v1",
+  "description": "A failed attempt (organic or a controlled mutation) preserved as training/analysis evidence. proof_authority is pinned to 'none' at the schema level: a negative example can never confer proof authority on its parent packet.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "record_type", "record_id", "packet_id", "environment_hash",
+    "created_at", "trust_status", "export_eligibility", "record_hash",
+    "attempt_id", "origin", "proof_authority",
+    "can_export_metadata", "can_export_proof_text", "can_export_diagnostics", "can_export_model_identity"
+  ],
+  "properties": {
+    "schema_version": { "$ref": "_defs.schema.json#/$defs/mcip_version" },
+    "record_type": { "const": "negative_example" },
+    "record_id": { "$ref": "_defs.schema.json#/$defs/record_id" },
+    "packet_id": { "$ref": "_defs.schema.json#/$defs/packet_id" },
+    "environment_hash": { "type": "string", "minLength": 1 },
+    "artifact_hashes": { "$ref": "_defs.schema.json#/$defs/artifact_hashes" },
+    "created_at": { "$ref": "_defs.schema.json#/$defs/iso_timestamp" },
+    "trust_status": { "$ref": "_defs.schema.json#/$defs/trust_status" },
+    "export_eligibility": { "$ref": "_defs.schema.json#/$defs/export_eligibility" },
+    "record_hash": { "$ref": "_defs.schema.json#/$defs/sha256" },
+    "attempt_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "record_id of the AttemptRecord this negative example is derived from."
+    },
+    "origin": { "type": "string", "enum": ["organic", "controlled_mutation"] },
+    "diagnostic_category": { "type": ["string", "null"] },
+    "candidate_source_ref": {
+      "type": ["string", "null"],
+      "description": "Governed artifact reference the failed candidate proof text can be recovered from, if retained."
+    },
+    "proof_authority": {
+      "const": "none",
+      "description": "Structural guarantee: a negative example is never proof authority for the parent packet."
+    },
+    "can_export_metadata": { "type": "boolean" },
+    "can_export_proof_text": { "type": "boolean" },
+    "can_export_diagnostics": { "type": "boolean" },
+    "can_export_model_identity": { "type": "boolean" }
+  }
+}

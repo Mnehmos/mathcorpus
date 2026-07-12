@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Mnehmos/mathcorpus/schema/mcip/v1/attempt_record.schema.json",
+  "title": "MCIP AttemptRecord v1",
+  "description": "One tracked proof-search attempt against a packet's statement, successful or not. Model-related: carries model_config_hash and redaction-aware public_metadata.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "record_type", "record_id", "packet_id", "environment_hash",
+    "created_at", "trust_status", "export_eligibility", "record_hash", "outcome"
+  ],
+  "properties": {
+    "schema_version": { "$ref": "_defs.schema.json#/$defs/mcip_version" },
+    "record_type": { "const": "attempt_record" },
+    "record_id": { "$ref": "_defs.schema.json#/$defs/record_id" },
+    "packet_id": { "$ref": "_defs.schema.json#/$defs/packet_id" },
+    "environment_hash": { "type": "string", "minLength": 1 },
+    "artifact_hashes": { "$ref": "_defs.schema.json#/$defs/artifact_hashes" },
+    "created_at": { "$ref": "_defs.schema.json#/$defs/iso_timestamp" },
+    "trust_status": { "$ref": "_defs.schema.json#/$defs/trust_status" },
+    "export_eligibility": { "$ref": "_defs.schema.json#/$defs/export_eligibility" },
+    "record_hash": { "$ref": "_defs.schema.json#/$defs/sha256" },
+    "proof_variant_id": { "type": ["string", "null"] },
+    "episode_id": { "type": ["string", "null"] },
+    "outcome": { "type": "string", "enum": ["succeeded", "failed", "abandoned"] },
+    "diagnostic_category": { "type": ["string", "null"] },
+    "diagnostics": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "category": { "type": "string" },
+          "message": { "type": "string" },
+          "source_span": { "type": "string" },
+          "goals": { "type": "array", "items": { "type": "string" } },
+          "local_context": { "type": "array", "items": { "type": "string" } },
+          "unsolved_goals": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    },
+    "tokens": { "type": ["integer", "null"], "minimum": 0 },
+    "cost": { "type": ["number", "null"], "minimum": 0 },
+    "wall_time_ms": { "type": ["number", "null"], "minimum": 0 },
+    "lean_cpu_time_ms": { "type": ["number", "null"], "minimum": 0 },
+    "model_run_id": { "type": ["string", "null"] },
+    "model_config_hash": { "$ref": "_defs.schema.json#/$defs/sha256_or_null" },
+    "prompt_hash": { "$ref": "_defs.schema.json#/$defs/sha256_or_null" },
+    "context_hash": { "$ref": "_defs.schema.json#/$defs/sha256_or_null" },
+    "public_metadata": { "$ref": "_defs.schema.json#/$defs/public_metadata" }
+  }
+}

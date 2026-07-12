@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Mnehmos/mathcorpus/schema/mcip/v1/restriction_profile.schema.json",
+  "title": "MCIP RestrictionProfile v1",
+  "description": "A hash-pinned, reusable constraint set (forbidden/allowed tactics, dependency budget) that a restricted ProofVariant was checked against. Reused across packets by record_id + record_hash, not copied inline.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "record_type", "record_id", "packet_id", "environment_hash",
+    "created_at", "trust_status", "export_eligibility", "record_hash"
+  ],
+  "properties": {
+    "schema_version": { "$ref": "_defs.schema.json#/$defs/mcip_version" },
+    "record_type": { "const": "restriction_profile" },
+    "record_id": { "$ref": "_defs.schema.json#/$defs/record_id" },
+    "packet_id": { "$ref": "_defs.schema.json#/$defs/packet_id" },
+    "environment_hash": { "type": "string", "minLength": 1 },
+    "artifact_hashes": { "$ref": "_defs.schema.json#/$defs/artifact_hashes" },
+    "created_at": { "$ref": "_defs.schema.json#/$defs/iso_timestamp" },
+    "trust_status": { "$ref": "_defs.schema.json#/$defs/trust_status" },
+    "export_eligibility": { "$ref": "_defs.schema.json#/$defs/export_eligibility" },
+    "record_hash": { "$ref": "_defs.schema.json#/$defs/sha256" },
+    "name": {
+      "type": "string",
+      "description": "Human-readable label, e.g. 'no-simp-no-decide' or 'mathlib-core-only'."
+    },
+    "forbidden_tactics": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+    "allowed_tactics": {
+      "type": ["array", "null"],
+      "items": { "type": "string" },
+      "uniqueItems": true,
+      "description": "Allowlist; null means 'no allowlist restriction' (only forbidden_tactics applies)."
+    },
+    "allowed_dependency_set": {
+      "type": ["array", "null"],
+      "items": { "type": "string" },
+      "uniqueItems": true,
+      "description": "Allowlist of dependency identifiers a variant may cite; null means unrestricted."
+    },
+    "max_tactic_count": { "type": ["integer", "null"], "minimum": 0 },
+    "max_dependency_count": { "type": ["integer", "null"], "minimum": 0 },
+    "requires_explicit_intermediate_claims": { "type": "boolean" }
+  }
+}

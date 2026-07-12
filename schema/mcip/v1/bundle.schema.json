@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Mnehmos/mathcorpus/schema/mcip/v1/bundle.schema.json",
+  "title": "MCIP Bundle v1",
+  "description": "Transport envelope for a set of MCIP records exchanged between MathCorpus and llm-driven-proof-search. A bundle is not itself a packet or a record; tools/validate_mcip.py dispatches each entry in records to the schema named by its own record_type.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["mcip_version", "bundle_id", "created_at", "records"],
+  "properties": {
+    "mcip_version": { "$ref": "_defs.schema.json#/$defs/mcip_version" },
+    "bundle_id": { "type": "string", "minLength": 1 },
+    "created_at": { "$ref": "_defs.schema.json#/$defs/iso_timestamp" },
+    "producer": {
+      "type": "string",
+      "description": "Identifies the system that emitted this bundle, e.g. 'llm-driven-proof-search'."
+    },
+    "records": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["record_type"],
+        "properties": {
+          "record_type": {
+            "type": "string",
+            "enum": [
+              "packet_identity", "proof_variant", "proof_profile", "restriction_profile",
+              "dependency_manifest", "attempt_record", "negative_example",
+              "repair_trajectory", "model_run", "empirical_difficulty_aggregate"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

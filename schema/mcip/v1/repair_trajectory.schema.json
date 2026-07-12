@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Mnehmos/mathcorpus/schema/mcip/v1/repair_trajectory.schema.json",
+  "title": "MCIP RepairTrajectory v1",
+  "description": "An ordered, hash-linked chain of repair steps from one or more failed attempts to a terminus: either a verified proof variant or an explicit, final failure.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "record_type", "record_id", "packet_id", "environment_hash",
+    "created_at", "trust_status", "export_eligibility", "record_hash",
+    "steps", "terminal_outcome", "terminal_ref"
+  ],
+  "properties": {
+    "schema_version": { "$ref": "_defs.schema.json#/$defs/mcip_version" },
+    "record_type": { "const": "repair_trajectory" },
+    "record_id": { "$ref": "_defs.schema.json#/$defs/record_id" },
+    "packet_id": { "$ref": "_defs.schema.json#/$defs/packet_id" },
+    "environment_hash": { "type": "string", "minLength": 1 },
+    "artifact_hashes": { "$ref": "_defs.schema.json#/$defs/artifact_hashes" },
+    "created_at": { "$ref": "_defs.schema.json#/$defs/iso_timestamp" },
+    "trust_status": { "$ref": "_defs.schema.json#/$defs/trust_status" },
+    "export_eligibility": { "$ref": "_defs.schema.json#/$defs/export_eligibility" },
+    "record_hash": { "$ref": "_defs.schema.json#/$defs/sha256" },
+    "steps": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["step_index", "from_attempt_id", "repair_action", "to_ref", "step_hash"],
+        "properties": {
+          "step_index": { "type": "integer", "minimum": 0 },
+          "from_attempt_id": {
+            "type": "string",
+            "minLength": 1,
+            "description": "record_id of the AttemptRecord this step repairs."
+          },
+          "repair_action": { "type": "string", "minLength": 1 },
+          "diagnostic_category_addressed": { "type": ["string", "null"] },
+          "to_ref": {
+            "type": "string",
+            "minLength": 1,
+            "description": "record_id of the AttemptRecord or ProofVariant this step produced."
+          },
+          "step_hash": { "$ref": "_defs.schema.json#/$defs/sha256" }
+        }
+      }
+    },
+    "terminal_outcome": { "type": "string", "enum": ["verified_proof", "explicit_failure"] },
+    "terminal_ref": {
+      "type": "string",
+      "minLength": 1,
+      "description": "record_id of the terminal ProofVariant (verified_proof) or AttemptRecord (explicit_failure)."
+    }
+  }
+}

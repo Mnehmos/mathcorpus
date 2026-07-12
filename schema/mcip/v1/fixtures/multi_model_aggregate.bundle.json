@@ -1,0 +1,131 @@
+{
+  "mcip_version": "1.0.0",
+  "bundle_id": "fixture.multi_model_aggregate.v1",
+  "created_at": "2026-07-11T00:00:00Z",
+  "producer": "llm-driven-proof-search",
+  "records": [
+    {
+      "schema_version": "1.0.0",
+      "record_type": "packet_identity",
+      "record_id": "pi.multi_model.1",
+      "packet_id": "elementary.algebra.add_assoc.v1",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "created_at": "2026-07-11T00:00:00Z",
+      "trust_status": "kernel_verified",
+      "export_eligibility": "public",
+      "packet_version": "1.0.0",
+      "formal_statement_sha256": "b90182e61b67b4c1f0c7706c0265f96a2db4ffd7cbf629202d37f4adb1f503f7",
+      "status": "kernel_verified",
+      "record_hash": "2411ee84e411e42cdb068df7ef9145742c803e7a2d632ccd3bd3b53f5083b998"
+    },
+    {
+      "schema_version": "1.0.0",
+      "record_type": "model_run",
+      "record_id": "mr.multi_model.model_a",
+      "packet_id": "elementary.algebra.add_assoc.v1",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "created_at": "2026-07-11T00:00:00Z",
+      "trust_status": "tracked_episode",
+      "export_eligibility": "restricted",
+      "evaluation_suite_version": "eval-suite-2026.07",
+      "policy_version": "policy-2026.07",
+      "model_family": "model-a-family",
+      "model_version": "model-a-2026-06",
+      "model_config_hash": "9776fa82fede48518e6fe3dd50a598c1d2328a6712b5790ee0de0961d8d5ba5f",
+      "episode_count": 8,
+      "seeds": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "first_attempt_pass_rate": 0.375,
+      "eventual_pass_rate": 0.75,
+      "attempts_to_pass_distribution": {
+        "1": 3,
+        "2": 2,
+        "3+": 1
+      },
+      "tokens": 18400,
+      "cost": 0.42,
+      "wall_time_ms": 96000.0,
+      "lean_cpu_time_ms": 5200.0,
+      "failure_category_distribution": {
+        "unsolved_goals": 2
+      },
+      "public_metadata": {
+        "model_family": "model-a-family"
+      },
+      "record_hash": "8c53c0b29b8eb651688da0035795286f641990f4b3e4c31f5a5402a7da8323e1"
+    },
+    {
+      "schema_version": "1.0.0",
+      "record_type": "model_run",
+      "record_id": "mr.multi_model.model_b",
+      "packet_id": "elementary.algebra.add_assoc.v1",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "created_at": "2026-07-11T00:00:00Z",
+      "trust_status": "tracked_episode",
+      "export_eligibility": "restricted",
+      "evaluation_suite_version": "eval-suite-2026.07",
+      "policy_version": "policy-2026.07",
+      "model_family": "model-b-family",
+      "model_version": "model-b-2026-06",
+      "model_config_hash": "ce66dcc343a280d23c94c5cc2a4d85fcc651bf787de73fcecf1fd65a26b03cce",
+      "episode_count": 8,
+      "seeds": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "first_attempt_pass_rate": 0.625,
+      "eventual_pass_rate": 1.0,
+      "attempts_to_pass_distribution": {
+        "1": 5,
+        "2": 3
+      },
+      "tokens": 15100,
+      "cost": 0.38,
+      "wall_time_ms": 81000.0,
+      "lean_cpu_time_ms": 4700.0,
+      "failure_category_distribution": {},
+      "public_metadata": {
+        "model_family": "model-b-family"
+      },
+      "record_hash": "b5fbbef88e87f0be7a3320caaef53f2e171e7456e60af70b56e05db88581dcdf"
+    },
+    {
+      "schema_version": "1.0.0",
+      "record_type": "empirical_difficulty_aggregate",
+      "record_id": "eda.multi_model.1",
+      "packet_id": "elementary.algebra.add_assoc.v1",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "created_at": "2026-07-11T00:00:00Z",
+      "trust_status": "tracked_episode",
+      "export_eligibility": "restricted",
+      "model_run_ids": [
+        "mr.multi_model.model_a",
+        "mr.multi_model.model_b"
+      ],
+      "observed_difficulty_score": 0.31,
+      "calibrated_difficulty_bin": "D1",
+      "author_difficulty_bin": "D0",
+      "evaluation_suite_version": "eval-suite-2026.07",
+      "policy_version": "policy-2026.07",
+      "model_config_hash": null,
+      "public_metadata": {
+        "note": "Two-model aggregate; author bin unchanged pending review."
+      },
+      "record_hash": "980c0e43a43a0c70a6b7177d2e588059a376e2364f536ff3b9d674f581c75b7a"
+    }
+  ]
+}

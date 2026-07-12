@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Mnehmos/mathcorpus/schema/mcip/v1/packet_identity.schema.json",
+  "title": "MCIP PacketIdentity v1",
+  "description": "Binds an MCIP bundle to a specific MathCorpus packet and pinned toolchain/environment. Every other record in a bundle refers back to the packet_id and environment_hash declared here.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "record_type", "record_id", "packet_id", "environment_hash",
+    "created_at", "trust_status", "export_eligibility", "record_hash",
+    "packet_version", "formal_statement_sha256"
+  ],
+  "properties": {
+    "schema_version": { "$ref": "_defs.schema.json#/$defs/mcip_version" },
+    "record_type": { "const": "packet_identity" },
+    "record_id": { "$ref": "_defs.schema.json#/$defs/record_id" },
+    "packet_id": { "$ref": "_defs.schema.json#/$defs/packet_id" },
+    "packet_version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "formal_statement_sha256": { "$ref": "_defs.schema.json#/$defs/sha256_or_null" },
+    "environment_hash": { "type": "string", "minLength": 1 },
+    "artifact_hashes": { "$ref": "_defs.schema.json#/$defs/artifact_hashes" },
+    "created_at": { "$ref": "_defs.schema.json#/$defs/iso_timestamp" },
+    "trust_status": { "$ref": "_defs.schema.json#/$defs/trust_status" },
+    "export_eligibility": { "$ref": "_defs.schema.json#/$defs/export_eligibility" },
+    "record_hash": { "$ref": "_defs.schema.json#/$defs/sha256" },
+    "lean_module": { "type": "string" },
+    "theorem_name": { "type": "string" },
+    "toolchain": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["lean_version", "mathlib_rev"],
+      "properties": {
+        "lean_version": { "type": "string" },
+        "mathlib_rev": { "type": "string" }
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "kernel_verified", "verified_certificate", "formula_fact_only",
+        "empirical_only", "failed_attempt", "redacted_public_metadata_only"
+      ],
+      "description": "Mirrors schema/packet.schema.json status at the time this bundle was produced; not authoritative over the packet."
+    }
+  }
+}

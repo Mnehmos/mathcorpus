@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Mnehmos/mathcorpus/schema/mcip/v1/_defs.schema.json",
+  "title": "MCIP v1 shared definitions",
+  "description": "Definitions shared by every MathCorpus Interchange Protocol (MCIP) v1 record schema. Not a record type itself — referenced via $ref from the per-record schemas in this directory. See README.md for canonicalization, hashing, and version-negotiation rules.",
+  "$defs": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$",
+      "description": "Lowercase hex SHA-256 digest."
+    },
+    "sha256_or_null": {
+      "oneOf": [
+        { "$ref": "#/$defs/sha256" },
+        { "type": "null" }
+      ]
+    },
+    "mcip_version": {
+      "type": "string",
+      "pattern": "^1\\.[0-9]+\\.[0-9]+$",
+      "description": "MCIP protocol version this record was produced under. Major version 1 for this schema generation."
+    },
+    "iso_timestamp": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\\.[0-9]+)?Z$",
+      "description": "UTC timestamp, RFC 3339 / ISO 8601 with a trailing Z."
+    },
+    "packet_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+([._][a-z0-9]+)*\\.v[0-9]+$",
+      "description": "MathCorpus packet_id this evidence record is about (schema/packet.schema.json)."
+    },
+    "record_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Stable identifier for this evidence record, unique within its record_type."
+    },
+    "trust_status": {
+      "type": "string",
+      "enum": [
+        "candidate_unverified",
+        "tracked_episode",
+        "kernel_verified",
+        "quarantined",
+        "superseded",
+        "not_proof_bearing"
+      ],
+      "description": "Evidentiary trust of this record. Distinct from MathCorpus packet trust.rung — an MCIP record is child evidence, never itself proof authority for a packet."
+    },
+    "export_eligibility": {
+      "type": "string",
+      "enum": ["public", "restricted", "private_only", "quarantined", "disallowed"],
+      "description": "Default export posture for this record as a whole. Model-related records additionally carry public_metadata for redaction-aware partial export."
+    },
+    "artifact_hashes": {
+      "type": "object",
+      "additionalProperties": { "$ref": "#/$defs/sha256" },
+      "description": "Map of artifact name -> sha256 for artifacts this record's claims depend on (e.g. trajectory_db, diagnostics_blob, model_weights_manifest)."
+    },
+    "public_metadata": {
+      "type": "object",
+      "description": "Redaction-aware subset of this record's fields considered safe for public export even when the full record is restricted. Deliberately not additionalProperties:false — its shape is policy-defined per issue #8 and may grow without a schema bump."
+    },
+    "difficulty_bin": {
+      "type": "string",
+      "enum": ["D0", "D1", "D2", "D3", "D4", "D5"]
+    },
+    "envelope_required": [
+      "schema_version",
+      "record_type",
+      "record_id",
+      "packet_id",
+      "environment_hash",
+      "created_at",
+      "trust_status",
+      "export_eligibility",
+      "record_hash"
+    ]
+  }
+}
