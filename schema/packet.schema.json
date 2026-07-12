@@ -275,6 +275,25 @@
         { "type": "null" }
       ]
     },
+    "publication": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status"],
+      "description": "Publication-readiness policy, separate from trust/proof authority. Kernel verification alone never implies publication readiness. Absent on a packet means the implicit default computed by tools/mathcorpus/policy.py (kernel_verified_unreviewed for kernel-verified packets, metadata_only otherwise) — existing packets remain valid without this field, marked under that legacy/unreviewed default until migrated.",
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "metadata_only", "kernel_verified_unreviewed", "citation_review_pending",
+            "novelty_review_pending", "reviewed_with_caveats", "publication_ready",
+            "blocked_missing_attribution", "blocked_novelty_claim"
+          ]
+        },
+        "reviewed_by": { "type": ["string", "null"] },
+        "reviewed_at": { "type": ["string", "null"] },
+        "unresolved_attribution_caveats": { "type": "array", "items": { "type": "string" } }
+      }
+    },
     "idea_attribution": {
       "type": "object",
       "additionalProperties": false,
@@ -636,6 +655,7 @@
       "description": "Declarations of what kind of new contribution this packet's proof represents. Kernel verification alone never implies a contribution_class. Multiple statements may exist over time; earlier ones are not deleted when revised.",
       "items": { "$ref": "#/$defs/contribution_statement" }
     },
+    "publication": { "$ref": "#/$defs/publication" },
     "metrics": {
       "type": "object",
       "additionalProperties": false,

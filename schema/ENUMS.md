@@ -242,6 +242,45 @@ and a distinct prior-art bound (Yu 2023) — was enriched instead, with its form
 contribution (`contribution_class: "adaptation"`) identified separately from that prior art.
 See the closing comment on issue #7 for the full substitution rationale.
 
+## Publication readiness (`publication`)
+
+A separate review dimension from `trust`/proof authority: a kernel-verified packet may
+still be misleading if its public presentation omits prior work or overstates novelty.
+`publication.status` never affects `trust.rung` / `proof_authority` / `status`, and no code
+path in this repo lets it — citation or novelty uncertainty changes public claim status
+only, never proof truth.
+
+- **`status`**: `metadata_only`, `kernel_verified_unreviewed`, `citation_review_pending`,
+  `novelty_review_pending`, `reviewed_with_caveats`, `publication_ready`,
+  `blocked_missing_attribution`, `blocked_novelty_claim`.
+- **Absent `publication` is valid, not an error** — existing packets remain valid under an
+  implicit default (`tools/mathcorpus/policy.implicit_publication_status`):
+  `kernel_verified_unreviewed` for a kernel-verified packet, `metadata_only` otherwise. This
+  is the "legacy/unreviewed until migrated" state the acceptance criteria ask for.
+- **`policy.check_publication_status`** gates only `publication_ready` (every other status
+  is self-limiting and needs no extra checking):
+  - `publication_ready` with zero `contribution_statements` is rejected — kernel
+    verification alone can never establish it.
+  - `publication_ready` on an `open_problem_related: true` packet requires at least one
+    *current* (not `supersedes`-ed away) `citation_review` with `review_status: "endorsed"`.
+  - A `contribution_class: "new_proof"` declaration ("strong novelty language") is blocked
+    from `publication_ready` unless a current review is endorsed — a disputed or missing
+    review blocks it outright.
+- **Corrections without rewriting history**: a `citation_review` with `supersedes` pointing
+  to an earlier review's `review_id` updates the record without deleting it;
+  `policy.check_literature_lineage` rejects a `supersedes` that doesn't resolve locally.
+- **Exports carry both forms of the contribution statement**: `mathcorpus.export.contribution_summary`
+  renders a human-readable sentence (contribution class, known prior art, publication
+  status, unresolved caveats) added to every exported row as `contribution_summary`; the
+  machine-readable form is the raw `contribution_statements`/`publication` fields, already
+  present in the same row.
+
+**Fixture**: same substitution as #7 — "CDC" doesn't exist in this repo.
+`union_closed_sharpness.v1` carries `publication.status: "reviewed_with_caveats"` (not
+`publication_ready`): it has an endorsed review, but `unresolved_attribution_caveats` names
+the Yu-2023 citation's unverified bibliographic precision honestly rather than claiming full
+readiness it hasn't earned.
+
 ## Importing MCIP bundles / backfilling the corpus
 
 `tools/import_mcip.py` folds an MCIP bundle's records into the child-record fields above

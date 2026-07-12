@@ -215,6 +215,70 @@ def check_packet(packet: dict[str, Any]) -> list[Finding]:
     #     corpus-wide, see check_literature_source_refs).
     findings.extend(check_literature_lineage(packet))
 
+    # 15. Publication-readiness policy: kernel verification alone can never claim
+    #     publication_ready, and a novelty claim is blocked without an endorsed review.
+    findings.extend(check_publication_status(packet))
+
+    return findings
+
+
+# --- publication-readiness policy (issue #8) ----------------------------------------
+
+_STRONG_NOVELTY_CLASS = "new_proof"
+
+
+def implicit_publication_status(packet: dict[str, Any]) -> str:
+    """The status an absent 'publication' field means, per issue #8's acceptance
+    criterion that existing packets remain valid, marked under a legacy/unreviewed
+    default rather than retroactively required to declare one."""
+    if packet.get("status") in ("kernel_verified", "verified_certificate"):
+        return "kernel_verified_unreviewed"
+    return "metadata_only"
+
+
+def _latest_non_superseded_reviews(packet: dict[str, Any]) -> list[dict[str, Any]]:
+    reviews = packet.get("citation_reviews") or []
+    superseded_ids = {r.get("supersedes") for r in reviews if r.get("supersedes")}
+    return [r for r in reviews if r.get("review_id") not in superseded_ids]
+
+
+def check_publication_status(packet: dict[str, Any]) -> list[Finding]:
+    """Kernel verification alone cannot produce publication_ready for an open-problem
+    claim; a new_proof contribution_class ('strong novelty language') is blocked from
+    publication_ready without at least one current, endorsed citation_review.
+    """
+    findings: list[Finding] = []
+    pub = packet.get("publication")
+    status = pub.get("status") if pub else implicit_publication_status(packet)
+    if status != "publication_ready":
+        return findings  # only publication_ready is gated; every other status is self-limiting
+
+    training = packet.get("training") or {}
+    contribution_statements = packet.get("contribution_statements") or []
+    current_reviews = _latest_non_superseded_reviews(packet)
+    has_endorsed_review = any(r.get("review_status") == "endorsed" for r in current_reviews)
+    has_disputed_review = any(r.get("review_status") == "disputed" for r in current_reviews)
+
+    if not contribution_statements:
+        findings.append(_err("publication_ready_missing_contribution_statement",
+                             "publication.status is 'publication_ready' but the packet has "
+                             "no contribution_statements — kernel verification alone cannot "
+                             "establish publication readiness"))
+
+    if training.get("open_problem_related") is True and not has_endorsed_review:
+        findings.append(_err("publication_ready_requires_endorsed_review",
+                             "publication.status is 'publication_ready' for an "
+                             "open_problem_related packet, but no current citation_review "
+                             "has review_status 'endorsed'"))
+
+    strong_novelty = any(s.get("contribution_class") == _STRONG_NOVELTY_CLASS for s in contribution_statements)
+    if strong_novelty and (has_disputed_review or not has_endorsed_review):
+        findings.append(_err("novelty_claim_blocked_without_endorsed_review",
+                             f"publication.status is 'publication_ready' with a "
+                             f"'{_STRONG_NOVELTY_CLASS}' contribution_class, but prior-art "
+                             "review is incomplete or disputed (strong novelty language is "
+                             "blocked until a current review is endorsed)"))
+
     return findings
 
 
@@ -245,6 +309,7 @@ def check_literature_lineage(packet: dict[str, Any]) -> list[Finding]:
                                  f"prior_art_matches[{i}].formal_statement_sha256 does not match "
                                  "the parent packet's hashes.formal_statement_sha256"))
 
+    review_ids_all = {r.get("review_id") for r in (packet.get("citation_reviews") or []) if r.get("review_id")}
     for i, r in enumerate(packet.get("citation_reviews") or []):
         for aid in r.get("reviewed_attribution_ids") or []:
             if aid not in attribution_ids:
@@ -256,6 +321,11 @@ def check_literature_lineage(packet: dict[str, Any]) -> list[Finding]:
                 findings.append(_err("citation_review_dangling_prior_art",
                                      f"citation_reviews[{i}] references match_id '{mid}' "
                                      "which is not in this packet's own prior_art_matches"))
+        supersedes = r.get("supersedes")
+        if supersedes is not None and supersedes not in review_ids_all:
+            findings.append(_err("citation_review_dangling_supersedes",
+                                 f"citation_reviews[{i}].supersedes references review_id '{supersedes}' "
+                                 "which is not in this packet's own citation_reviews"))
 
     review_ids = {r.get("review_id") for r in (packet.get("citation_reviews") or []) if r.get("review_id")}
     for i, s in enumerate(packet.get("contribution_statements") or []):

@@ -11,7 +11,7 @@ from __future__ import annotations
 import copy
 from typing import Any
 
-from .policy import PUBLIC_ELIGIBILITY
+from .policy import PUBLIC_ELIGIBILITY, implicit_publication_status
 
 # Split each eligibility maps to on the public surface.
 ELIGIBILITY_TO_SPLIT = {
@@ -25,6 +25,30 @@ ELIGIBILITY_TO_SPLIT = {
 _CERT_FORBIDDEN = {"private_artifact_uri"}
 # Top-level fields dropped from every public row.
 _ALWAYS_DROP = {"review"}
+
+
+def contribution_summary(packet: dict[str, Any]) -> str | None:
+    """Human-readable rendering of contribution class + publication status + known prior
+    art, for exports (issue #8: 'exports include a human-readable and machine-readable
+    contribution statement'). The machine-readable form is the raw contribution_statements
+    / publication fields, already present in the exported row.
+    """
+    statements = packet.get("contribution_statements") or []
+    pub = packet.get("publication")
+    if not statements and pub is None:
+        return None
+    parts = []
+    if statements:
+        latest = statements[-1]
+        parts.append(f"Contribution class: {latest.get('contribution_class', 'unspecified')}.")
+        prior = latest.get("known_prior_art_refs") or []
+        if prior:
+            parts.append(f"Known prior art: {', '.join(prior)}.")
+    parts.append(f"Publication status: {(pub or {}).get('status') or implicit_publication_status(packet)}.")
+    caveats = (pub or {}).get("unresolved_attribution_caveats") or []
+    if caveats:
+        parts.append(f"Unresolved caveats: {'; '.join(caveats)}.")
+    return " ".join(parts)
 
 
 def split_for(packet: dict[str, Any]) -> str | None:
@@ -87,6 +111,7 @@ def public_row(packet: dict[str, Any]) -> dict[str, Any] | None:
     if isinstance(hashes, dict):
         hashes.pop("private_artifact_bundle_sha256", None)
 
+    row["contribution_summary"] = contribution_summary(packet)
     return row
 
 
@@ -118,6 +143,7 @@ def negative_row(packet: dict[str, Any]) -> dict[str, Any] | None:
     hashes = row.get("hashes")
     if isinstance(hashes, dict):
         hashes.pop("private_artifact_bundle_sha256", None)
+    row["contribution_summary"] = contribution_summary(packet)
     return row
 
 
@@ -128,5 +154,5 @@ def negative_rows(packets: list[dict[str, Any]]) -> list[dict[str, Any]]:
 
 __all__ = [
     "public_row", "public_rows", "negative_row", "negative_rows",
-    "is_public", "split_for", "ELIGIBILITY_TO_SPLIT", "PUBLIC_ELIGIBILITY",
+    "is_public", "split_for", "contribution_summary", "ELIGIBILITY_TO_SPLIT", "PUBLIC_ELIGIBILITY",
 ]

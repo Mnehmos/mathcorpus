@@ -6,8 +6,8 @@ Untriaged or newly-filed issues awaiting a priority call.
 |-------|---------|-------------------|----------|----------|
 |       |         |                   |          |          |
 
-As of 2026-07-11, `Mnehmos/mathcorpus` has 7 open issues (#2-#8), all triaged into
-`FEATURES.md` — a MathCorpus Interchange Protocol (MCIP) roadmap. #1 (MCIP v1 schema
-foundation) is done; see `DONE.md`. #2-#5 and #7 extend `packet.schema.json` with
-MCIP-shaped child records; #6 is the importer/backfill; #8 is publication policy and
-depends on #7.
+As of 2026-07-12, `Mnehmos/mathcorpus` has 0 open issues. The MathCorpus Interchange
+Protocol (MCIP) roadmap (#1-#8) is fully closed — see `DONE.md` for the per-issue summary
+and `FEATURES.md` for the table. All work is committed locally on `main` but **not yet
+pushed** (pre-existing ~220-commits-ahead-of-origin situation, unrelated to this roadmap);
+see `HANDOFF.md` for the push decision that's still pending from the repo owner.

@@ -99,7 +99,7 @@
   },
   "notes": "ANTI-OVERCLAIM: this packet proves only that the constant 1/2 in the union-closed sets conjecture is sharp (cannot be replaced by any larger constant), not the conjecture itself, which remains open in general (the upstream file's own `union_closed` theorem for the general case is `sorry`/`research open`, and this corpus's best transported general bound is Yu 2023's ~0.38234 constant via a different, still-open-in-general theorem). Third and largest of `UnionClosed.lean`'s three proof-complete theorems transported this cycle/session (companions: `union_closed_singleton_mem.v1`, `union_closed_univ_card_two.v1` -- the latter authored independently by a concurrent agent in this same cycle). Restated (not verbatim) in the same two respects as its companions: the upstream `IsUnionClosed` abbrev is inlined directly as `∀ X ∈ A, ∀ Y ∈ A, X ∪ Y ∈ A`, and the upstream `#`/set-builder-filter notation (confirmed `scoped` behind `open Finset` by grepping the vendored Mathlib source) is spelled out as plain `Finset.card`/`Finset.filter` applications, plus the file-local helper `isUnionClosed_univ n` (used to show `Finset.univ` is union-closed) is inlined as a one-line anonymous proof `(by intro X _ Y _; exact Finset.mem_univ _)` at its single call site rather than transported as a separate helper theorem. Otherwise the proof term is essentially verbatim (only variable renames to avoid ambiguous repeated `this`/anonymous `have`s during manual transcription). Kernel-verified on the FIRST attempt (episode d3e6c1ee-ddc3-49e6-b774-6e63e9f8db8e) using `proof_format: raw_lean_block` to preserve the upstream proof's bullet structure exactly (two top-level bullets for the `isEmpty_or_nonempty` case split, plus a nested `constructor`/two-bullet split and a final unbulleted-continuation pattern inside the `hcardi` sub-proof, all copied verbatim). `training.eligibility: quarantined` per this session's default policy for adapted/restated frontier packets; `open_problem_related: true` since the underlying conjecture remains open in general.",
   "hashes": {
-    "packet_sha256": "49c89176d5a811ee6fbd00526f4114566e18f940825b594ac034c975b69129eb",
+    "packet_sha256": "e8511163db20045166dde65b9d06f8cee1c2efc4b314d878fe030fe6f7882e20",
     "formal_statement_sha256": "bf14dc3355c5c97c59a6647b64f772d43139419c1904f7c523d8ef66de0be90c",
     "proof_body_sha256": "7b364f13cb8d981cd2d75de87cfc26e1dc10d7d9561ce9b4678ec01336ee59b1"
   },
@@ -179,5 +179,13 @@
       "author": "The MathCorpus Authors",
       "created_at": "2026-07-12T00:00:00Z"
     }
-  ]
+  ],
+  "publication": {
+    "status": "reviewed_with_caveats",
+    "reviewed_by": "The MathCorpus Authors",
+    "reviewed_at": "2026-07-12T00:00:00Z",
+    "unresolved_attribution_caveats": [
+      "Yu 2023 prior-art citation's bibliographic precision (exact venue, DOI, full author name) has not been independently verified — see literature_sources/literature_source.yu2023_union_closed_bound.v1.json."
+    ]
+  }
 }
