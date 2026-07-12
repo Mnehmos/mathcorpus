@@ -31,6 +31,7 @@ import MathCorpus.Elementary.Algebra.PowOne
 import MathCorpus.Elementary.Algebra.PowTwo
 import MathCorpus.Elementary.Algebra.PowZero
 import MathCorpus.Elementary.Algebra.QuadFormNonneg
+import MathCorpus.Elementary.Algebra.QuadraticPos
 import MathCorpus.Elementary.Algebra.SqSumLe
 import MathCorpus.Elementary.Algebra.SquareOfDifference
 import MathCorpus.Elementary.Algebra.SubEqAddNeg

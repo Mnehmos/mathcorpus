@@ -1,5 +1,5 @@
 {
-  "packet_id": "elementary.algebra.cubic_pos.v1",
+  "packet_id": "elementary.algebra.quadratic_pos.v1",
   "packet_version": "1.0.0",
   "title": "The quadratic a^2+a+1 is always positive",
   "domain": "algebra",
@@ -7,8 +7,8 @@
   "kind": "concept",
   "status": "kernel_verified",
   "difficulty_bin": "D2",
-  "lean_module": "MathCorpus.Elementary.Algebra.CubicPos",
-  "theorem_name": "cubic_pos",
+  "lean_module": "MathCorpus.Elementary.Algebra.QuadraticPos",
+  "theorem_name": "quadratic_pos",
   "imports": [
     "Mathlib"
   ],
@@ -29,8 +29,8 @@
   },
   "informal_statement": "The quadratic a^2+a+1 is always positive.",
   "informal_proof_idea": "Completing the square gives 4(a^2+a+1)=(2a+1)^2+3>0.",
-  "formal_statement_pp": "theorem cubic_pos : ∀ (a : ℝ), 0 < a ^ 2 + a + 1",
-  "proof_body_path": "lean/MathCorpus/Elementary/Algebra/CubicPos.lean",
+  "formal_statement_pp": "theorem quadratic_pos : ∀ (a : ℝ), 0 < a ^ 2 + a + 1",
+  "proof_body_path": "lean/MathCorpus/Elementary/Algebra/QuadraticPos.lean",
   "proof_body_redacted": false,
   "trust": {
     "rung": 1,
@@ -42,11 +42,13 @@
     "public_claim_class": "public_safe"
   },
   "training": {
-    "eligibility": "quarantined",
+    "eligibility": "public_train",
     "reason_codes": [
-      "superseded_naming_correction"
+      "public",
+      "non_benchmark",
+      "unredacted"
     ],
-    "dedupe_cluster_id": "algebra.cubic_pos",
+    "dedupe_cluster_id": "algebra.quadratic_pos",
     "template_family_id": "algebra.sos_inequalities",
     "contamination_risk": "low",
     "can_export_proof_body": true
@@ -70,12 +72,13 @@
   },
   "artifacts": {
     "public_files": [
-      "lean/MathCorpus/Elementary/Algebra/CubicPos.lean"
+      "lean/MathCorpus/Elementary/Algebra/QuadraticPos.lean"
     ]
   },
   "review": {
-    "review_basis": "repo self-review; kernel-verified through the tracked proof-search loop",
-    "reviewer_status": "repo_reviewed"
+    "review_basis": "repo self-review; kernel-verified through the tracked proof-search loop; correctly-named re-issue of a misnamed prior packet, re-verified by a fresh full-corpus Lean build during a data-curation audit",
+    "reviewer_status": "repo_reviewed",
+    "reviewed_at": "2026-07-12"
   },
   "verification": {
     "verifier": "proofsearch",
@@ -88,11 +91,10 @@
     "import_manifest_hash": "aaf21893d520a78dee0787a1bcaf939ee6b922265ff670c272e2e1d450dd29a7",
     "verified_at": "2026-07-08T00:47:00Z"
   },
-  "notes": "SUPERSEDED (naming bug, not a math error): the identifier 'cubic_pos' is wrong -- the theorem a^2+a+1>0 is quadratic, not cubic (the title and informal_statement below already said 'quadratic' correctly; only packet_id/theorem_name/module name were wrong). Superseded by elementary.algebra.quadratic_pos.v1, which reuses this exact proof term and the same underlying kernel-verified episode (eb0c2e12) under the corrected name. This packet is kept as-is (never mutated or deleted) so its hashes and any prior external references (this packet was already pushed to origin/main before the correction) stay reproducible; it is quarantined so fresh exports carry only the correctly-named replacement. Original note: proof authority is the Lean kernel via the tracked proof-search loop (episode eb0c2e12). Found during an external review pasted into this session and independently confirmed by reading both files directly.",
-  "superseded_by": "elementary.algebra.quadratic_pos.v1",
+  "notes": "Supersedes elementary.algebra.cubic_pos.v1, which is kept (not deleted) for hash/history reproducibility but is now quarantined and points here via superseded_by. cubic_pos.v1 was a naming bug, not a math error: the theorem a^2+a+1>0 is quadratic, not cubic, and its own title/informal_statement already said 'quadratic' -- only packet_id, theorem_name, and the Lean module/file name were wrong. This packet reuses the identical proof term and the same underlying kernel-verified episode (eb0c2e12); it is a corrected re-issue, not a new proof attempt. Found during an external review pasted into this session and independently confirmed by reading both files directly.",
   "hashes": {
-    "packet_sha256": "ded8b7ff5ca212741fed6fec172c7b7eda2decf979b8f05b1e1f6718c86b58db",
-    "formal_statement_sha256": "3d21525b2afb5c9025e528fbafea4dfae81c246c5cf7e478d4714202e2485745",
-    "proof_body_sha256": "40028b16c4d46cbb82abc24d9f3ceaa147ef9f75b11e240740318773d16ee6e4"
+    "packet_sha256": "f836524cbe93b220b52499d1f3689f04481b3ce953636effdfa9c3a2ae1d66fa",
+    "formal_statement_sha256": "6b0ffec2a61fd3692d2b4fab96b0710c83214c864a67201a33d9f7df917767ae",
+    "proof_body_sha256": "f57e6f293473c06484aba34f3896754c7090f0d7c28b42e00f438e637e3940c3"
   }
 }

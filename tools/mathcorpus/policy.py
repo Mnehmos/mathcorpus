@@ -219,6 +219,15 @@ def check_packet(packet: dict[str, Any]) -> list[Finding]:
     #     publication_ready, and a novelty claim is blocked without an endorsed review.
     findings.extend(check_publication_status(packet))
 
+    # 16. A superseded packet must not stay eligible for fresh public exports — its own
+    #     hashes/history are preserved (never mutated or deleted), only its eligibility
+    #     changes so new consumers get the replacement, not the deprecated identifier.
+    if packet.get("superseded_by") is not None and eligibility in PUBLIC_ELIGIBILITY:
+        findings.append(_err("superseded_still_publicly_eligible",
+                             f"superseded_by is set ('{packet['superseded_by']}') but "
+                             f"training.eligibility ('{eligibility}') is still public — "
+                             "quarantine the superseded packet so exports carry only the replacement"))
+
     return findings
 
 
@@ -789,6 +798,15 @@ def check_corpus(packets: list[dict[str, Any]]) -> list[Finding]:
             findings.append(_err("template_split_leak",
                                  f"template_family_id '{fam}' spans multiple split families {sorted(splits)}; "
                                  "template families must not cross split boundaries"))
+
+    # superseded_by must resolve to a real packet_id in the corpus.
+    known_ids = {p.get("packet_id") for p in packets if p.get("packet_id")}
+    for p in packets:
+        target = p.get("superseded_by")
+        if target is not None and target not in known_ids:
+            findings.append(_err("superseded_by_dangling",
+                                 f"{p.get('packet_id', '<unknown>')}: superseded_by references "
+                                 f"packet_id '{target}' which is not in the corpus"))
 
     return findings
 

@@ -718,6 +718,11 @@
         "packet_sha256": { "$ref": "#/$defs/sha256" }
       }
     },
-    "notes": { "type": "string" }
+    "notes": { "type": "string" },
+    "superseded_by": {
+      "type": ["string", "null"],
+      "pattern": "^[a-z0-9]+([._][a-z0-9]+)*\\.v[0-9]+$",
+      "description": "packet_id of the packet that replaces this one (e.g. after a naming or identity correction). The superseded packet is never mutated or deleted — its hashes, episode linkage, and any prior external references stay reproducible. Set training.eligibility to quarantined once superseded, so fresh exports carry only the replacement."
+    }
   }
 }

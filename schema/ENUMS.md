@@ -302,6 +302,19 @@ each entry's `record_hash`; `tools/validate_packets.py` structurally validates t
 and checks that every packet's `restriction_profile_id` + `restriction_profile_sha256` pin
 resolves to a current catalog entry (`tools/mathcorpus/policy.check_restriction_profile_refs`).
 
+## `superseded_by`
+
+Points a packet at its replacement (e.g. after a naming or identity correction found in
+review) without mutating or deleting the superseded packet — its `packet_id` and hashes
+stay reproducible for anyone who already referenced them, including across a prior public
+push. The superseded packet's `training.eligibility` must move off every `public_*` value
+(`policy.check_packet`'s `superseded_still_publicly_eligible` rule) so fresh exports carry
+only the replacement; `policy.check_corpus` rejects a `superseded_by` that doesn't resolve
+to a real `packet_id` in the corpus. Example:
+`elementary.algebra.cubic_pos.v1` (misnamed — the theorem is quadratic, not cubic) is
+superseded by `elementary.algebra.quadratic_pos.v1`, which reuses the identical proof term
+and kernel-verified episode under the corrected name.
+
 ## `source_provenance`
 - `source_kind`: `author_written`, `adapted_public_source`, `formal_conjectures`,
   `erdos_problems`, `proofnet_style`, `repo_original`, `imported_open_repo`,
