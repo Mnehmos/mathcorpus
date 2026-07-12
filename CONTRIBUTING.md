@@ -23,6 +23,15 @@ reference a Lean proof under `lean/` via `lean_module` / `proof_body_path`.
 4. **Validate.** `python tools/validate_packets.py packets/<path>.json`
 5. **Open a PR.** CI must be green (see gates below).
 
+### Optional: dependency manifest
+
+`author_packet.py`'s batch spec can now supply a `dependency_manifest` section (and
+`theorem_deps`, which the tool previously accepted but silently dropped) — see the docstring
+in `tools/author_packet.py` for the spec shape and [`schema/ENUMS.md`](schema/ENUMS.md#dependency_manifest)
+for the field vocabulary and validation rules. Prefer supplying this from real Proof Search
+evidence over guessing; `claim_sources[].source` should say `verifier_export` when it came
+from a tracked episode and `manual` only when a human is asserting it after the fact.
+
 ### Optional: additional proof variants
 
 A packet may record extra proofs of its own statement under `proof_variants` — e.g. a

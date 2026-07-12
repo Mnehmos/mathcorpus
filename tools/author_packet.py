@@ -26,6 +26,7 @@ Spec JSON shape:
       "informal_proof_idea": "...",
       "dedupe_cluster_id": "algebra.binomial_cube",
       "template_family_id": "algebra.factorization_basics",
+      "theorem_deps": ["add_mul"],          # optional, Mathlib/MathCorpus deps actually cited
       "kits": ["core_algebra", "ring_automation"],
       "tactic_tags": ["ring"],
       "prerequisite_concepts": ["distributivity", "binomial"],
@@ -33,6 +34,15 @@ Spec JSON shape:
         "episode_id": "...", "import_manifest_hash": "...",
         "trajectory_first_hash": "...", "trajectory_last_hash": "...",
         "verified_at": "2026-07-07T17:35:52Z"
+      },
+      "dependency_manifest": {               # optional; omitted keys default (env_hash) or empty
+        "used_theorem_deps": ["add_mul"],
+        "verified_module_item_deps": ["add_mul"],
+        "retrieval_candidates": ["add_mul", "mul_add"],
+        "retrieved_unused_candidates": ["mul_add"],
+        "claim_sources": [
+          {"dependency_id": "add_mul", "category": "used", "source": "verifier_export"}
+        ]
       },
       "eligibility": "public_train"         # optional, default public_train
     }
@@ -144,6 +154,7 @@ def build_packet(spec: dict, toolchain: dict, env_hash: str) -> dict:
             "can_export_proof_body": True,
         },
         "dependencies": {
+            "theorem_deps": spec.get("theorem_deps", []),
             "kits": spec.get("kits", []),
             "tactic_tags": spec.get("tactic_tags", []),
             "prerequisite_concepts": spec.get("prerequisite_concepts", []),
@@ -160,7 +171,26 @@ def build_packet(spec: dict, toolchain: dict, env_hash: str) -> dict:
                           f"(episode {v['episode_id'][:8]})."),
         "hashes": {"packet_sha256": "0" * 64},
     }
+    if spec.get("dependency_manifest"):
+        packet["dependency_manifest"] = _dependency_manifest(spec["dependency_manifest"], env_hash)
     return packet
+
+
+def _dependency_manifest(dm: dict, env_hash: str) -> dict:
+    """Assemble a dependency_manifest from spec input, defaulting environment_hash to the
+    batch's own pinned environment_hash unless the spec overrides it."""
+    out = {"environment_hash": dm.get("environment_hash", env_hash)}
+    for field in (
+        "declared_theorem_deps", "used_theorem_deps", "obligation_deps",
+        "verified_module_item_deps", "retrieval_candidates", "retrieved_unused_candidates",
+        "claim_sources",
+    ):
+        if field in dm:
+            out[field] = dm[field]
+    for field in ("transitive_dependency_count", "transitive_dependency_depth"):
+        if field in dm:
+            out[field] = dm[field]
+    return out
 
 
 def write_lean(spec: dict) -> Path:

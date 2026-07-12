@@ -77,6 +77,38 @@ top-level fields regardless of how many variants exist. Cross-field checks live 
 - `proof_profile.automation_level`: `none`, `assisted`, `semi_automated`,
   `fully_automated`.
 
+## `dependency_manifest`
+
+Richer, Proof-Search-sourced dependency evidence (`$defs/dependency_manifest`), additive to
+the shallow top-level `dependencies` object. Distinguishes what was **declared**, **used**,
+raised as a proof-search **obligation**, confirmed as a **verified module item**, offered as
+a **retrieval candidate**, or **retrieved but unused** — six distinct categories, not one
+merged list. `claim_sources[]` records, per dependency id, which category it belongs to and
+whether that claim came from a human (`manual`), an MCIP import (`proof_search_import`), or
+a verifier export (`verifier_export`).
+
+Cross-field checks (`tools/mathcorpus/policy.py`):
+
+- `check_dependency_manifest` (per packet): `environment_hash` must match the parent
+  packet's `verification.environment_hash`; a dependency id cannot be claimed both `used`
+  and `retrieved_unused` (direct contradiction); every `claim_sources[]` entry's
+  `dependency_id` must actually appear in the array its `category` names.
+- `check_dependency_manifest_refs` (corpus-wide): any dependency id shaped like a
+  MathCorpus `packet_id` must resolve to a real packet (no dangling references) and must
+  not form a cycle through other packets' manifests. Mathlib declaration names (not
+  packet-id-shaped) aren't checkable this way — there is no local Mathlib index to resolve
+  against.
+
+`tools/build_manifests.py` aggregates `dependency_manifest` data corpus-wide into
+`manifests/dependency_graph.json`'s `dependency_manifest_summary`: frequency per dependency
+id per category, and min/max/avg transitive depth across packets that carry a manifest.
+
+**Not yet a blocking gate**: the roadmap (issue #2 of the MCIP series) calls for
+kernel-verified Proof-Search packets to *reference* a dependency manifest. Enforcing that as
+a hard `validate_packets.py` error today would fail every one of the ~350 packets authored
+before this field existed. It is deferred to the corpus-wide backfill (issue #6); until
+then, `dependency_manifest` is opt-in and validated only when present.
+
 ## Restriction profiles (`restriction_profiles/`)
 
 A restriction profile is a hash-pinned, reusable constraint set (forbidden/allowed

@@ -18,10 +18,22 @@ Each check yields :class:`Finding` objects at ``error`` (blocks release) or ``wa
 
 from __future__ import annotations
 
+import re
 from dataclasses import dataclass
 from typing import Any
 
 from .hashing import formal_statement_hash, packet_hash
+
+PACKET_ID_RE = re.compile(r"^[a-z0-9]+([._][a-z0-9]+)*\.v[0-9]+$")
+
+_DEP_CATEGORY_TO_ARRAY = {
+    "declared": "declared_theorem_deps",
+    "used": "used_theorem_deps",
+    "obligation": "obligation_deps",
+    "verified_module_item": "verified_module_item_deps",
+    "retrieval_candidate": "retrieval_candidates",
+    "retrieved_unused": "retrieved_unused_candidates",
+}
 
 # --- taxonomy constants -----------------------------------------------------------
 
@@ -187,6 +199,97 @@ def check_packet(packet: dict[str, Any]) -> list[Finding]:
 
     # 10. Proof variants must not silently disagree with their parent packet's own evidence.
     findings.extend(check_proof_variants(packet))
+
+    # 11. Dependency manifest internal consistency.
+    findings.extend(check_dependency_manifest(packet))
+
+    return findings
+
+
+def check_dependency_manifest(packet: dict[str, Any]) -> list[Finding]:
+    """A dependency_manifest's own claims must be internally consistent.
+
+    Declared, retrieved, and used dependencies must remain distinct categories: a claim's
+    ``dependency_id`` must actually appear in the array its ``category`` names, and a
+    dependency cannot simultaneously be 'used' and 'retrieved but unused' — that is a direct
+    contradiction in the evidence, not a matter of taste.
+    """
+    findings: list[Finding] = []
+    dm = packet.get("dependency_manifest")
+    if not dm:
+        return findings
+
+    env = dm.get("environment_hash")
+    packet_env = (packet.get("verification") or {}).get("environment_hash")
+    if env is not None and packet_env is not None and env != packet_env:
+        findings.append(_err("dependency_manifest_environment_mismatch",
+                             "dependency_manifest.environment_hash does not match "
+                             "the parent packet's verification.environment_hash"))
+
+    used = set(dm.get("used_theorem_deps") or [])
+    unused = set(dm.get("retrieved_unused_candidates") or [])
+    overlap = used & unused
+    if overlap:
+        findings.append(_err("dependency_manifest_used_unused_contradiction",
+                             f"dependency ids claimed both used and retrieved-unused: {sorted(overlap)}"))
+
+    for i, claim in enumerate(dm.get("claim_sources") or []):
+        category = claim.get("category")
+        array_field = _DEP_CATEGORY_TO_ARRAY.get(category)
+        dep_id = claim.get("dependency_id")
+        if array_field and dep_id not in (dm.get(array_field) or []):
+            findings.append(_err("dependency_claim_source_unlisted",
+                                 f"claim_sources[{i}] claims '{dep_id}' as category '{category}' "
+                                 f"but it is not present in dependency_manifest.{array_field}"))
+
+    return findings
+
+
+# --- corpus-wide dependency-manifest checks -----------------------------------------
+
+def check_dependency_manifest_refs(packets: list[dict[str, Any]]) -> list[Finding]:
+    """Cross-packet checks over dependency_manifest that need the whole corpus.
+
+    Only dependency ids shaped like a MathCorpus packet_id are checkable against the
+    corpus (Mathlib declaration names are not resolvable here); those must resolve to a
+    real packet (no dangling references) and must not form a cycle.
+    """
+    findings: list[Finding] = []
+    known_ids = {p.get("packet_id") for p in packets if p.get("packet_id")}
+    graph: dict[str, set[str]] = {}
+
+    for p in packets:
+        pid = p.get("packet_id", "<unknown>")
+        dm = p.get("dependency_manifest")
+        if not dm:
+            continue
+        referenced: set[str] = set()
+        for field in ("used_theorem_deps", "verified_module_item_deps", "obligation_deps", "declared_theorem_deps"):
+            for dep in dm.get(field) or []:
+                if PACKET_ID_RE.match(dep):
+                    referenced.add(dep)
+                    if dep not in known_ids:
+                        findings.append(_err("dependency_manifest_dangling_ref",
+                                             f"{pid}: dependency_manifest.{field} references "
+                                             f"packet_id '{dep}' which is not in the corpus"))
+        graph[pid] = referenced
+
+    seen_cycles: set[frozenset[tuple[str, str]]] = set()
+    for start in graph:
+        stack = [(start, [start])]
+        while stack:
+            node, path = stack.pop()
+            for nxt in graph.get(node, ()):
+                if nxt == start:
+                    cycle_nodes = path + [nxt]
+                    edges = frozenset(zip(cycle_nodes, cycle_nodes[1:]))
+                    if edges not in seen_cycles:
+                        seen_cycles.add(edges)
+                        findings.append(_err("dependency_manifest_cycle",
+                                             "dependency cycle through MathCorpus packet references: "
+                                             + " -> ".join(cycle_nodes)))
+                elif nxt not in path:
+                    stack.append((nxt, path + [nxt]))
 
     return findings
 

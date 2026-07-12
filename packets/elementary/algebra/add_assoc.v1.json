@@ -106,6 +106,37 @@
       "source": "proof_search"
     }
   ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "add_assoc"
+    ],
+    "used_theorem_deps": [
+      "add_assoc"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "add_assoc"
+    ],
+    "transitive_dependency_count": 1,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "add_assoc"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "add_assoc",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "add_assoc",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 3,
     "tactic_count": 1
@@ -131,7 +162,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode d3dd664a).",
   "hashes": {
-    "packet_sha256": "1ace064c82658befe6b756b75c6f1300c263ae3c719c6714f6856a1a098b537f",
+    "packet_sha256": "758a7aff129bb7e9c4af7fa17db07792936b11acfa48a88bde48e66fc26f3c0f",
     "formal_statement_sha256": "b90182e61b67b4c1f0c7706c0265f96a2db4ffd7cbf629202d37f4adb1f503f7",
     "proof_body_sha256": "ade2be9cc10bb260ef2761d8bd559780b2df33bf7a25b6aed31876d38105b774"
   }

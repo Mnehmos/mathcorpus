@@ -81,7 +81,7 @@ def main() -> int:
             print("\n".join(file_findings))
 
     # Corpus-wide.
-    corpus_findings = policy.check_corpus(corpus_data)
+    corpus_findings = policy.check_corpus(corpus_data) + policy.check_dependency_manifest_refs(corpus_data)
     if corpus_findings:
         print("<corpus>:")
         for f in corpus_findings:

@@ -60,6 +60,39 @@
         "uses_case_analysis": { "type": "boolean" }
       }
     },
+    "dependency_claim_source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["dependency_id", "category", "source"],
+      "properties": {
+        "dependency_id": { "type": "string", "minLength": 1 },
+        "category": {
+          "type": "string",
+          "enum": [
+            "declared", "used", "obligation", "verified_module_item",
+            "retrieval_candidate", "retrieved_unused"
+          ]
+        },
+        "source": { "type": "string", "enum": ["manual", "proof_search_import", "verifier_export"] }
+      }
+    },
+    "dependency_manifest": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Richer, Proof-Search-sourced dependency evidence. Distinct from (and additive to) the shallow top-level 'dependencies' object: this record distinguishes declared, retrieved, and actually-used dependencies rather than merging them into one list.",
+      "properties": {
+        "environment_hash": { "type": "string" },
+        "declared_theorem_deps": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+        "used_theorem_deps": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+        "obligation_deps": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+        "verified_module_item_deps": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+        "transitive_dependency_count": { "type": ["integer", "null"], "minimum": 0 },
+        "transitive_dependency_depth": { "type": ["integer", "null"], "minimum": 0 },
+        "retrieval_candidates": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+        "retrieved_unused_candidates": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+        "claim_sources": { "type": "array", "items": { "$ref": "#/$defs/dependency_claim_source" } }
+      }
+    },
     "proof_variant": {
       "type": "object",
       "additionalProperties": false,
@@ -287,6 +320,7 @@
       "description": "Zero or more additional proofs of this packet's statement, in styles other than (or including) the canonical proof_body_path. Adding variants never mutates the packet's own canonical identity/hash fields. See schema/mcip/v1/README.md — these mirror the MCIP ProofVariant/ProofProfile shapes. Cross-field checks (statement/environment/proof hash must match parent evidence; restricted variants must hash-pin a resolvable restriction profile) are enforced by tools/validate_packets.py.",
       "items": { "$ref": "#/$defs/proof_variant" }
     },
+    "dependency_manifest": { "$ref": "#/$defs/dependency_manifest" },
     "metrics": {
       "type": "object",
       "additionalProperties": false,
