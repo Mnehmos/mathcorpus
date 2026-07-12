@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Mnehmos/mathcorpus/schema/mcip/v1/prior_art_match.schema.json",
+  "title": "MCIP PriorArtMatch v1",
+  "description": "A post-hoc finding that existing published work overlaps with a packet's result — discovered during review, never claimed to have been model-visible. Distinguished from IdeaAttribution by record type alone (no visibility field needed): a PriorArtMatch is inherently post-hoc by construction, which is what keeps model-visible influence and post-hoc prior-art discovery from being conflated at the schema level.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "record_type", "record_id", "packet_id", "environment_hash",
+    "created_at", "trust_status", "export_eligibility", "record_hash",
+    "formal_statement_sha256", "literature_source_id", "match_type"
+  ],
+  "properties": {
+    "schema_version": { "$ref": "_defs.schema.json#/$defs/mcip_version" },
+    "record_type": { "const": "prior_art_match" },
+    "record_id": { "$ref": "_defs.schema.json#/$defs/record_id" },
+    "packet_id": { "$ref": "_defs.schema.json#/$defs/packet_id" },
+    "environment_hash": { "type": "string", "minLength": 1 },
+    "artifact_hashes": { "$ref": "_defs.schema.json#/$defs/artifact_hashes" },
+    "created_at": { "$ref": "_defs.schema.json#/$defs/iso_timestamp" },
+    "trust_status": { "$ref": "_defs.schema.json#/$defs/trust_status" },
+    "export_eligibility": { "$ref": "_defs.schema.json#/$defs/export_eligibility" },
+    "record_hash": { "$ref": "_defs.schema.json#/$defs/sha256" },
+    "formal_statement_sha256": { "$ref": "_defs.schema.json#/$defs/sha256_or_null" },
+    "literature_source_id": { "type": "string", "minLength": 1 },
+    "external_claim_id": { "type": ["string", "null"] },
+    "match_type": {
+      "type": "string",
+      "enum": ["same_result", "stronger_result", "weaker_result", "related_technique", "independent_rediscovery"]
+    },
+    "discovered_at": { "$ref": "_defs.schema.json#/$defs/iso_timestamp" },
+    "discovery_method": { "type": ["string", "null"], "description": "e.g. 'post_hoc_literature_search'." },
+    "confidence": { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
+    "notes": { "type": ["string", "null"] }
+  }
+}

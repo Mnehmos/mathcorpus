@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Mnehmos/mathcorpus/schema/mcip/v1/literature_source.schema.json",
+  "title": "MCIP LiteratureSource v1",
+  "description": "Bibliographic metadata and a stable identifier for a paper, book, or web source that may be cited by one or more packets. Lives in a shared catalog (literature_sources/) and is referenced by hash-pinned id, not duplicated per packet — mirrors how restriction_profiles/ works for RestrictionProfile.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "record_type", "record_id", "packet_id", "environment_hash",
+    "created_at", "trust_status", "export_eligibility", "record_hash", "title"
+  ],
+  "properties": {
+    "schema_version": { "$ref": "_defs.schema.json#/$defs/mcip_version" },
+    "record_type": { "const": "literature_source" },
+    "record_id": { "$ref": "_defs.schema.json#/$defs/record_id" },
+    "packet_id": {
+      "$ref": "_defs.schema.json#/$defs/packet_id",
+      "description": "The packet whose review first catalogued this source. Not an ownership restriction — any packet may cite this source by (record_id, record_hash), same as restriction_profiles."
+    },
+    "environment_hash": { "type": "string", "minLength": 1 },
+    "artifact_hashes": { "$ref": "_defs.schema.json#/$defs/artifact_hashes" },
+    "created_at": { "$ref": "_defs.schema.json#/$defs/iso_timestamp" },
+    "trust_status": { "$ref": "_defs.schema.json#/$defs/trust_status" },
+    "export_eligibility": { "$ref": "_defs.schema.json#/$defs/export_eligibility" },
+    "record_hash": { "$ref": "_defs.schema.json#/$defs/sha256" },
+    "title": { "type": "string", "minLength": 1 },
+    "authors": { "type": "array", "items": { "type": "string" } },
+    "publication_year": { "type": ["integer", "null"] },
+    "venue": { "type": ["string", "null"], "description": "Journal, conference, publisher, or site name." },
+    "external_ids": {
+      "type": "object",
+      "description": "Stable external identifiers keyed by scheme, e.g. {\"url\": \"...\", \"arxiv\": \"2301.00001\", \"doi\": \"10.1234/x\", \"isbn\": \"...\"}.",
+      "additionalProperties": { "type": "string" }
+    },
+    "source_sha256": {
+      "$ref": "_defs.schema.json#/$defs/sha256_or_null",
+      "description": "Hash of the archived source content, if retained. Null if only bibliographic metadata is recorded."
+    },
+    "retrieved_at": { "$ref": "_defs.schema.json#/$defs/iso_timestamp" },
+    "access_note": { "type": ["string", "null"], "description": "e.g. 'publicly accessible web page', 'paywalled, accessed via institutional license'." }
+  }
+}

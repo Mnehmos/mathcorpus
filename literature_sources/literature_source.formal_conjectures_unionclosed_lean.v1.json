@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "literature_source",
+  "record_id": "literature_source.formal_conjectures_unionclosed_lean.v1",
+  "packet_id": "frontier.formal_conjectures.union_closed_sharpness.v1",
+  "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+  "created_at": "2026-07-12T00:00:00Z",
+  "trust_status": "candidate_unverified",
+  "export_eligibility": "restricted",
+  "record_hash": "238a9dd771cd44900d7316d45fa2789ea6f835050e036a052feb5fa09b99f445",
+  "title": "FormalConjectures/Wikipedia/UnionClosed.lean (union_closed.variants.sharpness)",
+  "authors": [
+    "FormalConjectures contributors"
+  ],
+  "publication_year": null,
+  "venue": "sibling repo mnehmos.llm-driven-proof-search.environment/formal-conjectures",
+  "external_ids": {
+    "repo_path": "FormalConjectures/Wikipedia/UnionClosed.lean"
+  },
+  "source_sha256": null,
+  "access_note": "Sibling repository, not publicly published; the specific proof term (union_closed_sharpness) was transported/adapted from here per the packet's own authoring notes."
+}

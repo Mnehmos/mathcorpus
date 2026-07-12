@@ -275,6 +275,93 @@
         { "type": "null" }
       ]
     },
+    "idea_attribution": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "attribution_id", "literature_source_id", "source_sha256_pin",
+        "attribution_status", "visibility"
+      ],
+      "properties": {
+        "attribution_id": { "type": "string", "minLength": 1 },
+        "formal_statement_sha256": { "$ref": "#/$defs/sha256_or_null" },
+        "proof_variant_id": { "type": ["string", "null"] },
+        "literature_source_id": { "type": "string", "minLength": 1 },
+        "external_claim_id": { "type": ["string", "null"] },
+        "source_sha256_pin": {
+          "$ref": "#/$defs/sha256",
+          "description": "Hash-pin of the referenced literature_sources/ catalog entry's record_hash at attribution time."
+        },
+        "attribution_status": {
+          "type": "string",
+          "enum": [
+            "directly_used", "likely_influential", "background_only",
+            "independent_rediscovery", "uncertain", "not_used"
+          ]
+        },
+        "visibility": { "type": "string", "enum": ["model_visible", "post_hoc"] },
+        "dependency_refs": { "type": "array", "items": { "type": "string" } },
+        "reviewer": { "type": ["string", "null"] },
+        "notes": { "type": ["string", "null"] }
+      }
+    },
+    "prior_art_match": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["match_id", "literature_source_id", "match_type"],
+      "properties": {
+        "match_id": { "type": "string", "minLength": 1 },
+        "formal_statement_sha256": { "$ref": "#/$defs/sha256_or_null" },
+        "literature_source_id": { "type": "string", "minLength": 1 },
+        "external_claim_id": { "type": ["string", "null"] },
+        "match_type": {
+          "type": "string",
+          "enum": ["same_result", "stronger_result", "weaker_result", "related_technique", "independent_rediscovery"]
+        },
+        "discovered_at": { "type": ["string", "null"] },
+        "discovery_method": { "type": ["string", "null"] },
+        "confidence": { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
+        "notes": { "type": ["string", "null"] }
+      }
+    },
+    "citation_review": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["review_id", "reviewer", "reviewer_confidence", "review_status", "reviewed_at"],
+      "properties": {
+        "review_id": { "type": "string", "minLength": 1 },
+        "reviewed_attribution_ids": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+        "reviewed_prior_art_ids": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+        "reviewer": { "type": "string", "minLength": 1 },
+        "reviewer_confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+        "review_status": { "type": "string", "enum": ["endorsed", "disputed", "needs_more_evidence"] },
+        "notes": { "type": ["string", "null"] },
+        "reviewed_at": { "type": "string" },
+        "supersedes": { "type": ["string", "null"] }
+      }
+    },
+    "contribution_statement": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["statement_id", "contribution_class", "author", "created_at"],
+      "properties": {
+        "statement_id": { "type": "string", "minLength": 1 },
+        "contribution_class": {
+          "type": "string",
+          "enum": [
+            "new_proof", "independent_rediscovery", "formalization", "verification",
+            "reconstruction", "adaptation", "literature_derived_synthesis"
+          ]
+        },
+        "known_prior_art_refs": { "type": "array", "items": { "type": "string" } },
+        "literature_search_scope": { "type": ["string", "null"] },
+        "literature_search_date": { "type": ["string", "null"] },
+        "citation_review_ids": { "type": "array", "items": { "type": "string" } },
+        "ai_assistance_disclosure": { "type": ["string", "null"] },
+        "author": { "type": "string", "minLength": 1 },
+        "created_at": { "type": "string" }
+      }
+    },
     "proof_variant": {
       "type": "object",
       "additionalProperties": false,
@@ -528,6 +615,26 @@
       "type": "array",
       "description": "Difficulty observed empirically across one or more of this packet's own 'model_runs', kept strictly separate from the top-level author-assigned difficulty_bin. Multiple aggregates (different suites, or historical re-runs) may coexist.",
       "items": { "$ref": "#/$defs/empirical_difficulty_aggregate" }
+    },
+    "idea_attributions": {
+      "type": "array",
+      "description": "Claims that a literature_sources/ catalog entry influenced (or explicitly did not influence) this packet's proof. Never changes kernel-verification status — this is child evidence about provenance, not proof authority. See schema/ENUMS.md#literature-lineage.",
+      "items": { "$ref": "#/$defs/idea_attribution" }
+    },
+    "prior_art_matches": {
+      "type": "array",
+      "description": "Post-hoc findings that existing published work overlaps with this packet's result. Inherently post-hoc by record type — never conflated with idea_attributions[].visibility='model_visible' evidence.",
+      "items": { "$ref": "#/$defs/prior_art_match" }
+    },
+    "citation_reviews": {
+      "type": "array",
+      "description": "Reviewer assessments of this packet's idea_attributions/prior_art_matches. Multiple, even disputed, reviews coexist as separate entries; a new review never overwrites an earlier one.",
+      "items": { "$ref": "#/$defs/citation_review" }
+    },
+    "contribution_statements": {
+      "type": "array",
+      "description": "Declarations of what kind of new contribution this packet's proof represents. Kernel verification alone never implies a contribution_class. Multiple statements may exist over time; earlier ones are not deleted when revised.",
+      "items": { "$ref": "#/$defs/contribution_statement" }
     },
     "metrics": {
       "type": "object",

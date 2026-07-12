@@ -29,6 +29,13 @@ RECORD_TYPE_TO_SCHEMA_FILE = {
     "repair_trajectory": "repair_trajectory.schema.json",
     "model_run": "model_run.schema.json",
     "empirical_difficulty_aggregate": "empirical_difficulty_aggregate.schema.json",
+    "literature_source": "literature_source.schema.json",
+    "retrieved_passage": "retrieved_passage.schema.json",
+    "external_claim": "external_claim.schema.json",
+    "idea_attribution": "idea_attribution.schema.json",
+    "prior_art_match": "prior_art_match.schema.json",
+    "citation_review": "citation_review.schema.json",
+    "contribution_statement": "contribution_statement.schema.json",
 }
 
 SCHEMA_DIR = Path(__file__).resolve().parent.parent.parent / "schema" / "mcip" / "v1"

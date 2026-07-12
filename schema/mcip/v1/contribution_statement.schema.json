@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Mnehmos/mathcorpus/schema/mcip/v1/contribution_statement.schema.json",
+  "title": "MCIP ContributionStatement v1",
+  "description": "A declaration of what kind of new contribution a packet's proof represents, given the literature landscape found by its IdeaAttribution/PriorArtMatch/CitationReview records. Kernel verification alone never implies a contribution_class — this is a separate, explicit editorial claim. Multiple statements may exist over time (e.g. revised after a later literature review); the most recent is authoritative for publication decisions, but earlier ones are not deleted.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "record_type", "record_id", "packet_id", "environment_hash",
+    "created_at", "trust_status", "export_eligibility", "record_hash",
+    "contribution_class", "author"
+  ],
+  "properties": {
+    "schema_version": { "$ref": "_defs.schema.json#/$defs/mcip_version" },
+    "record_type": { "const": "contribution_statement" },
+    "record_id": { "$ref": "_defs.schema.json#/$defs/record_id" },
+    "packet_id": { "$ref": "_defs.schema.json#/$defs/packet_id" },
+    "environment_hash": { "type": "string", "minLength": 1 },
+    "artifact_hashes": { "$ref": "_defs.schema.json#/$defs/artifact_hashes" },
+    "created_at": { "$ref": "_defs.schema.json#/$defs/iso_timestamp" },
+    "trust_status": { "$ref": "_defs.schema.json#/$defs/trust_status" },
+    "export_eligibility": { "$ref": "_defs.schema.json#/$defs/export_eligibility" },
+    "record_hash": { "$ref": "_defs.schema.json#/$defs/sha256" },
+    "contribution_class": {
+      "type": "string",
+      "enum": [
+        "new_proof", "independent_rediscovery", "formalization", "verification",
+        "reconstruction", "adaptation", "literature_derived_synthesis"
+      ]
+    },
+    "known_prior_art_refs": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "record_id values of PriorArtMatch (or, lacking a specific match, LiteratureSource) entries this statement accounts for."
+    },
+    "literature_search_scope": { "type": ["string", "null"] },
+    "literature_search_date": { "type": ["string", "null"] },
+    "citation_review_ids": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "record_id values of the CitationReview entries this statement is based on."
+    },
+    "ai_assistance_disclosure": { "type": ["string", "null"] },
+    "author": { "type": "string", "minLength": 1 }
+  }
+}

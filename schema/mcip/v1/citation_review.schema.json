@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Mnehmos/mathcorpus/schema/mcip/v1/citation_review.schema.json",
+  "title": "MCIP CitationReview v1",
+  "description": "A reviewer's assessment of one or more IdeaAttribution/PriorArtMatch records for a packet. Multiple (even disputed) reviews coexist as separate records — a new review never overwrites an earlier one. 'supersedes' points backward to an earlier review this one updates, so review history is preserved rather than edited in place.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "record_type", "record_id", "packet_id", "environment_hash",
+    "created_at", "trust_status", "export_eligibility", "record_hash",
+    "reviewer", "reviewer_confidence", "review_status", "reviewed_at"
+  ],
+  "properties": {
+    "schema_version": { "$ref": "_defs.schema.json#/$defs/mcip_version" },
+    "record_type": { "const": "citation_review" },
+    "record_id": { "$ref": "_defs.schema.json#/$defs/record_id" },
+    "packet_id": { "$ref": "_defs.schema.json#/$defs/packet_id" },
+    "environment_hash": { "type": "string", "minLength": 1 },
+    "artifact_hashes": { "$ref": "_defs.schema.json#/$defs/artifact_hashes" },
+    "created_at": { "$ref": "_defs.schema.json#/$defs/iso_timestamp" },
+    "trust_status": { "$ref": "_defs.schema.json#/$defs/trust_status" },
+    "export_eligibility": { "$ref": "_defs.schema.json#/$defs/export_eligibility" },
+    "record_hash": { "$ref": "_defs.schema.json#/$defs/sha256" },
+    "reviewed_attribution_ids": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+    "reviewed_prior_art_ids": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+    "reviewer": { "type": "string", "minLength": 1 },
+    "reviewer_confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+    "review_status": { "type": "string", "enum": ["endorsed", "disputed", "needs_more_evidence"] },
+    "notes": { "type": ["string", "null"] },
+    "reviewed_at": { "$ref": "_defs.schema.json#/$defs/iso_timestamp" },
+    "supersedes": { "type": ["string", "null"], "description": "record_id of an earlier CitationReview this one updates." }
+  }
+}

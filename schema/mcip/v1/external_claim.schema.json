@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Mnehmos/mathcorpus/schema/mcip/v1/external_claim.schema.json",
+  "title": "MCIP ExternalClaim v1",
+  "description": "A specific claim (theorem statement, construction, proof strategy, definition, or conjecture) asserted by a LiteratureSource, decoupled from whether it influenced any particular proof. Whether it did is a separate IdeaAttribution record — an ExternalClaim existing is not itself a claim of influence. Lives in the shared literature_sources/ catalog.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "record_type", "record_id", "packet_id", "environment_hash",
+    "created_at", "trust_status", "export_eligibility", "record_hash",
+    "literature_source_id", "claim_text", "claim_type"
+  ],
+  "properties": {
+    "schema_version": { "$ref": "_defs.schema.json#/$defs/mcip_version" },
+    "record_type": { "const": "external_claim" },
+    "record_id": { "$ref": "_defs.schema.json#/$defs/record_id" },
+    "packet_id": { "$ref": "_defs.schema.json#/$defs/packet_id" },
+    "environment_hash": { "type": "string", "minLength": 1 },
+    "artifact_hashes": { "$ref": "_defs.schema.json#/$defs/artifact_hashes" },
+    "created_at": { "$ref": "_defs.schema.json#/$defs/iso_timestamp" },
+    "trust_status": { "$ref": "_defs.schema.json#/$defs/trust_status" },
+    "export_eligibility": { "$ref": "_defs.schema.json#/$defs/export_eligibility" },
+    "record_hash": { "$ref": "_defs.schema.json#/$defs/sha256" },
+    "literature_source_id": { "type": "string", "minLength": 1 },
+    "retrieved_passage_id": { "type": ["string", "null"] },
+    "claim_text": { "type": "string", "minLength": 1 },
+    "claim_type": {
+      "type": "string",
+      "enum": ["theorem_statement", "construction", "proof_strategy", "definition", "conjecture", "other"]
+    },
+    "formal_statement_sha256": {
+      "$ref": "_defs.schema.json#/$defs/sha256_or_null",
+      "description": "Set if this claim has itself been matched to a formalized statement (this corpus's or another's)."
+    }
+  }
+}

@@ -211,6 +211,122 @@ def check_packet(packet: dict[str, Any]) -> list[Finding]:
     #     model_runs, and must never claim to have overwritten the author-assigned bin.
     findings.extend(check_empirical_difficulty_aggregates(packet))
 
+    # 14. Literature lineage: internal reference consistency (catalog resolution is
+    #     corpus-wide, see check_literature_source_refs).
+    findings.extend(check_literature_lineage(packet))
+
+    return findings
+
+
+def check_literature_lineage(packet: dict[str, Any]) -> list[Finding]:
+    """citation_reviews / contribution_statements must only reference this packet's own
+    idea_attributions / prior_art_matches — cross-packet resolution isn't meaningful here,
+    unlike repair_trajectory's cross-packet terminal_ref (a review is about ITS packet's
+    claims). formal_statement_sha256 on attributions/matches must match the parent packet's
+    own, when both are set, same as proof_variants.
+    """
+    findings: list[Finding] = []
+    packet_fsh = (packet.get("hashes") or {}).get("formal_statement_sha256")
+
+    attribution_ids = {a.get("attribution_id") for a in (packet.get("idea_attributions") or []) if a.get("attribution_id")}
+    prior_art_ids = {m.get("match_id") for m in (packet.get("prior_art_matches") or []) if m.get("match_id")}
+
+    for i, a in enumerate(packet.get("idea_attributions") or []):
+        fsh = a.get("formal_statement_sha256")
+        if fsh is not None and packet_fsh is not None and fsh != packet_fsh:
+            findings.append(_err("idea_attribution_statement_hash_mismatch",
+                                 f"idea_attributions[{i}].formal_statement_sha256 does not match "
+                                 "the parent packet's hashes.formal_statement_sha256"))
+
+    for i, m in enumerate(packet.get("prior_art_matches") or []):
+        fsh = m.get("formal_statement_sha256")
+        if fsh is not None and packet_fsh is not None and fsh != packet_fsh:
+            findings.append(_err("prior_art_match_statement_hash_mismatch",
+                                 f"prior_art_matches[{i}].formal_statement_sha256 does not match "
+                                 "the parent packet's hashes.formal_statement_sha256"))
+
+    for i, r in enumerate(packet.get("citation_reviews") or []):
+        for aid in r.get("reviewed_attribution_ids") or []:
+            if aid not in attribution_ids:
+                findings.append(_err("citation_review_dangling_attribution",
+                                     f"citation_reviews[{i}] references attribution_id '{aid}' "
+                                     "which is not in this packet's own idea_attributions"))
+        for mid in r.get("reviewed_prior_art_ids") or []:
+            if mid not in prior_art_ids:
+                findings.append(_err("citation_review_dangling_prior_art",
+                                     f"citation_reviews[{i}] references match_id '{mid}' "
+                                     "which is not in this packet's own prior_art_matches"))
+
+    review_ids = {r.get("review_id") for r in (packet.get("citation_reviews") or []) if r.get("review_id")}
+    for i, s in enumerate(packet.get("contribution_statements") or []):
+        for rid in s.get("citation_review_ids") or []:
+            if rid not in review_ids:
+                findings.append(_err("contribution_statement_dangling_review",
+                                     f"contribution_statements[{i}] references citation_review_id "
+                                     f"'{rid}' which is not in this packet's own citation_reviews"))
+
+    return findings
+
+
+# --- corpus-wide literature-source catalog checks -----------------------------------
+
+def check_literature_source_refs(
+    packets: list[dict[str, Any]], literature_sources: dict[str, dict[str, Any]]
+) -> list[Finding]:
+    """Every literature_source_id / external_claim_id / source_sha256_pin must resolve in
+    the shared literature_sources/ catalog. Mirrors check_restriction_profile_refs.
+    """
+    findings: list[Finding] = []
+    for p in packets:
+        pid = p.get("packet_id", "<unknown>")
+        for i, a in enumerate(p.get("idea_attributions") or []):
+            src_id = a.get("literature_source_id")
+            entry = literature_sources.get(src_id)
+            if entry is None:
+                findings.append(_err("idea_attribution_dangling_source",
+                                     f"{pid}: idea_attributions[{i}] references literature_source_id "
+                                     f"'{src_id}' which is not in the literature_sources/ catalog"))
+                continue
+            pinned = a.get("source_sha256_pin")
+            actual = entry.get("record_hash")
+            if pinned is not None and pinned != actual:
+                findings.append(_err("idea_attribution_stale_source_pin",
+                                     f"{pid}: idea_attributions[{i}] pins literature_source_id "
+                                     f"'{src_id}' at hash {pinned}, but the catalog entry's current "
+                                     f"record_hash is {actual}"))
+            claim_id = a.get("external_claim_id")
+            if claim_id is not None and claim_id not in literature_sources:
+                findings.append(_err("idea_attribution_dangling_claim",
+                                     f"{pid}: idea_attributions[{i}] references external_claim_id "
+                                     f"'{claim_id}' which is not in the literature_sources/ catalog"))
+
+        for i, m in enumerate(p.get("prior_art_matches") or []):
+            src_id = m.get("literature_source_id")
+            if src_id not in literature_sources:
+                findings.append(_err("prior_art_match_dangling_source",
+                                     f"{pid}: prior_art_matches[{i}] references literature_source_id "
+                                     f"'{src_id}' which is not in the literature_sources/ catalog"))
+            claim_id = m.get("external_claim_id")
+            if claim_id is not None and claim_id not in literature_sources:
+                findings.append(_err("prior_art_match_dangling_claim",
+                                     f"{pid}: prior_art_matches[{i}] references external_claim_id "
+                                     f"'{claim_id}' which is not in the literature_sources/ catalog"))
+
+    return findings
+
+
+def check_literature_source_catalog(literature_sources: dict[str, dict[str, Any]]) -> list[Finding]:
+    """Catalog-entry-level consistency: a RetrievedPassage marked redacted must not still
+    carry its passage_text — matching the same redaction-contradiction rule check_packet
+    already applies to proof_body_redacted / can_export_proof_body.
+    """
+    findings: list[Finding] = []
+    for record_id, entry in literature_sources.items():
+        if entry.get("record_type") != "retrieved_passage":
+            continue
+        if entry.get("passage_redacted") is True and entry.get("passage_text") is not None:
+            findings.append(_err("retrieved_passage_redaction_contradiction",
+                                 f"{record_id}: passage_redacted=true but passage_text is still present"))
     return findings
 
 

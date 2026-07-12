@@ -19,11 +19,14 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from mathcorpus import loader, policy  # noqa: E402
+from mathcorpus.mcip import RECORD_TYPE_TO_SCHEMA_FILE  # noqa: E402
 from mathcorpus.mcip import record_hash as mcip_record_hash  # noqa: E402
 from mathcorpus.mcip import validator_for_schema_file  # noqa: E402
 
 SCHEMA_PATH = Path(__file__).resolve().parent.parent / "schema" / "packet.schema.json"
 RESTRICTION_PROFILES_DIR = Path(__file__).resolve().parent.parent / "restriction_profiles"
+LITERATURE_SOURCES_DIR = Path(__file__).resolve().parent.parent / "literature_sources"
+LITERATURE_SOURCE_RECORD_TYPES = {"literature_source", "retrieved_passage", "external_claim"}
 
 
 def _load_schema_validator():
@@ -137,6 +140,51 @@ def main() -> int:
             for f in rp_ref_findings:
                 print(f"  {f}")
                 n_error += 1  # check_restriction_profile_refs only ever emits errors
+
+    # Literature-sources catalog: structural validation (record-type-dispatched, since this
+    # catalog holds 3 distinct MCIP record types) + hash-pin resolution.
+    if LITERATURE_SOURCES_DIR.is_dir():
+        ls_validators = {
+            rtype: validator_for_schema_file(RECORD_TYPE_TO_SCHEMA_FILE[rtype])
+            for rtype in LITERATURE_SOURCE_RECORD_TYPES
+        }
+        literature_sources: dict[str, dict] = {}
+        for ls_file in loader.load_all([str(LITERATURE_SOURCES_DIR)]):
+            ls_findings: list[str] = []
+            rtype = ls_file.data.get("record_type")
+            ls_validator = ls_validators.get(rtype)
+            if ls_validator is None:
+                ls_findings.append(f"  [error] unknown or missing record_type {rtype!r} for literature_sources/ entry")
+                n_error += 1
+            else:
+                for e in sorted(ls_validator.iter_errors(ls_file.data), key=lambda e: e.path):
+                    loc = "/".join(str(x) for x in e.path) or "<root>"
+                    ls_findings.append(f"  [error] schema at {loc}: {e.message}")
+                    n_error += 1
+                if args.check_hashes:
+                    expected = mcip_record_hash(ls_file.data)
+                    if ls_file.data.get("record_hash") != expected:
+                        ls_findings.append(
+                            "  [error] record_hash does not match recompute "
+                            "(run tools/stamp_literature_sources.py)"
+                        )
+                        n_error += 1
+            if ls_findings:
+                print(f"{ls_file.path}:")
+                print("\n".join(ls_findings))
+            record_id = ls_file.data.get("record_id")
+            if record_id:
+                literature_sources[record_id] = ls_file.data
+
+        ls_ref_findings = (
+            policy.check_literature_source_refs(corpus_data, literature_sources)
+            + policy.check_literature_source_catalog(literature_sources)
+        )
+        if ls_ref_findings:
+            print("<literature_sources>:")
+            for f in ls_ref_findings:
+                print(f"  {f}")
+                n_error += 1  # both checks only ever emit errors
 
     total = len(packets)
     print(f"\nChecked {total} packet(s): {n_error} error(s), {n_warn} warning(s).")

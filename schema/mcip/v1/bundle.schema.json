@@ -26,7 +26,9 @@
             "enum": [
               "packet_identity", "proof_variant", "proof_profile", "restriction_profile",
               "dependency_manifest", "attempt_record", "negative_example",
-              "repair_trajectory", "model_run", "empirical_difficulty_aggregate"
+              "repair_trajectory", "model_run", "empirical_difficulty_aggregate",
+              "literature_source", "retrieved_passage", "external_claim",
+              "idea_attribution", "prior_art_match", "citation_review", "contribution_statement"
             ]
           }
         }

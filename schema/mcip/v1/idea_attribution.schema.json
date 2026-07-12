@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Mnehmos/mathcorpus/schema/mcip/v1/idea_attribution.schema.json",
+  "title": "MCIP IdeaAttribution v1",
+  "description": "A claim that a specific LiteratureSource/ExternalClaim influenced (or explicitly did not influence) a specific proof variant. This is the central attribution record — distinct from a bare citation (ExternalClaim/LiteratureSource existing) by carrying attribution_status and visibility. Never changes kernel-verification status: this is child evidence about provenance, not proof authority.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "record_type", "record_id", "packet_id", "environment_hash",
+    "created_at", "trust_status", "export_eligibility", "record_hash",
+    "formal_statement_sha256", "literature_source_id", "source_sha256_pin",
+    "attribution_status", "visibility"
+  ],
+  "properties": {
+    "schema_version": { "$ref": "_defs.schema.json#/$defs/mcip_version" },
+    "record_type": { "const": "idea_attribution" },
+    "record_id": { "$ref": "_defs.schema.json#/$defs/record_id" },
+    "packet_id": { "$ref": "_defs.schema.json#/$defs/packet_id" },
+    "environment_hash": { "type": "string", "minLength": 1 },
+    "artifact_hashes": { "$ref": "_defs.schema.json#/$defs/artifact_hashes" },
+    "created_at": { "$ref": "_defs.schema.json#/$defs/iso_timestamp" },
+    "trust_status": { "$ref": "_defs.schema.json#/$defs/trust_status" },
+    "export_eligibility": { "$ref": "_defs.schema.json#/$defs/export_eligibility" },
+    "record_hash": { "$ref": "_defs.schema.json#/$defs/sha256" },
+    "formal_statement_sha256": {
+      "$ref": "_defs.schema.json#/$defs/sha256_or_null",
+      "description": "Binds this attribution to the packet's statement, per the 'every attribution claim is bound to packet, statement, proof variant, and source hashes' acceptance criterion."
+    },
+    "proof_variant_id": {
+      "type": ["string", "null"],
+      "description": "Which proof variant this attribution concerns, if variant-specific rather than whole-packet."
+    },
+    "literature_source_id": { "type": "string", "minLength": 1 },
+    "external_claim_id": { "type": ["string", "null"] },
+    "source_sha256_pin": {
+      "$ref": "_defs.schema.json#/$defs/sha256",
+      "description": "Hash-pin of the referenced LiteratureSource.source_sha256 or RetrievedPassage.passage_sha256 at attribution time — the same hash-pin pattern as proof_variants[].restriction_profile_sha256. Detects drift if the underlying catalog entry changes."
+    },
+    "attribution_status": {
+      "type": "string",
+      "enum": [
+        "directly_used", "likely_influential", "background_only",
+        "independent_rediscovery", "uncertain", "not_used"
+      ]
+    },
+    "visibility": {
+      "type": "string",
+      "enum": ["model_visible", "post_hoc"],
+      "description": "model_visible: this source was available to/seen by the model during proof search (typically backed by a RetrievedPassage). post_hoc: discovered only during later review. This field is the structural mechanism keeping the two from being conflated."
+    },
+    "dependency_refs": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Links to theorem_deps / dependency_manifest ids, proof-profile features, or other research objects this attribution relates to."
+    },
+    "reviewer": { "type": ["string", "null"] },
+    "notes": { "type": ["string", "null"] }
+  }
+}

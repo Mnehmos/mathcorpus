@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Mnehmos/mathcorpus/schema/mcip/v1/retrieved_passage.schema.json",
+  "title": "MCIP RetrievedPassage v1",
+  "description": "A specific excerpt from a LiteratureSource that was model-visible during a tracked proof-search step — its existence as a record IS the evidence the model saw it. Post-hoc findings (discovered only during later review, never shown to the model) are PriorArtMatch instead, never this — that is the structural mechanism that keeps model-visible and post-hoc evidence from being conflated. Lives in the shared literature_sources/ catalog alongside LiteratureSource.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "record_type", "record_id", "packet_id", "environment_hash",
+    "created_at", "trust_status", "export_eligibility", "record_hash",
+    "literature_source_id", "passage_sha256", "passage_redacted"
+  ],
+  "properties": {
+    "schema_version": { "$ref": "_defs.schema.json#/$defs/mcip_version" },
+    "record_type": { "const": "retrieved_passage" },
+    "record_id": { "$ref": "_defs.schema.json#/$defs/record_id" },
+    "packet_id": { "$ref": "_defs.schema.json#/$defs/packet_id" },
+    "environment_hash": { "type": "string", "minLength": 1 },
+    "artifact_hashes": { "$ref": "_defs.schema.json#/$defs/artifact_hashes" },
+    "created_at": { "$ref": "_defs.schema.json#/$defs/iso_timestamp" },
+    "trust_status": { "$ref": "_defs.schema.json#/$defs/trust_status" },
+    "export_eligibility": { "$ref": "_defs.schema.json#/$defs/export_eligibility" },
+    "record_hash": { "$ref": "_defs.schema.json#/$defs/sha256" },
+    "literature_source_id": { "type": "string", "minLength": 1 },
+    "passage_sha256": {
+      "$ref": "_defs.schema.json#/$defs/sha256",
+      "description": "Hash of the exact passage text. Computed and retained even when passage_text itself is redacted, so public exports can retain the hash without the content."
+    },
+    "passage_text": { "type": ["string", "null"] },
+    "passage_redacted": { "type": "boolean" },
+    "location": { "type": ["string", "null"], "description": "e.g. 'section 2, paragraph 3', 'lines 40-52'." },
+    "retrieval_episode_id": {
+      "type": ["string", "null"],
+      "description": "episode_id of the tracked proof-search episode that retrieved this passage, if applicable — reinforces that this record represents model-visible evidence, not a post-hoc find."
+    },
+    "retrieved_at": { "$ref": "_defs.schema.json#/$defs/iso_timestamp" }
+  }
+}

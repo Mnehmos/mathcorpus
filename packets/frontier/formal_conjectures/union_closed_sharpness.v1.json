@@ -99,8 +99,85 @@
   },
   "notes": "ANTI-OVERCLAIM: this packet proves only that the constant 1/2 in the union-closed sets conjecture is sharp (cannot be replaced by any larger constant), not the conjecture itself, which remains open in general (the upstream file's own `union_closed` theorem for the general case is `sorry`/`research open`, and this corpus's best transported general bound is Yu 2023's ~0.38234 constant via a different, still-open-in-general theorem). Third and largest of `UnionClosed.lean`'s three proof-complete theorems transported this cycle/session (companions: `union_closed_singleton_mem.v1`, `union_closed_univ_card_two.v1` -- the latter authored independently by a concurrent agent in this same cycle). Restated (not verbatim) in the same two respects as its companions: the upstream `IsUnionClosed` abbrev is inlined directly as `∀ X ∈ A, ∀ Y ∈ A, X ∪ Y ∈ A`, and the upstream `#`/set-builder-filter notation (confirmed `scoped` behind `open Finset` by grepping the vendored Mathlib source) is spelled out as plain `Finset.card`/`Finset.filter` applications, plus the file-local helper `isUnionClosed_univ n` (used to show `Finset.univ` is union-closed) is inlined as a one-line anonymous proof `(by intro X _ Y _; exact Finset.mem_univ _)` at its single call site rather than transported as a separate helper theorem. Otherwise the proof term is essentially verbatim (only variable renames to avoid ambiguous repeated `this`/anonymous `have`s during manual transcription). Kernel-verified on the FIRST attempt (episode d3e6c1ee-ddc3-49e6-b774-6e63e9f8db8e) using `proof_format: raw_lean_block` to preserve the upstream proof's bullet structure exactly (two top-level bullets for the `isEmpty_or_nonempty` case split, plus a nested `constructor`/two-bullet split and a final unbulleted-continuation pattern inside the `hcardi` sub-proof, all copied verbatim). `training.eligibility: quarantined` per this session's default policy for adapted/restated frontier packets; `open_problem_related: true` since the underlying conjecture remains open in general.",
   "hashes": {
-    "packet_sha256": "98f20038679d069827c67e98c0a637356287034e17a5ad4696d4003a5d79430f",
+    "packet_sha256": "49c89176d5a811ee6fbd00526f4114566e18f940825b594ac034c975b69129eb",
     "formal_statement_sha256": "bf14dc3355c5c97c59a6647b64f772d43139419c1904f7c523d8ef66de0be90c",
     "proof_body_sha256": "7b364f13cb8d981cd2d75de87cfc26e1dc10d7d9561ce9b4678ec01336ee59b1"
-  }
+  },
+  "idea_attributions": [
+    {
+      "attribution_id": "ucs.attribution.formal_conjectures_source",
+      "formal_statement_sha256": "bf14dc3355c5c97c59a6647b64f772d43139419c1904f7c523d8ef66de0be90c",
+      "proof_variant_id": null,
+      "literature_source_id": "literature_source.formal_conjectures_unionclosed_lean.v1",
+      "external_claim_id": null,
+      "source_sha256_pin": "238a9dd771cd44900d7316d45fa2789ea6f835050e036a052feb5fa09b99f445",
+      "attribution_status": "directly_used",
+      "visibility": "model_visible",
+      "dependency_refs": [],
+      "reviewer": "The MathCorpus Authors",
+      "notes": "Proof term transported/adapted from this file per the packet's own authoring notes (manual transcription, essentially verbatim proof structure)."
+    },
+    {
+      "attribution_id": "ucs.attribution.wikipedia_background",
+      "formal_statement_sha256": "bf14dc3355c5c97c59a6647b64f772d43139419c1904f7c523d8ef66de0be90c",
+      "proof_variant_id": null,
+      "literature_source_id": "literature_source.wikipedia_union_closed_sets.v1",
+      "external_claim_id": null,
+      "source_sha256_pin": "c89da31b27e3b9c3fc60a7f464a94bd0d8a8d6ee2f5624e0bda7a70b13a1e17d",
+      "attribution_status": "background_only",
+      "visibility": "model_visible",
+      "dependency_refs": [],
+      "reviewer": "The MathCorpus Authors",
+      "notes": "Cited as general background for the conjecture statement; not the direct proof source (that is the FormalConjectures Lean file, see the other attribution)."
+    }
+  ],
+  "prior_art_matches": [
+    {
+      "match_id": "ucs.prior_art.yu2023",
+      "formal_statement_sha256": "bf14dc3355c5c97c59a6647b64f772d43139419c1904f7c523d8ef66de0be90c",
+      "literature_source_id": "literature_source.yu2023_union_closed_bound.v1",
+      "external_claim_id": "external_claim.yu2023_bound_statement.v1",
+      "match_type": "related_technique",
+      "discovered_at": null,
+      "discovery_method": "cited_in_original_authoring_notes",
+      "confidence": 0.5,
+      "notes": "This packet proves only that the 1/2 constant is SHARP (cannot be improved) for the family of counterexamples it constructs — a narrow, different claim from Yu 2023's improved general-case bound (~0.38234) for the conjecture itself, which remains open in general. Not a duplicate result; flagged here so a reviewer can confirm the two are not conflated. Confidence 0.5 reflects that the Yu 2023 bibliographic details are themselves unverified (see literature_sources/ catalog entry)."
+    }
+  ],
+  "citation_reviews": [
+    {
+      "review_id": "ucs.review.1",
+      "reviewed_attribution_ids": [
+        "ucs.attribution.formal_conjectures_source",
+        "ucs.attribution.wikipedia_background"
+      ],
+      "reviewed_prior_art_ids": [
+        "ucs.prior_art.yu2023"
+      ],
+      "reviewer": "The MathCorpus Authors",
+      "reviewer_confidence": 0.8,
+      "review_status": "endorsed",
+      "notes": "Attribution to the FormalConjectures source and Wikipedia background is well-documented in the packet's pre-existing notes/source_provenance. The Yu 2023 prior-art flag is retained at lower confidence pending an independent bibliography check.",
+      "reviewed_at": "2026-07-12T00:00:00Z",
+      "supersedes": null
+    }
+  ],
+  "contribution_statements": [
+    {
+      "statement_id": "ucs.contribution.1",
+      "contribution_class": "adaptation",
+      "known_prior_art_refs": [
+        "ucs.prior_art.yu2023",
+        "literature_source.yu2023_union_closed_bound.v1"
+      ],
+      "literature_search_scope": "Reviewed the packet's own pre-existing source_provenance and notes fields (Wikipedia article, FormalConjectures sibling-repo Lean file, and an internal note citing Yu 2023's improved general bound); no new independent literature search was performed as part of this MCIP literature-lineage retrofit (issue #7).",
+      "literature_search_date": "2026-07-12",
+      "citation_review_ids": [
+        "ucs.review.1"
+      ],
+      "ai_assistance_disclosure": "Original proof transported/adapted by an AI coding agent from FormalConjectures' UnionClosed.lean into this corpus's Lean dialect, per the packet's own authoring notes (2026-07-08). This literature-lineage retrofit (issue #7) was also performed by an AI coding agent, formalizing citation information already present in the packet's notes/source_provenance into the new structured schema — no new literature research was conducted for this retrofit.",
+      "author": "The MathCorpus Authors",
+      "created_at": "2026-07-12T00:00:00Z"
+    }
+  ]
 }

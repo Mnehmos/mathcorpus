@@ -191,6 +191,57 @@ comparative pass rates for a real packet,
 fixture (`kind: concept`, `training.eligibility: private_audit_only` — excluded from every
 export lane) with two illustrative model runs and a genuinely recomputed aggregate.
 
+## Literature lineage (`idea_attributions[]`, `prior_art_matches[]`, `citation_reviews[]`, `contribution_statements[]`)
+
+Formal correctness, source provenance, and intellectual lineage are separately auditable.
+Mirrors MCIP's `IdeaAttribution`/`PriorArtMatch`/`CitationReview`/`ContributionStatement`
+(new record types added in #7 — see `schema/mcip/v1/` for the full set including
+`LiteratureSource`/`RetrievedPassage`/`ExternalClaim`). Never changes kernel-verification
+status: this is child evidence about provenance, not proof authority.
+
+- **`literature_sources/`** is a shared, hash-pinned, reusable catalog (same pattern as
+  `restriction_profiles/`) holding `LiteratureSource` (bibliographic metadata),
+  `RetrievedPassage` (a model-visible excerpt — its existence as a record IS the evidence
+  the model saw it, tied to a `retrieval_episode_id`), and `ExternalClaim` (a specific claim
+  a source asserts, decoupled from whether it influenced any proof). Structurally validated
+  by `tools/validate_packets.py`; stamped by `tools/stamp_literature_sources.py`.
+- **`idea_attributions[].visibility`**: `model_visible` (available to/seen during proof
+  search, typically backed by a `RetrievedPassage`) or `post_hoc` (discovered only during
+  later review). `attribution_status`: `directly_used`, `likely_influential`,
+  `background_only`, `independent_rediscovery`, `uncertain`, `not_used`.
+  `source_sha256_pin` hash-pins the referenced catalog entry, checked by
+  `policy.check_literature_source_refs` exactly like `restriction_profile_sha256`.
+- **`prior_art_matches[]`** are inherently post-hoc by record type alone — no `visibility`
+  field needed. That structural separation (a different record type, not a shared field) is
+  what keeps model-visible influence and post-hoc discovery from being conflated.
+  `match_type`: `same_result`, `stronger_result`, `weaker_result`, `related_technique`,
+  `independent_rediscovery`.
+- **`citation_reviews[]`**: multiple, even disputed, reviews coexist as separate array
+  entries — a new review never overwrites an earlier one. `supersedes` points backward to
+  an earlier review it updates, preserving history instead of editing it away.
+  `review_status`: `endorsed`, `disputed`, `needs_more_evidence`.
+- **`contribution_statements[].contribution_class`**: `new_proof`, `independent_rediscovery`,
+  `formalization`, `verification`, `reconstruction`, `adaptation`,
+  `literature_derived_synthesis` — the same vocabulary issue #8's publication policy
+  requires. Kernel verification alone never implies a class; this is a separate, explicit
+  editorial claim.
+
+Cross-field checks: `policy.check_literature_lineage` (per packet — dangling
+attribution/prior-art references within `citation_reviews`/`contribution_statements`,
+statement-hash consistency) and corpus-wide `policy.check_literature_source_refs` (dangling
+catalog references, stale hash pins) + `policy.check_literature_source_catalog` (a
+`RetrievedPassage` marked `passage_redacted` must not still carry `passage_text` — the same
+redaction-contradiction rule already applied to `proof_body_redacted`).
+
+**Fixture**: the acceptance criterion names "CDC" with "prior Fano-flow work" — neither
+exists anywhere in this repo (confirmed by search) or in this project's known history; it
+appears to reference work external to this corpus. Rather than fabricate that scenario,
+`packets/frontier/formal_conjectures/union_closed_sharpness.v1.json` — a real packet whose
+own pre-existing notes already document its FormalConjectures source, Wikipedia background,
+and a distinct prior-art bound (Yu 2023) — was enriched instead, with its formal-verification
+contribution (`contribution_class: "adaptation"`) identified separately from that prior art.
+See the closing comment on issue #7 for the full substitution rationale.
+
 ## Importing MCIP bundles / backfilling the corpus
 
 `tools/import_mcip.py` folds an MCIP bundle's records into the child-record fields above

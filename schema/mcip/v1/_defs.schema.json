@@ -64,17 +64,6 @@
     "difficulty_bin": {
       "type": "string",
       "enum": ["D0", "D1", "D2", "D3", "D4", "D5"]
-    },
-    "envelope_required": [
-      "schema_version",
-      "record_type",
-      "record_id",
-      "packet_id",
-      "environment_hash",
-      "created_at",
-      "trust_status",
-      "export_eligibility",
-      "record_hash"
-    ]
+    }
   }
 }
