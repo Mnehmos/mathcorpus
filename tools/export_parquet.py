@@ -27,9 +27,46 @@ _SCALAR_COLUMNS = [
     "informal_statement", "proof_body_redacted", "split",
 ]
 
+# Enrichment summaries hoisted out of nested arrays/objects into native columns, so a
+# Parquet consumer can filter/aggregate on them without parsing packet_json. Each is a
+# (column_name, extractor) pair; the extractor returns None when the source data is absent.
+
+
+def _canonical_proof_class(row: dict):
+    for v in row.get("proof_variants") or []:
+        if v.get("variant_style") == "canonical":
+            profile = v.get("proof_profile") or {}
+            return profile.get("primary_proof_class")
+    return None
+
+
+def _best_eventual_pass_rate(row: dict):
+    rates = [r["eventual_pass_rate"] for r in (row.get("model_runs") or []) if r.get("eventual_pass_rate") is not None]
+    return max(rates) if rates else None
+
+
+def _latest_observed_difficulty_bin(row: dict):
+    aggs = row.get("empirical_difficulty_aggregates") or []
+    return aggs[-1].get("calibrated_difficulty_bin") if aggs else None
+
+
+_DERIVED_COLUMNS = [
+    ("proof_variant_count", lambda r: len(r.get("proof_variants") or [])),
+    ("canonical_proof_class", _canonical_proof_class),
+    ("dependency_transitive_depth", lambda r: (r.get("dependency_manifest") or {}).get("transitive_dependency_depth")),
+    ("attempt_count", lambda r: len(r.get("attempts") or [])),
+    ("attempt_failed_count", lambda r: sum(1 for a in (r.get("attempts") or []) if a.get("outcome") == "failed")),
+    ("negative_example_count", lambda r: len(r.get("negative_examples") or [])),
+    ("model_run_count", lambda r: len(r.get("model_runs") or [])),
+    ("best_eventual_pass_rate", _best_eventual_pass_rate),
+    ("observed_difficulty_bin", _latest_observed_difficulty_bin),
+]
+
 
 def _flatten(row: dict) -> dict:
     out = {c: row.get(c) for c in _SCALAR_COLUMNS}
+    for col, extractor in _DERIVED_COLUMNS:
+        out[col] = extractor(row)
     out["packet_json"] = json.dumps(row, ensure_ascii=False, sort_keys=True)
     return out
 
@@ -54,7 +91,7 @@ def main() -> int:
         print("No public rows to export.")
         return 0
 
-    columns = _SCALAR_COLUMNS + ["packet_json"]
+    columns = _SCALAR_COLUMNS + [c for c, _ in _DERIVED_COLUMNS] + ["packet_json"]
     table = pa.table({c: [r.get(c) for r in rows] for c in columns})
     out = Path(args.out)
     out.parent.mkdir(parents=True, exist_ok=True)

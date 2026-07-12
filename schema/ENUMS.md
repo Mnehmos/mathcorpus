@@ -149,6 +149,48 @@ covers `parse_failure`, `unknown_declaration`, and `type_mismatch` with illustra
 real-telemetry) diagnostics — it is explicitly `training.eligibility: private_audit_only` so
 it never reaches a public or negative-example export.
 
+## `model_runs[]`, `empirical_difficulty_aggregates[]`
+
+Multi-model empirical difficulty evidence, mirroring MCIP's `ModelRun`/
+`EmpiricalDifficultyAggregate` from #1. Strictly additive: nothing in this repo ever writes
+to a packet's own top-level `difficulty_bin` (the author-assigned bin) from this data — the
+two are deliberately kept apart, and `empirical_difficulty_aggregate.author_difficulty_bin`
+is only ever an *echo* of what the author bin was at aggregation time, for comparison.
+
+- `model_run.censored_fields[]`: names of fields on that record whose true value is known
+  but deliberately withheld (e.g. by export/redaction policy) — distinct from `null`, which
+  means "not collected". This is how "missing or censored model metadata is represented
+  honestly" is satisfied: the schema never conflates the two.
+- `empirical_difficulty_aggregate.calibration_version`: currently only `"v1"` is defined.
+  `tools/mathcorpus/difficulty.py` implements it: `observed_difficulty_score` is `1 -`
+  the unweighted mean `eventual_pass_rate` across the aggregate's referenced `model_runs`
+  (runs missing a rate are excluded, not treated as 0); `calibrated_difficulty_bin` maps
+  that score through fixed thresholds (`≤0.05→D0 … >0.90→D5`). A future recalibration gets
+  a new version rather than silently changing what an existing stored score means.
+  `tools/mathcorpus/policy.check_empirical_difficulty_aggregates` recomputes both from the
+  packet's own `model_runs` and rejects a mismatch — **aggregates are reproducible, not just
+  asserted.** Multiple aggregates (different suites, or repeated historical runs) may
+  coexist on one packet; an exact-duplicate `(evaluation_suite_version, policy_version,
+  calibration_version, model_run_ids)` signature is flagged as a warning, not blocked.
+
+**Corpus-level reporting**: `tools/mathcorpus/aggregates.py` (shared by
+`build_manifests.py`'s `dependency_graph.json` and `corpus_stats.py`) summarizes proof-class
+distribution, dependency transitive depth, negative-example counts (standalone packets vs.
+embedded), and per-model-family episode-weighted pass rate. `tools/export_parquet.py` hoists
+the same enrichment summaries (`proof_variant_count`, `canonical_proof_class`,
+`dependency_transitive_depth`, `attempt_count`, `negative_example_count`,
+`best_eventual_pass_rate`, `observed_difficulty_bin`, …) into native Parquet columns instead
+of leaving them reachable only by parsing the `packet_json` string column. JSONL exports
+already expose nested fields natively (each row is a full JSON object), so no change was
+needed there.
+
+**Fixture**: no packet in this corpus has real multi-model evaluation data yet — the
+roadmap's Phase 7 evaluation suite hasn't started (`docs/roadmap.md`). Rather than fabricate
+comparative pass rates for a real packet,
+`packets/_fixtures/model_performance_conformance.v1.json` is a new, explicitly synthetic
+fixture (`kind: concept`, `training.eligibility: private_audit_only` — excluded from every
+export lane) with two illustrative model runs and a genuinely recomputed aggregate.
+
 ## Restriction profiles (`restriction_profiles/`)
 
 A restriction profile is a hash-pinned, reusable constraint set (forbidden/allowed

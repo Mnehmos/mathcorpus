@@ -195,6 +195,86 @@
         }
       }
     },
+    "model_run": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "model_run_id", "evaluation_suite_version", "policy_version",
+        "model_family", "model_version", "model_config_hash"
+      ],
+      "properties": {
+        "model_run_id": { "type": "string", "minLength": 1 },
+        "evaluation_suite_version": { "type": "string", "minLength": 1 },
+        "policy_version": { "type": "string", "minLength": 1 },
+        "model_family": { "type": "string", "minLength": 1 },
+        "model_version": { "type": "string", "minLength": 1 },
+        "model_config_hash": { "$ref": "#/$defs/sha256" },
+        "episode_count": { "type": "integer", "minimum": 0 },
+        "seeds": { "type": "array", "items": { "type": "integer" } },
+        "first_attempt_pass_rate": { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
+        "eventual_pass_rate": { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
+        "attempts_to_pass_distribution": {
+          "type": "object",
+          "additionalProperties": { "type": "number", "minimum": 0 }
+        },
+        "tokens": { "type": ["integer", "null"], "minimum": 0 },
+        "cost": { "type": ["number", "null"], "minimum": 0 },
+        "wall_time_ms": { "type": ["number", "null"], "minimum": 0 },
+        "lean_cpu_time_ms": { "type": ["number", "null"], "minimum": 0 },
+        "failure_category_distribution": {
+          "type": "object",
+          "additionalProperties": { "type": "number", "minimum": 0 }
+        },
+        "censored_fields": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Names of fields on this record whose true value is known but deliberately withheld (e.g. by export/redaction policy) — distinct from null, which means 'not collected'."
+        }
+      }
+    },
+    "empirical_difficulty_aggregate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "aggregate_id", "model_run_ids", "calibration_version",
+        "observed_difficulty_score", "calibrated_difficulty_bin",
+        "evaluation_suite_version", "policy_version"
+      ],
+      "properties": {
+        "aggregate_id": { "type": "string", "minLength": 1 },
+        "model_run_ids": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string", "minLength": 1 },
+          "uniqueItems": true,
+          "description": "model_run_id values, from this same packet's own 'model_runs', this aggregate was reproducibly computed from."
+        },
+        "calibration_version": {
+          "type": "string",
+          "enum": ["v1"],
+          "description": "Which formula in tools/mathcorpus/difficulty.py computed this aggregate. A new formula gets a new version rather than silently changing what a stored score means."
+        },
+        "observed_difficulty_score": { "type": "number" },
+        "calibrated_difficulty_bin": { "$ref": "#/$defs/difficulty_bin_value" },
+        "author_difficulty_bin": {
+          "oneOf": [
+            { "$ref": "#/$defs/difficulty_bin_value" },
+            { "type": "null" }
+          ],
+          "description": "Echo of the packet's own top-level difficulty_bin at aggregation time, for comparison only. Never used to overwrite it."
+        },
+        "evaluation_suite_version": { "type": "string", "minLength": 1 },
+        "policy_version": { "type": "string", "minLength": 1 },
+        "computed_at": { "$ref": "#/$defs/iso_timestamp_or_null" }
+      }
+    },
+    "difficulty_bin_value": { "type": "string", "enum": ["D0", "D1", "D2", "D3", "D4", "D5"] },
+    "iso_timestamp_or_null": {
+      "oneOf": [
+        { "type": "string" },
+        { "type": "null" }
+      ]
+    },
     "proof_variant": {
       "type": "object",
       "additionalProperties": false,
@@ -437,6 +517,16 @@
       "type": "array",
       "description": "Ordered, hash-linked chains from a failed attempt to a terminus (a verified proof variant or an explicit final failure).",
       "items": { "$ref": "#/$defs/repair_trajectory" }
+    },
+    "model_runs": {
+      "type": "array",
+      "description": "Multi-model empirical evaluation evidence for this packet. Additive; never overwrites author-assigned difficulty_bin. See schema/mcip/v1/README.md — mirrors MCIP's ModelRun.",
+      "items": { "$ref": "#/$defs/model_run" }
+    },
+    "empirical_difficulty_aggregates": {
+      "type": "array",
+      "description": "Difficulty observed empirically across one or more of this packet's own 'model_runs', kept strictly separate from the top-level author-assigned difficulty_bin. Multiple aggregates (different suites, or historical re-runs) may coexist.",
+      "items": { "$ref": "#/$defs/empirical_difficulty_aggregate" }
     },
     "metrics": {
       "type": "object",

@@ -18,7 +18,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-from mathcorpus import loader  # noqa: E402
+from mathcorpus import aggregates, loader  # noqa: E402
 
 
 def _write(path: Path, obj) -> None:
@@ -85,40 +85,9 @@ def main() -> int:
             for dep in deps.get(kind, []) or []:
                 edges[pid].append({"to": dep, "type": kind})
 
-    # dependency_manifest aggregate: frequency per dependency id per category, and
-    # transitive-depth distribution across packets that carry a manifest.
-    freq: dict[str, Counter] = defaultdict(Counter)
-    depths: list[int] = []
-    manifest_packet_count = 0
-    for p in packets:
-        dm = p.get("dependency_manifest")
-        if not dm:
-            continue
-        manifest_packet_count += 1
-        for category, field in (
-            ("declared", "declared_theorem_deps"), ("used", "used_theorem_deps"),
-            ("obligation", "obligation_deps"), ("verified_module_item", "verified_module_item_deps"),
-            ("retrieval_candidate", "retrieval_candidates"), ("retrieved_unused", "retrieved_unused_candidates"),
-        ):
-            for dep in dm.get(field) or []:
-                freq[category][dep] += 1
-        if dm.get("transitive_dependency_depth") is not None:
-            depths.append(dm["transitive_dependency_depth"])
-
-    dependency_manifest_summary = {
-        "packets_with_manifest": manifest_packet_count,
-        "frequency_by_category": {cat: dict(counter.most_common()) for cat, counter in freq.items()},
-        "transitive_depth": {
-            "min": min(depths) if depths else None,
-            "max": max(depths) if depths else None,
-            "avg": (sum(depths) / len(depths)) if depths else None,
-            "n": len(depths),
-        },
-    }
-
     _write(out / "dependency_graph.json", {"nodes": [p.get("packet_id") for p in packets],
                                            "edges": dict(sorted(edges.items())),
-                                           "dependency_manifest_summary": dependency_manifest_summary})
+                                           "dependency_manifest_summary": aggregates.dependency_manifest_summary(packets)})
 
     print(f"Wrote corpus_index.json, license_manifest.json, SOURCE_MANIFEST.json, "
           f"dependency_graph.json to {out}/ ({len(packets)} packet(s)).")

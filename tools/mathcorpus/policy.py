@@ -22,6 +22,7 @@ import re
 from dataclasses import dataclass
 from typing import Any
 
+from . import difficulty
 from .hashing import formal_statement_hash, packet_hash, repair_step_hash
 
 PACKET_ID_RE = re.compile(r"^[a-z0-9]+([._][a-z0-9]+)*\.v[0-9]+$")
@@ -205,6 +206,68 @@ def check_packet(packet: dict[str, Any]) -> list[Finding]:
 
     # 12. Attempts / negative examples / repair trajectories internal consistency.
     findings.extend(check_attempts_and_repairs(packet))
+
+    # 13. Empirical difficulty aggregates must be reproducible from this packet's own
+    #     model_runs, and must never claim to have overwritten the author-assigned bin.
+    findings.extend(check_empirical_difficulty_aggregates(packet))
+
+    return findings
+
+
+def check_empirical_difficulty_aggregates(packet: dict[str, Any]) -> list[Finding]:
+    """Each aggregate must recompute from its referenced model_runs (same packet only)."""
+    findings: list[Finding] = []
+    model_runs = packet.get("model_runs") or []
+    runs_by_id = {r.get("model_run_id"): r for r in model_runs if r.get("model_run_id")}
+    author_bin = packet.get("difficulty_bin")
+    seen_signatures: set[tuple] = set()
+
+    for i, agg in enumerate(packet.get("empirical_difficulty_aggregates") or []):
+        ids = agg.get("model_run_ids") or []
+        referenced = []
+        for rid in ids:
+            run = runs_by_id.get(rid)
+            if run is None:
+                findings.append(_err("empirical_difficulty_dangling_model_run",
+                                     f"empirical_difficulty_aggregates[{i}] references model_run_id "
+                                     f"'{rid}' which is not in this packet's own 'model_runs'"))
+            else:
+                referenced.append(run)
+
+        if len(referenced) == len(ids) and agg.get("calibration_version") == difficulty.CALIBRATION_VERSION:
+            try:
+                expected_score, expected_bin = difficulty.compute(referenced)
+            except ValueError:
+                findings.append(_err("empirical_difficulty_no_usable_rate",
+                                     f"empirical_difficulty_aggregates[{i}]: none of its referenced "
+                                     "model_runs have an eventual_pass_rate to compute from"))
+            else:
+                if agg.get("observed_difficulty_score") != expected_score:
+                    findings.append(_err("empirical_difficulty_score_not_reproducible",
+                                         f"empirical_difficulty_aggregates[{i}].observed_difficulty_score "
+                                         f"({agg.get('observed_difficulty_score')}) does not match "
+                                         f"recompute ({expected_score}) from its referenced model_runs"))
+                if agg.get("calibrated_difficulty_bin") != expected_bin:
+                    findings.append(_err("empirical_difficulty_bin_not_reproducible",
+                                         f"empirical_difficulty_aggregates[{i}].calibrated_difficulty_bin "
+                                         f"('{agg.get('calibrated_difficulty_bin')}') does not match "
+                                         f"recompute ('{expected_bin}') from its referenced model_runs"))
+
+        if author_bin is not None and agg.get("author_difficulty_bin") not in (None, author_bin):
+            findings.append(_warn("empirical_difficulty_author_bin_stale",
+                                  f"empirical_difficulty_aggregates[{i}].author_difficulty_bin "
+                                  f"('{agg.get('author_difficulty_bin')}') disagrees with the packet's "
+                                  f"current difficulty_bin ('{author_bin}') — expected for a historical "
+                                  "aggregate, verify if unexpected"))
+
+        sig = (agg.get("evaluation_suite_version"), agg.get("policy_version"),
+               agg.get("calibration_version"), tuple(sorted(ids)))
+        if sig in seen_signatures:
+            findings.append(_warn("empirical_difficulty_duplicate_aggregate",
+                                  f"empirical_difficulty_aggregates[{i}] has the same "
+                                  "(evaluation_suite_version, policy_version, calibration_version, "
+                                  "model_run_ids) as an earlier aggregate on this packet"))
+        seen_signatures.add(sig)
 
     return findings
 

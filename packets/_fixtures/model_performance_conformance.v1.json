@@ -1,0 +1,125 @@
+{
+  "packet_id": "fixtures.metrics.model_performance_conformance.v1",
+  "packet_version": "1.0.0",
+  "title": "Schema conformance fixture: multi-model empirical difficulty",
+  "domain": "logic",
+  "level": "L0_elementary",
+  "kind": "concept",
+  "status": "empirical_only",
+  "difficulty_bin": "D0",
+  "source_provenance": {
+    "source_kind": "repo_original",
+    "source_refs": [],
+    "authors": [
+      "The MathCorpus Authors"
+    ],
+    "copyright_holder": "The MathCorpus Authors",
+    "license_spdx": "Apache-2.0",
+    "license_content": "CC-BY-4.0",
+    "statement_fidelity": "author_written"
+  },
+  "informal_statement": "Schema-conformance fixture only, not real evaluation data. MathCorpus has not yet run its Phase 7 multi-model evaluation suite (see docs/roadmap.md), so no packet in this corpus has genuine comparative model_runs yet. This fixture exercises model_runs[] / empirical_difficulty_aggregates[] and the reproducible difficulty-calibration formula (tools/mathcorpus/difficulty.py) against two illustrative models with different pass rates.",
+  "proof_body_redacted": false,
+  "trust": {
+    "rung": 0,
+    "proof_authority": "none",
+    "public_claim_class": "restricted"
+  },
+  "training": {
+    "eligibility": "private_audit_only",
+    "reason_codes": [
+      "schema_conformance_fixture",
+      "not_real_telemetry"
+    ],
+    "contamination_risk": "low"
+  },
+  "model_runs": [
+    {
+      "model_run_id": "mr.fixture.model_a",
+      "evaluation_suite_version": "fixture-eval-suite.v1",
+      "policy_version": "fixture-policy.v1",
+      "model_family": "model-a-family",
+      "model_version": "model-a-2026-06",
+      "model_config_hash": "09055ecadd5f82324604ce9c162c5861352729bed7b6f0496a343ef87d5a8f13",
+      "episode_count": 8,
+      "seeds": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "first_attempt_pass_rate": 0.375,
+      "eventual_pass_rate": 0.75,
+      "attempts_to_pass_distribution": {
+        "1": 3,
+        "2": 2,
+        "3+": 1
+      },
+      "tokens": 18400,
+      "cost": 0.42,
+      "wall_time_ms": 96000.0,
+      "lean_cpu_time_ms": 5200.0,
+      "failure_category_distribution": {
+        "unsolved_goals": 2
+      },
+      "censored_fields": []
+    },
+    {
+      "model_run_id": "mr.fixture.model_b",
+      "evaluation_suite_version": "fixture-eval-suite.v1",
+      "policy_version": "fixture-policy.v1",
+      "model_family": "model-b-family",
+      "model_version": "model-b-2026-06",
+      "model_config_hash": "059b712a3ddab837f9c9a5bcfb6c7d5014d71eb5f1f1ae69ab30e6a2089f6488",
+      "episode_count": 8,
+      "seeds": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "first_attempt_pass_rate": 0.625,
+      "eventual_pass_rate": 1.0,
+      "attempts_to_pass_distribution": {
+        "1": 5,
+        "2": 3
+      },
+      "tokens": 15100,
+      "cost": 0.38,
+      "wall_time_ms": 81000.0,
+      "lean_cpu_time_ms": 4700.0,
+      "failure_category_distribution": {},
+      "censored_fields": [
+        "cost"
+      ]
+    }
+  ],
+  "empirical_difficulty_aggregates": [
+    {
+      "aggregate_id": "eda.fixture.model_a_b",
+      "model_run_ids": [
+        "mr.fixture.model_a",
+        "mr.fixture.model_b"
+      ],
+      "calibration_version": "v1",
+      "observed_difficulty_score": 0.125,
+      "calibrated_difficulty_bin": "D1",
+      "author_difficulty_bin": "D0",
+      "evaluation_suite_version": "fixture-eval-suite.v1",
+      "policy_version": "fixture-policy.v1",
+      "computed_at": "2026-07-12T00:00:00Z"
+    }
+  ],
+  "notes": "Added for issue #5 (multi-model empirical difficulty). Deliberately excluded from every export lane (training.eligibility=private_audit_only) since its model performance figures are illustrative, not from a real evaluation run. observed_difficulty_score/calibrated_difficulty_bin are genuinely recomputed via tools/mathcorpus/difficulty.compute(), not hand-picked.",
+  "hashes": {
+    "packet_sha256": "22d2734143cf7be9a9601152af0530417b294886d1fb1d2cc5d31fad35deaf43"
+  }
+}
