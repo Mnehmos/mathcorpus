@@ -31,11 +31,15 @@ jobs:
       - name: MCIP conformance fixtures (schema + hashes)
         run: python tools/validate_mcip.py schema/mcip/v1/fixtures/ --check-hashes --warn-as-error
 
+      - name: MCIP import dry-run against real packets (issue #6)
+        run: python tools/import_mcip.py schema/mcip/v1/fixtures/ --packets-dir packets/
+
       - name: Build manifests
         run: |
           python tools/build_manifests.py packets/ --out manifests/
           python tools/build_split_manifest.py packets/ --out manifests/split_manifest.json
           python tools/dedupe_pipeline.py packets/ --out manifests/dedupe_clusters.json
+          python tools/backfill_report.py packets/ --out manifests/backfill_report.json
 
       - name: Build public exports
         run: python tools/export_jsonl.py packets/ --out exports/

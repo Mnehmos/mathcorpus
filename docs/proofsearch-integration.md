@@ -56,16 +56,18 @@ When an obligation reaches `kernel_verified` (or a certificate reaches `certifie
 
 ## Interchange format (MCIP)
 
-Steps 4/5 above are currently manual (`author_packet.py` batch specs). The
+Steps 4/5 above are best done via a verifier export rather than by hand. The
 **MathCorpus Interchange Protocol** (`schema/mcip/v1/`, see
 [`../schema/mcip/v1/README.md`](../schema/mcip/v1/README.md)) defines the versioned record
 types — `AttemptRecord`, `NegativeExample`, `RepairTrajectory`, `DependencyManifest`,
 `ProofVariant`/`ProofProfile`, `ModelRun`/`EmpiricalDifficultyAggregate` — that a
-proof-search export can emit so this extraction stops being manual. MCIP records are child
+proof-search export emits so this extraction stops being manual. MCIP records are child
 evidence only; they never replace the packet schema's own trust/training fields, and an
-import can never retroactively grant proof authority. The importer that consumes MCIP
-bundles into packets is tracked separately (issue #6) — today, `tools/validate_mcip.py` can
-already validate an MCIP bundle standalone.
+import can never retroactively grant proof authority. `tools/import_mcip.py` folds a bundle
+into an existing packet's child records (idempotent, conflict-quarantining); a new packet
+can pull the same evidence in at authoring time via `author_packet.py`'s
+`verifier_export_bundle` spec field. See [`mcip-import.md`](mcip-import.md) for the full
+workflow, including what the corpus-wide backfill can and cannot recover.
 
 ## Benchmark mode
 

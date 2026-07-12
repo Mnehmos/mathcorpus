@@ -11,7 +11,7 @@ packet schema.
 MCIP records are **child evidence**, never canonical packet data. A packet's identity,
 trust, and training-eligibility fields live in [`../../packet.schema.json`](../../packet.schema.json)
 and are never edited by an MCIP import. An MCIP bundle only ever *proposes* evidence that a
-downstream MathCorpus tool (packet authoring / enrichment, see issue #6) may choose to fold
+downstream MathCorpus tool (`tools/import_mcip.py`, see `docs/mcip-import.md`) may choose to fold
 into a packet's own child records. A bundle that fails validation, or whose hashes don't
 match the packet it claims to describe, must be rejected or quarantined — never partially
 applied.

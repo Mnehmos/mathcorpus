@@ -44,6 +44,16 @@ Spec JSON shape:
           {"dependency_id": "add_mul", "category": "used", "source": "verifier_export"}
         ]
       },
+      "verifier_export_bundle": "path/to/bundle.json",  # optional; MCIP bundle (schema/mcip/v1/)
+                                             # to fold in via mathcorpus.mcip_import — the
+                                             # preferred way to populate proof_variants,
+                                             # dependency_manifest, attempts,
+                                             # negative_examples, repair_trajectories,
+                                             # model_runs over hand-copying spec fields.
+                                             # If a bundle record disagrees with a manual
+                                             # field above, it is reported as a conflict and
+                                             # not applied — the manual field is never
+                                             # silently overwritten.
       "eligibility": "public_train"         # optional, default public_train
     }
   ]
@@ -62,6 +72,9 @@ import sys
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from mathcorpus.mcip_import import fold_bundle_into_packet, import_restriction_profile  # noqa: E402
 
 # Must match schema/packet.schema.json's packet_id pattern (lowercase, dot/underscore).
 PACKET_ID_RE = re.compile(r"^[a-z0-9]+([._][a-z0-9]+)*\.v[0-9]+$")
@@ -209,6 +222,36 @@ def write_packet(packet: dict, spec: dict) -> Path:
     return path
 
 
+def _fold_verifier_export(packet: dict, spec: dict) -> None:
+    """Fold spec['verifier_export_bundle'] (an MCIP bundle path) into ``packet`` in place.
+
+    Prefer this over hand-copying dependency_manifest/theorem_deps/etc. into the spec: it
+    reuses the exact same fold logic tools/import_mcip.py uses for existing packets, so a
+    freshly authored packet and a backfilled one populate their child records identically.
+    """
+    bundle_path = REPO / spec["verifier_export_bundle"]
+    bundle = json.loads(bundle_path.read_text(encoding="utf-8"))
+    result = fold_bundle_into_packet(bundle, packet)
+
+    if result.errors:
+        print(f"WARNING: {spec['packet_id']}: verifier_export_bundle rejected: {'; '.join(result.errors)}",
+              file=sys.stderr)
+        return
+    for field_name, rid, reason in result.conflicts:
+        print(f"WARNING: {spec['packet_id']}: verifier_export_bundle record '{rid}' for "
+              f"'{field_name}' conflicts with a manually specified field ({reason}) — not applied", file=sys.stderr)
+    for field_name, rid in result.applied:
+        print(f"  + {field_name} {rid} (from verifier_export_bundle)")
+
+    for rp_record in result.restriction_profiles:
+        status, rid = import_restriction_profile(rp_record, REPO / "restriction_profiles")
+        if status == "conflict":
+            print(f"WARNING: {spec['packet_id']}: restriction_profile '{rid}' conflicts with "
+                  "an existing catalog entry — not applied", file=sys.stderr)
+        else:
+            print(f"  + restriction_profile {rid} ({status})")
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("spec", help="Batch spec JSON.")
@@ -228,6 +271,8 @@ def main() -> int:
     n = 0
     for spec in batch["packets"]:
         packet = build_packet(spec, toolchain, env_hash)
+        if spec.get("verifier_export_bundle"):
+            _fold_verifier_export(packet, spec)
         lp = write_lean(spec)
         pp = write_packet(packet, spec)
         print(f"authored {spec['packet_id']}")

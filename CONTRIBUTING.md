@@ -18,7 +18,11 @@ reference a Lean proof under `lean/` via `lean_module` / `proof_body_path`.
    a *candidate* until the pinned Lean kernel checks it in a tracked episode.
 2. **Write the packet JSON.** Fill provenance, trust, training, and (if applicable)
    certificate + encoding-soundness objects. See existing packets under `packets/` as
-   templates.
+   templates. **Prefer the enriched path**: if Proof Search produced an MCIP bundle for
+   this proof, pass it via `author_packet.py`'s `verifier_export_bundle` spec field rather
+   than hand-copying dependencies/proof shape — see
+   [`docs/mcip-import.md`](docs/mcip-import.md). Hand-authoring child records directly is
+   still fine when no bundle exists.
 3. **Stamp hashes.** `python tools/stamp_hashes.py packets/<path>.json`
 4. **Validate.** `python tools/validate_packets.py packets/<path>.json`
 5. **Open a PR.** CI must be green (see gates below).

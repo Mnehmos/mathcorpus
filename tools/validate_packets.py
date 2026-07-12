@@ -43,6 +43,11 @@ def main() -> int:
     ap.add_argument("paths", nargs="+", help="Packet files, directories, or globs.")
     ap.add_argument("--check-hashes", action="store_true", help="Also verify stored hashes match a recompute.")
     ap.add_argument("--warn-as-error", action="store_true", help="Treat warnings as errors.")
+    ap.add_argument("--artifact-index", default=None,
+                     help="Optional JSON file mapping episode_id -> known trajectory hashes. "
+                          "When supplied, Proof Search provenance claims (verification.episode_id / "
+                          "trajectory_first_hash / trajectory_last_hash) must resolve against it. "
+                          "Skipped by default — no such index exists yet in this environment.")
     args = ap.parse_args()
 
     validator = _load_schema_validator()
@@ -50,6 +55,10 @@ def main() -> int:
     if not packets:
         print("No packets found.", file=sys.stderr)
         return 1
+
+    artifact_index = None
+    if args.artifact_index:
+        artifact_index = json.loads(Path(args.artifact_index).read_text(encoding="utf-8"))
 
     n_error = 0
     n_warn = 0
@@ -69,6 +78,8 @@ def main() -> int:
         findings = policy.check_packet(lp.data)
         if args.check_hashes:
             findings += policy.hash_mismatches(lp.data)
+        if artifact_index is not None:
+            findings += policy.check_trajectory_artifact_resolution(lp.data, artifact_index)
         for f in findings:
             file_findings.append(f"  {f}")
             if f.level == "error":

@@ -116,7 +116,8 @@
         "mr.multi_model.model_a",
         "mr.multi_model.model_b"
       ],
-      "observed_difficulty_score": 0.31,
+      "calibration_version": "v1",
+      "observed_difficulty_score": 0.125,
       "calibrated_difficulty_bin": "D1",
       "author_difficulty_bin": "D0",
       "evaluation_suite_version": "eval-suite-2026.07",
@@ -125,7 +126,7 @@
       "public_metadata": {
         "note": "Two-model aggregate; author bin unchanged pending review."
       },
-      "record_hash": "980c0e43a43a0c70a6b7177d2e588059a376e2364f536ff3b9d674f581c75b7a"
+      "record_hash": "3e855b5a8a7a591d41db300c04117658863f7b590bbf1ad4a6b58d3acdb6b137"
     }
   ]
 }

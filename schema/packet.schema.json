@@ -295,6 +295,7 @@
         "restriction_profile_id": { "type": ["string", "null"] },
         "restriction_profile_sha256": { "$ref": "#/$defs/sha256_or_null" },
         "proof_profile": { "$ref": "#/$defs/proof_profile" },
+        "model_run_id": { "type": ["string", "null"] },
         "source": { "type": "string", "enum": ["human_authored", "proof_search", "imported"] }
       },
       "allOf": [

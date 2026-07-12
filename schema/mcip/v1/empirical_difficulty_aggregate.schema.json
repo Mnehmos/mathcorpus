@@ -8,7 +8,7 @@
   "required": [
     "schema_version", "record_type", "record_id", "packet_id", "environment_hash",
     "created_at", "trust_status", "export_eligibility", "record_hash",
-    "model_run_ids", "observed_difficulty_score", "calibrated_difficulty_bin",
+    "model_run_ids", "calibration_version", "observed_difficulty_score", "calibrated_difficulty_bin",
     "evaluation_suite_version", "policy_version"
   ],
   "properties": {
@@ -28,6 +28,11 @@
       "items": { "type": "string", "minLength": 1 },
       "uniqueItems": true,
       "description": "record_id values of the ModelRun records this aggregate was reproducibly computed from."
+    },
+    "calibration_version": {
+      "type": "string",
+      "enum": ["v1"],
+      "description": "Which formula computed this aggregate. Matches packet.schema.json's empirical_difficulty_aggregate.calibration_version and tools/mathcorpus/difficulty.py's CALIBRATION_VERSION — added after the fact (issue #6) to close a schema-drift gap: this field was missing from MCIP v1 when #1 shipped, before #5's calibration formula existed."
     },
     "observed_difficulty_score": { "type": "number" },
     "calibrated_difficulty_bin": { "$ref": "_defs.schema.json#/$defs/difficulty_bin" },

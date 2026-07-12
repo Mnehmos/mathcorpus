@@ -191,6 +191,15 @@ comparative pass rates for a real packet,
 fixture (`kind: concept`, `training.eligibility: private_audit_only` — excluded from every
 export lane) with two illustrative model runs and a genuinely recomputed aggregate.
 
+## Importing MCIP bundles / backfilling the corpus
+
+`tools/import_mcip.py` folds an MCIP bundle's records into the child-record fields above
+(idempotent, conflict-quarantining, dry-run by default); `tools/backfill_report.py` reports
+per-packet recovery status for the existing corpus. See
+[`../docs/mcip-import.md`](../docs/mcip-import.md) for the full workflow, safety model, and
+an honest accounting of what cannot be recovered without a retained Proof Search trajectory
+store.
+
 ## Restriction profiles (`restriction_profiles/`)
 
 A restriction profile is a hash-pinned, reusable constraint set (forbidden/allowed

@@ -21,6 +21,7 @@ from typing import Any
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
+from mathcorpus import difficulty  # noqa: E402
 from mathcorpus.mcip import record_hash  # noqa: E402
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
@@ -319,11 +320,13 @@ def multi_model_aggregate_bundle() -> dict[str, Any]:
         "failure_category_distribution": {},
         "public_metadata": {"model_family": "model-b-family"},
     })
+    _score, _bin = difficulty.compute([{"eventual_pass_rate": 0.75}, {"eventual_pass_rate": 1.0}])
     aggregate = _finalize({
         **_envelope("empirical_difficulty_aggregate", "eda.multi_model.1", trust_status="tracked_episode", export_eligibility="restricted"),
         "model_run_ids": ["mr.multi_model.model_a", "mr.multi_model.model_b"],
-        "observed_difficulty_score": 0.31,
-        "calibrated_difficulty_bin": "D1",
+        "calibration_version": difficulty.CALIBRATION_VERSION,
+        "observed_difficulty_score": _score,
+        "calibrated_difficulty_bin": _bin,
         "author_difficulty_bin": "D0",
         "evaluation_suite_version": "eval-suite-2026.07",
         "policy_version": "policy-2026.07",

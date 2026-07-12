@@ -341,6 +341,44 @@ def check_attempts_and_repairs(packet: dict[str, Any]) -> list[Finding]:
     return findings
 
 
+# --- optional trajectory/artifact resolution (issue #6) ----------------------------
+
+def check_trajectory_artifact_resolution(packet: dict[str, Any], artifact_index: dict[str, Any]) -> list[Finding]:
+    """Proof Search provenance claims must resolve to a real trajectory/artifact record,
+    when a policy-supplied artifact index is available to check against.
+
+    ``artifact_index`` maps ``episode_id`` -> a record with (at minimum) the trajectory
+    hashes known to exist for that episode, e.g.
+    ``{"<episode_id>": {"trajectory_first_hash": "...", "trajectory_last_hash": "..."}}``.
+    This is opt-in: without an index (the default — no such store is available in this
+    environment yet), the caller skips this check entirely rather than failing every
+    packet's unverifiable provenance claim closed. See schema/ENUMS.md.
+    """
+    findings: list[Finding] = []
+    verification = packet.get("verification") or {}
+    if verification.get("verifier") != "proofsearch":
+        return findings
+    episode_id = verification.get("episode_id")
+    if not episode_id:
+        return findings
+
+    entry = artifact_index.get(episode_id)
+    if entry is None:
+        findings.append(_err("trajectory_episode_unresolved",
+                             f"verification.episode_id '{episode_id}' does not resolve in the "
+                             "supplied artifact index"))
+        return findings
+
+    for claimed_field in ("trajectory_first_hash", "trajectory_last_hash"):
+        claimed = verification.get(claimed_field)
+        if claimed is not None and entry.get(claimed_field) != claimed:
+            findings.append(_err("trajectory_hash_unresolved",
+                                 f"verification.{claimed_field} ('{claimed}') does not match "
+                                 f"the artifact index's record for episode '{episode_id}'"))
+
+    return findings
+
+
 # --- corpus-wide repair-trajectory checks -------------------------------------------
 
 def check_repair_trajectory_refs(packets: list[dict[str, Any]]) -> list[Finding]:
