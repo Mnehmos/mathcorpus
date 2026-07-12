@@ -1,23 +1,28 @@
 {
-  "packet_count": 190,
+  "packet_count": 358,
   "by_domain": {
-    "algebra": 79,
-    "combinatorics": 33,
-    "geometry": 30,
-    "number_theory": 48
+    "logic": 2,
+    "algebra": 171,
+    "combinatorics": 57,
+    "geometry": 40,
+    "number_theory": 64,
+    "frontier": 24
   },
   "by_level": {
-    "L0_elementary": 79,
-    "L2_olympiad": 23,
-    "L1_proof_basics": 88
+    "L0_elementary": 111,
+    "L1_proof_basics": 187,
+    "L2_olympiad": 36,
+    "L7_frontier": 24
   },
   "by_kind": {
-    "concept": 189,
-    "negative_example": 1
+    "concept": 297,
+    "theorem": 33,
+    "negative_example": 28
   },
   "by_status": {
-    "kernel_verified": 189,
-    "failed_attempt": 1
+    "empirical_only": 2,
+    "kernel_verified": 328,
+    "failed_attempt": 28
   },
   "packets": [
     {
@@ -28,7 +33,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "6416a94c3034ff4196a1b127b320e6633de46b14e66175d5514342832180cb5e"
+      "packet_sha256": "758a7aff129bb7e9c4af7fa17db07792936b11acfa48a88bde48e66fc26f3c0f"
     },
     {
       "packet_id": "elementary.algebra.add_comm.v1",
@@ -38,7 +43,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "e08ead12d116a35afc68580e74b304ef25f8280f2878fa22b3bb863159c9c314"
+      "packet_sha256": "3f92ffa136bcb1681158894c2edc280d81555f7ea46eef0af29603b260eb41a1"
     },
     {
       "packet_id": "elementary.algebra.add_left_comm.v1",
@@ -48,7 +53,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "dcbbff68c4f5cb4eda8c96aac9cdaae735f249e8c46749c38d059fa064b5ce9b"
+      "packet_sha256": "f058f93f6094ce89537d31338bb71fa7f6c45ed5b034a6346b3171d7314c14cc"
     },
     {
       "packet_id": "elementary.algebra.add_mul.v1",
@@ -58,7 +63,17 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "18f3ea7c2d9566bc2b5521710559b1e14f9b354fefaecce907fb790a269ba435"
+      "packet_sha256": "ec8fe5a28371046dfbcd3c85d55cf17dcbb8da7c9bcf436bdc732afcf71c5db7"
+    },
+    {
+      "packet_id": "elementary.algebra.add_sq_three.v1",
+      "title": "Three-variable binomial square expansion",
+      "domain": "algebra",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "36d2b4a738fe43095979e0fef1025ea34a223f583ca256bd1b9a84297ead991f"
     },
     {
       "packet_id": "elementary.algebra.add_zero.v1",
@@ -68,7 +83,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "b88026e53c65bdd5dfbaf83b6e4e55b2d92d5f942f9223ac14d097a7d8de3309"
+      "packet_sha256": "289152bca8ff98c40cfab479f6ad851439c9f46ccfe3edb59223a9a4e28c9263"
     },
     {
       "packet_id": "elementary.algebra.am_gm_half.v1",
@@ -78,7 +93,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "97c28b9a2c860206decd7146f0e386b2019f4b9a1819de2cfe414ba3008216bc"
+      "packet_sha256": "b2780f632093872865607ffd24e40455ecb83b6f001c6db0da981686e829508e"
     },
     {
       "packet_id": "elementary.algebra.binomial_cube.v1",
@@ -88,7 +103,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "b10eda3d483ba5551e7fb194bfdd3b15a107be01268f75068bb7a5b313b5cf5e"
+      "packet_sha256": "898bda7aa0257690033155270a0a0aa58668b649484fd4bad5d482f1e90685ef"
     },
     {
       "packet_id": "elementary.algebra.binomial_square.v1",
@@ -98,7 +113,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "8b2e01526502c462610f22f95184ed510b68cd00feb86fb74b04885e78994dc9"
+      "packet_sha256": "0d86483c8546d90db020f24e39e0bbade3565432e95897b4f17a2753c6cf1964"
     },
     {
       "packet_id": "elementary.algebra.cubic_pos.v1",
@@ -107,8 +122,8 @@
       "level": "L2_olympiad",
       "kind": "concept",
       "status": "kernel_verified",
-      "eligibility": "public_train",
-      "packet_sha256": "d65b75b5c8411e2c4fb75a8fc72d1e23df710a73efcadde0438872c74d95a4e9"
+      "eligibility": "quarantined",
+      "packet_sha256": "899e559309e34fbe0cff2d0f336a45e2e4889de08fcd145b634e83852d8bf9a9"
     },
     {
       "packet_id": "elementary.algebra.diff_of_cubes.v1",
@@ -118,7 +133,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "d9ab94abc8e03d8c260fd28a7fb7cc7a89570f167691bea9587a719d0902bd12"
+      "packet_sha256": "8a030f21bbc092e83b91830f511d993bd122ca69a3889ee738509fba4a201c58"
     },
     {
       "packet_id": "elementary.algebra.diff_of_squares.v1",
@@ -128,7 +143,17 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "e0a0d078f7d1dae81f2fd7421cfb14c68bf363de0aa8b6deb0e98f87d3623cd5"
+      "packet_sha256": "577738a6b90301da96898ed8c27949d2e40e257fb899400b6f0b26d64dbed1a7"
+    },
+    {
+      "packet_id": "elementary.algebra.div_add_div_same.v1",
+      "title": "Adding fractions with the same denominator",
+      "domain": "algebra",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "2595b0de3636c1b967dfdc409357295a54fa46ba10972e314a954701938823a2"
     },
     {
       "packet_id": "elementary.algebra.factor_by_grouping.v1",
@@ -138,7 +163,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "ace3578c9b48c0a7f12a73ac3c2a2bc4840a933a5dc9271ca7d229cc46786045"
+      "packet_sha256": "21ae44d5d9521cee7aecb0f784045901c3c4d986966613412a047ab62feec9dc"
     },
     {
       "packet_id": "elementary.algebra.mul_add.v1",
@@ -148,7 +173,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "7d2c32e8c8e06b8153113fdcbbe7b512a0a83a695556fb3d8b41746fa6972c75"
+      "packet_sha256": "5b6d0b7c0faae8b7b772ddec377c100b8ab0e286868af1cb7eeb4f7bca5aae35"
     },
     {
       "packet_id": "elementary.algebra.mul_assoc.v1",
@@ -158,7 +183,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "d937d421c1725289f9397717b5f38f47d8f58b2c1f2af54186acb7b904ce0966"
+      "packet_sha256": "48d567958cbbeb73a382e66603eba8802572ac364134d225bba9bcdc7d48466c"
     },
     {
       "packet_id": "elementary.algebra.mul_comm.v1",
@@ -168,7 +193,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "9475bca0081d0547ac83d53364ec4ebbba62b36d76daa60cfe7e3462fcdc9741"
+      "packet_sha256": "aec6148ca94e302f449feaa1212e159aed57e863e8fe2c0215870bbbd499ffcf"
     },
     {
       "packet_id": "elementary.algebra.mul_left_comm.v1",
@@ -178,7 +203,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "42061b6ac06923b9a7685301bdadc6202671a03c26d4f87e27effba1d5c3d1a6"
+      "packet_sha256": "6039a960b1fae9a823447faa566cfe820a474afe70732cd536c85e865c45edc9"
     },
     {
       "packet_id": "elementary.algebra.mul_neg.v1",
@@ -188,7 +213,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "05402039f5ebbfbadde607e740a58f1f1ef95235e085df5c5aef8e82f2ac484f"
+      "packet_sha256": "0a713eb58965ec92bd473a64df327d5b8e58e37e4c53d396d0c67c7a4d7a73c4"
     },
     {
       "packet_id": "elementary.algebra.mul_one.v1",
@@ -198,7 +223,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "6318563ab52c1e20c453e18489cc32aee153dd02c7e4651c1da8229b43a08542"
+      "packet_sha256": "bdf98dd972adc63437133bb1ff7957bfa629527cbc2f37d723467a154088cd15"
     },
     {
       "packet_id": "elementary.algebra.mul_self_eq_zero.v1",
@@ -208,7 +233,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "99d9599ec3490bd9eb5f7dc836b08caf9061725b92fa6b07f58edf9546b72f60"
+      "packet_sha256": "4b3ddf49b79f567ff948e76ff882a4a72c08af75d143bf33b2a278f88976b7fd"
     },
     {
       "packet_id": "elementary.algebra.mul_zero.v1",
@@ -218,7 +243,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "0c2988179c4bec59db1a8637ccde77b07d6f51a78d3e77da604c7e245c5fbb9b"
+      "packet_sha256": "460fe40d0223fd5b4d621ac1bfc93faf3c36e4ecb6069882a91a2e763f418f5e"
     },
     {
       "packet_id": "elementary.algebra.neg_mul.v1",
@@ -228,7 +253,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "2363af81e084ab1a39932a2f789c35b5a7fff40a630912bcc0d10da1b3dcfa5b"
+      "packet_sha256": "3dc7626532943ccf8c09f4c6e1efbb6989cea11524c5e50bb7fa0bddd38fab39"
     },
     {
       "packet_id": "elementary.algebra.neg_neg.v1",
@@ -238,7 +263,17 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "f982a9118c4040b1301798aa0f79c3f629f1c361a4190cd07e6de94294401cc8"
+      "packet_sha256": "7fef3a8999b34ce0648719ebdeac9d704bd465dd4aeae02ec819cecd8d5bec2f"
+    },
+    {
+      "packet_id": "elementary.algebra.neg_sq.v1",
+      "title": "Squaring a negation",
+      "domain": "algebra",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "ab6d61d64913d3258ad49158737e0b635e5f935e73c4b8771efd678c1e8530c8"
     },
     {
       "packet_id": "elementary.algebra.neg_two_ab_le.v1",
@@ -248,7 +283,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "fca497bbb4cd1520d3cead2f85039e129c2e5c155d117f49df4a50d08c3acbd9"
+      "packet_sha256": "b0c22be27fc9c87233e013405f6011dac08872ff0980bbce2457f3aa27f1604e"
     },
     {
       "packet_id": "elementary.algebra.neg_zero.v1",
@@ -258,7 +293,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "63c2c39fe7fdcbf3448d6b31a37d950f8894f9a2b7e82f5271666a9660564270"
+      "packet_sha256": "25ff3d21c380f76d6fb44f93d18eb7624a6bc10f337e513edf220a5060be244c"
     },
     {
       "packet_id": "elementary.algebra.one_mul.v1",
@@ -268,7 +303,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "3614393abb45894970ee96607b59002dc2657ff9504656ddcd42aff1a81a4f1a"
+      "packet_sha256": "f305862185d96eda98bad7f68452fd6dbe43f85baae6c6915fc8271c6340a020"
     },
     {
       "packet_id": "elementary.algebra.one_pow.v1",
@@ -278,7 +313,27 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "bd46f3cfb2fb0f520cbc4caae0a1678ffe7170cd5b02ca3811e01f260e555a76"
+      "packet_sha256": "6d0f6549970256fd1b9006065cc198ed22c72a9c8e879c88448bc1e726aa3d35"
+    },
+    {
+      "packet_id": "elementary.algebra.pow_add.v1",
+      "title": "Exponent addition law",
+      "domain": "algebra",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "d68e8911a60625ca8535de14c60ecc041a811b4284d2594df8c4250c46559a52"
+    },
+    {
+      "packet_id": "elementary.algebra.pow_mul.v1",
+      "title": "Exponent multiplication law",
+      "domain": "algebra",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "65ca9e1c7d6a226905c0a6b13285882ec47f58d55fa2d991ed55329017d892c8"
     },
     {
       "packet_id": "elementary.algebra.pow_one.v1",
@@ -288,7 +343,17 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "1bc52c959a17be20faf574fd837225939e5ada569377877622791f317e76f905"
+      "packet_sha256": "f5166a4f82d4b598f581f329952b3155ef10f6fd5d35fd7c1c36082e8c286e0d"
+    },
+    {
+      "packet_id": "elementary.algebra.pow_succ.v1",
+      "title": "Exponent successor law",
+      "domain": "algebra",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "da998a2a75f1a144fec532440bc3c811b6319c635f5382c362d70bb97045a12a"
     },
     {
       "packet_id": "elementary.algebra.pow_two.v1",
@@ -298,7 +363,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "609a5f699724bb07165f3fe1d357ac052a336741cb2cee344bd1e2b5f1bb4e53"
+      "packet_sha256": "0fed5fd52d763d7d3d15df8326bba38e155a868b4f4ae218a76f034ccea6620e"
     },
     {
       "packet_id": "elementary.algebra.pow_zero.v1",
@@ -308,7 +373,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "ae45c73f5d2566e35b5585cae1f672d1a248e568881399658372a9778672d31c"
+      "packet_sha256": "9c194b785f0f9f4a97ffeb53125457b558e46551fb0e11e79993140f7d72f8d9"
     },
     {
       "packet_id": "elementary.algebra.quad_form_nonneg.v1",
@@ -318,7 +383,37 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "927d006360b6a1bf50c5057f16dcedc909d7494f205e5d8f225a9a5ea0db9fbe"
+      "packet_sha256": "f7126d79be7c4f4554306f25f7094c8dbf4c361cdb78fb3073f615f727d09cd7"
+    },
+    {
+      "packet_id": "elementary.algebra.quad_formula_real_root.v1",
+      "title": "Nonnegative discriminant implies a real root",
+      "domain": "algebra",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "db8e86c361c9648ee788434703ba484ba1e3f99020ab6d79ad63d8e16edaa15b"
+    },
+    {
+      "packet_id": "elementary.algebra.quadratic_pos.v1",
+      "title": "The quadratic a^2+a+1 is always positive",
+      "domain": "algebra",
+      "level": "L2_olympiad",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "cf094ec69502dd867c5050e24e4625e0fae352eda79c35296e477040f99a6bc6"
+    },
+    {
+      "packet_id": "elementary.algebra.sq_sum_ge_two_mul.v1",
+      "title": "a^2 + b^2 >= 2ab",
+      "domain": "algebra",
+      "level": "L1_proof_basics",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "94578b0d260e82ec56a3e7a2e0785a090511eeaaeac21b2bbfd9403b3fc1408c"
     },
     {
       "packet_id": "elementary.algebra.sq_sum_le.v1",
@@ -328,7 +423,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "2b3ffebda3f10138ff6fb51e16d392992fab318abbd28d5ac320201b879b9628"
+      "packet_sha256": "06a72a1d27f20eaaeb5165f6494bda0d108fc60372051582dd18258a48480043"
     },
     {
       "packet_id": "elementary.algebra.square_of_difference.v1",
@@ -338,7 +433,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "1f94dba8e915d03757703d03e6f5ccf93262d1f309e70cc32b3ac270ee2a3c68"
+      "packet_sha256": "36492388d105d31d5837f23f4bf99d5a3747db96c84b68dc2d5b20bdde443898"
     },
     {
       "packet_id": "elementary.algebra.sub_eq_add_neg.v1",
@@ -348,7 +443,17 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "dda6f1c3146a2d918ba3a5b7a649feecb51d9d7f36ac19905e0ef139bc8b8dc2"
+      "packet_sha256": "09164ca2a0c765172b48bf940bd5fb3f77cc155bdc2b9051a9f7b89abe6376c5"
+    },
+    {
+      "packet_id": "elementary.algebra.sub_mul.v1",
+      "title": "Right distributivity over subtraction",
+      "domain": "algebra",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "5c877683b83d9358583830fb3f1a8b5b504aa48879b4be9d644f665fb5c6e404"
     },
     {
       "packet_id": "elementary.algebra.sub_self.v1",
@@ -358,7 +463,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "427c6045e36b6cc3c6f95d17121448e4dfe6bcbd1d1851c57f711e47f3558f1b"
+      "packet_sha256": "caed937c12cd35d00e7ea02ad7ef21b200cea3b40d560fd09a8ff3728820fb75"
     },
     {
       "packet_id": "elementary.algebra.sub_zero.v1",
@@ -368,7 +473,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "d66c883e21a8122dd74fe347b601ca76ef9dcb26a3afafbccdbf5b728331a678"
+      "packet_sha256": "d3ef1210285a25baa6cd2f10dfe78560cd652b9695f4ae40da403dc7042f4ca0"
     },
     {
       "packet_id": "elementary.algebra.sum_of_cubes.v1",
@@ -378,7 +483,17 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "d120a3d9ba2a5e6d98735f04762f1cf756ce360544346997c6c253e481ee8acd"
+      "packet_sha256": "13e273a1b0ab09a74e148806c486e5cbba65e406be0a72afa837302091acc67e"
+    },
+    {
+      "packet_id": "elementary.algebra.sum_reciprocals_eq_sum_over_product.v1",
+      "title": "1/a + 1/b = (a+b)/(a*b)",
+      "domain": "algebra",
+      "level": "L1_proof_basics",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "9c72fcfc8d4d8b2549cab0799b83c6db79019a233d065fabcf46be1624c843b0"
     },
     {
       "packet_id": "elementary.algebra.two_mul.v1",
@@ -388,7 +503,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "7c51ea99456f72c53d4e32a3af7f49bc57637fb4ebdc21ed71952c587c5629f9"
+      "packet_sha256": "492309452fa6d0924ff8c45223c5cf2639fcd526a4f8ca88fadc1acab27cc31b"
     },
     {
       "packet_id": "elementary.algebra.x4_ge_2x2.v1",
@@ -398,7 +513,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "b706b8ac744e25d50952e6af2008c2dec39feac2eb807704dc95f0d6dd096593"
+      "packet_sha256": "61d70c0f962129188d1df8deb0cafbfd29b5f7f63c2cb4f1006e9e10d2490c3b"
     },
     {
       "packet_id": "elementary.algebra.zero_add.v1",
@@ -408,7 +523,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "5d0006b0768f33192c9eda7558c9b35cd53487c601df04ac415a4e68fe30ad9c"
+      "packet_sha256": "c54552614e738df91dc955b2eaebb79dba42da5d8b17d8af0e37ede18f86f5d6"
     },
     {
       "packet_id": "elementary.algebra.zero_pow_succ.v1",
@@ -418,7 +533,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "0384c24aa7641c0e23f2aca9d55f732bc2d3545cf2029fe5caef4c58ecacc4f9"
+      "packet_sha256": "8dada8edcf914a0dd6b6b1184f0d64c5dec89f1095cc50296fd6d39fe1a47069"
     },
     {
       "packet_id": "elementary.algebra.zero_sub.v1",
@@ -428,7 +543,17 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "7476a28cf687ae6ac1140d6eb4d92c5373d842fb441a5a70195cee1939b8d6c9"
+      "packet_sha256": "47be36467a08965456ea8b49b010ff9dda5372d1ab7043869fa5682394ba94ef"
+    },
+    {
+      "packet_id": "elementary.combinatorics.card_bi_union_le.v1",
+      "title": "Cardinality of an indexed union is subadditive",
+      "domain": "combinatorics",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "e3551286007b045908a1817f8738d0c7fd5e95e674dfd099abd2df4db90fb01d"
     },
     {
       "packet_id": "elementary.combinatorics.card_empty.v1",
@@ -438,7 +563,37 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "04c6a42d928891157c7581427bd08428e6e8a50020d89892c52f3c6d8d12e4d1"
+      "packet_sha256": "85620984a4684ab81f2416085ac704280032eeb098daeb0926c0e981503c7b0c"
+    },
+    {
+      "packet_id": "elementary.combinatorics.card_filter_partition.v1",
+      "title": "A predicate and its negation partition a finite set's cardinality",
+      "domain": "combinatorics",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "2b8a8cefcd0b2a24afc565995eee1429a4dfbe9df7b8bcadc67419da2262c22c"
+    },
+    {
+      "packet_id": "elementary.combinatorics.card_image_le.v1",
+      "title": "The image of a finite set is no larger than the set",
+      "domain": "combinatorics",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "a7a10d4eae7ef4ba1452018077479dc04d31ba23a1911418a89e7e8ed2f600bf"
+    },
+    {
+      "packet_id": "elementary.combinatorics.card_image_of_injective.v1",
+      "title": "An injective function preserves cardinality on a finite set",
+      "domain": "combinatorics",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "e49d74e8a13baabdb61e59c56a929d5f37ce7b621899a194316d526451b8851d"
     },
     {
       "packet_id": "elementary.combinatorics.card_insert_le.v1",
@@ -448,7 +603,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "ff38eb47b0c09121f07f8996da510cf68992109846102d3f8e73b0f82b6bd0ed"
+      "packet_sha256": "cf26868afa14556355eb8de43fd94437c6f8cd9fd904962790d8d157c3ae1172"
     },
     {
       "packet_id": "elementary.combinatorics.card_le_of_subset.v1",
@@ -458,7 +613,27 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "09d9172f04cd1e38d8c6a133474bfcb4f9e2a85efebd143da0c03e42fe1dfff6"
+      "packet_sha256": "24697d1f7f275bc1c7d5658e03d5dfac6fd4d094ab0b9da7dd02e6b94ec205e3"
+    },
+    {
+      "packet_id": "elementary.combinatorics.card_powerset.v1",
+      "title": "The number of subsets of a finite set is 2 to the size",
+      "domain": "combinatorics",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "1f9f20852c04f67097fa544afec31a272111f1ae5b27224d1a28aac15e6e06e3"
+    },
+    {
+      "packet_id": "elementary.combinatorics.card_product.v1",
+      "title": "The fundamental counting principle for Cartesian products",
+      "domain": "combinatorics",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "d47ce689d3e5851b0675cf233ff7d1900a904403e934f77bf6dde30bf0ebfe85"
     },
     {
       "packet_id": "elementary.combinatorics.card_range.v1",
@@ -468,7 +643,17 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "6ef7f1be38eee9a2555aa8ea2a648bcc06810c98900ca15559d3ed9c48d74fb8"
+      "packet_sha256": "b4c82d2f209bbf0fcf355f4c88242b2c24196a6db3afccdbc9daec5b581ed177"
+    },
+    {
+      "packet_id": "elementary.combinatorics.card_sdiff_of_subset.v1",
+      "title": "Cardinality of a set difference",
+      "domain": "combinatorics",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "cb67dae7d9238d58a6bc5215f09185a64ab505f2e9801d1586d57eed0d454c36"
     },
     {
       "packet_id": "elementary.combinatorics.card_singleton.v1",
@@ -478,7 +663,17 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "d24e76161c5ca2252cda8e7cd92b808a70055728af1dfb7d99b1adbd0fc654d7"
+      "packet_sha256": "a6f5798f5c9bfd931fb7754e36ad29403e6bf93f625eafb48bd5236962630913"
+    },
+    {
+      "packet_id": "elementary.combinatorics.card_union_add_card_inter.v1",
+      "title": "Inclusion-exclusion for finite set cardinality",
+      "domain": "combinatorics",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "931b2a90cf1ec6c85ee175873caa489469dc981b452d533f8d7c3aa321151147"
     },
     {
       "packet_id": "elementary.combinatorics.card_union_le.v1",
@@ -488,7 +683,67 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "65d75a5e5146a05d57a278fc044117a085166fd779876ce16845fbd19a4eab38"
+      "packet_sha256": "8911d50bbe559672d027769718f558d50d2075c8788aba14add33d369b2a9611"
+    },
+    {
+      "packet_id": "elementary.combinatorics.card_union_not_additive.v1",
+      "title": "Finset union cardinality is not unconditionally additive",
+      "domain": "combinatorics",
+      "level": "L1_proof_basics",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "7e16c12e234986a33d1dc2c150ec510a983c52e6d16ad83c36034f70be780c34"
+    },
+    {
+      "packet_id": "elementary.combinatorics.choose_self.v1",
+      "title": "Choosing all n items is always 1 way",
+      "domain": "combinatorics",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "914c9a81991811d0288816a9ab9b8f72758cbdabc353d649b298e573e2948fcc"
+    },
+    {
+      "packet_id": "elementary.combinatorics.choose_succ_succ.v1",
+      "title": "Pascal's rule for binomial coefficients",
+      "domain": "combinatorics",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "7b112b5b6d2bec7d7b579ce04bdd9e130fbcb890a4b0b4d81a0077deee459457"
+    },
+    {
+      "packet_id": "elementary.combinatorics.choose_symm.v1",
+      "title": "Binomial coefficient symmetry",
+      "domain": "combinatorics",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "9e5f99223eb420e09cd891541e17701bb0dee593ac4f61a2c168106d147b2bb8"
+    },
+    {
+      "packet_id": "elementary.combinatorics.choose_zero_right.v1",
+      "title": "Choosing 0 items is always 1 way",
+      "domain": "combinatorics",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "466993da1471039bb908bb68fecb57103be31f700f3f9fdf508ebf7adf7d7e8b"
+    },
+    {
+      "packet_id": "elementary.combinatorics.disjoint_union_card.v1",
+      "title": "Cardinality of a disjoint union is additive",
+      "domain": "combinatorics",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "72cd0255152d1c51e3468f2b7230986dd8012ddf3ad0c014b74d92aef4c17a8e"
     },
     {
       "packet_id": "elementary.combinatorics.empty_inter.v1",
@@ -498,7 +753,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "b4584c6aac6d1674a2a160cb10f8744749ec23ae59b1231de91427e0eb29e60d"
+      "packet_sha256": "ed4379976905e359ac64734280d59e42b119ccbb8ae2496c7c07bf0002f31346"
     },
     {
       "packet_id": "elementary.combinatorics.empty_subset.v1",
@@ -508,7 +763,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "e03355b9fda63d8a3274c2dc70b51eeb5ced7ef1716ceede5ad246d210077608"
+      "packet_sha256": "55c93c012a6e42bd600ea62025a4e99d2da3dcf0adb9c666f6a9878909393d0e"
     },
     {
       "packet_id": "elementary.combinatorics.empty_union.v1",
@@ -518,7 +773,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "530f029f96d340a9185a5aac1dc8b2cdebe76592bfa00fe6894cc204d765a11b"
+      "packet_sha256": "05f3f62c4776ce2f1f8b6da119d8bf4d69ae4abe575a58b3ab33bb5166cf67bb"
     },
     {
       "packet_id": "elementary.combinatorics.filter_subset.v1",
@@ -528,7 +783,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "2a5577e10957d9c42e1f25d2b9c6b0dd835dbda0453b1f8cb60e461ddd696e4b"
+      "packet_sha256": "16ebb374ccd74cf41a5d6a9251c46e4692d45e96404011b0620721aa92958f7b"
     },
     {
       "packet_id": "elementary.combinatorics.inter_comm.v1",
@@ -538,7 +793,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "62ae1a570c4c52f552425114357fc3cd6d4c40c1603c8394522dc8638bf3d881"
+      "packet_sha256": "46eb32bd0d5d1cd32d1422513599dbb20515a1b0f9ba75b9daf8137b2b86472c"
     },
     {
       "packet_id": "elementary.combinatorics.inter_empty.v1",
@@ -548,7 +803,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "d4438c68cf25756c6eb6de51f455e4eabb9744cd9c89cd4b3fea6127f068790d"
+      "packet_sha256": "a956367dc25a13cee0f42389ab20ca2f1463e0cfc94797fe5d30a410cb5e27d9"
     },
     {
       "packet_id": "elementary.combinatorics.inter_self.v1",
@@ -558,7 +813,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "b8e43c2cc0a7672049f1c79028dbc5bece0e70e56bfad551589b7d84702617d6"
+      "packet_sha256": "a6368bc0205d7f5456d952690283178887341f0011655b62779f914d3dacd6c2"
     },
     {
       "packet_id": "elementary.combinatorics.inter_subset_left.v1",
@@ -568,7 +823,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "81673bfff7d80580998bae0e0f20e0e264a3a46f8c26e45cfa9a95a2d95e67d9"
+      "packet_sha256": "513bca50431ce60720b0c095c30e7c524fd303aa234f04a4b09f62dd285cd0e9"
     },
     {
       "packet_id": "elementary.combinatorics.inter_subset_right.v1",
@@ -578,7 +833,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "5e6858462f9231121bd31ddc191f18f745ab0215893a91dc0ba9404b8774b889"
+      "packet_sha256": "0929f29e39c09fd9132c347f1c709efff19af0d201323a25c78a32e6d2d5d8bf"
     },
     {
       "packet_id": "elementary.combinatorics.mem_insert.v1",
@@ -588,7 +843,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "01e7b0c06d378c5bf92281cede533b38e7034010235bdf1e079eb47a38405be8"
+      "packet_sha256": "2a8feb7fae4df209f1ebde4c59521bda059c71515ce678dd80e4de34e2b77afe"
     },
     {
       "packet_id": "elementary.combinatorics.mem_inter.v1",
@@ -598,7 +853,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "4074c9848b1125e15366458ffa73be6fe0839cb83ae64aca8f9d2063c4bd2187"
+      "packet_sha256": "e03bf59253393e995e547e513ce9a99e6436f01bff3b5aae1a437b0cb3112444"
     },
     {
       "packet_id": "elementary.combinatorics.mem_range.v1",
@@ -608,7 +863,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "578ba9892060d879735f3f999b8922d4993ad3c7ec7442d21d13d0110da9c4ff"
+      "packet_sha256": "8028fc8b9618d18a5830ea3a78c8aa5f454c9d2581d514028a1b5cdfb3d754b5"
     },
     {
       "packet_id": "elementary.combinatorics.mem_singleton.v1",
@@ -618,7 +873,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "7b8f98aedcb5f09211b9149c3500ba3b4fcc6404ea8c84fc2e19d08c49150bc0"
+      "packet_sha256": "0730aa51aa614e9b280710033e8b92e0e1336da184b347babac6b5a316988459"
     },
     {
       "packet_id": "elementary.combinatorics.mem_union.v1",
@@ -628,7 +883,37 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "0b932b0d859fc0007a7b2de0977bec3c8236d24bb735500eb3b5d37cc1342eff"
+      "packet_sha256": "6187133e42232addf9a8df76cd4e90e34acc673265f8f5145be321148899533c"
+    },
+    {
+      "packet_id": "elementary.combinatorics.pigeonhole_3_into_2.v1",
+      "title": "Pigeonhole: 3 items into 2 boxes forces a repeated box",
+      "domain": "combinatorics",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "06e5956572e698cd988ab439b3b285d37ebc531c53d5b5d15310ec0dc158a486"
+    },
+    {
+      "packet_id": "elementary.combinatorics.pigeonhole_general.v1",
+      "title": "The pigeonhole principle, general form",
+      "domain": "combinatorics",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "1cadd4db226bd7dd310f5b3794ac9bed8550826d2c5141b1554d9d3edcfa18af"
+    },
+    {
+      "packet_id": "elementary.combinatorics.primes_below_ten_card.v1",
+      "title": "There are 4 primes less than 10",
+      "domain": "combinatorics",
+      "level": "L1_proof_basics",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "4e7ccb9a25041c6d2dac0952b4dcf4dbd2378fee7f316bcb1c9dbf5133332d06"
     },
     {
       "packet_id": "elementary.combinatorics.prod_range_one.v1",
@@ -638,7 +923,17 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "c96c95956be68e333ca192fc03bd1b38d35052c29a4346653bfce268534e27ab"
+      "packet_sha256": "f8f67d743f4939b5e3c11ccb2ff7a20e0a239cf93d4f49622ea5bec3b7b446f4"
+    },
+    {
+      "packet_id": "elementary.combinatorics.prod_range_succ.v1",
+      "title": "Splitting off the last factor of a finite product",
+      "domain": "combinatorics",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "9c680503a8af8258a4e3dcfd87b39492f3c7e43860d14d10d323c418a0671a6d"
     },
     {
       "packet_id": "elementary.combinatorics.prod_range_zero.v1",
@@ -648,7 +943,17 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "12711e4f4c4d0d9074ea3a4bdd7b8dfcfe20aff566aac8a9d025aec9a6a2da76"
+      "packet_sha256": "84aed4e673b9d4bab168909be4956eaac64b5be9f6e7f88bf02c8e5fd73a214c"
+    },
+    {
+      "packet_id": "elementary.combinatorics.set_mem_union.v1",
+      "title": "Set union membership",
+      "domain": "combinatorics",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "776dda89049ef3198417a9fd4554e52c0b3b958708125814bbcba312e7393199"
     },
     {
       "packet_id": "elementary.combinatorics.subset_refl.v1",
@@ -658,7 +963,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "39636651c213a19b039f86c9d0d0a4cd8b4a4108b55f76b94808d0d87e69407c"
+      "packet_sha256": "20ee5e4b56e6a2e1229d19691171a6f8322652e2b4f7733876cdb3064535f231"
     },
     {
       "packet_id": "elementary.combinatorics.subset_union_left.v1",
@@ -668,7 +973,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "63b169ac0ceeb6363317ba1be88fbab7ff1ae8eb485af9d6bd11954e8bfc15c8"
+      "packet_sha256": "be5ef1073c7b59e63a4ab983453ce5a8eb1951c994f40a7afdcf6193ea204511"
     },
     {
       "packet_id": "elementary.combinatorics.subset_union_right.v1",
@@ -678,7 +983,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "c62133f35f69e881d746c0d9f79d2bbdb9c5119c3cc522a8201b9cb187c0da8b"
+      "packet_sha256": "ea9946d33b52b7fc0cff6c29cbfbdcf99d3477b9dde667d011cce7b6d8ee5db7"
     },
     {
       "packet_id": "elementary.combinatorics.sum_empty.v1",
@@ -688,7 +993,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "1cb362343ae924c736072f4bfcf7b7d3be7d39b5d83fe1f0952e51af595dff5c"
+      "packet_sha256": "86253cd5ab2651524c128a99293d3502982125b40faeb4ed3156bcf7865c48de"
     },
     {
       "packet_id": "elementary.combinatorics.sum_ones_card.v1",
@@ -698,7 +1003,17 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "436019b631cfa80f23407f8db6b59e27da42c3d8538c17d1330e5a127fa1f476"
+      "packet_sha256": "199cf2d7c0582850767d725e324b7f3ba2294d89ed56dfcb76575262b7a89123"
+    },
+    {
+      "packet_id": "elementary.combinatorics.sum_range_choose.v1",
+      "title": "Sum of a row of Pascal's triangle is a power of two",
+      "domain": "combinatorics",
+      "level": "L2_olympiad",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "c1de01be062da665ca782bcd499d1f967127ff8ba514b41087dc0f432edaecbb"
     },
     {
       "packet_id": "elementary.combinatorics.sum_range_one.v1",
@@ -708,7 +1023,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "b75dc5640ef5b8c3a5917a671a66e5e03ed32b2d51867cf3ff6f88f1dce47c30"
+      "packet_sha256": "8bf8f4d4e9a22f6cb97b33878f8de28cebbcdcd512a406829c155290ed6a079b"
     },
     {
       "packet_id": "elementary.combinatorics.sum_range_zero.v1",
@@ -718,7 +1033,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "9e70d8c835db78224affabd5a8d4a122c40f49fe808218719a0f64780adad182"
+      "packet_sha256": "fa168f6fba067b932feef9f49a04f43a7f2ee2750607f15758084fea42ea745d"
     },
     {
       "packet_id": "elementary.combinatorics.union_assoc.v1",
@@ -728,7 +1043,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "8bae9a90646141204fd35277e789930ee4d9b2965f6c88cb8bb099cd1630a8bc"
+      "packet_sha256": "196be6dd907e2793378523e6752eaa1b54298197a68c9ce9eab51e9931c37666"
     },
     {
       "packet_id": "elementary.combinatorics.union_comm.v1",
@@ -738,7 +1053,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "774c0f7b8ab5530003f006e354a6af3148e81eac9dc9466139c404c792bca5da"
+      "packet_sha256": "7e76aca7357e4adf5bd2f114660786ff133bf194bbdd54f994d8a01edce83648"
     },
     {
       "packet_id": "elementary.combinatorics.union_empty.v1",
@@ -748,7 +1063,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "92aac73450f31cd8a234b752c3e7c26e0a9ca54939e7a629e79da0c086dffaf2"
+      "packet_sha256": "110a6cc76c92a06fb43ab4cf08852334ed5af676759c6af6d4824a4ad50ca6dc"
     },
     {
       "packet_id": "elementary.combinatorics.union_self.v1",
@@ -758,7 +1073,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "b6220ccc5493eae2be4a1b54b09c747223e6c6afef2b45af9376f349442870a1"
+      "packet_sha256": "e611e8b7debc6a1d52b6a02286fbff2cb5acad52e43077f1ea6f93237c2b33f9"
     },
     {
       "packet_id": "elementary.functions.abs_abs.v1",
@@ -768,7 +1083,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "ae7279d29ac0bd427b5d2a3f849a0edb90aba7797959e6990849203cda60e6db"
+      "packet_sha256": "81a26c77727ed0888a85180ec8d587a04d0100c9e7f3762f49dd77f64865fced"
     },
     {
       "packet_id": "elementary.functions.abs_add_le.v1",
@@ -778,7 +1093,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "4febd893521a6561d28aca94392a896443aba7fdc3f1978e3062f9c973071623"
+      "packet_sha256": "0cc411337503afce75352fe9cdc3c2a7f48b27855caa9bbcf731c082980b165b"
     },
     {
       "packet_id": "elementary.functions.abs_mul.v1",
@@ -788,7 +1103,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "291b0509b7fb0a8fd89c7fbb359c62568f9da9b258928d5e4a1a6039cf55fbad"
+      "packet_sha256": "312dd2a6abd5b96303e280f2ddeb1c7decebf025dea75e98abf15e1d5100488f"
     },
     {
       "packet_id": "elementary.functions.abs_neg.v1",
@@ -798,7 +1113,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "185e3287ccae4a8acc1ad93cddd906a5d673ad449050c8623d5890f6a20948f1"
+      "packet_sha256": "6ad2ab5f2c7a1efa627b64390ba949be0e745ea37a134fda27f2f2572183def3"
     },
     {
       "packet_id": "elementary.functions.abs_nonneg.v1",
@@ -808,7 +1123,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "be40b26657afc635564318ef6a34ed9839e065b577517d455ac7ca6fced4d166"
+      "packet_sha256": "14153ba74c367e6246e61229b9ed5fba7572ae3e71d7630da2cc56ea442a0139"
     },
     {
       "packet_id": "elementary.functions.abs_of_nonneg.v1",
@@ -818,7 +1133,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "a39fa17f0efb9fb1bc2f28501918c6f91f6f15dc7b8ad1e47cfb79989b436b4b"
+      "packet_sha256": "3db3bbc78429a589862b4f4c04d179746fec40283e1fe1ed102262eb952d2196"
     },
     {
       "packet_id": "elementary.functions.abs_sub_comm.v1",
@@ -828,7 +1143,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "0174a5f5b8f9af8831cdcfc922250f8ccb51359421202127806d2fe98423e984"
+      "packet_sha256": "7fa7514f2e73a031796b1bc9981a2dbfef3f584c9bcf286891d22a921c312e2a"
     },
     {
       "packet_id": "elementary.functions.abs_zero.v1",
@@ -838,7 +1153,37 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "f0c4aee177e6330c26d105c74e3cacf0374e3dda002029f2405e9c9cc8746b18"
+      "packet_sha256": "dc895e16c394913ce22a6de361ea7aa7cf2ba5e92bd7e19670264c943dcafce5"
+    },
+    {
+      "packet_id": "elementary.functions.bijective_comp.v1",
+      "title": "Composition of bijective functions is bijective",
+      "domain": "algebra",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "204ff597ac6738b4eecc189cd4f6cbe3f02a1d85ab77f3e280785e4b3b55a386"
+    },
+    {
+      "packet_id": "elementary.functions.finite_injective_iff_surjective.v1",
+      "title": "Injective iff surjective for finite self-maps",
+      "domain": "algebra",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "a9a45e27f166b355d320491b5570c2cafa62917f8476ab1d316e86e0d77e2671"
+    },
+    {
+      "packet_id": "elementary.functions.fixed_point_id.v1",
+      "title": "Every point is a fixed point of the identity function",
+      "domain": "algebra",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "d7639d42d143f45cd64ea6e567ec87b9f41c5247c6324e6d26b278089c4f18b4"
     },
     {
       "packet_id": "elementary.functions.geom_series_mul.v1",
@@ -848,7 +1193,47 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "ddf9fdf508d7173e432cb714da60ccbf5ff8dfa33aa68959572f1b759ccc913f"
+      "packet_sha256": "d4208fff53b9c43b08ce77447f8e7e32e88dcd8ebe5f62ff794d0eaa6e794833"
+    },
+    {
+      "packet_id": "elementary.functions.id_bijective.v1",
+      "title": "The identity function is bijective",
+      "domain": "algebra",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "c5fabd8f53769711011388d84c35857fe836c59619a18e58017434f6c9981f3a"
+    },
+    {
+      "packet_id": "elementary.functions.image_inter_subset.v1",
+      "title": "Image of an intersection is a subset of the intersection of images",
+      "domain": "algebra",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "1445d86ae15a9080a23ad4d41ffc93b72c94551cfa54af00dd58197dc30de293"
+    },
+    {
+      "packet_id": "elementary.functions.image_union.v1",
+      "title": "Image of a union is the union of images",
+      "domain": "algebra",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "86ebd1fe3cc9095d4ffb9a60e64513724c6b30275fb035b80f6601f2444ede21"
+    },
+    {
+      "packet_id": "elementary.functions.injective_comp.v1",
+      "title": "Composition of injective functions is injective",
+      "domain": "algebra",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "d00051cee3709a5490980103c0bf0ba570e89a804763ca06ad86f92059ad0296"
     },
     {
       "packet_id": "elementary.functions.le_abs_self.v1",
@@ -858,7 +1243,37 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "999667a0815d80fb268f77660d5fe90ceb445cbb0b4e18f53effa34e0851d5b6"
+      "packet_sha256": "8f9e9edd741f38e440072a22636a0760ecedd6af2e237fc464d872eabefc4217"
+    },
+    {
+      "packet_id": "elementary.functions.left_inverse_injective.v1",
+      "title": "A left inverse implies injectivity",
+      "domain": "algebra",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "2152f686d686aeea745bc163a5abf91402307b36da66fa891b15319754e8e57b"
+    },
+    {
+      "packet_id": "elementary.functions.linear_injective.v1",
+      "title": "Affine functions with nonzero slope are injective",
+      "domain": "algebra",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "fae9be59089315ca8a0f83961e9f45a2534205bb8ba7346f4da6e1b30deaf8b1"
+    },
+    {
+      "packet_id": "elementary.functions.linear_injective_concrete_instance.v1",
+      "title": "3n + 7 is injective",
+      "domain": "algebra",
+      "level": "L1_proof_basics",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "af90c4d712690d695182fa02d4a20a9209f2734f1c3eeae141c1fbdba54a16a0"
     },
     {
       "packet_id": "elementary.functions.max_comm.v1",
@@ -868,7 +1283,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "0c80df4706bed7e91f460c198fe5d11280b471c5df52963fc4ff476425e34dc0"
+      "packet_sha256": "eb2e1b6217fec18a243b322f92515df0a33314ae22c12a75b8c85ed03eb935f8"
     },
     {
       "packet_id": "elementary.functions.max_self.v1",
@@ -878,7 +1293,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "4ebe20dfd42505be9be64ab0a5ef457a1a377a27b544c22194a1cf4646983121"
+      "packet_sha256": "f14b4ae33025ef240d72a0a25a1c3c8349df99aaa50854ca18cbcf72d30c7c0f"
     },
     {
       "packet_id": "elementary.functions.min_comm.v1",
@@ -888,7 +1303,17 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "ff10dfec3f0e8ba917c10d88d26cc417768f6f335f7764285d807cd3a4c5a67a"
+      "packet_sha256": "21d1033b649ea83f42c516237d4b9f67666b5e53db64b93e51307f6bdccee275"
+    },
+    {
+      "packet_id": "elementary.functions.min_le_max.v1",
+      "title": "The minimum of two reals is at most their maximum",
+      "domain": "algebra",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "3e633954e50b420c3a3d20518196d950c8145891052254b02caa9d347807f009"
     },
     {
       "packet_id": "elementary.functions.min_self.v1",
@@ -898,7 +1323,17 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "1539a69d9e93429b3246946961fc561a32c44e238a94c9661ff1f6fef40e63a0"
+      "packet_sha256": "e6d6f2978bec94431d4b0d67d57ed66932d6d5737a1ed6f8c60729bad8d8ffa0"
+    },
+    {
+      "packet_id": "elementary.functions.monotone_comp.v1",
+      "title": "Composition of monotone functions is monotone",
+      "domain": "algebra",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "8d2882825abc74401829d65d275ae43f68f17a33a2ea23861b458cdc3ee2d9ff"
     },
     {
       "packet_id": "elementary.functions.neg_abs_le.v1",
@@ -908,7 +1343,27 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "1333df118d4f4eea728a6b797b6cfe977ee54f0b795c08b38541c0bc8d17538a"
+      "packet_sha256": "c0d87626dae847a0ea03a88d9f1a9b8e4618cbb360b3bf85d4d396f5a4ef69ea"
+    },
+    {
+      "packet_id": "elementary.functions.preimage_inter.v1",
+      "title": "Preimage of an intersection is the intersection of preimages",
+      "domain": "algebra",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "c1ad0a737f562f82f1074f186fbb45baae2ff4e7df8aedb3dc6cdb8e44bb2dcb"
+    },
+    {
+      "packet_id": "elementary.functions.right_inverse_surjective.v1",
+      "title": "A right inverse implies surjectivity",
+      "domain": "algebra",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "06140318ac99127b5bd1ed17c6c9ee2d74f75ea71e11474aff7335b4f4caa358"
     },
     {
       "packet_id": "elementary.functions.sq_abs.v1",
@@ -918,7 +1373,47 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "bc7090335767b00c1295eb9372c50ac05ac38378832fc375799a5b3768602baf"
+      "packet_sha256": "6aabf79163401b172bfb191d07dc774513acbfddb3f835bb6742f3980c5c097b"
+    },
+    {
+      "packet_id": "elementary.functions.strictmono_comp.v1",
+      "title": "Composition of strictly monotone functions is strictly monotone",
+      "domain": "algebra",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "83f84d757005cf2901781c9d2eb1b2d8d0e1dd1dfe7a0f71b8f370d6032bf6ab"
+    },
+    {
+      "packet_id": "elementary.functions.strictmono_injective.v1",
+      "title": "A strictly monotone function is injective",
+      "domain": "algebra",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "d820e312507739defcd65e893555e4529ffaaceac1908d74362813488d2aec88"
+    },
+    {
+      "packet_id": "elementary.functions.surjective_comp.v1",
+      "title": "Composition of surjective functions is surjective",
+      "domain": "algebra",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "5c7386214f10d49cddd76dd568a97cd90237e14766c79caaf3c44faf481fce32"
+    },
+    {
+      "packet_id": "elementary.functions.surjective_not_always_injective.v1",
+      "title": "Surjective does not imply injective on an infinite domain",
+      "domain": "algebra",
+      "level": "L1_proof_basics",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "9f4f91e89843e02c4eed9520f73e229485dbbd24b09bea9b87c1275b090eddaa"
     },
     {
       "packet_id": "elementary.geometry.angle_bisector_double.v1",
@@ -928,7 +1423,17 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "53a1f7e143ef0a75547391f11d1baf3a881c5d1114f8f976d7847e2fb57fdb84"
+      "packet_sha256": "4fd83daeefe6d3afd0a5d83d824c240f4313965504d76fbb71d5498dbca58c68"
+    },
+    {
+      "packet_id": "elementary.geometry.apollonius_median.v1",
+      "title": "Apollonius's theorem (median length theorem)",
+      "domain": "geometry",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "cb51cf3fe8c4842a9c3121984e90e431f771644076aab8eb4f78fad279532f9a"
     },
     {
       "packet_id": "elementary.geometry.centroid_sum.v1",
@@ -938,7 +1443,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "5519fdb06bc2a4d9cebedeca77b9e2c25d3dd4c34d8f89b64bd1da1f67354ad1"
+      "packet_sha256": "880e285a01d0be1cb3f3e9da274c979ac129788a0b9f633669382db8af5f714c"
     },
     {
       "packet_id": "elementary.geometry.centroid_x.v1",
@@ -948,7 +1453,17 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "75484af4e4dd9c5e64f38cfe9421a756ec7f912769be83ccf48c06b21455871e"
+      "packet_sha256": "a9ac1ca735de925db2ddb60b170807f6c5f756e5a01e2d3de97da7340a08d185"
+    },
+    {
+      "packet_id": "elementary.geometry.circle_point_dist_eq_radius.v1",
+      "title": "Cosine/sine parametrization lies on the circle",
+      "domain": "geometry",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "27884cf965643d156622a996bc6a8a4d309882260b91d62d2a4808cae30b9fd8"
     },
     {
       "packet_id": "elementary.geometry.collinear_det.v1",
@@ -958,7 +1473,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "f3aee53a8ad45bbd9e4788df3ca7f9128642bcfd6878642a8031e1aa0769b24b"
+      "packet_sha256": "e94ad8b7bcbb81e6d4cab42b917107ab0ed3bcc4b422b10fe38a553dfd9779f7"
     },
     {
       "packet_id": "elementary.geometry.complementary_angle.v1",
@@ -968,7 +1483,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "6d006bd67941c926531a1abc48e394ea49fcec4d65f4cf83b61ff259cd635059"
+      "packet_sha256": "45198e94f63e9c7b3311ed7a517d22e288608937db048671a271a7da458f15c1"
     },
     {
       "packet_id": "elementary.geometry.dist_sq_expand.v1",
@@ -978,7 +1493,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "cfe329d97078fdda2fd6ae29508ee46b95735d8078780a4cdf1cf2402a4e31e8"
+      "packet_sha256": "398e56b29a4d85fd9f1ac5eac4ab7d12c01c888ec16ab873a16353cb321e4cc9"
     },
     {
       "packet_id": "elementary.geometry.dist_sq_symm.v1",
@@ -988,7 +1503,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "c35d25a8991f58bdb0b8e26355729d893a84ee27115237c090c47353e4b22044"
+      "packet_sha256": "a04a215973e9fed205612aeadaa18c92ff0c4725c25582b74a106c2061c4789f"
     },
     {
       "packet_id": "elementary.geometry.distance_expand.v1",
@@ -998,7 +1513,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "547491d04d129a502d4dd232020a1bf532bb42dcc7764af03e5b402a3ef05eb2"
+      "packet_sha256": "60223c60ddaea56b42381df8c17d6614cb30508c76fdb5e77abd1b8276bb0235"
     },
     {
       "packet_id": "elementary.geometry.distance_sq_nonneg.v1",
@@ -1008,7 +1523,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "249cb7cd6394c1b179dc471c858582b21789eb773c1f89aa7b7a30e29bcb8261"
+      "packet_sha256": "37f55e5709e77bac2b03bfd0551b167fc202600a63bc3452a35532b14151be62"
     },
     {
       "packet_id": "elementary.geometry.dot_distrib.v1",
@@ -1018,7 +1533,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "2434f1e82dbe39613ff6dfa59557efd10fdf9fc47fec544a64a4c0846b83bca0"
+      "packet_sha256": "2cd226a680b53fd7a589f130555d3553aaf1f167957fb58cf495c6fcb6ab7b53"
     },
     {
       "packet_id": "elementary.geometry.dot_product_comm.v1",
@@ -1028,7 +1543,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "982773b7d9d9b8a74e934d5e1eb95604f4ea1f020c18cf7212336eb8c237f6b5"
+      "packet_sha256": "f7faf42c64084ac2ce3b79997d1244c7e0c95e4203951d7ccc82bffab1b3dde0"
     },
     {
       "packet_id": "elementary.geometry.exterior_angle.v1",
@@ -1038,7 +1553,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "14cc687cdc867a9a058ef92f7bcc0f985bac7e7b0f7bf327678fd0184a62e685"
+      "packet_sha256": "587e985ebd3b6948543eb3a9a896d5f611edbc0c2d68393c2f3e64f6a75cc03e"
     },
     {
       "packet_id": "elementary.geometry.isosceles_base_angle.v1",
@@ -1048,7 +1563,17 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "0782fd148d13f2cf03a605faa12f1cb5ccbe3b2f6babdc457902f8a5fe1614f0"
+      "packet_sha256": "09984afafe80598d81d36e6676bc7cee46cc097c12bc6fd10fffea722dd59088"
+    },
+    {
+      "packet_id": "elementary.geometry.law_of_cosines.v1",
+      "title": "Law of cosines (coordinate / squared-distance form)",
+      "domain": "geometry",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "61523b34279b80dfd544eb63683cb9ff89ca67bced94495d7697877e9b092daf"
     },
     {
       "packet_id": "elementary.geometry.midpoint_between.v1",
@@ -1058,7 +1583,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "1485aabb4cac94e9862ac98a6fcbe05ad10246937a4d3b4aa745c991f041dba7"
+      "packet_sha256": "86e60a25b8c9c81adfdd1cbd1d7fb39d2235668a1c011acc3e6a11655082f504"
     },
     {
       "packet_id": "elementary.geometry.midpoint_double.v1",
@@ -1068,7 +1593,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "0aa0572ce1ed69df4e3abc586b79ed6aeb033532457e6c61afd954d2180305ac"
+      "packet_sha256": "dfea0703c7f757b0d8f17f663f243990f19c1b2ed94527876b475d58f1430a27"
     },
     {
       "packet_id": "elementary.geometry.midpoint_equidist.v1",
@@ -1078,7 +1603,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "a298990853f3111449c663d9c8fbb30753b652631d937cd96f72637cc465cc06"
+      "packet_sha256": "799a247a09293135fe33f108f69e3f6dae5d9a81f904f64320f22463d1d26c51"
     },
     {
       "packet_id": "elementary.geometry.midpoint_symm.v1",
@@ -1088,7 +1613,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "5c52650a1b6fd9b6d6c0145fcedcc46c1e1c7c008c8759fa89254635603ab7dc"
+      "packet_sha256": "ebcae03c3437812925272b01feeeb4fed3912e47115026b35020d807c0eca5de"
     },
     {
       "packet_id": "elementary.geometry.parallelogram_law.v1",
@@ -1098,7 +1623,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "6cc99f270e95535ace01e94966a15430ae9b57daf9f9f24e3394d47234cb6c68"
+      "packet_sha256": "2776efdd4dceaca5783376e1e738d12c810738c5c10787dd839df9df5c9ea580"
     },
     {
       "packet_id": "elementary.geometry.perp_rotation.v1",
@@ -1108,7 +1633,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "b8899e9332f2b5f030c680702b58b995b0aea90e0252f6e87f75b07cd20e42c4"
+      "packet_sha256": "4c1c3024de3a02f27b5c021f410cbb832d4791b2483d3e00ee8e2e2be54d97c3"
     },
     {
       "packet_id": "elementary.geometry.perp_slopes_comm.v1",
@@ -1118,7 +1643,17 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "159004a0d52553bcceb3442aa502c082ee4ec6e8d9a3effb03cfb2ef59efebf6"
+      "packet_sha256": "b7b1f97a9c5ec7d5311d3cfb6283e5c0cc25fe1b041d73a8245f12b5892925c3"
+    },
+    {
+      "packet_id": "elementary.geometry.pythagorean_right_angle.v1",
+      "title": "Pythagorean theorem (squared-distance form)",
+      "domain": "geometry",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "4af1704591623c2baf197bf3609a77d19250747ec44292e894891547d29b5b12"
     },
     {
       "packet_id": "elementary.geometry.reflection_dist.v1",
@@ -1128,7 +1663,27 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "4549b2396f46329e2cf6d50a5a16f67f6cd00d9c09f3b9586ebb2cc0d8073fa9"
+      "packet_sha256": "0b585a5f72965067e9614b4fc073b57a757db440169f0e8a818f80f941369681"
+    },
+    {
+      "packet_id": "elementary.geometry.reflection_over_x_axis.v1",
+      "title": "Reflection over the x-axis preserves distance to points on the axis",
+      "domain": "geometry",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "455af3a556e7b5e769e76fc5401045649a59344e520bd18426adaee453a9b550"
+    },
+    {
+      "packet_id": "elementary.geometry.reflection_over_y_axis.v1",
+      "title": "Reflection over the y-axis preserves distance to points on the y-axis",
+      "domain": "geometry",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "79590284bb17b77eb1cf76082fd76e55ac1278bf556dd2d6a147a07d5a9d34e6"
     },
     {
       "packet_id": "elementary.geometry.reflex_angle.v1",
@@ -1138,7 +1693,17 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "da165ec5051ee673928557b7235c7071e0c49590f8c7ce44a6240cd792cfe088"
+      "packet_sha256": "bba9ce4073a2d0758d39ad780445700a5a421a016638cb16b72ca2e14ce4331c"
+    },
+    {
+      "packet_id": "elementary.geometry.right_triangle_area_half_base_height.v1",
+      "title": "Right-triangle area via base and height (squared form)",
+      "domain": "geometry",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "7b285c0197fc0b29cabe12fee5649cbe44e81ad77bedc1e93e6d1f3d017499c8"
     },
     {
       "packet_id": "elementary.geometry.section_formula_thirds.v1",
@@ -1148,7 +1713,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "25513af1f08535223b3bab929f88fce613699aa03ac9628b231df1552b5ddb14"
+      "packet_sha256": "580b8364a93f6734b1a3e323bc0431d924be5031218c722ba15ba99d7591f437"
     },
     {
       "packet_id": "elementary.geometry.shoelace_identity.v1",
@@ -1158,7 +1723,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "bee898809ec821508e4501de6ac03bfe2d0726653b91d4c4f38deb158459c89c"
+      "packet_sha256": "58cb88d430861499750f25409c94f284e0103f6d982393f5357189ec789d4488"
     },
     {
       "packet_id": "elementary.geometry.slope_cross_symm.v1",
@@ -1168,7 +1733,17 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "81a3b82abd089bcf332f1de35bb419783ab0da2b4ade3f22b5ee0613452e12a0"
+      "packet_sha256": "cf5effec74a91d0ebeeb305e40deb7cc0f9d2650b392dc5e5465d92e57c1b96c"
+    },
+    {
+      "packet_id": "elementary.geometry.slope_div_mul_not_always_cancel.v1",
+      "title": "Dividing then multiplying back by (x2 - x1) does not always recover (y2 - y1)",
+      "domain": "geometry",
+      "level": "L1_proof_basics",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "41d1b60da4fbebe3686b7779fa3772e84df7eb2493ee5841fe6ec71cf8f0a62d"
     },
     {
       "packet_id": "elementary.geometry.supplementary_angle.v1",
@@ -1178,7 +1753,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "f1eb8df4b3f41313b761f50fe406f6a1a6dd4d2c804b0f47b9932c6047725ad7"
+      "packet_sha256": "45675ebdde2f1694b6c3824b29e4acbc093e02a0a4858ecead4984ab0cd03c5d"
     },
     {
       "packet_id": "elementary.geometry.triangle_angle_sum.v1",
@@ -1188,7 +1763,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "b60a00b251fc147f938dfd608ea0c1e6fa29b848e8a22dfd55b1c3ffc8cf2084"
+      "packet_sha256": "a9527b2295213e45bce6e5efe8de7b6bf9e1245e0897e852eaa325012cb344e6"
     },
     {
       "packet_id": "elementary.geometry.two_dot_le.v1",
@@ -1198,7 +1773,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "37169ebf05349f6f14b91cca26a0a70c50881e43c2ae247b736e949dea79e7ba"
+      "packet_sha256": "c66acacf22ab55e854bb5073834576c218832325fa761cd2abe5b7a26e0e52c1"
     },
     {
       "packet_id": "elementary.geometry.vertical_angles.v1",
@@ -1208,7 +1783,127 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "0981c9c6873420a8c2648d377ed4f2dbe4d01ff306a44ccbb9d052bb29cef4b7"
+      "packet_sha256": "7c039d4a88f621f16001278dff01826816c5891d7e56a6743f8c2a45157fca4c"
+    },
+    {
+      "packet_id": "elementary.induction.arith_seq_sum.v1",
+      "title": "General arithmetic-sequence sum formula",
+      "domain": "algebra",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "d7a12af07fca787c409e2e9f40a7942fd71fcae2cc9e83afa3c433a2e385a731"
+    },
+    {
+      "packet_id": "elementary.induction.bernoulli_inequality.v1",
+      "title": "Bernoulli's inequality",
+      "domain": "algebra",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "9e25a4b169687ef171620a778d707bc75eb1330d8b93a6a146807557d44a3dd3"
+    },
+    {
+      "packet_id": "elementary.induction.euclid_gcd_eq_gcd.v1",
+      "title": "Euclidean gcd via well-founded recursion equals Nat.gcd",
+      "domain": "algebra",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "a766a3400ed831a33dc01ea7eec746ecbf37b93dce09a8be2126036a4274df02"
+    },
+    {
+      "packet_id": "elementary.induction.even_odd_mutual_totality.v1",
+      "title": "isEven / isOdd totality, via mutual recursion",
+      "domain": "algebra",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "a6f1ca249ade05402b535f231b9b20bc80cbc7358bb618ce73dc49cb531d1c9a"
+    },
+    {
+      "packet_id": "elementary.induction.exists_prime_factor.v1",
+      "title": "Every n >= 2 has a prime factor, by strong induction",
+      "domain": "algebra",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "60b85c00330a6a490515cc5164cfc06933e8cf0cc9aadc6494afd0ab8d66b7a8"
+    },
+    {
+      "packet_id": "elementary.induction.exists_prime_factorization.v1",
+      "title": "Every n >= 1 is a product of primes (existence half of FTA)",
+      "domain": "algebra",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "689b2950498c0b196a52208a200ccbbbb6aad3494b91579c01532b7930a46f77"
+    },
+    {
+      "packet_id": "elementary.induction.factorial_add_ge_mul.v1",
+      "title": "(m+n)! is at least m! times n!",
+      "domain": "algebra",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "c03cbddb50f5aad75cad3a788c9570d4df157a401254249c71f9cbff43c084fe"
+    },
+    {
+      "packet_id": "elementary.induction.factorial_ge_two_pow.v1",
+      "title": "Factorial dominates 2^n",
+      "domain": "algebra",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "c7d61ca7b15443d1db4c9538b017915877568283f8a4d795a7d9afd9888a0989"
+    },
+    {
+      "packet_id": "elementary.induction.factorial_pos_induction.v1",
+      "title": "Factorial positivity, by induction",
+      "domain": "algebra",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "404cba2f0bd59b2fd636dd519bc09496c709f26acf57807ea0fbe3b1a2fe20ed"
+    },
+    {
+      "packet_id": "elementary.induction.fib_le_two_pow.v1",
+      "title": "A hand-rolled Fibonacci sequence satisfies fib n <= 2^n",
+      "domain": "algebra",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "91e3a122e8b4690552544f239866981cc65871c8c1c86f63a84228ab3683da34"
+    },
+    {
+      "packet_id": "elementary.induction.fib_sum_succ.v1",
+      "title": "Fibonacci partial-sum identity",
+      "domain": "algebra",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "3649c689fc386d1bb21eedf5db9904a3e9c35b2c1a8c126eaa3f7cf93d9bd0a3"
+    },
+    {
+      "packet_id": "elementary.induction.foldl_cons_eq_reverse_append.v1",
+      "title": "Accumulator-passing foldl equals reverse-append",
+      "domain": "algebra",
+      "level": "L1_proof_basics",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "cc7e1e2986dfa72ab19a652a825799f83f396144807a2a9d217186c9d1848d51"
     },
     {
       "packet_id": "elementary.induction.gauss_sum.v1",
@@ -1218,7 +1913,77 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "16eb73f60f7916db7e93a120a56bc722041fa5c151b8308eaa424bcc2899e695"
+      "packet_sha256": "a85d58a29113c9946bbb9acd9386c5097bad5e570bba37dc8451e6fa1b5b68c1"
+    },
+    {
+      "packet_id": "elementary.induction.geom_series_sum_induction.v1",
+      "title": "Geometric series closed form, proved by induction",
+      "domain": "algebra",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "a5556e6b4e156ff24d444cbd9f67ddda3a2642c84647e13bdd24e437885ec39b"
+    },
+    {
+      "packet_id": "elementary.induction.myfactorial_eq_factorial.v1",
+      "title": "A hand-rolled factorial via structural recursion equals Nat.factorial",
+      "domain": "algebra",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "0121af09b7ede5d3c5e93e0480770784cd06d75e98d98a2395aea87df12a73bb"
+    },
+    {
+      "packet_id": "elementary.induction.mygcd_wellfounded.v1",
+      "title": "Euclidean gcd via genuine well-founded recursion",
+      "domain": "algebra",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "f80f3693be16c30a318eee7171be53089bc6bbe0d9de2cf47abcd4184590b3e9"
+    },
+    {
+      "packet_id": "elementary.induction.odd_part_decomposition.v1",
+      "title": "Every positive natural number is 2^k times an odd number",
+      "domain": "algebra",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "c4b1975b31664c4d31b7777c7f9f2bfaa6d45781ffeb1f4d5ed059c73721ce75"
+    },
+    {
+      "packet_id": "elementary.induction.one_le_two_pow.v1",
+      "title": "Powers of two are at least 1",
+      "domain": "algebra",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "4e319d77e45cb2b2a8ea7170f19aebebba8ee8e89c3e29d2cd31ee558b8a20fb"
+    },
+    {
+      "packet_id": "elementary.induction.prod_range_monotone.v1",
+      "title": "Partial products of a >=1-valued sequence are monotone",
+      "domain": "algebra",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "21f2ae58098bb179791efcf21f35683e25362010a1a715d63bdd448dd8e6ebc4"
+    },
+    {
+      "packet_id": "elementary.induction.prod_range_pos.v1",
+      "title": "Product of positive terms over a range is positive",
+      "domain": "algebra",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "91315a5682405fad65d043d44ae3deeb94a4970b18c6a0def5d6384c07c95b8b"
     },
     {
       "packet_id": "elementary.induction.prod_range_succ.v1",
@@ -1228,7 +1993,17 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "b08f0795c5fec4e33c3ff9d14c65bcd5e9ad3cebc241fe3836e05324a042f24a"
+      "packet_sha256": "be8974d7bab61fb226f7aad722a9369429d85deec948198d06eeb8d3ecc6d4e0"
+    },
+    {
+      "packet_id": "elementary.induction.sum_consec_product.v1",
+      "title": "Tetrahedral number formula (division-free)",
+      "domain": "algebra",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "1bc784642935b01bc86e04220bba138ac12b8a4d0e7d61a27a00b084c51af9f3"
     },
     {
       "packet_id": "elementary.induction.sum_cubes.v1",
@@ -1238,7 +2013,37 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "6715e78dbc99bc0d85f008bd8689a497de5b4ad33b82bcc467ab751d048a75fc"
+      "packet_sha256": "dc6dc1343d568112a0c3bd8401ab41269aa4023cb26ea009b5c2c00abff519c7"
+    },
+    {
+      "packet_id": "elementary.induction.sum_cubes_eq_sum_sq.v1",
+      "title": "Nicomachus's theorem (sum of cubes equals square of the sum)",
+      "domain": "algebra",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "0a549fff972c2438c079ac5a5e55b0344117d74df5fb318389152cacfd932b11"
+    },
+    {
+      "packet_id": "elementary.induction.sum_evens.v1",
+      "title": "Sum of the first n positive even numbers is n(n+1)",
+      "domain": "algebra",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "d3f8e27262cc06c325b8a84bfdbdd3ce2480ef8fd869d96a6494cc8117eca2d2"
+    },
+    {
+      "packet_id": "elementary.induction.sum_fib_sq.v1",
+      "title": "Sum of squares of Fibonacci numbers",
+      "domain": "algebra",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "e2acef686845c41d3a88e8f8d684a88d7fbb392b672d448c811323fd081efc34"
     },
     {
       "packet_id": "elementary.induction.sum_odds.v1",
@@ -1248,7 +2053,17 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "350bc8216c837ba0b84fca276b7a22ea208aed82c8d0b9ba85b79c5b55587581"
+      "packet_sha256": "787855e9b33c028b036604bf4a7f10ba35800027f279a1fff4aecd54869dfe3b"
+    },
+    {
+      "packet_id": "elementary.induction.sum_range_monotone.v1",
+      "title": "Partial sums of a nonnegative-valued sequence are monotone",
+      "domain": "algebra",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "7a900b5dc34a4a47eb81ba39367fab9fedf0781d8bbf10cf02f9e87eaa0363ce"
     },
     {
       "packet_id": "elementary.induction.sum_range_succ.v1",
@@ -1258,7 +2073,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "78b9e7c1e3e6651a1092759526eea5e0e0f3e28d924c447268c20ab9ead5b967"
+      "packet_sha256": "b39776b6a9aedf82fdb2035734ac3d90f2bb1e3fc19ae458608c90c8f7f313f7"
     },
     {
       "packet_id": "elementary.induction.sum_squares.v1",
@@ -1268,7 +2083,87 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "d74d790f1db55f5b6a44a3823b221d70c12f1d4dc40fa9808ae6078601e29872"
+      "packet_sha256": "6e637e77d649f7ce1b39306a299042f721f6fd73edcc4e485cef06266d071910"
+    },
+    {
+      "packet_id": "elementary.induction.telescoping_sum.v1",
+      "title": "Telescoping sum identity",
+      "domain": "algebra",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "18a4c07402cee0f00049fd750d4d04dca30f45aa869fa872719d6da7c107ef5d"
+    },
+    {
+      "packet_id": "elementary.induction.two_pow_gt_self.v1",
+      "title": "2^n exceeds n",
+      "domain": "algebra",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "160844d3c8301e5f8f83bdde20b38a4cf0a207ceecf49551de3c49ded1df105c"
+    },
+    {
+      "packet_id": "elementary.induction.two_pow_gt_sq_from_five.v1",
+      "title": "2^n exceeds n^2 from n = 5 onward",
+      "domain": "algebra",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "46775ce9e219d93376f84d1dbd99c7a2afb2662270b9371040d128a87dfdb6e1"
+    },
+    {
+      "packet_id": "elementary.induction.two_pow_strictmono.v1",
+      "title": "Powers of 2 are strictly monotone in the exponent",
+      "domain": "algebra",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "dd229dfb08c21f114839db9e13579f95bc171cdd835edafe534526d411df4438"
+    },
+    {
+      "packet_id": "elementary.inequalities.abs_abs_sub_abs_le.v1",
+      "title": "Full (doubly-absolute) reverse triangle inequality",
+      "domain": "algebra",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "8df2edd48604a85931d26618ffbff6b0315cdaafaf30c1a34e9b33c2f9ed3fdc"
+    },
+    {
+      "packet_id": "elementary.inequalities.abs_add_le.v1",
+      "title": "Triangle inequality for real absolute value",
+      "domain": "algebra",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "e57bfc84aacfb28c8297bc77e04fde13f6c59c45a3f2b3536072d7ea2bdc93b5"
+    },
+    {
+      "packet_id": "elementary.inequalities.abs_add_three.v1",
+      "title": "Three-term triangle inequality for real absolute value",
+      "domain": "algebra",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "65fb77f4161d823247a08b05c6c93934c6b573509388ddf603218721138ff9a2"
+    },
+    {
+      "packet_id": "elementary.inequalities.abs_sub_le.v1",
+      "title": "Triangle inequality for real distance",
+      "domain": "algebra",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "915851211dc9c04cc8d266ceddc7410afafca039b6e717d0571c2f2c79c97c47"
     },
     {
       "packet_id": "elementary.inequalities.add_one_div_ge_two.v1",
@@ -1278,7 +2173,17 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "a8725ef63bdc447eb34c2dbe43a5c21531d408ad08dd094982452bbabd5fb6af"
+      "packet_sha256": "1fc3d51c33c29036c3ed3da9905c279d7a2d83a30592d6e32616929d19b32bcd"
+    },
+    {
+      "packet_id": "elementary.inequalities.am_gm_four_term.v1",
+      "title": "AM-GM, four-term polynomial special case",
+      "domain": "algebra",
+      "level": "L2_olympiad",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "6b9def90ec1e43119cafa31919b6b62f89b42650a6b6762730952cda87e203c3"
     },
     {
       "packet_id": "elementary.inequalities.am_gm_two.v1",
@@ -1288,7 +2193,47 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "8326c94018b69e6b024c6567b09aff38f86eee4c17b0eb13383157624c28ad30"
+      "packet_sha256": "13d381fb190d919ba01510f823dc9d6f436addb038b227faf6904e3ccc9f9e74"
+    },
+    {
+      "packet_id": "elementary.inequalities.am_hm_two.v1",
+      "title": "AM-HM inequality (two-term case)",
+      "domain": "algebra",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "08c5ffea5d4e6ca3d133f134da2856838a1408b00d73754475c1b254ff8a3b54"
+    },
+    {
+      "packet_id": "elementary.inequalities.amgm_wrong_direction_counterexample.v1",
+      "title": "AM-GM flipped-direction counterexample",
+      "domain": "algebra",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "f1206ce0f358c71d97db56a00a17a9d685d8f364e210b8829e6a9f29259f4b89"
+    },
+    {
+      "packet_id": "elementary.inequalities.avg_between_min_max.v1",
+      "title": "The average of two reals lies between their min and max",
+      "domain": "algebra",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "cd3db55ce00e51b72bbb4ba29e480f2c7aa217fcce93ff8f85d289cf5b660079"
+    },
+    {
+      "packet_id": "elementary.inequalities.cauchy_three_term.v1",
+      "title": "Cauchy-Schwarz inequality, three-term case",
+      "domain": "algebra",
+      "level": "L2_olympiad",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "45454f313d097b1cde8fa41624c21868bd2fb3d36a20fdf03870e0836c913650"
     },
     {
       "packet_id": "elementary.inequalities.cauchy_two_term.v1",
@@ -1298,7 +2243,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "d954d1b08a7fa4c9e5b393582eb939f452058e00d63e0e7c83c842d6c14bc8de"
+      "packet_sha256": "e785537c75f8da1e42d0f303a0e2fe935f0c56357533120ef4b77b62b32be19c"
     },
     {
       "packet_id": "elementary.inequalities.four_mul_le_add_sq.v1",
@@ -1308,7 +2253,67 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "31afc98273d1f08c115ae96639a2713c4def7fe9c4057bc98ac794fcbf327092"
+      "packet_sha256": "8a2e0ff62d430ee4c382fd551ead7e30c23f46e55987cea57fd3b50ee12c8cf2"
+    },
+    {
+      "packet_id": "elementary.inequalities.general_amgm.v1",
+      "title": "General n-term (unweighted) AM-GM inequality",
+      "domain": "algebra",
+      "level": "L2_olympiad",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "95a467dfe5828bbb2e8f37be4c0bcd854edb93e6b36b7694132cf55ab2540233"
+    },
+    {
+      "packet_id": "elementary.inequalities.general_cauchy_schwarz.v1",
+      "title": "General n-term Cauchy-Schwarz inequality",
+      "domain": "algebra",
+      "level": "L2_olympiad",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "93c8eb15e49c47bda088910f31f4a476764f937b28cf9ed9b4918e026efdf460"
+    },
+    {
+      "packet_id": "elementary.inequalities.general_qm_am.v1",
+      "title": "General n-term QM-AM inequality (squared-sum form)",
+      "domain": "algebra",
+      "level": "L2_olympiad",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "9a14b2783d75ea8482719543b2c4435252487aaffbd610b85312f39e3535ff6d"
+    },
+    {
+      "packet_id": "elementary.inequalities.max_add_le.v1",
+      "title": "Max is subadditive",
+      "domain": "algebra",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "15004b1b2844ffb4d5e4ce024977edf0daadadd30062983850d9647f05dbe806"
+    },
+    {
+      "packet_id": "elementary.inequalities.min_add_max.v1",
+      "title": "min plus max equals the sum",
+      "domain": "algebra",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "60434f0553be6071b9ddb66a353e7d8ef6b82c690045fdc125b2d5e614c34538"
+    },
+    {
+      "packet_id": "elementary.inequalities.min_add_min_le.v1",
+      "title": "Min is superadditive",
+      "domain": "algebra",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "733969307f8bf2bb5dca312bdd4f7ec558cfffc6d1b70a2abf467819047b774a"
     },
     {
       "packet_id": "elementary.inequalities.mul_pos.v1",
@@ -1318,7 +2323,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "6dff07ff96d56f6d820501799cea085c95b20ebb0d670b52ec62bed28aadb78e"
+      "packet_sha256": "83576f1f734406a3fd2789a9c988419745e0a53722f92fb21f888878a27c5269"
     },
     {
       "packet_id": "elementary.inequalities.mul_self_nonneg.v1",
@@ -1328,7 +2333,17 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "79fdab91301d46eec789e1708928fdddca33d416478d9a6caead1bf11670c5d1"
+      "packet_sha256": "71fa04ffb1d6f2c2c2a102b68cad0c24db602605e80cc21b0d862f1b84c19bf4"
+    },
+    {
+      "packet_id": "elementary.inequalities.nesbitt_three_var.v1",
+      "title": "Nesbitt's inequality",
+      "domain": "algebra",
+      "level": "L2_olympiad",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "79b31ceef9f8293be4cec85bfcbd841e44792376788b70a0fe24f2df08861f51"
     },
     {
       "packet_id": "elementary.inequalities.qm_am_bound.v1",
@@ -1338,7 +2353,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "406250d18be5f627a28c0e3f1f6b17b21a7143119364a1795564c6f454ed6b94"
+      "packet_sha256": "baa90b6174c3971f916aa09ca29fc051b3322a97225838f31a28c82a36d815c3"
     },
     {
       "packet_id": "elementary.inequalities.quad_pos.v1",
@@ -1348,7 +2363,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "82eb6f38feec5780f61e87a0b5c46461a6c64caeb8fa488a525d289705d95e28"
+      "packet_sha256": "5264a361d1b481f3b13bc3bde99705a619fd1d30e6bcf312f62c20697e77d880"
     },
     {
       "packet_id": "elementary.inequalities.reverse_triangle.v1",
@@ -1358,7 +2373,17 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "103a7524cffbcc0b28bdbf383f50101b46678f26f44503fb61c30d90d152a063"
+      "packet_sha256": "85bf7d733b67b08c9ed172226278caf8daa7c5b98ff2a5b402752e204eee590c"
+    },
+    {
+      "packet_id": "elementary.inequalities.schur_degree_one.v1",
+      "title": "Schur's inequality, t = 1 case",
+      "domain": "algebra",
+      "level": "L2_olympiad",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "13e8b39a644a5458b94c363934c1e48e4c904f86b470ca1803adb33e2ad3304e"
     },
     {
       "packet_id": "elementary.inequalities.sq_nonneg.v1",
@@ -1368,7 +2393,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "8feb9c7929785d2614ec5648918d0633c71d2cd35fb18d925a846f4b5721bc50"
+      "packet_sha256": "9e308137cc25dd1324afcc09e91751731eecaaa5c0659d20927a253345b23a10"
     },
     {
       "packet_id": "elementary.inequalities.three_sq_bound.v1",
@@ -1378,7 +2403,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "79168df2ebb4110d09a98dd0a5d48b4d052efb2693773593579070dd14fa905e"
+      "packet_sha256": "e6172969b9ca72298d501663bb897066f456210513c11595f9c081898769fff1"
     },
     {
       "packet_id": "elementary.inequalities.three_var_am_gm.v1",
@@ -1388,7 +2413,17 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "63916928717b2f67123afc107dcc4c501c2b7043ed2dab9fa03d5ddf4bf7e471"
+      "packet_sha256": "f3b5d1b9d33f3f498f035da698d1122cee2f968eca206ec79fc285982b839a7c"
+    },
+    {
+      "packet_id": "elementary.inequalities.three_var_qm_am_bound.v1",
+      "title": "Three-term QM-AM style bound",
+      "domain": "algebra",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "db377faa4ed9cd39cfba879b1f5cae78881b24eefdab482a11343ae74cff3a15"
     },
     {
       "packet_id": "elementary.inequalities.three_var_sq_ge.v1",
@@ -1398,7 +2433,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "f4d8116e9fcf12da3846162b9517260c3a0a1c0c8e84560aed127171f712c672"
+      "packet_sha256": "b478e17f26203d09cc3c1ac5138afcdfe8424e07b7336b458d2fa399b1393a49"
     },
     {
       "packet_id": "elementary.inequalities.two_a_le_sq_add_one.v1",
@@ -1408,7 +2443,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "6cf3a455e46f19865a3f5c4923546ba06f268c8d27079e3318a259e6f6cc6d92"
+      "packet_sha256": "05aeedebfcf5f85bb70beb3d5e1174dc92fe2c493a35b7f24301cdafdf52d789"
     },
     {
       "packet_id": "elementary.inequalities.two_mul_le_add_sq.v1",
@@ -1418,7 +2453,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "801fbdcf7bd37aa53ddfbfac6adec4cdb1bdd980c6c3858a8f0589e2fdc3a429"
+      "packet_sha256": "c6cc2cd79fbbd940134169a3e54858905ec502cfd1bf122171a334f8e17a73b2"
     },
     {
       "packet_id": "elementary.inequalities.two_sq_prod_le.v1",
@@ -1428,7 +2463,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "29621be7e316f29d16d09c4b8373ca47d0e5c844d313411b19a4c0706d3c0cd2"
+      "packet_sha256": "c512c8ff04db317ee4d2401d6e93590a95f07df2269b2a3ac39585e7e0e3ef1a"
     },
     {
       "packet_id": "elementary.number_theory.add_mod.v1",
@@ -1438,7 +2473,17 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "ca63b1d7ca81219dc63616a1b46a7b6d8fe603fea1e57be34eaa71e54f08a118"
+      "packet_sha256": "31ba11d15cf86e66ba7a058dfacb5810700a16269d5ea69baf161e1e5de3b39f"
+    },
+    {
+      "packet_id": "elementary.number_theory.bezout.v1",
+      "title": "Bezout's identity",
+      "domain": "number_theory",
+      "level": "L2_olympiad",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "cd0ef1e451b748422d3b955e472e6bfcf99bcb26832863bff5e9be5181f78f74"
     },
     {
       "packet_id": "elementary.number_theory.coprime_comm.v1",
@@ -1448,7 +2493,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "f1c2f661210e82ad5ac485c555cd5d3e5738da7d0016117814c4acf8af658f6f"
+      "packet_sha256": "ee6de48c9dc09ff35a3d8c410a949e3f005834d472961e8a3aebfa774a15d4c3"
     },
     {
       "packet_id": "elementary.number_theory.coprime_one_left.v1",
@@ -1458,7 +2503,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "46ff1ba36bdeba59790939fed95e266e7b002f8b7eac65c04fafe5f206f01c23"
+      "packet_sha256": "91956dc9156dffb055b4a861da645b6c51c3de6f4c791a2f440c9cc4a6b90b4b"
     },
     {
       "packet_id": "elementary.number_theory.dvd_add.v1",
@@ -1468,7 +2513,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "e284e163fd97f7e179bbbf887121690a26d5b3b8c5ec3fdfaed57b96ce501634"
+      "packet_sha256": "6dae5b6e5287eb0352d54e590691e6eaa8411c4b4b9f022fd1e3884352a02c9b"
     },
     {
       "packet_id": "elementary.number_theory.dvd_gcd.v1",
@@ -1478,7 +2523,27 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "f76e7dd77e1242f2b2312a7844b8c7e0b29971196158484cf056b67e2eed18a4"
+      "packet_sha256": "2f33606fbb803d0591098751ea9a0ae185e4832aa58bec2197fa2aa9cb8403a5"
+    },
+    {
+      "packet_id": "elementary.number_theory.dvd_lcm_left.v1",
+      "title": "a divides lcm(a, b)",
+      "domain": "number_theory",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "d356e917d67c66c3d58bb790bab72d0adb63463dbf8f4256ff3044627f17be42"
+    },
+    {
+      "packet_id": "elementary.number_theory.dvd_lcm_right.v1",
+      "title": "b divides lcm(a, b)",
+      "domain": "number_theory",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "d24edb9dabdff1b7326ea6e1f35f543a8015b8d9a42033f0332ae37cbeca0cca"
     },
     {
       "packet_id": "elementary.number_theory.dvd_mul.v1",
@@ -1488,7 +2553,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "1e3e263673fdca611770ad7601cc103e332e1ecac97d957677af39387275fce7"
+      "packet_sha256": "3f1965086afd5ca790913d56f43710ba1fd32f675ad5424ee51d0ee0746511a1"
     },
     {
       "packet_id": "elementary.number_theory.dvd_mul_left.v1",
@@ -1498,7 +2563,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "c4c32efcbafb0da2917fe6f095cb55e60243362846bf5eafaeceb694074d9a1e"
+      "packet_sha256": "874bf28ff06a2bdfbbef0f52f2c2d2b6e9d811e34c1e1c24373cca0a698842a3"
     },
     {
       "packet_id": "elementary.number_theory.dvd_refl.v1",
@@ -1508,7 +2573,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "d7ed8fae0d8078e7adb14a4e72b672134ead3cf3f45c17233d927d5d088efd6e"
+      "packet_sha256": "64c45dcc77d5b74fbaa8a95c9a0dd7a00a8ea33828afaff674eca1eb8ac6408d"
     },
     {
       "packet_id": "elementary.number_theory.dvd_sub.v1",
@@ -1518,7 +2583,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "aeaeb9ac012b3135b63cdb3d4c1d54ba0eeb73e62cb2af6ea61db4f2f8827dec"
+      "packet_sha256": "84136bcb2d1988ffad975391efca3e22a4d5b173073a8e31d7fa7f49fe7a7f7e"
     },
     {
       "packet_id": "elementary.number_theory.dvd_trans.v1",
@@ -1528,7 +2593,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "a9e9aa5531cf570f5c82d92d7ba39c770ef1e3d986c81d6b8d99b37865eafa18"
+      "packet_sha256": "72437e5e983b35df040c2664f6fdc9e2aecaa319d58e9e8e442d21497b028e98"
     },
     {
       "packet_id": "elementary.number_theory.dvd_zero.v1",
@@ -1538,7 +2603,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "44f9fddf639ceecd23632cfd9954c33f8e9cb36edc2af401d3fdab723bebd9a0"
+      "packet_sha256": "f1e266538b99eb9c6a1bab8c21f739480ec69d339ddffa8f04af51716d6518f1"
     },
     {
       "packet_id": "elementary.number_theory.emod_two.v1",
@@ -1548,7 +2613,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "4069f601a841c3aa1a623c1cd90a6c9c8437937661c501d226b6b9226e94b23d"
+      "packet_sha256": "6339403bfc6bdfffbc55014c0cce4fbb2a58b0579b4fda46c129c2bc4a8126ba"
     },
     {
       "packet_id": "elementary.number_theory.even_add.v1",
@@ -1558,7 +2623,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "fda3caa3e13750acc0efb7e8169fa3523933618fc5c008d286c212921e8a6dee"
+      "packet_sha256": "12d9ab4d32b264a4d803595bdbfe53027d9aa620b9b24d64753deec73902bae7"
     },
     {
       "packet_id": "elementary.number_theory.even_add_even.v1",
@@ -1568,7 +2633,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "41a1b599533d724de4fe4d695076c356a7ff833b1f4a1868fe9d610016cdd5f3"
+      "packet_sha256": "814e1e75864c8bcc85d069d4c739fb7c6632f64a20bb7b02bff06bd1f654ee1a"
     },
     {
       "packet_id": "elementary.number_theory.even_mul.v1",
@@ -1578,7 +2643,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "b519b708ab5cf641d20d4729a6933cba93d9487cc3931b28a6ef121924125878"
+      "packet_sha256": "e0012311a1a6398cba868572000b5ea026807cae5331689fb866d19f08f09c62"
     },
     {
       "packet_id": "elementary.number_theory.even_mul_succ_self.v1",
@@ -1588,7 +2653,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "423402f909118a1eeecd056f206ae60c8f7e24b02effd2efaeeb168ee7d5178b"
+      "packet_sha256": "42c5637af00605f7e9309a464da408a72df3372e2549403296fc7b58527f73d0"
     },
     {
       "packet_id": "elementary.number_theory.even_or_odd.v1",
@@ -1598,7 +2663,17 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "e9079015a816690616982f934633673cabb9c2e303dc3289515a5d5821845a0b"
+      "packet_sha256": "a13c0f9202531eb14b48c2bb14c9ae12d856c05148348329959931f646e2c11a"
+    },
+    {
+      "packet_id": "elementary.number_theory.even_sq.v1",
+      "title": "n is even iff n^2 is even",
+      "domain": "number_theory",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "783d87f2a8f3534e1a988fb618efb634826adf29468e9232986d122eb917c91d"
     },
     {
       "packet_id": "elementary.number_theory.factorial_le.v1",
@@ -1608,7 +2683,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "cccda21b6f86cc9bc9ebb709abc4cdc3a587a68a11e2c2040a99cac5df1e9cab"
+      "packet_sha256": "d0b1e2a48be7139fa8cceef3c54f0d1e9d11f439bee5b98d0d4722edaa33ba19"
     },
     {
       "packet_id": "elementary.number_theory.factorial_pos.v1",
@@ -1618,7 +2693,17 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "f2f567c21184befba67cc0570e8777cd0fe2227deb8acb722d8cb011385e94c6"
+      "packet_sha256": "2dccd4f6a05548af6b45a4cae1b3e4bfb9d8b5b7f5bfda3356e238251dfa203a"
+    },
+    {
+      "packet_id": "elementary.number_theory.four_mul_not_prime.v1",
+      "title": "4n is never prime",
+      "domain": "number_theory",
+      "level": "L1_proof_basics",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "b93adf7433dabf238a3d6f9f189f259d3ab7a3b5644e1d1b3fac19a60f1c34ea"
     },
     {
       "packet_id": "elementary.number_theory.gcd_comm.v1",
@@ -1628,7 +2713,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "5b3e2f8b49d7d468ad03275d0cc84b82c24dcbf283b45d996bbf0388f6766600"
+      "packet_sha256": "e712f24d46008f5a6f1106aa499b4b15dbec6a01da7da45c95e7f10f3c1685aa"
     },
     {
       "packet_id": "elementary.number_theory.gcd_dvd_left.v1",
@@ -1638,7 +2723,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "65965ef9d00e6b262dd9350fb34a34d3ec45c152f8543ada5bd0038f965674f6"
+      "packet_sha256": "46e109937d0bb059cdb8ff5ff070844a37f0827a17cd0eb8c822e977d8b76105"
     },
     {
       "packet_id": "elementary.number_theory.gcd_dvd_right.v1",
@@ -1648,7 +2733,17 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "68e4eaa736c2b63ed1e9fa5b313c2f98bf3542a986cba3d381d1df7ea8e481e9"
+      "packet_sha256": "c6a9a94e1cfc461fc5cefdf8333fdcc00abc315d6b79ef0ef55abfc42ec52b1a"
+    },
+    {
+      "packet_id": "elementary.number_theory.gcd_mul_lcm.v1",
+      "title": "gcd times lcm equals the product",
+      "domain": "number_theory",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "3bfd3695de58e443d700c185edeb5c74c080bfa9b3a9e5ae52882b4a5ffcce27"
     },
     {
       "packet_id": "elementary.number_theory.gcd_mul_left.v1",
@@ -1658,7 +2753,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "42be99de2dc1c33e7ffaeae3ede34219f57368699655b16b5eab182cc5dba980"
+      "packet_sha256": "40b5bf8a76b52f22eb1ec6af3db0bf4a4f851b8ad409cbe21410de365c7c018a"
     },
     {
       "packet_id": "elementary.number_theory.gcd_one_right.v1",
@@ -1668,7 +2763,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "93acdb873348cce870c2a37c0a148cb5fb6420b9a251cf85db46825e44611df1"
+      "packet_sha256": "bf90650bf1645fd0421758cf76c2714f372a52313bcdc7420906b9b57019d077"
     },
     {
       "packet_id": "elementary.number_theory.gcd_self.v1",
@@ -1678,7 +2773,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "98507d6f3a6776725e6ca08596363cae8bf2c87daa1b87c7cf60d3eb480fdd74"
+      "packet_sha256": "e90d68db732dc4c16cd8f5a7bca945f19e35e7670870fe368af3a8aba1e7890a"
     },
     {
       "packet_id": "elementary.number_theory.gcd_zero_left.v1",
@@ -1688,7 +2783,17 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "2aa799ae6b0c18b65c7e22e0dc00b58e65b3e0a56b521a3d6cb31ede4e661d6c"
+      "packet_sha256": "835d554145798737cfd471cc311e1e5c25d1be212087da29cd4fdb29a467fde9"
+    },
+    {
+      "packet_id": "elementary.number_theory.lcm_comm.v1",
+      "title": "lcm is commutative",
+      "domain": "number_theory",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "7c136defa8d506446c43c4c35c98d2b97e361968114d1ccd6f8f67ad3db0413b"
     },
     {
       "packet_id": "elementary.number_theory.le_of_lt_succ.v1",
@@ -1698,7 +2803,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "d4923d0ab956347e9aa4f32290be71347cb086db58acba01f67dea3178ab9a46"
+      "packet_sha256": "3aa1fd269aaaafbb634c237b76772da5c0372f765f32e4d8f94981e33e2d0a6d"
     },
     {
       "packet_id": "elementary.number_theory.lt_irrefl.v1",
@@ -1708,7 +2813,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "bfc9502e3dd9377725ca490bcdceb03e459f4d370a3532e5f65e683d2ca71dc8"
+      "packet_sha256": "8994e6416c20fe8d5bed84508509449edeea22b049d2c01b38de025926d8631f"
     },
     {
       "packet_id": "elementary.number_theory.lt_succ_iff.v1",
@@ -1718,7 +2823,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "7995b4f72f01e5d7b9ec0c36e12bf0b900b22e9e3e5aa68320ed068cda4e2e1f"
+      "packet_sha256": "94d94ade93eee5133ee1baf098ca3af8a289b4a5433b6b36d50cc3e751e29d95"
     },
     {
       "packet_id": "elementary.number_theory.mod_lt.v1",
@@ -1728,7 +2833,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "e66dce613f9f34f659fe7387e8057f1a17d065be731218471d94eb65c8ab082e"
+      "packet_sha256": "9e7c2baf6fa1d669fb18bb2749b3eed1aab6f04993cf53dde73592ea07a8cbf3"
     },
     {
       "packet_id": "elementary.number_theory.mod_self.v1",
@@ -1738,7 +2843,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "278aa61e59fe71e34fd946444665e8a044cf248e7c100eeb8c5b175c379f43d7"
+      "packet_sha256": "3f12b24fc5a80184a66f4a027df507bde3fd0189ab9c1f1ec91d9947d495ed48"
     },
     {
       "packet_id": "elementary.number_theory.mul_div_cancel.v1",
@@ -1748,7 +2853,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "5f07f34404e5ea91a0830ffde18a75ed2d0f61de5f729bd555fd0dcbcd77f656"
+      "packet_sha256": "f6974c1cadb1939cf0b6930a56b7b2d33d052f1acfb3ab524aa1df6dd3ac06ac"
     },
     {
       "packet_id": "elementary.number_theory.mul_mod.v1",
@@ -1758,7 +2863,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "79583b5e86c580a10ec08374ecff0e182dbd31bd1ddb8e2f832c1e17c7be6f8f"
+      "packet_sha256": "f6774cbf173a48303d9f2fed1433111addb5ec56754eb5fd60b9f72228ff57ac"
     },
     {
       "packet_id": "elementary.number_theory.mul_mod_right.v1",
@@ -1768,7 +2873,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "8894e44228b96eaf9dba53e0ec81b7fb00516d2f4b80d9a7ada39ed9e58990fb"
+      "packet_sha256": "11734c530a596cac0d7e65ad8239d9c4f81990eee889a7f6e0d658340075068a"
     },
     {
       "packet_id": "elementary.number_theory.nat_abs_mul.v1",
@@ -1778,7 +2883,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "9e80743d066c207bca1d41f211b39447b3e3af25e7614186e24b7b08aa3a94bd"
+      "packet_sha256": "764057d5eb0d837f322301f15aef4d9f12d0dae8d93707f9ee57e09faae128bf"
     },
     {
       "packet_id": "elementary.number_theory.nat_pos_of_ne_zero.v1",
@@ -1788,7 +2893,17 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "a2c2e679f986b9af73e31fc6d938e89b0ed330c6578b46d3a6b9687c6ae96423"
+      "packet_sha256": "48dc84e37cb106f999a971312ed32c9752381e5f63502f7f9950ae3a732f8fcb"
+    },
+    {
+      "packet_id": "elementary.number_theory.not_prime_one.v1",
+      "title": "1 is not prime",
+      "domain": "number_theory",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "f2e1927d2c1fe4ed60f033ccfb34bab15338a70ff19057c9ad9adddd97812913"
     },
     {
       "packet_id": "elementary.number_theory.odd_add_odd.v1",
@@ -1798,7 +2913,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "6ed85ebd8a77e2a0596d0c29ee1033cdbd34be0b46b8d6207460b9709bf6aec9"
+      "packet_sha256": "46da3b70043e2deede6e5442ec1815aaae6ef77e5903f853ee62a67dc3e08ba5"
     },
     {
       "packet_id": "elementary.number_theory.one_dvd.v1",
@@ -1808,7 +2923,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "7bd9a2ba6d75ba7adb68df11ded3d334e552f6fb8689b01527dfc73a92132642"
+      "packet_sha256": "f05c2162bc24b3f5a46f40bf838edb2f441ea3108b8628dcbb6c3b7c83a1ae53"
     },
     {
       "packet_id": "elementary.number_theory.one_le_iff_ne_zero.v1",
@@ -1818,7 +2933,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "be24d690ececcc386a29f30d20ba061b8c0d0be161f6941cbbec0e32298be080"
+      "packet_sha256": "fe54edbd6df83cd766b35575882d8bc02c4a953f78807c5a3fc7da144ea06af5"
     },
     {
       "packet_id": "elementary.number_theory.pow_le_pow_left.v1",
@@ -1828,7 +2943,37 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "a1c34379d73cef778df074da740f21f36c43aa85630223931a158e4df5dc72c6"
+      "packet_sha256": "f1341f461f47a83b851465cb5df41f41a3c2f07e97adccb4508a9bf7698c8e74"
+    },
+    {
+      "packet_id": "elementary.number_theory.prime_dvd_mul.v1",
+      "title": "A prime divides a product iff it divides a factor",
+      "domain": "number_theory",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "a69bd8cf3e22b2eab1fa292c72ff85938e2b9ea1bd963e8b3f50094aa04a0ebe"
+    },
+    {
+      "packet_id": "elementary.number_theory.prime_two.v1",
+      "title": "2 is prime",
+      "domain": "number_theory",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "5f869ac18e63fca9d6732480c7c37919cef01afe278824800ab532b950b2cde4"
+    },
+    {
+      "packet_id": "elementary.number_theory.sq_mod_two_eq_self_mod_two.v1",
+      "title": "Squares preserve parity",
+      "domain": "number_theory",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "f12e6f225ff48659b369db68d3cd4287fab38f34785e73f51d68d7b85fcffaf2"
     },
     {
       "packet_id": "elementary.number_theory.sub_add_cancel.v1",
@@ -1838,7 +2983,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "f9ef7b7d05da5f6e2e878155accc57b338af463ccce43db33c2daa084cdc2204"
+      "packet_sha256": "8654bce9b243dfe4b4e203bf3c7eaca1e8a60351b535a9d30b095d8703b89c76"
     },
     {
       "packet_id": "elementary.number_theory.succ_le_iff.v1",
@@ -1848,7 +2993,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "28cd760d5d58208dedb8b735e3a178334289982755eea73a297e1d8ba5fa60f6"
+      "packet_sha256": "1e5ac1e7c478c527b27d7f3c0876f4a06e1e616cca680c35cfbce8b68f203294"
     },
     {
       "packet_id": "elementary.number_theory.succ_ne_self.v1",
@@ -1858,7 +3003,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "500e096db340d80240e21f02077da3be120cc2497d2889597c1885234d31ef18"
+      "packet_sha256": "da813b7ad4b0cd2830f4aec77ca20fd06ed1987ba8536da08a59a2061e70ee51"
     },
     {
       "packet_id": "elementary.number_theory.succ_ne_zero.v1",
@@ -1868,7 +3013,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "4340163b2c6ade0c12c678fd5ddba7289de4fc1a64a1e88c53651313e5ea1fbe"
+      "packet_sha256": "19bc12cc0072c795e279219e6f8b33393842ce7b6e4c2dc094195677ae5b0e86"
     },
     {
       "packet_id": "elementary.number_theory.succ_pos.v1",
@@ -1878,7 +3023,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "0afabe1e3c4b13d364f692a41ea9cc51039599783299d9be2687934377d376be"
+      "packet_sha256": "43a1e13dca0dfb1582c795171ba97b93f0fa2f313b29d264671b512692ff6c0a"
     },
     {
       "packet_id": "elementary.number_theory.two_mul_nat.v1",
@@ -1888,7 +3033,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "360dff6da3c764e96bc05f3a22324355fcc377fe7ffc9c15285a59cfa506e984"
+      "packet_sha256": "644eb9af94c81c584f1af9468aedf4df5b7b3f26599f4f63c532cd59a25a37f5"
     },
     {
       "packet_id": "elementary.number_theory.two_pow_pos.v1",
@@ -1898,7 +3043,17 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "f6cab940f90b0f432451d4aefecf14499b24e6ad94d388f57799f45238fe3aac"
+      "packet_sha256": "c62be4d5fdf2901f0f3b7b3b754e8690c6600ac901e98dd9664c8b3f417599a8"
+    },
+    {
+      "packet_id": "elementary.number_theory.well_ordering.v1",
+      "title": "Well-ordering principle for the naturals",
+      "domain": "number_theory",
+      "level": "L1_proof_basics",
+      "kind": "concept",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "077e8e44a6903f7a4907cc0721d81d69a8d0bace4a0cc048843b71cf7d4b29c5"
     },
     {
       "packet_id": "elementary.number_theory.zero_mod.v1",
@@ -1908,7 +3063,387 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "99880d303d636161af41f7a3125003a52ee9aa537f3758b287303f1aa7477dd1"
+      "packet_sha256": "2249799fa7865ef0f1a59972ea2b4565a324527ba7e33e5c3b642ebde6f5c00c"
+    },
+    {
+      "packet_id": "fixtures.diagnostics.diagnostic_categories_conformance.v1",
+      "title": "Schema conformance fixture: attempt/negative_example diagnostic categories",
+      "domain": "logic",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "empirical_only",
+      "eligibility": "private_audit_only",
+      "packet_sha256": "3afee1fe323b8913c2947d65081cfb5e724dc0b281096092999e4e05df6c3835"
+    },
+    {
+      "packet_id": "fixtures.metrics.model_performance_conformance.v1",
+      "title": "Schema conformance fixture: multi-model empirical difficulty",
+      "domain": "logic",
+      "level": "L0_elementary",
+      "kind": "concept",
+      "status": "empirical_only",
+      "eligibility": "private_audit_only",
+      "packet_sha256": "22d2734143cf7be9a9601152af0530417b294886d1fb1d2cc5d31fad35deaf43"
+    },
+    {
+      "packet_id": "frontier.erdos.erdos_1052_filter_ordcompl.v1",
+      "title": "Erdős #1052 companion infrastructure: p-free unitary divisors",
+      "domain": "frontier",
+      "level": "L7_frontier",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "eligibility": "quarantined",
+      "packet_sha256": "f87633f7402d5b1ce317975318cc53bd9fda522a48be99e76b63c5f22b6bef0f"
+    },
+    {
+      "packet_id": "frontier.erdos.erdos_1052_not_dvd_div_ordproj.v1",
+      "title": "Erdős #1052 companion infrastructure: removing the full p-part is p-free",
+      "domain": "frontier",
+      "level": "L7_frontier",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "eligibility": "quarantined",
+      "packet_sha256": "681314e8862d1fe596ffa1f7bb38288eebb4d2c55b680f85ec4e223ee10f20c6"
+    },
+    {
+      "packet_id": "frontier.erdos.erdos_1052_omega_odd_le_two_adic_add_one.v1",
+      "title": "Erdős #1052 companion infrastructure: odd-prime-factor-count structural bound",
+      "domain": "frontier",
+      "level": "L7_frontier",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "eligibility": "quarantined",
+      "packet_sha256": "f0161e3fae30c9863486ece6c419b4952b24618392abd725e700658e75220b69"
+    },
+    {
+      "packet_id": "frontier.erdos.erdos_1052_proper_eq_erase.v1",
+      "title": "Erdős #1052 companion infrastructure: unitary-divisor bridge lemma",
+      "domain": "frontier",
+      "level": "L7_frontier",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "eligibility": "quarantined",
+      "packet_sha256": "1d410372f6eafd4175e69ea8bb52aee2940a67992692cc2b1a4e29bffa5a90c8"
+    },
+    {
+      "packet_id": "frontier.erdos.erdos_1052_sigmastar_mul_of_coprime.v1",
+      "title": "Erdős #1052 companion infrastructure: σ* is multiplicative",
+      "domain": "frontier",
+      "level": "L7_frontier",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "eligibility": "quarantined",
+      "packet_sha256": "18754cd4b0799c7c42d67b052118055211fd2c0668a66d8112ce51d4cc072a96"
+    },
+    {
+      "packet_id": "frontier.erdos.erdos_1052_sigmastar_prime_pow_and_prime.v1",
+      "title": "Erdős #1052 companion infrastructure: σ* on prime powers and primes",
+      "domain": "frontier",
+      "level": "L7_frontier",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "eligibility": "quarantined",
+      "packet_sha256": "27912b85059e009f3152f9f8906634e17701d5c171ba0b5145dd54b666954af0"
+    },
+    {
+      "packet_id": "frontier.erdos.erdos_291_infinite_gcd_gt_one.v1",
+      "title": "Erdős #291 companion, part (ii) (Steinerberger): gcd(aₙ,Lₙ)>1 infinitely often",
+      "domain": "frontier",
+      "level": "L7_frontier",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "eligibility": "quarantined",
+      "packet_sha256": "32417adca7d804d05f71ccf8e5152356403c8805b2dd59c96806b77003e39dbb"
+    },
+    {
+      "packet_id": "frontier.erdos.erdos_349_alpha_gt_two_not_is_good_pair.v1",
+      "title": "Erdős #349 assembly piece: α > 2 fails to be a good pair",
+      "domain": "frontier",
+      "level": "L7_frontier",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "eligibility": "quarantined",
+      "packet_sha256": "4aa732aea0a4fe1c347083327bf08626e1024173bd097bd527f8d6e4f31b537d"
+    },
+    {
+      "packet_id": "frontier.erdos.erdos_349_alpha_le_one_not_is_good_pair.v1",
+      "title": "Erdős #349 assembly piece: α ≤ 1 fails to be a good pair",
+      "domain": "frontier",
+      "level": "L7_frontier",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "eligibility": "quarantined",
+      "packet_sha256": "2374383508e7da1542b5a29654f9fa6943108a4708146df3981cf5012e8177d5"
+    },
+    {
+      "packet_id": "frontier.erdos.erdos_349_exists_finset_sum_two_pow.v1",
+      "title": "Erdős #349 sublemma: every natural is a sum of distinct powers of 2",
+      "domain": "frontier",
+      "level": "L7_frontier",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "eligibility": "quarantined",
+      "packet_sha256": "2e50c41d53b1979e447adef508649a1e72fb7db8aadee70d87bbfd1ce1ee2493"
+    },
+    {
+      "packet_id": "frontier.erdos.erdos_349_int_coeff_ge_two_not_is_good_pair.v1",
+      "title": "Erdős #349 assembly piece: integer t ≥ 2 fails to be a good coefficient",
+      "domain": "frontier",
+      "level": "L7_frontier",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "eligibility": "quarantined",
+      "packet_sha256": "7c45f6b66b183328d4825e59392b6544d4c8a6bcc559fe4efdff15cb0a7e8d9d"
+    },
+    {
+      "packet_id": "frontier.erdos.erdos_349_integer_is_good_pair_iff.v1",
+      "title": "Erdős #349 culminating assembly: integer_isGoodPair_iff",
+      "domain": "frontier",
+      "level": "L7_frontier",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "eligibility": "quarantined",
+      "packet_sha256": "dcfc321ce1efb6886046fb7a1bd95b53efd3cce88f98211b0c3b6b71c2874607"
+    },
+    {
+      "packet_id": "frontier.erdos.erdos_349_one_two_is_good_pair.v1",
+      "title": "Erdős #349 assembly piece: the pair (1, 2) is good",
+      "domain": "frontier",
+      "level": "L7_frontier",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "eligibility": "quarantined",
+      "packet_sha256": "3feeb13c37923b7bfe4d0bab2af9b864cd76ec0e39fb57522344156883128bab"
+    },
+    {
+      "packet_id": "frontier.erdos.erdos_399_cambie.v1",
+      "title": "Erdős #399 companion (Cambie): no n! = x^4 + y^4 with gcd(x,y)=1, xy>1",
+      "domain": "frontier",
+      "level": "L7_frontier",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "eligibility": "quarantined",
+      "packet_sha256": "7aa230e1545a4c3124ccc5ceeb7494a5eab8240263d01bdbb16c36afa1007c94"
+    },
+    {
+      "packet_id": "frontier.erdos.erdos_494_product.v1",
+      "title": "Erdős #494 companion (Steinerberger): the product version is false",
+      "domain": "frontier",
+      "level": "L7_frontier",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "eligibility": "quarantined",
+      "packet_sha256": "58cd5ca5e073e1422b43481afada9d5b6f30b4839217ab356e1f1c8b14630a71"
+    },
+    {
+      "packet_id": "frontier.formal_conjectures.degiorgi_conjecture_dim_one.v1",
+      "title": "De Giorgi's conjecture holds in dimension 1 (EuclideanSpace restatement)",
+      "domain": "frontier",
+      "level": "L7_frontier",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "eligibility": "quarantined",
+      "packet_sha256": "c4c0579c6fccebd8a737eac53dcc34378bc868e63affc7bccd17405d567cc622"
+    },
+    {
+      "packet_id": "frontier.formal_conjectures.equational_theories_677_255_class_free.v1",
+      "title": "Equational Theories: Equation 255 does not imply Equation 677 (class-free restatement)",
+      "domain": "frontier",
+      "level": "L7_frontier",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "eligibility": "quarantined",
+      "packet_sha256": "0f08cc9c74abe4289f1031a7f7441f00c24f4a2be4f10f96d9b9ccb13be13529"
+    },
+    {
+      "packet_id": "frontier.formal_conjectures.euler_sum_of_powers_false_for_k4.v1",
+      "title": "Euler's sum of powers conjecture is false for k=4",
+      "domain": "frontier",
+      "level": "L7_frontier",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "eligibility": "quarantined",
+      "packet_sha256": "720d5f286b4c6f9c7ca1fd3ec0264430ead5fcccadfc85514656a4a8d9c9d797"
+    },
+    {
+      "packet_id": "frontier.formal_conjectures.euler_sum_of_powers_false_for_k5.v1",
+      "title": "Euler's sum of powers conjecture is false for k=5",
+      "domain": "frontier",
+      "level": "L7_frontier",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "eligibility": "quarantined",
+      "packet_sha256": "bf8a1c4efe5e852b36597c8659de75a90aebcbe27b44d41e459591c7eaed9eb5"
+    },
+    {
+      "packet_id": "frontier.formal_conjectures.oeis_a34693_exists_k_best_possible.v1",
+      "title": "OEIS A34693: the bound 1 + n^0.74 is not always valid (witness n=19)",
+      "domain": "frontier",
+      "level": "L7_frontier",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "eligibility": "quarantined",
+      "packet_sha256": "f723411eff3dbc0bb9e794029ba69853bd0636607ff637153a03f57a16cccf42"
+    },
+    {
+      "packet_id": "frontier.formal_conjectures.oeis_a358684_conjecture_0.v1",
+      "title": "OEIS A358684: a 2-adic valuation bound on Fermat number factors",
+      "domain": "frontier",
+      "level": "L7_frontier",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "eligibility": "quarantined",
+      "packet_sha256": "7e02e31a149ebe09647e25c72719af68db665637d8af36bae3bd0f1477608888"
+    },
+    {
+      "packet_id": "frontier.formal_conjectures.union_closed_sharpness.v1",
+      "title": "Union-closed sets conjecture: sharpness of the 1/2 constant",
+      "domain": "frontier",
+      "level": "L7_frontier",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "eligibility": "quarantined",
+      "packet_sha256": "94dfa902b158008c494c4cff6764334c5bd736373077cfe87a740b2569203f9f"
+    },
+    {
+      "packet_id": "frontier.formal_conjectures.union_closed_singleton_mem.v1",
+      "title": "Union-closed sets conjecture: the 'contains a singleton' special case",
+      "domain": "frontier",
+      "level": "L7_frontier",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "eligibility": "quarantined",
+      "packet_sha256": "7825d75640c414e58311d5b9824c2ef289682b9555446e117265648fa45c18b2"
+    },
+    {
+      "packet_id": "frontier.formal_conjectures.union_closed_univ_card_two.v1",
+      "title": "Union-closed sets conjecture: the |universe| = 2 special case",
+      "domain": "frontier",
+      "level": "L7_frontier",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "eligibility": "quarantined",
+      "packet_sha256": "cbd525e6874a774e52a9ef0f67e946135dae7145836301deeb86708f80888991"
+    },
+    {
+      "packet_id": "negative.algebra.div_mul_cancel_bare_ring_no_hypothesis_failure.v1",
+      "title": "ring fails on a division-cancellation identity despite a true nonzero hypothesis",
+      "domain": "algebra",
+      "level": "L0_elementary",
+      "kind": "negative_example",
+      "status": "failed_attempt",
+      "eligibility": "negative_example_only",
+      "packet_sha256": "f743c428ac315faaa599fa85dd1f5794054fc3e5ca34ec27022dfcec9771b255"
+    },
+    {
+      "packet_id": "negative.algebra.frac_sum_bare_ring.missing_field_simp.v1",
+      "title": "Bare ring fails to combine fractions without field_simp",
+      "domain": "algebra",
+      "level": "L1_proof_basics",
+      "kind": "negative_example",
+      "status": "failed_attempt",
+      "eligibility": "negative_example_only",
+      "packet_sha256": "585055608f3f615bb9952ec2df8befbb3c848efe6a7319da6b434a88f1454db3"
+    },
+    {
+      "packet_id": "negative.algebra.nat_sub_ring_trap.v1",
+      "title": "ring fails on a Nat truncated-subtraction cancellation despite a true hypothesis",
+      "domain": "algebra",
+      "level": "L0_elementary",
+      "kind": "negative_example",
+      "status": "failed_attempt",
+      "eligibility": "negative_example_only",
+      "packet_sha256": "dd4196fc1b613ec059fda1003f4e2bc029a75a4f8104ad6a6c566c7a1c44bed9"
+    },
+    {
+      "packet_id": "negative.algebra.pow_mul_ring_timeout_failure.v1",
+      "title": "ring times out on the exponent-multiplication law",
+      "domain": "algebra",
+      "level": "L0_elementary",
+      "kind": "negative_example",
+      "status": "failed_attempt",
+      "eligibility": "negative_example_only",
+      "packet_sha256": "d2d2eb4994a298021897d85ea9741a7fa8d6dd31f6afe7fcc908c66355997d98"
+    },
+    {
+      "packet_id": "negative.algebra.sq_sum_bare_nlinarith.missing_sos_hint.v1",
+      "title": "Bare nlinarith fails on a^2 + b^2 >= 2ab without an SOS hint",
+      "domain": "algebra",
+      "level": "L1_proof_basics",
+      "kind": "negative_example",
+      "status": "failed_attempt",
+      "eligibility": "negative_example_only",
+      "packet_sha256": "6dd64705ab06fc961515ff1eb99f3b6a4d64639f85ccdbba91744e5419878171"
+    },
+    {
+      "packet_id": "negative.combinatorics.card_image_injective.omega_failure.v1",
+      "title": "omega cannot use an injectivity hypothesis to relate image cardinality",
+      "domain": "combinatorics",
+      "level": "L1_proof_basics",
+      "kind": "negative_example",
+      "status": "failed_attempt",
+      "eligibility": "negative_example_only",
+      "packet_sha256": "39fe787f4acdad14d928d510d4a5bd454a5f0a798c9ee175a3713c6ef369fb06"
+    },
+    {
+      "packet_id": "negative.combinatorics.card_union_no_disjoint.false_generalization.v1",
+      "title": "False generalization: Finset.card_union without a disjointness hypothesis",
+      "domain": "combinatorics",
+      "level": "L1_proof_basics",
+      "kind": "negative_example",
+      "status": "failed_attempt",
+      "eligibility": "negative_example_only",
+      "packet_sha256": "8761c279b28b813477ed1d03c8695ba503475f8d1b5ab96bb8dab1c69ec4436d"
+    },
+    {
+      "packet_id": "negative.combinatorics.filter_prime_simp.no_progress.v1",
+      "title": "simp cannot compute a concrete Finset.filter/Nat.Prime cardinality",
+      "domain": "combinatorics",
+      "level": "L1_proof_basics",
+      "kind": "negative_example",
+      "status": "failed_attempt",
+      "eligibility": "negative_example_only",
+      "packet_sha256": "30101e38896d82244addf528785a6872bc7b4a9b67efa406b529656010f58ce1"
+    },
+    {
+      "packet_id": "negative.combinatorics.finset_card_atoms.omega_failure.v1",
+      "title": "omega fails on raw Finset.card atoms without inclusion-exclusion bridging",
+      "domain": "combinatorics",
+      "level": "L1_proof_basics",
+      "kind": "negative_example",
+      "status": "failed_attempt",
+      "eligibility": "negative_example_only",
+      "packet_sha256": "5b646c82776f1bd22fd2a9114e611a29c0c9042db4c49308f630a17a3b762a1b"
+    },
+    {
+      "packet_id": "negative.functions.injective_add.decide_failure.v1",
+      "title": "decide fails on an injectivity goal over an infinite domain",
+      "domain": "algebra",
+      "level": "L1_proof_basics",
+      "kind": "negative_example",
+      "status": "failed_attempt",
+      "eligibility": "negative_example_only",
+      "packet_sha256": "5e0e3d93ef4cbb4ce94e997466b5e6527615ed42cca4f52366725ae4e3310836"
+    },
+    {
+      "packet_id": "negative.functions.quad_injective.simp_unfold_incomplete.v1",
+      "title": "simp-unfold on Function.Injective leaves a quadratic goal open",
+      "domain": "algebra",
+      "level": "L1_proof_basics",
+      "kind": "negative_example",
+      "status": "failed_attempt",
+      "eligibility": "negative_example_only",
+      "packet_sha256": "b599bc01d1b9e4a8e08a47ffd1001eb99607679fe88ac514f099a414125f1e91"
+    },
+    {
+      "packet_id": "negative.functions.surjective_implies_injective.finite_pigeonhole_misapplied.v1",
+      "title": "False converse: surjective ℕ → ℕ functions are not always injective",
+      "domain": "algebra",
+      "level": "L1_proof_basics",
+      "kind": "negative_example",
+      "status": "failed_attempt",
+      "eligibility": "negative_example_only",
+      "packet_sha256": "3d836a34aa00469e117e5d3cdd91b9e3c4a2df9d6ab7ab792a55bac8cb4fc5c8"
     },
     {
       "packet_id": "negative.geometry.angle_atoms.nlinarith_failure.v1",
@@ -1919,6 +3454,156 @@
       "status": "failed_attempt",
       "eligibility": "negative_example_only",
       "packet_sha256": "7827922c0a547d9c461c95f6f35b1a123bbd7bdeea0a19cd76ef218bd326fffe"
+    },
+    {
+      "packet_id": "negative.geometry.pythagorean_bare_ring_no_hypothesis_failure.v1",
+      "title": "Bare ring fails on the Pythagorean identity because it ignores the right-angle hypothesis",
+      "domain": "geometry",
+      "level": "L1_proof_basics",
+      "kind": "negative_example",
+      "status": "failed_attempt",
+      "eligibility": "negative_example_only",
+      "packet_sha256": "bd8f074816757c061ef260795287e617749b719eeed16d14c7d01b1699108f76"
+    },
+    {
+      "packet_id": "negative.geometry.slope_div_mul.division_by_zero_unguarded.v1",
+      "title": "False generalization: slope div-then-mul cancellation without x2 != x1",
+      "domain": "geometry",
+      "level": "L1_proof_basics",
+      "kind": "negative_example",
+      "status": "failed_attempt",
+      "eligibility": "negative_example_only",
+      "packet_sha256": "b0d0596e482ffef2c49e8d72e4535b90de4fd767d648462cc770761c2828d0f6"
+    },
+    {
+      "packet_id": "negative.induction.factorial_gt_two_pow.offbyone_false_base.v1",
+      "title": "n! > 2^n is false at n=0..3; naive induction-from-zero cannot start",
+      "domain": "algebra",
+      "level": "L1_proof_basics",
+      "kind": "negative_example",
+      "status": "failed_attempt",
+      "eligibility": "negative_example_only",
+      "packet_sha256": "743d80298681b292d7d752c4e2780b33caaf71de0b6248cb47684257591e7516"
+    },
+    {
+      "packet_id": "negative.induction.foldl_no_generalize.ih_too_weak.v1",
+      "title": "Induction without generalizing the accumulator leaves a too-weak IH",
+      "domain": "algebra",
+      "level": "L1_proof_basics",
+      "kind": "negative_example",
+      "status": "failed_attempt",
+      "eligibility": "negative_example_only",
+      "packet_sha256": "5f3ea8d82b93d2f6c59c195c4ba3e542e1353bf5c8907a5e4130b782932d4b39"
+    },
+    {
+      "packet_id": "negative.induction.pow_succ_atom.nlinarith_failure.v1",
+      "title": "nlinarith fails to bridge 2^(n+1) and 2^n without a pow_succ rewrite",
+      "domain": "algebra",
+      "level": "L1_proof_basics",
+      "kind": "negative_example",
+      "status": "failed_attempt",
+      "eligibility": "negative_example_only",
+      "packet_sha256": "3cf08ee85ea6e404056e519bc10cfd2297f9b4e81d6642e8edeeacd2fade7f21"
+    },
+    {
+      "packet_id": "negative.induction.two_pow_gt_sq_offbyone_naive_ih_failure.v1",
+      "title": "Plain induction from n=0 gives an unusable inductive hypothesis at a shifted threshold",
+      "domain": "algebra",
+      "level": "L1_proof_basics",
+      "kind": "negative_example",
+      "status": "failed_attempt",
+      "eligibility": "negative_example_only",
+      "packet_sha256": "4eec62b9ffcd3b9469a3b49b329e681337d61ebe19dee974c3e0cd2c11549447"
+    },
+    {
+      "packet_id": "negative.inequalities.amgm_wrong_direction_bare_nlinarith_failure.v1",
+      "title": "False generalization: AM-GM with the inequality direction flipped",
+      "domain": "algebra",
+      "level": "L1_proof_basics",
+      "kind": "negative_example",
+      "status": "failed_attempt",
+      "eligibility": "negative_example_only",
+      "packet_sha256": "d81785a9da0d937174cbcabc1112c00d5066ecb72dc84a1ecd9b7fbd597e5e35"
+    },
+    {
+      "packet_id": "negative.inequalities.cauchy_three_term_bare_nlinarith_failure.v1",
+      "title": "Bare nlinarith fails on the three-term Cauchy-Schwarz inequality",
+      "domain": "algebra",
+      "level": "L2_olympiad",
+      "kind": "negative_example",
+      "status": "failed_attempt",
+      "eligibility": "negative_example_only",
+      "packet_sha256": "ee950db04732117aa1b986be942e092305733eaa44a96fd3179fb7a52dbd25a2"
+    },
+    {
+      "packet_id": "negative.inequalities.nesbitt_bare_nlinarith_division_failure.v1",
+      "title": "Bare nlinarith fails on Nesbitt's inequality without clearing denominators",
+      "domain": "algebra",
+      "level": "L2_olympiad",
+      "kind": "negative_example",
+      "status": "failed_attempt",
+      "eligibility": "negative_example_only",
+      "packet_sha256": "1974989afc80920ffe55655b87fd3f24691692176ebfb28c4f2ecf00c0e4ceea"
+    },
+    {
+      "packet_id": "negative.inequalities.three_var_sq_bare_nlinarith_failure.v1",
+      "title": "Bare nlinarith fails on the three-variable square inequality",
+      "domain": "algebra",
+      "level": "L2_olympiad",
+      "kind": "negative_example",
+      "status": "failed_attempt",
+      "eligibility": "negative_example_only",
+      "packet_sha256": "e768308ab58b6dca23ea2d45022525835cc195818712297a61385c3a6087b81f"
+    },
+    {
+      "packet_id": "negative.inequalities.two_mul_le_add_sq_bare_linarith_failure.v1",
+      "title": "linarith (not nlinarith) fails outright on a nonlinear inequality",
+      "domain": "algebra",
+      "level": "L1_proof_basics",
+      "kind": "negative_example",
+      "status": "failed_attempt",
+      "eligibility": "negative_example_only",
+      "packet_sha256": "e4c2952d0074cd5f5e0f2d2cbf95e40b516ca0d211ff59a5969de99420003dc1"
+    },
+    {
+      "packet_id": "negative.number_theory.decide_unbounded_prime_universal.v1",
+      "title": "decide has no Decidable instance for an unbounded universal primality claim",
+      "domain": "number_theory",
+      "level": "L1_proof_basics",
+      "kind": "negative_example",
+      "status": "failed_attempt",
+      "eligibility": "negative_example_only",
+      "packet_sha256": "f00a88e774aef1a7353a5787e29a8473a97e5839c4530490040a1fefb812caf6"
+    },
+    {
+      "packet_id": "negative.number_theory.divisor_case_split.omega_unevaluated_literal.v1",
+      "title": "omega fails on a divisibility goal with an unreduced literal divisor",
+      "domain": "number_theory",
+      "level": "L1_proof_basics",
+      "kind": "negative_example",
+      "status": "failed_attempt",
+      "eligibility": "negative_example_only",
+      "packet_sha256": "3da9abd92b85bd5f8c799b3010bbf4fb52237e1e57a74c926b42048aae7b0cc9"
+    },
+    {
+      "packet_id": "negative.number_theory.gcd_dvd.omega_no_gcd_theory.v1",
+      "title": "omega has no theory of Nat.gcd, fails on gcd a b | a",
+      "domain": "number_theory",
+      "level": "L1_proof_basics",
+      "kind": "negative_example",
+      "status": "failed_attempt",
+      "eligibility": "negative_example_only",
+      "packet_sha256": "50c63d9d152e230dac36e389ac32bfd0615e7c836db2e67e330c8b304656b2f8"
+    },
+    {
+      "packet_id": "negative.number_theory.sq_parity.omega_nonlinear_failure.v1",
+      "title": "omega fails on n^2 % 2 = n % 2 without a linear bridge",
+      "domain": "number_theory",
+      "level": "L1_proof_basics",
+      "kind": "negative_example",
+      "status": "failed_attempt",
+      "eligibility": "negative_example_only",
+      "packet_sha256": "1180e83178294b0387609a870da22e0f19e3b217e24f6abf21d59886cf708b5c"
     }
   ]
 }

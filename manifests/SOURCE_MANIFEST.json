@@ -41,6 +41,16 @@
       "source_sha256": null
     },
     {
+      "packet_id": "elementary.algebra.add_sq_three.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
       "packet_id": "elementary.algebra.add_zero.v1",
       "source_kind": "author_written",
       "source_refs": [],
@@ -102,6 +112,16 @@
     },
     {
       "packet_id": "elementary.algebra.diff_of_squares.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.algebra.div_add_div_same.v1",
       "source_kind": "author_written",
       "source_refs": [],
       "authors": [
@@ -221,6 +241,16 @@
       "source_sha256": null
     },
     {
+      "packet_id": "elementary.algebra.neg_sq.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
       "packet_id": "elementary.algebra.neg_two_ab_le.v1",
       "source_kind": "author_written",
       "source_refs": [],
@@ -261,7 +291,37 @@
       "source_sha256": null
     },
     {
+      "packet_id": "elementary.algebra.pow_add.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.algebra.pow_mul.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
       "packet_id": "elementary.algebra.pow_one.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.algebra.pow_succ.v1",
       "source_kind": "author_written",
       "source_refs": [],
       "authors": [
@@ -301,6 +361,36 @@
       "source_sha256": null
     },
     {
+      "packet_id": "elementary.algebra.quad_formula_real_root.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.algebra.quadratic_pos.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.algebra.sq_sum_ge_two_mul.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
       "packet_id": "elementary.algebra.sq_sum_le.v1",
       "source_kind": "author_written",
       "source_refs": [],
@@ -331,6 +421,16 @@
       "source_sha256": null
     },
     {
+      "packet_id": "elementary.algebra.sub_mul.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
       "packet_id": "elementary.algebra.sub_self.v1",
       "source_kind": "author_written",
       "source_refs": [],
@@ -352,6 +452,16 @@
     },
     {
       "packet_id": "elementary.algebra.sum_of_cubes.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.algebra.sum_reciprocals_eq_sum_over_product.v1",
       "source_kind": "author_written",
       "source_refs": [],
       "authors": [
@@ -411,7 +521,47 @@
       "source_sha256": null
     },
     {
+      "packet_id": "elementary.combinatorics.card_bi_union_le.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
       "packet_id": "elementary.combinatorics.card_empty.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.combinatorics.card_filter_partition.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.combinatorics.card_image_le.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.combinatorics.card_image_of_injective.v1",
       "source_kind": "author_written",
       "source_refs": [],
       "authors": [
@@ -441,7 +591,37 @@
       "source_sha256": null
     },
     {
+      "packet_id": "elementary.combinatorics.card_powerset.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.combinatorics.card_product.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
       "packet_id": "elementary.combinatorics.card_range.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.combinatorics.card_sdiff_of_subset.v1",
       "source_kind": "author_written",
       "source_refs": [],
       "authors": [
@@ -461,7 +641,77 @@
       "source_sha256": null
     },
     {
+      "packet_id": "elementary.combinatorics.card_union_add_card_inter.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
       "packet_id": "elementary.combinatorics.card_union_le.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.combinatorics.card_union_not_additive.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.combinatorics.choose_self.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.combinatorics.choose_succ_succ.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.combinatorics.choose_symm.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.combinatorics.choose_zero_right.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.combinatorics.disjoint_union_card.v1",
       "source_kind": "author_written",
       "source_refs": [],
       "authors": [
@@ -611,6 +861,36 @@
       "source_sha256": null
     },
     {
+      "packet_id": "elementary.combinatorics.pigeonhole_3_into_2.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.combinatorics.pigeonhole_general.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.combinatorics.primes_below_ten_card.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
       "packet_id": "elementary.combinatorics.prod_range_one.v1",
       "source_kind": "author_written",
       "source_refs": [],
@@ -621,7 +901,27 @@
       "source_sha256": null
     },
     {
+      "packet_id": "elementary.combinatorics.prod_range_succ.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
       "packet_id": "elementary.combinatorics.prod_range_zero.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.combinatorics.set_mem_union.v1",
       "source_kind": "author_written",
       "source_refs": [],
       "authors": [
@@ -672,6 +972,16 @@
     },
     {
       "packet_id": "elementary.combinatorics.sum_ones_card.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.combinatorics.sum_range_choose.v1",
       "source_kind": "author_written",
       "source_refs": [],
       "authors": [
@@ -821,6 +1131,36 @@
       "source_sha256": null
     },
     {
+      "packet_id": "elementary.functions.bijective_comp.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.functions.finite_injective_iff_surjective.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.functions.fixed_point_id.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
       "packet_id": "elementary.functions.geom_series_mul.v1",
       "source_kind": "author_written",
       "source_refs": [],
@@ -831,7 +1171,77 @@
       "source_sha256": null
     },
     {
+      "packet_id": "elementary.functions.id_bijective.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.functions.image_inter_subset.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.functions.image_union.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.functions.injective_comp.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
       "packet_id": "elementary.functions.le_abs_self.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.functions.left_inverse_injective.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.functions.linear_injective.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.functions.linear_injective_concrete_instance.v1",
       "source_kind": "author_written",
       "source_refs": [],
       "authors": [
@@ -871,7 +1281,27 @@
       "source_sha256": null
     },
     {
+      "packet_id": "elementary.functions.min_le_max.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
       "packet_id": "elementary.functions.min_self.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.functions.monotone_comp.v1",
       "source_kind": "author_written",
       "source_refs": [],
       "authors": [
@@ -891,6 +1321,26 @@
       "source_sha256": null
     },
     {
+      "packet_id": "elementary.functions.preimage_inter.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.functions.right_inverse_surjective.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
       "packet_id": "elementary.functions.sq_abs.v1",
       "source_kind": "author_written",
       "source_refs": [],
@@ -901,7 +1351,57 @@
       "source_sha256": null
     },
     {
+      "packet_id": "elementary.functions.strictmono_comp.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.functions.strictmono_injective.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.functions.surjective_comp.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.functions.surjective_not_always_injective.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
       "packet_id": "elementary.geometry.angle_bisector_double.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.geometry.apollonius_median.v1",
       "source_kind": "author_written",
       "source_refs": [],
       "authors": [
@@ -922,6 +1422,16 @@
     },
     {
       "packet_id": "elementary.geometry.centroid_x.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.geometry.circle_point_dist_eq_radius.v1",
       "source_kind": "author_written",
       "source_refs": [],
       "authors": [
@@ -1031,6 +1541,16 @@
       "source_sha256": null
     },
     {
+      "packet_id": "elementary.geometry.law_of_cosines.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
       "packet_id": "elementary.geometry.midpoint_between.v1",
       "source_kind": "author_written",
       "source_refs": [],
@@ -1101,6 +1621,16 @@
       "source_sha256": null
     },
     {
+      "packet_id": "elementary.geometry.pythagorean_right_angle.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
       "packet_id": "elementary.geometry.reflection_dist.v1",
       "source_kind": "author_written",
       "source_refs": [],
@@ -1111,7 +1641,37 @@
       "source_sha256": null
     },
     {
+      "packet_id": "elementary.geometry.reflection_over_x_axis.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.geometry.reflection_over_y_axis.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
       "packet_id": "elementary.geometry.reflex_angle.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.geometry.right_triangle_area_half_base_height.v1",
       "source_kind": "author_written",
       "source_refs": [],
       "authors": [
@@ -1142,6 +1702,16 @@
     },
     {
       "packet_id": "elementary.geometry.slope_cross_symm.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.geometry.slope_div_mul_not_always_cancel.v1",
       "source_kind": "author_written",
       "source_refs": [],
       "authors": [
@@ -1191,7 +1761,197 @@
       "source_sha256": null
     },
     {
+      "packet_id": "elementary.induction.arith_seq_sum.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.induction.bernoulli_inequality.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.induction.euclid_gcd_eq_gcd.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.induction.even_odd_mutual_totality.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.induction.exists_prime_factor.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.induction.exists_prime_factorization.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.induction.factorial_add_ge_mul.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.induction.factorial_ge_two_pow.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.induction.factorial_pos_induction.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.induction.fib_le_two_pow.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.induction.fib_sum_succ.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.induction.foldl_cons_eq_reverse_append.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
       "packet_id": "elementary.induction.gauss_sum.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.induction.geom_series_sum_induction.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.induction.myfactorial_eq_factorial.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.induction.mygcd_wellfounded.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.induction.odd_part_decomposition.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.induction.one_le_two_pow.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.induction.prod_range_monotone.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.induction.prod_range_pos.v1",
       "source_kind": "author_written",
       "source_refs": [],
       "authors": [
@@ -1211,6 +1971,16 @@
       "source_sha256": null
     },
     {
+      "packet_id": "elementary.induction.sum_consec_product.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
       "packet_id": "elementary.induction.sum_cubes.v1",
       "source_kind": "author_written",
       "source_refs": [],
@@ -1221,7 +1991,47 @@
       "source_sha256": null
     },
     {
+      "packet_id": "elementary.induction.sum_cubes_eq_sum_sq.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.induction.sum_evens.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.induction.sum_fib_sq.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
       "packet_id": "elementary.induction.sum_odds.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.induction.sum_range_monotone.v1",
       "source_kind": "author_written",
       "source_refs": [],
       "authors": [
@@ -1251,6 +2061,86 @@
       "source_sha256": null
     },
     {
+      "packet_id": "elementary.induction.telescoping_sum.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.induction.two_pow_gt_self.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.induction.two_pow_gt_sq_from_five.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.induction.two_pow_strictmono.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.inequalities.abs_abs_sub_abs_le.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.inequalities.abs_add_le.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.inequalities.abs_add_three.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.inequalities.abs_sub_le.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
       "packet_id": "elementary.inequalities.add_one_div_ge_two.v1",
       "source_kind": "author_written",
       "source_refs": [],
@@ -1261,7 +2151,57 @@
       "source_sha256": null
     },
     {
+      "packet_id": "elementary.inequalities.am_gm_four_term.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
       "packet_id": "elementary.inequalities.am_gm_two.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.inequalities.am_hm_two.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.inequalities.amgm_wrong_direction_counterexample.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.inequalities.avg_between_min_max.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.inequalities.cauchy_three_term.v1",
       "source_kind": "author_written",
       "source_refs": [],
       "authors": [
@@ -1291,6 +2231,66 @@
       "source_sha256": null
     },
     {
+      "packet_id": "elementary.inequalities.general_amgm.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.inequalities.general_cauchy_schwarz.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.inequalities.general_qm_am.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.inequalities.max_add_le.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.inequalities.min_add_max.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.inequalities.min_add_min_le.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
       "packet_id": "elementary.inequalities.mul_pos.v1",
       "source_kind": "author_written",
       "source_refs": [],
@@ -1302,6 +2302,16 @@
     },
     {
       "packet_id": "elementary.inequalities.mul_self_nonneg.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.inequalities.nesbitt_three_var.v1",
       "source_kind": "author_written",
       "source_refs": [],
       "authors": [
@@ -1341,6 +2351,16 @@
       "source_sha256": null
     },
     {
+      "packet_id": "elementary.inequalities.schur_degree_one.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
       "packet_id": "elementary.inequalities.sq_nonneg.v1",
       "source_kind": "author_written",
       "source_refs": [],
@@ -1362,6 +2382,16 @@
     },
     {
       "packet_id": "elementary.inequalities.three_var_am_gm.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.inequalities.three_var_qm_am_bound.v1",
       "source_kind": "author_written",
       "source_refs": [],
       "authors": [
@@ -1421,6 +2451,16 @@
       "source_sha256": null
     },
     {
+      "packet_id": "elementary.number_theory.bezout.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
       "packet_id": "elementary.number_theory.coprime_comm.v1",
       "source_kind": "author_written",
       "source_refs": [],
@@ -1452,6 +2492,26 @@
     },
     {
       "packet_id": "elementary.number_theory.dvd_gcd.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.number_theory.dvd_lcm_left.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.number_theory.dvd_lcm_right.v1",
       "source_kind": "author_written",
       "source_refs": [],
       "authors": [
@@ -1581,6 +2641,16 @@
       "source_sha256": null
     },
     {
+      "packet_id": "elementary.number_theory.even_sq.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
       "packet_id": "elementary.number_theory.factorial_le.v1",
       "source_kind": "author_written",
       "source_refs": [],
@@ -1592,6 +2662,16 @@
     },
     {
       "packet_id": "elementary.number_theory.factorial_pos.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.number_theory.four_mul_not_prime.v1",
       "source_kind": "author_written",
       "source_refs": [],
       "authors": [
@@ -1622,6 +2702,16 @@
     },
     {
       "packet_id": "elementary.number_theory.gcd_dvd_right.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.number_theory.gcd_mul_lcm.v1",
       "source_kind": "author_written",
       "source_refs": [],
       "authors": [
@@ -1662,6 +2752,16 @@
     },
     {
       "packet_id": "elementary.number_theory.gcd_zero_left.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.number_theory.lcm_comm.v1",
       "source_kind": "author_written",
       "source_refs": [],
       "authors": [
@@ -1771,6 +2871,16 @@
       "source_sha256": null
     },
     {
+      "packet_id": "elementary.number_theory.not_prime_one.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
       "packet_id": "elementary.number_theory.odd_add_odd.v1",
       "source_kind": "author_written",
       "source_refs": [],
@@ -1802,6 +2912,36 @@
     },
     {
       "packet_id": "elementary.number_theory.pow_le_pow_left.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.number_theory.prime_dvd_mul.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.number_theory.prime_two.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "elementary.number_theory.sq_mod_two_eq_self_mod_two.v1",
       "source_kind": "author_written",
       "source_refs": [],
       "authors": [
@@ -1881,6 +3021,16 @@
       "source_sha256": null
     },
     {
+      "packet_id": "elementary.number_theory.well_ordering.v1",
+      "source_kind": "author_written",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
       "packet_id": "elementary.number_theory.zero_mod.v1",
       "source_kind": "author_written",
       "source_refs": [],
@@ -1891,7 +3041,632 @@
       "source_sha256": null
     },
     {
+      "packet_id": "fixtures.diagnostics.diagnostic_categories_conformance.v1",
+      "source_kind": "repo_original",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "fixtures.metrics.model_performance_conformance.v1",
+      "source_kind": "repo_original",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "frontier.erdos.erdos_1052_filter_ordcompl.v1",
+      "source_kind": "erdos_problems",
+      "source_refs": [
+        "ErdosProblems/erdos-1052/proof/Erdos1052_even_of_isUnitaryPerfect.lean (sibling repo mnehmos.llm-driven-proof-search.environment)",
+        "https://www.erdosproblems.com/1052"
+      ],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "adapted_with_review",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "frontier.erdos.erdos_1052_not_dvd_div_ordproj.v1",
+      "source_kind": "erdos_problems",
+      "source_refs": [
+        "ErdosProblems/erdos-1052/proof/Erdos1052_even_of_isUnitaryPerfect.lean (sibling repo mnehmos.llm-driven-proof-search.environment)",
+        "https://www.erdosproblems.com/1052"
+      ],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "adapted_with_review",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "frontier.erdos.erdos_1052_omega_odd_le_two_adic_add_one.v1",
+      "source_kind": "erdos_problems",
+      "source_refs": [
+        "ErdosProblems/erdos-1052/proof/Erdos1052_sigmaStar_and_bounds.lean (sibling repo mnehmos.llm-driven-proof-search.environment)",
+        "https://www.erdosproblems.com/1052"
+      ],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "adapted_with_review",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "frontier.erdos.erdos_1052_proper_eq_erase.v1",
+      "source_kind": "erdos_problems",
+      "source_refs": [
+        "ErdosProblems/erdos-1052/proof/Erdos1052_even_of_isUnitaryPerfect.lean (sibling repo mnehmos.llm-driven-proof-search.environment)",
+        "https://www.erdosproblems.com/1052"
+      ],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "adapted_with_review",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "frontier.erdos.erdos_1052_sigmastar_mul_of_coprime.v1",
+      "source_kind": "erdos_problems",
+      "source_refs": [
+        "ErdosProblems/erdos-1052/proof/Erdos1052_sigmaStar_and_bounds.lean (sibling repo mnehmos.llm-driven-proof-search.environment)",
+        "https://www.erdosproblems.com/1052"
+      ],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "adapted_with_review",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "frontier.erdos.erdos_1052_sigmastar_prime_pow_and_prime.v1",
+      "source_kind": "erdos_problems",
+      "source_refs": [
+        "ErdosProblems/erdos-1052/proof/Erdos1052_sigmaStar_and_bounds.lean (sibling repo mnehmos.llm-driven-proof-search.environment)",
+        "https://www.erdosproblems.com/1052"
+      ],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "adapted_with_review",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "frontier.erdos.erdos_291_infinite_gcd_gt_one.v1",
+      "source_kind": "erdos_problems",
+      "source_refs": [
+        "ErdosProblems/erdos-291/proof/Erdos291_infinite_gcd_gt_one.lean (sibling repo mnehmos.llm-driven-proof-search.environment)",
+        "https://www.erdosproblems.com/291"
+      ],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "adapted_with_review",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "frontier.erdos.erdos_349_alpha_gt_two_not_is_good_pair.v1",
+      "source_kind": "erdos_problems",
+      "source_refs": [
+        "ErdosProblems/erdos-349/proof/Erdos349_alpha_gt_two_not_isGoodPair.lean (sibling repo mnehmos.llm-driven-proof-search.environment)",
+        "https://www.erdosproblems.com/349"
+      ],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "canonical_statement_hash_match",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "frontier.erdos.erdos_349_alpha_le_one_not_is_good_pair.v1",
+      "source_kind": "erdos_problems",
+      "source_refs": [
+        "ErdosProblems/erdos-349/proof/Erdos349_alpha_le_one_not_isGoodPair.lean (sibling repo mnehmos.llm-driven-proof-search.environment)",
+        "https://www.erdosproblems.com/349"
+      ],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "canonical_statement_hash_match",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "frontier.erdos.erdos_349_exists_finset_sum_two_pow.v1",
+      "source_kind": "erdos_problems",
+      "source_refs": [
+        "ErdosProblems/erdos-349/proof/Erdos349_exists_finset_sum_two_pow.lean (sibling repo mnehmos.llm-driven-proof-search.environment)",
+        "google-deepmind/formal-conjectures FormalConjectures/ErdosProblems/349.lean (exists_finset_sum_two_pow)",
+        "https://www.erdosproblems.com/349"
+      ],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "canonical_statement_hash_match",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "frontier.erdos.erdos_349_int_coeff_ge_two_not_is_good_pair.v1",
+      "source_kind": "erdos_problems",
+      "source_refs": [
+        "ErdosProblems/erdos-349/proof/Erdos349_int_coeff_ge_two_not_isGoodPair.lean (sibling repo mnehmos.llm-driven-proof-search.environment)",
+        "https://www.erdosproblems.com/349"
+      ],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "adapted_with_review",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "frontier.erdos.erdos_349_integer_is_good_pair_iff.v1",
+      "source_kind": "erdos_problems",
+      "source_refs": [
+        "ErdosProblems/erdos-349/proof/Erdos349_integer_isGoodPair_iff.lean (sibling repo mnehmos.llm-driven-proof-search.environment)",
+        "https://www.erdosproblems.com/349"
+      ],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "adapted_with_review",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "frontier.erdos.erdos_349_one_two_is_good_pair.v1",
+      "source_kind": "erdos_problems",
+      "source_refs": [
+        "ErdosProblems/erdos-349/proof/Erdos349_one_two_isGoodPair.lean (sibling repo mnehmos.llm-driven-proof-search.environment)",
+        "https://www.erdosproblems.com/349"
+      ],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "canonical_statement_hash_match",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "frontier.erdos.erdos_399_cambie.v1",
+      "source_kind": "erdos_problems",
+      "source_refs": [
+        "ErdosProblems/erdos-399/proof/Erdos399_cambie.lean (sibling repo mnehmos.llm-driven-proof-search.environment)",
+        "https://www.erdosproblems.com/399"
+      ],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "adapted_with_review",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "frontier.erdos.erdos_494_product.v1",
+      "source_kind": "erdos_problems",
+      "source_refs": [
+        "ErdosProblems/erdos-494/proof/Erdos494_product.lean (sibling repo mnehmos.llm-driven-proof-search.environment)",
+        "google-deepmind/formal-conjectures FormalConjectures/ErdosProblems/494.lean (erdos_494.variants.product)",
+        "https://www.erdosproblems.com/494"
+      ],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "adapted_with_review",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "frontier.formal_conjectures.degiorgi_conjecture_dim_one.v1",
+      "source_kind": "formal_conjectures",
+      "source_refs": [
+        "FormalConjectures/Paper/DeGiorgi.lean::DeGiorgi_one (sibling repo mnehmos.llm-driven-proof-search.environment/formal-conjectures)",
+        "Ghoussoub, Gui, https://doi.org/10.1007/s002080050196 (n=2 case, not covered here)",
+        "Ambrosio, Cabre, https://doi.org/10.1090/S0894-0347-00-00345-3 (n=3 case, not covered here)",
+        "Del Pino, Kowalczyk, Wei, http://dx.doi.org/10.4007/annals.2011.174.3.3 (n>=9 counterexample, not covered here)"
+      ],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "adapted_with_review",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "frontier.formal_conjectures.equational_theories_677_255_class_free.v1",
+      "source_kind": "formal_conjectures",
+      "source_refs": [
+        "FormalConjectures/Other/EquationalTheories_677_255.lean::Equation255_not_implies_Equation677 (sibling repo mnehmos.llm-driven-proof-search.environment/formal-conjectures)",
+        "https://teorth.github.io/equational_theories/implications/?677&finite"
+      ],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "adapted_with_review",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "frontier.formal_conjectures.euler_sum_of_powers_false_for_k4.v1",
+      "source_kind": "formal_conjectures",
+      "source_refs": [
+        "FormalConjectures/Wikipedia/EulerSumOfPowers.lean::eulers_sum_of_powers_conjecture.false_for_k4 (sibling repo mnehmos.llm-driven-proof-search.environment/formal-conjectures)",
+        "https://en.wikipedia.org/wiki/Euler's_sum_of_powers_conjecture",
+        "Roger Frye, 1988 (counterexample search); Noam Elkies, 1987 (existence proof for k=4)"
+      ],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "canonical_statement_hash_match",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "frontier.formal_conjectures.euler_sum_of_powers_false_for_k5.v1",
+      "source_kind": "formal_conjectures",
+      "source_refs": [
+        "FormalConjectures/Wikipedia/EulerSumOfPowers.lean::eulers_sum_of_powers_conjecture.false_for_k5 (sibling repo mnehmos.llm-driven-proof-search.environment/formal-conjectures)",
+        "https://en.wikipedia.org/wiki/Euler's_sum_of_powers_conjecture",
+        "L. J. Lander, T. R. Parkin, 1966 (first known counterexample, found by computer search)"
+      ],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "canonical_statement_hash_match",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "frontier.formal_conjectures.oeis_a34693_exists_k_best_possible.v1",
+      "source_kind": "formal_conjectures",
+      "source_refs": [
+        "FormalConjectures/OEIS/34693.lean::exists_k_best_possible (sibling repo mnehmos.llm-driven-proof-search.environment/formal-conjectures)",
+        "https://oeis.org/A34693"
+      ],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "adapted_with_review",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "frontier.formal_conjectures.oeis_a358684_conjecture_0.v1",
+      "source_kind": "formal_conjectures",
+      "source_refs": [
+        "FormalConjectures/OEIS/358684.lean::oeis_358684_conjecture_0 (sibling repo mnehmos.llm-driven-proof-search.environment/formal-conjectures)",
+        "https://oeis.org/A358684",
+        "Lorenzo Sauras-Altuzarra, \"Some properties of the factors of Fermat numbers\", Art Discrete Appl. Math. (2022), Conjecture 3.4, https://doi.org/10.26493/2590-9770.1473.ec5"
+      ],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "adapted_with_review",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "frontier.formal_conjectures.union_closed_sharpness.v1",
+      "source_kind": "formal_conjectures",
+      "source_refs": [
+        "FormalConjectures/Wikipedia/UnionClosed.lean::union_closed.variants.sharpness (sibling repo mnehmos.llm-driven-proof-search.environment/formal-conjectures)",
+        "https://en.wikipedia.org/wiki/Union-closed_sets_conjecture"
+      ],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "adapted_with_review",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "frontier.formal_conjectures.union_closed_singleton_mem.v1",
+      "source_kind": "formal_conjectures",
+      "source_refs": [
+        "FormalConjectures/Wikipedia/UnionClosed.lean::union_closed.variants.singleton_mem (sibling repo mnehmos.llm-driven-proof-search.environment/formal-conjectures)",
+        "https://en.wikipedia.org/wiki/Union-closed_sets_conjecture"
+      ],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "adapted_with_review",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "frontier.formal_conjectures.union_closed_univ_card_two.v1",
+      "source_kind": "formal_conjectures",
+      "source_refs": [
+        "FormalConjectures/Wikipedia/UnionClosed.lean::union_closed.variants.univ_card_two (sibling repo mnehmos.llm-driven-proof-search.environment/formal-conjectures)",
+        "https://en.wikipedia.org/wiki/Union-closed_sets_conjecture"
+      ],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "adapted_with_review",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "negative.algebra.div_mul_cancel_bare_ring_no_hypothesis_failure.v1",
+      "source_kind": "repo_original",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "negative.algebra.frac_sum_bare_ring.missing_field_simp.v1",
+      "source_kind": "repo_original",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "negative.algebra.nat_sub_ring_trap.v1",
+      "source_kind": "repo_original",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "negative.algebra.pow_mul_ring_timeout_failure.v1",
+      "source_kind": "repo_original",
+      "source_refs": [
+        "packets/elementary/algebra/pow_mul.v1.json"
+      ],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "negative.algebra.sq_sum_bare_nlinarith.missing_sos_hint.v1",
+      "source_kind": "repo_original",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "negative.combinatorics.card_image_injective.omega_failure.v1",
+      "source_kind": "repo_original",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "negative.combinatorics.card_union_no_disjoint.false_generalization.v1",
+      "source_kind": "repo_original",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "negative.combinatorics.filter_prime_simp.no_progress.v1",
+      "source_kind": "repo_original",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "negative.combinatorics.finset_card_atoms.omega_failure.v1",
+      "source_kind": "repo_original",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "negative.functions.injective_add.decide_failure.v1",
+      "source_kind": "repo_original",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "negative.functions.quad_injective.simp_unfold_incomplete.v1",
+      "source_kind": "repo_original",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "negative.functions.surjective_implies_injective.finite_pigeonhole_misapplied.v1",
+      "source_kind": "repo_original",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
       "packet_id": "negative.geometry.angle_atoms.nlinarith_failure.v1",
+      "source_kind": "repo_original",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "negative.geometry.pythagorean_bare_ring_no_hypothesis_failure.v1",
+      "source_kind": "repo_original",
+      "source_refs": [
+        "packets/elementary/geometry/pythagorean_right_angle.v1.json"
+      ],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "negative.geometry.slope_div_mul.division_by_zero_unguarded.v1",
+      "source_kind": "repo_original",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "negative.induction.factorial_gt_two_pow.offbyone_false_base.v1",
+      "source_kind": "repo_original",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "negative.induction.foldl_no_generalize.ih_too_weak.v1",
+      "source_kind": "repo_original",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "negative.induction.pow_succ_atom.nlinarith_failure.v1",
+      "source_kind": "repo_original",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "negative.induction.two_pow_gt_sq_offbyone_naive_ih_failure.v1",
+      "source_kind": "repo_original",
+      "source_refs": [
+        "packets/elementary/induction/two_pow_gt_sq_from_five.v1.json"
+      ],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "negative.inequalities.amgm_wrong_direction_bare_nlinarith_failure.v1",
+      "source_kind": "repo_original",
+      "source_refs": [
+        "packets/elementary/inequalities/amgm_wrong_direction_counterexample.v1.json"
+      ],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "negative.inequalities.cauchy_three_term_bare_nlinarith_failure.v1",
+      "source_kind": "repo_original",
+      "source_refs": [
+        "packets/elementary/inequalities/cauchy_three_term.v1.json"
+      ],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "negative.inequalities.nesbitt_bare_nlinarith_division_failure.v1",
+      "source_kind": "repo_original",
+      "source_refs": [
+        "packets/elementary/inequalities/nesbitt_three_var.v1.json"
+      ],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "negative.inequalities.three_var_sq_bare_nlinarith_failure.v1",
+      "source_kind": "repo_original",
+      "source_refs": [
+        "packets/elementary/inequalities/three_var_sq_ge.v1.json"
+      ],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "negative.inequalities.two_mul_le_add_sq_bare_linarith_failure.v1",
+      "source_kind": "repo_original",
+      "source_refs": [
+        "packets/elementary/inequalities/two_mul_le_add_sq.v1.json"
+      ],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "negative.number_theory.decide_unbounded_prime_universal.v1",
+      "source_kind": "repo_original",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "negative.number_theory.divisor_case_split.omega_unevaluated_literal.v1",
+      "source_kind": "repo_original",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "negative.number_theory.gcd_dvd.omega_no_gcd_theory.v1",
+      "source_kind": "repo_original",
+      "source_refs": [],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "negative.number_theory.sq_parity.omega_nonlinear_failure.v1",
       "source_kind": "repo_original",
       "source_refs": [],
       "authors": [

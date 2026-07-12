@@ -1,9 +1,11 @@
 {
   "nodes": [
+    "fixtures.metrics.model_performance_conformance.v1",
     "elementary.algebra.add_assoc.v1",
     "elementary.algebra.add_comm.v1",
     "elementary.algebra.add_left_comm.v1",
     "elementary.algebra.add_mul.v1",
+    "elementary.algebra.add_sq_three.v1",
     "elementary.algebra.add_zero.v1",
     "elementary.algebra.am_gm_half.v1",
     "elementary.algebra.binomial_cube.v1",
@@ -11,6 +13,7 @@
     "elementary.algebra.cubic_pos.v1",
     "elementary.algebra.diff_of_cubes.v1",
     "elementary.algebra.diff_of_squares.v1",
+    "elementary.algebra.div_add_div_same.v1",
     "elementary.algebra.factor_by_grouping.v1",
     "elementary.algebra.mul_add.v1",
     "elementary.algebra.mul_assoc.v1",
@@ -22,31 +25,54 @@
     "elementary.algebra.mul_zero.v1",
     "elementary.algebra.neg_mul.v1",
     "elementary.algebra.neg_neg.v1",
+    "elementary.algebra.neg_sq.v1",
     "elementary.algebra.neg_two_ab_le.v1",
     "elementary.algebra.neg_zero.v1",
     "elementary.algebra.one_mul.v1",
     "elementary.algebra.one_pow.v1",
+    "elementary.algebra.pow_add.v1",
+    "elementary.algebra.pow_mul.v1",
     "elementary.algebra.pow_one.v1",
+    "elementary.algebra.pow_succ.v1",
     "elementary.algebra.pow_two.v1",
     "elementary.algebra.pow_zero.v1",
     "elementary.algebra.quad_form_nonneg.v1",
+    "elementary.algebra.quad_formula_real_root.v1",
+    "elementary.algebra.quadratic_pos.v1",
+    "elementary.algebra.sq_sum_ge_two_mul.v1",
     "elementary.algebra.sq_sum_le.v1",
     "elementary.algebra.square_of_difference.v1",
     "elementary.algebra.sub_eq_add_neg.v1",
+    "elementary.algebra.sub_mul.v1",
     "elementary.algebra.sub_self.v1",
     "elementary.algebra.sub_zero.v1",
     "elementary.algebra.sum_of_cubes.v1",
+    "elementary.algebra.sum_reciprocals_eq_sum_over_product.v1",
     "elementary.algebra.two_mul.v1",
     "elementary.algebra.x4_ge_2x2.v1",
     "elementary.algebra.zero_add.v1",
     "elementary.algebra.zero_pow_succ.v1",
     "elementary.algebra.zero_sub.v1",
+    "elementary.combinatorics.card_bi_union_le.v1",
     "elementary.combinatorics.card_empty.v1",
+    "elementary.combinatorics.card_filter_partition.v1",
+    "elementary.combinatorics.card_image_le.v1",
+    "elementary.combinatorics.card_image_of_injective.v1",
     "elementary.combinatorics.card_insert_le.v1",
     "elementary.combinatorics.card_le_of_subset.v1",
+    "elementary.combinatorics.card_powerset.v1",
+    "elementary.combinatorics.card_product.v1",
     "elementary.combinatorics.card_range.v1",
+    "elementary.combinatorics.card_sdiff_of_subset.v1",
     "elementary.combinatorics.card_singleton.v1",
+    "elementary.combinatorics.card_union_add_card_inter.v1",
     "elementary.combinatorics.card_union_le.v1",
+    "elementary.combinatorics.card_union_not_additive.v1",
+    "elementary.combinatorics.choose_self.v1",
+    "elementary.combinatorics.choose_succ_succ.v1",
+    "elementary.combinatorics.choose_symm.v1",
+    "elementary.combinatorics.choose_zero_right.v1",
+    "elementary.combinatorics.disjoint_union_card.v1",
     "elementary.combinatorics.empty_inter.v1",
     "elementary.combinatorics.empty_subset.v1",
     "elementary.combinatorics.empty_union.v1",
@@ -61,13 +87,19 @@
     "elementary.combinatorics.mem_range.v1",
     "elementary.combinatorics.mem_singleton.v1",
     "elementary.combinatorics.mem_union.v1",
+    "elementary.combinatorics.pigeonhole_3_into_2.v1",
+    "elementary.combinatorics.pigeonhole_general.v1",
+    "elementary.combinatorics.primes_below_ten_card.v1",
     "elementary.combinatorics.prod_range_one.v1",
+    "elementary.combinatorics.prod_range_succ.v1",
     "elementary.combinatorics.prod_range_zero.v1",
+    "elementary.combinatorics.set_mem_union.v1",
     "elementary.combinatorics.subset_refl.v1",
     "elementary.combinatorics.subset_union_left.v1",
     "elementary.combinatorics.subset_union_right.v1",
     "elementary.combinatorics.sum_empty.v1",
     "elementary.combinatorics.sum_ones_card.v1",
+    "elementary.combinatorics.sum_range_choose.v1",
     "elementary.combinatorics.sum_range_one.v1",
     "elementary.combinatorics.sum_range_zero.v1",
     "elementary.combinatorics.union_assoc.v1",
@@ -82,17 +114,37 @@
     "elementary.functions.abs_of_nonneg.v1",
     "elementary.functions.abs_sub_comm.v1",
     "elementary.functions.abs_zero.v1",
+    "elementary.functions.bijective_comp.v1",
+    "elementary.functions.finite_injective_iff_surjective.v1",
+    "elementary.functions.fixed_point_id.v1",
     "elementary.functions.geom_series_mul.v1",
+    "elementary.functions.id_bijective.v1",
+    "elementary.functions.image_inter_subset.v1",
+    "elementary.functions.image_union.v1",
+    "elementary.functions.injective_comp.v1",
     "elementary.functions.le_abs_self.v1",
+    "elementary.functions.left_inverse_injective.v1",
+    "elementary.functions.linear_injective.v1",
+    "elementary.functions.linear_injective_concrete_instance.v1",
     "elementary.functions.max_comm.v1",
     "elementary.functions.max_self.v1",
     "elementary.functions.min_comm.v1",
+    "elementary.functions.min_le_max.v1",
     "elementary.functions.min_self.v1",
+    "elementary.functions.monotone_comp.v1",
     "elementary.functions.neg_abs_le.v1",
+    "elementary.functions.preimage_inter.v1",
+    "elementary.functions.right_inverse_surjective.v1",
     "elementary.functions.sq_abs.v1",
+    "elementary.functions.strictmono_comp.v1",
+    "elementary.functions.strictmono_injective.v1",
+    "elementary.functions.surjective_comp.v1",
+    "elementary.functions.surjective_not_always_injective.v1",
     "elementary.geometry.angle_bisector_double.v1",
+    "elementary.geometry.apollonius_median.v1",
     "elementary.geometry.centroid_sum.v1",
     "elementary.geometry.centroid_x.v1",
+    "elementary.geometry.circle_point_dist_eq_radius.v1",
     "elementary.geometry.collinear_det.v1",
     "elementary.geometry.complementary_angle.v1",
     "elementary.geometry.dist_sq_expand.v1",
@@ -103,6 +155,7 @@
     "elementary.geometry.dot_product_comm.v1",
     "elementary.geometry.exterior_angle.v1",
     "elementary.geometry.isosceles_base_angle.v1",
+    "elementary.geometry.law_of_cosines.v1",
     "elementary.geometry.midpoint_between.v1",
     "elementary.geometry.midpoint_double.v1",
     "elementary.geometry.midpoint_equidist.v1",
@@ -110,42 +163,96 @@
     "elementary.geometry.parallelogram_law.v1",
     "elementary.geometry.perp_rotation.v1",
     "elementary.geometry.perp_slopes_comm.v1",
+    "elementary.geometry.pythagorean_right_angle.v1",
     "elementary.geometry.reflection_dist.v1",
+    "elementary.geometry.reflection_over_x_axis.v1",
+    "elementary.geometry.reflection_over_y_axis.v1",
     "elementary.geometry.reflex_angle.v1",
+    "elementary.geometry.right_triangle_area_half_base_height.v1",
     "elementary.geometry.section_formula_thirds.v1",
     "elementary.geometry.shoelace_identity.v1",
     "elementary.geometry.slope_cross_symm.v1",
+    "elementary.geometry.slope_div_mul_not_always_cancel.v1",
     "elementary.geometry.supplementary_angle.v1",
     "elementary.geometry.triangle_angle_sum.v1",
     "elementary.geometry.two_dot_le.v1",
     "elementary.geometry.vertical_angles.v1",
+    "elementary.induction.arith_seq_sum.v1",
+    "elementary.induction.bernoulli_inequality.v1",
+    "elementary.induction.euclid_gcd_eq_gcd.v1",
+    "elementary.induction.even_odd_mutual_totality.v1",
+    "elementary.induction.exists_prime_factor.v1",
+    "elementary.induction.exists_prime_factorization.v1",
+    "elementary.induction.factorial_add_ge_mul.v1",
+    "elementary.induction.factorial_ge_two_pow.v1",
+    "elementary.induction.factorial_pos_induction.v1",
+    "elementary.induction.fib_le_two_pow.v1",
+    "elementary.induction.fib_sum_succ.v1",
+    "elementary.induction.foldl_cons_eq_reverse_append.v1",
     "elementary.induction.gauss_sum.v1",
+    "elementary.induction.geom_series_sum_induction.v1",
+    "elementary.induction.myfactorial_eq_factorial.v1",
+    "elementary.induction.mygcd_wellfounded.v1",
+    "elementary.induction.odd_part_decomposition.v1",
+    "elementary.induction.one_le_two_pow.v1",
+    "elementary.induction.prod_range_monotone.v1",
+    "elementary.induction.prod_range_pos.v1",
     "elementary.induction.prod_range_succ.v1",
+    "elementary.induction.sum_consec_product.v1",
     "elementary.induction.sum_cubes.v1",
+    "elementary.induction.sum_cubes_eq_sum_sq.v1",
+    "elementary.induction.sum_evens.v1",
+    "elementary.induction.sum_fib_sq.v1",
     "elementary.induction.sum_odds.v1",
+    "elementary.induction.sum_range_monotone.v1",
     "elementary.induction.sum_range_succ.v1",
     "elementary.induction.sum_squares.v1",
+    "elementary.induction.telescoping_sum.v1",
+    "elementary.induction.two_pow_gt_self.v1",
+    "elementary.induction.two_pow_gt_sq_from_five.v1",
+    "elementary.induction.two_pow_strictmono.v1",
+    "elementary.inequalities.abs_abs_sub_abs_le.v1",
+    "elementary.inequalities.abs_add_le.v1",
+    "elementary.inequalities.abs_add_three.v1",
+    "elementary.inequalities.abs_sub_le.v1",
     "elementary.inequalities.add_one_div_ge_two.v1",
+    "elementary.inequalities.am_gm_four_term.v1",
     "elementary.inequalities.am_gm_two.v1",
+    "elementary.inequalities.am_hm_two.v1",
+    "elementary.inequalities.amgm_wrong_direction_counterexample.v1",
+    "elementary.inequalities.avg_between_min_max.v1",
+    "elementary.inequalities.cauchy_three_term.v1",
     "elementary.inequalities.cauchy_two_term.v1",
     "elementary.inequalities.four_mul_le_add_sq.v1",
+    "elementary.inequalities.general_amgm.v1",
+    "elementary.inequalities.general_cauchy_schwarz.v1",
+    "elementary.inequalities.general_qm_am.v1",
+    "elementary.inequalities.max_add_le.v1",
+    "elementary.inequalities.min_add_max.v1",
+    "elementary.inequalities.min_add_min_le.v1",
     "elementary.inequalities.mul_pos.v1",
     "elementary.inequalities.mul_self_nonneg.v1",
+    "elementary.inequalities.nesbitt_three_var.v1",
     "elementary.inequalities.qm_am_bound.v1",
     "elementary.inequalities.quad_pos.v1",
     "elementary.inequalities.reverse_triangle.v1",
+    "elementary.inequalities.schur_degree_one.v1",
     "elementary.inequalities.sq_nonneg.v1",
     "elementary.inequalities.three_sq_bound.v1",
     "elementary.inequalities.three_var_am_gm.v1",
+    "elementary.inequalities.three_var_qm_am_bound.v1",
     "elementary.inequalities.three_var_sq_ge.v1",
     "elementary.inequalities.two_a_le_sq_add_one.v1",
     "elementary.inequalities.two_mul_le_add_sq.v1",
     "elementary.inequalities.two_sq_prod_le.v1",
     "elementary.number_theory.add_mod.v1",
+    "elementary.number_theory.bezout.v1",
     "elementary.number_theory.coprime_comm.v1",
     "elementary.number_theory.coprime_one_left.v1",
     "elementary.number_theory.dvd_add.v1",
     "elementary.number_theory.dvd_gcd.v1",
+    "elementary.number_theory.dvd_lcm_left.v1",
+    "elementary.number_theory.dvd_lcm_right.v1",
     "elementary.number_theory.dvd_mul.v1",
     "elementary.number_theory.dvd_mul_left.v1",
     "elementary.number_theory.dvd_refl.v1",
@@ -158,15 +265,19 @@
     "elementary.number_theory.even_mul.v1",
     "elementary.number_theory.even_mul_succ_self.v1",
     "elementary.number_theory.even_or_odd.v1",
+    "elementary.number_theory.even_sq.v1",
     "elementary.number_theory.factorial_le.v1",
     "elementary.number_theory.factorial_pos.v1",
+    "elementary.number_theory.four_mul_not_prime.v1",
     "elementary.number_theory.gcd_comm.v1",
     "elementary.number_theory.gcd_dvd_left.v1",
     "elementary.number_theory.gcd_dvd_right.v1",
+    "elementary.number_theory.gcd_mul_lcm.v1",
     "elementary.number_theory.gcd_mul_left.v1",
     "elementary.number_theory.gcd_one_right.v1",
     "elementary.number_theory.gcd_self.v1",
     "elementary.number_theory.gcd_zero_left.v1",
+    "elementary.number_theory.lcm_comm.v1",
     "elementary.number_theory.le_of_lt_succ.v1",
     "elementary.number_theory.lt_irrefl.v1",
     "elementary.number_theory.lt_succ_iff.v1",
@@ -177,10 +288,14 @@
     "elementary.number_theory.mul_mod_right.v1",
     "elementary.number_theory.nat_abs_mul.v1",
     "elementary.number_theory.nat_pos_of_ne_zero.v1",
+    "elementary.number_theory.not_prime_one.v1",
     "elementary.number_theory.odd_add_odd.v1",
     "elementary.number_theory.one_dvd.v1",
     "elementary.number_theory.one_le_iff_ne_zero.v1",
     "elementary.number_theory.pow_le_pow_left.v1",
+    "elementary.number_theory.prime_dvd_mul.v1",
+    "elementary.number_theory.prime_two.v1",
+    "elementary.number_theory.sq_mod_two_eq_self_mod_two.v1",
     "elementary.number_theory.sub_add_cancel.v1",
     "elementary.number_theory.succ_le_iff.v1",
     "elementary.number_theory.succ_ne_self.v1",
@@ -188,8 +303,61 @@
     "elementary.number_theory.succ_pos.v1",
     "elementary.number_theory.two_mul_nat.v1",
     "elementary.number_theory.two_pow_pos.v1",
+    "elementary.number_theory.well_ordering.v1",
     "elementary.number_theory.zero_mod.v1",
-    "negative.geometry.angle_atoms.nlinarith_failure.v1"
+    "frontier.erdos.erdos_1052_filter_ordcompl.v1",
+    "frontier.erdos.erdos_1052_not_dvd_div_ordproj.v1",
+    "frontier.erdos.erdos_1052_omega_odd_le_two_adic_add_one.v1",
+    "frontier.erdos.erdos_1052_proper_eq_erase.v1",
+    "frontier.erdos.erdos_1052_sigmastar_mul_of_coprime.v1",
+    "frontier.erdos.erdos_1052_sigmastar_prime_pow_and_prime.v1",
+    "frontier.erdos.erdos_291_infinite_gcd_gt_one.v1",
+    "frontier.erdos.erdos_349_alpha_gt_two_not_is_good_pair.v1",
+    "frontier.erdos.erdos_349_alpha_le_one_not_is_good_pair.v1",
+    "frontier.erdos.erdos_349_exists_finset_sum_two_pow.v1",
+    "frontier.erdos.erdos_349_int_coeff_ge_two_not_is_good_pair.v1",
+    "frontier.erdos.erdos_349_integer_is_good_pair_iff.v1",
+    "frontier.erdos.erdos_349_one_two_is_good_pair.v1",
+    "frontier.erdos.erdos_399_cambie.v1",
+    "frontier.erdos.erdos_494_product.v1",
+    "frontier.formal_conjectures.degiorgi_conjecture_dim_one.v1",
+    "frontier.formal_conjectures.equational_theories_677_255_class_free.v1",
+    "frontier.formal_conjectures.euler_sum_of_powers_false_for_k4.v1",
+    "frontier.formal_conjectures.euler_sum_of_powers_false_for_k5.v1",
+    "frontier.formal_conjectures.oeis_a34693_exists_k_best_possible.v1",
+    "frontier.formal_conjectures.oeis_a358684_conjecture_0.v1",
+    "frontier.formal_conjectures.union_closed_sharpness.v1",
+    "frontier.formal_conjectures.union_closed_singleton_mem.v1",
+    "frontier.formal_conjectures.union_closed_univ_card_two.v1",
+    "fixtures.diagnostics.diagnostic_categories_conformance.v1",
+    "negative.algebra.div_mul_cancel_bare_ring_no_hypothesis_failure.v1",
+    "negative.algebra.frac_sum_bare_ring.missing_field_simp.v1",
+    "negative.algebra.nat_sub_ring_trap.v1",
+    "negative.algebra.pow_mul_ring_timeout_failure.v1",
+    "negative.algebra.sq_sum_bare_nlinarith.missing_sos_hint.v1",
+    "negative.combinatorics.card_image_injective.omega_failure.v1",
+    "negative.combinatorics.card_union_no_disjoint.false_generalization.v1",
+    "negative.combinatorics.filter_prime_simp.no_progress.v1",
+    "negative.combinatorics.finset_card_atoms.omega_failure.v1",
+    "negative.functions.injective_add.decide_failure.v1",
+    "negative.functions.quad_injective.simp_unfold_incomplete.v1",
+    "negative.functions.surjective_implies_injective.finite_pigeonhole_misapplied.v1",
+    "negative.geometry.angle_atoms.nlinarith_failure.v1",
+    "negative.geometry.pythagorean_bare_ring_no_hypothesis_failure.v1",
+    "negative.geometry.slope_div_mul.division_by_zero_unguarded.v1",
+    "negative.induction.factorial_gt_two_pow.offbyone_false_base.v1",
+    "negative.induction.foldl_no_generalize.ih_too_weak.v1",
+    "negative.induction.pow_succ_atom.nlinarith_failure.v1",
+    "negative.induction.two_pow_gt_sq_offbyone_naive_ih_failure.v1",
+    "negative.inequalities.amgm_wrong_direction_bare_nlinarith_failure.v1",
+    "negative.inequalities.cauchy_three_term_bare_nlinarith_failure.v1",
+    "negative.inequalities.nesbitt_bare_nlinarith_division_failure.v1",
+    "negative.inequalities.three_var_sq_bare_nlinarith_failure.v1",
+    "negative.inequalities.two_mul_le_add_sq_bare_linarith_failure.v1",
+    "negative.number_theory.decide_unbounded_prime_universal.v1",
+    "negative.number_theory.divisor_case_split.omega_unevaluated_literal.v1",
+    "negative.number_theory.gcd_dvd.omega_no_gcd_theory.v1",
+    "negative.number_theory.sq_parity.omega_nonlinear_failure.v1"
   ],
   "edges": {
     "elementary.algebra.add_assoc.v1": [
@@ -245,6 +413,16 @@
       },
       {
         "to": "distributivity",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.algebra.add_sq_three.v1": [
+      {
+        "to": "binomial_expansion",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "three_variable_identities",
         "type": "prerequisite_concepts"
       }
     ],
@@ -363,6 +541,16 @@
       },
       {
         "to": "distributivity",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.algebra.div_add_div_same.v1": [
+      {
+        "to": "division",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "field",
         "type": "prerequisite_concepts"
       }
     ],
@@ -520,6 +708,16 @@
         "type": "prerequisite_concepts"
       }
     ],
+    "elementary.algebra.neg_sq.v1": [
+      {
+        "to": "negation",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "squaring",
+        "type": "prerequisite_concepts"
+      }
+    ],
     "elementary.algebra.neg_two_ab_le.v1": [
       {
         "to": "core_algebra",
@@ -580,6 +778,34 @@
         "type": "prerequisite_concepts"
       }
     ],
+    "elementary.algebra.pow_add.v1": [
+      {
+        "to": "core_algebra",
+        "type": "kits"
+      },
+      {
+        "to": "power",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "exponent_laws",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.algebra.pow_mul.v1": [
+      {
+        "to": "core_algebra",
+        "type": "kits"
+      },
+      {
+        "to": "power",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "exponent_laws",
+        "type": "prerequisite_concepts"
+      }
+    ],
     "elementary.algebra.pow_one.v1": [
       {
         "to": "core_algebra",
@@ -587,6 +813,20 @@
       },
       {
         "to": "power",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.algebra.pow_succ.v1": [
+      {
+        "to": "core_algebra",
+        "type": "kits"
+      },
+      {
+        "to": "power",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "exponent_laws",
         "type": "prerequisite_concepts"
       }
     ],
@@ -629,6 +869,52 @@
       },
       {
         "to": "quadratic_form",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.algebra.quad_formula_real_root.v1": [
+      {
+        "to": "quadratic_formula",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "discriminant",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "real_root_existence",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.algebra.quadratic_pos.v1": [
+      {
+        "to": "core_algebra",
+        "type": "kits"
+      },
+      {
+        "to": "real_numbers",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "inequalities",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "completing_the_square",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.algebra.sq_sum_ge_two_mul.v1": [
+      {
+        "to": "InequalityEstimateKit",
+        "type": "kits"
+      },
+      {
+        "to": "square",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "real_number_order",
         "type": "prerequisite_concepts"
       }
     ],
@@ -682,6 +968,16 @@
         "type": "prerequisite_concepts"
       }
     ],
+    "elementary.algebra.sub_mul.v1": [
+      {
+        "to": "distributivity",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "subtraction",
+        "type": "prerequisite_concepts"
+      }
+    ],
     "elementary.algebra.sub_self.v1": [
       {
         "to": "core_algebra",
@@ -721,6 +1017,20 @@
       },
       {
         "to": "factoring",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.algebra.sum_reciprocals_eq_sum_over_product.v1": [
+      {
+        "to": "reciprocal",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "field",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "division",
         "type": "prerequisite_concepts"
       }
     ],
@@ -798,6 +1108,32 @@
         "type": "prerequisite_concepts"
       }
     ],
+    "elementary.combinatorics.card_bi_union_le.v1": [
+      {
+        "to": "ExtremalCombinatoricsKit",
+        "type": "kits"
+      },
+      {
+        "to": "finite_set",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "cardinality",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "union",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "indexed_family",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "finite_sum",
+        "type": "prerequisite_concepts"
+      }
+    ],
     "elementary.combinatorics.card_empty.v1": [
       {
         "to": "core_combinatorics",
@@ -809,6 +1145,76 @@
       },
       {
         "to": "cardinality",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.combinatorics.card_filter_partition.v1": [
+      {
+        "to": "ExtremalCombinatoricsKit",
+        "type": "kits"
+      },
+      {
+        "to": "finite_set",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "cardinality",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "filter",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "predicate",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "partition",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.combinatorics.card_image_le.v1": [
+      {
+        "to": "ExtremalCombinatoricsKit",
+        "type": "kits"
+      },
+      {
+        "to": "finite_set",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "cardinality",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "image",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "function",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.combinatorics.card_image_of_injective.v1": [
+      {
+        "to": "ExtremalCombinatoricsKit",
+        "type": "kits"
+      },
+      {
+        "to": "finite_set",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "cardinality",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "image",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "injective_function",
         "type": "prerequisite_concepts"
       }
     ],
@@ -848,6 +1254,50 @@
         "type": "prerequisite_concepts"
       }
     ],
+    "elementary.combinatorics.card_powerset.v1": [
+      {
+        "to": "ExtremalCombinatoricsKit",
+        "type": "kits"
+      },
+      {
+        "to": "finite_set",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "cardinality",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "powerset",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "exponentiation",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.combinatorics.card_product.v1": [
+      {
+        "to": "ExtremalCombinatoricsKit",
+        "type": "kits"
+      },
+      {
+        "to": "finite_set",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "cardinality",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "cartesian_product",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "counting_principle",
+        "type": "prerequisite_concepts"
+      }
+    ],
     "elementary.combinatorics.card_range.v1": [
       {
         "to": "ExtremalCombinatoricsKit",
@@ -862,6 +1312,28 @@
         "type": "prerequisite_concepts"
       }
     ],
+    "elementary.combinatorics.card_sdiff_of_subset.v1": [
+      {
+        "to": "ExtremalCombinatoricsKit",
+        "type": "kits"
+      },
+      {
+        "to": "finite_set",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "cardinality",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "set_difference",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "subset",
+        "type": "prerequisite_concepts"
+      }
+    ],
     "elementary.combinatorics.card_singleton.v1": [
       {
         "to": "ExtremalCombinatoricsKit",
@@ -873,6 +1345,28 @@
       },
       {
         "to": "cardinality",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.combinatorics.card_union_add_card_inter.v1": [
+      {
+        "to": "ExtremalCombinatoricsKit",
+        "type": "kits"
+      },
+      {
+        "to": "finite_set",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "cardinality",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "union",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "intersection",
         "type": "prerequisite_concepts"
       }
     ],
@@ -891,6 +1385,114 @@
       },
       {
         "to": "union",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.combinatorics.card_union_not_additive.v1": [
+      {
+        "to": "ExtremalCombinatoricsKit",
+        "type": "kits"
+      },
+      {
+        "to": "finite_set",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "cardinality",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "union",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "disjointness",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.combinatorics.choose_self.v1": [
+      {
+        "to": "ExtremalCombinatoricsKit",
+        "type": "kits"
+      },
+      {
+        "to": "binomial_coefficient",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "combination",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.combinatorics.choose_succ_succ.v1": [
+      {
+        "to": "ExtremalCombinatoricsKit",
+        "type": "kits"
+      },
+      {
+        "to": "binomial_coefficient",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "combination",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "pascals_rule",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.combinatorics.choose_symm.v1": [
+      {
+        "to": "ExtremalCombinatoricsKit",
+        "type": "kits"
+      },
+      {
+        "to": "binomial_coefficient",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "combination",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "subtraction",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.combinatorics.choose_zero_right.v1": [
+      {
+        "to": "ExtremalCombinatoricsKit",
+        "type": "kits"
+      },
+      {
+        "to": "binomial_coefficient",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "combination",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.combinatorics.disjoint_union_card.v1": [
+      {
+        "to": "ExtremalCombinatoricsKit",
+        "type": "kits"
+      },
+      {
+        "to": "finite_set",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "cardinality",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "union",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "disjointness",
         "type": "prerequisite_concepts"
       }
     ],
@@ -1142,6 +1744,68 @@
         "type": "prerequisite_concepts"
       }
     ],
+    "elementary.combinatorics.pigeonhole_3_into_2.v1": [
+      {
+        "to": "ExtremalCombinatoricsKit",
+        "type": "kits"
+      },
+      {
+        "to": "finite_set",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "cardinality",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "pigeonhole_principle",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "function",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.combinatorics.pigeonhole_general.v1": [
+      {
+        "to": "ExtremalCombinatoricsKit",
+        "type": "kits"
+      },
+      {
+        "to": "finite_set",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "cardinality",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "pigeonhole_principle",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "function",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.combinatorics.primes_below_ten_card.v1": [
+      {
+        "to": "finite_set",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "cardinality",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "prime",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "filter",
+        "type": "prerequisite_concepts"
+      }
+    ],
     "elementary.combinatorics.prod_range_one.v1": [
       {
         "to": "ExtremalCombinatoricsKit",
@@ -1153,6 +1817,24 @@
       },
       {
         "to": "range",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.combinatorics.prod_range_succ.v1": [
+      {
+        "to": "ExtremalCombinatoricsKit",
+        "type": "kits"
+      },
+      {
+        "to": "finite_product",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "range",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "recurrence",
         "type": "prerequisite_concepts"
       }
     ],
@@ -1171,6 +1853,16 @@
       },
       {
         "to": "empty_range",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.combinatorics.set_mem_union.v1": [
+      {
+        "to": "set_union",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "set_membership",
         "type": "prerequisite_concepts"
       }
     ],
@@ -1253,6 +1945,28 @@
       },
       {
         "to": "cardinality",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.combinatorics.sum_range_choose.v1": [
+      {
+        "to": "ExtremalCombinatoricsKit",
+        "type": "kits"
+      },
+      {
+        "to": "binomial_coefficient",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "combination",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "powerset",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "finite_sum",
         "type": "prerequisite_concepts"
       }
     ],
@@ -1420,6 +2134,52 @@
         "type": "prerequisite_concepts"
       }
     ],
+    "elementary.functions.bijective_comp.v1": [
+      {
+        "to": "bijective",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "injective",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "surjective",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "composition",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.functions.finite_injective_iff_surjective.v1": [
+      {
+        "to": "injective",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "surjective",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "finite",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "pigeonhole_principle",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.functions.fixed_point_id.v1": [
+      {
+        "to": "identity_function",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "fixed_point",
+        "type": "prerequisite_concepts"
+      }
+    ],
     "elementary.functions.geom_series_mul.v1": [
       {
         "to": "PowerSeriesKit",
@@ -1442,6 +2202,58 @@
         "type": "prerequisite_concepts"
       }
     ],
+    "elementary.functions.id_bijective.v1": [
+      {
+        "to": "identity_function",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "injective_function",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "surjective_function",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.functions.image_inter_subset.v1": [
+      {
+        "to": "image",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "set_intersection",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "subset",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.functions.image_union.v1": [
+      {
+        "to": "image",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "set_union",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "function",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.functions.injective_comp.v1": [
+      {
+        "to": "injective_function",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "function_composition",
+        "type": "prerequisite_concepts"
+      }
+    ],
     "elementary.functions.le_abs_self.v1": [
       {
         "to": "absolute_value",
@@ -1449,6 +2261,48 @@
       },
       {
         "to": "order",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.functions.left_inverse_injective.v1": [
+      {
+        "to": "left_inverse",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "injective",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "function_composition",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.functions.linear_injective.v1": [
+      {
+        "to": "injective_function",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "affine_function",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "cancellation",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.functions.linear_injective_concrete_instance.v1": [
+      {
+        "to": "function",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "injectivity",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "linear_function",
         "type": "prerequisite_concepts"
       }
     ],
@@ -1478,9 +2332,37 @@
         "type": "prerequisite_concepts"
       }
     ],
+    "elementary.functions.min_le_max.v1": [
+      {
+        "to": "min",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "max",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "order",
+        "type": "prerequisite_concepts"
+      }
+    ],
     "elementary.functions.min_self.v1": [
       {
         "to": "min",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.functions.monotone_comp.v1": [
+      {
+        "to": "monotonicity",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "function_composition",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "preorder",
         "type": "prerequisite_concepts"
       }
     ],
@@ -1494,6 +2376,30 @@
         "type": "prerequisite_concepts"
       }
     ],
+    "elementary.functions.preimage_inter.v1": [
+      {
+        "to": "preimage",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "set_intersection",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.functions.right_inverse_surjective.v1": [
+      {
+        "to": "right_inverse",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "surjective",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "function_composition",
+        "type": "prerequisite_concepts"
+      }
+    ],
     "elementary.functions.sq_abs.v1": [
       {
         "to": "absolute_value",
@@ -1501,6 +2407,66 @@
       },
       {
         "to": "square",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.functions.strictmono_comp.v1": [
+      {
+        "to": "strict_monotonicity",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "function_composition",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "preorder",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.functions.strictmono_injective.v1": [
+      {
+        "to": "strict_monotonicity",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "injective_function",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "trichotomy",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.functions.surjective_comp.v1": [
+      {
+        "to": "surjective_function",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "function_composition",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.functions.surjective_not_always_injective.v1": [
+      {
+        "to": "function",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "injectivity",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "surjectivity",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "pigeonhole",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "infinite_set",
         "type": "prerequisite_concepts"
       }
     ],
@@ -1515,6 +2481,28 @@
       },
       {
         "to": "bisector",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.geometry.apollonius_median.v1": [
+      {
+        "to": "AffineAreaKit",
+        "type": "kits"
+      },
+      {
+        "to": "midpoint",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "distance",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "triangle",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "median",
         "type": "prerequisite_concepts"
       }
     ],
@@ -1547,6 +2535,20 @@
       },
       {
         "to": "coordinates",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.geometry.circle_point_dist_eq_radius.v1": [
+      {
+        "to": "circle_equation",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "trig_pythagorean_identity",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "squared_distance",
         "type": "prerequisite_concepts"
       }
     ],
@@ -1714,6 +2716,24 @@
         "type": "prerequisite_concepts"
       }
     ],
+    "elementary.geometry.law_of_cosines.v1": [
+      {
+        "to": "GeometryAngleKit",
+        "type": "kits"
+      },
+      {
+        "to": "law_of_cosines",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "trig_pythagorean_identity",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "squared_distance",
+        "type": "prerequisite_concepts"
+      }
+    ],
     "elementary.geometry.midpoint_between.v1": [
       {
         "to": "core_geometry",
@@ -1828,7 +2848,65 @@
         "type": "prerequisite_concepts"
       }
     ],
+    "elementary.geometry.pythagorean_right_angle.v1": [
+      {
+        "to": "AffineAreaKit",
+        "type": "kits"
+      },
+      {
+        "to": "distance",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "dot_product",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "coordinates",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "right_angle",
+        "type": "prerequisite_concepts"
+      }
+    ],
     "elementary.geometry.reflection_dist.v1": [
+      {
+        "to": "AffineAreaKit",
+        "type": "kits"
+      },
+      {
+        "to": "reflection",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "distance",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "coordinates",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.geometry.reflection_over_x_axis.v1": [
+      {
+        "to": "AffineAreaKit",
+        "type": "kits"
+      },
+      {
+        "to": "reflection",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "distance",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "coordinates",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.geometry.reflection_over_y_axis.v1": [
       {
         "to": "AffineAreaKit",
         "type": "kits"
@@ -1857,6 +2935,28 @@
       },
       {
         "to": "reflex",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.geometry.right_triangle_area_half_base_height.v1": [
+      {
+        "to": "triangle_area",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "shoelace_formula",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "right_angle",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "dot_product",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "lagrange_identity",
         "type": "prerequisite_concepts"
       }
     ],
@@ -1903,6 +3003,20 @@
       },
       {
         "to": "coordinates",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.geometry.slope_div_mul_not_always_cancel.v1": [
+      {
+        "to": "slope",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "division_by_zero",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "field",
         "type": "prerequisite_concepts"
       }
     ],
@@ -1978,6 +3092,234 @@
         "type": "prerequisite_concepts"
       }
     ],
+    "elementary.induction.arith_seq_sum.v1": [
+      {
+        "to": "induction",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "finite_sum",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "arithmetic_sequence",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.induction.bernoulli_inequality.v1": [
+      {
+        "to": "InequalityEstimateKit",
+        "type": "kits"
+      },
+      {
+        "to": "induction",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "exponentiation",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "order_on_reals",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "nonnegativity",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.induction.euclid_gcd_eq_gcd.v1": [
+      {
+        "to": "recursion",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "well_founded_recursion",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "euclidean_algorithm",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "gcd",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "strong_induction",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.induction.even_odd_mutual_totality.v1": [
+      {
+        "to": "RecurrenceGeneratingFunctionKit",
+        "type": "kits"
+      },
+      {
+        "to": "induction",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "recursion",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "mutual_recursion",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "even_odd",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.induction.exists_prime_factor.v1": [
+      {
+        "to": "strong_induction",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "primality",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "divisibility",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "well_founded_recursion",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.induction.exists_prime_factorization.v1": [
+      {
+        "to": "strong_induction",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "prime",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "divisibility",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "list_product",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.induction.factorial_add_ge_mul.v1": [
+      {
+        "to": "induction",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "factorial",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "two_parameter_induction",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "binomial_coefficient",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.induction.factorial_ge_two_pow.v1": [
+      {
+        "to": "induction",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "factorial",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "exponentiation",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "natural_number_order",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.induction.factorial_pos_induction.v1": [
+      {
+        "to": "induction",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "factorial",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "positivity",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.induction.fib_le_two_pow.v1": [
+      {
+        "to": "structural_recursion",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "pair_encoding",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "induction",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "growth_bound",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "exponentiation",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.induction.fib_sum_succ.v1": [
+      {
+        "to": "induction",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "fibonacci_sequence",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "finite_sum",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "recurrence_relation",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.induction.foldl_cons_eq_reverse_append.v1": [
+      {
+        "to": "induction",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "list",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "fold",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "reverse",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "append",
+        "type": "prerequisite_concepts"
+      }
+    ],
     "elementary.induction.gauss_sum.v1": [
       {
         "to": "RecurrenceGeneratingFunctionKit",
@@ -1993,6 +3335,124 @@
       },
       {
         "to": "arithmetic_series",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.induction.geom_series_sum_induction.v1": [
+      {
+        "to": "RecurrenceGeneratingFunctionKit",
+        "type": "kits"
+      },
+      {
+        "to": "induction",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "finite_sum",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "geometric_series",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.induction.myfactorial_eq_factorial.v1": [
+      {
+        "to": "structural_recursion",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "factorial",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "induction",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "definitional_equality",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.induction.mygcd_wellfounded.v1": [
+      {
+        "to": "RecurrenceGeneratingFunctionKit",
+        "type": "kits"
+      },
+      {
+        "to": "recursion",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "well_founded_recursion",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "euclidean_algorithm",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "gcd",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.induction.odd_part_decomposition.v1": [
+      {
+        "to": "strong_induction",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "parity",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "divisibility",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "existential_construction",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.induction.one_le_two_pow.v1": [
+      {
+        "to": "induction",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "exponentiation",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "positivity",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.induction.prod_range_monotone.v1": [
+      {
+        "to": "induction",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "finite_product",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "monotonicity",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.induction.prod_range_pos.v1": [
+      {
+        "to": "induction",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "finite_product",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "positivity",
         "type": "prerequisite_concepts"
       }
     ],
@@ -2014,6 +3474,20 @@
         "type": "prerequisite_concepts"
       }
     ],
+    "elementary.induction.sum_consec_product.v1": [
+      {
+        "to": "induction",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "finite_sum",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "triangular_number",
+        "type": "prerequisite_concepts"
+      }
+    ],
     "elementary.induction.sum_cubes.v1": [
       {
         "to": "RecurrenceGeneratingFunctionKit",
@@ -2032,6 +3506,52 @@
         "type": "prerequisite_concepts"
       }
     ],
+    "elementary.induction.sum_cubes_eq_sum_sq.v1": [
+      {
+        "to": "gauss_sum",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "sum_of_cubes",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "nicomachus",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.induction.sum_evens.v1": [
+      {
+        "to": "RecurrenceGeneratingFunctionKit",
+        "type": "kits"
+      },
+      {
+        "to": "induction",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "finite_sum",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "even_numbers",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.induction.sum_fib_sq.v1": [
+      {
+        "to": "fibonacci",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "finite_sum",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "induction",
+        "type": "prerequisite_concepts"
+      }
+    ],
     "elementary.induction.sum_odds.v1": [
       {
         "to": "RecurrenceGeneratingFunctionKit",
@@ -2047,6 +3567,24 @@
       },
       {
         "to": "odd_numbers",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.induction.sum_range_monotone.v1": [
+      {
+        "to": "RecurrenceGeneratingFunctionKit",
+        "type": "kits"
+      },
+      {
+        "to": "induction",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "finite_sum",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "monotonicity",
         "type": "prerequisite_concepts"
       }
     ],
@@ -2086,6 +3624,114 @@
         "type": "prerequisite_concepts"
       }
     ],
+    "elementary.induction.telescoping_sum.v1": [
+      {
+        "to": "induction",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "finite_sum",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "telescoping",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.induction.two_pow_gt_self.v1": [
+      {
+        "to": "induction",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "exponentiation",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "natural_number_order",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.induction.two_pow_gt_sq_from_five.v1": [
+      {
+        "to": "induction",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "exponentiation",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "shifted_base_case",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.induction.two_pow_strictmono.v1": [
+      {
+        "to": "strict_monotonicity",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "powers",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "induction",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.inequalities.abs_abs_sub_abs_le.v1": [
+      {
+        "to": "absolute_value",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "case_split",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "triangle_inequality",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.inequalities.abs_add_le.v1": [
+      {
+        "to": "absolute_value",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "case_split",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "triangle_inequality",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.inequalities.abs_add_three.v1": [
+      {
+        "to": "absolute_value",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "triangle_inequality",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.inequalities.abs_sub_le.v1": [
+      {
+        "to": "absolute_value",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "triangle_inequality",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "metric_distance",
+        "type": "prerequisite_concepts"
+      }
+    ],
     "elementary.inequalities.add_one_div_ge_two.v1": [
       {
         "to": "InequalityEstimateKit",
@@ -2104,6 +3750,20 @@
         "type": "prerequisite_concepts"
       }
     ],
+    "elementary.inequalities.am_gm_four_term.v1": [
+      {
+        "to": "am_gm_inequality",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "sum_of_squares",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "polynomial_inequality",
+        "type": "prerequisite_concepts"
+      }
+    ],
     "elementary.inequalities.am_gm_two.v1": [
       {
         "to": "InequalityEstimateKit",
@@ -2115,6 +3775,70 @@
       },
       {
         "to": "square",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.inequalities.am_hm_two.v1": [
+      {
+        "to": "harmonic_mean",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "arithmetic_mean",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "division",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.inequalities.amgm_wrong_direction_counterexample.v1": [
+      {
+        "to": "InequalityEstimateKit",
+        "type": "kits"
+      },
+      {
+        "to": "amgm",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "sqrt",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "counterexample",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.inequalities.avg_between_min_max.v1": [
+      {
+        "to": "min",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "max",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "average",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "case_split",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.inequalities.cauchy_three_term.v1": [
+      {
+        "to": "cauchy_schwarz",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "sum_of_squares",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "lagrange_identity",
         "type": "prerequisite_concepts"
       }
     ],
@@ -2146,6 +3870,82 @@
         "type": "prerequisite_concepts"
       }
     ],
+    "elementary.inequalities.general_amgm.v1": [
+      {
+        "to": "arithmetic_mean",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "geometric_mean",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "weighted_inequality",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.inequalities.general_cauchy_schwarz.v1": [
+      {
+        "to": "cauchy_schwarz",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "finite_sum",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "square",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.inequalities.general_qm_am.v1": [
+      {
+        "to": "qm_am",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "finite_sum",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "cauchy_schwarz",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.inequalities.max_add_le.v1": [
+      {
+        "to": "max",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "subadditivity",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.inequalities.min_add_max.v1": [
+      {
+        "to": "min",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "max",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "case_split",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.inequalities.min_add_min_le.v1": [
+      {
+        "to": "min",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "superadditivity",
+        "type": "prerequisite_concepts"
+      }
+    ],
     "elementary.inequalities.mul_pos.v1": [
       {
         "to": "InequalityEstimateKit",
@@ -2171,6 +3971,24 @@
       },
       {
         "to": "order",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.inequalities.nesbitt_three_var.v1": [
+      {
+        "to": "InequalityEstimateKit",
+        "type": "kits"
+      },
+      {
+        "to": "sum_of_squares",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "amgm",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "clearing_denominators",
         "type": "prerequisite_concepts"
       }
     ],
@@ -2216,6 +4034,20 @@
         "type": "prerequisite_concepts"
       }
     ],
+    "elementary.inequalities.schur_degree_one.v1": [
+      {
+        "to": "schur_inequality",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "case_split_on_ordering",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "sum_of_squares",
+        "type": "prerequisite_concepts"
+      }
+    ],
     "elementary.inequalities.sq_nonneg.v1": [
       {
         "to": "InequalityEstimateKit",
@@ -2255,6 +4087,20 @@
       },
       {
         "to": "amgm",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.inequalities.three_var_qm_am_bound.v1": [
+      {
+        "to": "sum_of_squares",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "power_mean",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "quadratic_mean",
         "type": "prerequisite_concepts"
       }
     ],
@@ -2320,6 +4166,20 @@
         "type": "prerequisite_concepts"
       }
     ],
+    "elementary.number_theory.bezout.v1": [
+      {
+        "to": "gcd",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "bezout_identity",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "extended_euclidean_algorithm",
+        "type": "prerequisite_concepts"
+      }
+    ],
     "elementary.number_theory.coprime_comm.v1": [
       {
         "to": "elementary_number_theory",
@@ -2361,6 +4221,26 @@
       },
       {
         "to": "gcd",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "divisibility",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.number_theory.dvd_lcm_left.v1": [
+      {
+        "to": "lcm",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "divisibility",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.number_theory.dvd_lcm_right.v1": [
+      {
+        "to": "lcm",
         "type": "prerequisite_concepts"
       },
       {
@@ -2524,6 +4404,20 @@
         "type": "prerequisite_concepts"
       }
     ],
+    "elementary.number_theory.even_sq.v1": [
+      {
+        "to": "even_number",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "power",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "irrationality_proof_pattern",
+        "type": "prerequisite_concepts"
+      }
+    ],
     "elementary.number_theory.factorial_le.v1": [
       {
         "to": "elementary_number_theory",
@@ -2545,6 +4439,24 @@
       },
       {
         "to": "factorial",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.number_theory.four_mul_not_prime.v1": [
+      {
+        "to": "elementary_number_theory",
+        "type": "kits"
+      },
+      {
+        "to": "primality",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "divisibility",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "even_number",
         "type": "prerequisite_concepts"
       }
     ],
@@ -2583,6 +4495,16 @@
       },
       {
         "to": "divisibility",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.number_theory.gcd_mul_lcm.v1": [
+      {
+        "to": "gcd",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "lcm",
         "type": "prerequisite_concepts"
       }
     ],
@@ -2627,6 +4549,16 @@
       },
       {
         "to": "gcd",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.number_theory.lcm_comm.v1": [
+      {
+        "to": "lcm",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "commutativity",
         "type": "prerequisite_concepts"
       }
     ],
@@ -2766,6 +4698,16 @@
         "type": "prerequisite_concepts"
       }
     ],
+    "elementary.number_theory.not_prime_one.v1": [
+      {
+        "to": "elementary_number_theory",
+        "type": "kits"
+      },
+      {
+        "to": "prime",
+        "type": "prerequisite_concepts"
+      }
+    ],
     "elementary.number_theory.odd_add_odd.v1": [
       {
         "to": "elementary_number_theory",
@@ -2819,6 +4761,40 @@
       },
       {
         "to": "monotonicity",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.number_theory.prime_dvd_mul.v1": [
+      {
+        "to": "prime_number",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "divisibility",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.number_theory.prime_two.v1": [
+      {
+        "to": "elementary_number_theory",
+        "type": "kits"
+      },
+      {
+        "to": "prime",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "elementary.number_theory.sq_mod_two_eq_self_mod_two.v1": [
+      {
+        "to": "elementary_number_theory",
+        "type": "kits"
+      },
+      {
+        "to": "parity",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "modular_arithmetic",
         "type": "prerequisite_concepts"
       }
     ],
@@ -2916,6 +4892,20 @@
         "type": "prerequisite_concepts"
       }
     ],
+    "elementary.number_theory.well_ordering.v1": [
+      {
+        "to": "well_ordering_principle",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "strong_induction",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "least_element",
+        "type": "prerequisite_concepts"
+      }
+    ],
     "elementary.number_theory.zero_mod.v1": [
       {
         "to": "core_number_theory",
@@ -2930,11 +4920,2772 @@
         "type": "prerequisite_concepts"
       }
     ],
+    "frontier.erdos.erdos_1052_filter_ordcompl.v1": [
+      {
+        "to": "unitary_divisor",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "p-adic_valuation",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "coprimality",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "frontier.erdos.erdos_1052_not_dvd_div_ordproj.v1": [
+      {
+        "to": "unitary_divisor",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "p-adic_valuation",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "prime_factorization",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "frontier.erdos.erdos_1052_omega_odd_le_two_adic_add_one.v1": [
+      {
+        "to": "unitary_divisor",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "sigma_star",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "strong_induction",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "prime_factorization",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "two_adic_valuation",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "frontier.erdos.erdos_1052_proper_eq_erase.v1": [
+      {
+        "to": "unitary_divisor",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "divisibility",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "finset_membership",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "frontier.erdos.erdos_1052_sigmastar_mul_of_coprime.v1": [
+      {
+        "to": "unitary_divisor",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "sigma_star",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "multiplicativity",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "coprimality",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "finset_bijection",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "frontier.erdos.erdos_1052_sigmastar_prime_pow_and_prime.v1": [
+      {
+        "to": "unitary_divisor",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "sigma_star",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "prime_power",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "divisibility",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "frontier.erdos.erdos_291_infinite_gcd_gt_one.v1": [
+      {
+        "to": "lcm",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "gcd",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "3-adic_valuation",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "harmonic_sum",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "infinite_set",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "frontier.erdos.erdos_349_alpha_gt_two_not_is_good_pair.v1": [
+      {
+        "to": "floor_function",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "geometric_series",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "limit",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "monotonicity",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "eventually",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "frequently",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "frontier.erdos.erdos_349_alpha_le_one_not_is_good_pair.v1": [
+      {
+        "to": "floor_function",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "boundedness",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "eventually",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "finite_sum",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "frontier.erdos.erdos_349_exists_finset_sum_two_pow.v1": [
+      {
+        "to": "binary_representation",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "finite_set",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "sum",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "power_of_two",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "frontier.erdos.erdos_349_int_coeff_ge_two_not_is_good_pair.v1": [
+      {
+        "to": "divisibility",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "floor_function",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "eventually",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "finite_sum",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "frontier.erdos.erdos_349_integer_is_good_pair_iff.v1": [
+      {
+        "to": "floor_function",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "geometric_series",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "limit",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "characterization",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "eventually",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "binary_representation",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "frontier.erdos.erdos_349_one_two_is_good_pair.v1": [
+      {
+        "to": "binary_representation",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "eventually",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "floor_function",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "injectivity",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "frontier.erdos.erdos_399_cambie.v1": [
+      {
+        "to": "factorial",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "coprimality",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "modular_arithmetic",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "fourth_power",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "parity",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "frontier.erdos.erdos_494_product.v1": [
+      {
+        "to": "finite_set",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "multiset",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "complex_number",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "root_of_unity",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "embedding",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "frontier.formal_conjectures.degiorgi_conjecture_dim_one.v1": [
+      {
+        "to": "strict_monotonicity",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "directional_derivative",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "injectivity",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "affine_subspace",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "euclidean_space",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "frontier.formal_conjectures.equational_theories_677_255_class_free.v1": [
+      {
+        "to": "binary_operation",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "finite_type",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "decidability",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "counterexample",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "frontier.formal_conjectures.euler_sum_of_powers_false_for_k4.v1": [
+      {
+        "to": "counterexample",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "power_sum",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "explicit_witness",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "frontier.formal_conjectures.euler_sum_of_powers_false_for_k5.v1": [
+      {
+        "to": "counterexample",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "power_sum",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "explicit_witness",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "frontier.formal_conjectures.oeis_a34693_exists_k_best_possible.v1": [
+      {
+        "to": "primality",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "real_exponentiation",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "rpow",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "monotonicity",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "case_split",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "frontier.formal_conjectures.oeis_a358684_conjecture_0.v1": [
+      {
+        "to": "fermat_number",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "smallest_prime_factor",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "padic_valuation",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "logarithm",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "case_split",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "frontier.formal_conjectures.union_closed_sharpness.v1": [
+      {
+        "to": "union_closed_family",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "powerset",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "finset_bijection",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "cardinality_bound",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "optimality",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "frontier.formal_conjectures.union_closed_singleton_mem.v1": [
+      {
+        "to": "union_closed_family",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "finset_injection",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "finset_partition",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "cardinality_bound",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "frontier.formal_conjectures.union_closed_univ_card_two.v1": [
+      {
+        "to": "finite_type",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "decidability",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "union_closed_family",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "finset_card",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "negative.algebra.frac_sum_bare_ring.missing_field_simp.v1": [
+      {
+        "to": "reciprocal",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "field",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "division",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "negative.algebra.pow_mul_ring_timeout_failure.v1": [
+      {
+        "to": "power",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "exponent_laws",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "negative.algebra.sq_sum_bare_nlinarith.missing_sos_hint.v1": [
+      {
+        "to": "InequalityEstimateKit",
+        "type": "kits"
+      },
+      {
+        "to": "square",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "real_number_order",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "negative.combinatorics.card_image_injective.omega_failure.v1": [
+      {
+        "to": "ExtremalCombinatoricsKit",
+        "type": "kits"
+      },
+      {
+        "to": "finite_set",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "cardinality",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "image",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "injective_function",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "negative.combinatorics.card_union_no_disjoint.false_generalization.v1": [
+      {
+        "to": "ExtremalCombinatoricsKit",
+        "type": "kits"
+      },
+      {
+        "to": "finite_set",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "cardinality",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "union",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "disjointness",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "negative.combinatorics.filter_prime_simp.no_progress.v1": [
+      {
+        "to": "finite_set",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "cardinality",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "prime",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "filter",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "decidability",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "negative.combinatorics.finset_card_atoms.omega_failure.v1": [
+      {
+        "to": "ExtremalCombinatoricsKit",
+        "type": "kits"
+      },
+      {
+        "to": "finite_set",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "cardinality",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "union",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "intersection",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "negative.functions.quad_injective.simp_unfold_incomplete.v1": [
+      {
+        "to": "function",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "injectivity",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "quadratic",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "negative.functions.surjective_implies_injective.finite_pigeonhole_misapplied.v1": [
+      {
+        "to": "function",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "injectivity",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "surjectivity",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "pigeonhole",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "infinite_set",
+        "type": "prerequisite_concepts"
+      }
+    ],
     "negative.geometry.angle_atoms.nlinarith_failure.v1": [
       {
         "to": "GeometryAngleKit",
         "type": "kits"
       }
+    ],
+    "negative.geometry.pythagorean_bare_ring_no_hypothesis_failure.v1": [
+      {
+        "to": "AffineAreaKit",
+        "type": "kits"
+      },
+      {
+        "to": "distance",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "dot_product",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "right_angle",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "negative.geometry.slope_div_mul.division_by_zero_unguarded.v1": [
+      {
+        "to": "slope",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "division_by_zero",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "field",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "negative.induction.factorial_gt_two_pow.offbyone_false_base.v1": [
+      {
+        "to": "induction",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "base_case",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "factorial",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "exponential_growth",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "negative.induction.foldl_no_generalize.ih_too_weak.v1": [
+      {
+        "to": "induction",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "generalization",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "list",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "fold",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "accumulator",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "negative.induction.two_pow_gt_sq_offbyone_naive_ih_failure.v1": [
+      {
+        "to": "induction",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "shifted_base_case",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "vacuous_hypothesis",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "negative.inequalities.amgm_wrong_direction_bare_nlinarith_failure.v1": [
+      {
+        "to": "InequalityEstimateKit",
+        "type": "kits"
+      },
+      {
+        "to": "amgm",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "sqrt",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "negative.inequalities.nesbitt_bare_nlinarith_division_failure.v1": [
+      {
+        "to": "InequalityEstimateKit",
+        "type": "kits"
+      },
+      {
+        "to": "clearing_denominators",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "sum_of_squares",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "negative.inequalities.three_var_sq_bare_nlinarith_failure.v1": [
+      {
+        "to": "InequalityEstimateKit",
+        "type": "kits"
+      },
+      {
+        "to": "square",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "sum_of_squares",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "negative.inequalities.two_mul_le_add_sq_bare_linarith_failure.v1": [
+      {
+        "to": "InequalityEstimateKit",
+        "type": "kits"
+      },
+      {
+        "to": "square",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "amgm",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "negative.number_theory.decide_unbounded_prime_universal.v1": [
+      {
+        "to": "primality",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "decidability",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "unbounded_quantifier",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "negative.number_theory.gcd_dvd.omega_no_gcd_theory.v1": [
+      {
+        "to": "gcd",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "divisibility",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "negative.number_theory.sq_parity.omega_nonlinear_failure.v1": [
+      {
+        "to": "parity",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "modular_arithmetic",
+        "type": "prerequisite_concepts"
+      }
     ]
+  },
+  "dependency_manifest_summary": {
+    "packets_with_manifest": 328,
+    "frequency_by_category": {
+      "declared": {
+        "sq_nonneg": 29,
+        "Finset.sum_range_succ": 14,
+        "add_mul": 7,
+        "pow_succ": 7,
+        "Nat.strong_induction_on": 5,
+        "le_trans": 5,
+        "pow_pos": 5,
+        "Finset.prod_range_succ": 4,
+        "Nat.pos_of_ne_zero": 4,
+        "Nat.factorial_succ": 4,
+        "Nat.factorial": 4,
+        "abs_cases": 4,
+        "le_max_left": 4,
+        "le_max_right": 4,
+        "Nat.dvd_gcd": 4,
+        "le_refl": 4,
+        "exact_mod_cast": 4,
+        "Filter.eventually_atTop": 4,
+        "mul_comm": 3,
+        "mul_zero": 3,
+        "mul_ne_zero": 3,
+        "sub_eq_add_neg": 3,
+        "Finset.mem_insert": 3,
+        "Function.Injective": 3,
+        "Nat.mod_lt": 3,
+        "Nat.mul_div_cancel'": 3,
+        "Nat.factorial_pos": 3,
+        "Finset.mem_range.mpr": 3,
+        "Finset.range": 3,
+        "le_total": 3,
+        "Finset.mul_sum": 3,
+        "dvd_mul_left": 3,
+        "Finset.mem_filter": 3,
+        "mem_uDiv": 3,
+        "Nat.gcd": 3,
+        "Nat.pow_right_injective": 3,
+        "Finset.mem_image": 3,
+        "Finset.sum_le_sum_of_subset_of_nonneg": 3,
+        "Int.floor_le_floor": 3,
+        "Int.floor_nonneg.mpr": 3,
+        "Set.range": 3,
+        "Finset.sum_toFinset_bitIndices_two_pow": 3,
+        "Int.floor_intCast": 3,
+        "Finset.mem_coe": 3,
+        "mul_one": 2,
+        "two_mul": 2,
+        "Finset.card_empty": 2,
+        "Finset.card_filter_add_card_filter_not": 2,
+        "Finset.card_powerset": 2,
+        "Finset.mem_singleton": 2,
+        "Finset.exists_ne_map_eq_of_card_lt_of_maps_to": 2,
+        "min_le_left": 2,
+        "Real.sin_sq_add_cos_sq": 2,
+        "dvd_refl": 2,
+        "Nat.minFac_le": 2,
+        "Nat.minFac_prime": 2,
+        "Nat.mul_pos": 2,
+        "Nat.succ_pos": 2,
+        "Nat.fib_add_two": 2,
+        "Nat.even_or_odd": 2,
+        "ne_of_gt": 2,
+        "div_add_div": 2,
+        "max_eq_left": 2,
+        "max_eq_right": 2,
+        "min_eq_left": 2,
+        "min_eq_right": 2,
+        "mul_pos": 2,
+        "Nat.add_mod": 2,
+        "Nat.factorial_le": 2,
+        "Nat.gcd_dvd_left": 2,
+        "Nat.gcd_dvd_right": 2,
+        "Nat.le_of_lt_succ": 2,
+        "Nat.pow_le_pow_left": 2,
+        "Nat.Coprime": 2,
+        "Nat.Prime.pow_dvd_iff_le_factorization": 2,
+        "Nat.dvd_iff_mod_eq_zero": 2,
+        "sigmaStar_prime_pow": 2,
+        "Set.mem_setOf_eq": 2,
+        "Filter.Tendsto": 2,
+        "Filter.atTop": 2,
+        "Filter.frequently_atTop": 2,
+        "Filter.not_eventually": 2,
+        "Filter.tendsto_add_atTop_nat": 2,
+        "Filter.tendsto_atTop_add_const_right": 2,
+        "Finset.single_le_sum": 2,
+        "Finset.sum_image_le_of_nonneg": 2,
+        "Finset.sum_le_sum": 2,
+        "Int.floor_le": 2,
+        "Int.sub_one_lt_floor": 2,
+        "_root_.div_pos": 2,
+        "div_le_div_of_nonneg_right": 2,
+        "geom_sum_eq": 2,
+        "h1.atTop_mul_const": 2,
+        "hBsum_le": 2,
+        "hpow.const_mul_atTop": 2,
+        "htend.eventually_ge_atTop": 2,
+        "htend2.eventually_ge_atTop": 2,
+        "hterm_le": 2,
+        "le_of_lt": 2,
+        "m1.le": 2,
+        "mul_div_assoc": 2,
+        "mul_le_mul_of_nonneg_left": 2,
+        "not_lt.mp": 2,
+        "pow_le_pow_right": 2,
+        "tendsto_pow_atTop_atTop_of_one_lt": 2,
+        "Finset.Icc": 2,
+        "Finset.coe_Icc": 2,
+        "Finset.mem_Icc.mp": 2,
+        "Set.mem_Icc": 2,
+        "hpos.le": 2,
+        "hpow_pos": 2,
+        "pow_le_one": 2,
+        "Finset.dvd_sum": 2,
+        "Int.le_natAbs": 2,
+        "Int.le_of_dvd": 2,
+        "Int.natCast_nonneg": 2,
+        "N.natAbs": 2,
+        "one_pos": 2,
+        "E.image": 2,
+        "Finset.coe_image": 2,
+        "Finset.sum_image": 2,
+        "Int.toNat_of_nonneg": 2,
+        "Set.mem_image": 2,
+        "k.toNat": 2,
+        "k.toNat.bitIndices.toFinset": 2,
+        "fin_cases": 2,
+        "Finset.erase_insert": 2,
+        "add_assoc": 1,
+        "add_comm": 1,
+        "add_left_comm": 1,
+        "add_zero": 1,
+        "mul_add": 1,
+        "mul_assoc": 1,
+        "mul_left_comm": 1,
+        "mul_neg": 1,
+        "_root_.mul_self_eq_zero": 1,
+        "neg_mul": 1,
+        "neg_neg": 1,
+        "neg_zero": 1,
+        "one_mul": 1,
+        "_root_.one_pow": 1,
+        "pow_mul": 1,
+        "pow_one": 1,
+        "_root_.pow_two": 1,
+        "pow_zero": 1,
+        "Real.sq_sqrt": 1,
+        "Real.sqrt": 1,
+        "two_ne_zero": 1,
+        "sub_mul": 1,
+        "sub_self": 1,
+        "sub_zero": 1,
+        "zero_add": 1,
+        "zero_sub": 1,
+        "Finset.card_biUnion_le": 1,
+        "Finset.card_image_le": 1,
+        "Finset.card_image_of_injective": 1,
+        "Finset.card_insert_le": 1,
+        "Finset.card_le_card": 1,
+        "Finset.card_product": 1,
+        "Finset.card_range": 1,
+        "Finset.card_sdiff_of_subset": 1,
+        "Finset.card_singleton": 1,
+        "Finset.card_union_add_card_inter": 1,
+        "Finset.card_union_le": 1,
+        "Nat.choose_self": 1,
+        "Nat.choose_succ_succ'": 1,
+        "Nat.choose_symm": 1,
+        "Nat.choose_zero_right": 1,
+        "Finset.card_union_eq_card_add_card": 1,
+        "Finset.empty_inter": 1,
+        "Finset.empty_subset": 1,
+        "Finset.empty_union": 1,
+        "Finset.filter_subset": 1,
+        "Finset.inter_comm": 1,
+        "Finset.inter_empty": 1,
+        "Finset.inter_self": 1,
+        "Finset.inter_subset_left": 1,
+        "Finset.inter_subset_right": 1,
+        "Finset.mem_inter": 1,
+        "Finset.mem_range": 1,
+        "Finset.mem_union": 1,
+        "Set.mem_union": 1,
+        "Finset.Subset.refl": 1,
+        "Finset.subset_union_left": 1,
+        "Finset.subset_union_right": 1,
+        "Nat.sum_range_choose": 1,
+        "Finset.union_assoc": 1,
+        "Finset.union_comm": 1,
+        "Finset.union_empty": 1,
+        "Finset.union_self": 1,
+        "abs_abs": 1,
+        "abs_add_le": 1,
+        "abs_mul": 1,
+        "abs_neg": 1,
+        "abs_nonneg": 1,
+        "abs_of_nonneg": 1,
+        "abs_sub_comm": 1,
+        "abs_zero": 1,
+        "hf.injective": 1,
+        "hf.surjective": 1,
+        "hg.injective.comp": 1,
+        "hg.surjective.comp": 1,
+        "Finite.injective_iff_surjective": 1,
+        "geom_sum_mul": 1,
+        "Set.image_inter_subset": 1,
+        "Set.image_union": 1,
+        "le_abs_self": 1,
+        "mul_left_cancel": 1,
+        "max_comm": 1,
+        "max_self": 1,
+        "min_comm": 1,
+        "le_max_of_le_left": 1,
+        "min_self": 1,
+        "neg_abs_le": 1,
+        "Set.preimage_inter": 1,
+        "sq_abs": 1,
+        "lt_trichotomy": 1,
+        "ne_of_lt": 1,
+        "Function.comp_apply": 1,
+        "Function.Surjective": 1,
+        "Real.cos": 1,
+        "Real.sin": 1,
+        "mul_le_mul_of_nonneg_right": 1,
+        "Nat.gcd_rec": 1,
+        "dif_neg": 1,
+        "euclidGcd_unfold": 1,
+        "Nat.exists_dvd_of_not_prime2": 1,
+        "hp_dvd.trans": 1,
+        "hp_prime": 1,
+        "n.Prime": 1,
+        "List.mem_cons.mp": 1,
+        "List.prod_cons": 1,
+        "Nat.div_lt_self": 1,
+        "Nat.div_pos": 1,
+        "Nat.minFac_dvd": 1,
+        "hp.one_lt": 1,
+        "hp.pos": 1,
+        "n.minFac": 1,
+        "Nat.mul_le_mul_left": 1,
+        "fibPair_le": 1,
+        "Nat.fib": 1,
+        "Nat.strongRecOn_eq": 1,
+        "Nat.zero_le": 1,
+        "le_mul_of_one_le_right": 1,
+        "Finset.mem_range.mp": 1,
+        "Finset.self_mem_range_succ": 1,
+        "Nat.lt_succ_of_lt": 1,
+        "Nat.mul_add": 1,
+        "Nat.le_add_right": 1,
+        "Nat.le_induction": 1,
+        "strictMono_nat_of_lt_succ": 1,
+        "sub_nonneg": 1,
+        "div_div_eq_mul_div": 1,
+        "div_le_div_iff": 1,
+        "ha.ne'": 1,
+        "hb.ne'": 1,
+        "Real.sqrt_sq": 1,
+        "Finset.card_pos.mpr": 1,
+        "Finset.sum_const": 1,
+        "Nat.cast_ne_zero.mpr": 1,
+        "Nat.cast_nonneg": 1,
+        "Real.finsetProd_rpow": 1,
+        "Real.geom_mean_le_arith_mean_weighted": 1,
+        "div_eq_inv_mul": 1,
+        "hcardpos.ne'": 1,
+        "inv_nonneg.mpr": 1,
+        "mul_inv_cancel": 1,
+        "nsmul_eq_mul": 1,
+        "s.card": 1,
+        "Finset.sum_mul_sq_le_sq_mul_sq": 1,
+        "sq_sum_le_card_mul_sum_sq": 1,
+        "max_le": 1,
+        "le_min": 1,
+        "min_le_right": 1,
+        "mul_self_nonneg": 1,
+        "ge_iff_le": 1,
+        "le_div_iff": 1,
+        "abs_sub_abs_le_abs_sub": 1,
+        "mul_nonneg": 1,
+        "Int.gcdA": 1,
+        "Int.gcdB": 1,
+        "Int.gcd_eq_gcd_ab": 1,
+        "Nat.coprime_one_left": 1,
+        "dvd_add": 1,
+        "Nat.dvd_lcm_left": 1,
+        "Nat.dvd_lcm_right": 1,
+        "hb.mul_right": 1,
+        "Nat.dvd_sub": 1,
+        "hab.trans": 1,
+        "dvd_zero": 1,
+        "Nat.even_add": 1,
+        "ha.add": 1,
+        "ha.mul_right": 1,
+        "Int.even_mul_succ_self": 1,
+        "Int.even_or_odd": 1,
+        "Nat.even_pow'": 1,
+        "hp.eq_one_or_self_of_dvd": 1,
+        "Nat.gcd_comm": 1,
+        "Nat.gcd_mul_lcm": 1,
+        "Nat.gcd_mul_left": 1,
+        "Nat.gcd_one_right": 1,
+        "Nat.gcd_self": 1,
+        "Nat.gcd_zero_left": 1,
+        "Nat.lcm_comm": 1,
+        "lt_irrefl": 1,
+        "Nat.lt_succ_iff": 1,
+        "Nat.mod_self": 1,
+        "Nat.mul_mod": 1,
+        "Nat.mul_mod_right": 1,
+        "Int.natAbs_mul": 1,
+        "ha.add_odd": 1,
+        "one_dvd": 1,
+        "Nat.one_le_iff_ne_zero": 1,
+        "hp.prime.dvd_mul": 1,
+        "Nat.sub_add_cancel": 1,
+        "Nat.succ_le_iff": 1,
+        "Nat.succ_ne_self": 1,
+        "Nat.succ_ne_zero": 1,
+        "Nat.zero_mod": 1,
+        "Nat.Coprime.coprime_dvd_right": 1,
+        "Nat.Coprime.mul_right": 1,
+        "Nat.Coprime.pow_right": 1,
+        "Nat.mul_div_assoc": 1,
+        "Nat.not_dvd_ordCompl": 1,
+        "Nat.ordCompl_dvd": 1,
+        "Nat.ordCompl_pos": 1,
+        "Nat.ordProj_mul_ordCompl_eq_self": 1,
+        "hcpe.dvd_of_dvd_mul_left": 1,
+        "hem.trans": 1,
+        "hp.coprime_iff_not_dvd.mpr": 1,
+        "hpe.trans": 1,
+        "hstep.trans": 1,
+        "mul_dvd_mul_left": 1,
+        "n.factorization": 1,
+        "Nat.coprime_two_left": 1,
+        "Nat.factorization_eq_zero_of_not_dvd": 1,
+        "Nat.factorization_mul": 1,
+        "Nat.factorization_pow_self": 1,
+        "Nat.odd_iff.mp": 1,
+        "hcop2.pow_left": 1,
+        "hm_odd.pos.ne'": 1,
+        "hodd_seed": 1,
+        "m.factorization": 1,
+        "pow_succ'": 1,
+        "sigmaStar_mul_of_coprime": 1,
+        "two_pow_card_primeFactors_dvd_sigmaStar": 1,
+        "Finset.mem_Ico": 1,
+        "Finset.mem_erase": 1,
+        "Nat.le_of_dvd": 1,
+        "Nat.pos_of_dvd_of_pos": 1,
+        "hlt.ne": 1,
+        "lt_of_le_of_ne": 1,
+        "Finset.mem_product": 1,
+        "Finset.sum_mul_sum": 1,
+        "Finset.sum_nbij'": 1,
+        "Finset.sum_product'": 1,
+        "Nat.div_dvd_of_dvd": 1,
+        "Nat.dvd_one.mp": 1,
+        "Nat.mul_dvd_mul": 1,
+        "coprime_dvd_left": 1,
+        "coprime_dvd_right": 1,
+        "dvd_mul_right": 1,
+        "gcd_mul_left_eq": 1,
+        "hcross2.mul_right": 1,
+        "hd.1": 1,
+        "hd1cop.mul_right": 1,
+        "hmn.coprime_dvd_left": 1,
+        "hmn.coprime_dvd_right": 1,
+        "hp1.1": 1,
+        "hp2.1": 1,
+        "p.1": 1,
+        "p.1.Coprime": 1,
+        "p.2": 1,
+        "p.2.Coprime": 1,
+        "quot_mul_quot": 1,
+        "split_dvd_mul": 1,
+        "L_ne_zero": 1,
+        "Nat.gcd_pos_of_pos_right": 1,
+        "Set.infinite_of_injective_forall_mem": 1,
+        "three_dvd_L": 1,
+        "three_dvd_a": 1,
+        "k.bitIndices.toFinset": 1,
+        "Int.cast_one": 1,
+        "alpha_gt_two_not_isGoodPair": 1,
+        "alpha_le_one_not_isGoodPair": 1,
+        "int_coeff_ge_two_not_isGoodPair": 1,
+        "one_two_isGoodPair": 1,
+        "Nat.eq_zero_or_pos": 1,
+        "Nat.factorial_dvd_factorial": 1,
+        "Nat.lt_or_ge": 1,
+        "Nat.mul_le_mul": 1,
+        "Nat.one_le_pow": 1,
+        "hdvd4.trans": 1,
+        "not_le": 1,
+        "not_or": 1,
+        "pow4_mod8": 1,
+        "Complex.I": 1,
+        "Complex.exp": 1,
+        "Complex.isPrimitiveRoot_exp": 1,
+        "Finset.card_map": 1,
+        "Finset.mem_map": 1,
+        "Function.Embedding.coeFn_mk": 1,
+        "Real.pi": 1,
+        "hprim.ne_one": 1,
+        "hprim.pow_eq_one": 1,
+        "mul_right_cancel": 1,
+        "mul_right_injective": 1,
+        "prodMultiset_map_mul": 1,
+        "AffineSubspace.coe_affineSpan_singleton": 1,
+        "EuclideanSpace.single": 1,
+        "Function.Injective.of_comp_right": 1,
+        "Function.comp_def": 1,
+        "Set.image_singleton": 1,
+        "Set.preimage_image_eq": 1,
+        "deriv_comp_const_add": 1,
+        "direction_affineSpan": 1,
+        "hu_deriv": 1,
+        "strictMono_of_deriv_pos": 1,
+        "Real.rpow_mul": 1,
+        "Real.rpow_natCast": 1,
+        "pow_le_pow_iff_left": 1,
+        "Nat.fermatNumber_ne_one": 1,
+        "Nat.le_log_of_pow_le": 1,
+        "Nat.log2_eq_log_two": 1,
+        "Nat.minFac_pos": 1,
+        "Nat.ordProj_le": 1,
+        "Nat.sub_le": 1,
+        "Nat.sub_ne_zero_of_lt": 1,
+        "Nat.sub_sub_self": 1,
+        "log_lt_of_lt_pow": 1,
+        "mul_two": 1,
+        "one_lt": 1,
+        "pow_add": 1,
+        "trans_lt": 1,
+        "A.card": 1,
+        "CharP.cast_eq_zero": 1,
+        "Decidable.not_not": 1,
+        "Finset.card_image_of_injOn": 1,
+        "Finset.card_univ": 1,
+        "Finset.coe_erase": 1,
+        "Finset.coe_powerset": 1,
+        "Finset.coe_univ": 1,
+        "Finset.filter_empty": 1,
+        "Finset.mem_powerset": 1,
+        "Finset.mem_univ": 1,
+        "Finset.notMem_empty": 1,
+        "Finset.subset_erase": 1,
+        "Finset.subset_univ": 1,
+        "Finset.univ": 1,
+        "Finset.univ.erase": 1,
+        "Finset.univ.filter": 1,
+        "Fintype.card": 1,
+        "Fintype.card_finset": 1,
+        "Fintype.card_pos": 1,
+        "IsEmpty.exists_iff": 1,
+        "Nat.add_one_le_iff": 1,
+        "Nat.cast_ofNat": 1,
+        "Nat.cast_pow": 1,
+        "Set.disjoint_singleton_right": 1,
+        "Set.mem_powerset_iff": 1,
+        "Set.mem_preimage": 1,
+        "Set.subset_diff": 1,
+        "Set.subset_univ": 1,
+        "exists_const": 1,
+        "h_ne_singleton_empty": 1,
+        "imp_false": 1,
+        "isEmpty_or_nonempty": 1,
+        "ne_eq": 1,
+        "not_forall": 1,
+        "pow_sub": 1,
+        "powerset.image": 1,
+        "true_and": 1,
+        "x.erase": 1,
+        "Finset.card": 1,
+        "Finset.card_le_card_of_injOn": 1,
+        "Finset.coe_filter": 1,
+        "Finset.filter": 1,
+        "Finset.insert_eq": 1,
+        "Set.InjOn": 1,
+        "Set.MapsTo": 1,
+        "and_imp": 1,
+        "and_true": 1,
+        "cancel_denoms": 1,
+        "h_union_closed": 1,
+        "true_or": 1
+      },
+      "used": {
+        "sq_nonneg": 29,
+        "Finset.sum_range_succ": 14,
+        "add_mul": 7,
+        "pow_succ": 7,
+        "Nat.strong_induction_on": 5,
+        "le_trans": 5,
+        "pow_pos": 5,
+        "Finset.prod_range_succ": 4,
+        "Nat.pos_of_ne_zero": 4,
+        "Nat.factorial_succ": 4,
+        "Nat.factorial": 4,
+        "abs_cases": 4,
+        "le_max_left": 4,
+        "le_max_right": 4,
+        "Nat.dvd_gcd": 4,
+        "le_refl": 4,
+        "exact_mod_cast": 4,
+        "Filter.eventually_atTop": 4,
+        "mul_comm": 3,
+        "mul_zero": 3,
+        "mul_ne_zero": 3,
+        "sub_eq_add_neg": 3,
+        "Finset.mem_insert": 3,
+        "Function.Injective": 3,
+        "Nat.mod_lt": 3,
+        "Nat.mul_div_cancel'": 3,
+        "Nat.factorial_pos": 3,
+        "Finset.mem_range.mpr": 3,
+        "Finset.range": 3,
+        "le_total": 3,
+        "Finset.mul_sum": 3,
+        "dvd_mul_left": 3,
+        "Finset.mem_filter": 3,
+        "mem_uDiv": 3,
+        "Nat.gcd": 3,
+        "Nat.pow_right_injective": 3,
+        "Finset.mem_image": 3,
+        "Finset.sum_le_sum_of_subset_of_nonneg": 3,
+        "Int.floor_le_floor": 3,
+        "Int.floor_nonneg.mpr": 3,
+        "Set.range": 3,
+        "Finset.sum_toFinset_bitIndices_two_pow": 3,
+        "Int.floor_intCast": 3,
+        "Finset.mem_coe": 3,
+        "mul_one": 2,
+        "two_mul": 2,
+        "Finset.card_empty": 2,
+        "Finset.card_filter_add_card_filter_not": 2,
+        "Finset.card_powerset": 2,
+        "Finset.mem_singleton": 2,
+        "Finset.exists_ne_map_eq_of_card_lt_of_maps_to": 2,
+        "min_le_left": 2,
+        "Real.sin_sq_add_cos_sq": 2,
+        "dvd_refl": 2,
+        "Nat.minFac_le": 2,
+        "Nat.minFac_prime": 2,
+        "Nat.mul_pos": 2,
+        "Nat.succ_pos": 2,
+        "Nat.fib_add_two": 2,
+        "Nat.even_or_odd": 2,
+        "ne_of_gt": 2,
+        "div_add_div": 2,
+        "max_eq_left": 2,
+        "max_eq_right": 2,
+        "min_eq_left": 2,
+        "min_eq_right": 2,
+        "mul_pos": 2,
+        "Nat.add_mod": 2,
+        "Nat.factorial_le": 2,
+        "Nat.gcd_dvd_left": 2,
+        "Nat.gcd_dvd_right": 2,
+        "Nat.le_of_lt_succ": 2,
+        "Nat.pow_le_pow_left": 2,
+        "Nat.Coprime": 2,
+        "Nat.Prime.pow_dvd_iff_le_factorization": 2,
+        "Nat.dvd_iff_mod_eq_zero": 2,
+        "sigmaStar_prime_pow": 2,
+        "Set.mem_setOf_eq": 2,
+        "Filter.Tendsto": 2,
+        "Filter.atTop": 2,
+        "Filter.frequently_atTop": 2,
+        "Filter.not_eventually": 2,
+        "Filter.tendsto_add_atTop_nat": 2,
+        "Filter.tendsto_atTop_add_const_right": 2,
+        "Finset.single_le_sum": 2,
+        "Finset.sum_image_le_of_nonneg": 2,
+        "Finset.sum_le_sum": 2,
+        "Int.floor_le": 2,
+        "Int.sub_one_lt_floor": 2,
+        "_root_.div_pos": 2,
+        "div_le_div_of_nonneg_right": 2,
+        "geom_sum_eq": 2,
+        "h1.atTop_mul_const": 2,
+        "hBsum_le": 2,
+        "hpow.const_mul_atTop": 2,
+        "htend.eventually_ge_atTop": 2,
+        "htend2.eventually_ge_atTop": 2,
+        "hterm_le": 2,
+        "le_of_lt": 2,
+        "m1.le": 2,
+        "mul_div_assoc": 2,
+        "mul_le_mul_of_nonneg_left": 2,
+        "not_lt.mp": 2,
+        "pow_le_pow_right": 2,
+        "tendsto_pow_atTop_atTop_of_one_lt": 2,
+        "Finset.Icc": 2,
+        "Finset.coe_Icc": 2,
+        "Finset.mem_Icc.mp": 2,
+        "Set.mem_Icc": 2,
+        "hpos.le": 2,
+        "hpow_pos": 2,
+        "pow_le_one": 2,
+        "Finset.dvd_sum": 2,
+        "Int.le_natAbs": 2,
+        "Int.le_of_dvd": 2,
+        "Int.natCast_nonneg": 2,
+        "N.natAbs": 2,
+        "one_pos": 2,
+        "E.image": 2,
+        "Finset.coe_image": 2,
+        "Finset.sum_image": 2,
+        "Int.toNat_of_nonneg": 2,
+        "Set.mem_image": 2,
+        "k.toNat": 2,
+        "k.toNat.bitIndices.toFinset": 2,
+        "fin_cases": 2,
+        "Finset.erase_insert": 2,
+        "add_assoc": 1,
+        "add_comm": 1,
+        "add_left_comm": 1,
+        "add_zero": 1,
+        "mul_add": 1,
+        "mul_assoc": 1,
+        "mul_left_comm": 1,
+        "mul_neg": 1,
+        "_root_.mul_self_eq_zero": 1,
+        "neg_mul": 1,
+        "neg_neg": 1,
+        "neg_zero": 1,
+        "one_mul": 1,
+        "_root_.one_pow": 1,
+        "pow_mul": 1,
+        "pow_one": 1,
+        "_root_.pow_two": 1,
+        "pow_zero": 1,
+        "Real.sq_sqrt": 1,
+        "Real.sqrt": 1,
+        "two_ne_zero": 1,
+        "sub_mul": 1,
+        "sub_self": 1,
+        "sub_zero": 1,
+        "zero_add": 1,
+        "zero_sub": 1,
+        "Finset.card_biUnion_le": 1,
+        "Finset.card_image_le": 1,
+        "Finset.card_image_of_injective": 1,
+        "Finset.card_insert_le": 1,
+        "Finset.card_le_card": 1,
+        "Finset.card_product": 1,
+        "Finset.card_range": 1,
+        "Finset.card_sdiff_of_subset": 1,
+        "Finset.card_singleton": 1,
+        "Finset.card_union_add_card_inter": 1,
+        "Finset.card_union_le": 1,
+        "Nat.choose_self": 1,
+        "Nat.choose_succ_succ'": 1,
+        "Nat.choose_symm": 1,
+        "Nat.choose_zero_right": 1,
+        "Finset.card_union_eq_card_add_card": 1,
+        "Finset.empty_inter": 1,
+        "Finset.empty_subset": 1,
+        "Finset.empty_union": 1,
+        "Finset.filter_subset": 1,
+        "Finset.inter_comm": 1,
+        "Finset.inter_empty": 1,
+        "Finset.inter_self": 1,
+        "Finset.inter_subset_left": 1,
+        "Finset.inter_subset_right": 1,
+        "Finset.mem_inter": 1,
+        "Finset.mem_range": 1,
+        "Finset.mem_union": 1,
+        "Set.mem_union": 1,
+        "Finset.Subset.refl": 1,
+        "Finset.subset_union_left": 1,
+        "Finset.subset_union_right": 1,
+        "Nat.sum_range_choose": 1,
+        "Finset.union_assoc": 1,
+        "Finset.union_comm": 1,
+        "Finset.union_empty": 1,
+        "Finset.union_self": 1,
+        "abs_abs": 1,
+        "abs_add_le": 1,
+        "abs_mul": 1,
+        "abs_neg": 1,
+        "abs_nonneg": 1,
+        "abs_of_nonneg": 1,
+        "abs_sub_comm": 1,
+        "abs_zero": 1,
+        "hf.injective": 1,
+        "hf.surjective": 1,
+        "hg.injective.comp": 1,
+        "hg.surjective.comp": 1,
+        "Finite.injective_iff_surjective": 1,
+        "geom_sum_mul": 1,
+        "Set.image_inter_subset": 1,
+        "Set.image_union": 1,
+        "le_abs_self": 1,
+        "mul_left_cancel": 1,
+        "max_comm": 1,
+        "max_self": 1,
+        "min_comm": 1,
+        "le_max_of_le_left": 1,
+        "min_self": 1,
+        "neg_abs_le": 1,
+        "Set.preimage_inter": 1,
+        "sq_abs": 1,
+        "lt_trichotomy": 1,
+        "ne_of_lt": 1,
+        "Function.comp_apply": 1,
+        "Function.Surjective": 1,
+        "Real.cos": 1,
+        "Real.sin": 1,
+        "mul_le_mul_of_nonneg_right": 1,
+        "Nat.gcd_rec": 1,
+        "dif_neg": 1,
+        "euclidGcd_unfold": 1,
+        "Nat.exists_dvd_of_not_prime2": 1,
+        "hp_dvd.trans": 1,
+        "hp_prime": 1,
+        "n.Prime": 1,
+        "List.mem_cons.mp": 1,
+        "List.prod_cons": 1,
+        "Nat.div_lt_self": 1,
+        "Nat.div_pos": 1,
+        "Nat.minFac_dvd": 1,
+        "hp.one_lt": 1,
+        "hp.pos": 1,
+        "n.minFac": 1,
+        "Nat.mul_le_mul_left": 1,
+        "fibPair_le": 1,
+        "Nat.fib": 1,
+        "Nat.strongRecOn_eq": 1,
+        "Nat.zero_le": 1,
+        "le_mul_of_one_le_right": 1,
+        "Finset.mem_range.mp": 1,
+        "Finset.self_mem_range_succ": 1,
+        "Nat.lt_succ_of_lt": 1,
+        "Nat.mul_add": 1,
+        "Nat.le_add_right": 1,
+        "Nat.le_induction": 1,
+        "strictMono_nat_of_lt_succ": 1,
+        "sub_nonneg": 1,
+        "div_div_eq_mul_div": 1,
+        "div_le_div_iff": 1,
+        "ha.ne'": 1,
+        "hb.ne'": 1,
+        "Real.sqrt_sq": 1,
+        "Finset.card_pos.mpr": 1,
+        "Finset.sum_const": 1,
+        "Nat.cast_ne_zero.mpr": 1,
+        "Nat.cast_nonneg": 1,
+        "Real.finsetProd_rpow": 1,
+        "Real.geom_mean_le_arith_mean_weighted": 1,
+        "div_eq_inv_mul": 1,
+        "hcardpos.ne'": 1,
+        "inv_nonneg.mpr": 1,
+        "mul_inv_cancel": 1,
+        "nsmul_eq_mul": 1,
+        "s.card": 1,
+        "Finset.sum_mul_sq_le_sq_mul_sq": 1,
+        "sq_sum_le_card_mul_sum_sq": 1,
+        "max_le": 1,
+        "le_min": 1,
+        "min_le_right": 1,
+        "mul_self_nonneg": 1,
+        "ge_iff_le": 1,
+        "le_div_iff": 1,
+        "abs_sub_abs_le_abs_sub": 1,
+        "mul_nonneg": 1,
+        "Int.gcdA": 1,
+        "Int.gcdB": 1,
+        "Int.gcd_eq_gcd_ab": 1,
+        "Nat.coprime_one_left": 1,
+        "dvd_add": 1,
+        "Nat.dvd_lcm_left": 1,
+        "Nat.dvd_lcm_right": 1,
+        "hb.mul_right": 1,
+        "Nat.dvd_sub": 1,
+        "hab.trans": 1,
+        "dvd_zero": 1,
+        "Nat.even_add": 1,
+        "ha.add": 1,
+        "ha.mul_right": 1,
+        "Int.even_mul_succ_self": 1,
+        "Int.even_or_odd": 1,
+        "Nat.even_pow'": 1,
+        "hp.eq_one_or_self_of_dvd": 1,
+        "Nat.gcd_comm": 1,
+        "Nat.gcd_mul_lcm": 1,
+        "Nat.gcd_mul_left": 1,
+        "Nat.gcd_one_right": 1,
+        "Nat.gcd_self": 1,
+        "Nat.gcd_zero_left": 1,
+        "Nat.lcm_comm": 1,
+        "lt_irrefl": 1,
+        "Nat.lt_succ_iff": 1,
+        "Nat.mod_self": 1,
+        "Nat.mul_mod": 1,
+        "Nat.mul_mod_right": 1,
+        "Int.natAbs_mul": 1,
+        "ha.add_odd": 1,
+        "one_dvd": 1,
+        "Nat.one_le_iff_ne_zero": 1,
+        "hp.prime.dvd_mul": 1,
+        "Nat.sub_add_cancel": 1,
+        "Nat.succ_le_iff": 1,
+        "Nat.succ_ne_self": 1,
+        "Nat.succ_ne_zero": 1,
+        "Nat.zero_mod": 1,
+        "Nat.Coprime.coprime_dvd_right": 1,
+        "Nat.Coprime.mul_right": 1,
+        "Nat.Coprime.pow_right": 1,
+        "Nat.mul_div_assoc": 1,
+        "Nat.not_dvd_ordCompl": 1,
+        "Nat.ordCompl_dvd": 1,
+        "Nat.ordCompl_pos": 1,
+        "Nat.ordProj_mul_ordCompl_eq_self": 1,
+        "hcpe.dvd_of_dvd_mul_left": 1,
+        "hem.trans": 1,
+        "hp.coprime_iff_not_dvd.mpr": 1,
+        "hpe.trans": 1,
+        "hstep.trans": 1,
+        "mul_dvd_mul_left": 1,
+        "n.factorization": 1,
+        "Nat.coprime_two_left": 1,
+        "Nat.factorization_eq_zero_of_not_dvd": 1,
+        "Nat.factorization_mul": 1,
+        "Nat.factorization_pow_self": 1,
+        "Nat.odd_iff.mp": 1,
+        "hcop2.pow_left": 1,
+        "hm_odd.pos.ne'": 1,
+        "hodd_seed": 1,
+        "m.factorization": 1,
+        "pow_succ'": 1,
+        "sigmaStar_mul_of_coprime": 1,
+        "two_pow_card_primeFactors_dvd_sigmaStar": 1,
+        "Finset.mem_Ico": 1,
+        "Finset.mem_erase": 1,
+        "Nat.le_of_dvd": 1,
+        "Nat.pos_of_dvd_of_pos": 1,
+        "hlt.ne": 1,
+        "lt_of_le_of_ne": 1,
+        "Finset.mem_product": 1,
+        "Finset.sum_mul_sum": 1,
+        "Finset.sum_nbij'": 1,
+        "Finset.sum_product'": 1,
+        "Nat.div_dvd_of_dvd": 1,
+        "Nat.dvd_one.mp": 1,
+        "Nat.mul_dvd_mul": 1,
+        "coprime_dvd_left": 1,
+        "coprime_dvd_right": 1,
+        "dvd_mul_right": 1,
+        "gcd_mul_left_eq": 1,
+        "hcross2.mul_right": 1,
+        "hd.1": 1,
+        "hd1cop.mul_right": 1,
+        "hmn.coprime_dvd_left": 1,
+        "hmn.coprime_dvd_right": 1,
+        "hp1.1": 1,
+        "hp2.1": 1,
+        "p.1": 1,
+        "p.1.Coprime": 1,
+        "p.2": 1,
+        "p.2.Coprime": 1,
+        "quot_mul_quot": 1,
+        "split_dvd_mul": 1,
+        "L_ne_zero": 1,
+        "Nat.gcd_pos_of_pos_right": 1,
+        "Set.infinite_of_injective_forall_mem": 1,
+        "three_dvd_L": 1,
+        "three_dvd_a": 1,
+        "k.bitIndices.toFinset": 1,
+        "Int.cast_one": 1,
+        "alpha_gt_two_not_isGoodPair": 1,
+        "alpha_le_one_not_isGoodPair": 1,
+        "int_coeff_ge_two_not_isGoodPair": 1,
+        "one_two_isGoodPair": 1,
+        "Nat.eq_zero_or_pos": 1,
+        "Nat.factorial_dvd_factorial": 1,
+        "Nat.lt_or_ge": 1,
+        "Nat.mul_le_mul": 1,
+        "Nat.one_le_pow": 1,
+        "hdvd4.trans": 1,
+        "not_le": 1,
+        "not_or": 1,
+        "pow4_mod8": 1,
+        "Complex.I": 1,
+        "Complex.exp": 1,
+        "Complex.isPrimitiveRoot_exp": 1,
+        "Finset.card_map": 1,
+        "Finset.mem_map": 1,
+        "Function.Embedding.coeFn_mk": 1,
+        "Real.pi": 1,
+        "hprim.ne_one": 1,
+        "hprim.pow_eq_one": 1,
+        "mul_right_cancel": 1,
+        "mul_right_injective": 1,
+        "prodMultiset_map_mul": 1,
+        "AffineSubspace.coe_affineSpan_singleton": 1,
+        "EuclideanSpace.single": 1,
+        "Function.Injective.of_comp_right": 1,
+        "Function.comp_def": 1,
+        "Set.image_singleton": 1,
+        "Set.preimage_image_eq": 1,
+        "deriv_comp_const_add": 1,
+        "direction_affineSpan": 1,
+        "hu_deriv": 1,
+        "strictMono_of_deriv_pos": 1,
+        "Real.rpow_mul": 1,
+        "Real.rpow_natCast": 1,
+        "pow_le_pow_iff_left": 1,
+        "Nat.fermatNumber_ne_one": 1,
+        "Nat.le_log_of_pow_le": 1,
+        "Nat.log2_eq_log_two": 1,
+        "Nat.minFac_pos": 1,
+        "Nat.ordProj_le": 1,
+        "Nat.sub_le": 1,
+        "Nat.sub_ne_zero_of_lt": 1,
+        "Nat.sub_sub_self": 1,
+        "log_lt_of_lt_pow": 1,
+        "mul_two": 1,
+        "one_lt": 1,
+        "pow_add": 1,
+        "trans_lt": 1,
+        "A.card": 1,
+        "CharP.cast_eq_zero": 1,
+        "Decidable.not_not": 1,
+        "Finset.card_image_of_injOn": 1,
+        "Finset.card_univ": 1,
+        "Finset.coe_erase": 1,
+        "Finset.coe_powerset": 1,
+        "Finset.coe_univ": 1,
+        "Finset.filter_empty": 1,
+        "Finset.mem_powerset": 1,
+        "Finset.mem_univ": 1,
+        "Finset.notMem_empty": 1,
+        "Finset.subset_erase": 1,
+        "Finset.subset_univ": 1,
+        "Finset.univ": 1,
+        "Finset.univ.erase": 1,
+        "Finset.univ.filter": 1,
+        "Fintype.card": 1,
+        "Fintype.card_finset": 1,
+        "Fintype.card_pos": 1,
+        "IsEmpty.exists_iff": 1,
+        "Nat.add_one_le_iff": 1,
+        "Nat.cast_ofNat": 1,
+        "Nat.cast_pow": 1,
+        "Set.disjoint_singleton_right": 1,
+        "Set.mem_powerset_iff": 1,
+        "Set.mem_preimage": 1,
+        "Set.subset_diff": 1,
+        "Set.subset_univ": 1,
+        "exists_const": 1,
+        "h_ne_singleton_empty": 1,
+        "imp_false": 1,
+        "isEmpty_or_nonempty": 1,
+        "ne_eq": 1,
+        "not_forall": 1,
+        "pow_sub": 1,
+        "powerset.image": 1,
+        "true_and": 1,
+        "x.erase": 1,
+        "Finset.card": 1,
+        "Finset.card_le_card_of_injOn": 1,
+        "Finset.coe_filter": 1,
+        "Finset.filter": 1,
+        "Finset.insert_eq": 1,
+        "Set.InjOn": 1,
+        "Set.MapsTo": 1,
+        "and_imp": 1,
+        "and_true": 1,
+        "cancel_denoms": 1,
+        "h_union_closed": 1,
+        "true_or": 1
+      },
+      "verified_module_item": {
+        "sq_nonneg": 29,
+        "Finset.sum_range_succ": 14,
+        "add_mul": 7,
+        "pow_succ": 7,
+        "Nat.strong_induction_on": 5,
+        "le_trans": 5,
+        "pow_pos": 5,
+        "Finset.prod_range_succ": 4,
+        "Nat.pos_of_ne_zero": 4,
+        "Nat.factorial_succ": 4,
+        "Nat.factorial": 4,
+        "abs_cases": 4,
+        "le_max_left": 4,
+        "le_max_right": 4,
+        "Nat.dvd_gcd": 4,
+        "le_refl": 4,
+        "exact_mod_cast": 4,
+        "Filter.eventually_atTop": 4,
+        "mul_comm": 3,
+        "mul_zero": 3,
+        "mul_ne_zero": 3,
+        "sub_eq_add_neg": 3,
+        "Finset.mem_insert": 3,
+        "Function.Injective": 3,
+        "Nat.mod_lt": 3,
+        "Nat.mul_div_cancel'": 3,
+        "Nat.factorial_pos": 3,
+        "Finset.mem_range.mpr": 3,
+        "Finset.range": 3,
+        "le_total": 3,
+        "Finset.mul_sum": 3,
+        "dvd_mul_left": 3,
+        "Finset.mem_filter": 3,
+        "mem_uDiv": 3,
+        "Nat.gcd": 3,
+        "Nat.pow_right_injective": 3,
+        "Finset.mem_image": 3,
+        "Finset.sum_le_sum_of_subset_of_nonneg": 3,
+        "Int.floor_le_floor": 3,
+        "Int.floor_nonneg.mpr": 3,
+        "Set.range": 3,
+        "Finset.sum_toFinset_bitIndices_two_pow": 3,
+        "Int.floor_intCast": 3,
+        "Finset.mem_coe": 3,
+        "mul_one": 2,
+        "two_mul": 2,
+        "Finset.card_empty": 2,
+        "Finset.card_filter_add_card_filter_not": 2,
+        "Finset.card_powerset": 2,
+        "Finset.mem_singleton": 2,
+        "Finset.exists_ne_map_eq_of_card_lt_of_maps_to": 2,
+        "min_le_left": 2,
+        "Real.sin_sq_add_cos_sq": 2,
+        "dvd_refl": 2,
+        "Nat.minFac_le": 2,
+        "Nat.minFac_prime": 2,
+        "Nat.mul_pos": 2,
+        "Nat.succ_pos": 2,
+        "Nat.fib_add_two": 2,
+        "Nat.even_or_odd": 2,
+        "ne_of_gt": 2,
+        "div_add_div": 2,
+        "max_eq_left": 2,
+        "max_eq_right": 2,
+        "min_eq_left": 2,
+        "min_eq_right": 2,
+        "mul_pos": 2,
+        "Nat.add_mod": 2,
+        "Nat.factorial_le": 2,
+        "Nat.gcd_dvd_left": 2,
+        "Nat.gcd_dvd_right": 2,
+        "Nat.le_of_lt_succ": 2,
+        "Nat.pow_le_pow_left": 2,
+        "Nat.Coprime": 2,
+        "Nat.Prime.pow_dvd_iff_le_factorization": 2,
+        "Nat.dvd_iff_mod_eq_zero": 2,
+        "sigmaStar_prime_pow": 2,
+        "Set.mem_setOf_eq": 2,
+        "Filter.Tendsto": 2,
+        "Filter.atTop": 2,
+        "Filter.frequently_atTop": 2,
+        "Filter.not_eventually": 2,
+        "Filter.tendsto_add_atTop_nat": 2,
+        "Filter.tendsto_atTop_add_const_right": 2,
+        "Finset.single_le_sum": 2,
+        "Finset.sum_image_le_of_nonneg": 2,
+        "Finset.sum_le_sum": 2,
+        "Int.floor_le": 2,
+        "Int.sub_one_lt_floor": 2,
+        "_root_.div_pos": 2,
+        "div_le_div_of_nonneg_right": 2,
+        "geom_sum_eq": 2,
+        "h1.atTop_mul_const": 2,
+        "hBsum_le": 2,
+        "hpow.const_mul_atTop": 2,
+        "htend.eventually_ge_atTop": 2,
+        "htend2.eventually_ge_atTop": 2,
+        "hterm_le": 2,
+        "le_of_lt": 2,
+        "m1.le": 2,
+        "mul_div_assoc": 2,
+        "mul_le_mul_of_nonneg_left": 2,
+        "not_lt.mp": 2,
+        "pow_le_pow_right": 2,
+        "tendsto_pow_atTop_atTop_of_one_lt": 2,
+        "Finset.Icc": 2,
+        "Finset.coe_Icc": 2,
+        "Finset.mem_Icc.mp": 2,
+        "Set.mem_Icc": 2,
+        "hpos.le": 2,
+        "hpow_pos": 2,
+        "pow_le_one": 2,
+        "Finset.dvd_sum": 2,
+        "Int.le_natAbs": 2,
+        "Int.le_of_dvd": 2,
+        "Int.natCast_nonneg": 2,
+        "N.natAbs": 2,
+        "one_pos": 2,
+        "E.image": 2,
+        "Finset.coe_image": 2,
+        "Finset.sum_image": 2,
+        "Int.toNat_of_nonneg": 2,
+        "Set.mem_image": 2,
+        "k.toNat": 2,
+        "k.toNat.bitIndices.toFinset": 2,
+        "fin_cases": 2,
+        "Finset.erase_insert": 2,
+        "add_assoc": 1,
+        "add_comm": 1,
+        "add_left_comm": 1,
+        "add_zero": 1,
+        "mul_add": 1,
+        "mul_assoc": 1,
+        "mul_left_comm": 1,
+        "mul_neg": 1,
+        "_root_.mul_self_eq_zero": 1,
+        "neg_mul": 1,
+        "neg_neg": 1,
+        "neg_zero": 1,
+        "one_mul": 1,
+        "_root_.one_pow": 1,
+        "pow_mul": 1,
+        "pow_one": 1,
+        "_root_.pow_two": 1,
+        "pow_zero": 1,
+        "Real.sq_sqrt": 1,
+        "Real.sqrt": 1,
+        "two_ne_zero": 1,
+        "sub_mul": 1,
+        "sub_self": 1,
+        "sub_zero": 1,
+        "zero_add": 1,
+        "zero_sub": 1,
+        "Finset.card_biUnion_le": 1,
+        "Finset.card_image_le": 1,
+        "Finset.card_image_of_injective": 1,
+        "Finset.card_insert_le": 1,
+        "Finset.card_le_card": 1,
+        "Finset.card_product": 1,
+        "Finset.card_range": 1,
+        "Finset.card_sdiff_of_subset": 1,
+        "Finset.card_singleton": 1,
+        "Finset.card_union_add_card_inter": 1,
+        "Finset.card_union_le": 1,
+        "Nat.choose_self": 1,
+        "Nat.choose_succ_succ'": 1,
+        "Nat.choose_symm": 1,
+        "Nat.choose_zero_right": 1,
+        "Finset.card_union_eq_card_add_card": 1,
+        "Finset.empty_inter": 1,
+        "Finset.empty_subset": 1,
+        "Finset.empty_union": 1,
+        "Finset.filter_subset": 1,
+        "Finset.inter_comm": 1,
+        "Finset.inter_empty": 1,
+        "Finset.inter_self": 1,
+        "Finset.inter_subset_left": 1,
+        "Finset.inter_subset_right": 1,
+        "Finset.mem_inter": 1,
+        "Finset.mem_range": 1,
+        "Finset.mem_union": 1,
+        "Set.mem_union": 1,
+        "Finset.Subset.refl": 1,
+        "Finset.subset_union_left": 1,
+        "Finset.subset_union_right": 1,
+        "Nat.sum_range_choose": 1,
+        "Finset.union_assoc": 1,
+        "Finset.union_comm": 1,
+        "Finset.union_empty": 1,
+        "Finset.union_self": 1,
+        "abs_abs": 1,
+        "abs_add_le": 1,
+        "abs_mul": 1,
+        "abs_neg": 1,
+        "abs_nonneg": 1,
+        "abs_of_nonneg": 1,
+        "abs_sub_comm": 1,
+        "abs_zero": 1,
+        "hf.injective": 1,
+        "hf.surjective": 1,
+        "hg.injective.comp": 1,
+        "hg.surjective.comp": 1,
+        "Finite.injective_iff_surjective": 1,
+        "geom_sum_mul": 1,
+        "Set.image_inter_subset": 1,
+        "Set.image_union": 1,
+        "le_abs_self": 1,
+        "mul_left_cancel": 1,
+        "max_comm": 1,
+        "max_self": 1,
+        "min_comm": 1,
+        "le_max_of_le_left": 1,
+        "min_self": 1,
+        "neg_abs_le": 1,
+        "Set.preimage_inter": 1,
+        "sq_abs": 1,
+        "lt_trichotomy": 1,
+        "ne_of_lt": 1,
+        "Function.comp_apply": 1,
+        "Function.Surjective": 1,
+        "Real.cos": 1,
+        "Real.sin": 1,
+        "mul_le_mul_of_nonneg_right": 1,
+        "Nat.gcd_rec": 1,
+        "dif_neg": 1,
+        "euclidGcd_unfold": 1,
+        "Nat.exists_dvd_of_not_prime2": 1,
+        "hp_dvd.trans": 1,
+        "hp_prime": 1,
+        "n.Prime": 1,
+        "List.mem_cons.mp": 1,
+        "List.prod_cons": 1,
+        "Nat.div_lt_self": 1,
+        "Nat.div_pos": 1,
+        "Nat.minFac_dvd": 1,
+        "hp.one_lt": 1,
+        "hp.pos": 1,
+        "n.minFac": 1,
+        "Nat.mul_le_mul_left": 1,
+        "fibPair_le": 1,
+        "Nat.fib": 1,
+        "Nat.strongRecOn_eq": 1,
+        "Nat.zero_le": 1,
+        "le_mul_of_one_le_right": 1,
+        "Finset.mem_range.mp": 1,
+        "Finset.self_mem_range_succ": 1,
+        "Nat.lt_succ_of_lt": 1,
+        "Nat.mul_add": 1,
+        "Nat.le_add_right": 1,
+        "Nat.le_induction": 1,
+        "strictMono_nat_of_lt_succ": 1,
+        "sub_nonneg": 1,
+        "div_div_eq_mul_div": 1,
+        "div_le_div_iff": 1,
+        "ha.ne'": 1,
+        "hb.ne'": 1,
+        "Real.sqrt_sq": 1,
+        "Finset.card_pos.mpr": 1,
+        "Finset.sum_const": 1,
+        "Nat.cast_ne_zero.mpr": 1,
+        "Nat.cast_nonneg": 1,
+        "Real.finsetProd_rpow": 1,
+        "Real.geom_mean_le_arith_mean_weighted": 1,
+        "div_eq_inv_mul": 1,
+        "hcardpos.ne'": 1,
+        "inv_nonneg.mpr": 1,
+        "mul_inv_cancel": 1,
+        "nsmul_eq_mul": 1,
+        "s.card": 1,
+        "Finset.sum_mul_sq_le_sq_mul_sq": 1,
+        "sq_sum_le_card_mul_sum_sq": 1,
+        "max_le": 1,
+        "le_min": 1,
+        "min_le_right": 1,
+        "mul_self_nonneg": 1,
+        "ge_iff_le": 1,
+        "le_div_iff": 1,
+        "abs_sub_abs_le_abs_sub": 1,
+        "mul_nonneg": 1,
+        "Int.gcdA": 1,
+        "Int.gcdB": 1,
+        "Int.gcd_eq_gcd_ab": 1,
+        "Nat.coprime_one_left": 1,
+        "dvd_add": 1,
+        "Nat.dvd_lcm_left": 1,
+        "Nat.dvd_lcm_right": 1,
+        "hb.mul_right": 1,
+        "Nat.dvd_sub": 1,
+        "hab.trans": 1,
+        "dvd_zero": 1,
+        "Nat.even_add": 1,
+        "ha.add": 1,
+        "ha.mul_right": 1,
+        "Int.even_mul_succ_self": 1,
+        "Int.even_or_odd": 1,
+        "Nat.even_pow'": 1,
+        "hp.eq_one_or_self_of_dvd": 1,
+        "Nat.gcd_comm": 1,
+        "Nat.gcd_mul_lcm": 1,
+        "Nat.gcd_mul_left": 1,
+        "Nat.gcd_one_right": 1,
+        "Nat.gcd_self": 1,
+        "Nat.gcd_zero_left": 1,
+        "Nat.lcm_comm": 1,
+        "lt_irrefl": 1,
+        "Nat.lt_succ_iff": 1,
+        "Nat.mod_self": 1,
+        "Nat.mul_mod": 1,
+        "Nat.mul_mod_right": 1,
+        "Int.natAbs_mul": 1,
+        "ha.add_odd": 1,
+        "one_dvd": 1,
+        "Nat.one_le_iff_ne_zero": 1,
+        "hp.prime.dvd_mul": 1,
+        "Nat.sub_add_cancel": 1,
+        "Nat.succ_le_iff": 1,
+        "Nat.succ_ne_self": 1,
+        "Nat.succ_ne_zero": 1,
+        "Nat.zero_mod": 1,
+        "Nat.Coprime.coprime_dvd_right": 1,
+        "Nat.Coprime.mul_right": 1,
+        "Nat.Coprime.pow_right": 1,
+        "Nat.mul_div_assoc": 1,
+        "Nat.not_dvd_ordCompl": 1,
+        "Nat.ordCompl_dvd": 1,
+        "Nat.ordCompl_pos": 1,
+        "Nat.ordProj_mul_ordCompl_eq_self": 1,
+        "hcpe.dvd_of_dvd_mul_left": 1,
+        "hem.trans": 1,
+        "hp.coprime_iff_not_dvd.mpr": 1,
+        "hpe.trans": 1,
+        "hstep.trans": 1,
+        "mul_dvd_mul_left": 1,
+        "n.factorization": 1,
+        "Nat.coprime_two_left": 1,
+        "Nat.factorization_eq_zero_of_not_dvd": 1,
+        "Nat.factorization_mul": 1,
+        "Nat.factorization_pow_self": 1,
+        "Nat.odd_iff.mp": 1,
+        "hcop2.pow_left": 1,
+        "hm_odd.pos.ne'": 1,
+        "hodd_seed": 1,
+        "m.factorization": 1,
+        "pow_succ'": 1,
+        "sigmaStar_mul_of_coprime": 1,
+        "two_pow_card_primeFactors_dvd_sigmaStar": 1,
+        "Finset.mem_Ico": 1,
+        "Finset.mem_erase": 1,
+        "Nat.le_of_dvd": 1,
+        "Nat.pos_of_dvd_of_pos": 1,
+        "hlt.ne": 1,
+        "lt_of_le_of_ne": 1,
+        "Finset.mem_product": 1,
+        "Finset.sum_mul_sum": 1,
+        "Finset.sum_nbij'": 1,
+        "Finset.sum_product'": 1,
+        "Nat.div_dvd_of_dvd": 1,
+        "Nat.dvd_one.mp": 1,
+        "Nat.mul_dvd_mul": 1,
+        "coprime_dvd_left": 1,
+        "coprime_dvd_right": 1,
+        "dvd_mul_right": 1,
+        "gcd_mul_left_eq": 1,
+        "hcross2.mul_right": 1,
+        "hd.1": 1,
+        "hd1cop.mul_right": 1,
+        "hmn.coprime_dvd_left": 1,
+        "hmn.coprime_dvd_right": 1,
+        "hp1.1": 1,
+        "hp2.1": 1,
+        "p.1": 1,
+        "p.1.Coprime": 1,
+        "p.2": 1,
+        "p.2.Coprime": 1,
+        "quot_mul_quot": 1,
+        "split_dvd_mul": 1,
+        "L_ne_zero": 1,
+        "Nat.gcd_pos_of_pos_right": 1,
+        "Set.infinite_of_injective_forall_mem": 1,
+        "three_dvd_L": 1,
+        "three_dvd_a": 1,
+        "k.bitIndices.toFinset": 1,
+        "Int.cast_one": 1,
+        "alpha_gt_two_not_isGoodPair": 1,
+        "alpha_le_one_not_isGoodPair": 1,
+        "int_coeff_ge_two_not_isGoodPair": 1,
+        "one_two_isGoodPair": 1,
+        "Nat.eq_zero_or_pos": 1,
+        "Nat.factorial_dvd_factorial": 1,
+        "Nat.lt_or_ge": 1,
+        "Nat.mul_le_mul": 1,
+        "Nat.one_le_pow": 1,
+        "hdvd4.trans": 1,
+        "not_le": 1,
+        "not_or": 1,
+        "pow4_mod8": 1,
+        "Complex.I": 1,
+        "Complex.exp": 1,
+        "Complex.isPrimitiveRoot_exp": 1,
+        "Finset.card_map": 1,
+        "Finset.mem_map": 1,
+        "Function.Embedding.coeFn_mk": 1,
+        "Real.pi": 1,
+        "hprim.ne_one": 1,
+        "hprim.pow_eq_one": 1,
+        "mul_right_cancel": 1,
+        "mul_right_injective": 1,
+        "prodMultiset_map_mul": 1,
+        "AffineSubspace.coe_affineSpan_singleton": 1,
+        "EuclideanSpace.single": 1,
+        "Function.Injective.of_comp_right": 1,
+        "Function.comp_def": 1,
+        "Set.image_singleton": 1,
+        "Set.preimage_image_eq": 1,
+        "deriv_comp_const_add": 1,
+        "direction_affineSpan": 1,
+        "hu_deriv": 1,
+        "strictMono_of_deriv_pos": 1,
+        "Real.rpow_mul": 1,
+        "Real.rpow_natCast": 1,
+        "pow_le_pow_iff_left": 1,
+        "Nat.fermatNumber_ne_one": 1,
+        "Nat.le_log_of_pow_le": 1,
+        "Nat.log2_eq_log_two": 1,
+        "Nat.minFac_pos": 1,
+        "Nat.ordProj_le": 1,
+        "Nat.sub_le": 1,
+        "Nat.sub_ne_zero_of_lt": 1,
+        "Nat.sub_sub_self": 1,
+        "log_lt_of_lt_pow": 1,
+        "mul_two": 1,
+        "one_lt": 1,
+        "pow_add": 1,
+        "trans_lt": 1,
+        "A.card": 1,
+        "CharP.cast_eq_zero": 1,
+        "Decidable.not_not": 1,
+        "Finset.card_image_of_injOn": 1,
+        "Finset.card_univ": 1,
+        "Finset.coe_erase": 1,
+        "Finset.coe_powerset": 1,
+        "Finset.coe_univ": 1,
+        "Finset.filter_empty": 1,
+        "Finset.mem_powerset": 1,
+        "Finset.mem_univ": 1,
+        "Finset.notMem_empty": 1,
+        "Finset.subset_erase": 1,
+        "Finset.subset_univ": 1,
+        "Finset.univ": 1,
+        "Finset.univ.erase": 1,
+        "Finset.univ.filter": 1,
+        "Fintype.card": 1,
+        "Fintype.card_finset": 1,
+        "Fintype.card_pos": 1,
+        "IsEmpty.exists_iff": 1,
+        "Nat.add_one_le_iff": 1,
+        "Nat.cast_ofNat": 1,
+        "Nat.cast_pow": 1,
+        "Set.disjoint_singleton_right": 1,
+        "Set.mem_powerset_iff": 1,
+        "Set.mem_preimage": 1,
+        "Set.subset_diff": 1,
+        "Set.subset_univ": 1,
+        "exists_const": 1,
+        "h_ne_singleton_empty": 1,
+        "imp_false": 1,
+        "isEmpty_or_nonempty": 1,
+        "ne_eq": 1,
+        "not_forall": 1,
+        "pow_sub": 1,
+        "powerset.image": 1,
+        "true_and": 1,
+        "x.erase": 1,
+        "Finset.card": 1,
+        "Finset.card_le_card_of_injOn": 1,
+        "Finset.coe_filter": 1,
+        "Finset.filter": 1,
+        "Finset.insert_eq": 1,
+        "Set.InjOn": 1,
+        "Set.MapsTo": 1,
+        "and_imp": 1,
+        "and_true": 1,
+        "cancel_denoms": 1,
+        "h_union_closed": 1,
+        "true_or": 1
+      },
+      "retrieval_candidate": {
+        "sq_nonneg": 29,
+        "Finset.sum_range_succ": 14,
+        "add_mul": 7,
+        "pow_succ": 7,
+        "Nat.strong_induction_on": 5,
+        "le_trans": 5,
+        "pow_pos": 5,
+        "Finset.prod_range_succ": 4,
+        "Nat.pos_of_ne_zero": 4,
+        "Nat.factorial_succ": 4,
+        "Nat.factorial": 4,
+        "abs_cases": 4,
+        "le_max_left": 4,
+        "le_max_right": 4,
+        "Nat.dvd_gcd": 4,
+        "le_refl": 4,
+        "exact_mod_cast": 4,
+        "Filter.eventually_atTop": 4,
+        "mul_comm": 3,
+        "mul_zero": 3,
+        "mul_ne_zero": 3,
+        "sub_eq_add_neg": 3,
+        "Finset.mem_insert": 3,
+        "Function.Injective": 3,
+        "Nat.mod_lt": 3,
+        "Nat.mul_div_cancel'": 3,
+        "Nat.factorial_pos": 3,
+        "Finset.mem_range.mpr": 3,
+        "Finset.range": 3,
+        "le_total": 3,
+        "Finset.mul_sum": 3,
+        "dvd_mul_left": 3,
+        "Finset.mem_filter": 3,
+        "mem_uDiv": 3,
+        "Nat.gcd": 3,
+        "Nat.pow_right_injective": 3,
+        "Finset.mem_image": 3,
+        "Finset.sum_le_sum_of_subset_of_nonneg": 3,
+        "Int.floor_le_floor": 3,
+        "Int.floor_nonneg.mpr": 3,
+        "Set.range": 3,
+        "Finset.sum_toFinset_bitIndices_two_pow": 3,
+        "Int.floor_intCast": 3,
+        "Finset.mem_coe": 3,
+        "mul_one": 2,
+        "two_mul": 2,
+        "Finset.card_empty": 2,
+        "Finset.card_filter_add_card_filter_not": 2,
+        "Finset.card_powerset": 2,
+        "Finset.mem_singleton": 2,
+        "Finset.exists_ne_map_eq_of_card_lt_of_maps_to": 2,
+        "min_le_left": 2,
+        "Real.sin_sq_add_cos_sq": 2,
+        "dvd_refl": 2,
+        "Nat.minFac_le": 2,
+        "Nat.minFac_prime": 2,
+        "Nat.mul_pos": 2,
+        "Nat.succ_pos": 2,
+        "Nat.fib_add_two": 2,
+        "Nat.even_or_odd": 2,
+        "ne_of_gt": 2,
+        "div_add_div": 2,
+        "max_eq_left": 2,
+        "max_eq_right": 2,
+        "min_eq_left": 2,
+        "min_eq_right": 2,
+        "mul_pos": 2,
+        "Nat.add_mod": 2,
+        "Nat.factorial_le": 2,
+        "Nat.gcd_dvd_left": 2,
+        "Nat.gcd_dvd_right": 2,
+        "Nat.le_of_lt_succ": 2,
+        "Nat.pow_le_pow_left": 2,
+        "Nat.Coprime": 2,
+        "Nat.Prime.pow_dvd_iff_le_factorization": 2,
+        "Nat.dvd_iff_mod_eq_zero": 2,
+        "sigmaStar_prime_pow": 2,
+        "Set.mem_setOf_eq": 2,
+        "Filter.Tendsto": 2,
+        "Filter.atTop": 2,
+        "Filter.frequently_atTop": 2,
+        "Filter.not_eventually": 2,
+        "Filter.tendsto_add_atTop_nat": 2,
+        "Filter.tendsto_atTop_add_const_right": 2,
+        "Finset.single_le_sum": 2,
+        "Finset.sum_image_le_of_nonneg": 2,
+        "Finset.sum_le_sum": 2,
+        "Int.floor_le": 2,
+        "Int.sub_one_lt_floor": 2,
+        "_root_.div_pos": 2,
+        "div_le_div_of_nonneg_right": 2,
+        "geom_sum_eq": 2,
+        "h1.atTop_mul_const": 2,
+        "hBsum_le": 2,
+        "hpow.const_mul_atTop": 2,
+        "htend.eventually_ge_atTop": 2,
+        "htend2.eventually_ge_atTop": 2,
+        "hterm_le": 2,
+        "le_of_lt": 2,
+        "m1.le": 2,
+        "mul_div_assoc": 2,
+        "mul_le_mul_of_nonneg_left": 2,
+        "not_lt.mp": 2,
+        "pow_le_pow_right": 2,
+        "tendsto_pow_atTop_atTop_of_one_lt": 2,
+        "Finset.Icc": 2,
+        "Finset.coe_Icc": 2,
+        "Finset.mem_Icc.mp": 2,
+        "Set.mem_Icc": 2,
+        "hpos.le": 2,
+        "hpow_pos": 2,
+        "pow_le_one": 2,
+        "Finset.dvd_sum": 2,
+        "Int.le_natAbs": 2,
+        "Int.le_of_dvd": 2,
+        "Int.natCast_nonneg": 2,
+        "N.natAbs": 2,
+        "one_pos": 2,
+        "E.image": 2,
+        "Finset.coe_image": 2,
+        "Finset.sum_image": 2,
+        "Int.toNat_of_nonneg": 2,
+        "Set.mem_image": 2,
+        "k.toNat": 2,
+        "k.toNat.bitIndices.toFinset": 2,
+        "fin_cases": 2,
+        "Finset.erase_insert": 2,
+        "add_assoc": 1,
+        "add_comm": 1,
+        "add_left_comm": 1,
+        "add_zero": 1,
+        "mul_add": 1,
+        "mul_assoc": 1,
+        "mul_left_comm": 1,
+        "mul_neg": 1,
+        "_root_.mul_self_eq_zero": 1,
+        "neg_mul": 1,
+        "neg_neg": 1,
+        "neg_zero": 1,
+        "one_mul": 1,
+        "_root_.one_pow": 1,
+        "pow_mul": 1,
+        "pow_one": 1,
+        "_root_.pow_two": 1,
+        "pow_zero": 1,
+        "Real.sq_sqrt": 1,
+        "Real.sqrt": 1,
+        "two_ne_zero": 1,
+        "sub_mul": 1,
+        "sub_self": 1,
+        "sub_zero": 1,
+        "zero_add": 1,
+        "zero_sub": 1,
+        "Finset.card_biUnion_le": 1,
+        "Finset.card_image_le": 1,
+        "Finset.card_image_of_injective": 1,
+        "Finset.card_insert_le": 1,
+        "Finset.card_le_card": 1,
+        "Finset.card_product": 1,
+        "Finset.card_range": 1,
+        "Finset.card_sdiff_of_subset": 1,
+        "Finset.card_singleton": 1,
+        "Finset.card_union_add_card_inter": 1,
+        "Finset.card_union_le": 1,
+        "Nat.choose_self": 1,
+        "Nat.choose_succ_succ'": 1,
+        "Nat.choose_symm": 1,
+        "Nat.choose_zero_right": 1,
+        "Finset.card_union_eq_card_add_card": 1,
+        "Finset.empty_inter": 1,
+        "Finset.empty_subset": 1,
+        "Finset.empty_union": 1,
+        "Finset.filter_subset": 1,
+        "Finset.inter_comm": 1,
+        "Finset.inter_empty": 1,
+        "Finset.inter_self": 1,
+        "Finset.inter_subset_left": 1,
+        "Finset.inter_subset_right": 1,
+        "Finset.mem_inter": 1,
+        "Finset.mem_range": 1,
+        "Finset.mem_union": 1,
+        "Set.mem_union": 1,
+        "Finset.Subset.refl": 1,
+        "Finset.subset_union_left": 1,
+        "Finset.subset_union_right": 1,
+        "Nat.sum_range_choose": 1,
+        "Finset.union_assoc": 1,
+        "Finset.union_comm": 1,
+        "Finset.union_empty": 1,
+        "Finset.union_self": 1,
+        "abs_abs": 1,
+        "abs_add_le": 1,
+        "abs_mul": 1,
+        "abs_neg": 1,
+        "abs_nonneg": 1,
+        "abs_of_nonneg": 1,
+        "abs_sub_comm": 1,
+        "abs_zero": 1,
+        "hf.injective": 1,
+        "hf.surjective": 1,
+        "hg.injective.comp": 1,
+        "hg.surjective.comp": 1,
+        "Finite.injective_iff_surjective": 1,
+        "geom_sum_mul": 1,
+        "Set.image_inter_subset": 1,
+        "Set.image_union": 1,
+        "le_abs_self": 1,
+        "mul_left_cancel": 1,
+        "max_comm": 1,
+        "max_self": 1,
+        "min_comm": 1,
+        "le_max_of_le_left": 1,
+        "min_self": 1,
+        "neg_abs_le": 1,
+        "Set.preimage_inter": 1,
+        "sq_abs": 1,
+        "lt_trichotomy": 1,
+        "ne_of_lt": 1,
+        "Function.comp_apply": 1,
+        "Function.Surjective": 1,
+        "Real.cos": 1,
+        "Real.sin": 1,
+        "mul_le_mul_of_nonneg_right": 1,
+        "Nat.gcd_rec": 1,
+        "dif_neg": 1,
+        "euclidGcd_unfold": 1,
+        "Nat.exists_dvd_of_not_prime2": 1,
+        "hp_dvd.trans": 1,
+        "hp_prime": 1,
+        "n.Prime": 1,
+        "List.mem_cons.mp": 1,
+        "List.prod_cons": 1,
+        "Nat.div_lt_self": 1,
+        "Nat.div_pos": 1,
+        "Nat.minFac_dvd": 1,
+        "hp.one_lt": 1,
+        "hp.pos": 1,
+        "n.minFac": 1,
+        "Nat.mul_le_mul_left": 1,
+        "fibPair_le": 1,
+        "Nat.fib": 1,
+        "Nat.strongRecOn_eq": 1,
+        "Nat.zero_le": 1,
+        "le_mul_of_one_le_right": 1,
+        "Finset.mem_range.mp": 1,
+        "Finset.self_mem_range_succ": 1,
+        "Nat.lt_succ_of_lt": 1,
+        "Nat.mul_add": 1,
+        "Nat.le_add_right": 1,
+        "Nat.le_induction": 1,
+        "strictMono_nat_of_lt_succ": 1,
+        "sub_nonneg": 1,
+        "div_div_eq_mul_div": 1,
+        "div_le_div_iff": 1,
+        "ha.ne'": 1,
+        "hb.ne'": 1,
+        "Real.sqrt_sq": 1,
+        "Finset.card_pos.mpr": 1,
+        "Finset.sum_const": 1,
+        "Nat.cast_ne_zero.mpr": 1,
+        "Nat.cast_nonneg": 1,
+        "Real.finsetProd_rpow": 1,
+        "Real.geom_mean_le_arith_mean_weighted": 1,
+        "div_eq_inv_mul": 1,
+        "hcardpos.ne'": 1,
+        "inv_nonneg.mpr": 1,
+        "mul_inv_cancel": 1,
+        "nsmul_eq_mul": 1,
+        "s.card": 1,
+        "Finset.sum_mul_sq_le_sq_mul_sq": 1,
+        "sq_sum_le_card_mul_sum_sq": 1,
+        "max_le": 1,
+        "le_min": 1,
+        "min_le_right": 1,
+        "mul_self_nonneg": 1,
+        "ge_iff_le": 1,
+        "le_div_iff": 1,
+        "abs_sub_abs_le_abs_sub": 1,
+        "mul_nonneg": 1,
+        "Int.gcdA": 1,
+        "Int.gcdB": 1,
+        "Int.gcd_eq_gcd_ab": 1,
+        "Nat.coprime_one_left": 1,
+        "dvd_add": 1,
+        "Nat.dvd_lcm_left": 1,
+        "Nat.dvd_lcm_right": 1,
+        "hb.mul_right": 1,
+        "Nat.dvd_sub": 1,
+        "hab.trans": 1,
+        "dvd_zero": 1,
+        "Nat.even_add": 1,
+        "ha.add": 1,
+        "ha.mul_right": 1,
+        "Int.even_mul_succ_self": 1,
+        "Int.even_or_odd": 1,
+        "Nat.even_pow'": 1,
+        "hp.eq_one_or_self_of_dvd": 1,
+        "Nat.gcd_comm": 1,
+        "Nat.gcd_mul_lcm": 1,
+        "Nat.gcd_mul_left": 1,
+        "Nat.gcd_one_right": 1,
+        "Nat.gcd_self": 1,
+        "Nat.gcd_zero_left": 1,
+        "Nat.lcm_comm": 1,
+        "lt_irrefl": 1,
+        "Nat.lt_succ_iff": 1,
+        "Nat.mod_self": 1,
+        "Nat.mul_mod": 1,
+        "Nat.mul_mod_right": 1,
+        "Int.natAbs_mul": 1,
+        "ha.add_odd": 1,
+        "one_dvd": 1,
+        "Nat.one_le_iff_ne_zero": 1,
+        "hp.prime.dvd_mul": 1,
+        "Nat.sub_add_cancel": 1,
+        "Nat.succ_le_iff": 1,
+        "Nat.succ_ne_self": 1,
+        "Nat.succ_ne_zero": 1,
+        "Nat.zero_mod": 1,
+        "Nat.Coprime.coprime_dvd_right": 1,
+        "Nat.Coprime.mul_right": 1,
+        "Nat.Coprime.pow_right": 1,
+        "Nat.mul_div_assoc": 1,
+        "Nat.not_dvd_ordCompl": 1,
+        "Nat.ordCompl_dvd": 1,
+        "Nat.ordCompl_pos": 1,
+        "Nat.ordProj_mul_ordCompl_eq_self": 1,
+        "hcpe.dvd_of_dvd_mul_left": 1,
+        "hem.trans": 1,
+        "hp.coprime_iff_not_dvd.mpr": 1,
+        "hpe.trans": 1,
+        "hstep.trans": 1,
+        "mul_dvd_mul_left": 1,
+        "n.factorization": 1,
+        "Nat.coprime_two_left": 1,
+        "Nat.factorization_eq_zero_of_not_dvd": 1,
+        "Nat.factorization_mul": 1,
+        "Nat.factorization_pow_self": 1,
+        "Nat.odd_iff.mp": 1,
+        "hcop2.pow_left": 1,
+        "hm_odd.pos.ne'": 1,
+        "hodd_seed": 1,
+        "m.factorization": 1,
+        "pow_succ'": 1,
+        "sigmaStar_mul_of_coprime": 1,
+        "two_pow_card_primeFactors_dvd_sigmaStar": 1,
+        "Finset.mem_Ico": 1,
+        "Finset.mem_erase": 1,
+        "Nat.le_of_dvd": 1,
+        "Nat.pos_of_dvd_of_pos": 1,
+        "hlt.ne": 1,
+        "lt_of_le_of_ne": 1,
+        "Finset.mem_product": 1,
+        "Finset.sum_mul_sum": 1,
+        "Finset.sum_nbij'": 1,
+        "Finset.sum_product'": 1,
+        "Nat.div_dvd_of_dvd": 1,
+        "Nat.dvd_one.mp": 1,
+        "Nat.mul_dvd_mul": 1,
+        "coprime_dvd_left": 1,
+        "coprime_dvd_right": 1,
+        "dvd_mul_right": 1,
+        "gcd_mul_left_eq": 1,
+        "hcross2.mul_right": 1,
+        "hd.1": 1,
+        "hd1cop.mul_right": 1,
+        "hmn.coprime_dvd_left": 1,
+        "hmn.coprime_dvd_right": 1,
+        "hp1.1": 1,
+        "hp2.1": 1,
+        "p.1": 1,
+        "p.1.Coprime": 1,
+        "p.2": 1,
+        "p.2.Coprime": 1,
+        "quot_mul_quot": 1,
+        "split_dvd_mul": 1,
+        "L_ne_zero": 1,
+        "Nat.gcd_pos_of_pos_right": 1,
+        "Set.infinite_of_injective_forall_mem": 1,
+        "three_dvd_L": 1,
+        "three_dvd_a": 1,
+        "k.bitIndices.toFinset": 1,
+        "Int.cast_one": 1,
+        "alpha_gt_two_not_isGoodPair": 1,
+        "alpha_le_one_not_isGoodPair": 1,
+        "int_coeff_ge_two_not_isGoodPair": 1,
+        "one_two_isGoodPair": 1,
+        "Nat.eq_zero_or_pos": 1,
+        "Nat.factorial_dvd_factorial": 1,
+        "Nat.lt_or_ge": 1,
+        "Nat.mul_le_mul": 1,
+        "Nat.one_le_pow": 1,
+        "hdvd4.trans": 1,
+        "not_le": 1,
+        "not_or": 1,
+        "pow4_mod8": 1,
+        "Complex.I": 1,
+        "Complex.exp": 1,
+        "Complex.isPrimitiveRoot_exp": 1,
+        "Finset.card_map": 1,
+        "Finset.mem_map": 1,
+        "Function.Embedding.coeFn_mk": 1,
+        "Real.pi": 1,
+        "hprim.ne_one": 1,
+        "hprim.pow_eq_one": 1,
+        "mul_right_cancel": 1,
+        "mul_right_injective": 1,
+        "prodMultiset_map_mul": 1,
+        "AffineSubspace.coe_affineSpan_singleton": 1,
+        "EuclideanSpace.single": 1,
+        "Function.Injective.of_comp_right": 1,
+        "Function.comp_def": 1,
+        "Set.image_singleton": 1,
+        "Set.preimage_image_eq": 1,
+        "deriv_comp_const_add": 1,
+        "direction_affineSpan": 1,
+        "hu_deriv": 1,
+        "strictMono_of_deriv_pos": 1,
+        "Real.rpow_mul": 1,
+        "Real.rpow_natCast": 1,
+        "pow_le_pow_iff_left": 1,
+        "Nat.fermatNumber_ne_one": 1,
+        "Nat.le_log_of_pow_le": 1,
+        "Nat.log2_eq_log_two": 1,
+        "Nat.minFac_pos": 1,
+        "Nat.ordProj_le": 1,
+        "Nat.sub_le": 1,
+        "Nat.sub_ne_zero_of_lt": 1,
+        "Nat.sub_sub_self": 1,
+        "log_lt_of_lt_pow": 1,
+        "mul_two": 1,
+        "one_lt": 1,
+        "pow_add": 1,
+        "trans_lt": 1,
+        "A.card": 1,
+        "CharP.cast_eq_zero": 1,
+        "Decidable.not_not": 1,
+        "Finset.card_image_of_injOn": 1,
+        "Finset.card_univ": 1,
+        "Finset.coe_erase": 1,
+        "Finset.coe_powerset": 1,
+        "Finset.coe_univ": 1,
+        "Finset.filter_empty": 1,
+        "Finset.mem_powerset": 1,
+        "Finset.mem_univ": 1,
+        "Finset.notMem_empty": 1,
+        "Finset.subset_erase": 1,
+        "Finset.subset_univ": 1,
+        "Finset.univ": 1,
+        "Finset.univ.erase": 1,
+        "Finset.univ.filter": 1,
+        "Fintype.card": 1,
+        "Fintype.card_finset": 1,
+        "Fintype.card_pos": 1,
+        "IsEmpty.exists_iff": 1,
+        "Nat.add_one_le_iff": 1,
+        "Nat.cast_ofNat": 1,
+        "Nat.cast_pow": 1,
+        "Set.disjoint_singleton_right": 1,
+        "Set.mem_powerset_iff": 1,
+        "Set.mem_preimage": 1,
+        "Set.subset_diff": 1,
+        "Set.subset_univ": 1,
+        "exists_const": 1,
+        "h_ne_singleton_empty": 1,
+        "imp_false": 1,
+        "isEmpty_or_nonempty": 1,
+        "ne_eq": 1,
+        "not_forall": 1,
+        "pow_sub": 1,
+        "powerset.image": 1,
+        "true_and": 1,
+        "x.erase": 1,
+        "Finset.card": 1,
+        "Finset.card_le_card_of_injOn": 1,
+        "Finset.coe_filter": 1,
+        "Finset.filter": 1,
+        "Finset.insert_eq": 1,
+        "Set.InjOn": 1,
+        "Set.MapsTo": 1,
+        "and_imp": 1,
+        "and_true": 1,
+        "cancel_denoms": 1,
+        "h_union_closed": 1,
+        "true_or": 1
+      }
+    },
+    "transitive_depth": {
+      "min": 0,
+      "max": 1,
+      "avg": 0.7804878048780488,
+      "n": 328
+    }
   }
 }

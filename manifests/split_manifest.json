@@ -1,8 +1,10 @@
 {
-  "packet_count": 190,
+  "packet_count": 358,
   "split_family_counts": {
-    "negative_example_only": 1,
-    "train": 189
+    "negative_example_only": 28,
+    "private_audit_only": 2,
+    "quarantined": 25,
+    "train": 303
   },
   "entries": [
     {
@@ -34,6 +36,13 @@
       "dedupe_cluster_id": "algebra.add_mul"
     },
     {
+      "packet_id": "elementary.algebra.add_sq_three.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "algebra.factorization_basics",
+      "dedupe_cluster_id": "algebra.add_sq_three"
+    },
+    {
       "packet_id": "elementary.algebra.add_zero.v1",
       "eligibility": "public_train",
       "split_family": "train",
@@ -63,8 +72,8 @@
     },
     {
       "packet_id": "elementary.algebra.cubic_pos.v1",
-      "eligibility": "public_train",
-      "split_family": "train",
+      "eligibility": "quarantined",
+      "split_family": "quarantined",
       "template_family_id": "algebra.sos_inequalities",
       "dedupe_cluster_id": "algebra.cubic_pos"
     },
@@ -81,6 +90,13 @@
       "split_family": "train",
       "template_family_id": "algebra.factorization_basics",
       "dedupe_cluster_id": "algebra.diff_of_squares"
+    },
+    {
+      "packet_id": "elementary.algebra.div_add_div_same.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "algebra.field_identities",
+      "dedupe_cluster_id": "algebra.div_add_div_same"
     },
     {
       "packet_id": "elementary.algebra.factor_by_grouping.v1",
@@ -160,6 +176,13 @@
       "dedupe_cluster_id": "algebra.neg_neg"
     },
     {
+      "packet_id": "elementary.algebra.neg_sq.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "algebra.factorization_basics",
+      "dedupe_cluster_id": "algebra.neg_sq"
+    },
+    {
       "packet_id": "elementary.algebra.neg_two_ab_le.v1",
       "eligibility": "public_train",
       "split_family": "train",
@@ -188,11 +211,32 @@
       "dedupe_cluster_id": "algebra.one_pow"
     },
     {
+      "packet_id": "elementary.algebra.pow_add.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "algebra.power_basics",
+      "dedupe_cluster_id": "algebra.pow_add"
+    },
+    {
+      "packet_id": "elementary.algebra.pow_mul.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "algebra.power_basics",
+      "dedupe_cluster_id": "algebra.pow_mul"
+    },
+    {
       "packet_id": "elementary.algebra.pow_one.v1",
       "eligibility": "public_train",
       "split_family": "train",
       "template_family_id": "algebra.power_basics",
       "dedupe_cluster_id": "algebra.pow_one"
+    },
+    {
+      "packet_id": "elementary.algebra.pow_succ.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "algebra.power_basics",
+      "dedupe_cluster_id": "algebra.pow_succ"
     },
     {
       "packet_id": "elementary.algebra.pow_two.v1",
@@ -216,6 +260,27 @@
       "dedupe_cluster_id": "algebra.quad_form_nonneg"
     },
     {
+      "packet_id": "elementary.algebra.quad_formula_real_root.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "algebra.quadratic_basics",
+      "dedupe_cluster_id": "algebra.quad_formula_real_root"
+    },
+    {
+      "packet_id": "elementary.algebra.quadratic_pos.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "algebra.sos_inequalities",
+      "dedupe_cluster_id": "algebra.quadratic_pos"
+    },
+    {
+      "packet_id": "elementary.algebra.sq_sum_ge_two_mul.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "algebra.sos_bounds",
+      "dedupe_cluster_id": "algebra.sq_sum_two_mul"
+    },
+    {
       "packet_id": "elementary.algebra.sq_sum_le.v1",
       "eligibility": "public_train",
       "split_family": "train",
@@ -237,6 +302,13 @@
       "dedupe_cluster_id": "algebra.sub_eq_add_neg"
     },
     {
+      "packet_id": "elementary.algebra.sub_mul.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "algebra.distributivity_basics",
+      "dedupe_cluster_id": "algebra.sub_mul"
+    },
+    {
       "packet_id": "elementary.algebra.sub_self.v1",
       "eligibility": "public_train",
       "split_family": "train",
@@ -256,6 +328,13 @@
       "split_family": "train",
       "template_family_id": "algebra.factorization_basics",
       "dedupe_cluster_id": "algebra.sum_of_cubes"
+    },
+    {
+      "packet_id": "elementary.algebra.sum_reciprocals_eq_sum_over_product.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "algebra.field_simp_basics",
+      "dedupe_cluster_id": "algebra.sum_reciprocals"
     },
     {
       "packet_id": "elementary.algebra.two_mul.v1",
@@ -293,11 +372,39 @@
       "dedupe_cluster_id": "algebra.zero_sub"
     },
     {
+      "packet_id": "elementary.combinatorics.card_bi_union_le.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "combinatorics.finset_card",
+      "dedupe_cluster_id": "combinatorics.card_union"
+    },
+    {
       "packet_id": "elementary.combinatorics.card_empty.v1",
       "eligibility": "public_train",
       "split_family": "train",
       "template_family_id": "combinatorics.finset_cardinality",
       "dedupe_cluster_id": "combinatorics.card_empty"
+    },
+    {
+      "packet_id": "elementary.combinatorics.card_filter_partition.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "combinatorics.finset_card",
+      "dedupe_cluster_id": "combinatorics.card_filter"
+    },
+    {
+      "packet_id": "elementary.combinatorics.card_image_le.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "combinatorics.finset_card",
+      "dedupe_cluster_id": "combinatorics.card_image"
+    },
+    {
+      "packet_id": "elementary.combinatorics.card_image_of_injective.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "combinatorics.finset_card",
+      "dedupe_cluster_id": "combinatorics.card_image"
     },
     {
       "packet_id": "elementary.combinatorics.card_insert_le.v1",
@@ -314,11 +421,32 @@
       "dedupe_cluster_id": "combinatorics.card_mono"
     },
     {
+      "packet_id": "elementary.combinatorics.card_powerset.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "combinatorics.finset_card",
+      "dedupe_cluster_id": "combinatorics.card_powerset"
+    },
+    {
+      "packet_id": "elementary.combinatorics.card_product.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "combinatorics.finset_card",
+      "dedupe_cluster_id": "combinatorics.card_product"
+    },
+    {
       "packet_id": "elementary.combinatorics.card_range.v1",
       "eligibility": "public_train",
       "split_family": "train",
       "template_family_id": "combinatorics.finset_card",
       "dedupe_cluster_id": "combinatorics.card_range"
+    },
+    {
+      "packet_id": "elementary.combinatorics.card_sdiff_of_subset.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "combinatorics.finset_card",
+      "dedupe_cluster_id": "combinatorics.card_sdiff"
     },
     {
       "packet_id": "elementary.combinatorics.card_singleton.v1",
@@ -328,7 +456,56 @@
       "dedupe_cluster_id": "combinatorics.card_singleton"
     },
     {
+      "packet_id": "elementary.combinatorics.card_union_add_card_inter.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "combinatorics.finset_card",
+      "dedupe_cluster_id": "combinatorics.card_union_inter"
+    },
+    {
       "packet_id": "elementary.combinatorics.card_union_le.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "combinatorics.finset_card",
+      "dedupe_cluster_id": "combinatorics.card_union"
+    },
+    {
+      "packet_id": "elementary.combinatorics.card_union_not_additive.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "combinatorics.finset_card",
+      "dedupe_cluster_id": "combinatorics.card_union_disjoint"
+    },
+    {
+      "packet_id": "elementary.combinatorics.choose_self.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "combinatorics.binomial_coefficient_identities",
+      "dedupe_cluster_id": "combinatorics.nat_choose_basics"
+    },
+    {
+      "packet_id": "elementary.combinatorics.choose_succ_succ.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "combinatorics.binomial_coefficient_identities",
+      "dedupe_cluster_id": "combinatorics.nat_choose_basics"
+    },
+    {
+      "packet_id": "elementary.combinatorics.choose_symm.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "combinatorics.binomial_coefficient_identities",
+      "dedupe_cluster_id": "combinatorics.nat_choose_basics"
+    },
+    {
+      "packet_id": "elementary.combinatorics.choose_zero_right.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "combinatorics.binomial_coefficient_identities",
+      "dedupe_cluster_id": "combinatorics.nat_choose_basics"
+    },
+    {
+      "packet_id": "elementary.combinatorics.disjoint_union_card.v1",
       "eligibility": "public_train",
       "split_family": "train",
       "template_family_id": "combinatorics.finset_card",
@@ -433,6 +610,27 @@
       "dedupe_cluster_id": "combinatorics.mem_union"
     },
     {
+      "packet_id": "elementary.combinatorics.pigeonhole_3_into_2.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "combinatorics.pigeonhole_basics",
+      "dedupe_cluster_id": "combinatorics.pigeonhole"
+    },
+    {
+      "packet_id": "elementary.combinatorics.pigeonhole_general.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "combinatorics.pigeonhole_basics",
+      "dedupe_cluster_id": "combinatorics.pigeonhole"
+    },
+    {
+      "packet_id": "elementary.combinatorics.primes_below_ten_card.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "combinatorics.finset_filter_card",
+      "dedupe_cluster_id": "combinatorics.primes_below_ten"
+    },
+    {
       "packet_id": "elementary.combinatorics.prod_range_one.v1",
       "eligibility": "public_train",
       "split_family": "train",
@@ -440,11 +638,25 @@
       "dedupe_cluster_id": "combinatorics.prod_range_one"
     },
     {
+      "packet_id": "elementary.combinatorics.prod_range_succ.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "combinatorics.finite_products_sums",
+      "dedupe_cluster_id": "combinatorics.finset_prod"
+    },
+    {
       "packet_id": "elementary.combinatorics.prod_range_zero.v1",
       "eligibility": "public_train",
       "split_family": "train",
       "template_family_id": "combinatorics.finite_products",
       "dedupe_cluster_id": "combinatorics.prod_range_zero"
+    },
+    {
+      "packet_id": "elementary.combinatorics.set_mem_union.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "combinatorics.set_basics",
+      "dedupe_cluster_id": "combinatorics.set_mem_union"
     },
     {
       "packet_id": "elementary.combinatorics.subset_refl.v1",
@@ -480,6 +692,13 @@
       "split_family": "train",
       "template_family_id": "combinatorics.finset_card",
       "dedupe_cluster_id": "combinatorics.sum_ones"
+    },
+    {
+      "packet_id": "elementary.combinatorics.sum_range_choose.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "combinatorics.binomial_coefficient_identities",
+      "dedupe_cluster_id": "combinatorics.nat_choose_basics"
     },
     {
       "packet_id": "elementary.combinatorics.sum_range_one.v1",
@@ -580,6 +799,27 @@
       "dedupe_cluster_id": "functions.abs_zero"
     },
     {
+      "packet_id": "elementary.functions.bijective_comp.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "functions.composition_basics",
+      "dedupe_cluster_id": "functions.bijective_comp"
+    },
+    {
+      "packet_id": "elementary.functions.finite_injective_iff_surjective.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "functions.finite_endofunction",
+      "dedupe_cluster_id": "functions.finite_injective_iff_surjective"
+    },
+    {
+      "packet_id": "elementary.functions.fixed_point_id.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "functions.injective_surjective_basics",
+      "dedupe_cluster_id": "functions.fixed_point_id"
+    },
+    {
       "packet_id": "elementary.functions.geom_series_mul.v1",
       "eligibility": "public_train",
       "split_family": "train",
@@ -587,11 +827,60 @@
       "dedupe_cluster_id": "functions.geom_series"
     },
     {
+      "packet_id": "elementary.functions.id_bijective.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "functions.injective_surjective_basics",
+      "dedupe_cluster_id": "functions.id_bijective"
+    },
+    {
+      "packet_id": "elementary.functions.image_inter_subset.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "functions.image_preimage_basics",
+      "dedupe_cluster_id": "functions.image_inter_subset"
+    },
+    {
+      "packet_id": "elementary.functions.image_union.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "functions.image_preimage_basics",
+      "dedupe_cluster_id": "functions.image_union"
+    },
+    {
+      "packet_id": "elementary.functions.injective_comp.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "functions.injective_surjective_basics",
+      "dedupe_cluster_id": "functions.injective_comp"
+    },
+    {
       "packet_id": "elementary.functions.le_abs_self.v1",
       "eligibility": "public_train",
       "split_family": "train",
       "template_family_id": "functions.absolute_value",
       "dedupe_cluster_id": "functions.le_abs_self"
+    },
+    {
+      "packet_id": "elementary.functions.left_inverse_injective.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "functions.inverse_basics",
+      "dedupe_cluster_id": "functions.left_inverse_injective"
+    },
+    {
+      "packet_id": "elementary.functions.linear_injective.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "functions.injective_surjective_basics",
+      "dedupe_cluster_id": "functions.linear_injective"
+    },
+    {
+      "packet_id": "elementary.functions.linear_injective_concrete_instance.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "functions.injectivity_basics",
+      "dedupe_cluster_id": "functions.linear_injective"
     },
     {
       "packet_id": "elementary.functions.max_comm.v1",
@@ -615,11 +904,25 @@
       "dedupe_cluster_id": "functions.min_comm"
     },
     {
+      "packet_id": "elementary.functions.min_le_max.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "functions.max_min_basics",
+      "dedupe_cluster_id": "functions.min_le_max"
+    },
+    {
       "packet_id": "elementary.functions.min_self.v1",
       "eligibility": "public_train",
       "split_family": "train",
       "template_family_id": "functions.order_lattice",
       "dedupe_cluster_id": "functions.min_self"
+    },
+    {
+      "packet_id": "elementary.functions.monotone_comp.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "functions.injective_surjective_basics",
+      "dedupe_cluster_id": "functions.monotone_comp"
     },
     {
       "packet_id": "elementary.functions.neg_abs_le.v1",
@@ -629,6 +932,20 @@
       "dedupe_cluster_id": "functions.neg_abs_le"
     },
     {
+      "packet_id": "elementary.functions.preimage_inter.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "functions.image_preimage_basics",
+      "dedupe_cluster_id": "functions.preimage_inter"
+    },
+    {
+      "packet_id": "elementary.functions.right_inverse_surjective.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "functions.inverse_basics",
+      "dedupe_cluster_id": "functions.right_inverse_surjective"
+    },
+    {
       "packet_id": "elementary.functions.sq_abs.v1",
       "eligibility": "public_train",
       "split_family": "train",
@@ -636,11 +953,46 @@
       "dedupe_cluster_id": "functions.sq_abs"
     },
     {
+      "packet_id": "elementary.functions.strictmono_comp.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "functions.monotone_basics",
+      "dedupe_cluster_id": "functions.strictmono_comp"
+    },
+    {
+      "packet_id": "elementary.functions.strictmono_injective.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "functions.injective_surjective_basics",
+      "dedupe_cluster_id": "functions.strictmono_injective"
+    },
+    {
+      "packet_id": "elementary.functions.surjective_comp.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "functions.injective_surjective_basics",
+      "dedupe_cluster_id": "functions.surjective_comp"
+    },
+    {
+      "packet_id": "elementary.functions.surjective_not_always_injective.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "functions.injectivity_basics",
+      "dedupe_cluster_id": "functions.surjective_injective_converse"
+    },
+    {
       "packet_id": "elementary.geometry.angle_bisector_double.v1",
       "eligibility": "public_train",
       "split_family": "train",
       "template_family_id": "geometry.angle_relations",
       "dedupe_cluster_id": "geometry.angle_bisector"
+    },
+    {
+      "packet_id": "elementary.geometry.apollonius_median.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "geometry.coordinate_distance",
+      "dedupe_cluster_id": "geometry.apollonius_median"
     },
     {
       "packet_id": "elementary.geometry.centroid_sum.v1",
@@ -655,6 +1007,13 @@
       "split_family": "train",
       "template_family_id": "geometry.coordinate_basics",
       "dedupe_cluster_id": "geometry.centroid_x"
+    },
+    {
+      "packet_id": "elementary.geometry.circle_point_dist_eq_radius.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "geometry.coordinate_distance_basics",
+      "dedupe_cluster_id": "geometry.circle_point_dist_eq_radius"
     },
     {
       "packet_id": "elementary.geometry.collinear_det.v1",
@@ -727,6 +1086,13 @@
       "dedupe_cluster_id": "geometry.isosceles"
     },
     {
+      "packet_id": "elementary.geometry.law_of_cosines.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "geometry.coordinate_distance_basics",
+      "dedupe_cluster_id": "geometry.law_of_cosines"
+    },
+    {
       "packet_id": "elementary.geometry.midpoint_between.v1",
       "eligibility": "public_train",
       "split_family": "train",
@@ -776,6 +1142,13 @@
       "dedupe_cluster_id": "geometry.perp_slopes_comm"
     },
     {
+      "packet_id": "elementary.geometry.pythagorean_right_angle.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "geometry.coordinate_distance",
+      "dedupe_cluster_id": "geometry.pythagorean_right_angle"
+    },
+    {
       "packet_id": "elementary.geometry.reflection_dist.v1",
       "eligibility": "public_train",
       "split_family": "train",
@@ -783,11 +1156,32 @@
       "dedupe_cluster_id": "geometry.reflection"
     },
     {
+      "packet_id": "elementary.geometry.reflection_over_x_axis.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "geometry.coordinate_distance",
+      "dedupe_cluster_id": "geometry.reflection_over_x_axis"
+    },
+    {
+      "packet_id": "elementary.geometry.reflection_over_y_axis.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "geometry.coordinate_distance",
+      "dedupe_cluster_id": "geometry.reflection_over_y_axis"
+    },
+    {
       "packet_id": "elementary.geometry.reflex_angle.v1",
       "eligibility": "public_train",
       "split_family": "train",
       "template_family_id": "geometry.angle_relations",
       "dedupe_cluster_id": "geometry.reflex"
+    },
+    {
+      "packet_id": "elementary.geometry.right_triangle_area_half_base_height.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "geometry.coordinate_area_basics",
+      "dedupe_cluster_id": "geometry.right_triangle_area_half_base_height"
     },
     {
       "packet_id": "elementary.geometry.section_formula_thirds.v1",
@@ -809,6 +1203,13 @@
       "split_family": "train",
       "template_family_id": "geometry.coordinate_distance",
       "dedupe_cluster_id": "geometry.slope_symm"
+    },
+    {
+      "packet_id": "elementary.geometry.slope_div_mul_not_always_cancel.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "geometry.division_guard_lemmas",
+      "dedupe_cluster_id": "geometry.slope_div_zero"
     },
     {
       "packet_id": "elementary.geometry.supplementary_angle.v1",
@@ -839,11 +1240,144 @@
       "dedupe_cluster_id": "geometry.vertical_angles"
     },
     {
+      "packet_id": "elementary.induction.arith_seq_sum.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "induction.arithmetic_series",
+      "dedupe_cluster_id": "induction.arith_seq_sum"
+    },
+    {
+      "packet_id": "elementary.induction.bernoulli_inequality.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "induction.exponential_growth_bounds",
+      "dedupe_cluster_id": "induction.bernoulli_inequality"
+    },
+    {
+      "packet_id": "elementary.induction.euclid_gcd_eq_gcd.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "induction.recursion_techniques",
+      "dedupe_cluster_id": "induction.euclid_gcd_eq_gcd"
+    },
+    {
+      "packet_id": "elementary.induction.even_odd_mutual_totality.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "induction.recursion_techniques",
+      "dedupe_cluster_id": "induction.even_odd_mutual"
+    },
+    {
+      "packet_id": "elementary.induction.exists_prime_factor.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "induction.strong_induction_basics",
+      "dedupe_cluster_id": "induction.exists_prime_factor"
+    },
+    {
+      "packet_id": "elementary.induction.exists_prime_factorization.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "induction.strong_induction_minfac",
+      "dedupe_cluster_id": "induction.exists_prime_factorization"
+    },
+    {
+      "packet_id": "elementary.induction.factorial_add_ge_mul.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "induction.factorial_bounds",
+      "dedupe_cluster_id": "induction.factorial_add_ge_mul"
+    },
+    {
+      "packet_id": "elementary.induction.factorial_ge_two_pow.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "induction.exponential_growth_bounds",
+      "dedupe_cluster_id": "induction.factorial_ge_two_pow"
+    },
+    {
+      "packet_id": "elementary.induction.factorial_pos_induction.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "induction.factorial_and_power_bounds",
+      "dedupe_cluster_id": "induction.factorial_pos_induction"
+    },
+    {
+      "packet_id": "elementary.induction.fib_le_two_pow.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "induction.recursion_via_submit_module",
+      "dedupe_cluster_id": "induction.fib_le_two_pow"
+    },
+    {
+      "packet_id": "elementary.induction.fib_sum_succ.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "induction.finite_sum_identities",
+      "dedupe_cluster_id": "induction.fib_sum_succ"
+    },
+    {
+      "packet_id": "elementary.induction.foldl_cons_eq_reverse_append.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "induction.list_accumulator_lemmas",
+      "dedupe_cluster_id": "induction.foldl_reverse_accumulator"
+    },
+    {
       "packet_id": "elementary.induction.gauss_sum.v1",
       "eligibility": "public_train",
       "split_family": "train",
       "template_family_id": "induction.arithmetic_series",
       "dedupe_cluster_id": "induction.gauss_sum"
+    },
+    {
+      "packet_id": "elementary.induction.geom_series_sum_induction.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "induction.arithmetic_series",
+      "dedupe_cluster_id": "induction.geom_series_sum"
+    },
+    {
+      "packet_id": "elementary.induction.myfactorial_eq_factorial.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "induction.recursion_via_submit_module",
+      "dedupe_cluster_id": "induction.myfactorial_eq_factorial"
+    },
+    {
+      "packet_id": "elementary.induction.mygcd_wellfounded.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "induction.recursion_techniques",
+      "dedupe_cluster_id": "induction.mygcd_wellfounded"
+    },
+    {
+      "packet_id": "elementary.induction.odd_part_decomposition.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "induction.strong_induction_basics",
+      "dedupe_cluster_id": "induction.odd_part_decomposition"
+    },
+    {
+      "packet_id": "elementary.induction.one_le_two_pow.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "induction.exponential_growth_bounds",
+      "dedupe_cluster_id": "induction.one_le_two_pow"
+    },
+    {
+      "packet_id": "elementary.induction.prod_range_monotone.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "induction.monotonicity",
+      "dedupe_cluster_id": "induction.prod_range_monotone"
+    },
+    {
+      "packet_id": "elementary.induction.prod_range_pos.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "induction.finite_sum_identities",
+      "dedupe_cluster_id": "induction.prod_range_pos"
     },
     {
       "packet_id": "elementary.induction.prod_range_succ.v1",
@@ -853,6 +1387,13 @@
       "dedupe_cluster_id": "induction.prod_range_succ"
     },
     {
+      "packet_id": "elementary.induction.sum_consec_product.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "induction.finite_sum_closed_form",
+      "dedupe_cluster_id": "induction.sum_consec_product"
+    },
+    {
       "packet_id": "elementary.induction.sum_cubes.v1",
       "eligibility": "public_train",
       "split_family": "train",
@@ -860,11 +1401,39 @@
       "dedupe_cluster_id": "induction.sum_cubes"
     },
     {
+      "packet_id": "elementary.induction.sum_cubes_eq_sum_sq.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "induction.finite_sum_closed_form",
+      "dedupe_cluster_id": "induction.sum_cubes_eq_sum_sq"
+    },
+    {
+      "packet_id": "elementary.induction.sum_evens.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "induction.arithmetic_series",
+      "dedupe_cluster_id": "induction.sum_evens"
+    },
+    {
+      "packet_id": "elementary.induction.sum_fib_sq.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "induction.finite_sum_closed_form",
+      "dedupe_cluster_id": "induction.sum_fib_sq"
+    },
+    {
       "packet_id": "elementary.induction.sum_odds.v1",
       "eligibility": "public_train",
       "split_family": "train",
       "template_family_id": "induction.arithmetic_series",
       "dedupe_cluster_id": "induction.sum_odds"
+    },
+    {
+      "packet_id": "elementary.induction.sum_range_monotone.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "induction.monotonicity",
+      "dedupe_cluster_id": "induction.sum_range_monotone"
     },
     {
       "packet_id": "elementary.induction.sum_range_succ.v1",
@@ -881,6 +1450,62 @@
       "dedupe_cluster_id": "induction.sum_squares"
     },
     {
+      "packet_id": "elementary.induction.telescoping_sum.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "induction.telescoping",
+      "dedupe_cluster_id": "induction.telescoping_sum"
+    },
+    {
+      "packet_id": "elementary.induction.two_pow_gt_self.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "induction.exponential_growth_bounds",
+      "dedupe_cluster_id": "induction.two_pow_gt_self"
+    },
+    {
+      "packet_id": "elementary.induction.two_pow_gt_sq_from_five.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "induction.shifted_threshold_induction",
+      "dedupe_cluster_id": "induction.two_pow_gt_sq_from_five"
+    },
+    {
+      "packet_id": "elementary.induction.two_pow_strictmono.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "induction.monotonicity_from_succ_step",
+      "dedupe_cluster_id": "induction.two_pow_strictmono"
+    },
+    {
+      "packet_id": "elementary.inequalities.abs_abs_sub_abs_le.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "inequalities.absolute_value_basics",
+      "dedupe_cluster_id": "inequalities.abs_abs_sub_abs_le"
+    },
+    {
+      "packet_id": "elementary.inequalities.abs_add_le.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "inequalities.absolute_value_basics",
+      "dedupe_cluster_id": "inequalities.abs_add_le"
+    },
+    {
+      "packet_id": "elementary.inequalities.abs_add_three.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "inequalities.absolute_value_basics",
+      "dedupe_cluster_id": "inequalities.abs_add_three"
+    },
+    {
+      "packet_id": "elementary.inequalities.abs_sub_le.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "inequalities.absolute_value_basics",
+      "dedupe_cluster_id": "inequalities.abs_sub_le"
+    },
+    {
       "packet_id": "elementary.inequalities.add_one_div_ge_two.v1",
       "eligibility": "public_train",
       "split_family": "train",
@@ -888,11 +1513,46 @@
       "dedupe_cluster_id": "inequalities.add_one_div"
     },
     {
+      "packet_id": "elementary.inequalities.am_gm_four_term.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "inequalities.am_gm_ladder",
+      "dedupe_cluster_id": "inequalities.am_gm_four_term"
+    },
+    {
       "packet_id": "elementary.inequalities.am_gm_two.v1",
       "eligibility": "public_train",
       "split_family": "train",
       "template_family_id": "inequalities.amgm_two_var",
       "dedupe_cluster_id": "inequalities.am_gm_two"
+    },
+    {
+      "packet_id": "elementary.inequalities.am_hm_two.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "inequalities.power_mean_chain",
+      "dedupe_cluster_id": "inequalities.am_hm_two"
+    },
+    {
+      "packet_id": "elementary.inequalities.amgm_wrong_direction_counterexample.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "inequalities.false_generalization_hazards",
+      "dedupe_cluster_id": "inequalities.amgm_wrong_direction"
+    },
+    {
+      "packet_id": "elementary.inequalities.avg_between_min_max.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "inequalities.min_max_basics",
+      "dedupe_cluster_id": "inequalities.avg_between_min_max"
+    },
+    {
+      "packet_id": "elementary.inequalities.cauchy_three_term.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "inequalities.cauchy_schwarz_ladder",
+      "dedupe_cluster_id": "inequalities.cauchy_three_term"
     },
     {
       "packet_id": "elementary.inequalities.cauchy_two_term.v1",
@@ -909,6 +1569,48 @@
       "dedupe_cluster_id": "inequalities.four_mul_le"
     },
     {
+      "packet_id": "elementary.inequalities.general_amgm.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "inequalities.amgm_ladder",
+      "dedupe_cluster_id": "inequalities.general_amgm"
+    },
+    {
+      "packet_id": "elementary.inequalities.general_cauchy_schwarz.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "inequalities.named_ladder_n_term",
+      "dedupe_cluster_id": "inequalities.general_cauchy_schwarz"
+    },
+    {
+      "packet_id": "elementary.inequalities.general_qm_am.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "inequalities.named_ladder_n_term",
+      "dedupe_cluster_id": "inequalities.general_qm_am"
+    },
+    {
+      "packet_id": "elementary.inequalities.max_add_le.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "inequalities.min_max_basics",
+      "dedupe_cluster_id": "inequalities.max_add_le"
+    },
+    {
+      "packet_id": "elementary.inequalities.min_add_max.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "inequalities.min_max_family",
+      "dedupe_cluster_id": "inequalities.min_add_max"
+    },
+    {
+      "packet_id": "elementary.inequalities.min_add_min_le.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "inequalities.min_max_basics",
+      "dedupe_cluster_id": "inequalities.min_add_min_le"
+    },
+    {
       "packet_id": "elementary.inequalities.mul_pos.v1",
       "eligibility": "public_train",
       "split_family": "train",
@@ -921,6 +1623,13 @@
       "split_family": "train",
       "template_family_id": "inequalities.square_nonneg",
       "dedupe_cluster_id": "inequalities.mul_self_nonneg"
+    },
+    {
+      "packet_id": "elementary.inequalities.nesbitt_three_var.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "inequalities.named_olympiad_inequalities",
+      "dedupe_cluster_id": "inequalities.nesbitt_three_var"
     },
     {
       "packet_id": "elementary.inequalities.qm_am_bound.v1",
@@ -944,6 +1653,13 @@
       "dedupe_cluster_id": "inequalities.reverse_triangle"
     },
     {
+      "packet_id": "elementary.inequalities.schur_degree_one.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "inequalities.named_olympiad_inequalities",
+      "dedupe_cluster_id": "inequalities.schur_degree_one"
+    },
+    {
       "packet_id": "elementary.inequalities.sq_nonneg.v1",
       "eligibility": "public_train",
       "split_family": "train",
@@ -963,6 +1679,13 @@
       "split_family": "train",
       "template_family_id": "inequalities.sum_of_squares",
       "dedupe_cluster_id": "inequalities.three_var_am_gm"
+    },
+    {
+      "packet_id": "elementary.inequalities.three_var_qm_am_bound.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "inequalities.power_mean_ladder",
+      "dedupe_cluster_id": "inequalities.three_var_qm_am_bound"
     },
     {
       "packet_id": "elementary.inequalities.three_var_sq_ge.v1",
@@ -1000,6 +1723,13 @@
       "dedupe_cluster_id": "number_theory.add_mod"
     },
     {
+      "packet_id": "elementary.number_theory.bezout.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "number_theory.gcd_lcm_family",
+      "dedupe_cluster_id": "number_theory.bezout"
+    },
+    {
       "packet_id": "elementary.number_theory.coprime_comm.v1",
       "eligibility": "public_train",
       "split_family": "train",
@@ -1026,6 +1756,20 @@
       "split_family": "train",
       "template_family_id": "number_theory.gcd_basics",
       "dedupe_cluster_id": "number_theory.dvd_gcd"
+    },
+    {
+      "packet_id": "elementary.number_theory.dvd_lcm_left.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "number_theory.gcd_lcm_basics",
+      "dedupe_cluster_id": "number_theory.dvd_lcm_left"
+    },
+    {
+      "packet_id": "elementary.number_theory.dvd_lcm_right.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "number_theory.gcd_lcm_family",
+      "dedupe_cluster_id": "number_theory.dvd_lcm_right"
     },
     {
       "packet_id": "elementary.number_theory.dvd_mul.v1",
@@ -1112,6 +1856,13 @@
       "dedupe_cluster_id": "number_theory.even_or_odd"
     },
     {
+      "packet_id": "elementary.number_theory.even_sq.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "number_theory.parity_basics",
+      "dedupe_cluster_id": "number_theory.even_sq"
+    },
+    {
       "packet_id": "elementary.number_theory.factorial_le.v1",
       "eligibility": "public_train",
       "split_family": "train",
@@ -1124,6 +1875,13 @@
       "split_family": "train",
       "template_family_id": "number_theory.nat_basics",
       "dedupe_cluster_id": "number_theory.factorial_pos"
+    },
+    {
+      "packet_id": "elementary.number_theory.four_mul_not_prime.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "number_theory.primality_basics",
+      "dedupe_cluster_id": "number_theory.four_mul_not_prime"
     },
     {
       "packet_id": "elementary.number_theory.gcd_comm.v1",
@@ -1145,6 +1903,13 @@
       "split_family": "train",
       "template_family_id": "number_theory.gcd_basics",
       "dedupe_cluster_id": "number_theory.gcd_dvd_right"
+    },
+    {
+      "packet_id": "elementary.number_theory.gcd_mul_lcm.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "number_theory.gcd_lcm_family",
+      "dedupe_cluster_id": "number_theory.gcd_mul_lcm"
     },
     {
       "packet_id": "elementary.number_theory.gcd_mul_left.v1",
@@ -1173,6 +1938,13 @@
       "split_family": "train",
       "template_family_id": "number_theory.gcd_basics",
       "dedupe_cluster_id": "number_theory.gcd_zero_left"
+    },
+    {
+      "packet_id": "elementary.number_theory.lcm_comm.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "number_theory.gcd_lcm_basics",
+      "dedupe_cluster_id": "number_theory.lcm_comm"
     },
     {
       "packet_id": "elementary.number_theory.le_of_lt_succ.v1",
@@ -1245,6 +2017,13 @@
       "dedupe_cluster_id": "nat.pos_of_ne_zero"
     },
     {
+      "packet_id": "elementary.number_theory.not_prime_one.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "number_theory.primality_basics",
+      "dedupe_cluster_id": "number_theory.not_prime_one"
+    },
+    {
       "packet_id": "elementary.number_theory.odd_add_odd.v1",
       "eligibility": "public_train",
       "split_family": "train",
@@ -1271,6 +2050,27 @@
       "split_family": "train",
       "template_family_id": "number_theory.nat_basics",
       "dedupe_cluster_id": "number_theory.pow_le_pow_left"
+    },
+    {
+      "packet_id": "elementary.number_theory.prime_dvd_mul.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "number_theory.primality_basics",
+      "dedupe_cluster_id": "number_theory.prime_dvd_mul"
+    },
+    {
+      "packet_id": "elementary.number_theory.prime_two.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "number_theory.primality_basics",
+      "dedupe_cluster_id": "number_theory.prime_two"
+    },
+    {
+      "packet_id": "elementary.number_theory.sq_mod_two_eq_self_mod_two.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "number_theory.parity_basics",
+      "dedupe_cluster_id": "number_theory.sq_mod_two_eq_self_mod_two"
     },
     {
       "packet_id": "elementary.number_theory.sub_add_cancel.v1",
@@ -1322,6 +2122,13 @@
       "dedupe_cluster_id": "number_theory.two_pow_pos"
     },
     {
+      "packet_id": "elementary.number_theory.well_ordering.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "number_theory.foundational_principles",
+      "dedupe_cluster_id": "number_theory.well_ordering"
+    },
+    {
       "packet_id": "elementary.number_theory.zero_mod.v1",
       "eligibility": "public_train",
       "split_family": "train",
@@ -1329,11 +2136,382 @@
       "dedupe_cluster_id": "nat.zero_mod"
     },
     {
+      "packet_id": "fixtures.diagnostics.diagnostic_categories_conformance.v1",
+      "eligibility": "private_audit_only",
+      "split_family": "private_audit_only",
+      "template_family_id": null,
+      "dedupe_cluster_id": null
+    },
+    {
+      "packet_id": "fixtures.metrics.model_performance_conformance.v1",
+      "eligibility": "private_audit_only",
+      "split_family": "private_audit_only",
+      "template_family_id": null,
+      "dedupe_cluster_id": null
+    },
+    {
+      "packet_id": "frontier.erdos.erdos_1052_filter_ordcompl.v1",
+      "eligibility": "quarantined",
+      "split_family": "quarantined",
+      "template_family_id": "frontier.erdos_companion_results",
+      "dedupe_cluster_id": "frontier.erdos_1052"
+    },
+    {
+      "packet_id": "frontier.erdos.erdos_1052_not_dvd_div_ordproj.v1",
+      "eligibility": "quarantined",
+      "split_family": "quarantined",
+      "template_family_id": "frontier.erdos_companion_results",
+      "dedupe_cluster_id": "frontier.erdos_1052"
+    },
+    {
+      "packet_id": "frontier.erdos.erdos_1052_omega_odd_le_two_adic_add_one.v1",
+      "eligibility": "quarantined",
+      "split_family": "quarantined",
+      "template_family_id": "frontier.erdos_companion_results",
+      "dedupe_cluster_id": "frontier.erdos_1052"
+    },
+    {
+      "packet_id": "frontier.erdos.erdos_1052_proper_eq_erase.v1",
+      "eligibility": "quarantined",
+      "split_family": "quarantined",
+      "template_family_id": "frontier.erdos_companion_results",
+      "dedupe_cluster_id": "frontier.erdos_1052"
+    },
+    {
+      "packet_id": "frontier.erdos.erdos_1052_sigmastar_mul_of_coprime.v1",
+      "eligibility": "quarantined",
+      "split_family": "quarantined",
+      "template_family_id": "frontier.erdos_companion_results",
+      "dedupe_cluster_id": "frontier.erdos_1052"
+    },
+    {
+      "packet_id": "frontier.erdos.erdos_1052_sigmastar_prime_pow_and_prime.v1",
+      "eligibility": "quarantined",
+      "split_family": "quarantined",
+      "template_family_id": "frontier.erdos_companion_results",
+      "dedupe_cluster_id": "frontier.erdos_1052"
+    },
+    {
+      "packet_id": "frontier.erdos.erdos_291_infinite_gcd_gt_one.v1",
+      "eligibility": "quarantined",
+      "split_family": "quarantined",
+      "template_family_id": "frontier.erdos_companion_results",
+      "dedupe_cluster_id": "frontier.erdos_291"
+    },
+    {
+      "packet_id": "frontier.erdos.erdos_349_alpha_gt_two_not_is_good_pair.v1",
+      "eligibility": "quarantined",
+      "split_family": "quarantined",
+      "template_family_id": "frontier.erdos_companion_results",
+      "dedupe_cluster_id": "frontier.erdos_349"
+    },
+    {
+      "packet_id": "frontier.erdos.erdos_349_alpha_le_one_not_is_good_pair.v1",
+      "eligibility": "quarantined",
+      "split_family": "quarantined",
+      "template_family_id": "frontier.erdos_companion_results",
+      "dedupe_cluster_id": "frontier.erdos_349"
+    },
+    {
+      "packet_id": "frontier.erdos.erdos_349_exists_finset_sum_two_pow.v1",
+      "eligibility": "quarantined",
+      "split_family": "quarantined",
+      "template_family_id": "frontier.erdos_companion_results",
+      "dedupe_cluster_id": "frontier.erdos_349"
+    },
+    {
+      "packet_id": "frontier.erdos.erdos_349_int_coeff_ge_two_not_is_good_pair.v1",
+      "eligibility": "quarantined",
+      "split_family": "quarantined",
+      "template_family_id": "frontier.erdos_companion_results",
+      "dedupe_cluster_id": "frontier.erdos_349"
+    },
+    {
+      "packet_id": "frontier.erdos.erdos_349_integer_is_good_pair_iff.v1",
+      "eligibility": "quarantined",
+      "split_family": "quarantined",
+      "template_family_id": "frontier.erdos_companion_results",
+      "dedupe_cluster_id": "frontier.erdos_349"
+    },
+    {
+      "packet_id": "frontier.erdos.erdos_349_one_two_is_good_pair.v1",
+      "eligibility": "quarantined",
+      "split_family": "quarantined",
+      "template_family_id": "frontier.erdos_companion_results",
+      "dedupe_cluster_id": "frontier.erdos_349"
+    },
+    {
+      "packet_id": "frontier.erdos.erdos_399_cambie.v1",
+      "eligibility": "quarantined",
+      "split_family": "quarantined",
+      "template_family_id": "frontier.erdos_companion_results",
+      "dedupe_cluster_id": "frontier.erdos_399"
+    },
+    {
+      "packet_id": "frontier.erdos.erdos_494_product.v1",
+      "eligibility": "quarantined",
+      "split_family": "quarantined",
+      "template_family_id": "frontier.erdos_companion_results",
+      "dedupe_cluster_id": "frontier.erdos_494"
+    },
+    {
+      "packet_id": "frontier.formal_conjectures.degiorgi_conjecture_dim_one.v1",
+      "eligibility": "quarantined",
+      "split_family": "quarantined",
+      "template_family_id": "frontier.formal_conjectures_companion_results",
+      "dedupe_cluster_id": "frontier.formal_conjectures.degiorgi_dim_one"
+    },
+    {
+      "packet_id": "frontier.formal_conjectures.equational_theories_677_255_class_free.v1",
+      "eligibility": "quarantined",
+      "split_family": "quarantined",
+      "template_family_id": "frontier.formal_conjectures_companion_results",
+      "dedupe_cluster_id": "frontier.formal_conjectures.equational_theories_677_255"
+    },
+    {
+      "packet_id": "frontier.formal_conjectures.euler_sum_of_powers_false_for_k4.v1",
+      "eligibility": "quarantined",
+      "split_family": "quarantined",
+      "template_family_id": "frontier.formal_conjectures_companion_results",
+      "dedupe_cluster_id": "frontier.formal_conjectures.euler_sum_of_powers"
+    },
+    {
+      "packet_id": "frontier.formal_conjectures.euler_sum_of_powers_false_for_k5.v1",
+      "eligibility": "quarantined",
+      "split_family": "quarantined",
+      "template_family_id": "frontier.formal_conjectures_companion_results",
+      "dedupe_cluster_id": "frontier.formal_conjectures.euler_sum_of_powers"
+    },
+    {
+      "packet_id": "frontier.formal_conjectures.oeis_a34693_exists_k_best_possible.v1",
+      "eligibility": "quarantined",
+      "split_family": "quarantined",
+      "template_family_id": "frontier.formal_conjectures_companion_results",
+      "dedupe_cluster_id": "frontier.formal_conjectures.oeis_a34693"
+    },
+    {
+      "packet_id": "frontier.formal_conjectures.oeis_a358684_conjecture_0.v1",
+      "eligibility": "quarantined",
+      "split_family": "quarantined",
+      "template_family_id": "frontier.formal_conjectures_companion_results",
+      "dedupe_cluster_id": "frontier.formal_conjectures.oeis_a358684"
+    },
+    {
+      "packet_id": "frontier.formal_conjectures.union_closed_sharpness.v1",
+      "eligibility": "quarantined",
+      "split_family": "quarantined",
+      "template_family_id": "frontier.formal_conjectures_companion_results",
+      "dedupe_cluster_id": "frontier.formal_conjectures.union_closed"
+    },
+    {
+      "packet_id": "frontier.formal_conjectures.union_closed_singleton_mem.v1",
+      "eligibility": "quarantined",
+      "split_family": "quarantined",
+      "template_family_id": "frontier.formal_conjectures_companion_results",
+      "dedupe_cluster_id": "frontier.formal_conjectures.union_closed"
+    },
+    {
+      "packet_id": "frontier.formal_conjectures.union_closed_univ_card_two.v1",
+      "eligibility": "quarantined",
+      "split_family": "quarantined",
+      "template_family_id": "frontier.formal_conjectures_companion_results",
+      "dedupe_cluster_id": "frontier.formal_conjectures.union_closed"
+    },
+    {
+      "packet_id": "negative.algebra.div_mul_cancel_bare_ring_no_hypothesis_failure.v1",
+      "eligibility": "negative_example_only",
+      "split_family": "negative_example_only",
+      "template_family_id": "algebra.automation_hazards",
+      "dedupe_cluster_id": "algebra.div_mul_cancel.failure_patterns"
+    },
+    {
+      "packet_id": "negative.algebra.frac_sum_bare_ring.missing_field_simp.v1",
+      "eligibility": "negative_example_only",
+      "split_family": "negative_example_only",
+      "template_family_id": "algebra.automation_hazards",
+      "dedupe_cluster_id": "algebra.sum_reciprocals"
+    },
+    {
+      "packet_id": "negative.algebra.nat_sub_ring_trap.v1",
+      "eligibility": "negative_example_only",
+      "split_family": "negative_example_only",
+      "template_family_id": "algebra.automation_hazards",
+      "dedupe_cluster_id": "algebra.nat_sub.failure_patterns"
+    },
+    {
+      "packet_id": "negative.algebra.pow_mul_ring_timeout_failure.v1",
+      "eligibility": "negative_example_only",
+      "split_family": "negative_example_only",
+      "template_family_id": "algebra.automation_hazards",
+      "dedupe_cluster_id": "algebra.pow_mul.failure_patterns"
+    },
+    {
+      "packet_id": "negative.algebra.sq_sum_bare_nlinarith.missing_sos_hint.v1",
+      "eligibility": "negative_example_only",
+      "split_family": "negative_example_only",
+      "template_family_id": "algebra.automation_hazards",
+      "dedupe_cluster_id": "algebra.sq_sum_two_mul"
+    },
+    {
+      "packet_id": "negative.combinatorics.card_image_injective.omega_failure.v1",
+      "eligibility": "negative_example_only",
+      "split_family": "negative_example_only",
+      "template_family_id": "combinatorics.automation_hazards",
+      "dedupe_cluster_id": "combinatorics.card_image.failure_patterns"
+    },
+    {
+      "packet_id": "negative.combinatorics.card_union_no_disjoint.false_generalization.v1",
+      "eligibility": "negative_example_only",
+      "split_family": "negative_example_only",
+      "template_family_id": "combinatorics.false_generalization_hazards",
+      "dedupe_cluster_id": "combinatorics.card_union_disjoint"
+    },
+    {
+      "packet_id": "negative.combinatorics.filter_prime_simp.no_progress.v1",
+      "eligibility": "negative_example_only",
+      "split_family": "negative_example_only",
+      "template_family_id": "combinatorics.automation_hazards",
+      "dedupe_cluster_id": "combinatorics.primes_below_ten"
+    },
+    {
+      "packet_id": "negative.combinatorics.finset_card_atoms.omega_failure.v1",
+      "eligibility": "negative_example_only",
+      "split_family": "negative_example_only",
+      "template_family_id": "combinatorics.automation_hazards",
+      "dedupe_cluster_id": "combinatorics.card_identity.failure_patterns"
+    },
+    {
+      "packet_id": "negative.functions.injective_add.decide_failure.v1",
+      "eligibility": "negative_example_only",
+      "split_family": "negative_example_only",
+      "template_family_id": "functions.automation_hazards",
+      "dedupe_cluster_id": "functions.injective.failure_patterns"
+    },
+    {
+      "packet_id": "negative.functions.quad_injective.simp_unfold_incomplete.v1",
+      "eligibility": "negative_example_only",
+      "split_family": "negative_example_only",
+      "template_family_id": "functions.automation_hazards",
+      "dedupe_cluster_id": "functions.injective_simp_boundary"
+    },
+    {
+      "packet_id": "negative.functions.surjective_implies_injective.finite_pigeonhole_misapplied.v1",
+      "eligibility": "negative_example_only",
+      "split_family": "negative_example_only",
+      "template_family_id": "functions.false_generalization_hazards",
+      "dedupe_cluster_id": "functions.surjective_injective_converse"
+    },
+    {
       "packet_id": "negative.geometry.angle_atoms.nlinarith_failure.v1",
       "eligibility": "negative_example_only",
       "split_family": "negative_example_only",
       "template_family_id": "geometry.automation_hazards",
       "dedupe_cluster_id": "geom.angle.failure_patterns"
+    },
+    {
+      "packet_id": "negative.geometry.pythagorean_bare_ring_no_hypothesis_failure.v1",
+      "eligibility": "negative_example_only",
+      "split_family": "negative_example_only",
+      "template_family_id": "geometry.automation_hazards",
+      "dedupe_cluster_id": "geometry.pythagorean.failure_patterns"
+    },
+    {
+      "packet_id": "negative.geometry.slope_div_mul.division_by_zero_unguarded.v1",
+      "eligibility": "negative_example_only",
+      "split_family": "negative_example_only",
+      "template_family_id": "geometry.false_generalization_hazards",
+      "dedupe_cluster_id": "geometry.slope_div_zero"
+    },
+    {
+      "packet_id": "negative.induction.factorial_gt_two_pow.offbyone_false_base.v1",
+      "eligibility": "negative_example_only",
+      "split_family": "negative_example_only",
+      "template_family_id": "induction.offbyone_base_case_hazards",
+      "dedupe_cluster_id": "induction.factorial_vs_two_pow_threshold"
+    },
+    {
+      "packet_id": "negative.induction.foldl_no_generalize.ih_too_weak.v1",
+      "eligibility": "negative_example_only",
+      "split_family": "negative_example_only",
+      "template_family_id": "induction.generalization_hazards",
+      "dedupe_cluster_id": "induction.foldl_reverse_accumulator"
+    },
+    {
+      "packet_id": "negative.induction.pow_succ_atom.nlinarith_failure.v1",
+      "eligibility": "negative_example_only",
+      "split_family": "negative_example_only",
+      "template_family_id": "induction.automation_hazards",
+      "dedupe_cluster_id": "induction.exponential_atom_failure_patterns"
+    },
+    {
+      "packet_id": "negative.induction.two_pow_gt_sq_offbyone_naive_ih_failure.v1",
+      "eligibility": "negative_example_only",
+      "split_family": "negative_example_only",
+      "template_family_id": "induction.shifted_threshold_hazards",
+      "dedupe_cluster_id": "induction.two_pow_gt_sq.failure_patterns"
+    },
+    {
+      "packet_id": "negative.inequalities.amgm_wrong_direction_bare_nlinarith_failure.v1",
+      "eligibility": "negative_example_only",
+      "split_family": "negative_example_only",
+      "template_family_id": "inequalities.false_generalization_hazards",
+      "dedupe_cluster_id": "inequalities.amgm_wrong_direction.failure_patterns"
+    },
+    {
+      "packet_id": "negative.inequalities.cauchy_three_term_bare_nlinarith_failure.v1",
+      "eligibility": "negative_example_only",
+      "split_family": "negative_example_only",
+      "template_family_id": "inequalities.automation_hazards",
+      "dedupe_cluster_id": "inequalities.nlinarith_missing_hint_failures"
+    },
+    {
+      "packet_id": "negative.inequalities.nesbitt_bare_nlinarith_division_failure.v1",
+      "eligibility": "negative_example_only",
+      "split_family": "negative_example_only",
+      "template_family_id": "inequalities.automation_hazards",
+      "dedupe_cluster_id": "inequalities.nesbitt.failure_patterns"
+    },
+    {
+      "packet_id": "negative.inequalities.three_var_sq_bare_nlinarith_failure.v1",
+      "eligibility": "negative_example_only",
+      "split_family": "negative_example_only",
+      "template_family_id": "inequalities.automation_hazards",
+      "dedupe_cluster_id": "inequalities.three_var_sq.failure_patterns"
+    },
+    {
+      "packet_id": "negative.inequalities.two_mul_le_add_sq_bare_linarith_failure.v1",
+      "eligibility": "negative_example_only",
+      "split_family": "negative_example_only",
+      "template_family_id": "inequalities.automation_hazards",
+      "dedupe_cluster_id": "inequalities.two_mul_le_add_sq.failure_patterns"
+    },
+    {
+      "packet_id": "negative.number_theory.decide_unbounded_prime_universal.v1",
+      "eligibility": "negative_example_only",
+      "split_family": "negative_example_only",
+      "template_family_id": "number_theory.automation_hazards",
+      "dedupe_cluster_id": "nt.four_mul_not_prime"
+    },
+    {
+      "packet_id": "negative.number_theory.divisor_case_split.omega_unevaluated_literal.v1",
+      "eligibility": "negative_example_only",
+      "split_family": "negative_example_only",
+      "template_family_id": "number_theory.automation_hazards",
+      "dedupe_cluster_id": "nt.divisibility.failure_patterns"
+    },
+    {
+      "packet_id": "negative.number_theory.gcd_dvd.omega_no_gcd_theory.v1",
+      "eligibility": "negative_example_only",
+      "split_family": "negative_example_only",
+      "template_family_id": "number_theory.automation_hazards",
+      "dedupe_cluster_id": "nt.gcd_dvd"
+    },
+    {
+      "packet_id": "negative.number_theory.sq_parity.omega_nonlinear_failure.v1",
+      "eligibility": "negative_example_only",
+      "split_family": "negative_example_only",
+      "template_family_id": "number_theory.automation_hazards",
+      "dedupe_cluster_id": "nt.parity.failure_patterns"
     }
   ],
   "template_split_violations": []

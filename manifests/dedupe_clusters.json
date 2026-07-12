@@ -1,30 +1,54 @@
 {
-  "packet_count": 190,
+  "packet_count": 358,
   "exact_file_duplicates": {},
   "canonical_theorem_duplicates": {},
   "family_clusters": {
+    "algebra.automation_hazards": [
+      "negative.algebra.div_mul_cancel_bare_ring_no_hypothesis_failure.v1",
+      "negative.algebra.frac_sum_bare_ring.missing_field_simp.v1",
+      "negative.algebra.nat_sub_ring_trap.v1",
+      "negative.algebra.pow_mul_ring_timeout_failure.v1",
+      "negative.algebra.sq_sum_bare_nlinarith.missing_sos_hint.v1"
+    ],
     "algebra.distributivity": [
       "elementary.algebra.add_mul.v1",
       "elementary.algebra.mul_add.v1"
     ],
+    "algebra.distributivity_basics": [
+      "elementary.algebra.sub_mul.v1"
+    ],
     "algebra.factorization_basics": [
+      "elementary.algebra.add_sq_three.v1",
       "elementary.algebra.binomial_cube.v1",
       "elementary.algebra.binomial_square.v1",
       "elementary.algebra.diff_of_cubes.v1",
       "elementary.algebra.diff_of_squares.v1",
       "elementary.algebra.factor_by_grouping.v1",
+      "elementary.algebra.neg_sq.v1",
       "elementary.algebra.square_of_difference.v1",
       "elementary.algebra.sum_of_cubes.v1"
+    ],
+    "algebra.field_identities": [
+      "elementary.algebra.div_add_div_same.v1"
+    ],
+    "algebra.field_simp_basics": [
+      "elementary.algebra.sum_reciprocals_eq_sum_over_product.v1"
     ],
     "algebra.integral_domain": [
       "elementary.algebra.mul_self_eq_zero.v1"
     ],
     "algebra.power_basics": [
       "elementary.algebra.one_pow.v1",
+      "elementary.algebra.pow_add.v1",
+      "elementary.algebra.pow_mul.v1",
       "elementary.algebra.pow_one.v1",
+      "elementary.algebra.pow_succ.v1",
       "elementary.algebra.pow_two.v1",
       "elementary.algebra.pow_zero.v1",
       "elementary.algebra.zero_pow_succ.v1"
+    ],
+    "algebra.quadratic_basics": [
+      "elementary.algebra.quad_formula_real_root.v1"
     ],
     "algebra.ring_basics": [
       "elementary.algebra.add_assoc.v1",
@@ -48,31 +72,66 @@
       "elementary.algebra.zero_add.v1",
       "elementary.algebra.zero_sub.v1"
     ],
+    "algebra.sos_bounds": [
+      "elementary.algebra.sq_sum_ge_two_mul.v1"
+    ],
     "algebra.sos_inequalities": [
       "elementary.algebra.am_gm_half.v1",
       "elementary.algebra.cubic_pos.v1",
       "elementary.algebra.neg_two_ab_le.v1",
       "elementary.algebra.quad_form_nonneg.v1",
+      "elementary.algebra.quadratic_pos.v1",
       "elementary.algebra.sq_sum_le.v1",
       "elementary.algebra.x4_ge_2x2.v1"
     ],
+    "combinatorics.automation_hazards": [
+      "negative.combinatorics.card_image_injective.omega_failure.v1",
+      "negative.combinatorics.filter_prime_simp.no_progress.v1",
+      "negative.combinatorics.finset_card_atoms.omega_failure.v1"
+    ],
+    "combinatorics.binomial_coefficient_identities": [
+      "elementary.combinatorics.choose_self.v1",
+      "elementary.combinatorics.choose_succ_succ.v1",
+      "elementary.combinatorics.choose_symm.v1",
+      "elementary.combinatorics.choose_zero_right.v1",
+      "elementary.combinatorics.sum_range_choose.v1"
+    ],
+    "combinatorics.false_generalization_hazards": [
+      "negative.combinatorics.card_union_no_disjoint.false_generalization.v1"
+    ],
     "combinatorics.finite_products": [
       "elementary.combinatorics.prod_range_zero.v1"
+    ],
+    "combinatorics.finite_products_sums": [
+      "elementary.combinatorics.prod_range_succ.v1"
     ],
     "combinatorics.finite_sums": [
       "elementary.combinatorics.sum_empty.v1",
       "elementary.combinatorics.sum_range_zero.v1"
     ],
     "combinatorics.finset_card": [
+      "elementary.combinatorics.card_bi_union_le.v1",
+      "elementary.combinatorics.card_filter_partition.v1",
+      "elementary.combinatorics.card_image_le.v1",
+      "elementary.combinatorics.card_image_of_injective.v1",
       "elementary.combinatorics.card_insert_le.v1",
       "elementary.combinatorics.card_le_of_subset.v1",
+      "elementary.combinatorics.card_powerset.v1",
+      "elementary.combinatorics.card_product.v1",
       "elementary.combinatorics.card_range.v1",
+      "elementary.combinatorics.card_sdiff_of_subset.v1",
       "elementary.combinatorics.card_singleton.v1",
+      "elementary.combinatorics.card_union_add_card_inter.v1",
       "elementary.combinatorics.card_union_le.v1",
+      "elementary.combinatorics.card_union_not_additive.v1",
+      "elementary.combinatorics.disjoint_union_card.v1",
       "elementary.combinatorics.sum_ones_card.v1"
     ],
     "combinatorics.finset_cardinality": [
       "elementary.combinatorics.card_empty.v1"
+    ],
+    "combinatorics.finset_filter_card": [
+      "elementary.combinatorics.primes_below_ten_card.v1"
     ],
     "combinatorics.finset_identities": [
       "elementary.combinatorics.empty_inter.v1",
@@ -105,6 +164,41 @@
       "elementary.combinatorics.prod_range_one.v1",
       "elementary.combinatorics.sum_range_one.v1"
     ],
+    "combinatorics.pigeonhole_basics": [
+      "elementary.combinatorics.pigeonhole_3_into_2.v1",
+      "elementary.combinatorics.pigeonhole_general.v1"
+    ],
+    "combinatorics.set_basics": [
+      "elementary.combinatorics.set_mem_union.v1"
+    ],
+    "frontier.erdos_companion_results": [
+      "frontier.erdos.erdos_1052_filter_ordcompl.v1",
+      "frontier.erdos.erdos_1052_not_dvd_div_ordproj.v1",
+      "frontier.erdos.erdos_1052_omega_odd_le_two_adic_add_one.v1",
+      "frontier.erdos.erdos_1052_proper_eq_erase.v1",
+      "frontier.erdos.erdos_1052_sigmastar_mul_of_coprime.v1",
+      "frontier.erdos.erdos_1052_sigmastar_prime_pow_and_prime.v1",
+      "frontier.erdos.erdos_291_infinite_gcd_gt_one.v1",
+      "frontier.erdos.erdos_349_alpha_gt_two_not_is_good_pair.v1",
+      "frontier.erdos.erdos_349_alpha_le_one_not_is_good_pair.v1",
+      "frontier.erdos.erdos_349_exists_finset_sum_two_pow.v1",
+      "frontier.erdos.erdos_349_int_coeff_ge_two_not_is_good_pair.v1",
+      "frontier.erdos.erdos_349_integer_is_good_pair_iff.v1",
+      "frontier.erdos.erdos_349_one_two_is_good_pair.v1",
+      "frontier.erdos.erdos_399_cambie.v1",
+      "frontier.erdos.erdos_494_product.v1"
+    ],
+    "frontier.formal_conjectures_companion_results": [
+      "frontier.formal_conjectures.degiorgi_conjecture_dim_one.v1",
+      "frontier.formal_conjectures.equational_theories_677_255_class_free.v1",
+      "frontier.formal_conjectures.euler_sum_of_powers_false_for_k4.v1",
+      "frontier.formal_conjectures.euler_sum_of_powers_false_for_k5.v1",
+      "frontier.formal_conjectures.oeis_a34693_exists_k_best_possible.v1",
+      "frontier.formal_conjectures.oeis_a358684_conjecture_0.v1",
+      "frontier.formal_conjectures.union_closed_sharpness.v1",
+      "frontier.formal_conjectures.union_closed_singleton_mem.v1",
+      "frontier.formal_conjectures.union_closed_univ_card_two.v1"
+    ],
     "functions.absolute_value": [
       "elementary.functions.abs_abs.v1",
       "elementary.functions.abs_add_le.v1",
@@ -118,8 +212,49 @@
       "elementary.functions.neg_abs_le.v1",
       "elementary.functions.sq_abs.v1"
     ],
+    "functions.automation_hazards": [
+      "negative.functions.injective_add.decide_failure.v1",
+      "negative.functions.quad_injective.simp_unfold_incomplete.v1"
+    ],
+    "functions.composition_basics": [
+      "elementary.functions.bijective_comp.v1"
+    ],
+    "functions.false_generalization_hazards": [
+      "negative.functions.surjective_implies_injective.finite_pigeonhole_misapplied.v1"
+    ],
+    "functions.finite_endofunction": [
+      "elementary.functions.finite_injective_iff_surjective.v1"
+    ],
     "functions.geometric_series": [
       "elementary.functions.geom_series_mul.v1"
+    ],
+    "functions.image_preimage_basics": [
+      "elementary.functions.image_inter_subset.v1",
+      "elementary.functions.image_union.v1",
+      "elementary.functions.preimage_inter.v1"
+    ],
+    "functions.injective_surjective_basics": [
+      "elementary.functions.fixed_point_id.v1",
+      "elementary.functions.id_bijective.v1",
+      "elementary.functions.injective_comp.v1",
+      "elementary.functions.linear_injective.v1",
+      "elementary.functions.monotone_comp.v1",
+      "elementary.functions.strictmono_injective.v1",
+      "elementary.functions.surjective_comp.v1"
+    ],
+    "functions.injectivity_basics": [
+      "elementary.functions.linear_injective_concrete_instance.v1",
+      "elementary.functions.surjective_not_always_injective.v1"
+    ],
+    "functions.inverse_basics": [
+      "elementary.functions.left_inverse_injective.v1",
+      "elementary.functions.right_inverse_surjective.v1"
+    ],
+    "functions.max_min_basics": [
+      "elementary.functions.min_le_max.v1"
+    ],
+    "functions.monotone_basics": [
+      "elementary.functions.strictmono_comp.v1"
     ],
     "functions.order_lattice": [
       "elementary.functions.max_comm.v1",
@@ -138,7 +273,11 @@
       "elementary.geometry.vertical_angles.v1"
     ],
     "geometry.automation_hazards": [
-      "negative.geometry.angle_atoms.nlinarith_failure.v1"
+      "negative.geometry.angle_atoms.nlinarith_failure.v1",
+      "negative.geometry.pythagorean_bare_ring_no_hypothesis_failure.v1"
+    ],
+    "geometry.coordinate_area_basics": [
+      "elementary.geometry.right_triangle_area_half_base_height.v1"
     ],
     "geometry.coordinate_basics": [
       "elementary.geometry.centroid_x.v1",
@@ -146,6 +285,7 @@
       "elementary.geometry.midpoint_between.v1"
     ],
     "geometry.coordinate_distance": [
+      "elementary.geometry.apollonius_median.v1",
       "elementary.geometry.centroid_sum.v1",
       "elementary.geometry.dist_sq_symm.v1",
       "elementary.geometry.distance_expand.v1",
@@ -154,9 +294,22 @@
       "elementary.geometry.midpoint_equidist.v1",
       "elementary.geometry.midpoint_symm.v1",
       "elementary.geometry.parallelogram_law.v1",
+      "elementary.geometry.pythagorean_right_angle.v1",
       "elementary.geometry.reflection_dist.v1",
+      "elementary.geometry.reflection_over_x_axis.v1",
+      "elementary.geometry.reflection_over_y_axis.v1",
       "elementary.geometry.section_formula_thirds.v1",
       "elementary.geometry.slope_cross_symm.v1"
+    ],
+    "geometry.coordinate_distance_basics": [
+      "elementary.geometry.circle_point_dist_eq_radius.v1",
+      "elementary.geometry.law_of_cosines.v1"
+    ],
+    "geometry.division_guard_lemmas": [
+      "elementary.geometry.slope_div_mul_not_always_cancel.v1"
+    ],
+    "geometry.false_generalization_hazards": [
+      "negative.geometry.slope_div_mul.division_by_zero_unguarded.v1"
     ],
     "geometry.inner_product_basics": [
       "elementary.geometry.dot_distrib.v1"
@@ -174,14 +327,94 @@
       "elementary.geometry.shoelace_identity.v1"
     ],
     "induction.arithmetic_series": [
+      "elementary.induction.arith_seq_sum.v1",
       "elementary.induction.gauss_sum.v1",
+      "elementary.induction.geom_series_sum_induction.v1",
       "elementary.induction.sum_cubes.v1",
+      "elementary.induction.sum_evens.v1",
       "elementary.induction.sum_odds.v1",
       "elementary.induction.sum_squares.v1"
+    ],
+    "induction.automation_hazards": [
+      "negative.induction.pow_succ_atom.nlinarith_failure.v1"
+    ],
+    "induction.exponential_growth_bounds": [
+      "elementary.induction.bernoulli_inequality.v1",
+      "elementary.induction.factorial_ge_two_pow.v1",
+      "elementary.induction.one_le_two_pow.v1",
+      "elementary.induction.two_pow_gt_self.v1"
+    ],
+    "induction.factorial_and_power_bounds": [
+      "elementary.induction.factorial_pos_induction.v1"
+    ],
+    "induction.factorial_bounds": [
+      "elementary.induction.factorial_add_ge_mul.v1"
+    ],
+    "induction.finite_sum_closed_form": [
+      "elementary.induction.sum_consec_product.v1",
+      "elementary.induction.sum_cubes_eq_sum_sq.v1",
+      "elementary.induction.sum_fib_sq.v1"
+    ],
+    "induction.finite_sum_identities": [
+      "elementary.induction.fib_sum_succ.v1",
+      "elementary.induction.prod_range_pos.v1"
     ],
     "induction.finite_sum_recursion": [
       "elementary.induction.prod_range_succ.v1",
       "elementary.induction.sum_range_succ.v1"
+    ],
+    "induction.generalization_hazards": [
+      "negative.induction.foldl_no_generalize.ih_too_weak.v1"
+    ],
+    "induction.list_accumulator_lemmas": [
+      "elementary.induction.foldl_cons_eq_reverse_append.v1"
+    ],
+    "induction.monotonicity": [
+      "elementary.induction.prod_range_monotone.v1",
+      "elementary.induction.sum_range_monotone.v1"
+    ],
+    "induction.monotonicity_from_succ_step": [
+      "elementary.induction.two_pow_strictmono.v1"
+    ],
+    "induction.offbyone_base_case_hazards": [
+      "negative.induction.factorial_gt_two_pow.offbyone_false_base.v1"
+    ],
+    "induction.recursion_techniques": [
+      "elementary.induction.euclid_gcd_eq_gcd.v1",
+      "elementary.induction.even_odd_mutual_totality.v1",
+      "elementary.induction.mygcd_wellfounded.v1"
+    ],
+    "induction.recursion_via_submit_module": [
+      "elementary.induction.fib_le_two_pow.v1",
+      "elementary.induction.myfactorial_eq_factorial.v1"
+    ],
+    "induction.shifted_threshold_hazards": [
+      "negative.induction.two_pow_gt_sq_offbyone_naive_ih_failure.v1"
+    ],
+    "induction.shifted_threshold_induction": [
+      "elementary.induction.two_pow_gt_sq_from_five.v1"
+    ],
+    "induction.strong_induction_basics": [
+      "elementary.induction.exists_prime_factor.v1",
+      "elementary.induction.odd_part_decomposition.v1"
+    ],
+    "induction.strong_induction_minfac": [
+      "elementary.induction.exists_prime_factorization.v1"
+    ],
+    "induction.telescoping": [
+      "elementary.induction.telescoping_sum.v1"
+    ],
+    "inequalities.absolute_value_basics": [
+      "elementary.inequalities.abs_abs_sub_abs_le.v1",
+      "elementary.inequalities.abs_add_le.v1",
+      "elementary.inequalities.abs_add_three.v1",
+      "elementary.inequalities.abs_sub_le.v1"
+    ],
+    "inequalities.am_gm_ladder": [
+      "elementary.inequalities.am_gm_four_term.v1"
+    ],
+    "inequalities.amgm_ladder": [
+      "elementary.inequalities.general_amgm.v1"
     ],
     "inequalities.amgm_reciprocal": [
       "elementary.inequalities.add_one_div_ge_two.v1"
@@ -191,14 +424,49 @@
       "elementary.inequalities.four_mul_le_add_sq.v1",
       "elementary.inequalities.two_mul_le_add_sq.v1"
     ],
+    "inequalities.automation_hazards": [
+      "negative.inequalities.cauchy_three_term_bare_nlinarith_failure.v1",
+      "negative.inequalities.nesbitt_bare_nlinarith_division_failure.v1",
+      "negative.inequalities.three_var_sq_bare_nlinarith_failure.v1",
+      "negative.inequalities.two_mul_le_add_sq_bare_linarith_failure.v1"
+    ],
     "inequalities.cauchy_schwarz": [
       "elementary.inequalities.cauchy_two_term.v1"
+    ],
+    "inequalities.cauchy_schwarz_ladder": [
+      "elementary.inequalities.cauchy_three_term.v1"
     ],
     "inequalities.discriminant": [
       "elementary.inequalities.quad_pos.v1"
     ],
+    "inequalities.false_generalization_hazards": [
+      "elementary.inequalities.amgm_wrong_direction_counterexample.v1",
+      "negative.inequalities.amgm_wrong_direction_bare_nlinarith_failure.v1"
+    ],
+    "inequalities.min_max_basics": [
+      "elementary.inequalities.avg_between_min_max.v1",
+      "elementary.inequalities.max_add_le.v1",
+      "elementary.inequalities.min_add_min_le.v1"
+    ],
+    "inequalities.min_max_family": [
+      "elementary.inequalities.min_add_max.v1"
+    ],
+    "inequalities.named_ladder_n_term": [
+      "elementary.inequalities.general_cauchy_schwarz.v1",
+      "elementary.inequalities.general_qm_am.v1"
+    ],
+    "inequalities.named_olympiad_inequalities": [
+      "elementary.inequalities.nesbitt_three_var.v1",
+      "elementary.inequalities.schur_degree_one.v1"
+    ],
     "inequalities.positivity": [
       "elementary.inequalities.mul_pos.v1"
+    ],
+    "inequalities.power_mean_chain": [
+      "elementary.inequalities.am_hm_two.v1"
+    ],
+    "inequalities.power_mean_ladder": [
+      "elementary.inequalities.three_var_qm_am_bound.v1"
     ],
     "inequalities.square_nonneg": [
       "elementary.inequalities.mul_self_nonneg.v1",
@@ -214,6 +482,12 @@
     ],
     "inequalities.triangle": [
       "elementary.inequalities.reverse_triangle.v1"
+    ],
+    "number_theory.automation_hazards": [
+      "negative.number_theory.decide_unbounded_prime_universal.v1",
+      "negative.number_theory.divisor_case_split.omega_unevaluated_literal.v1",
+      "negative.number_theory.gcd_dvd.omega_no_gcd_theory.v1",
+      "negative.number_theory.sq_parity.omega_nonlinear_failure.v1"
     ],
     "number_theory.coprime_basics": [
       "elementary.number_theory.coprime_comm.v1",
@@ -234,6 +508,9 @@
       "elementary.number_theory.dvd_zero.v1",
       "elementary.number_theory.one_dvd.v1"
     ],
+    "number_theory.foundational_principles": [
+      "elementary.number_theory.well_ordering.v1"
+    ],
     "number_theory.gcd_basics": [
       "elementary.number_theory.dvd_gcd.v1",
       "elementary.number_theory.gcd_comm.v1",
@@ -243,6 +520,15 @@
       "elementary.number_theory.gcd_one_right.v1",
       "elementary.number_theory.gcd_self.v1",
       "elementary.number_theory.gcd_zero_left.v1"
+    ],
+    "number_theory.gcd_lcm_basics": [
+      "elementary.number_theory.dvd_lcm_left.v1",
+      "elementary.number_theory.lcm_comm.v1"
+    ],
+    "number_theory.gcd_lcm_family": [
+      "elementary.number_theory.bezout.v1",
+      "elementary.number_theory.dvd_lcm_right.v1",
+      "elementary.number_theory.gcd_mul_lcm.v1"
     ],
     "number_theory.modular_arithmetic": [
       "elementary.number_theory.add_mod.v1",
@@ -269,6 +555,10 @@
       "elementary.number_theory.nat_pos_of_ne_zero.v1",
       "elementary.number_theory.succ_le_iff.v1"
     ],
+    "number_theory.parity_basics": [
+      "elementary.number_theory.even_sq.v1",
+      "elementary.number_theory.sq_mod_two_eq_self_mod_two.v1"
+    ],
     "number_theory.parity_closure": [
       "elementary.number_theory.emod_two.v1",
       "elementary.number_theory.even_add.v1",
@@ -277,6 +567,12 @@
       "elementary.number_theory.even_mul_succ_self.v1",
       "elementary.number_theory.even_or_odd.v1",
       "elementary.number_theory.odd_add_odd.v1"
+    ],
+    "number_theory.primality_basics": [
+      "elementary.number_theory.four_mul_not_prime.v1",
+      "elementary.number_theory.not_prime_one.v1",
+      "elementary.number_theory.prime_dvd_mul.v1",
+      "elementary.number_theory.prime_two.v1"
     ],
     "number_theory.successor_basics": [
       "elementary.number_theory.succ_ne_zero.v1"
