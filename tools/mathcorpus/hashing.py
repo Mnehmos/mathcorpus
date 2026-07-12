@@ -18,6 +18,20 @@ from .canonical import canonical_json_sha256
 # Fields required to derive a formal-statement identity hash.
 _FORMAL_STATEMENT_KEYS = ("theorem_name", "formal_statement_pp", "toolchain")
 
+# Fields that identify a repair_trajectories[].steps[] entry's content (excludes step_hash).
+_REPAIR_STEP_KEYS = ("step_index", "from_attempt_id", "repair_action", "diagnostic_category_addressed", "to_ref")
+
+
+def repair_step_hash(step: dict[str, Any]) -> str:
+    """SHA-256 over canonical JSON of a repair step's content, excluding step_hash itself.
+
+    This is what makes a repair chain 'hash-linked': the step_hash is derived from the
+    step's own claims, not an arbitrary label, so a step cannot be silently reworded
+    without changing its hash.
+    """
+    obj = {k: step.get(k) for k in _REPAIR_STEP_KEYS}
+    return canonical_json_sha256(obj)
+
 
 def formal_statement_hash(packet: dict[str, Any]) -> str | None:
     """SHA-256 over canonical JSON of ``{theorem_name, formal_statement_pp, toolchain}``.

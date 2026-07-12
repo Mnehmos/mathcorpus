@@ -109,6 +109,46 @@ a hard `validate_packets.py` error today would fail every one of the ~350 packet
 before this field existed. It is deferred to the corpus-wide backfill (issue #6); until
 then, `dependency_manifest` is opt-in and validated only when present.
 
+## `attempts[]`, `negative_examples[]`, `repair_trajectories[]`
+
+Packet-embedded evidence for the tracked attempts that led to a packet's current state,
+mirroring MCIP's `AttemptRecord`/`NegativeExample`/`RepairTrajectory` from #1. Additive to
+the packet-level `failure` object (which describes a whole `kind: negative_example` packet
+narratively); these instead let *any* packet — most usefully a successful one — carry its
+own attempt history, including the failed tries along the way.
+
+- `attempts[].outcome`: `succeeded`, `failed`, `abandoned`.
+- `attempts[].diagnostics[].category` is free text (not a closed enum) so it can name any
+  Lean diagnostic; the categories this schema was built to support are `parse_failure`,
+  `unknown_declaration`, `type_mismatch`, and `unsolved_goals` — see the diagnostics
+  conformance fixture below.
+- `negative_examples[].origin`: `organic` (arose from a real tracked attempt) or
+  `controlled_mutation` (deliberately produced to exercise a diagnostic path).
+  `proof_authority` is fixed to `"none"` at the schema level — a negative example can never
+  confer proof authority on its parent packet.
+- `repair_trajectories[].steps[].step_hash`: SHA-256 over canonical JSON of
+  `{step_index, from_attempt_id, repair_action, diagnostic_category_addressed, to_ref}` —
+  see `tools/mathcorpus/hashing.repair_step_hash`. This is what makes a chain
+  "hash-linked": a step cannot be silently reworded without changing its hash.
+- `repair_trajectories[].terminal_ref`: for `verified_proof`, either a `proof_variants[]`
+  entry in the *same* packet, or — when the successful proof was filed as its own packet —
+  that packet's `packet_id` (checked corpus-wide, not just locally). For `explicit_failure`,
+  an `attempts[]` entry in the same packet.
+
+Cross-field checks live in `tools/mathcorpus/policy.py`: `check_attempts_and_repairs`
+(per packet — dangling attempt/variant references, step ordering, step-hash staleness,
+diagnostic-category consistency between a negative example and its attempt) and
+`check_repair_trajectory_refs` (corpus-wide — a cross-packet `terminal_ref` must resolve to
+a real packet).
+
+**Fixtures**: `packets/negative/number_theory/gcd_dvd_omega_no_gcd_theory.v1.json` carries a
+real `unsolved_goals` attempt and a real successful repair (its own episode's second step
+already exists as `packets/elementary/number_theory/gcd_dvd_left.v1.json`, referenced by
+`terminal_ref`). `packets/negative/_fixtures/diagnostic_categories_conformance.v1.json`
+covers `parse_failure`, `unknown_declaration`, and `type_mismatch` with illustrative (not
+real-telemetry) diagnostics — it is explicitly `training.eligibility: private_audit_only` so
+it never reaches a public or negative-example export.
+
 ## Restriction profiles (`restriction_profiles/`)
 
 A restriction profile is a hash-pinned, reusable constraint set (forbidden/allowed

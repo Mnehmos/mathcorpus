@@ -1,0 +1,168 @@
+{
+  "packet_id": "fixtures.diagnostics.diagnostic_categories_conformance.v1",
+  "packet_version": "1.0.0",
+  "title": "Schema conformance fixture: attempt/negative_example diagnostic categories",
+  "domain": "logic",
+  "level": "L0_elementary",
+  "kind": "concept",
+  "status": "empirical_only",
+  "difficulty_bin": "D0",
+  "source_provenance": {
+    "source_kind": "repo_original",
+    "source_refs": [],
+    "authors": [
+      "The MathCorpus Authors"
+    ],
+    "copyright_holder": "The MathCorpus Authors",
+    "license_spdx": "Apache-2.0",
+    "license_content": "CC-BY-4.0",
+    "statement_fidelity": "author_written"
+  },
+  "informal_statement": "Schema-conformance fixture only, not real corpus content or a tracked Proof Search episode. Exercises three attempt/negative_example diagnostic categories (parse_failure, unknown_declaration, type_mismatch) that no existing negative example in this corpus happens to cover; the fourth required category (unsolved_goals) plus a successful repair are demonstrated with real data on packets/negative/number_theory/gcd_dvd_omega_no_gcd_theory.v1.json instead.",
+  "proof_body_redacted": false,
+  "trust": {
+    "rung": 0,
+    "proof_authority": "none",
+    "public_claim_class": "restricted"
+  },
+  "training": {
+    "eligibility": "private_audit_only",
+    "reason_codes": [
+      "schema_conformance_fixture",
+      "not_real_telemetry"
+    ],
+    "contamination_risk": "low"
+  },
+  "attempts": [
+    {
+      "attempt_id": "fixture.attempt.parse_failure",
+      "episode_id": null,
+      "outcome": "failed",
+      "diagnostic_category": "parse_failure",
+      "diagnostics": [
+        {
+          "category": "parse_failure",
+          "message": "unexpected token '=>'; expected term",
+          "source_span": "theorem foo (n : ℕ) : n = n => rfl",
+          "goals": [],
+          "local_context": [],
+          "unsolved_goals": []
+        }
+      ],
+      "tokens": null,
+      "cost": null,
+      "wall_time_ms": null,
+      "lean_cpu_time_ms": null,
+      "model_run_id": null,
+      "model_config_hash": null,
+      "prompt_hash": null,
+      "context_hash": null,
+      "proof_variant_id": null
+    },
+    {
+      "attempt_id": "fixture.attempt.unknown_declaration",
+      "episode_id": null,
+      "outcome": "failed",
+      "diagnostic_category": "unknown_declaration",
+      "diagnostics": [
+        {
+          "category": "unknown_declaration",
+          "message": "unknown identifier 'Nat.frobnicate_left'",
+          "source_span": "exact Nat.frobnicate_left a b",
+          "goals": [
+            "Nat.gcd a b ∣ a"
+          ],
+          "local_context": [
+            "a b : ℕ"
+          ],
+          "unsolved_goals": [
+            "Nat.gcd a b ∣ a"
+          ]
+        }
+      ],
+      "tokens": null,
+      "cost": null,
+      "wall_time_ms": null,
+      "lean_cpu_time_ms": null,
+      "model_run_id": null,
+      "model_config_hash": null,
+      "prompt_hash": null,
+      "context_hash": null,
+      "proof_variant_id": null
+    },
+    {
+      "attempt_id": "fixture.attempt.type_mismatch",
+      "episode_id": null,
+      "outcome": "failed",
+      "diagnostic_category": "type_mismatch",
+      "diagnostics": [
+        {
+          "category": "type_mismatch",
+          "message": "type mismatch: term has type ℕ but is expected to have type ℤ",
+          "source_span": "exact (n : ℕ)",
+          "goals": [
+            "a = (n : ℤ)"
+          ],
+          "local_context": [
+            "n : ℕ",
+            "a : ℤ"
+          ],
+          "unsolved_goals": [
+            "a = (n : ℤ)"
+          ]
+        }
+      ],
+      "tokens": null,
+      "cost": null,
+      "wall_time_ms": null,
+      "lean_cpu_time_ms": null,
+      "model_run_id": null,
+      "model_config_hash": null,
+      "prompt_hash": null,
+      "context_hash": null,
+      "proof_variant_id": null
+    }
+  ],
+  "negative_examples": [
+    {
+      "negative_id": "fixture.negative.parse_failure",
+      "attempt_id": "fixture.attempt.parse_failure",
+      "origin": "controlled_mutation",
+      "diagnostic_category": "parse_failure",
+      "candidate_source_ref": null,
+      "proof_authority": "none",
+      "can_export_metadata": true,
+      "can_export_proof_text": false,
+      "can_export_diagnostics": true,
+      "can_export_model_identity": false
+    },
+    {
+      "negative_id": "fixture.negative.unknown_declaration",
+      "attempt_id": "fixture.attempt.unknown_declaration",
+      "origin": "controlled_mutation",
+      "diagnostic_category": "unknown_declaration",
+      "candidate_source_ref": null,
+      "proof_authority": "none",
+      "can_export_metadata": true,
+      "can_export_proof_text": false,
+      "can_export_diagnostics": true,
+      "can_export_model_identity": false
+    },
+    {
+      "negative_id": "fixture.negative.type_mismatch",
+      "attempt_id": "fixture.attempt.type_mismatch",
+      "origin": "controlled_mutation",
+      "diagnostic_category": "type_mismatch",
+      "candidate_source_ref": null,
+      "proof_authority": "none",
+      "can_export_metadata": true,
+      "can_export_proof_text": false,
+      "can_export_diagnostics": true,
+      "can_export_model_identity": false
+    }
+  ],
+  "notes": "Added for issue #4 (negative-example / repair-trajectory child records) acceptance criterion 'fixtures cover parse failure, unknown declaration, type mismatch, unsolved goals, and a successful repair'. Deliberately excluded from every export lane (training.eligibility=private_audit_only) since its diagnostic text is illustrative, not a real tracked episode.",
+  "hashes": {
+    "packet_sha256": "3afee1fe323b8913c2947d65081cfb5e724dc0b281096092999e4e05df6c3835"
+  }
+}

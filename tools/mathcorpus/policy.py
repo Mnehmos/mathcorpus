@@ -22,7 +22,7 @@ import re
 from dataclasses import dataclass
 from typing import Any
 
-from .hashing import formal_statement_hash, packet_hash
+from .hashing import formal_statement_hash, packet_hash, repair_step_hash
 
 PACKET_ID_RE = re.compile(r"^[a-z0-9]+([._][a-z0-9]+)*\.v[0-9]+$")
 
@@ -202,6 +202,108 @@ def check_packet(packet: dict[str, Any]) -> list[Finding]:
 
     # 11. Dependency manifest internal consistency.
     findings.extend(check_dependency_manifest(packet))
+
+    # 12. Attempts / negative examples / repair trajectories internal consistency.
+    findings.extend(check_attempts_and_repairs(packet))
+
+    return findings
+
+
+def check_attempts_and_repairs(packet: dict[str, Any]) -> list[Finding]:
+    """attempts / negative_examples / repair_trajectories must reference each other
+    consistently within one packet. Cross-packet terminal_ref resolution (when a repair's
+    successful proof was filed as its own packet) is checked corpus-wide by
+    check_repair_trajectory_refs, since it needs the full packet list.
+    """
+    findings: list[Finding] = []
+    attempts = packet.get("attempts") or []
+    attempt_ids = {a.get("attempt_id") for a in attempts if a.get("attempt_id")}
+    variant_ids = {v.get("variant_id") for v in (packet.get("proof_variants") or []) if v.get("variant_id")}
+    attempts_by_id = {a.get("attempt_id"): a for a in attempts if a.get("attempt_id")}
+
+    for i, ne in enumerate(packet.get("negative_examples") or []):
+        aid = ne.get("attempt_id")
+        if aid not in attempt_ids:
+            findings.append(_err("negative_example_dangling_attempt",
+                                 f"negative_examples[{i}] references attempt_id '{aid}' "
+                                 "which is not in this packet's own 'attempts'"))
+        elif ne.get("diagnostic_category") is not None:
+            attempt_cat = attempts_by_id.get(aid, {}).get("diagnostic_category")
+            if attempt_cat is not None and ne["diagnostic_category"] != attempt_cat:
+                findings.append(_warn("negative_example_diagnostic_category_mismatch",
+                                      f"negative_examples[{i}].diagnostic_category "
+                                      f"('{ne['diagnostic_category']}') disagrees with its "
+                                      f"attempt's diagnostic_category ('{attempt_cat}')"))
+
+    for ti, traj in enumerate(packet.get("repair_trajectories") or []):
+        steps = traj.get("steps") or []
+        prev_index = None
+        for si, step in enumerate(steps):
+            idx = step.get("step_index")
+            if prev_index is not None and idx is not None and idx <= prev_index:
+                findings.append(_err("repair_trajectory_steps_unordered",
+                                     f"repair_trajectories[{ti}].steps[{si}] has step_index {idx}, "
+                                     f"not strictly greater than the previous step's {prev_index}"))
+            prev_index = idx if idx is not None else prev_index
+
+            if step.get("from_attempt_id") not in attempt_ids:
+                findings.append(_err("repair_step_dangling_from_attempt",
+                                     f"repair_trajectories[{ti}].steps[{si}].from_attempt_id "
+                                     f"'{step.get('from_attempt_id')}' is not in this packet's own 'attempts'"))
+            to_ref = step.get("to_ref")
+            if to_ref not in attempt_ids and to_ref not in variant_ids:
+                findings.append(_err("repair_step_dangling_to_ref",
+                                     f"repair_trajectories[{ti}].steps[{si}].to_ref '{to_ref}' is "
+                                     "not an attempt_id or proof_variants[].variant_id in this same packet"))
+
+            expected_hash = repair_step_hash(step)
+            if step.get("step_hash") != expected_hash:
+                findings.append(_err("repair_step_hash_stale",
+                                     f"repair_trajectories[{ti}].steps[{si}].step_hash does not match "
+                                     "recompute over {step_index, from_attempt_id, repair_action, "
+                                     "diagnostic_category_addressed, to_ref}"))
+
+        terminal_ref = traj.get("terminal_ref")
+        terminal_outcome = traj.get("terminal_outcome")
+        locally_resolved = (
+            (terminal_outcome == "verified_proof" and terminal_ref in variant_ids)
+            or (terminal_outcome == "explicit_failure" and terminal_ref in attempt_ids)
+        )
+        if not locally_resolved and not PACKET_ID_RE.match(terminal_ref or ""):
+            findings.append(_err("repair_trajectory_terminal_ref_unresolved",
+                                 f"repair_trajectories[{ti}].terminal_ref '{terminal_ref}' resolves "
+                                 f"neither locally (for outcome '{terminal_outcome}') nor as a "
+                                 "cross-packet packet_id"))
+
+    return findings
+
+
+# --- corpus-wide repair-trajectory checks -------------------------------------------
+
+def check_repair_trajectory_refs(packets: list[dict[str, Any]]) -> list[Finding]:
+    """A repair_trajectory's terminal_ref that points to another packet (packet-id-shaped,
+    not resolved locally) must resolve to a real packet in the corpus.
+    """
+    findings: list[Finding] = []
+    known_ids = {p.get("packet_id") for p in packets if p.get("packet_id")}
+
+    for p in packets:
+        pid = p.get("packet_id", "<unknown>")
+        variant_ids = {v.get("variant_id") for v in (p.get("proof_variants") or []) if v.get("variant_id")}
+        attempt_ids = {a.get("attempt_id") for a in (p.get("attempts") or []) if a.get("attempt_id")}
+        for ti, traj in enumerate(p.get("repair_trajectories") or []):
+            terminal_ref = traj.get("terminal_ref")
+            terminal_outcome = traj.get("terminal_outcome")
+            locally_resolved = (
+                (terminal_outcome == "verified_proof" and terminal_ref in variant_ids)
+                or (terminal_outcome == "explicit_failure" and terminal_ref in attempt_ids)
+            )
+            if locally_resolved or not PACKET_ID_RE.match(terminal_ref or ""):
+                continue
+            if terminal_ref not in known_ids:
+                findings.append(_err("repair_trajectory_dangling_cross_packet_ref",
+                                     f"{pid}: repair_trajectories[{ti}].terminal_ref references "
+                                     f"packet_id '{terminal_ref}' which is not in the corpus"))
 
     return findings
 

@@ -93,6 +93,108 @@
         "claim_sources": { "type": "array", "items": { "$ref": "#/$defs/dependency_claim_source" } }
       }
     },
+    "diagnostic": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "category": { "type": "string" },
+        "message": { "type": "string" },
+        "source_span": { "type": "string" },
+        "goals": { "type": "array", "items": { "type": "string" } },
+        "local_context": { "type": "array", "items": { "type": "string" } },
+        "unsolved_goals": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "attempt_record": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["attempt_id", "outcome"],
+      "properties": {
+        "attempt_id": { "type": "string", "minLength": 1 },
+        "episode_id": { "type": ["string", "null"] },
+        "outcome": { "type": "string", "enum": ["succeeded", "failed", "abandoned"] },
+        "diagnostic_category": { "type": ["string", "null"] },
+        "diagnostics": { "type": "array", "items": { "$ref": "#/$defs/diagnostic" } },
+        "tokens": { "type": ["integer", "null"], "minimum": 0 },
+        "cost": { "type": ["number", "null"], "minimum": 0 },
+        "wall_time_ms": { "type": ["number", "null"], "minimum": 0 },
+        "lean_cpu_time_ms": { "type": ["number", "null"], "minimum": 0 },
+        "model_run_id": { "type": ["string", "null"] },
+        "model_config_hash": { "$ref": "#/$defs/sha256_or_null" },
+        "prompt_hash": { "$ref": "#/$defs/sha256_or_null" },
+        "context_hash": { "$ref": "#/$defs/sha256_or_null" },
+        "proof_variant_id": { "type": ["string", "null"] }
+      }
+    },
+    "negative_example_record": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "negative_id", "attempt_id", "origin", "proof_authority",
+        "can_export_metadata", "can_export_proof_text", "can_export_diagnostics", "can_export_model_identity"
+      ],
+      "properties": {
+        "negative_id": { "type": "string", "minLength": 1 },
+        "attempt_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "attempt_id of the entry in this packet's own 'attempts' this negative example is derived from."
+        },
+        "origin": { "type": "string", "enum": ["organic", "controlled_mutation"] },
+        "diagnostic_category": { "type": ["string", "null"] },
+        "candidate_source_ref": {
+          "type": ["string", "null"],
+          "description": "Governed artifact reference the failed candidate proof text can be recovered from, if retained."
+        },
+        "proof_authority": { "const": "none" },
+        "can_export_metadata": { "type": "boolean" },
+        "can_export_proof_text": { "type": "boolean" },
+        "can_export_diagnostics": { "type": "boolean" },
+        "can_export_model_identity": { "type": "boolean" }
+      }
+    },
+    "repair_trajectory": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["trajectory_id", "steps", "terminal_outcome", "terminal_ref"],
+      "properties": {
+        "trajectory_id": { "type": "string", "minLength": 1 },
+        "steps": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["step_index", "from_attempt_id", "repair_action", "to_ref", "step_hash"],
+            "properties": {
+              "step_index": { "type": "integer", "minimum": 0 },
+              "from_attempt_id": {
+                "type": "string",
+                "minLength": 1,
+                "description": "attempt_id of the entry in this packet's own 'attempts' this step repairs."
+              },
+              "repair_action": { "type": "string", "minLength": 1 },
+              "diagnostic_category_addressed": { "type": ["string", "null"] },
+              "to_ref": {
+                "type": "string",
+                "minLength": 1,
+                "description": "attempt_id or proof_variants[].variant_id in this same packet that this step produced."
+              },
+              "step_hash": {
+                "$ref": "#/$defs/sha256",
+                "description": "SHA-256 over canonical JSON of {step_index, from_attempt_id, repair_action, diagnostic_category_addressed, to_ref} — see tools/mathcorpus/hashing.repair_step_hash."
+              }
+            }
+          }
+        },
+        "terminal_outcome": { "type": "string", "enum": ["verified_proof", "explicit_failure"] },
+        "terminal_ref": {
+          "type": "string",
+          "minLength": 1,
+          "description": "For 'verified_proof': a proof_variants[].variant_id in this packet, or (if the successful proof was filed as its own packet) another packet's packet_id. For 'explicit_failure': an attempt_id in this packet's own 'attempts'."
+        }
+      }
+    },
     "proof_variant": {
       "type": "object",
       "additionalProperties": false,
@@ -321,6 +423,21 @@
       "items": { "$ref": "#/$defs/proof_variant" }
     },
     "dependency_manifest": { "$ref": "#/$defs/dependency_manifest" },
+    "attempts": {
+      "type": "array",
+      "description": "This packet's own recorded proof-search attempts, successful and failed, that led to its current state. See schema/mcip/v1/README.md — mirrors MCIP's AttemptRecord.",
+      "items": { "$ref": "#/$defs/attempt_record" }
+    },
+    "negative_examples": {
+      "type": "array",
+      "description": "Failed attempts (from 'attempts') preserved as labeled, non-proof-bearing evidence. proof_authority is fixed to 'none' at the schema level.",
+      "items": { "$ref": "#/$defs/negative_example_record" }
+    },
+    "repair_trajectories": {
+      "type": "array",
+      "description": "Ordered, hash-linked chains from a failed attempt to a terminus (a verified proof variant or an explicit final failure).",
+      "items": { "$ref": "#/$defs/repair_trajectory" }
+    },
     "metrics": {
       "type": "object",
       "additionalProperties": false,

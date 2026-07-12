@@ -55,6 +55,86 @@
       "divisibility"
     ]
   },
+  "attempts": [
+    {
+      "attempt_id": "gcd_dvd.attempt.1_omega",
+      "episode_id": "e92f1fe2-eedb-48d5-94c8-9695aa253fed",
+      "outcome": "failed",
+      "diagnostic_category": "unsolved_goals",
+      "diagnostics": [
+        {
+          "category": "unsolved_goals",
+          "message": "omega found a countermodel treating Nat.gcd a b as an opaque atom with no gcd theory",
+          "source_span": "intro a b; omega",
+          "goals": [
+            "Nat.gcd a b ∣ a"
+          ],
+          "local_context": [
+            "a b : ℕ"
+          ],
+          "unsolved_goals": [
+            "Nat.gcd a b ∣ a"
+          ]
+        }
+      ],
+      "tokens": null,
+      "cost": null,
+      "wall_time_ms": 15500.0,
+      "lean_cpu_time_ms": null,
+      "model_run_id": null,
+      "model_config_hash": null,
+      "prompt_hash": null,
+      "context_hash": null,
+      "proof_variant_id": null
+    },
+    {
+      "attempt_id": "gcd_dvd.attempt.2_gcd_api",
+      "episode_id": "e92f1fe2-eedb-48d5-94c8-9695aa253fed",
+      "outcome": "succeeded",
+      "diagnostic_category": null,
+      "diagnostics": [],
+      "tokens": null,
+      "cost": null,
+      "wall_time_ms": null,
+      "lean_cpu_time_ms": null,
+      "model_run_id": null,
+      "model_config_hash": null,
+      "prompt_hash": null,
+      "context_hash": null,
+      "proof_variant_id": null
+    }
+  ],
+  "negative_examples": [
+    {
+      "negative_id": "gcd_dvd.negative.1",
+      "attempt_id": "gcd_dvd.attempt.1_omega",
+      "origin": "organic",
+      "diagnostic_category": "unsolved_goals",
+      "candidate_source_ref": "proofsearch://episodes/e92f1fe2-eedb-48d5-94c8-9695aa253fed",
+      "proof_authority": "none",
+      "can_export_metadata": true,
+      "can_export_proof_text": false,
+      "can_export_diagnostics": true,
+      "can_export_model_identity": false
+    }
+  ],
+  "repair_trajectories": [
+    {
+      "trajectory_id": "gcd_dvd.repair.1",
+      "steps": [
+        {
+          "step_index": 0,
+          "from_attempt_id": "gcd_dvd.attempt.1_omega",
+          "repair_action": "replace `omega` with `exact Nat.gcd_dvd_left a b`, routing through the gcd API instead of expecting omega to have gcd theory",
+          "diagnostic_category_addressed": "unsolved_goals",
+          "to_ref": "gcd_dvd.attempt.2_gcd_api",
+          "step_hash": "d06a65e7e41864175f271ec046dd80e219f4de580fe5e6ae069e877d0e5e0215"
+        }
+      ],
+      "terminal_outcome": "verified_proof",
+      "terminal_ref": "elementary.number_theory.gcd_dvd_left.v1"
+    }
+  ],
   "verification": {
     "verifier": "proofsearch",
     "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
@@ -66,6 +146,6 @@
   },
   "notes": "Produced via tracked proofsearch episode e92f1fe2-eedb-48d5-94c8-9695aa253fed (problem_version 70addb1d-32b8-4fe4-b2f4-69e1ff0b5019): `solve` with `intro a b; omega` returned kernel_fail (tactic_failure, omega's spurious-counterexample report on the bare gcd atom); the same episode's second step, `intro a b; exact Nat.gcd_dvd_left a b`, reached kernel_verified -- but that exact theorem already existed in the corpus as `packets/elementary/number_theory/gcd_dvd_left.v1.json`, so no duplicate positive packet was authored; this negative example references that existing packet as its companion instead. Third negative example for the number_theory domain, alongside divisor_case_split_omega_unevaluated_literal.v1 and sq_parity_omega_nonlinear_failure.v1 -- all three are distinct omega-failure sub-categories (unevaluated literal, nonlinear atom, total theory gap) rather than near-duplicates.",
   "hashes": {
-    "packet_sha256": "3314eafee9bc7c83c46828cd41f802c65fe3fe61811d321e2c88638c53bcb414"
+    "packet_sha256": "50c63d9d152e230dac36e389ac32bfd0615e7c836db2e67e330c8b304656b2f8"
   }
 }
