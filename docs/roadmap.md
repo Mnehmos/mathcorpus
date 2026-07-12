@@ -26,6 +26,21 @@ built to serve.
 
 **Phase 1 is the scaffold in this repo.** Everything below Phase 1 is authoring work.
 
+## MCIP interchange layer (Phase 1 extension)
+
+Delivered as an 8-issue roadmap (`agents/github_issues/DONE.md`): a versioned,
+cross-repo interchange contract (`schema/mcip/v1/`) plus matching optional child-evidence
+fields on packets — proof profiles and restriction profiles, dependency manifests,
+attempts/negative-examples/repair-trajectories, multi-model empirical difficulty, literature
+lineage, and a publication-readiness policy layer. An importer (`tools/import_mcip.py`)
+folds a bundle into existing packets idempotently; a backfill report
+(`tools/backfill_report.py`) tracks per-packet recovery status honestly — most
+pre-existing packets cannot recover attempt/diagnostic/model-performance evidence, since
+no retained Proof Search trajectory database is reachable from this repo. See
+[`mcip-import.md`](mcip-import.md) and [`../schema/mcip/v1/README.md`](../schema/mcip/v1/README.md).
+This is infrastructure, not corpus growth — it changes what a packet *can* carry, not how
+many packets exist.
+
 ## Elementary spine starter families (Phase 2)
 
 Arithmetic identities (25) · divisibility & parity (20) · induction (20) · equations &
@@ -51,8 +66,9 @@ split-leakage · takedown policy live.
 **v1.0** — 450–650 public packets (elementary + undergrad + competition + public-safe
 frontier) · ≥25 tracked frontier packets with public/private separation ·
 certificate-bearing packets carry canonical CNF + certificate hashes · heldout_public +
-heldout_private eval running · baseline leaderboard · documented external-review process ·
-provenance coverage >99% · reproducible end-to-end export.
+heldout_private eval running · baseline leaderboard · documented external-review process
+(technical foundation now in place — `citation_reviews`/`publication`, see the MCIP
+interchange layer above) · provenance coverage >99% · reproducible end-to-end export.
 
 ## Risks (top mitigations)
 

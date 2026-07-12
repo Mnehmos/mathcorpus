@@ -52,5 +52,23 @@ one is quarantined. This blocks leakage through near-duplicate templates.
 
 `SOURCE_MANIFEST.json`, `DEDUPE_REPORT.json` / `dedupe_clusters.json`,
 `split_manifest.json`, `license_manifest.json`, `artifact_manifest.json`,
-`corpus_index.json`, `dependency_graph.json`, `dataset_infos.json`, `REMOVALS.jsonl`, and
+`corpus_index.json`, `dependency_graph.json` (includes a `dependency_manifest_summary`
+aggregate), `backfill_report.json` (per-packet MCIP evidence-recovery status, see
+[`docs/mcip-import.md`](docs/mcip-import.md)), `dataset_infos.json`, `REMOVALS.jsonl`, and
 a signed release tag or equivalent integrity record.
+
+## Exported row: contribution statement
+
+Every public/negative row carries the packet's `contribution_statements`/`publication`
+fields (machine-readable) plus a `contribution_summary` string (human-readable — see
+`mathcorpus.export.contribution_summary`) covering contribution class, known prior art,
+publication status, and unresolved attribution caveats. Absent on a packet without
+literature-lineage data — never fabricated at export time.
+
+## Shared reference catalogs
+
+`restriction_profiles/` (hash-pinned tactic/dependency restriction sets) and
+`literature_sources/` (hash-pinned bibliographic sources, retrieved passages, and
+external claims) are validated alongside `packets/` by `validate_packets.py` but are not
+themselves exported rows — packets reference entries by `(id, hash)` pin, resolved and
+redaction-checked at export time the same way certificate/proof-body references are.

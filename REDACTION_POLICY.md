@@ -65,4 +65,23 @@ The following default to `quarantined` or `private_audit_only`:
 - open-problem campaign proof artifacts pending external review;
 - third-party source text with uncertain license compatibility;
 - self-reviewed frontier proofs whose public claim would attract strong scrutiny;
-- negative examples exposing private prompts, internal traces, or non-public benchmark routes.
+- negative examples exposing private prompts, internal traces, or non-public benchmark routes;
+- schema-conformance fixtures whose content is illustrative rather than real corpus data
+  or real telemetry (`kind: concept`, `training.eligibility: private_audit_only` — the
+  convention used by `packets/negative/_fixtures/` and `packets/_fixtures/`). Never
+  `negative_example_only`, which would place synthetic content in the real
+  `negative_examples.jsonl` training surface.
+
+## Literature-lineage and publication policy independence
+
+`idea_attributions`, `prior_art_matches`, `citation_reviews`, `contribution_statements`,
+and `publication` (`schema/mcip/v1/`, see [`DATASET_CARD.md`](DATASET_CARD.md)) are a
+separate review dimension from the trust ladder above and **never** change `trust.rung`,
+`proof_authority`, or `status` — citation or novelty uncertainty affects only public claim
+status. `publication.status: "publication_ready"` additionally requires a current,
+non-superseded, endorsed `citation_review` for any `open_problem_related` packet or any
+`contribution_class: "new_proof"` claim; kernel verification alone can never produce it.
+
+A `RetrievedPassage` follows the same redaction shape as a proof body: `passage_redacted`
++ nullable `passage_text`, with `passage_sha256` always retained so a public export can
+prove what was cited without reproducing the excerpt.

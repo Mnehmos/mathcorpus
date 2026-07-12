@@ -35,15 +35,20 @@ place; corpus authoring (Phases 2–7) is in progress. See [`docs/roadmap.md`](d
 
 ```
 schema/          JSON Schema for concept packets + enum reference
+  mcip/v1/       MathCorpus Interchange Protocol — cross-repo evidence record schemas
 packets/         The corpus — one JSON concept packet per item (curriculum tree)
+restriction_profiles/  Shared, hash-pinned tactic/dependency restriction catalog
+literature_sources/    Shared, hash-pinned literature-lineage catalog
 lean/            Lean 4 project; formal proof bodies referenced by packets
-tools/           Functional tooling: validate, hash, export, dedupe, redaction audit
-manifests/       Generated corpus manifests (source, dedupe, split, license, artifacts)
+tools/           Functional tooling: validate, hash, export, dedupe, redaction audit,
+                 MCIP import, backfill reporting
+manifests/       Generated corpus manifests (source, dedupe, split, license, artifacts,
+                 dependency graph, backfill report)
 exports/         Generated JSONL/Parquet exports (gitignored — regenerable)
 governance/      REMOVALS.jsonl tombstones and governance state
 hf/              Hugging Face dataset-card mirror
 eval/            Evaluation-suite design, task families, leaderboard rules
-docs/            Roadmap, proof-search integration, design notes
+docs/            Roadmap, proof-search integration, MCIP import/backfill, design notes
 .github/         CI gates (schema validation, hash check, redaction audit)
 ```
 
@@ -63,7 +68,8 @@ Governance files: [`DATASET_CARD.md`](DATASET_CARD.md) ·
 ## Quick start
 
 ```bash
-# Validate every packet against the schema + policy rules
+# Validate every packet against the schema + policy rules (also validates the
+# restriction_profiles/ and literature_sources/ catalogs, if present)
 python tools/validate_packets.py packets/
 
 # Recompute canonical hashes for a packet (or --check to verify without writing)
@@ -75,6 +81,11 @@ python tools/export_jsonl.py    packets/ --out exports/
 python tools/build_split_manifest.py packets/ --out manifests/split_manifest.json
 python tools/dedupe_pipeline.py packets/ --out manifests/dedupe_clusters.json
 python tools/redaction_audit.py packets/ exports/
+
+# MCIP: validate a bundle, import it into existing packets, check backfill coverage
+python tools/validate_mcip.py   schema/mcip/v1/fixtures/ --check-hashes
+python tools/import_mcip.py     <bundle_or_dir> --apply
+python tools/backfill_report.py packets/ --out manifests/backfill_report.json
 ```
 
 CI runs all of these on every PR touching `packets/`, `schema/`, or `tools/`.
@@ -86,6 +97,24 @@ by pasting proofs. A candidate proof is only a candidate until the *pinned Lean 
 checks it inside a tracked episode; the ledger of attempts, diagnostics, and repairs is
 preserved as training signal (including labeled negative examples). See
 [`docs/proofsearch-integration.md`](docs/proofsearch-integration.md).
+
+## Interchange, enrichment, and provenance (MCIP)
+
+A packet's canonical identity (statement, proof, trust, training eligibility) is only
+part of the picture. The **MathCorpus Interchange Protocol** (`schema/mcip/v1/`) is a
+versioned, cross-repo evidence contract that lets richer proof-search output — proof
+strategy, dependency evidence, failed attempts and repairs, multi-model performance, and
+literature lineage — travel between MathCorpus and its proof-search environment without
+either depending on the other's internal schema. Packets carry this as optional **child
+evidence** (`proof_variants`, `dependency_manifest`, `attempts`/`negative_examples`/
+`repair_trajectories`, `model_runs`/`empirical_difficulty_aggregates`,
+`idea_attributions`/`prior_art_matches`/`citation_reviews`/`contribution_statements`,
+`publication`) that never mutates canonical packet identity or proof authority — see
+[`schema/ENUMS.md`](schema/ENUMS.md) for the full field reference. `tools/import_mcip.py`
+folds an MCIP bundle into existing packets (idempotent, conflict-quarantining, dry-run by
+default); see [`docs/mcip-import.md`](docs/mcip-import.md) for the full workflow,
+including an honest accounting of what can and cannot be backfilled for packets authored
+before this layer existed.
 
 ## Releases
 
