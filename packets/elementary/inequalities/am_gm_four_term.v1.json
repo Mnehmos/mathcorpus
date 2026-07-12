@@ -65,6 +65,60 @@
       "polynomial_inequality"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.inequalities.am_gm_four_term.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "7d6074e440e11b2d2fd5fc41214535d34ecc35cc285df292c02dc22ca58130df",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Inequalities/AmGmFourTerm.lean",
+      "proof_body_sha256": "7b058dcf1b778aade917bd9ad2b3e015b87ffa9513b8a73f89c0105f678e6cb8",
+      "proof_body_redacted": false,
+      "tactic_count": 2,
+      "proof_length": 2,
+      "proof_profile": {
+        "primary_proof_class": "arithmetic_automation",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": true,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "sq_nonneg"
+    ],
+    "used_theorem_deps": [
+      "sq_nonneg"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "sq_nonneg"
+    ],
+    "transitive_dependency_count": 1,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "sq_nonneg"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "sq_nonneg",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "sq_nonneg",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 2,
     "tactic_count": 2
@@ -91,7 +145,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 26c22232), kernel_verified on the first Solve attempt. Completes the AM-GM ladder alongside am_gm_two.v1 and three_var_am_gm.v1; deliberately phrased as the radical-free polynomial special case (fourth powers) rather than the classical (a+b+c+d)/4 >= (abcd)^(1/4) form, which needs Real.sqrt/rpow machinery beyond this cycle's scope (see InequalityEstimateKit notes on sqrt-based AM-GM being 'beyond nlinarith'). Closes the am_gm_four_term item in packets/elementary/inequalities/QUEUE.md.",
   "hashes": {
-    "packet_sha256": "51d57e935b38e4bcbf8b4bc9518f7f87d70e7e345120a259157f461ce86cd63e",
+    "packet_sha256": "6b9def90ec1e43119cafa31919b6b62f89b42650a6b6762730952cda87e203c3",
     "formal_statement_sha256": "7d6074e440e11b2d2fd5fc41214535d34ecc35cc285df292c02dc22ca58130df",
     "proof_body_sha256": "7b058dcf1b778aade917bd9ad2b3e015b87ffa9513b8a73f89c0105f678e6cb8"
   }

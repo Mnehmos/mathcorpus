@@ -65,6 +65,41 @@
       "coordinates"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.geometry.distance_expand.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "824374e78d7053575d02b90e50bb2bde09c923fcfc001f586eb6c56d6551d408",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Geometry/DistanceExpand.lean",
+      "proof_body_sha256": "f1cd450f2c2563444483952c4401142e81117863347ab313962cbe5a3521ac66",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "normalization",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [],
+    "used_theorem_deps": [],
+    "obligation_deps": [],
+    "verified_module_item_deps": [],
+    "transitive_dependency_count": 0,
+    "transitive_dependency_depth": 0,
+    "retrieval_candidates": [],
+    "retrieved_unused_candidates": [],
+    "claim_sources": []
+  },
   "metrics": {
     "loc": 3,
     "tactic_count": 1
@@ -90,7 +125,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 5fbdba3e).",
   "hashes": {
-    "packet_sha256": "547491d04d129a502d4dd232020a1bf532bb42dcc7764af03e5b402a3ef05eb2",
+    "packet_sha256": "60223c60ddaea56b42381df8c17d6614cb30508c76fdb5e77abd1b8276bb0235",
     "formal_statement_sha256": "824374e78d7053575d02b90e50bb2bde09c923fcfc001f586eb6c56d6551d408",
     "proof_body_sha256": "f1cd450f2c2563444483952c4401142e81117863347ab313962cbe5a3521ac66"
   }

@@ -63,6 +63,60 @@
       "lcm"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.number_theory.gcd_mul_lcm.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "e63b16f9632ca9a7f576a8fae3958786f519399f612fe33188c1f31394354391",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/NumberTheory/GcdMulLcm.lean",
+      "proof_body_sha256": "9f01a57a03dbd56b05fef08cd4b4fd0d3cb8c1194bd29dd391d2a81cd141fd73",
+      "proof_body_redacted": false,
+      "tactic_count": 2,
+      "proof_length": 2,
+      "proof_profile": {
+        "primary_proof_class": "multi_lemma_composition",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "Nat.gcd_mul_lcm"
+    ],
+    "used_theorem_deps": [
+      "Nat.gcd_mul_lcm"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "Nat.gcd_mul_lcm"
+    ],
+    "transitive_dependency_count": 1,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "Nat.gcd_mul_lcm"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "Nat.gcd_mul_lcm",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.gcd_mul_lcm",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 2,
     "tactic_count": 2
@@ -89,7 +143,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode f6352ddf), kernel_verified on the first Solve attempt. Closes the gcd_mul_lcm item in packets/elementary/number_theory/QUEUE.md, ties the gcd_* and lcm_* families together.",
   "hashes": {
-    "packet_sha256": "45b25208802df25a7bf5dfad88c2367e19f304aada75ab099f1f464d2bf2eb1d",
+    "packet_sha256": "3bfd3695de58e443d700c185edeb5c74c080bfa9b3a9e5ae52882b4a5ffcce27",
     "formal_statement_sha256": "e63b16f9632ca9a7f576a8fae3958786f519399f612fe33188c1f31394354391",
     "proof_body_sha256": "9f01a57a03dbd56b05fef08cd4b4fd0d3cb8c1194bd29dd391d2a81cd141fd73"
   }

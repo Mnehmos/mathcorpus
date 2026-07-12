@@ -67,6 +67,41 @@
       "right_angle"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.geometry.pythagorean_right_angle.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "c1be83d794361881d8706eeee36953c621a13b84e0675e204370ff5c9e77c7fe",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Geometry/PythagoreanRightAngle.lean",
+      "proof_body_sha256": "b6ba98e1eae97a257a57ec13824339b489f0e1e65fba93e6a33b01120033f42e",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "arithmetic_automation",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": true,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [],
+    "used_theorem_deps": [],
+    "obligation_deps": [],
+    "verified_module_item_deps": [],
+    "transitive_dependency_count": 0,
+    "transitive_dependency_depth": 0,
+    "retrieval_candidates": [],
+    "retrieved_unused_candidates": [],
+    "claim_sources": []
+  },
   "metrics": {
     "loc": 2,
     "tactic_count": 1
@@ -95,7 +130,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 1ee45ae1). Step 1 (bare `ring`, no use of the hypothesis) kernel-failed with an `unsolved_goals` diagnostic and is preserved as negative.geometry.pythagorean_bare_ring_no_hypothesis_failure.v1; step 2 (`nlinarith [h]`) closed kernel_verified on the immediate next attempt. Fills the curriculum-notable Pythagorean-theorem gap flagged in packets/elementary/geometry/QUEUE.md.",
   "hashes": {
-    "packet_sha256": "535b062e6a7d9b001b8d1e0cb1e530ec5c629c44e6ab861391d35ed68910a6b1",
+    "packet_sha256": "4af1704591623c2baf197bf3609a77d19250747ec44292e894891547d29b5b12",
     "formal_statement_sha256": "c1be83d794361881d8706eeee36953c621a13b84e0675e204370ff5c9e77c7fe",
     "proof_body_sha256": "b6ba98e1eae97a257a57ec13824339b489f0e1e65fba93e6a33b01120033f42e"
   }

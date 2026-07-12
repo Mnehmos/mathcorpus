@@ -69,6 +69,130 @@
       "well_founded_recursion"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.induction.exists_prime_factor.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "35fa3e2122e7161bf7f3cd35dfb68c9535e7645a03f4d18bcf3dadee7ad4e466",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Induction/ExistsPrimeFactor.lean",
+      "proof_body_sha256": "3aed936ce15d7fdea1988e01c8b6813d649550b92818f8902e905f6d7835d375",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "induction",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": true,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "Nat.exists_dvd_of_not_prime2",
+      "Nat.strong_induction_on",
+      "dvd_refl",
+      "hp_dvd.trans",
+      "hp_prime",
+      "n.Prime"
+    ],
+    "used_theorem_deps": [
+      "Nat.exists_dvd_of_not_prime2",
+      "Nat.strong_induction_on",
+      "dvd_refl",
+      "hp_dvd.trans",
+      "hp_prime",
+      "n.Prime"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "Nat.exists_dvd_of_not_prime2",
+      "Nat.strong_induction_on",
+      "dvd_refl",
+      "hp_dvd.trans",
+      "hp_prime",
+      "n.Prime"
+    ],
+    "transitive_dependency_count": 6,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "Nat.exists_dvd_of_not_prime2",
+      "Nat.strong_induction_on",
+      "dvd_refl",
+      "hp_dvd.trans",
+      "hp_prime",
+      "n.Prime"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "Nat.exists_dvd_of_not_prime2",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.exists_dvd_of_not_prime2",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.strong_induction_on",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.strong_induction_on",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "dvd_refl",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "dvd_refl",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "hp_dvd.trans",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "hp_dvd.trans",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "hp_prime",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "hp_prime",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "n.Prime",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "n.Prime",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 3,
     "tactic_count": 1
@@ -95,7 +219,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode ac1ea7d4), kernel_verified on the first attempt. The packet's Lean file states n and hn as explicit theorem parameters (not a bare `intro n; intro hn` inside the tactic block, since the proof-search environment's root obligation is always a headerless `∀`-statement); this exact tactic-state form (`intro n hn` before `induction n using Nat.strong_induction_on`, confirming the induction tactic auto-reverts/reintroduces the dependent hypothesis hn) was independently kernel-verified in this episode before being packaged, per docs/proofsearch-integration.md (a prior episode f9e06b9b verified the `intro n; induction n; (case) intro hn` ordering instead, which is not the form used in the packaged file, hence the re-check). This domain's first genuine strong-induction packet (`Nat.strong_induction_on`) — every prior induction packet used plain `induction n with zero | succ`. Related to (but not proof-term-dependent on) the number_theory domain's queued `prime_two` / `not_prime_one` packets and Mathlib's own `Nat.exists_prime_and_dvd`, which this proof deliberately does not cite directly so the strong-induction technique is the one actually exercised.",
   "hashes": {
-    "packet_sha256": "2883776c52be32fb6ac304318f4f175f5a974ed2b98cd927fbf0804f76413adf",
+    "packet_sha256": "60b85c00330a6a490515cc5164cfc06933e8cf0cc9aadc6494afd0ab8d66b7a8",
     "formal_statement_sha256": "35fa3e2122e7161bf7f3cd35dfb68c9535e7645a03f4d18bcf3dadee7ad4e466",
     "proof_body_sha256": "3aed936ce15d7fdea1988e01c8b6813d649550b92818f8902e905f6d7835d375"
   }

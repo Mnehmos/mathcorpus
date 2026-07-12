@@ -64,6 +64,60 @@
       "divisibility"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.number_theory.prime_dvd_mul.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "65f2289b52e2e4f881d62d3b9038f29bfbbea3f462af549592ac3e80c370837d",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/NumberTheory/PrimeDvdMul.lean",
+      "proof_body_sha256": "99434c9900096a79460d2d76c0fd9694d30dd7c0603810638fff7f7364434e36",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "theorem_lookup",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "hp.prime.dvd_mul"
+    ],
+    "used_theorem_deps": [
+      "hp.prime.dvd_mul"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "hp.prime.dvd_mul"
+    ],
+    "transitive_dependency_count": 1,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "hp.prime.dvd_mul"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "hp.prime.dvd_mul",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "hp.prime.dvd_mul",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 2,
     "tactic_count": 1
@@ -90,7 +144,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode b42295d9), kernel_verified on the first accepted attempt. A prior problem_version using the default Ring+NormNum-only import manifest kernel-failed with 'the environment does not contain Nat.Prime' -- Nat.Prime isn't available under that narrow manifest; switched to problem_imports: [\"Mathlib\"] (matching this domain's prime_two packet), which worked cleanly. Closes the prime_dvd_mul item in packets/elementary/number_theory/QUEUE.md, flagged there as 'the single most reusable primality lemma for later divisibility work'.",
   "hashes": {
-    "packet_sha256": "03a76b92a18e5bfe6714a4aba70f86b9e0557c85a5647d70028ec0ac24e903d7",
+    "packet_sha256": "a69bd8cf3e22b2eab1fa292c72ff85938e2b9ea1bd963e8b3f50094aa04a0ebe",
     "formal_statement_sha256": "65f2289b52e2e4f881d62d3b9038f29bfbbea3f462af549592ac3e80c370837d",
     "proof_body_sha256": "99434c9900096a79460d2d76c0fd9694d30dd7c0603810638fff7f7364434e36"
   }

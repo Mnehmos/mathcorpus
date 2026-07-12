@@ -66,6 +66,41 @@
       "angle_sum"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.geometry.exterior_angle.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "18c819f4fb60654d7dd123aed1e87dcfe0cc46b5d3f5ed9b7c6443b5ed65454d",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Geometry/ExteriorAngle.lean",
+      "proof_body_sha256": "b26e9b0b9d44256afa178cb183de8dde0e4def46a740b570d048436cdc2ac2e6",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "arithmetic_automation",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [],
+    "used_theorem_deps": [],
+    "obligation_deps": [],
+    "verified_module_item_deps": [],
+    "transitive_dependency_count": 0,
+    "transitive_dependency_depth": 0,
+    "retrieval_candidates": [],
+    "retrieved_unused_candidates": [],
+    "claim_sources": []
+  },
   "metrics": {
     "loc": 3,
     "tactic_count": 1
@@ -91,7 +126,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode f9f2334b).",
   "hashes": {
-    "packet_sha256": "14cc687cdc867a9a058ef92f7bcc0f985bac7e7b0f7bf327678fd0184a62e685",
+    "packet_sha256": "587e985ebd3b6948543eb3a9a896d5f611edbc0c2d68393c2f3e64f6a75cc03e",
     "formal_statement_sha256": "18c819f4fb60654d7dd123aed1e87dcfe0cc46b5d3f5ed9b7c6443b5ed65454d",
     "proof_body_sha256": "b26e9b0b9d44256afa178cb183de8dde0e4def46a740b570d048436cdc2ac2e6"
   }

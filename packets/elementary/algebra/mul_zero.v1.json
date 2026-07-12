@@ -65,6 +65,60 @@
       "zero"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.algebra.mul_zero.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "27b0be8b33637aa72c219cc9d9a5bfc90e2a5d49dd467436bcbde1bb95f06198",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Algebra/MulZero.lean",
+      "proof_body_sha256": "4d3a32b50623b80db1b8557cd0d0b66c756ff021e725cf5c440913bb3c55322b",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "theorem_lookup",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "mul_zero"
+    ],
+    "used_theorem_deps": [
+      "mul_zero"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "mul_zero"
+    ],
+    "transitive_dependency_count": 1,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "mul_zero"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "mul_zero",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "mul_zero",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 3,
     "tactic_count": 1
@@ -90,7 +144,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 577b301c).",
   "hashes": {
-    "packet_sha256": "0c2988179c4bec59db1a8637ccde77b07d6f51a78d3e77da604c7e245c5fbb9b",
+    "packet_sha256": "460fe40d0223fd5b4d621ac1bfc93faf3c36e4ecb6069882a91a2e763f418f5e",
     "formal_statement_sha256": "27b0be8b33637aa72c219cc9d9a5bfc90e2a5d49dd467436bcbde1bb95f06198",
     "proof_body_sha256": "4d3a32b50623b80db1b8557cd0d0b66c756ff021e725cf5c440913bb3c55322b"
   }

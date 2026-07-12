@@ -65,6 +65,60 @@
       "exponent_laws"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.algebra.pow_mul.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "63b6052ca7ab805aa8d1d3737f0e04b037a101194aa4865c7948215f903d88bf",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Algebra/PowMul.lean",
+      "proof_body_sha256": "5a9bd0cff4e1d4d5127b589d71fdfd9032bf6816b9684eb8317354b76e68b5e3",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "theorem_lookup",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "pow_mul"
+    ],
+    "used_theorem_deps": [
+      "pow_mul"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "pow_mul"
+    ],
+    "transitive_dependency_count": 1,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "pow_mul"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "pow_mul",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "pow_mul",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 2,
     "tactic_count": 1
@@ -91,7 +145,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 13c20f38). Step 1 (bare `ring`) timed out after 60s and is preserved as negative.algebra.pow_mul_ring_timeout_failure.v1 — unlike the sibling pow_add packet, `ring` cannot cheaply normalize a goal with a *product* of two variable exponents. Step 2 (`exact pow_mul x m n`) closed kernel_verified immediately. Closes the pow_mul item in packets/elementary/algebra/QUEUE.md.",
   "hashes": {
-    "packet_sha256": "28ea25182672be597d5788c752919da0a3ff03345b9728bc60c90fc4accb6201",
+    "packet_sha256": "65ca9e1c7d6a226905c0a6b13285882ec47f58d55fa2d991ed55329017d892c8",
     "formal_statement_sha256": "63b6052ca7ab805aa8d1d3737f0e04b037a101194aa4865c7948215f903d88bf",
     "proof_body_sha256": "5a9bd0cff4e1d4d5127b589d71fdfd9032bf6816b9684eb8317354b76e68b5e3"
   }

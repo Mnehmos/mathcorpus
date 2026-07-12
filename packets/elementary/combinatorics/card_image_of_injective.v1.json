@@ -67,6 +67,60 @@
       "injective_function"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.combinatorics.card_image_of_injective.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "1b1620f2cce6102a7ad0590591f6a8a1d8cb04a9bd56d89bdbb7fa1d3b9f914f",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Combinatorics/CardImageOfInjective.lean",
+      "proof_body_sha256": "2a9111cbd5e010ce2e877d49395c64326ec33126c99807600abe731293bd8ce1",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "theorem_lookup",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "Finset.card_image_of_injective"
+    ],
+    "used_theorem_deps": [
+      "Finset.card_image_of_injective"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "Finset.card_image_of_injective"
+    ],
+    "transitive_dependency_count": 1,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "Finset.card_image_of_injective"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "Finset.card_image_of_injective",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.card_image_of_injective",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 3,
     "tactic_count": 1
@@ -92,7 +146,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 5f59b5d8). Companion positive packet to negative.combinatorics.card_image_injective_omega_failure.v1 (step 1 of the same episode): bare omega cannot use the Function.Injective hypothesis to relate (s.image f).card and s.card, but Finset.card_image_of_injective closes it directly. Closes the domain's card_image_of_injective negative-example backlog item.",
   "hashes": {
-    "packet_sha256": "acb1d9cae1dd76c4e80a6bf58d5ab5172c54daf6acfac0f34d5e6193acea0f32",
+    "packet_sha256": "e49d74e8a13baabdb61e59c56a929d5f37ce7b621899a194316d526451b8851d",
     "formal_statement_sha256": "1b1620f2cce6102a7ad0590591f6a8a1d8cb04a9bd56d89bdbb7fa1d3b9f914f",
     "proof_body_sha256": "2a9111cbd5e010ce2e877d49395c64326ec33126c99807600abe731293bd8ce1"
   }

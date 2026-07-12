@@ -66,6 +66,74 @@
       "triangular_number"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.induction.sum_consec_product.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "989f0669afa21e4e940a97de56dd54802d346c387809a3777a39aad93d2543ce",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Induction/SumConsecProduct.lean",
+      "proof_body_sha256": "38d09918864280a05f4244624baf6e1d3f0c5d01979f38aca71be842c0957c44",
+      "proof_body_redacted": false,
+      "tactic_count": 4,
+      "proof_length": 4,
+      "proof_profile": {
+        "primary_proof_class": "induction",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": true,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "Finset.sum_range_succ",
+      "Nat.mul_add"
+    ],
+    "used_theorem_deps": [
+      "Finset.sum_range_succ",
+      "Nat.mul_add"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "Finset.sum_range_succ",
+      "Nat.mul_add"
+    ],
+    "transitive_dependency_count": 2,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "Finset.sum_range_succ",
+      "Nat.mul_add"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "Finset.sum_range_succ",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.sum_range_succ",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.mul_add",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.mul_add",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 6,
     "tactic_count": 4
@@ -92,7 +160,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 1db4baa6), kernel_verified on the first attempt. Picked as a fresh gap in the domain's 'finite sums/products' focus: the domain already has gauss_sum/sum_squares/sum_cubes (degree 1/2/3 power sums) and arith_seq_sum (general arithmetic series, division-free via a *2 factor) but nothing at the 'sum of triangular numbers' level -- this is the natural next rung, using the same division-avoidance trick (multiply through by 3, here matching the true denominator of n(n+1)(n+2)/6 once the implicit factor of 2 from (k+1)(k+2)=2*T_(k+1) is accounted for). Confirmed no existing packet duplicates this via `grep -rl triangular\\|tetrahedral packets/elementary/*/*.json` (no hits) before authoring. Domain tagged `algebra` per this folder's established convention (schema has no `induction` domain value; see `exists_prime_factorization`'s notes from the same cycle for the same finding).",
   "hashes": {
-    "packet_sha256": "466f243205b61b2b439f34955a3a86c8ebf5ada552d01dede232c2f6407694ee",
+    "packet_sha256": "1bc784642935b01bc86e04220bba138ac12b8a4d0e7d61a27a00b084c51af9f3",
     "formal_statement_sha256": "989f0669afa21e4e940a97de56dd54802d346c387809a3777a39aad93d2543ce",
     "proof_body_sha256": "38d09918864280a05f4244624baf6e1d3f0c5d01979f38aca71be842c0957c44"
   }

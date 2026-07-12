@@ -66,6 +66,60 @@
       "associativity"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.combinatorics.union_assoc.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "b44302a0e19144b63e9b23195eee56228ae6b15b782ba7e751cba84cdf4f48b0",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Combinatorics/UnionAssoc.lean",
+      "proof_body_sha256": "52665e8862f8db7977513a537f8c98c9da7bb498f5b4a999940cd6df8b0ba0fa",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "theorem_lookup",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "Finset.union_assoc"
+    ],
+    "used_theorem_deps": [
+      "Finset.union_assoc"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "Finset.union_assoc"
+    ],
+    "transitive_dependency_count": 1,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "Finset.union_assoc"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "Finset.union_assoc",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.union_assoc",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 3,
     "tactic_count": 1
@@ -91,7 +145,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 0319b31c).",
   "hashes": {
-    "packet_sha256": "8bae9a90646141204fd35277e789930ee4d9b2965f6c88cb8bb099cd1630a8bc",
+    "packet_sha256": "196be6dd907e2793378523e6752eaa1b54298197a68c9ce9eab51e9931c37666",
     "formal_statement_sha256": "b44302a0e19144b63e9b23195eee56228ae6b15b782ba7e751cba84cdf4f48b0",
     "proof_body_sha256": "52665e8862f8db7977513a537f8c98c9da7bb498f5b4a999940cd6df8b0ba0fa"
   }

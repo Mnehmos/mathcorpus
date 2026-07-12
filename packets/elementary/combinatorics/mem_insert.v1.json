@@ -66,6 +66,60 @@
       "insert"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.combinatorics.mem_insert.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "5ea0720dd7adfa2574bde15f19adcdf5567ce3a732fb762888af53f50c339c25",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Combinatorics/MemInsert.lean",
+      "proof_body_sha256": "da80f8e0fce4456f26a05da45b30cbb0af7a3f1841b735a9b931f62c5b576aa7",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "theorem_lookup",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "Finset.mem_insert"
+    ],
+    "used_theorem_deps": [
+      "Finset.mem_insert"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "Finset.mem_insert"
+    ],
+    "transitive_dependency_count": 1,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "Finset.mem_insert"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "Finset.mem_insert",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.mem_insert",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 3,
     "tactic_count": 1
@@ -91,7 +145,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode c2196ad0).",
   "hashes": {
-    "packet_sha256": "01e7b0c06d378c5bf92281cede533b38e7034010235bdf1e079eb47a38405be8",
+    "packet_sha256": "2a8feb7fae4df209f1ebde4c59521bda059c71515ce678dd80e4de34e2b77afe",
     "formal_statement_sha256": "5ea0720dd7adfa2574bde15f19adcdf5567ce3a732fb762888af53f50c339c25",
     "proof_body_sha256": "da80f8e0fce4456f26a05da45b30cbb0af7a3f1841b735a9b931f62c5b576aa7"
   }

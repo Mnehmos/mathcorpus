@@ -66,6 +66,88 @@
       "subadditivity"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.inequalities.max_add_le.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "433c705c9e04d887a713afd9547054a79df55c7a30f3e9feea832e36a63006f8",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Inequalities/MaxAddLe.lean",
+      "proof_body_sha256": "dfafd1f6434fa6048c4a612681869f181d773d95a8a387202e2dfead0df40218",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "arithmetic_automation",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": true,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "le_max_left",
+      "le_max_right",
+      "max_le"
+    ],
+    "used_theorem_deps": [
+      "le_max_left",
+      "le_max_right",
+      "max_le"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "le_max_left",
+      "le_max_right",
+      "max_le"
+    ],
+    "transitive_dependency_count": 3,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "le_max_left",
+      "le_max_right",
+      "max_le"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "le_max_left",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "le_max_left",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "le_max_right",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "le_max_right",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "max_le",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "max_le",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 3,
     "tactic_count": 1
@@ -92,7 +174,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode a6eb2a43), kernel_verified on the first attempt. The dual companion to min_add_min_le.v1 (min is superadditive) -- same proof structure with max_le/le_max_left/le_max_right in place of le_min/min_le_left/min_le_right.",
   "hashes": {
-    "packet_sha256": "3556d66f5b295d791e5c857ef431d7a9cfc4d5a0694dd7ad0fb2b55f12a896ff",
+    "packet_sha256": "15004b1b2844ffb4d5e4ce024977edf0daadadd30062983850d9647f05dbe806",
     "formal_statement_sha256": "433c705c9e04d887a713afd9547054a79df55c7a30f3e9feea832e36a63006f8",
     "proof_body_sha256": "dfafd1f6434fa6048c4a612681869f181d773d95a8a387202e2dfead0df40218"
   }

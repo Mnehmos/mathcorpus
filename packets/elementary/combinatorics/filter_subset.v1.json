@@ -66,6 +66,60 @@
       "subset"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.combinatorics.filter_subset.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "23a6a5ff0da22836fdf775398d1e0bbb5b21ec63c310118850a00758a50d0196",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Combinatorics/FilterSubset.lean",
+      "proof_body_sha256": "41e22b5ec4ec9bf2707e97aadda192803e9ee6f1877a7bb0c4253c9f7d05e319",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "theorem_lookup",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "Finset.filter_subset"
+    ],
+    "used_theorem_deps": [
+      "Finset.filter_subset"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "Finset.filter_subset"
+    ],
+    "transitive_dependency_count": 1,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "Finset.filter_subset"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "Finset.filter_subset",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.filter_subset",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 3,
     "tactic_count": 1
@@ -91,7 +145,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 5140abfa).",
   "hashes": {
-    "packet_sha256": "2a5577e10957d9c42e1f25d2b9c6b0dd835dbda0453b1f8cb60e461ddd696e4b",
+    "packet_sha256": "16ebb374ccd74cf41a5d6a9251c46e4692d45e96404011b0620721aa92958f7b",
     "formal_statement_sha256": "23a6a5ff0da22836fdf775398d1e0bbb5b21ec63c310118850a00758a50d0196",
     "proof_body_sha256": "41e22b5ec4ec9bf2707e97aadda192803e9ee6f1877a7bb0c4253c9f7d05e319"
   }

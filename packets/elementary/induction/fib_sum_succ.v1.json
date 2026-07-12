@@ -68,6 +68,88 @@
       "recurrence_relation"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.induction.fib_sum_succ.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "492185cdcfe0fe660f7231dc6e8e953f51f43368d31b64bf275694a025fe439e",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Induction/FibSumSucc.lean",
+      "proof_body_sha256": "8de7dfe0f6edc877eda018688a09078389b88881f3fd9e66f9d42db6c240db20",
+      "proof_body_redacted": false,
+      "tactic_count": 4,
+      "proof_length": 4,
+      "proof_profile": {
+        "primary_proof_class": "induction",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": true,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "Finset.sum_range_succ",
+      "Nat.fib",
+      "Nat.fib_add_two"
+    ],
+    "used_theorem_deps": [
+      "Finset.sum_range_succ",
+      "Nat.fib",
+      "Nat.fib_add_two"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "Finset.sum_range_succ",
+      "Nat.fib",
+      "Nat.fib_add_two"
+    ],
+    "transitive_dependency_count": 3,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "Finset.sum_range_succ",
+      "Nat.fib",
+      "Nat.fib_add_two"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "Finset.sum_range_succ",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.sum_range_succ",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.fib",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.fib",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.fib_add_two",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.fib_add_two",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 5,
     "tactic_count": 4
@@ -94,7 +176,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode fe47cf48), kernel_verified on the first Solve attempt. Distinct from the already-authored elementary.induction.fib_le_two_pow.v1 (a growth-rate bound on a hand-rolled fib defined via SubmitModule pair-recursion): this packet uses Mathlib's Nat.fib directly and proves an exact partial-sum identity rather than an inequality. Picked as a fresh target after induction's QUEUE.md Next targets/Backlog were both empty this cycle (repopulated from the domain's LOOP.md focus list: finite sums/products, recurrence relations).",
   "hashes": {
-    "packet_sha256": "aa7c683cbe0e7fce76b889f45b3e5ae3b38efd515261ebbfd735c20ca4f0249f",
+    "packet_sha256": "3649c689fc386d1bb21eedf5db9904a3e9c35b2c1a8c126eaa3f7cf93d9bd0a3",
     "formal_statement_sha256": "492185cdcfe0fe660f7231dc6e8e953f51f43368d31b64bf275694a025fe439e",
     "proof_body_sha256": "8de7dfe0f6edc877eda018688a09078389b88881f3fd9e66f9d42db6c240db20"
   }

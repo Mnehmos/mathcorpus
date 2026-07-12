@@ -66,6 +66,74 @@
       "induction"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.induction.sum_fib_sq.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "aba0d2b85375e3e291eeb4d2391ad188903a1b2b47b35e610a7664e76eab30b2",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Induction/SumFibSq.lean",
+      "proof_body_sha256": "c276cf59ad01598cc811f58d1882774a051b983ee952baaec606bc44fa5738e6",
+      "proof_body_redacted": false,
+      "tactic_count": 4,
+      "proof_length": 4,
+      "proof_profile": {
+        "primary_proof_class": "induction",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": true,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "Finset.sum_range_succ",
+      "Nat.fib_add_two"
+    ],
+    "used_theorem_deps": [
+      "Finset.sum_range_succ",
+      "Nat.fib_add_two"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "Finset.sum_range_succ",
+      "Nat.fib_add_two"
+    ],
+    "transitive_dependency_count": 2,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "Finset.sum_range_succ",
+      "Nat.fib_add_two"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "Finset.sum_range_succ",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.sum_range_succ",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.fib_add_two",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.fib_add_two",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 6,
     "tactic_count": 4
@@ -92,7 +160,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 452d7bbe), kernel_verified on the first attempt. Confirmed via `mathlib_search_declarations` that Mathlib has no `fib_sq`/`fib_sum` convenience lemma (genuine hand-derived induction, not a citation) and via `grep -rl 'fib.*sq'` that no existing packet duplicated this. Complements the domain's `fib_le_two_pow` (growth bound) and `fib_sum_succ` (plain sum identity) with this classic sum-of-squares identity. The `n+1+1`-vs-`n+2` numeral form that caused a real issue in the previous cycle's `two_pow_strictmono` was NOT a problem here -- `rw [Nat.fib_add_two]` matched the induction-generated `Nat.fib (n+1+1)` goal term against the lemma's `Nat.fib (?n+2)` pattern without incident, since both reduce to the same `Nat.succ (Nat.succ n)` normal form and `rw`'s unifier handles that defeq gap for simple numeral addition.",
   "hashes": {
-    "packet_sha256": "c30c28de68582ca87ee3c46295454bb98f2b45f23f99660de5b07de20569b30c",
+    "packet_sha256": "e2acef686845c41d3a88e8f8d684a88d7fbb392b672d448c811323fd081efc34",
     "formal_statement_sha256": "aba0d2b85375e3e291eeb4d2391ad188903a1b2b47b35e610a7664e76eab30b2",
     "proof_body_sha256": "c276cf59ad01598cc811f58d1882774a051b983ee952baaec606bc44fa5738e6"
   }

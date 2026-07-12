@@ -67,6 +67,60 @@
       "function"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.combinatorics.card_image_le.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "f93d97471cd6bf173d79bdda3c308e8597c6aa962cc48d084cb170ceb305bf7c",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Combinatorics/CardImageLe.lean",
+      "proof_body_sha256": "dc275400619383db28773b5bb625f76be7409adf1cc747d4595dceb6c933609c",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "theorem_lookup",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "Finset.card_image_le"
+    ],
+    "used_theorem_deps": [
+      "Finset.card_image_le"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "Finset.card_image_le"
+    ],
+    "transitive_dependency_count": 1,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "Finset.card_image_le"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "Finset.card_image_le",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.card_image_le",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 3,
     "tactic_count": 1
@@ -92,7 +146,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 56d41a21). Closes the card_image_le item promoted from packets/elementary/combinatorics/QUEUE.md backlog.",
   "hashes": {
-    "packet_sha256": "f816029068d9ac0deae72f83e396529365ae1b51f6afe80250102823cf86e66e",
+    "packet_sha256": "a7a10d4eae7ef4ba1452018077479dc04d31ba23a1911418a89e7e8ed2f600bf",
     "formal_statement_sha256": "f93d97471cd6bf173d79bdda3c308e8597c6aa962cc48d084cb170ceb305bf7c",
     "proof_body_sha256": "dc275400619383db28773b5bb625f76be7409adf1cc747d4595dceb6c933609c"
   }

@@ -66,6 +66,60 @@
       "absorbing_element"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.combinatorics.empty_inter.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "6c384c8c0f1367a2ea97f15726c97aceb9300658f265f1a66a9f3e295dae5dc9",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Combinatorics/EmptyInter.lean",
+      "proof_body_sha256": "2d6f1d16c8dd9ffb757f6ea4c7b9f6180eccde60ad7ae2f643872d164308ce33",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "theorem_lookup",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "Finset.empty_inter"
+    ],
+    "used_theorem_deps": [
+      "Finset.empty_inter"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "Finset.empty_inter"
+    ],
+    "transitive_dependency_count": 1,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "Finset.empty_inter"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "Finset.empty_inter",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.empty_inter",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 3,
     "tactic_count": 1
@@ -92,7 +146,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 21724974).",
   "hashes": {
-    "packet_sha256": "b4584c6aac6d1674a2a160cb10f8744749ec23ae59b1231de91427e0eb29e60d",
+    "packet_sha256": "ed4379976905e359ac64734280d59e42b119ccbb8ae2496c7c07bf0002f31346",
     "formal_statement_sha256": "6c384c8c0f1367a2ea97f15726c97aceb9300658f265f1a66a9f3e295dae5dc9",
     "proof_body_sha256": "2d6f1d16c8dd9ffb757f6ea4c7b9f6180eccde60ad7ae2f643872d164308ce33"
   }

@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "literature_source",
+  "record_id": "literature_source.formalconjectures_oeis_358684_lean_oeis_.v1",
+  "packet_id": "frontier.formal_conjectures.oeis_a358684_conjecture_0.v1",
+  "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+  "created_at": "2026-07-12T00:00:00Z",
+  "trust_status": "candidate_unverified",
+  "export_eligibility": "public",
+  "record_hash": "e7b74c6625ce93294f85bbf5e89f2f982ed4f20ab6b77a3fe3c51826f60c0e9b",
+  "title": "FormalConjectures/OEIS/358684.lean::oeis_358684_conjecture_0",
+  "authors": [],
+  "publication_year": null,
+  "venue": "sibling repo mnehmos.llm-driven-proof-search.environment/formal-conjectures",
+  "external_ids": {
+    "repo_path": "FormalConjectures/OEIS/358684.lean::oeis_358684_conjecture_0"
+  },
+  "source_sha256": null,
+  "access_note": "Formalized from this packet's own pre-existing source_provenance.source_refs (issue #8 follow-up); not independently re-verified."
+}

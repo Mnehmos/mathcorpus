@@ -66,6 +66,41 @@
       "empty_range"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.combinatorics.prod_range_zero.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "092d6ed3a50c46b8b8a3a0b16f52ab2bdbdafe2a4fa14216679745d48595a8b7",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Combinatorics/ProdRangeZero.lean",
+      "proof_body_sha256": "7fa1a73fb8cae46b9a1787a8a84bbeb53d931ea51158c5c510747257a1acd4bd",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "normalization",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [],
+    "used_theorem_deps": [],
+    "obligation_deps": [],
+    "verified_module_item_deps": [],
+    "transitive_dependency_count": 0,
+    "transitive_dependency_depth": 0,
+    "retrieval_candidates": [],
+    "retrieved_unused_candidates": [],
+    "claim_sources": []
+  },
   "metrics": {
     "loc": 3,
     "tactic_count": 1
@@ -92,7 +127,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 37e7d706).",
   "hashes": {
-    "packet_sha256": "12711e4f4c4d0d9074ea3a4bdd7b8dfcfe20aff566aac8a9d025aec9a6a2da76",
+    "packet_sha256": "84aed4e673b9d4bab168909be4956eaac64b5be9f6e7f88bf02c8e5fd73a214c",
     "formal_statement_sha256": "092d6ed3a50c46b8b8a3a0b16f52ab2bdbdafe2a4fa14216679745d48595a8b7",
     "proof_body_sha256": "7fa1a73fb8cae46b9a1787a8a84bbeb53d931ea51158c5c510747257a1acd4bd"
   }

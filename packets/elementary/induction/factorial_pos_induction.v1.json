@@ -66,6 +66,102 @@
       "positivity"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.induction.factorial_pos_induction.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "a5a92a3d0fa069d1d1338b6dbfb2b3f2536100eb3b1bdd7b04a09247d55ad628",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Induction/FactorialPosInduction.lean",
+      "proof_body_sha256": "b60848a92e89c43c78b788703a6cc9fcb6779f4fdb8e8976595a861e4d885a13",
+      "proof_body_redacted": false,
+      "tactic_count": 3,
+      "proof_length": 3,
+      "proof_profile": {
+        "primary_proof_class": "induction",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": true,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "Nat.factorial",
+      "Nat.factorial_succ",
+      "Nat.mul_pos",
+      "Nat.succ_pos"
+    ],
+    "used_theorem_deps": [
+      "Nat.factorial",
+      "Nat.factorial_succ",
+      "Nat.mul_pos",
+      "Nat.succ_pos"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "Nat.factorial",
+      "Nat.factorial_succ",
+      "Nat.mul_pos",
+      "Nat.succ_pos"
+    ],
+    "transitive_dependency_count": 4,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "Nat.factorial",
+      "Nat.factorial_succ",
+      "Nat.mul_pos",
+      "Nat.succ_pos"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "Nat.factorial",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.factorial",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.factorial_succ",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.factorial_succ",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.mul_pos",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.mul_pos",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.succ_pos",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.succ_pos",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 3,
     "tactic_count": 3
@@ -92,7 +188,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode d6963e91), kernel_verified on the first Solve attempt. Distinct from elementary.number_theory.factorial_pos.v1 (a bare Nat.factorial_pos citation): this is a genuine self-contained inductive proof of the same fact, aimed at offsetting this domain's flagged L0_elementary/L1_proof_basics level-distribution skew (only 2 of 26 packets were L0 before this one).",
   "hashes": {
-    "packet_sha256": "1b857d2d4acceaa0bebf38e421179a4e7f99ad5f24905f00c7ee553cdc27c3fd",
+    "packet_sha256": "404cba2f0bd59b2fd636dd519bc09496c709f26acf57807ea0fbe3b1a2fe20ed",
     "formal_statement_sha256": "a5a92a3d0fa069d1d1338b6dbfb2b3f2536100eb3b1bdd7b04a09247d55ad628",
     "proof_body_sha256": "b60848a92e89c43c78b788703a6cc9fcb6779f4fdb8e8976595a861e4d885a13"
   }

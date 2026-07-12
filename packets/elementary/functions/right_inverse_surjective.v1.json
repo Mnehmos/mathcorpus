@@ -64,6 +64,41 @@
       "function_composition"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.functions.right_inverse_surjective.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "ea5cbd980f21662123b0df789fcf91959b6418379ca5e7b429627f37cf2c3d81",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Functions/RightInverseSurjective.lean",
+      "proof_body_sha256": "f182c4e2be61b61fbbcd506e5c3b08c34b935d5bd90892a5ee9b2555b971aedf",
+      "proof_body_redacted": false,
+      "tactic_count": 2,
+      "proof_length": 2,
+      "proof_profile": {
+        "primary_proof_class": "multi_lemma_composition",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [],
+    "used_theorem_deps": [],
+    "obligation_deps": [],
+    "verified_module_item_deps": [],
+    "transitive_dependency_count": 0,
+    "transitive_dependency_depth": 0,
+    "retrieval_candidates": [],
+    "retrieved_unused_candidates": [],
+    "claim_sources": []
+  },
   "metrics": {
     "loc": 3,
     "tactic_count": 2
@@ -90,7 +125,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 6f12df1e), kernel_verified on the first attempt. Completes the domain's 'inverse' focus pair alongside last cycle's `left_inverse_injective` -- this was the explicit backlog item that cycle left for exactly this pickup. `Function.RightInverse g f` unfolds to `Function.LeftInverse f g`, i.e. `∀ x, f (g x) = x`, so the witness `g b` with `h b : f (g b) = b` proves surjectivity directly, no rewriting needed (simpler than `left_inverse_injective`'s two-step congrArg/rw, hence D0 not D1).",
   "hashes": {
-    "packet_sha256": "b73bccfd559fe593c57a7574edf64aa6f5b51740b34f2752070fa04565632fee",
+    "packet_sha256": "06140318ac99127b5bd1ed17c6c9ee2d74f75ea71e11474aff7335b4f4caa358",
     "formal_statement_sha256": "ea5cbd980f21662123b0df789fcf91959b6418379ca5e7b429627f37cf2c3d81",
     "proof_body_sha256": "f182c4e2be61b61fbbcd506e5c3b08c34b935d5bd90892a5ee9b2555b971aedf"
   }

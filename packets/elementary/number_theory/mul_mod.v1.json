@@ -64,6 +64,60 @@
       "modular_arithmetic"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.number_theory.mul_mod.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "510b9aa57d95b7e5e7022f7bcdbea55c072df4cebdde379fc24268c11c5ffc78",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/NumberTheory/MulMod.lean",
+      "proof_body_sha256": "3218ecb8537c2dc65aaf098bb09007a52802d26ba11a26581171f90023e863af",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "theorem_lookup",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "Nat.mul_mod"
+    ],
+    "used_theorem_deps": [
+      "Nat.mul_mod"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "Nat.mul_mod"
+    ],
+    "transitive_dependency_count": 1,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "Nat.mul_mod"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "Nat.mul_mod",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.mul_mod",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 3,
     "tactic_count": 1
@@ -89,7 +143,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode c43e2c46).",
   "hashes": {
-    "packet_sha256": "79583b5e86c580a10ec08374ecff0e182dbd31bd1ddb8e2f832c1e17c7be6f8f",
+    "packet_sha256": "f6774cbf173a48303d9f2fed1433111addb5ec56754eb5fd60b9f72228ff57ac",
     "formal_statement_sha256": "510b9aa57d95b7e5e7022f7bcdbea55c072df4cebdde379fc24268c11c5ffc78",
     "proof_body_sha256": "3218ecb8537c2dc65aaf098bb09007a52802d26ba11a26581171f90023e863af"
   }

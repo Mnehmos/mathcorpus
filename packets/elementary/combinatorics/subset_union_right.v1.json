@@ -66,6 +66,60 @@
       "subset"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.combinatorics.subset_union_right.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "45a669abdd16afbc52df90db85d36cc53e361459c7175a4981e1d89fd06665a0",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Combinatorics/SubsetUnionRight.lean",
+      "proof_body_sha256": "e1b321f319fa106f7717541c6027246fb25484b1e1344a50bb3fb609bda9ffaa",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "theorem_lookup",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "Finset.subset_union_right"
+    ],
+    "used_theorem_deps": [
+      "Finset.subset_union_right"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "Finset.subset_union_right"
+    ],
+    "transitive_dependency_count": 1,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "Finset.subset_union_right"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "Finset.subset_union_right",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.subset_union_right",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 3,
     "tactic_count": 1
@@ -91,7 +145,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 91481a8e).",
   "hashes": {
-    "packet_sha256": "c62133f35f69e881d746c0d9f79d2bbdb9c5119c3cc522a8201b9cb187c0da8b",
+    "packet_sha256": "ea9946d33b52b7fc0cff6c29cbfbdcf99d3477b9dde667d011cce7b6d8ee5db7",
     "formal_statement_sha256": "45a669abdd16afbc52df90db85d36cc53e361459c7175a4981e1d89fd06665a0",
     "proof_body_sha256": "e1b321f319fa106f7717541c6027246fb25484b1e1344a50bb3fb609bda9ffaa"
   }

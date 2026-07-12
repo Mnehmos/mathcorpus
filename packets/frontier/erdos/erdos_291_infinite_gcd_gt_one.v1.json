@@ -73,6 +73,200 @@
       "infinite_set"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "frontier.erdos.erdos_291_infinite_gcd_gt_one.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "759105fef4b1a6ace2026f4fc1567c7115df5bb41f7f665ce7c45ddddaa3e9c2",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Frontier/Erdos/Erdos291InfiniteGcdGtOne.lean",
+      "proof_body_sha256": "f1fde40826da81ef09e9289826a80479a21d0cdecba7ee8e1c186d628e6f4261",
+      "proof_body_redacted": false,
+      "tactic_count": 74,
+      "proof_length": 74,
+      "proof_profile": {
+        "primary_proof_class": "witness_construction",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": true,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "L_ne_zero",
+      "Nat.dvd_gcd",
+      "Nat.gcd",
+      "Nat.gcd_pos_of_pos_right",
+      "Nat.pos_of_ne_zero",
+      "Nat.pow_right_injective",
+      "Set.infinite_of_injective_forall_mem",
+      "Set.mem_setOf_eq",
+      "pow_pos",
+      "three_dvd_L",
+      "three_dvd_a"
+    ],
+    "used_theorem_deps": [
+      "L_ne_zero",
+      "Nat.dvd_gcd",
+      "Nat.gcd",
+      "Nat.gcd_pos_of_pos_right",
+      "Nat.pos_of_ne_zero",
+      "Nat.pow_right_injective",
+      "Set.infinite_of_injective_forall_mem",
+      "Set.mem_setOf_eq",
+      "pow_pos",
+      "three_dvd_L",
+      "three_dvd_a"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "L_ne_zero",
+      "Nat.dvd_gcd",
+      "Nat.gcd",
+      "Nat.gcd_pos_of_pos_right",
+      "Nat.pos_of_ne_zero",
+      "Nat.pow_right_injective",
+      "Set.infinite_of_injective_forall_mem",
+      "Set.mem_setOf_eq",
+      "pow_pos",
+      "three_dvd_L",
+      "three_dvd_a"
+    ],
+    "transitive_dependency_count": 11,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "L_ne_zero",
+      "Nat.dvd_gcd",
+      "Nat.gcd",
+      "Nat.gcd_pos_of_pos_right",
+      "Nat.pos_of_ne_zero",
+      "Nat.pow_right_injective",
+      "Set.infinite_of_injective_forall_mem",
+      "Set.mem_setOf_eq",
+      "pow_pos",
+      "three_dvd_L",
+      "three_dvd_a"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "L_ne_zero",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "L_ne_zero",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.dvd_gcd",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.dvd_gcd",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.gcd",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.gcd",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.gcd_pos_of_pos_right",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.gcd_pos_of_pos_right",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.pos_of_ne_zero",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.pos_of_ne_zero",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.pow_right_injective",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.pow_right_injective",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Set.infinite_of_injective_forall_mem",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Set.infinite_of_injective_forall_mem",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Set.mem_setOf_eq",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Set.mem_setOf_eq",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "pow_pos",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "pow_pos",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "three_dvd_L",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "three_dvd_L",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "three_dvd_a",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "three_dvd_a",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 108,
     "tactic_count": 74
@@ -99,8 +293,36 @@
   },
   "notes": "ANTI-OVERCLAIM: this packet proves only the EASY, already-known companion direction (part ii) of Erdos #291, not part (i) (whether gcd(a_n,L_n)=1 infinitely often), which remains genuinely OPEN. Proof authority: Lean kernel via the tracked proof-search loop (episode 2f8943e6, problem_version 6a5fd25f-bf69-4354-957e-e2546df3be86), submitted as a SubmitModule (2 defs L/a + 5 helper theorems + root theorem), kernel_verified on the fourth submission -- the most complex module transported in this corpus's frontier lane so far (8 items). Failures 1-3 were all instances of the documented flattened-sequence trap (issue #67) at a larger scale than previously seen: helper module items are ALWAYS transported through the flattener regardless of requested proof_format, and any `have h := by tac1; tac2` assignment followed by more sibling tactics gets its trailing tactics silently swallowed into the inner by-block unless explicitly parenthesized as `have h := (by tac1; tac2)`. Attempt 2 fixed this for the `filter_multiples` helper (which also needed its two internal case-split branches rewritten bullet-free, using `Or.elim`/`.elim` term-mode dispatch instead of `·`-bullets, since bullet scoping does not survive the same forced flattening); attempt 4 fixed the same unparenthesized-by pattern recurring four more times in the `three_dvd_a` helper (prime3, hj_ne, e1, e2). The root theorem itself used `proof_format: raw_lean_block` successfully with its original bullet structure intact (root theorems are NOT forced through the flattener). Independently re-verified in THIS environment's own pinned toolchain rather than treated as evidence merely because the sibling repo (F:\\Github\\mnehmos.llm-driven-proof-search.environment\\ErdosProblems\\erdos-291\\proof\\Erdos291_infinite_gcd_gt_one.lean) already reports it kernel_verified there -- per this repo's evidence policy. training.eligibility: quarantined per the default-quarantine policy for open_problem_related packets pending real external review (same policy as the #399/#349/#494 packets). Fourth packet in the frontier/erdos lane.",
   "hashes": {
-    "packet_sha256": "12afa78d7e1d9f69f81dcd8cdcde5fa569efa1d631166ca3cd40492c8083131e",
+    "packet_sha256": "32417adca7d804d05f71ccf8e5152356403c8805b2dd59c96806b77003e39dbb",
     "formal_statement_sha256": "759105fef4b1a6ace2026f4fc1567c7115df5bb41f7f665ce7c45ddddaa3e9c2",
     "proof_body_sha256": "f1fde40826da81ef09e9289826a80479a21d0cdecba7ee8e1c186d628e6f4261"
-  }
+  },
+  "idea_attributions": [
+    {
+      "attribution_id": "frontier.erdos.erdos_291_infinite_gcd_gt_one.v1.attribution.1",
+      "formal_statement_sha256": "759105fef4b1a6ace2026f4fc1567c7115df5bb41f7f665ce7c45ddddaa3e9c2",
+      "proof_variant_id": null,
+      "literature_source_id": "literature_source.erdosproblems_erdos_291_proof_erdos291_i.v1",
+      "external_claim_id": null,
+      "source_sha256_pin": "632f899e275622826a5c249ad7443189cbb750a999cf9c30221f70b3fec7ee01",
+      "attribution_status": "directly_used",
+      "visibility": "model_visible",
+      "dependency_refs": [],
+      "reviewer": "The MathCorpus Authors",
+      "notes": "Formalized from source_provenance.source_refs[0] (pre-existing, not newly researched)."
+    },
+    {
+      "attribution_id": "frontier.erdos.erdos_291_infinite_gcd_gt_one.v1.attribution.2",
+      "formal_statement_sha256": "759105fef4b1a6ace2026f4fc1567c7115df5bb41f7f665ce7c45ddddaa3e9c2",
+      "proof_variant_id": null,
+      "literature_source_id": "literature_source.https_www_erdosproblems_com_291.v1",
+      "external_claim_id": null,
+      "source_sha256_pin": "21e4475bad3c432d6445ec9cfad9dd35e3b23f25d9076c5f16e56d7c1c58f0f0",
+      "attribution_status": "background_only",
+      "visibility": "model_visible",
+      "dependency_refs": [],
+      "reviewer": "The MathCorpus Authors",
+      "notes": "Formalized from source_provenance.source_refs[1] (pre-existing, not newly researched)."
+    }
+  ]
 }

@@ -68,6 +68,102 @@
       "natural_number_order"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.induction.factorial_ge_two_pow.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "e8a92874f9a4f19c7c1243acb2e84ef1e21fb7daedd1be1f9f61daf81e64218e",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Induction/FactorialGeTwoPow.lean",
+      "proof_body_sha256": "b9e225471f4d8cc044e6d43484cabd8d790221de5750b5aa4becb90ba9f6429f",
+      "proof_body_redacted": false,
+      "tactic_count": 3,
+      "proof_length": 3,
+      "proof_profile": {
+        "primary_proof_class": "induction",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": true,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "Nat.factorial",
+      "Nat.factorial_pos",
+      "Nat.factorial_succ",
+      "pow_succ"
+    ],
+    "used_theorem_deps": [
+      "Nat.factorial",
+      "Nat.factorial_pos",
+      "Nat.factorial_succ",
+      "pow_succ"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "Nat.factorial",
+      "Nat.factorial_pos",
+      "Nat.factorial_succ",
+      "pow_succ"
+    ],
+    "transitive_dependency_count": 4,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "Nat.factorial",
+      "Nat.factorial_pos",
+      "Nat.factorial_succ",
+      "pow_succ"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "Nat.factorial",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.factorial",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.factorial_pos",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.factorial_pos",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.factorial_succ",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.factorial_succ",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "pow_succ",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "pow_succ",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 4,
     "tactic_count": 3
@@ -94,7 +190,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 538ea8b6), kernel_verified on the first Solve attempt. Cross-references packets/elementary/number_theory/factorial_pos.v1.json and factorial_le.v1.json (see CROSS_DOMAIN.md). Builds on the induction curriculum lane, the smallest domain in the corpus at the time of authoring.",
   "hashes": {
-    "packet_sha256": "fb3f2413a56761243f088c2dfa6f82072464eaf962e74db5dd8e6c52d1d1bbd1",
+    "packet_sha256": "c7d61ca7b15443d1db4c9538b017915877568283f8a4d795a7d9afd9888a0989",
     "formal_statement_sha256": "e8a92874f9a4f19c7c1243acb2e84ef1e21fb7daedd1be1f9f61daf81e64218e",
     "proof_body_sha256": "b9e225471f4d8cc044e6d43484cabd8d790221de5750b5aa4becb90ba9f6429f"
   }

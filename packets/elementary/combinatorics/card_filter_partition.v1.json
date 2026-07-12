@@ -68,6 +68,60 @@
       "partition"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.combinatorics.card_filter_partition.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "97afc42ecd2689d17a8208cb16707ee8abcfff073023e7668d966b35d3785d46",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Combinatorics/CardFilterPartition.lean",
+      "proof_body_sha256": "1873e4e5704ac75cfe3b2d4f4ce220d10930e8c23ea1aea9a8f3cc4e4a0e25cb",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "theorem_lookup",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "Finset.card_filter_add_card_filter_not"
+    ],
+    "used_theorem_deps": [
+      "Finset.card_filter_add_card_filter_not"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "Finset.card_filter_add_card_filter_not"
+    ],
+    "transitive_dependency_count": 1,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "Finset.card_filter_add_card_filter_not"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "Finset.card_filter_add_card_filter_not",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.card_filter_add_card_filter_not",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 3,
     "tactic_count": 1
@@ -93,7 +147,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 5229559a). First filter counting/partition packet, alongside the existing filter_subset'. Two earlier steps in the same episode mis-guessed Finset.card_filter_add_card_filter_not's argument order/arity (it takes only the predicate explicitly, with the Finset argument inferred) and hit kernel_fail type-mismatch/parse_error diagnostics before the third attempt supplied a single underscore and succeeded.",
   "hashes": {
-    "packet_sha256": "c21766717ed5775ca967bc3add56f152bdbe719346164a59fcc0e7d5818015e1",
+    "packet_sha256": "2b8a8cefcd0b2a24afc565995eee1429a4dfbe9df7b8bcadc67419da2262c22c",
     "formal_statement_sha256": "97afc42ecd2689d17a8208cb16707ee8abcfff073023e7668d966b35d3785d46",
     "proof_body_sha256": "1873e4e5704ac75cfe3b2d4f4ce220d10930e8c23ea1aea9a8f3cc4e4a0e25cb"
   }

@@ -65,6 +65,60 @@
       "divisibility"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.number_theory.gcd_dvd_right.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "290eb7e6fd38e1fab5e749ab7a0feb343761a8ce9c73a811e5d895fc2e604653",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/NumberTheory/GcdDvdRight.lean",
+      "proof_body_sha256": "e1768205516da22b63776ae1f9d055cf34b69f5b9f7d47e7fd31a1970e843659",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "theorem_lookup",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "Nat.gcd_dvd_right"
+    ],
+    "used_theorem_deps": [
+      "Nat.gcd_dvd_right"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "Nat.gcd_dvd_right"
+    ],
+    "transitive_dependency_count": 1,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "Nat.gcd_dvd_right"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "Nat.gcd_dvd_right",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.gcd_dvd_right",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 3,
     "tactic_count": 1
@@ -90,7 +144,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 38579e1f).",
   "hashes": {
-    "packet_sha256": "68e4eaa736c2b63ed1e9fa5b313c2f98bf3542a986cba3d381d1df7ea8e481e9",
+    "packet_sha256": "c6a9a94e1cfc461fc5cefdf8333fdcc00abc315d6b79ef0ef55abfc42ec52b1a",
     "formal_statement_sha256": "290eb7e6fd38e1fab5e749ab7a0feb343761a8ce9c73a811e5d895fc2e604653",
     "proof_body_sha256": "e1768205516da22b63776ae1f9d055cf34b69f5b9f7d47e7fd31a1970e843659"
   }

@@ -65,6 +65,41 @@
       "surjective_function"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.functions.id_bijective.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "33555d716ffc1507be1ddd9273bfcf76c465f7e3315ceb83e7d505ce80cee6e0",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Functions/IdBijective.lean",
+      "proof_body_sha256": "b0c0385078ee5a59f6f3113b70d99e2a06e06639529b035d774942b6c4c15a9d",
+      "proof_body_redacted": false,
+      "tactic_count": 2,
+      "proof_length": 2,
+      "proof_profile": {
+        "primary_proof_class": "normalization",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [],
+    "used_theorem_deps": [],
+    "obligation_deps": [],
+    "verified_module_item_deps": [],
+    "transitive_dependency_count": 0,
+    "transitive_dependency_depth": 0,
+    "retrieval_candidates": [],
+    "retrieved_unused_candidates": [],
+    "claim_sources": []
+  },
   "metrics": {
     "loc": 2,
     "tactic_count": 2
@@ -91,7 +126,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 7bce298c). Step 1 kernel-failed: a bulleted (`constructor; · ...; · ...`) tactic proof lost its case-block structure under the default `flat_tactic_sequence` transport (the tactic-transport hazard documented in docs/proofsearch-integration.md), leaving `hab` out of scope for the following line. Step 2 fixed it by switching to a single-line term-mode proof (`exact <fun a b hab => hab, fun b => <b, rfl>>`), avoiding bullets entirely, and reached kernel_verified. Not packaged as a separate negative example: same category of authoring/transport slip as the injective_comp binder-arity issue, not an independent tactic-mismatch lesson. Picked after a concurrent agent had already claimed both linear_injective and strictMono_injective from packets/elementary/functions/QUEUE.md; closes the id_bijective item there.",
   "hashes": {
-    "packet_sha256": "5e3230f816cf9e9001d3a19981386385db72f7dfea0c3f0c27295d5a30fabb3d",
+    "packet_sha256": "c5fabd8f53769711011388d84c35857fe836c59619a18e58017434f6c9981f3a",
     "formal_statement_sha256": "33555d716ffc1507be1ddd9273bfcf76c465f7e3315ceb83e7d505ce80cee6e0",
     "proof_body_sha256": "b0c0385078ee5a59f6f3113b70d99e2a06e06639529b035d774942b6c4c15a9d"
   }

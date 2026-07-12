@@ -71,6 +71,60 @@
       "exponentiation"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.induction.fib_le_two_pow.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "78af058676e347c4542f2eb5bf996178bfed47166c492dcd6db319a2d1589338",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Induction/FibLeTwoPow.lean",
+      "proof_body_sha256": "9582e0aa3901e0aa28df2b907c73dab46c2e62bc08e24ad24cf62324b8ae8d1f",
+      "proof_body_redacted": false,
+      "tactic_count": 6,
+      "proof_length": 6,
+      "proof_profile": {
+        "primary_proof_class": "multi_lemma_composition",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "fibPair_le"
+    ],
+    "used_theorem_deps": [
+      "fibPair_le"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "fibPair_le"
+    ],
+    "transitive_dependency_count": 1,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "fibPair_le"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "fibPair_le",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "fibPair_le",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 15,
     "tactic_count": 6
@@ -97,7 +151,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 11c5774d), kernel_verified on the second SubmitModule attempt (three helper declarations: fibPair, fib, fibPair_succ, plus the fibPair_le helper theorem and fib_le_two_pow root theorem). The first attempt used `show` to swap to a defeq-equal goal relying directly on Prod.fst/Prod.snd reduction before calling omega, which left omega looking at the un-reduced (fibPair (n+1)).2 atom instead of its constituents and failed with 'omega could not prove the goal'; replaced with an explicit fibPair_succ rfl lemma used as a simp rewrite rule, which reliably reduces the pair projections before omega runs -- kept as a documented tactic-transport lesson for future pair-encoded-recursion packets in this domain. Builds on the recursion techniques from myfactorial_eq_factorial.v1 (single helper def) and combines them with a genuine growth-bound induction, distinct from that packet and from exists_prime_factor.v1 (strong induction, no helper defs).",
   "hashes": {
-    "packet_sha256": "8b9117dce2227f1203c621633a40b1c796868ceaa259a48a4e97b28667201a64",
+    "packet_sha256": "91e3a122e8b4690552544f239866981cc65871c8c1c86f63a84228ab3683da34",
     "formal_statement_sha256": "78af058676e347c4542f2eb5bf996178bfed47166c492dcd6db319a2d1589338",
     "proof_body_sha256": "9582e0aa3901e0aa28df2b907c73dab46c2e62bc08e24ad24cf62324b8ae8d1f"
   }

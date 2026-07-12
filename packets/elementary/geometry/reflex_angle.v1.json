@@ -65,6 +65,41 @@
       "reflex"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.geometry.reflex_angle.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "188b92aa71ff7b85b8c03dd2cb74479e095eb45323f2ba70b694ea11a0d41f03",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Geometry/ReflexAngle.lean",
+      "proof_body_sha256": "821d51adf96f9e6dca3b848f8fff207f49cd09564eff7d5c9b3457bd7caacfef",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "normalization",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [],
+    "used_theorem_deps": [],
+    "obligation_deps": [],
+    "verified_module_item_deps": [],
+    "transitive_dependency_count": 0,
+    "transitive_dependency_depth": 0,
+    "retrieval_candidates": [],
+    "retrieved_unused_candidates": [],
+    "claim_sources": []
+  },
   "metrics": {
     "loc": 3,
     "tactic_count": 1
@@ -90,7 +125,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 7e9d24a6).",
   "hashes": {
-    "packet_sha256": "da165ec5051ee673928557b7235c7071e0c49590f8c7ce44a6240cd792cfe088",
+    "packet_sha256": "bba9ce4073a2d0758d39ad780445700a5a421a016638cb16b72ca2e14ce4331c",
     "formal_statement_sha256": "188b92aa71ff7b85b8c03dd2cb74479e095eb45323f2ba70b694ea11a0d41f03",
     "proof_body_sha256": "821d51adf96f9e6dca3b848f8fff207f49cd09564eff7d5c9b3457bd7caacfef"
   }

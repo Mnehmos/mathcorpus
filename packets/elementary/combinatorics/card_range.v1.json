@@ -65,6 +65,60 @@
       "cardinality"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.combinatorics.card_range.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "9672b88590bfc0b154f4fe14bd4c2f31ea6b6d3866af8a9f2b996118b2fc755d",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Combinatorics/CardRange.lean",
+      "proof_body_sha256": "7ab06e0e3365c2adac49f0f2fec9800bbcd5bfa4f50c7cc5ddbf8267c4859f6b",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "theorem_lookup",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "Finset.card_range"
+    ],
+    "used_theorem_deps": [
+      "Finset.card_range"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "Finset.card_range"
+    ],
+    "transitive_dependency_count": 1,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "Finset.card_range"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "Finset.card_range",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.card_range",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 3,
     "tactic_count": 1
@@ -93,7 +147,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 28c94a45).",
   "hashes": {
-    "packet_sha256": "6ef7f1be38eee9a2555aa8ea2a648bcc06810c98900ca15559d3ed9c48d74fb8",
+    "packet_sha256": "b4c82d2f209bbf0fcf355f4c88242b2c24196a6db3afccdbc9daec5b581ed177",
     "formal_statement_sha256": "9672b88590bfc0b154f4fe14bd4c2f31ea6b6d3866af8a9f2b996118b2fc755d",
     "proof_body_sha256": "7ab06e0e3365c2adac49f0f2fec9800bbcd5bfa4f50c7cc5ddbf8267c4859f6b"
   }

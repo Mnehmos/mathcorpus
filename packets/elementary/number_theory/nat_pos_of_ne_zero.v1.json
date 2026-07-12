@@ -65,6 +65,60 @@
       "order"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.number_theory.nat_pos_of_ne_zero.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "7aacb08245e6fa34e5c2f752746ff10a4e2514b2878171e05f4b7ea90abd26c0",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/NumberTheory/NatPosOfNeZero.lean",
+      "proof_body_sha256": "0d9d5e7deeeafc3feb5c323e049d103971661b29500b698ca912ea36d4e114b8",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "theorem_lookup",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "Nat.pos_of_ne_zero"
+    ],
+    "used_theorem_deps": [
+      "Nat.pos_of_ne_zero"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "Nat.pos_of_ne_zero"
+    ],
+    "transitive_dependency_count": 1,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "Nat.pos_of_ne_zero"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "Nat.pos_of_ne_zero",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.pos_of_ne_zero",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 3,
     "tactic_count": 1
@@ -91,7 +145,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 641c48b1).",
   "hashes": {
-    "packet_sha256": "a2c2e679f986b9af73e31fc6d938e89b0ed330c6578b46d3a6b9687c6ae96423",
+    "packet_sha256": "48dc84e37cb106f999a971312ed32c9752381e5f63502f7f9950ae3a732f8fcb",
     "formal_statement_sha256": "7aacb08245e6fa34e5c2f752746ff10a4e2514b2878171e05f4b7ea90abd26c0",
     "proof_body_sha256": "0d9d5e7deeeafc3feb5c323e049d103971661b29500b698ca912ea36d4e114b8"
   }

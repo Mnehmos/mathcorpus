@@ -67,6 +67,102 @@
       "monotonicity"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.induction.prod_range_monotone.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "7ad96c0fdff067abae2bc77652fabb57f0664f7805a11e199615d590d9ca70ae",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Induction/ProdRangeMonotone.lean",
+      "proof_body_sha256": "3a5e578c8bb1ff47a797a4ceab76cdcf34d5aa063ce39f81541467b2c0cec33c",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "induction",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": true,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "Finset.prod_range_succ",
+      "Nat.zero_le",
+      "le_mul_of_one_le_right",
+      "le_trans"
+    ],
+    "used_theorem_deps": [
+      "Finset.prod_range_succ",
+      "Nat.zero_le",
+      "le_mul_of_one_le_right",
+      "le_trans"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "Finset.prod_range_succ",
+      "Nat.zero_le",
+      "le_mul_of_one_le_right",
+      "le_trans"
+    ],
+    "transitive_dependency_count": 4,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "Finset.prod_range_succ",
+      "Nat.zero_le",
+      "le_mul_of_one_le_right",
+      "le_trans"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "Finset.prod_range_succ",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.prod_range_succ",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.zero_le",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.zero_le",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "le_mul_of_one_le_right",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "le_mul_of_one_le_right",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "le_trans",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "le_trans",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 3,
     "tactic_count": 1
@@ -93,7 +189,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 5918401a), kernel_verified on the first attempt. Mirrors sum_range_monotone.v1's proof style (induction on the gap k, avoiding a direct Nat.le_induction on n <= m) but for Finset.prod; cross-referenced in CROSS_DOMAIN.md as a sibling of that packet, not a duplicate.",
   "hashes": {
-    "packet_sha256": "9008a1f029a09cb82ab4c6168858966b7bcf5150fe41d4e8eeae9310c33236e6",
+    "packet_sha256": "21f2ae58098bb179791efcf21f35683e25362010a1a715d63bdd448dd8e6ebc4",
     "formal_statement_sha256": "7ad96c0fdff067abae2bc77652fabb57f0664f7805a11e199615d590d9ca70ae",
     "proof_body_sha256": "3a5e578c8bb1ff47a797a4ceab76cdcf34d5aa063ce39f81541467b2c0cec33c"
   }

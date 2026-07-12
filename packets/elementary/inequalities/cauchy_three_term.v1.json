@@ -65,6 +65,60 @@
       "lagrange_identity"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.inequalities.cauchy_three_term.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "483b560993c9add62d988e2187545e3af7078da15a16e978efbadd322bc429d9",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Inequalities/CauchyThreeTerm.lean",
+      "proof_body_sha256": "34ea0fc6f7eb552fbef456cc155108f119fbaf6c894aa39a6d0c90c408f8fb93",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "arithmetic_automation",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": true,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "sq_nonneg"
+    ],
+    "used_theorem_deps": [
+      "sq_nonneg"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "sq_nonneg"
+    ],
+    "transitive_dependency_count": 1,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "sq_nonneg"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "sq_nonneg",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "sq_nonneg",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 3,
     "tactic_count": 1
@@ -91,7 +145,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 3e12e9cc), kernel_verified on the first attempt. Extends cauchy_two_term.v1 (the two-term case) by one more variable pair, mirroring how the domain's AM-GM ladder was built up from 2 to 3 to 4 terms.",
   "hashes": {
-    "packet_sha256": "c5cc7683094cfd2fcc5c6329289da9fca5436c8426f7a094a989d7b3b1a354cf",
+    "packet_sha256": "45454f313d097b1cde8fa41624c21868bd2fb3d36a20fdf03870e0836c913650",
     "formal_statement_sha256": "483b560993c9add62d988e2187545e3af7078da15a16e978efbadd322bc429d9",
     "proof_body_sha256": "34ea0fc6f7eb552fbef456cc155108f119fbaf6c894aa39a6d0c90c408f8fb93"
   }

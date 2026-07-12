@@ -66,6 +66,60 @@
       "triangle_inequality"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.inequalities.abs_abs_sub_abs_le.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "c4769b8a6af14d5f6ae20e00c811a8aad1f647508b9319d5d790c504d05c0d83",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Inequalities/AbsAbsSubAbsLe.lean",
+      "proof_body_sha256": "48a01967847db85af149f356b79e221129834f7569298cf0000648fb4ceeafc5",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "case_analysis",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": true
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "abs_cases"
+    ],
+    "used_theorem_deps": [
+      "abs_cases"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "abs_cases"
+    ],
+    "transitive_dependency_count": 1,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "abs_cases"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "abs_cases",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "abs_cases",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 3,
     "tactic_count": 1
@@ -92,7 +146,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode e036f4e8), kernel_verified on the first attempt, mirroring the abs_cases/nlinarith case-split technique from abs_add_le.v1 and abs_add_three.v1. Natural strengthening of reverse_triangle.v1's one-sided bound to the full doubly-absolute form; not a duplicate since reverse_triangle.v1 only proves |a| - |b| <= |a - b| (missing the |b| - |a| > 0 case).",
   "hashes": {
-    "packet_sha256": "b300078599d2a5376e9cc76076c0c5488e4858304cf7a7e0f00230f35b45af8a",
+    "packet_sha256": "8df2edd48604a85931d26618ffbff6b0315cdaafaf30c1a34e9b33c2f9ed3fdc",
     "formal_statement_sha256": "c4769b8a6af14d5f6ae20e00c811a8aad1f647508b9319d5d790c504d05c0d83",
     "proof_body_sha256": "48a01967847db85af149f356b79e221129834f7569298cf0000648fb4ceeafc5"
   }

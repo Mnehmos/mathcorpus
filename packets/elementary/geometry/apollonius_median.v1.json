@@ -67,6 +67,41 @@
       "median"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.geometry.apollonius_median.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "9e4e67db31a842c0a12ad6680be1161c1ec5a2e32d4b1e55b8aa7f2018f7b407",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Geometry/ApolloniusMedian.lean",
+      "proof_body_sha256": "0ad0e00e7447ec90943a852a16541607661f9e98c47548a0fb1fae6d6db3b2bc",
+      "proof_body_redacted": false,
+      "tactic_count": 2,
+      "proof_length": 2,
+      "proof_profile": {
+        "primary_proof_class": "normalization",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [],
+    "used_theorem_deps": [],
+    "obligation_deps": [],
+    "verified_module_item_deps": [],
+    "transitive_dependency_count": 0,
+    "transitive_dependency_depth": 0,
+    "retrieval_candidates": [],
+    "retrieved_unused_candidates": [],
+    "claim_sources": []
+  },
   "metrics": {
     "loc": 4,
     "tactic_count": 2
@@ -93,7 +128,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode d56cbb06), kernel_verified on the second attempt -- the first problem_version omitted problem_imports and defaulted to a Ring+NormNum-only import manifest that does not resolve the `ℝ` notation, so Lean's autoImplicit silently auto-generalized `ℝ` as an unbound implicit type variable, causing a spurious 'failed to synthesize instance of type class HSub ℝ ℝ ?m' error when `ring` tried to normalize genuine real subtraction. Re-registered a fresh problem_version with problem_imports=[\"Mathlib\"] (same fix pattern documented in the law_of_cosines packet's notes) and it went through on the first real attempt with a plain `intro ...; ring`. Picked as this cycle's geometry target after confirming `packets/elementary/geometry/QUEUE.md`'s 'Law of cosines' backlog item had already been landed by a concurrent agent (packet law_of_cosines.v1, episode d1f31293) but the queue file was stale; the remaining backlog item, 'Law of sines', was investigated and deferred (see QUEUE.md) as genuinely L2/hard -- a faithful formalization needs an intrinsic definition of the angle at a second triangle vertex, which reintroduces the sqrt/division machinery this domain's packets deliberately avoid (see the domain's own noted `Real.sqrt` atom-matching pitfall). Apollonius's theorem was chosen instead as a same-difficulty, same-style classical triangle fact that was still missing from the domain and reuses the existing `midpoint_equidist`/`AffineAreaKit` pattern.",
   "hashes": {
-    "packet_sha256": "75438aef9c54bf5efed5de2650156bcfcda77c06eda95bde6aa78647247ef3d9",
+    "packet_sha256": "cb51cf3fe8c4842a9c3121984e90e431f771644076aab8eb4f78fad279532f9a",
     "formal_statement_sha256": "9e4e67db31a842c0a12ad6680be1161c1ec5a2e32d4b1e55b8aa7f2018f7b407",
     "proof_body_sha256": "0ad0e00e7447ec90943a852a16541607661f9e98c47548a0fb1fae6d6db3b2bc"
   }

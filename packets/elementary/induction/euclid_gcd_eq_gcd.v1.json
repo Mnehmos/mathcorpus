@@ -71,6 +71,130 @@
       "strong_induction"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.induction.euclid_gcd_eq_gcd.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "24e44f032b2b7a9ad5aacfae06cce72c3dd8f4218380b4125056563776598caa",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Induction/EuclidGcdEqGcd.lean",
+      "proof_body_sha256": "1d11391c0d24bdc39da527de94127de3cc5a5bca073f49aa9013d680ee0ba672",
+      "proof_body_redacted": false,
+      "tactic_count": 9,
+      "proof_length": 9,
+      "proof_profile": {
+        "primary_proof_class": "induction",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": true,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "Nat.gcd_rec",
+      "Nat.mod_lt",
+      "Nat.pos_of_ne_zero",
+      "Nat.strong_induction_on",
+      "dif_neg",
+      "euclidGcd_unfold"
+    ],
+    "used_theorem_deps": [
+      "Nat.gcd_rec",
+      "Nat.mod_lt",
+      "Nat.pos_of_ne_zero",
+      "Nat.strong_induction_on",
+      "dif_neg",
+      "euclidGcd_unfold"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "Nat.gcd_rec",
+      "Nat.mod_lt",
+      "Nat.pos_of_ne_zero",
+      "Nat.strong_induction_on",
+      "dif_neg",
+      "euclidGcd_unfold"
+    ],
+    "transitive_dependency_count": 6,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "Nat.gcd_rec",
+      "Nat.mod_lt",
+      "Nat.pos_of_ne_zero",
+      "Nat.strong_induction_on",
+      "dif_neg",
+      "euclidGcd_unfold"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "Nat.gcd_rec",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.gcd_rec",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.mod_lt",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.mod_lt",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.pos_of_ne_zero",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.pos_of_ne_zero",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.strong_induction_on",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.strong_induction_on",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "dif_neg",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "dif_neg",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "euclidGcd_unfold",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "euclidGcd_unfold",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 15,
     "tactic_count": 9
@@ -97,7 +221,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode a4a2a972, kernel_verified on the first submit_module attempt in that episode). This is a renamed re-verification of the same construction first worked out under the name myGcd in an earlier probing episode (d83a52a3, also kernel_verified, 4 steps) within this same cycle -- discovered afterward that another concurrent agent had already landed a distinct, weaker packet, elementary.induction.mygcd_wellfounded.v1 (only myGcd a 0 = a, via Nat.strongRecOn/Nat.strongRecOn_eq), reusing the name myGcd in this same namespace; renamed to euclidGcd throughout and re-ran the identical (already-debugged) proof recipe end-to-end through the tracked loop to avoid a duplicate top-level Lean identifier across the two packets' standalone modules, rather than silently hand-renaming an already-verified script. Key debugging lesson from the myGcd episode, preserved here: WellFoundedLT.fix does not reduce by rfl; `unfold <name>; rw [WellFoundedLT.fix_eq]` is required (a bare `show ... ; rw [WellFoundedLT.fix_eq]` leaves an unclosed goal because the recursive-call site still refers to the folded definition name, not its raw fix-based unfolding). Strengthens the already-closed 'well-founded (non-structural) recursion via SubmitModule' backlog item in packets/elementary/induction/QUEUE.md from a base-case-only fact to full correctness against Nat.gcd.",
   "hashes": {
-    "packet_sha256": "d39c300849a6090496679533ea76d5af0d2a47d5cc4de1e3517df5dc1be28ea9",
+    "packet_sha256": "a766a3400ed831a33dc01ea7eec746ecbf37b93dce09a8be2126036a4274df02",
     "formal_statement_sha256": "24e44f032b2b7a9ad5aacfae06cce72c3dd8f4218380b4125056563776598caa",
     "proof_body_sha256": "1d11391c0d24bdc39da527de94127de3cc5a5bca073f49aa9013d680ee0ba672"
   }

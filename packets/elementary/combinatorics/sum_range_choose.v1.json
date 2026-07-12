@@ -67,6 +67,60 @@
       "finite_sum"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.combinatorics.sum_range_choose.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "1c1114402c900b051b49b1e980fbaccba4edbd104ce6575b363123aaa2510fb4",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Combinatorics/SumRangeChoose.lean",
+      "proof_body_sha256": "1369967c483bbd4f35a1d5a11ee244190ac2744f61005ed1227e380f640ef0d6",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "theorem_lookup",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "Nat.sum_range_choose"
+    ],
+    "used_theorem_deps": [
+      "Nat.sum_range_choose"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "Nat.sum_range_choose"
+    ],
+    "transitive_dependency_count": 1,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "Nat.sum_range_choose"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "Nat.sum_range_choose",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.sum_range_choose",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 3,
     "tactic_count": 1
@@ -92,7 +146,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 11038106). Closes the binomial-coefficient-sum item in packets/elementary/combinatorics/QUEUE.md, tying the Nat.choose starter family to card_powerset' (both equal 2 ^ n).",
   "hashes": {
-    "packet_sha256": "7123d6af49db120b09c861bce3be2e43b62af393ccd194b34bb7153743bfc94a",
+    "packet_sha256": "c1de01be062da665ca782bcd499d1f967127ff8ba514b41087dc0f432edaecbb",
     "formal_statement_sha256": "1c1114402c900b051b49b1e980fbaccba4edbd104ce6575b363123aaa2510fb4",
     "proof_body_sha256": "1369967c483bbd4f35a1d5a11ee244190ac2744f61005ed1227e380f640ef0d6"
   }

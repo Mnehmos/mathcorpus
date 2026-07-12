@@ -66,6 +66,60 @@
       "least_element"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.number_theory.well_ordering.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "5f3bd1f7a313680458de349083cb32cfc9cd630d5d7006868d0011c9fcdd349b",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/NumberTheory/WellOrdering.lean",
+      "proof_body_sha256": "1f9a741d8b28da336cbc4500780cf958404e412bce690efeaca99466c328f305",
+      "proof_body_redacted": false,
+      "tactic_count": 7,
+      "proof_length": 7,
+      "proof_profile": {
+        "primary_proof_class": "induction",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": true,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "Nat.strong_induction_on"
+    ],
+    "used_theorem_deps": [
+      "Nat.strong_induction_on"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "Nat.strong_induction_on"
+    ],
+    "transitive_dependency_count": 1,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "Nat.strong_induction_on"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "Nat.strong_induction_on",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.strong_induction_on",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 9,
     "tactic_count": 7
@@ -92,7 +146,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 96e95cc1), kernel_verified on the second Solve attempt. The first attempt used the same tactic script under the default flat_tactic_sequence transport and kernel-failed: the two `·` bullets after `by_cases` lost their case-block association, leaving the 'neg' branch's goal unsolved (a tactic-transport hazard also hit on the id_bijective and image_union packets in packets/elementary/functions/). Fixed by resubmitting the identical script under proof_format: raw_lean_block, which preserves the bullets' relative indentation. Closes the well_ordering backlog item in packets/elementary/number_theory/QUEUE.md.",
   "hashes": {
-    "packet_sha256": "9634d1dff66eaefbff6465d14d3722d9bf024594e3bd7eb7b9158f8fe7957624",
+    "packet_sha256": "077e8e44a6903f7a4907cc0721d81d69a8d0bace4a0cc048843b71cf7d4b29c5",
     "formal_statement_sha256": "5f3bd1f7a313680458de349083cb32cfc9cd630d5d7006868d0011c9fcdd349b",
     "proof_body_sha256": "1f9a741d8b28da336cbc4500780cf958404e412bce690efeaca99466c328f305"
   }

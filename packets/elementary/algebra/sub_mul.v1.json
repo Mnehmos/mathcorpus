@@ -63,6 +63,60 @@
       "subtraction"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.algebra.sub_mul.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "0667ab425347cf61e31e53d865716f69a737dee04a84150f341ff4aa9fa22456",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Algebra/SubMul.lean",
+      "proof_body_sha256": "1eed4a479538c50a3081e299e2893d71f59c2895d3294ee4c4e1b489f9f7e7e6",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "theorem_lookup",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "sub_mul"
+    ],
+    "used_theorem_deps": [
+      "sub_mul"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "sub_mul"
+    ],
+    "transitive_dependency_count": 1,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "sub_mul"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "sub_mul",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "sub_mul",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 1,
     "tactic_count": 1
@@ -89,7 +143,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode ed63843f), kernel_verified on the first attempt. Closes the sub_mul item in packets/elementary/algebra/QUEUE.md -- mul_add'/add_mul' existed but not the subtraction variant.",
   "hashes": {
-    "packet_sha256": "2ff2dea9cb9affe846b6e7c6910b855e525751957864f1f75895da2133f91bba",
+    "packet_sha256": "5c877683b83d9358583830fb3f1a8b5b504aa48879b4be9d644f665fb5c6e404",
     "formal_statement_sha256": "0667ab425347cf61e31e53d865716f69a737dee04a84150f341ff4aa9fa22456",
     "proof_body_sha256": "1eed4a479538c50a3081e299e2893d71f59c2895d3294ee4c4e1b489f9f7e7e6"
   }

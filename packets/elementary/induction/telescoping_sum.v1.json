@@ -66,6 +66,60 @@
       "telescoping"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.induction.telescoping_sum.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "fb7ed55f34860fd5104d803b801da1bc8949021006e7d333dde61ef77b5dfd3c",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Induction/TelescopingSum.lean",
+      "proof_body_sha256": "75daa1af57faa19cd669d69ab6df34ff03d9266e43114d156df8259716ffd50e",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "induction",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": true,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "Finset.sum_range_succ"
+    ],
+    "used_theorem_deps": [
+      "Finset.sum_range_succ"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "Finset.sum_range_succ"
+    ],
+    "transitive_dependency_count": 1,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "Finset.sum_range_succ"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "Finset.sum_range_succ",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.sum_range_succ",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 3,
     "tactic_count": 1
@@ -92,7 +146,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 10b7c24b), kernel_verified on the first attempt. Deliberately picked as a general, reusable lemma (the telescoping principle itself) rather than another specific closed-form instance -- every prior sum packet in this domain (sum_odds, sum_evens, sum_squares, sum_cubes, gauss_sum, geom_series_sum_induction) proves one particular closed form, whereas this proves the general mechanism that underlies them; a future packet could re-derive e.g. gauss_sum as a corollary via a (i) = i*(i+1)/2-style telescoping term, though that cross-reference is not attempted here.",
   "hashes": {
-    "packet_sha256": "f39fe14e01951701344723966c7ca5259f3a50e17af55be21633c6e9ca63d4aa",
+    "packet_sha256": "18a4c07402cee0f00049fd750d4d04dca30f45aa869fa872719d6da7c107ef5d",
     "formal_statement_sha256": "fb7ed55f34860fd5104d803b801da1bc8949021006e7d333dde61ef77b5dfd3c",
     "proof_body_sha256": "75daa1af57faa19cd669d69ab6df34ff03d9266e43114d156df8259716ffd50e"
   }

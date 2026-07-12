@@ -66,6 +66,60 @@
       "union"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.combinatorics.mem_union.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "2a63f3f23f4b99db6c97d6cbc8c2514d912729ba07665527b7572aefbc2ad161",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Combinatorics/MemUnion.lean",
+      "proof_body_sha256": "8086c8016445c83f080678941961bd6f085408a56649871dc027957e9cee77fb",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "theorem_lookup",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "Finset.mem_union"
+    ],
+    "used_theorem_deps": [
+      "Finset.mem_union"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "Finset.mem_union"
+    ],
+    "transitive_dependency_count": 1,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "Finset.mem_union"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "Finset.mem_union",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.mem_union",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 3,
     "tactic_count": 1
@@ -91,7 +145,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode bd77a4da).",
   "hashes": {
-    "packet_sha256": "0b932b0d859fc0007a7b2de0977bec3c8236d24bb735500eb3b5d37cc1342eff",
+    "packet_sha256": "6187133e42232addf9a8df76cd4e90e34acc673265f8f5145be321148899533c",
     "formal_statement_sha256": "2a63f3f23f4b99db6c97d6cbc8c2514d912729ba07665527b7572aefbc2ad161",
     "proof_body_sha256": "8086c8016445c83f080678941961bd6f085408a56649871dc027957e9cee77fb"
   }

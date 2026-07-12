@@ -65,6 +65,60 @@
       "quadratic_mean"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.inequalities.three_var_qm_am_bound.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "a35b2c9c93281086363659363cc1984382a35600f1858c7b9da492d55d14d330",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Inequalities/ThreeVarQmAmBound.lean",
+      "proof_body_sha256": "51872ee4dcf170adce9e27b0d638a892de27a0bf12fc032baaa7e2c427c01da5",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "arithmetic_automation",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": true,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "sq_nonneg"
+    ],
+    "used_theorem_deps": [
+      "sq_nonneg"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "sq_nonneg"
+    ],
+    "transitive_dependency_count": 1,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "sq_nonneg"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "sq_nonneg",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "sq_nonneg",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 3,
     "tactic_count": 1
@@ -91,7 +145,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 15f8194a), kernel_verified on the first attempt. Extends qm_am_bound.v1 (the two-term case, (a+b)^2 <= 2*(a^2+b^2)) by one more variable, mirroring how the domain's AM-GM and Cauchy-Schwarz ladders were built up from 2 to 3 terms.",
   "hashes": {
-    "packet_sha256": "f2fb76a642f66e0d3e519e0077ca9b6e0355aca78b2b4895747792f6a1dfaf6f",
+    "packet_sha256": "db377faa4ed9cd39cfba879b1f5cae78881b24eefdab482a11343ae74cff3a15",
     "formal_statement_sha256": "a35b2c9c93281086363659363cc1984382a35600f1858c7b9da492d55d14d330",
     "proof_body_sha256": "51872ee4dcf170adce9e27b0d638a892de27a0bf12fc032baaa7e2c427c01da5"
   }

@@ -65,6 +65,41 @@
       "preorder"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.functions.strictmono_comp.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "d996d4ab69d36f7cb904a382291b025b6920b256a71a25fb2f2dde753dea2659",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Functions/StrictMonoComp.lean",
+      "proof_body_sha256": "eae6ddf62c2a57b53479c002ba051e05b25cb46b7f9480b215f64c118815101a",
+      "proof_body_redacted": false,
+      "tactic_count": 2,
+      "proof_length": 2,
+      "proof_profile": {
+        "primary_proof_class": "multi_lemma_composition",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [],
+    "used_theorem_deps": [],
+    "obligation_deps": [],
+    "verified_module_item_deps": [],
+    "transitive_dependency_count": 0,
+    "transitive_dependency_depth": 0,
+    "retrieval_candidates": [],
+    "retrieved_unused_candidates": [],
+    "claim_sources": []
+  },
   "metrics": {
     "loc": 2,
     "tactic_count": 2
@@ -91,7 +126,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 21aeb6a1), kernel_verified on the first Solve attempt. Pairs with elementary.functions.monotone_comp.v1 and elementary.functions.strictmono_injective.v1, completing the monotone-family lemma cluster suggested in packets/elementary/functions/QUEUE.md's Next targets note.",
   "hashes": {
-    "packet_sha256": "564033c1127fb065dcdbef7543ffe0d8d3401d9ea5d9af2c3ab241ca31a2f0ae",
+    "packet_sha256": "83f84d757005cf2901781c9d2eb1b2d8d0e1dd1dfe7a0f71b8f370d6032bf6ab",
     "formal_statement_sha256": "d996d4ab69d36f7cb904a382291b025b6920b256a71a25fb2f2dde753dea2659",
     "proof_body_sha256": "eae6ddf62c2a57b53479c002ba051e05b25cb46b7f9480b215f64c118815101a"
   }

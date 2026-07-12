@@ -66,6 +66,41 @@
       "coordinates"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.geometry.parallelogram_law.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "ad91799ec6ee14ea502b978bd208d767160a27b0b939bdd7d208df5ebc580c67",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Geometry/ParallelogramLaw.lean",
+      "proof_body_sha256": "e0671c5f2e8fee96442375063cc204609ea1c8e8113d3e2a1c490fe8f33580af",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "normalization",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [],
+    "used_theorem_deps": [],
+    "obligation_deps": [],
+    "verified_module_item_deps": [],
+    "transitive_dependency_count": 0,
+    "transitive_dependency_depth": 0,
+    "retrieval_candidates": [],
+    "retrieved_unused_candidates": [],
+    "claim_sources": []
+  },
   "metrics": {
     "loc": 3,
     "tactic_count": 1
@@ -91,7 +126,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode d8aabf90).",
   "hashes": {
-    "packet_sha256": "6cc99f270e95535ace01e94966a15430ae9b57daf9f9f24e3394d47234cb6c68",
+    "packet_sha256": "2776efdd4dceaca5783376e1e738d12c810738c5c10787dd839df9df5c9ea580",
     "formal_statement_sha256": "ad91799ec6ee14ea502b978bd208d767160a27b0b939bdd7d208df5ebc580c67",
     "proof_body_sha256": "e0671c5f2e8fee96442375063cc204609ea1c8e8113d3e2a1c490fe8f33580af"
   }

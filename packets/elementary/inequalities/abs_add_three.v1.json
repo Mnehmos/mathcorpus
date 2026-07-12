@@ -65,6 +65,60 @@
       "triangle_inequality"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.inequalities.abs_add_three.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "72611178f2b62385501c6a2ce5eded4c4fd91f07ed03a09cf214d9a8d9a48077",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Inequalities/AbsAddThree.lean",
+      "proof_body_sha256": "cddbc573b8714920d0bab622787803d7a3f6fbe2cdf1e1960fcf3d122d0a054a",
+      "proof_body_redacted": false,
+      "tactic_count": 5,
+      "proof_length": 5,
+      "proof_profile": {
+        "primary_proof_class": "case_analysis",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": true
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "abs_cases"
+    ],
+    "used_theorem_deps": [
+      "abs_cases"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "abs_cases"
+    ],
+    "transitive_dependency_count": 1,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "abs_cases"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "abs_cases",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "abs_cases",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 5,
     "tactic_count": 5
@@ -91,7 +145,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 00c6c1c7), kernel_verified on the second Solve attempt in this episode (the first tried `linarith [abs_add (a + b) c, abs_add a b]`, citing a lemma name (`abs_add`) that does not exist under this pinned Mathlib rev; switched to the same `abs_cases`-based case-split technique already used by the paired abs_add_le packet, which is more robust to exact-lemma-name drift). A separate, fully broken problem_version attempt (missing `Mathlib.Tactic.Linarith` in `problem_imports`) was abandoned via `give_up` before this one. Natural extension of elementary.inequalities.abs_add_le.v1 to three terms; deliberately picked to continue offsetting this domain's L0_elementary/L2_olympiad skew.",
   "hashes": {
-    "packet_sha256": "4fb280eebdbbc53987e63a79665a49c82ce43fdecdbda1fa990837aab216c693",
+    "packet_sha256": "65fb77f4161d823247a08b05c6c93934c6b573509388ddf603218721138ff9a2",
     "formal_statement_sha256": "72611178f2b62385501c6a2ce5eded4c4fd91f07ed03a09cf214d9a8d9a48077",
     "proof_body_sha256": "cddbc573b8714920d0bab622787803d7a3f6fbe2cdf1e1960fcf3d122d0a054a"
   }

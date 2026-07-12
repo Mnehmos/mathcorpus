@@ -66,6 +66,41 @@
       "angle_sum"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.geometry.triangle_angle_sum.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "f74150e1e9ee4efc6f57de280dc70efd29f5a6cac7c4196e693f41b0a7551bf4",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Geometry/TriangleAngleSum.lean",
+      "proof_body_sha256": "8ab602cc38015bb2838a328d2c5214c1e2e28b3fe029631403338aa4387f09c1",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "arithmetic_automation",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [],
+    "used_theorem_deps": [],
+    "obligation_deps": [],
+    "verified_module_item_deps": [],
+    "transitive_dependency_count": 0,
+    "transitive_dependency_depth": 0,
+    "retrieval_candidates": [],
+    "retrieved_unused_candidates": [],
+    "claim_sources": []
+  },
   "metrics": {
     "loc": 3,
     "tactic_count": 1
@@ -94,7 +129,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 5e6ab2e5).",
   "hashes": {
-    "packet_sha256": "b60a00b251fc147f938dfd608ea0c1e6fa29b848e8a22dfd55b1c3ffc8cf2084",
+    "packet_sha256": "a9527b2295213e45bce6e5efe8de7b6bf9e1245e0897e852eaa325012cb344e6",
     "formal_statement_sha256": "f74150e1e9ee4efc6f57de280dc70efd29f5a6cac7c4196e693f41b0a7551bf4",
     "proof_body_sha256": "8ab602cc38015bb2838a328d2c5214c1e2e28b3fe029631403338aa4387f09c1"
   }

@@ -67,6 +67,102 @@
       "real_root_existence"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.algebra.quad_formula_real_root.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "9a67edf3d93b94f0b0e142b7a2146873e30448483ef67dbcd82a8d9b3bae03f0",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Algebra/QuadFormulaRealRoot.lean",
+      "proof_body_sha256": "df1717e0c4ce415dce2455a13a320adf166e618dc4ce1c9c22edd65dece57280",
+      "proof_body_redacted": false,
+      "tactic_count": 5,
+      "proof_length": 5,
+      "proof_profile": {
+        "primary_proof_class": "witness_construction",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": true,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "Real.sq_sqrt",
+      "Real.sqrt",
+      "mul_ne_zero",
+      "two_ne_zero"
+    ],
+    "used_theorem_deps": [
+      "Real.sq_sqrt",
+      "Real.sqrt",
+      "mul_ne_zero",
+      "two_ne_zero"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "Real.sq_sqrt",
+      "Real.sqrt",
+      "mul_ne_zero",
+      "two_ne_zero"
+    ],
+    "transitive_dependency_count": 4,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "Real.sq_sqrt",
+      "Real.sqrt",
+      "mul_ne_zero",
+      "two_ne_zero"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "Real.sq_sqrt",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Real.sq_sqrt",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Real.sqrt",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Real.sqrt",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "mul_ne_zero",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "mul_ne_zero",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "two_ne_zero",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "two_ne_zero",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 6,
     "tactic_count": 5
@@ -93,7 +189,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 9435347e), kernel_verified on the third Solve attempt. Step 1: nlinarith [hs] alone couldn't expand the needed (sqrt D - b)*(sqrt D + b) product after field_simp. Step 2: switched to linear_combination hs (the right tool for an equality goal that's a polynomial consequence of another equality), but it failed with 'ring expressions not equal' -- field_simp had rewritten one occurrence of the sqrt's argument (b^2 - 4*a*c) into a differently-ordered but equal expression (b^2 - a*4*c), and `ring` cannot see through Real.sqrt to recognize the two resulting sqrt terms as the same atom. Step 3 fixed it by `set`-ing the sqrt term to a plain variable s (with its defining equation folded into hs) *before* field_simp/linear_combination, so both tactics only ever see the opaque atom s rather than two syntactically-distinct sqrt applications. Builds on packets/elementary/algebra/quad_form_nonneg.v1.json; closes the discriminant/real-root backlog item in packets/elementary/algebra/QUEUE.md.",
   "hashes": {
-    "packet_sha256": "807e95ed93b70d150c06a32e43094bf11508625895ac0b7ac0772a863ecb196e",
+    "packet_sha256": "db8e86c361c9648ee788434703ba484ba1e3f99020ab6d79ad63d8e16edaa15b",
     "formal_statement_sha256": "9a67edf3d93b94f0b0e142b7a2146873e30448483ef67dbcd82a8d9b3bae03f0",
     "proof_body_sha256": "df1717e0c4ce415dce2455a13a320adf166e618dc4ce1c9c22edd65dece57280"
   }

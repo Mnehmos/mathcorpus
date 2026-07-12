@@ -65,6 +65,60 @@
       "modular_arithmetic"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.number_theory.zero_mod.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "2e8d29dbe0cf2a9e808f512de6f3f22a4d1a702d6b4fe9d2a84db21937e8f3c5",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/NumberTheory/ZeroMod.lean",
+      "proof_body_sha256": "834c72892f093042a568e3d15acd050d64694a8201db4cf5f600715af77f950f",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "theorem_lookup",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "Nat.zero_mod"
+    ],
+    "used_theorem_deps": [
+      "Nat.zero_mod"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "Nat.zero_mod"
+    ],
+    "transitive_dependency_count": 1,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "Nat.zero_mod"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "Nat.zero_mod",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.zero_mod",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 3,
     "tactic_count": 1
@@ -91,7 +145,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode e18a578f).",
   "hashes": {
-    "packet_sha256": "99880d303d636161af41f7a3125003a52ee9aa537f3758b287303f1aa7477dd1",
+    "packet_sha256": "2249799fa7865ef0f1a59972ea2b4565a324527ba7e33e5c3b642ebde6f5c00c",
     "formal_statement_sha256": "2e8d29dbe0cf2a9e808f512de6f3f22a4d1a702d6b4fe9d2a84db21937e8f3c5",
     "proof_body_sha256": "834c72892f093042a568e3d15acd050d64694a8201db4cf5f600715af77f950f"
   }

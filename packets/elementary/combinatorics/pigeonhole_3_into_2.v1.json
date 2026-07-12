@@ -68,6 +68,60 @@
       "function"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.combinatorics.pigeonhole_3_into_2.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "fa88ec2be84e807c6873bc95b0c90f918614d84e0ad38db4a317b10846630499",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Combinatorics/Pigeonhole3Into2.lean",
+      "proof_body_sha256": "31c3ac256e308e21a431870b63196f037c8a4034d627e8c326bc8b3c9bde71bd",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "theorem_lookup",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "Finset.exists_ne_map_eq_of_card_lt_of_maps_to"
+    ],
+    "used_theorem_deps": [
+      "Finset.exists_ne_map_eq_of_card_lt_of_maps_to"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "Finset.exists_ne_map_eq_of_card_lt_of_maps_to"
+    ],
+    "transitive_dependency_count": 1,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "Finset.exists_ne_map_eq_of_card_lt_of_maps_to"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "Finset.exists_ne_map_eq_of_card_lt_of_maps_to",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.exists_ne_map_eq_of_card_lt_of_maps_to",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 3,
     "tactic_count": 1
@@ -93,7 +147,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode f2716b47). Closes the domain's largest documented focus/content gap: the README names pigeonhole-style basics explicitly, but no packet covered it until now.",
   "hashes": {
-    "packet_sha256": "84bf7e83f9fb81d633b5b493b1ba98d80c9bbf2ae2ba00e60aeb76885619e668",
+    "packet_sha256": "06e5956572e698cd988ab439b3b285d37ebc531c53d5b5d15310ec0dc158a486",
     "formal_statement_sha256": "fa88ec2be84e807c6873bc95b0c90f918614d84e0ad38db4a317b10846630499",
     "proof_body_sha256": "31c3ac256e308e21a431870b63196f037c8a4034d627e8c326bc8b3c9bde71bd"
   }

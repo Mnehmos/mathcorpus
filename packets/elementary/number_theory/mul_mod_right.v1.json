@@ -66,6 +66,60 @@
       "multiplication"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.number_theory.mul_mod_right.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "b665aede58bbfdad4c250be1aa9e13d295f3625944ced16f2f5c5c0abb232906",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/NumberTheory/MulModRight.lean",
+      "proof_body_sha256": "ae1598546adcf9799f95055b22586fd8b5e7d7046c09c5b470066569d24458e2",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "theorem_lookup",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "Nat.mul_mod_right"
+    ],
+    "used_theorem_deps": [
+      "Nat.mul_mod_right"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "Nat.mul_mod_right"
+    ],
+    "transitive_dependency_count": 1,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "Nat.mul_mod_right"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "Nat.mul_mod_right",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.mul_mod_right",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 3,
     "tactic_count": 1
@@ -92,7 +146,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode da2c1a1c).",
   "hashes": {
-    "packet_sha256": "8894e44228b96eaf9dba53e0ec81b7fb00516d2f4b80d9a7ada39ed9e58990fb",
+    "packet_sha256": "11734c530a596cac0d7e65ad8239d9c4f81990eee889a7f6e0d658340075068a",
     "formal_statement_sha256": "b665aede58bbfdad4c250be1aa9e13d295f3625944ced16f2f5c5c0abb232906",
     "proof_body_sha256": "ae1598546adcf9799f95055b22586fd8b5e7d7046c09c5b470066569d24458e2"
   }

@@ -65,6 +65,60 @@
       "distributivity"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.number_theory.gcd_mul_left.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "522dbb90e227b5a01ee0666bfcbcfade61c4ebe1ee33f16c3f77a6c61ca09766",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/NumberTheory/GcdMulLeft.lean",
+      "proof_body_sha256": "b995ef0664c569a5c3b229e62419ac57dbce7878626fdf134c2ab38ee9d1258c",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "theorem_lookup",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "Nat.gcd_mul_left"
+    ],
+    "used_theorem_deps": [
+      "Nat.gcd_mul_left"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "Nat.gcd_mul_left"
+    ],
+    "transitive_dependency_count": 1,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "Nat.gcd_mul_left"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "Nat.gcd_mul_left",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.gcd_mul_left",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 3,
     "tactic_count": 1
@@ -90,7 +144,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode c4f2e20e).",
   "hashes": {
-    "packet_sha256": "42be99de2dc1c33e7ffaeae3ede34219f57368699655b16b5eab182cc5dba980",
+    "packet_sha256": "40b5bf8a76b52f22eb1ec6af3db0bf4a4f851b8ad409cbe21410de365c7c018a",
     "formal_statement_sha256": "522dbb90e227b5a01ee0666bfcbcfade61c4ebe1ee33f16c3f77a6c61ca09766",
     "proof_body_sha256": "b995ef0664c569a5c3b229e62419ac57dbce7878626fdf134c2ab38ee9d1258c"
   }

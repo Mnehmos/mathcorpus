@@ -66,6 +66,41 @@
       "range"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.combinatorics.prod_range_one.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "6ad1c3be0be22abe3601201afa89d00e3a661cfcddfebfe9afce4b520af899c9",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Combinatorics/ProdRangeOne.lean",
+      "proof_body_sha256": "97ae345f925664d5151de94cf4b7a75591d1a9b3a70e2958fdf1724b855b27e6",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "normalization",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [],
+    "used_theorem_deps": [],
+    "obligation_deps": [],
+    "verified_module_item_deps": [],
+    "transitive_dependency_count": 0,
+    "transitive_dependency_depth": 0,
+    "retrieval_candidates": [],
+    "retrieved_unused_candidates": [],
+    "claim_sources": []
+  },
   "metrics": {
     "loc": 3,
     "tactic_count": 1
@@ -91,7 +126,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode f7dfbab8).",
   "hashes": {
-    "packet_sha256": "c96c95956be68e333ca192fc03bd1b38d35052c29a4346653bfce268534e27ab",
+    "packet_sha256": "f8f67d743f4939b5e3c11ccb2ff7a20e0a239cf93d4f49622ea5bec3b7b446f4",
     "formal_statement_sha256": "6ad1c3be0be22abe3601201afa89d00e3a661cfcddfebfe9afce4b520af899c9",
     "proof_body_sha256": "97ae345f925664d5151de94cf4b7a75591d1a9b3a70e2958fdf1724b855b27e6"
   }

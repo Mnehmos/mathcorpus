@@ -67,6 +67,102 @@
       "composition"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.functions.bijective_comp.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "e99409bda59e23291ab62c75edf8e68f81b5418449a91e0a49f42cad4de09586",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Functions/BijectiveComp.lean",
+      "proof_body_sha256": "d8f522ade0c68d38df98dc887dbb41e3ed6259d251b678f757532a523f8f0fd4",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "theorem_lookup",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "hf.injective",
+      "hf.surjective",
+      "hg.injective.comp",
+      "hg.surjective.comp"
+    ],
+    "used_theorem_deps": [
+      "hf.injective",
+      "hf.surjective",
+      "hg.injective.comp",
+      "hg.surjective.comp"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "hf.injective",
+      "hf.surjective",
+      "hg.injective.comp",
+      "hg.surjective.comp"
+    ],
+    "transitive_dependency_count": 4,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "hf.injective",
+      "hf.surjective",
+      "hg.injective.comp",
+      "hg.surjective.comp"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "hf.injective",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "hf.injective",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "hf.surjective",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "hf.surjective",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "hg.injective.comp",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "hg.injective.comp",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "hg.surjective.comp",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "hg.surjective.comp",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 4,
     "tactic_count": 1
@@ -93,7 +189,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 0b5fbe31), kernel_verified on the first attempt. This domain has `injective_comp` and `surjective_comp` separately but nothing combining them into the paired `Bijective` statement -- confirmed via `grep -rl Bijective packets/elementary/functions/*.json` (only `id_bijective` hit, nothing about composition) before authoring. Proved via the anonymous-constructor pairing of `Function.Injective.comp`/`Function.Surjective.comp` applied to each half of the two `Bijective` hypotheses, rather than searching for a possibly-differently-named `Function.Bijective.comp` convenience lemma (recent cycles' repeated experience with `mathlib_search_declarations` returning noisy generic 'comp' matches made deriving directly from the definition the faster, safer bet).",
   "hashes": {
-    "packet_sha256": "cf7a6088163ba0b1e1301fcdda092d49f3004645c301f9ea58fc39234bf132e6",
+    "packet_sha256": "204ff597ac6738b4eecc189cd4f6cbe3f02a1d85ab77f3e280785e4b3b55a386",
     "formal_statement_sha256": "e99409bda59e23291ab62c75edf8e68f81b5418449a91e0a49f42cad4de09586",
     "proof_body_sha256": "d8f522ade0c68d38df98dc887dbb41e3ed6259d251b678f757532a523f8f0fd4"
   }

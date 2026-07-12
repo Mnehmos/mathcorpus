@@ -74,6 +74,284 @@
       "two_adic_valuation"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "frontier.erdos.erdos_1052_omega_odd_le_two_adic_add_one.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "591cb2334f17167d125d32a15028453440975d2cedc7aa0275c8e3b588a206aa",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Frontier/Erdos/Erdos1052OmegaOddLeTwoAdicAddOne.lean",
+      "proof_body_sha256": "9a5f76e452b82864edb97e14cc5cc442fcc8692844f9a4a2b88bba88c4695f02",
+      "proof_body_redacted": false,
+      "tactic_count": 95,
+      "proof_length": 95,
+      "proof_profile": {
+        "primary_proof_class": "witness_construction",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": true,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "Nat.Prime.pow_dvd_iff_le_factorization",
+      "Nat.coprime_two_left",
+      "Nat.dvd_iff_mod_eq_zero",
+      "Nat.factorization_eq_zero_of_not_dvd",
+      "Nat.factorization_mul",
+      "Nat.factorization_pow_self",
+      "Nat.odd_iff.mp",
+      "hcop2.pow_left",
+      "hm_odd.pos.ne'",
+      "hodd_seed",
+      "m.factorization",
+      "mul_zero",
+      "pow_pos",
+      "pow_succ'",
+      "sigmaStar_mul_of_coprime",
+      "sigmaStar_prime_pow",
+      "two_pow_card_primeFactors_dvd_sigmaStar"
+    ],
+    "used_theorem_deps": [
+      "Nat.Prime.pow_dvd_iff_le_factorization",
+      "Nat.coprime_two_left",
+      "Nat.dvd_iff_mod_eq_zero",
+      "Nat.factorization_eq_zero_of_not_dvd",
+      "Nat.factorization_mul",
+      "Nat.factorization_pow_self",
+      "Nat.odd_iff.mp",
+      "hcop2.pow_left",
+      "hm_odd.pos.ne'",
+      "hodd_seed",
+      "m.factorization",
+      "mul_zero",
+      "pow_pos",
+      "pow_succ'",
+      "sigmaStar_mul_of_coprime",
+      "sigmaStar_prime_pow",
+      "two_pow_card_primeFactors_dvd_sigmaStar"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "Nat.Prime.pow_dvd_iff_le_factorization",
+      "Nat.coprime_two_left",
+      "Nat.dvd_iff_mod_eq_zero",
+      "Nat.factorization_eq_zero_of_not_dvd",
+      "Nat.factorization_mul",
+      "Nat.factorization_pow_self",
+      "Nat.odd_iff.mp",
+      "hcop2.pow_left",
+      "hm_odd.pos.ne'",
+      "hodd_seed",
+      "m.factorization",
+      "mul_zero",
+      "pow_pos",
+      "pow_succ'",
+      "sigmaStar_mul_of_coprime",
+      "sigmaStar_prime_pow",
+      "two_pow_card_primeFactors_dvd_sigmaStar"
+    ],
+    "transitive_dependency_count": 17,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "Nat.Prime.pow_dvd_iff_le_factorization",
+      "Nat.coprime_two_left",
+      "Nat.dvd_iff_mod_eq_zero",
+      "Nat.factorization_eq_zero_of_not_dvd",
+      "Nat.factorization_mul",
+      "Nat.factorization_pow_self",
+      "Nat.odd_iff.mp",
+      "hcop2.pow_left",
+      "hm_odd.pos.ne'",
+      "hodd_seed",
+      "m.factorization",
+      "mul_zero",
+      "pow_pos",
+      "pow_succ'",
+      "sigmaStar_mul_of_coprime",
+      "sigmaStar_prime_pow",
+      "two_pow_card_primeFactors_dvd_sigmaStar"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "Nat.Prime.pow_dvd_iff_le_factorization",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.Prime.pow_dvd_iff_le_factorization",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.coprime_two_left",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.coprime_two_left",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.dvd_iff_mod_eq_zero",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.dvd_iff_mod_eq_zero",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.factorization_eq_zero_of_not_dvd",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.factorization_eq_zero_of_not_dvd",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.factorization_mul",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.factorization_mul",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.factorization_pow_self",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.factorization_pow_self",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.odd_iff.mp",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.odd_iff.mp",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "hcop2.pow_left",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "hcop2.pow_left",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "hm_odd.pos.ne'",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "hm_odd.pos.ne'",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "hodd_seed",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "hodd_seed",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "m.factorization",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "m.factorization",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "mul_zero",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "mul_zero",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "pow_pos",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "pow_pos",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "pow_succ'",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "pow_succ'",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "sigmaStar_mul_of_coprime",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "sigmaStar_mul_of_coprime",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "sigmaStar_prime_pow",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "sigmaStar_prime_pow",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "two_pow_card_primeFactors_dvd_sigmaStar",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "two_pow_card_primeFactors_dvd_sigmaStar",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 200,
     "tactic_count": 95
@@ -101,8 +379,36 @@
   },
   "notes": "ANTI-OVERCLAIM: this packet proves only bounded companion infrastructure (a structural bound narrowing the search space for unitary perfect numbers), not Erdos #1052 itself (genuinely OPEN: are there finitely many unitary perfect numbers?) and not the full Subbarao-Warren even_of_isUnitaryPerfect headline theorem. Proof authority: Lean kernel via the tracked proof-search loop (episode c5be6f70, problem_version e34c46bd-65c0-41de-8b32-6c78c7d8c220), submitted as a SubmitModule (2 defs uDiv/sigmaStar + 6 helper theorems mem_uDiv/split_dvd_mul/quot_mul_quot/gcd_mul_left_eq/sigmaStar_mul_of_coprime/sigmaStar_prime_pow, all re-transported verbatim from the already-verified companion packets since a SubmitModule namespace is self-contained, plus a new helper two_pow_card_primeFactors_dvd_sigmaStar + root theorem omega_odd_le_two_adic_add_one), kernel_verified on the 3rd attempt. Attempt 1 kernel-failed with 'Finset unknown' -- the problem_version's default import manifest is only Ring+NormNum, not full Mathlib; fixed by re-registering with problem_imports: [\"Mathlib\"] (yielding import_manifest_hash aaf21893..., matching every other packet in this corpus -- confirms this is the standard fix, not something prior cycles had silently gotten right by luck). Attempt 2 kernel-failed on two independent issues surfaced together: (1) `Nat.even_iff_two_dvd` doesn't exist under that qualification -- the lemma is the unqualified `even_iff_two_dvd` (lives in Mathlib.Algebra.Ring.Parity, not the Nat namespace); (2) two `omega` calls (for `hodd_seed`/`hnot2m`, proving 2 doesn't divide `2^a+1` resp. `m`) failed because omega cannot reason about the exponential `2^a` on its own -- the source's own `hseedk : ∃ k, 2^a = 2*k` (giving omega a linear witness) and `hmmod := Nat.odd_iff.mp hm_odd` facts had been accidentally dropped while restructuring the proof for the SubmitModule flattener; restored both and attempt 3 went through. Two new Mathlib names were confirmed to exist under this pinned rev via mathlib_search_declarations spot-checks before submission (`Nat.ordProj_mul_ordCompl_eq_self`, `Nat.coprime_ordCompl`, `Nat.primeFactors_prime_pow`, `Nat.primeFactors_mul`, `Nat.factorization_pow_self`, `Nat.factorization_eq_zero_of_not_dvd`, `Nat.prime_dvd_prime_iff_eq`, `Nat.factorization_eq_zero_iff`) while two names from the sibling source (`Nat.Prime.dvd_iff_one_le_factorization`, `Nat.Prime.odd_of_ne_two`) were confirmed ABSENT and replaced with from-scratch derivations using `Nat.factorization_eq_zero_iff` and `Nat.prime_dvd_prime_iff_eq` respectively -- consistent with this session's recurring cross-Mathlib-revision API-drift lesson (see BLOCKERS.md), here affecting an erdos_problems-sourced file rather than a formal_conjectures one. The sibling source's `rcases ... with rfl | hm1` immediately followed by a single closing `· simp [...]` then falling through unbulleted to the second case (rather than two full bullets) was kept bullet-free by simply dropping the lone `·` -- Lean applies the next tactic to the first remaining goal regardless, so this pattern was already flattener-safe without rewriting, matching the same trick used in the already-verified `quot_mul_quot` helper. The `induction m using Nat.strong_induction_on with | _ m ih =>` case-syntax form was avoided in favor of `induction' m using Nat.strong_induction_on with m ih` (Mathlib's induction' tactic) specifically because the `with | case =>` syntax's scope-termination under the SubmitModule flattener's newline-insensitive semicolon-joining was an untested risk this cycle preferred not to take. training.eligibility: quarantined per the default-quarantine policy for open_problem_related packets, matching every other packet in this lane. `COMPANION_RESULTS.md` updated to record this result; no further explicitly-flagged priority target remains in that file for this lane as of this cycle.",
   "hashes": {
-    "packet_sha256": "c152f142f11c189df7988afe7b1d57cc2ea1d3bab883b5a1e883d9b1cdfc8ab4",
+    "packet_sha256": "f0161e3fae30c9863486ece6c419b4952b24618392abd725e700658e75220b69",
     "formal_statement_sha256": "591cb2334f17167d125d32a15028453440975d2cedc7aa0275c8e3b588a206aa",
     "proof_body_sha256": "9a5f76e452b82864edb97e14cc5cc442fcc8692844f9a4a2b88bba88c4695f02"
-  }
+  },
+  "idea_attributions": [
+    {
+      "attribution_id": "frontier.erdos.erdos_1052_omega_odd_le_two_adic_add_one.v1.attribution.1",
+      "formal_statement_sha256": "591cb2334f17167d125d32a15028453440975d2cedc7aa0275c8e3b588a206aa",
+      "proof_variant_id": null,
+      "literature_source_id": "literature_source.erdosproblems_erdos_1052_proof_erdos1052_2.v1",
+      "external_claim_id": null,
+      "source_sha256_pin": "9b26f246ca0abf1082af5962ff5de4243457a76032b58944ba002ac6861f73d2",
+      "attribution_status": "directly_used",
+      "visibility": "model_visible",
+      "dependency_refs": [],
+      "reviewer": "The MathCorpus Authors",
+      "notes": "Formalized from source_provenance.source_refs[0] (pre-existing, not newly researched)."
+    },
+    {
+      "attribution_id": "frontier.erdos.erdos_1052_omega_odd_le_two_adic_add_one.v1.attribution.2",
+      "formal_statement_sha256": "591cb2334f17167d125d32a15028453440975d2cedc7aa0275c8e3b588a206aa",
+      "proof_variant_id": null,
+      "literature_source_id": "literature_source.https_www_erdosproblems_com_1052.v1",
+      "external_claim_id": null,
+      "source_sha256_pin": "1ec07fe6dd7fe1261e26053086640404964ec4b22aa5244fd72b53719ff9413a",
+      "attribution_status": "background_only",
+      "visibility": "model_visible",
+      "dependency_refs": [],
+      "reviewer": "The MathCorpus Authors",
+      "notes": "Formalized from source_provenance.source_refs[1] (pre-existing, not newly researched)."
+    }
+  ]
 }

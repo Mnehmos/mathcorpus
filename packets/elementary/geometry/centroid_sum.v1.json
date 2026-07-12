@@ -65,6 +65,41 @@
       "coordinates"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.geometry.centroid_sum.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "7f697d7ad6d9fdf75ed2c7a35ed82922ccad4bac10f7228d7896488f9e890e72",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Geometry/CentroidSum.lean",
+      "proof_body_sha256": "1e4c84d87cc438e59cc395c352b4e763b52a1965217b9439808b1640660b5457",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "normalization",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [],
+    "used_theorem_deps": [],
+    "obligation_deps": [],
+    "verified_module_item_deps": [],
+    "transitive_dependency_count": 0,
+    "transitive_dependency_depth": 0,
+    "retrieval_candidates": [],
+    "retrieved_unused_candidates": [],
+    "claim_sources": []
+  },
   "metrics": {
     "loc": 3,
     "tactic_count": 1
@@ -90,7 +125,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 19db8e69).",
   "hashes": {
-    "packet_sha256": "5519fdb06bc2a4d9cebedeca77b9e2c25d3dd4c34d8f89b64bd1da1f67354ad1",
+    "packet_sha256": "880e285a01d0be1cb3f3e9da274c979ac129788a0b9f633669382db8af5f714c",
     "formal_statement_sha256": "7f697d7ad6d9fdf75ed2c7a35ed82922ccad4bac10f7228d7896488f9e890e72",
     "proof_body_sha256": "1e4c84d87cc438e59cc395c352b4e763b52a1965217b9439808b1640660b5457"
   }

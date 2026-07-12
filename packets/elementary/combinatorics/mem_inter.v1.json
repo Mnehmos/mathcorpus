@@ -66,6 +66,60 @@
       "intersection"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.combinatorics.mem_inter.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "4480122e464d1d10c04f071a6bece4d3a16101b1c8375da35bee4e7f598e0c3a",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Combinatorics/MemInter.lean",
+      "proof_body_sha256": "0b717491ca919c307ab84d2188ee1f0f168fa4c92120bb3ca5fc69af80814d83",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "theorem_lookup",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "Finset.mem_inter"
+    ],
+    "used_theorem_deps": [
+      "Finset.mem_inter"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "Finset.mem_inter"
+    ],
+    "transitive_dependency_count": 1,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "Finset.mem_inter"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "Finset.mem_inter",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.mem_inter",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 3,
     "tactic_count": 1
@@ -91,7 +145,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode d0eaebf2).",
   "hashes": {
-    "packet_sha256": "4074c9848b1125e15366458ffa73be6fe0839cb83ae64aca8f9d2063c4bd2187",
+    "packet_sha256": "e03bf59253393e995e547e513ce9a99e6436f01bff3b5aae1a437b0cb3112444",
     "formal_statement_sha256": "4480122e464d1d10c04f071a6bece4d3a16101b1c8375da35bee4e7f598e0c3a",
     "proof_body_sha256": "0b717491ca919c307ab84d2188ee1f0f168fa4c92120bb3ca5fc69af80814d83"
   }

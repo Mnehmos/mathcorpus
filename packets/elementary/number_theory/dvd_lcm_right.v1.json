@@ -63,6 +63,60 @@
       "divisibility"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.number_theory.dvd_lcm_right.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "1951e32065312b7c09def44669069826270f1eba0b908e9be0b3806bc0969164",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/NumberTheory/DvdLcmRight.lean",
+      "proof_body_sha256": "094b011ae80fe8e3fb1cedb3769879f5b73f8c59a8aa0096c3cd2c1b998cdb66",
+      "proof_body_redacted": false,
+      "tactic_count": 2,
+      "proof_length": 2,
+      "proof_profile": {
+        "primary_proof_class": "multi_lemma_composition",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "Nat.dvd_lcm_right"
+    ],
+    "used_theorem_deps": [
+      "Nat.dvd_lcm_right"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "Nat.dvd_lcm_right"
+    ],
+    "transitive_dependency_count": 1,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "Nat.dvd_lcm_right"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "Nat.dvd_lcm_right",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.dvd_lcm_right",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 2,
     "tactic_count": 2
@@ -89,7 +143,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode b9c09daf), kernel_verified on the first Solve attempt. Closes the remaining half of the dvd_lcm_left/dvd_lcm_right item in packets/elementary/number_theory/QUEUE.md (dvd_lcm_left already landed via a concurrent agent). theorem_name uses a trailing apostrophe to avoid shadowing Mathlib's own Nat.dvd_lcm_right, matching the sibling dvd_lcm_left' convention.",
   "hashes": {
-    "packet_sha256": "04e50fc713f2ba24cd10fbad64dd6d4e940f1f6056be8a99cb9f0c7309ced06d",
+    "packet_sha256": "d24edb9dabdff1b7326ea6e1f35f543a8015b8d9a42033f0332ae37cbeca0cca",
     "formal_statement_sha256": "1951e32065312b7c09def44669069826270f1eba0b908e9be0b3806bc0969164",
     "proof_body_sha256": "094b011ae80fe8e3fb1cedb3769879f5b73f8c59a8aa0096c3cd2c1b998cdb66"
   }

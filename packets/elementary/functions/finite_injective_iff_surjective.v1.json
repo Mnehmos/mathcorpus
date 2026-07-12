@@ -65,6 +65,60 @@
       "pigeonhole_principle"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.functions.finite_injective_iff_surjective.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "ccea5382ebee13d897f96c7ba5dc44f441b86db3e102f7bd1d8e91451bddcb2b",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Functions/FiniteInjectiveIffSurjective.lean",
+      "proof_body_sha256": "83eeb6e04d235ecf2cd6b92db5bc4afd8b6d6fe59bcf7f942caa1f0f4ed10370",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "theorem_lookup",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "Finite.injective_iff_surjective"
+    ],
+    "used_theorem_deps": [
+      "Finite.injective_iff_surjective"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "Finite.injective_iff_surjective"
+    ],
+    "transitive_dependency_count": 1,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "Finite.injective_iff_surjective"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "Finite.injective_iff_surjective",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finite.injective_iff_surjective",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 4,
     "tactic_count": 1
@@ -91,7 +145,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 1cace84e), kernel_verified on the first attempt. All prior injective/surjective packets in this domain (`injective_comp`, `surjective_comp`, `strictmono_injective`, `bijective_comp`, `left_inverse_injective`/`right_inverse_surjective`) work over arbitrary (possibly infinite) types, where injective and surjective are independent properties -- this packet adds the classic FINITE-endofunction special case (pigeonhole principle) where the two coincide, a genuinely distinct fact worth its own packet. Confirmed via `grep -rl 'Fintype\\|Finite'` (no real hits) that this angle wasn't covered yet.",
   "hashes": {
-    "packet_sha256": "d7f78e794a3e9177002ec578befe58ec0f30ec78c1c5cc75f32a0e0ba6421a55",
+    "packet_sha256": "a9a45e27f166b355d320491b5570c2cafa62917f8476ab1d316e86e0d77e2671",
     "formal_statement_sha256": "ccea5382ebee13d897f96c7ba5dc44f441b86db3e102f7bd1d8e91451bddcb2b",
     "proof_body_sha256": "83eeb6e04d235ecf2cd6b92db5bc4afd8b6d6fe59bcf7f942caa1f0f4ed10370"
   }

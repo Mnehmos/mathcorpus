@@ -71,6 +71,172 @@
       "finset_membership"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "frontier.erdos.erdos_1052_proper_eq_erase.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "d2666d6fa7036045acca8da8095c6a99f28500a5198cafa2a9751df352a474ef",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Frontier/Erdos/Erdos1052ProperEqErase.lean",
+      "proof_body_sha256": "e4d8dd8fc27704306ab5031fe7325b2b0898f69fc4f523db9a26ceabe5b2dd11",
+      "proof_body_redacted": false,
+      "tactic_count": 10,
+      "proof_length": 10,
+      "proof_profile": {
+        "primary_proof_class": "witness_construction",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": true,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "Finset.mem_Ico",
+      "Finset.mem_erase",
+      "Finset.mem_filter",
+      "Nat.le_of_dvd",
+      "Nat.pos_of_dvd_of_pos",
+      "Nat.pos_of_ne_zero",
+      "hlt.ne",
+      "lt_of_le_of_ne",
+      "mem_uDiv"
+    ],
+    "used_theorem_deps": [
+      "Finset.mem_Ico",
+      "Finset.mem_erase",
+      "Finset.mem_filter",
+      "Nat.le_of_dvd",
+      "Nat.pos_of_dvd_of_pos",
+      "Nat.pos_of_ne_zero",
+      "hlt.ne",
+      "lt_of_le_of_ne",
+      "mem_uDiv"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "Finset.mem_Ico",
+      "Finset.mem_erase",
+      "Finset.mem_filter",
+      "Nat.le_of_dvd",
+      "Nat.pos_of_dvd_of_pos",
+      "Nat.pos_of_ne_zero",
+      "hlt.ne",
+      "lt_of_le_of_ne",
+      "mem_uDiv"
+    ],
+    "transitive_dependency_count": 9,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "Finset.mem_Ico",
+      "Finset.mem_erase",
+      "Finset.mem_filter",
+      "Nat.le_of_dvd",
+      "Nat.pos_of_dvd_of_pos",
+      "Nat.pos_of_ne_zero",
+      "hlt.ne",
+      "lt_of_le_of_ne",
+      "mem_uDiv"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "Finset.mem_Ico",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.mem_Ico",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.mem_erase",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.mem_erase",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.mem_filter",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.mem_filter",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.le_of_dvd",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.le_of_dvd",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.pos_of_dvd_of_pos",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.pos_of_dvd_of_pos",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.pos_of_ne_zero",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.pos_of_ne_zero",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "hlt.ne",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "hlt.ne",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "lt_of_le_of_ne",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "lt_of_le_of_ne",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "mem_uDiv",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "mem_uDiv",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 26,
     "tactic_count": 10
@@ -97,8 +263,36 @@
   },
   "notes": "ANTI-OVERCLAIM: this packet proves only bounded companion infrastructure (a bridge lemma between two divisor-set conventions), not Erdos #1052 itself (genuinely OPEN: are there finitely many unitary perfect numbers?), and not even the full known Subbarao-Warren 1966 companion result (unitary perfect numbers are even) -- that headline theorem additionally needs ordProj_dvd_of_mem_uDiv, not_dvd_div_ordProj, filter_not_dvd_eq_uDiv_ordCompl, sum_uDiv_factor (a Finset.sum_bij' 5-argument bijection), and sum_uDiv_even (a Finset.sum_involution 4-argument involution) -- all present, already kernel_verified, in the sibling repo's source file, but deferred here since transporting their nested `.`-bullet case splits (bullets inside bullets, in the sum_bij' branches) requires substantial bullet-free restructuring that this cycle's budget did not cover; a future cycle should attempt them, recording any blocker in packets/frontier/erdos/BLOCKERS.md rather than re-discovering this scoping decision from scratch. Proof authority: Lean kernel via the tracked proof-search loop (episode 59a627f1, problem_version 41662057-906e-478a-9593-de5cf47322a7), submitted as a SubmitModule (1 def uDiv + 2 helper theorems mem_uDiv/self_mem_uDiv + root theorem proper_eq_erase), kernel_verified on the FIRST attempt. The only bullet hazard in this bounded scope (proper_eq_erase's `constructor; · A; · B` Iff split) was rewritten as `Iff.intro (fun ... => A) (fun ... => ?_)`, continuing the remaining goal linearly with ordinary tactics -- no bullets needed since a single-`?_` refine never requires case-split syntax. Independently re-verified in THIS environment's own pinned toolchain rather than treated as evidence merely because the sibling repo (F:\\Github\\mnehmos.llm-driven-proof-search.environment\\ErdosProblems\\erdos-1052\\proof\\Erdos1052_even_of_isUnitaryPerfect.lean) already reports it kernel_verified there -- per this repo's evidence policy. training.eligibility: quarantined per the default-quarantine policy for open_problem_related packets pending real external review (same policy as the #291/#399/#349/#494 packets).",
   "hashes": {
-    "packet_sha256": "58e47d2312a4cd382da11e3ecd30530f24ab88e63466eac59d65798fe6149d91",
+    "packet_sha256": "1d410372f6eafd4175e69ea8bb52aee2940a67992692cc2b1a4e29bffa5a90c8",
     "formal_statement_sha256": "d2666d6fa7036045acca8da8095c6a99f28500a5198cafa2a9751df352a474ef",
     "proof_body_sha256": "e4d8dd8fc27704306ab5031fe7325b2b0898f69fc4f523db9a26ceabe5b2dd11"
-  }
+  },
+  "idea_attributions": [
+    {
+      "attribution_id": "frontier.erdos.erdos_1052_proper_eq_erase.v1.attribution.1",
+      "formal_statement_sha256": "d2666d6fa7036045acca8da8095c6a99f28500a5198cafa2a9751df352a474ef",
+      "proof_variant_id": null,
+      "literature_source_id": "literature_source.erdosproblems_erdos_1052_proof_erdos1052.v1",
+      "external_claim_id": null,
+      "source_sha256_pin": "5e55a3cd4c383bdb7a321234ad486f89a9d20ce495c783651a106109c709923c",
+      "attribution_status": "directly_used",
+      "visibility": "model_visible",
+      "dependency_refs": [],
+      "reviewer": "The MathCorpus Authors",
+      "notes": "Formalized from source_provenance.source_refs[0] (pre-existing, not newly researched)."
+    },
+    {
+      "attribution_id": "frontier.erdos.erdos_1052_proper_eq_erase.v1.attribution.2",
+      "formal_statement_sha256": "d2666d6fa7036045acca8da8095c6a99f28500a5198cafa2a9751df352a474ef",
+      "proof_variant_id": null,
+      "literature_source_id": "literature_source.https_www_erdosproblems_com_1052.v1",
+      "external_claim_id": null,
+      "source_sha256_pin": "1ec07fe6dd7fe1261e26053086640404964ec4b22aa5244fd72b53719ff9413a",
+      "attribution_status": "background_only",
+      "visibility": "model_visible",
+      "dependency_refs": [],
+      "reviewer": "The MathCorpus Authors",
+      "notes": "Formalized from source_provenance.source_refs[1] (pre-existing, not newly researched)."
+    }
+  ]
 }

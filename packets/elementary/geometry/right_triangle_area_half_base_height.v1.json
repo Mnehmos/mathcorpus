@@ -66,6 +66,41 @@
       "lagrange_identity"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.geometry.right_triangle_area_half_base_height.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "fb4f05a0681251bf8472db98a4e2dae9bba536e00292734a4dedc1e8dfc1518e",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Geometry/RightTriangleAreaHalfBaseHeight.lean",
+      "proof_body_sha256": "9b26d456f366ee587431aa54a2d5ffa6a11bcbe2ffa12f8f914a6f443c52d6d4",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "arithmetic_automation",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [],
+    "used_theorem_deps": [],
+    "obligation_deps": [],
+    "verified_module_item_deps": [],
+    "transitive_dependency_count": 0,
+    "transitive_dependency_depth": 0,
+    "retrieval_candidates": [],
+    "retrieved_unused_candidates": [],
+    "claim_sources": []
+  },
   "metrics": {
     "loc": 1,
     "tactic_count": 1
@@ -92,7 +127,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode db18efdb, kernel_verified on the first solve attempt in that episode). An earlier problem_version (episode 3c3b1994) used `by` as the y-coordinate variable name for vertex B, colliding with Lean's `by` tactic-block keyword and producing a parse error (`unexpected token 'by'`) in the proof term despite the root statement itself registering without error; abandoned via give_up and retried with the variable renamed to `by1`. Closes the `right_triangle_area_half_base_height` item in packets/elementary/geometry/QUEUE.md.",
   "hashes": {
-    "packet_sha256": "b8a4ae076bf473eead8a57fbfc1a878daeb67715148498d1d74a1624659871ec",
+    "packet_sha256": "7b285c0197fc0b29cabe12fee5649cbe44e81ad77bedc1e93e6d1f3d017499c8",
     "formal_statement_sha256": "fb4f05a0681251bf8472db98a4e2dae9bba536e00292734a4dedc1e8dfc1518e",
     "proof_body_sha256": "9b26d456f366ee587431aa54a2d5ffa6a11bcbe2ffa12f8f914a6f443c52d6d4"
   }

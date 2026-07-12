@@ -65,6 +65,41 @@
       "exponent_laws"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.algebra.pow_succ.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "fe056ebb3f247710f1d20e066beadcaad951ed9e073a39c0b1c8a8f1d5f76ab9",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Algebra/PowSucc.lean",
+      "proof_body_sha256": "73a550b3d081ac9275b2c23f5609e849bfa596f92ad115f675fc0f4044663089",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "normalization",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [],
+    "used_theorem_deps": [],
+    "obligation_deps": [],
+    "verified_module_item_deps": [],
+    "transitive_dependency_count": 0,
+    "transitive_dependency_depth": 0,
+    "retrieval_candidates": [],
+    "retrieved_unused_candidates": [],
+    "claim_sources": []
+  },
   "metrics": {
     "loc": 2,
     "tactic_count": 1
@@ -91,7 +126,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 869150c9), kernel_verified on the first attempt. Closes the pow_succ' item in packets/elementary/algebra/QUEUE.md. Note: an independent tracked episode (a3bdf47a-6539-438d-bc19-bdeaa8f53d85) also kernel-verified the queue's other open item, add_sq_three, but a concurrent agent had already landed elementary.algebra.add_sq_three.v1 first with the identical statement -- not duplicated here, no packet authored from that episode.",
   "hashes": {
-    "packet_sha256": "4ca72cdd40916a51c8e1d2c77977a9f45808a198511c7be03e1bedb15392380b",
+    "packet_sha256": "da998a2a75f1a144fec532440bc3c811b6319c635f5382c362d70bb97045a12a",
     "formal_statement_sha256": "fe056ebb3f247710f1d20e066beadcaad951ed9e073a39c0b1c8a8f1d5f76ab9",
     "proof_body_sha256": "73a550b3d081ac9275b2c23f5609e849bfa596f92ad115f675fc0f4044663089"
   }

@@ -68,6 +68,60 @@
       "sum_of_squares"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.geometry.two_dot_le.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "c314225dcbe047f92b4cbd3b0d156279cc3713187fda012288e24e14291eb3ee",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Geometry/TwoDotLe.lean",
+      "proof_body_sha256": "5433ac3aa142ccf613ce7c43525be03f90379883ec812685572f89cc8480ea2e",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "arithmetic_automation",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": true,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "sq_nonneg"
+    ],
+    "used_theorem_deps": [
+      "sq_nonneg"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "sq_nonneg"
+    ],
+    "transitive_dependency_count": 1,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "sq_nonneg"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "sq_nonneg",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "sq_nonneg",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 3,
     "tactic_count": 1
@@ -93,7 +147,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 23e38a80).",
   "hashes": {
-    "packet_sha256": "37169ebf05349f6f14b91cca26a0a70c50881e43c2ae247b736e949dea79e7ba",
+    "packet_sha256": "c66acacf22ab55e854bb5073834576c218832325fa761cd2abe5b7a26e0e52c1",
     "formal_statement_sha256": "c314225dcbe047f92b4cbd3b0d156279cc3713187fda012288e24e14291eb3ee",
     "proof_body_sha256": "5433ac3aa142ccf613ce7c43525be03f90379883ec812685572f89cc8480ea2e"
   }

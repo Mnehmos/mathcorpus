@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "literature_source",
+  "record_id": "literature_source.n_9_counterexample_not_covered_here.v1",
+  "packet_id": "frontier.formal_conjectures.degiorgi_conjecture_dim_one.v1",
+  "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+  "created_at": "2026-07-12T00:00:00Z",
+  "trust_status": "candidate_unverified",
+  "export_eligibility": "public",
+  "record_hash": "9154714131fd8ae6bd235bcb1b72308a1932e943600e8fec63fdeaf996a10e79",
+  "title": "n>=9 counterexample, not covered here",
+  "authors": [
+    "Del Pino",
+    "Kowalczyk",
+    "Wei"
+  ],
+  "publication_year": null,
+  "venue": null,
+  "external_ids": {
+    "url": "http://dx.doi.org/10.4007/annals.2011.174.3.3"
+  },
+  "source_sha256": null,
+  "access_note": "Formalized from this packet's own pre-existing source_provenance.source_refs (issue #8 follow-up); not independently re-verified."
+}

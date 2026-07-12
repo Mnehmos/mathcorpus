@@ -68,6 +68,74 @@
       "arithmetic_sequence"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.induction.arith_seq_sum.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "f722d562b809e936493a959e9ebbc1c8a48f2feae55d9dd44b3d6a741e305711",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Induction/ArithSeqSum.lean",
+      "proof_body_sha256": "ff52b80e634b02789f11e31a418e356f33e953267673170aca9443f91c47a5a8",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "induction",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": true,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "Finset.sum_range_succ",
+      "add_mul"
+    ],
+    "used_theorem_deps": [
+      "Finset.sum_range_succ",
+      "add_mul"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "Finset.sum_range_succ",
+      "add_mul"
+    ],
+    "transitive_dependency_count": 2,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "Finset.sum_range_succ",
+      "add_mul"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "Finset.sum_range_succ",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.sum_range_succ",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "add_mul",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "add_mul",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 3,
     "tactic_count": 1
@@ -94,7 +162,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode b6ef7a97), kernel_verified on the first attempt. Generalizes three of the domain's existing closed-form sum packets into a single reusable lemma: gauss_sum is the a=0, d=1 case; sum_odds is a=1, d=2; sum_evens is a=2, d=2. Stated over ℤ (rather than ℕ) so (n-1) can go negative at n=0 without truncation, matching the domain's established pattern (geom_series_sum_induction, telescoping_sum) of picking an ordered ring where the natural algebra holds cleanly.",
   "hashes": {
-    "packet_sha256": "21156aaef2f2acb19e73200abfff8eba081157ec9eb2dc57e23a219eeb77dfdb",
+    "packet_sha256": "d7a12af07fca787c409e2e9f40a7942fd71fcae2cc9e83afa3c433a2e385a731",
     "formal_statement_sha256": "f722d562b809e936493a959e9ebbc1c8a48f2feae55d9dd44b3d6a741e305711",
     "proof_body_sha256": "ff52b80e634b02789f11e31a418e356f33e953267673170aca9443f91c47a5a8"
   }

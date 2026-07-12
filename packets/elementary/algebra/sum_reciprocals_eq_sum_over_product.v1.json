@@ -65,6 +65,41 @@
       "division"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.algebra.sum_reciprocals_eq_sum_over_product.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "036b7f65067d414ae45a45bab71e9c74786757ecfc85ed6a3e2ee40864cb3213",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Algebra/SumReciprocalsEqSumOverProduct.lean",
+      "proof_body_sha256": "641d64a7742776d9a77e13ffe48f825aef0def5c14df0c954bd3839c0c00b752",
+      "proof_body_redacted": false,
+      "tactic_count": 2,
+      "proof_length": 2,
+      "proof_profile": {
+        "primary_proof_class": "normalization",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [],
+    "used_theorem_deps": [],
+    "obligation_deps": [],
+    "verified_module_item_deps": [],
+    "transitive_dependency_count": 0,
+    "transitive_dependency_depth": 0,
+    "retrieval_candidates": [],
+    "retrieved_unused_candidates": [],
+    "claim_sources": []
+  },
   "metrics": {
     "loc": 2,
     "tactic_count": 2
@@ -90,7 +125,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 580850dc, problem_version f2113984-0414-47d1-851d-6f65edae4469). The winning attempt was the second step in the episode; the first step (bare `ring`, no `field_simp`) kernel-failed and is preserved as negative.algebra.frac_sum_bare_ring.missing_field_simp.v1.",
   "hashes": {
-    "packet_sha256": "1b2fae49abc2360e9053c92d58a5138057860266b8100dd9aa97cc78757b3ca7",
+    "packet_sha256": "9c72fcfc8d4d8b2549cab0799b83c6db79019a233d065fabcf46be1624c843b0",
     "formal_statement_sha256": "036b7f65067d414ae45a45bab71e9c74786757ecfc85ed6a3e2ee40864cb3213",
     "proof_body_sha256": "641d64a7742776d9a77e13ffe48f825aef0def5c14df0c954bd3839c0c00b752"
   }

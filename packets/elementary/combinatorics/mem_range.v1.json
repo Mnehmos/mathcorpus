@@ -65,6 +65,60 @@
       "membership"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.combinatorics.mem_range.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "a2b496ab456ba64a438666bb7e75ee365db15734f822318ddc984913e8fc3967",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Combinatorics/MemRange.lean",
+      "proof_body_sha256": "b7533a2ccb86299342c1a465820770b120711a95f0c1d0408d9ef04520c89bf5",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "theorem_lookup",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "Finset.mem_range"
+    ],
+    "used_theorem_deps": [
+      "Finset.mem_range"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "Finset.mem_range"
+    ],
+    "transitive_dependency_count": 1,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "Finset.mem_range"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "Finset.mem_range",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.mem_range",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 3,
     "tactic_count": 1
@@ -90,7 +144,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 5f3f85a1).",
   "hashes": {
-    "packet_sha256": "578ba9892060d879735f3f999b8922d4993ad3c7ec7442d21d13d0110da9c4ff",
+    "packet_sha256": "8028fc8b9618d18a5830ea3a78c8aa5f454c9d2581d514028a1b5cdfb3d754b5",
     "formal_statement_sha256": "a2b496ab456ba64a438666bb7e75ee365db15734f822318ddc984913e8fc3967",
     "proof_body_sha256": "b7533a2ccb86299342c1a465820770b120711a95f0c1d0408d9ef04520c89bf5"
   }

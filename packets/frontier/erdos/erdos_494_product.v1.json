@@ -74,6 +74,256 @@
       "embedding"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "frontier.erdos.erdos_494_product.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "d49a7481f39b215c0d44ae762d43119dea18a2ef27e686d1f3bde3ffd3be0df0",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Frontier/Erdos/Erdos494Product.lean",
+      "proof_body_sha256": "5a0264522aaba8a7cf32eea7a88210cc942074168260ff1f6f5242c6e21df0e9",
+      "proof_body_redacted": false,
+      "tactic_count": 38,
+      "proof_length": 38,
+      "proof_profile": {
+        "primary_proof_class": "case_analysis",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": true
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "Complex.I",
+      "Complex.exp",
+      "Complex.isPrimitiveRoot_exp",
+      "Finset.card_map",
+      "Finset.mem_insert",
+      "Finset.mem_map",
+      "Finset.mem_singleton",
+      "Function.Embedding.coeFn_mk",
+      "Real.pi",
+      "hprim.ne_one",
+      "hprim.pow_eq_one",
+      "mul_one",
+      "mul_right_cancel",
+      "mul_right_injective",
+      "prodMultiset_map_mul"
+    ],
+    "used_theorem_deps": [
+      "Complex.I",
+      "Complex.exp",
+      "Complex.isPrimitiveRoot_exp",
+      "Finset.card_map",
+      "Finset.mem_insert",
+      "Finset.mem_map",
+      "Finset.mem_singleton",
+      "Function.Embedding.coeFn_mk",
+      "Real.pi",
+      "hprim.ne_one",
+      "hprim.pow_eq_one",
+      "mul_one",
+      "mul_right_cancel",
+      "mul_right_injective",
+      "prodMultiset_map_mul"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "Complex.I",
+      "Complex.exp",
+      "Complex.isPrimitiveRoot_exp",
+      "Finset.card_map",
+      "Finset.mem_insert",
+      "Finset.mem_map",
+      "Finset.mem_singleton",
+      "Function.Embedding.coeFn_mk",
+      "Real.pi",
+      "hprim.ne_one",
+      "hprim.pow_eq_one",
+      "mul_one",
+      "mul_right_cancel",
+      "mul_right_injective",
+      "prodMultiset_map_mul"
+    ],
+    "transitive_dependency_count": 15,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "Complex.I",
+      "Complex.exp",
+      "Complex.isPrimitiveRoot_exp",
+      "Finset.card_map",
+      "Finset.mem_insert",
+      "Finset.mem_map",
+      "Finset.mem_singleton",
+      "Function.Embedding.coeFn_mk",
+      "Real.pi",
+      "hprim.ne_one",
+      "hprim.pow_eq_one",
+      "mul_one",
+      "mul_right_cancel",
+      "mul_right_injective",
+      "prodMultiset_map_mul"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "Complex.I",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Complex.I",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Complex.exp",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Complex.exp",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Complex.isPrimitiveRoot_exp",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Complex.isPrimitiveRoot_exp",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.card_map",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.card_map",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.mem_insert",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.mem_insert",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.mem_map",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.mem_map",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.mem_singleton",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.mem_singleton",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Function.Embedding.coeFn_mk",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Function.Embedding.coeFn_mk",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Real.pi",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Real.pi",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "hprim.ne_one",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "hprim.ne_one",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "hprim.pow_eq_one",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "hprim.pow_eq_one",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "mul_one",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "mul_one",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "mul_right_cancel",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "mul_right_cancel",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "mul_right_injective",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "mul_right_injective",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "prodMultiset_map_mul",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "prodMultiset_map_mul",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 62,
     "tactic_count": 38
@@ -100,8 +350,49 @@
   },
   "notes": "ANTI-OVERCLAIM: this packet proves only a known COMPANION counterexample (Steinerberger's disproof of the multiplicative analogue), not Erdos #494's original sum-based question. Proof authority: Lean kernel via the tracked proof-search loop (episode d4688926, problem_version 6222e446-02cc-4315-a065-bd7434530fb3), submitted as a SubmitModule (1 helper def prodMultiset + 1 helper theorem prodMultiset_map_mul + root theorem erdos_494_product), kernel_verified on the second submission: the first attempt used the unqualified `mapEmbedding` name relying on the sibling repo's `open Finset` (module_items have no room for an `open` preamble), which elaborated to a metavariable and broke a `rw`; fully qualifying it as `Finset.mapEmbedding` fixed it cleanly. Independently re-verified in THIS environment's own pinned toolchain rather than treated as evidence merely because the sibling repo (F:\\Github\\mnehmos.llm-driven-proof-search.environment\\ErdosProblems\\erdos-494\\proof\\Erdos494_product.lean) already reports it kernel_verified there -- per this repo's evidence policy. training.eligibility: quarantined per the default-quarantine policy for open_problem_related packets pending real external review (same policy as the #399 and #349 packets). Third packet in the frontier/erdos lane.",
   "hashes": {
-    "packet_sha256": "15a7ba6e2df0d0ace935a38b818796805f9a1626e7ba4f75d8d7cad90bc7b4b4",
+    "packet_sha256": "58cd5ca5e073e1422b43481afada9d5b6f30b4839217ab356e1f1c8b14630a71",
     "formal_statement_sha256": "d49a7481f39b215c0d44ae762d43119dea18a2ef27e686d1f3bde3ffd3be0df0",
     "proof_body_sha256": "5a0264522aaba8a7cf32eea7a88210cc942074168260ff1f6f5242c6e21df0e9"
-  }
+  },
+  "idea_attributions": [
+    {
+      "attribution_id": "frontier.erdos.erdos_494_product.v1.attribution.1",
+      "formal_statement_sha256": "d49a7481f39b215c0d44ae762d43119dea18a2ef27e686d1f3bde3ffd3be0df0",
+      "proof_variant_id": null,
+      "literature_source_id": "literature_source.erdosproblems_erdos_494_proof_erdos494_p.v1",
+      "external_claim_id": null,
+      "source_sha256_pin": "6e45d214fcc8b06d459b9dc833b3a36c0f1cc4fb4565734bfe3578ee7aac265a",
+      "attribution_status": "directly_used",
+      "visibility": "model_visible",
+      "dependency_refs": [],
+      "reviewer": "The MathCorpus Authors",
+      "notes": "Formalized from source_provenance.source_refs[0] (pre-existing, not newly researched)."
+    },
+    {
+      "attribution_id": "frontier.erdos.erdos_494_product.v1.attribution.2",
+      "formal_statement_sha256": "d49a7481f39b215c0d44ae762d43119dea18a2ef27e686d1f3bde3ffd3be0df0",
+      "proof_variant_id": null,
+      "literature_source_id": "literature_source.formalconjectures_erdosproblems_349_lean.v1",
+      "external_claim_id": null,
+      "source_sha256_pin": "fc3b510ecac8ed7895d32adac1280b9d3bf8ddf930e67cbf231a0fbe8e2d5b0f",
+      "attribution_status": "background_only",
+      "visibility": "model_visible",
+      "dependency_refs": [],
+      "reviewer": "The MathCorpus Authors",
+      "notes": "Formalized from source_provenance.source_refs[1] (pre-existing, not newly researched)."
+    },
+    {
+      "attribution_id": "frontier.erdos.erdos_494_product.v1.attribution.3",
+      "formal_statement_sha256": "d49a7481f39b215c0d44ae762d43119dea18a2ef27e686d1f3bde3ffd3be0df0",
+      "proof_variant_id": null,
+      "literature_source_id": "literature_source.https_www_erdosproblems_com_494.v1",
+      "external_claim_id": null,
+      "source_sha256_pin": "ed896aebbfefaf48b59049aa93c7aef1c6ec36f06f05d9b673134daa66a86354",
+      "attribution_status": "background_only",
+      "visibility": "model_visible",
+      "dependency_refs": [],
+      "reviewer": "The MathCorpus Authors",
+      "notes": "Formalized from source_provenance.source_refs[2] (pre-existing, not newly researched)."
+    }
+  ]
 }

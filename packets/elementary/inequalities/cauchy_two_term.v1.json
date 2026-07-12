@@ -66,6 +66,60 @@
       "sum_of_squares"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.inequalities.cauchy_two_term.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "0a7bea032c1ea5763a61b5b4698e56792ef9b1a99d5effcb942c5c91c1292514",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Inequalities/Cauchy2Term.lean",
+      "proof_body_sha256": "9a1ba91ef7a08c3a997cf82b5ce772212cb2dca421f46e3b9df1dcabba287c27",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "arithmetic_automation",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": true,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "sq_nonneg"
+    ],
+    "used_theorem_deps": [
+      "sq_nonneg"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "sq_nonneg"
+    ],
+    "transitive_dependency_count": 1,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "sq_nonneg"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "sq_nonneg",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "sq_nonneg",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 3,
     "tactic_count": 1
@@ -91,7 +145,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode fec2a36c).",
   "hashes": {
-    "packet_sha256": "d954d1b08a7fa4c9e5b393582eb939f452058e00d63e0e7c83c842d6c14bc8de",
+    "packet_sha256": "e785537c75f8da1e42d0f303a0e2fe935f0c56357533120ef4b77b62b32be19c",
     "formal_statement_sha256": "0a7bea032c1ea5763a61b5b4698e56792ef9b1a99d5effcb942c5c91c1292514",
     "proof_body_sha256": "9a1ba91ef7a08c3a997cf82b5ce772212cb2dca421f46e3b9df1dcabba287c27"
   }

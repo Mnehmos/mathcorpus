@@ -65,6 +65,60 @@
       "combination"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.combinatorics.choose_self.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "e9c7184a5d7a336ff6e5c3fee8a73a8814ad66358034fabd2dfd906116256468",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Combinatorics/ChooseSelf.lean",
+      "proof_body_sha256": "39445dfae70b82e97d684d551060078abb1f48a8625b11498bad4e04cb477afe",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "theorem_lookup",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "Nat.choose_self"
+    ],
+    "used_theorem_deps": [
+      "Nat.choose_self"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "Nat.choose_self"
+    ],
+    "transitive_dependency_count": 1,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "Nat.choose_self"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "Nat.choose_self",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.choose_self",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 3,
     "tactic_count": 1
@@ -90,7 +144,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 0f2f545b). Companion to choose_zero_right'; choose_symm remains queued as a follow-up.",
   "hashes": {
-    "packet_sha256": "de990944283d4fc706dab7013d173c00b3ca20c095c3a26c3906f9c2b5ec71d2",
+    "packet_sha256": "914c9a81991811d0288816a9ab9b8f72758cbdabc353d649b298e573e2948fcc",
     "formal_statement_sha256": "e9c7184a5d7a336ff6e5c3fee8a73a8814ad66358034fabd2dfd906116256468",
     "proof_body_sha256": "39445dfae70b82e97d684d551060078abb1f48a8625b11498bad4e04cb477afe"
   }

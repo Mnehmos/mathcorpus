@@ -65,6 +65,60 @@
       "gcd"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.number_theory.coprime_one_left.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "c30a04bbe928c564d576769bd29b4602b5527c639942bf4457e0302ac7777c12",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/NumberTheory/CoprimeOneLeft.lean",
+      "proof_body_sha256": "6144e4f32f51786ee865a709a45e2c42b33135068fa52a45711da328621b695c",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "theorem_lookup",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "Nat.coprime_one_left"
+    ],
+    "used_theorem_deps": [
+      "Nat.coprime_one_left"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "Nat.coprime_one_left"
+    ],
+    "transitive_dependency_count": 1,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "Nat.coprime_one_left"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "Nat.coprime_one_left",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.coprime_one_left",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 3,
     "tactic_count": 1
@@ -90,7 +144,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 513069db).",
   "hashes": {
-    "packet_sha256": "46ff1ba36bdeba59790939fed95e266e7b002f8b7eac65c04fafe5f206f01c23",
+    "packet_sha256": "91956dc9156dffb055b4a861da645b6c51c3de6f4c791a2f440c9cc4a6b90b4b",
     "formal_statement_sha256": "c30a04bbe928c564d576769bd29b4602b5527c639942bf4457e0302ac7777c12",
     "proof_body_sha256": "6144e4f32f51786ee865a709a45e2c42b33135068fa52a45711da328621b695c"
   }

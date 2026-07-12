@@ -67,6 +67,60 @@
       "modular_arithmetic"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.number_theory.sq_mod_two_eq_self_mod_two.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "e8de3d988433ae18a488b7a68629d095b11701882683f0816ff1c8d8ecfe238b",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/NumberTheory/SqModTwoEqSelfModTwo.lean",
+      "proof_body_sha256": "18a833c9a8746740c4f3347de3bac29ee5872a9db7c9fc414980b23e90e081f5",
+      "proof_body_redacted": false,
+      "tactic_count": 3,
+      "proof_length": 3,
+      "proof_profile": {
+        "primary_proof_class": "case_analysis",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": true
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "Nat.even_or_odd"
+    ],
+    "used_theorem_deps": [
+      "Nat.even_or_odd"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "Nat.even_or_odd"
+    ],
+    "transitive_dependency_count": 1,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "Nat.even_or_odd"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "Nat.even_or_odd",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.even_or_odd",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 2,
     "tactic_count": 3
@@ -93,7 +147,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode d656e3da), kernel_verified on the first attempt. Fills the follow-up positive packet gap flagged in packets/negative/number_theory/QUEUE.md's sq_parity_omega_nonlinear_failure entry: the correct case-split proof for the curriculum-standard parity-of-squares lemma whose bare-omega attempt is already preserved as negative.number_theory.sq_parity.omega_nonlinear_failure.v1.",
   "hashes": {
-    "packet_sha256": "6fce1e05b29b2c19784aaf135ced9a2acf93006c66f6fbb650b7fe393d9453c9",
+    "packet_sha256": "f12e6f225ff48659b369db68d3cd4287fab38f34785e73f51d68d7b85fcffaf2",
     "formal_statement_sha256": "e8de3d988433ae18a488b7a68629d095b11701882683f0816ff1c8d8ecfe238b",
     "proof_body_sha256": "18a833c9a8746740c4f3347de3bac29ee5872a9db7c9fc414980b23e90e081f5"
   }

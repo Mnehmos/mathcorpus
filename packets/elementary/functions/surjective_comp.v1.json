@@ -65,6 +65,60 @@
       "function_composition"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.functions.surjective_comp.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "2199f05d4be4d129a261b12c85c006387ed7f5774ee807034e2bcf8cd82a10ce",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Functions/SurjectiveComp.lean",
+      "proof_body_sha256": "d158d44514e7d14dd4e8c7b7cf41deca1fa162706e7721d9cc48eaef7462d0bc",
+      "proof_body_redacted": false,
+      "tactic_count": 3,
+      "proof_length": 3,
+      "proof_profile": {
+        "primary_proof_class": "witness_construction",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": true,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "Function.comp_apply"
+    ],
+    "used_theorem_deps": [
+      "Function.comp_apply"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "Function.comp_apply"
+    ],
+    "transitive_dependency_count": 1,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "Function.comp_apply"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "Function.comp_apply",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Function.comp_apply",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 4,
     "tactic_count": 3
@@ -91,7 +145,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode fd3f917e), kernel_verified on the first Solve attempt (learned from the binder-arity slip on the paired injective_comp packet: intro'd the three implicit type variables alpha/beta/gamma up front this time). Pairs with elementary.functions.injective_comp.v1; closes the surjective_comp item in packets/elementary/functions/QUEUE.md.",
   "hashes": {
-    "packet_sha256": "ad88b76f074d5bdfefedaaf9b86239e4c63335321aff6fa1e8bcc134a924547f",
+    "packet_sha256": "5c7386214f10d49cddd76dd568a97cd90237e14766c79caaf3c44faf481fce32",
     "formal_statement_sha256": "2199f05d4be4d129a261b12c85c006387ed7f5774ee807034e2bcf8cd82a10ce",
     "proof_body_sha256": "d158d44514e7d14dd4e8c7b7cf41deca1fa162706e7721d9cc48eaef7462d0bc"
   }

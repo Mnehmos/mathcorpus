@@ -63,6 +63,60 @@
       "set_membership"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.combinatorics.set_mem_union.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "15a41ba046e338b1c4492b8f188a8a83376d8c3213eeb6df70d79c28fa7837b8",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Combinatorics/SetMemUnion.lean",
+      "proof_body_sha256": "0b0a0f5693a22f355b6c8ef11b0af294b9634a252027ea746fca1b1ff0a5d757",
+      "proof_body_redacted": false,
+      "tactic_count": 2,
+      "proof_length": 2,
+      "proof_profile": {
+        "primary_proof_class": "multi_lemma_composition",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "Set.mem_union"
+    ],
+    "used_theorem_deps": [
+      "Set.mem_union"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "Set.mem_union"
+    ],
+    "transitive_dependency_count": 1,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "Set.mem_union"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "Set.mem_union",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Set.mem_union",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 2,
     "tactic_count": 2
@@ -89,7 +143,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode d5cb1cff), kernel_verified on the first Solve attempt. This is the domain's first plain-Set packet: every prior packet in packets/elementary/combinatorics/ used Finset only, despite the README-stated focus explicitly naming both 'Finset, Set'. Closes that gap item in packets/elementary/combinatorics/QUEUE.md's Backlog.",
   "hashes": {
-    "packet_sha256": "19a1ad0c2678f5023b23ed808125bab48a6abeac766d887b99d14a46e17a0c67",
+    "packet_sha256": "776dda89049ef3198417a9fd4554e52c0b3b958708125814bbcba312e7393199",
     "formal_statement_sha256": "15a41ba046e338b1c4492b8f188a8a83376d8c3213eeb6df70d79c28fa7837b8",
     "proof_body_sha256": "0b0a0f5693a22f355b6c8ef11b0af294b9634a252027ea746fca1b1ff0a5d757"
   }

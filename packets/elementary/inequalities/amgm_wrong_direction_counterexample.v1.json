@@ -67,6 +67,60 @@
       "counterexample"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.inequalities.amgm_wrong_direction_counterexample.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "0621cfd66b32707b87be84dd635d43cb82947eaecee73c567b0b5ad5f069809d",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Inequalities/AmGmWrongDirectionCounterexample.lean",
+      "proof_body_sha256": "fd6f87606dc6b0d39b7b8219d1327c56b6906b30e08b830a60c3b2aeb18db0f9",
+      "proof_body_redacted": false,
+      "tactic_count": 3,
+      "proof_length": 3,
+      "proof_profile": {
+        "primary_proof_class": "witness_construction",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": true,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "Real.sqrt_sq"
+    ],
+    "used_theorem_deps": [
+      "Real.sqrt_sq"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "Real.sqrt_sq"
+    ],
+    "transitive_dependency_count": 1,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "Real.sqrt_sq"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "Real.sqrt_sq",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Real.sqrt_sq",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 4,
     "tactic_count": 3
@@ -93,7 +147,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 5c239fdd). Falseness of the flipped AM-GM direction is kernel-verified directly via this explicit witness, complementing the failed universal-claim attempt preserved as negative.inequalities.amgm_wrong_direction_bare_nlinarith_failure.v1 (a separate episode, ade3dee6). Resolves the queued 'AM-GM in the wrong direction' candidate in packets/negative/inequalities/QUEUE.md.",
   "hashes": {
-    "packet_sha256": "63650c211db9c4dd8f8f0f933197e1e8e79961d4a006eb98a8b375907d385f94",
+    "packet_sha256": "f1206ce0f358c71d97db56a00a17a9d685d8f364e210b8829e6a9f29259f4b89",
     "formal_statement_sha256": "0621cfd66b32707b87be84dd635d43cb82947eaecee73c567b0b5ad5f069809d",
     "proof_body_sha256": "fd6f87606dc6b0d39b7b8219d1327c56b6906b30e08b830a60c3b2aeb18db0f9"
   }

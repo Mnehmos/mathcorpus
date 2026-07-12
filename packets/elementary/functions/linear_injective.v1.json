@@ -66,6 +66,60 @@
       "cancellation"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.functions.linear_injective.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "5379068f3d40793e90f5d1c8628faf9068213456b65aa21e6074199d62245c74",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Functions/LinearInjective.lean",
+      "proof_body_sha256": "cdc338b3f2cee6ccdebcfee056149550e3bfb373817eb589fd3d83508b195abf",
+      "proof_body_redacted": false,
+      "tactic_count": 3,
+      "proof_length": 3,
+      "proof_profile": {
+        "primary_proof_class": "arithmetic_automation",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "mul_left_cancel"
+    ],
+    "used_theorem_deps": [
+      "mul_left_cancel"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "mul_left_cancel"
+    ],
+    "transitive_dependency_count": 1,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "mul_left_cancel"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "mul_left_cancel",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "mul_left_cancel",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 4,
     "tactic_count": 3
@@ -92,7 +146,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode ea9a41a4), kernel_verified on the first accepted attempt. Tooling lesson: two earlier problem_versions of this same target timed out ('Lean invocation timed out after 60 seconds') using problem_imports=[\"Mathlib\"] (the full library) -- twice, deterministically, regardless of proof_term -- while problem_imports=[\"Mathlib.Tactic.Linarith\"] alone elaborated fast but failed with missing real-number typeclass instances (OfNat/Mul on ℝ), since the tactic import alone doesn't pull in the real-number algebraic structure. The combination that worked: [\"Mathlib.Data.Real.Basic\", \"Mathlib.Tactic.Linarith\"] -- narrow and fast. Prefer narrow, targeted problem_imports over the blanket [\"Mathlib\"] for real-number targets in this environment; reserve full Mathlib import for cases where the narrow set genuinely can't be identified. Closes the general (parametrized a != 0) linear_injective item in packets/elementary/functions/QUEUE.md, distinct from the already-landed linear_injective_concrete_instance packet.",
   "hashes": {
-    "packet_sha256": "fac09596c9ab3a7225ff39da2f48e4d3531d476c8048505b0ee114c73c8d06c5",
+    "packet_sha256": "fae9be59089315ca8a0f83961e9f45a2534205bb8ba7346f4da6e1b30deaf8b1",
     "formal_statement_sha256": "5379068f3d40793e90f5d1c8628faf9068213456b65aa21e6074199d62245c74",
     "proof_body_sha256": "cdc338b3f2cee6ccdebcfee056149550e3bfb373817eb589fd3d83508b195abf"
   }

@@ -65,6 +65,41 @@
       "function_composition"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.functions.left_inverse_injective.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "bf75cedca6a4db6c8ac69596625525da171080ed7ad043a020bf5ffc0c0cfd28",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Functions/LeftInverseInjective.lean",
+      "proof_body_sha256": "4449b4f63c86b01489822fb93e3996a06b60239278d1a20b5e9c6d23b8ce0548",
+      "proof_body_redacted": false,
+      "tactic_count": 3,
+      "proof_length": 3,
+      "proof_profile": {
+        "primary_proof_class": "multi_lemma_composition",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [],
+    "used_theorem_deps": [],
+    "obligation_deps": [],
+    "verified_module_item_deps": [],
+    "transitive_dependency_count": 0,
+    "transitive_dependency_depth": 0,
+    "retrieval_candidates": [],
+    "retrieved_unused_candidates": [],
+    "claim_sources": []
+  },
   "metrics": {
     "loc": 4,
     "tactic_count": 3
@@ -91,7 +126,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 05445672), kernel_verified on the first attempt. This domain's `README.md` lists 'inverse' as an explicit focus item alongside injective/surjective/composition/monotone/fixed-point/image-preimage, but until this packet nothing in the domain touched `Function.LeftInverse`/`RightInverse` at all -- confirmed via `grep -rl LeftInverse\\|RightInverse packets/elementary/functions/*.json` (no hits) before authoring. Proved directly from the definition (`congrArg g hab` then rewriting via the two left-inverse equations) rather than citing a Mathlib convenience lemma by name, since `mathlib_search_declarations` results for `LeftInverse.injective` were noisy/ambiguous (many unrelated `injective` hits from other namespaces) -- the from-scratch two-line proof sidesteps needing to pin down the exact current Mathlib name. `general_amgm`/`am_hm_two`-style domain-tagged `algebra` per this folder's established convention (schema has no `functions` domain value).",
   "hashes": {
-    "packet_sha256": "26b880c46692b02b572c5c87be1ef0daf82312075e957138f3ec282954209c6a",
+    "packet_sha256": "2152f686d686aeea745bc163a5abf91402307b36da66fa891b15319754e8e57b",
     "formal_statement_sha256": "bf75cedca6a4db6c8ac69596625525da171080ed7ad043a020bf5ffc0c0cfd28",
     "proof_body_sha256": "4449b4f63c86b01489822fb93e3996a06b60239278d1a20b5e9c6d23b8ce0548"
   }

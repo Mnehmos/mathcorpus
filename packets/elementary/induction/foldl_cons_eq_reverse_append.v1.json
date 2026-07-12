@@ -69,6 +69,41 @@
       "append"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.induction.foldl_cons_eq_reverse_append.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "893381f5d598d3ec503b54052da28110dd74b0604c06a86f4c6ca02089312f7f",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Induction/FoldlConsEqReverseAppend.lean",
+      "proof_body_sha256": "b0be3e90757d25f97db4e20ced38b4c5f793d118bd74be13ce5e8577beb16aac",
+      "proof_body_redacted": false,
+      "tactic_count": 2,
+      "proof_length": 2,
+      "proof_profile": {
+        "primary_proof_class": "induction",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": true,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [],
+    "used_theorem_deps": [],
+    "obligation_deps": [],
+    "verified_module_item_deps": [],
+    "transitive_dependency_count": 0,
+    "transitive_dependency_depth": 0,
+    "retrieval_candidates": [],
+    "retrieved_unused_candidates": [],
+    "claim_sources": []
+  },
   "metrics": {
     "loc": 3,
     "tactic_count": 2
@@ -94,7 +129,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 0ab12a3b, problem_version 204fecc3-8ba6-4fac-bf30-03dec9b20ad4). Originally attempted as a negative example for the 'induction without generalizing an auxiliary variable' hazard queued in packets/negative/induction/QUEUE.md: the intended natural-but-wrong attempt (induction l without generalizing acc, then simp [ih]) actually succeeded (steps 1-2 were transport/syntax failures unrelated to the intended lesson -- raw_lean_block mis-parsed a multi-line `induction ... with` block, then a retry omitted the now-necessary `intro l acc`; step 3, `intro l acc; induction l with | nil => simp | cons x xs ih => simp [ih]`, reached kernel_verified). Per this domain's own queue policy, a hypothesis that turns out provable is not a valid negative example -- authored as a positive packet instead; the QUEUE.md candidate is corrected to suggest a weaker closing tactic for anyone re-attempting the negative-example version of this trap. domain: algebra is intentional, matching every other packet filed under the `induction` folder, since `induction` is not a valid `domain` enum value in schema/packet.schema.json.",
   "hashes": {
-    "packet_sha256": "1f427de9fa670999668dce51a60c53eb344859b1461ea3a06c8a4f91276aa970",
+    "packet_sha256": "cc7e1e2986dfa72ab19a652a825799f83f396144807a2a9d217186c9d1848d51",
     "formal_statement_sha256": "893381f5d598d3ec503b54052da28110dd74b0604c06a86f4c6ca02089312f7f",
     "proof_body_sha256": "b0be3e90757d25f97db4e20ced38b4c5f793d118bd74be13ce5e8577beb16aac"
   }

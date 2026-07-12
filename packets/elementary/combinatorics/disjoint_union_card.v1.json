@@ -68,6 +68,60 @@
       "disjointness"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.combinatorics.disjoint_union_card.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "312249ee1bb01043ee8ae83ff442c678a122d76534961a02eecb2d9948b4f8dd",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Combinatorics/DisjointUnionCard.lean",
+      "proof_body_sha256": "6f6e603f6407d40dd78293b8883804d5bc62efdb07ecf5a5cbef372423f73499",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "theorem_lookup",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "Finset.card_union_eq_card_add_card"
+    ],
+    "used_theorem_deps": [
+      "Finset.card_union_eq_card_add_card"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "Finset.card_union_eq_card_add_card"
+    ],
+    "transitive_dependency_count": 1,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "Finset.card_union_eq_card_add_card"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "Finset.card_union_eq_card_add_card",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.card_union_eq_card_add_card",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 3,
     "tactic_count": 1
@@ -93,7 +147,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode c0c34f8f). Equality companion to card_union_le'; the necessity of the Disjoint hypothesis (the goal is false in general without it) is the subject of the paired negative-example candidate in packets/negative/combinatorics/QUEUE.md.",
   "hashes": {
-    "packet_sha256": "a6d4a9b09a6f07d81716c37fffb1a51050bbc36038f339c4a201ed6a769282e5",
+    "packet_sha256": "72cd0255152d1c51e3468f2b7230986dd8012ddf3ad0c014b74d92aef4c17a8e",
     "formal_statement_sha256": "312249ee1bb01043ee8ae83ff442c678a122d76534961a02eecb2d9948b4f8dd",
     "proof_body_sha256": "6f6e603f6407d40dd78293b8883804d5bc62efdb07ecf5a5cbef372423f73499"
   }

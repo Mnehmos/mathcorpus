@@ -64,6 +64,41 @@
       "coprime"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.number_theory.coprime_comm.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "4a8b0ddf2da7080677788583ec8702f4a6d61559592559327b67517633a73480",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/NumberTheory/CoprimeComm.lean",
+      "proof_body_sha256": "14b6d7799218f9c6f58a2c3552472dca9d12e75555ad7bc77554edc01dac8a6a",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "theorem_lookup",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [],
+    "used_theorem_deps": [],
+    "obligation_deps": [],
+    "verified_module_item_deps": [],
+    "transitive_dependency_count": 0,
+    "transitive_dependency_depth": 0,
+    "retrieval_candidates": [],
+    "retrieved_unused_candidates": [],
+    "claim_sources": []
+  },
   "metrics": {
     "loc": 3,
     "tactic_count": 1
@@ -89,7 +124,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode fae1e9c9).",
   "hashes": {
-    "packet_sha256": "f1c2f661210e82ad5ac485c555cd5d3e5738da7d0016117814c4acf8af658f6f",
+    "packet_sha256": "ee6de48c9dc09ff35a3d8c410a949e3f005834d472961e8a3aebfa774a15d4c3",
     "formal_statement_sha256": "4a8b0ddf2da7080677788583ec8702f4a6d61559592559327b67517633a73480",
     "proof_body_sha256": "14b6d7799218f9c6f58a2c3552472dca9d12e75555ad7bc77554edc01dac8a6a"
   }

@@ -65,6 +65,60 @@
       "divisibility"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.number_theory.gcd_dvd_left.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "e935647a9020f169aab4d7e7fe5ea4fe4dd2e0d0701072fe7afeb548884d328c",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/NumberTheory/GcdDvd.lean",
+      "proof_body_sha256": "656e8246fcc77a8bc576995f61ec87472bfd174c9f5a4a23fe20e5a0e644be9b",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "theorem_lookup",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "Nat.gcd_dvd_left"
+    ],
+    "used_theorem_deps": [
+      "Nat.gcd_dvd_left"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "Nat.gcd_dvd_left"
+    ],
+    "transitive_dependency_count": 1,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "Nat.gcd_dvd_left"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "Nat.gcd_dvd_left",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.gcd_dvd_left",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 3,
     "tactic_count": 1
@@ -93,7 +147,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 6dcd9358).",
   "hashes": {
-    "packet_sha256": "65965ef9d00e6b262dd9350fb34a34d3ec45c152f8543ada5bd0038f965674f6",
+    "packet_sha256": "46e109937d0bb059cdb8ff5ff070844a37f0827a17cd0eb8c822e977d8b76105",
     "formal_statement_sha256": "e935647a9020f169aab4d7e7fe5ea4fe4dd2e0d0701072fe7afeb548884d328c",
     "proof_body_sha256": "656e8246fcc77a8bc576995f61ec87472bfd174c9f5a4a23fe20e5a0e644be9b"
   }

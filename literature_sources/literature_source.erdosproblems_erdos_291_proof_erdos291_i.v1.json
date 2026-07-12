@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "literature_source",
+  "record_id": "literature_source.erdosproblems_erdos_291_proof_erdos291_i.v1",
+  "packet_id": "frontier.erdos.erdos_291_infinite_gcd_gt_one.v1",
+  "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+  "created_at": "2026-07-12T00:00:00Z",
+  "trust_status": "candidate_unverified",
+  "export_eligibility": "public",
+  "record_hash": "632f899e275622826a5c249ad7443189cbb750a999cf9c30221f70b3fec7ee01",
+  "title": "ErdosProblems/erdos-291/proof/Erdos291_infinite_gcd_gt_one.lean",
+  "authors": [],
+  "publication_year": null,
+  "venue": "sibling repo mnehmos.llm-driven-proof-search.environment",
+  "external_ids": {
+    "repo_path": "ErdosProblems/erdos-291/proof/Erdos291_infinite_gcd_gt_one.lean"
+  },
+  "source_sha256": null,
+  "access_note": "Formalized from this packet's own pre-existing source_provenance.source_refs (issue #8 follow-up); not independently re-verified."
+}

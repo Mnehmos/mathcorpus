@@ -66,6 +66,41 @@
       "binomial"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.algebra.square_of_difference.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "2b6216cfef5626f726f2193b3634a6209e1627bedeeddba12e0ac7ed992cccfa",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Algebra/SquareOfDifference.lean",
+      "proof_body_sha256": "087789c8f23926e8a8feb2ada2ed39ba319e172edfde65faf942270cc2b7982a",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "normalization",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [],
+    "used_theorem_deps": [],
+    "obligation_deps": [],
+    "verified_module_item_deps": [],
+    "transitive_dependency_count": 0,
+    "transitive_dependency_depth": 0,
+    "retrieval_candidates": [],
+    "retrieved_unused_candidates": [],
+    "claim_sources": []
+  },
   "metrics": {
     "loc": 3,
     "tactic_count": 1
@@ -94,7 +129,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 60dbf56e). Root statement proved: forall (a b : Int), (a - b)^2 = a^2 - 2*a*b + b^2, by `intro a b; ring`.",
   "hashes": {
-    "packet_sha256": "1f94dba8e915d03757703d03e6f5ccf93262d1f309e70cc32b3ac270ee2a3c68",
+    "packet_sha256": "36492388d105d31d5837f23f4bf99d5a3747db96c84b68dc2d5b20bdde443898",
     "formal_statement_sha256": "2b6216cfef5626f726f2193b3634a6209e1627bedeeddba12e0ac7ed992cccfa",
     "proof_body_sha256": "087789c8f23926e8a8feb2ada2ed39ba319e172edfde65faf942270cc2b7982a"
   }

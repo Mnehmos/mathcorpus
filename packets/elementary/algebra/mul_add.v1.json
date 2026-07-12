@@ -65,6 +65,60 @@
       "distributivity"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.algebra.mul_add.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "edad98859e4dac68b0d3c30eeadc80da9503c6c3d7759a82fab82663c643e14a",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Algebra/MulAdd.lean",
+      "proof_body_sha256": "ddfea0d8a54dc79aabcaf636fb675925895db970bafee56f68c48ee7bdce44b3",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "theorem_lookup",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "mul_add"
+    ],
+    "used_theorem_deps": [
+      "mul_add"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "mul_add"
+    ],
+    "transitive_dependency_count": 1,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "mul_add"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "mul_add",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "mul_add",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 3,
     "tactic_count": 1
@@ -90,7 +144,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode ed5cfdfa).",
   "hashes": {
-    "packet_sha256": "7d2c32e8c8e06b8153113fdcbbe7b512a0a83a695556fb3d8b41746fa6972c75",
+    "packet_sha256": "5b6d0b7c0faae8b7b772ddec377c100b8ab0e286868af1cb7eeb4f7bca5aae35",
     "formal_statement_sha256": "edad98859e4dac68b0d3c30eeadc80da9503c6c3d7759a82fab82663c643e14a",
     "proof_body_sha256": "ddfea0d8a54dc79aabcaf636fb675925895db970bafee56f68c48ee7bdce44b3"
   }

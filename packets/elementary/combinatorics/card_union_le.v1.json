@@ -66,6 +66,60 @@
       "union"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.combinatorics.card_union_le.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "f651a78dc98c723f11526ec76e814a52207aac4ce0f8508d31056a23d2c87b6e",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Combinatorics/CardUnionLe.lean",
+      "proof_body_sha256": "17a95d69eb9d08e27ed9d6924515d39ab156792bcf4c8e54ae7973f500e78b37",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "theorem_lookup",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "Finset.card_union_le"
+    ],
+    "used_theorem_deps": [
+      "Finset.card_union_le"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "Finset.card_union_le"
+    ],
+    "transitive_dependency_count": 1,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "Finset.card_union_le"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "Finset.card_union_le",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.card_union_le",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 3,
     "tactic_count": 1
@@ -91,7 +145,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 2756aadd).",
   "hashes": {
-    "packet_sha256": "65d75a5e5146a05d57a278fc044117a085166fd779876ce16845fbd19a4eab38",
+    "packet_sha256": "8911d50bbe559672d027769718f558d50d2075c8788aba14add33d369b2a9611",
     "formal_statement_sha256": "f651a78dc98c723f11526ec76e814a52207aac4ce0f8508d31056a23d2c87b6e",
     "proof_body_sha256": "17a95d69eb9d08e27ed9d6924515d39ab156792bcf4c8e54ae7973f500e78b37"
   }

@@ -66,6 +66,41 @@
       "coordinates"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.geometry.midpoint_between.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "47a0980bde9fa82b11b46c9fc44bec67359697dd2d3eea9ff76572f875b552b6",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Geometry/MidpointBetween.lean",
+      "proof_body_sha256": "d29016730e15204ae4246fab21c78227ebe6b0124ae61dcbd8f3456b071aa001",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "normalization",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [],
+    "used_theorem_deps": [],
+    "obligation_deps": [],
+    "verified_module_item_deps": [],
+    "transitive_dependency_count": 0,
+    "transitive_dependency_depth": 0,
+    "retrieval_candidates": [],
+    "retrieved_unused_candidates": [],
+    "claim_sources": []
+  },
   "metrics": {
     "loc": 3,
     "tactic_count": 1
@@ -92,7 +127,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 4ab61e5e).",
   "hashes": {
-    "packet_sha256": "1485aabb4cac94e9862ac98a6fcbe05ad10246937a4d3b4aa745c991f041dba7",
+    "packet_sha256": "86e60a25b8c9c81adfdd1cbd1d7fb39d2235668a1c011acc3e6a11655082f504",
     "formal_statement_sha256": "47a0980bde9fa82b11b46c9fc44bec67359697dd2d3eea9ff76572f875b552b6",
     "proof_body_sha256": "d29016730e15204ae4246fab21c78227ebe6b0124ae61dcbd8f3456b071aa001"
   }

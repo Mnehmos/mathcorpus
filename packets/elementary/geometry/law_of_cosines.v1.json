@@ -67,6 +67,60 @@
       "squared_distance"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.geometry.law_of_cosines.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "6dfb95705e72c912b59a1ce9bb31db90651a29b4dd002c6562ddd9f687a788f1",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Geometry/LawOfCosines.lean",
+      "proof_body_sha256": "f7e9b31baeb92248b575749331501e8ffc371420883abd8cf633de98d8ca2e56",
+      "proof_body_redacted": false,
+      "tactic_count": 2,
+      "proof_length": 2,
+      "proof_profile": {
+        "primary_proof_class": "arithmetic_automation",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": true,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "Real.sin_sq_add_cos_sq"
+    ],
+    "used_theorem_deps": [
+      "Real.sin_sq_add_cos_sq"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "Real.sin_sq_add_cos_sq"
+    ],
+    "transitive_dependency_count": 1,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "Real.sin_sq_add_cos_sq"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "Real.sin_sq_add_cos_sq",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Real.sin_sq_add_cos_sq",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 3,
     "tactic_count": 2
@@ -93,7 +147,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode d1f31293), kernel_verified on the first attempt (no import timeout this time, unlike a similar-import attempt two cycles ago on a different, unrelated target). Closes the 'Law of cosines' backlog item in packets/elementary/geometry/QUEUE.md. Note: problem_imports=[\"Mathlib.Analysis.SpecialFunctions.Trig.Basic\"] was rejected outright -- the pinned build's .olean for that module does not exist on disk in this environment -- fell back to the full [\"Mathlib\"] import instead, which worked fine here.",
   "hashes": {
-    "packet_sha256": "bd0a832ec11a343d181a8fe6bbb4774046fd4f2d9aaf70f91a817b67f09c80b8",
+    "packet_sha256": "61523b34279b80dfd544eb63683cb9ff89ca67bced94495d7697877e9b092daf",
     "formal_statement_sha256": "6dfb95705e72c912b59a1ce9bb31db90651a29b4dd002c6562ddd9f687a788f1",
     "proof_body_sha256": "f7e9b31baeb92248b575749331501e8ffc371420883abd8cf633de98d8ca2e56"
   }

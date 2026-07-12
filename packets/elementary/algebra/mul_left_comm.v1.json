@@ -65,6 +65,60 @@
       "commutativity"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.algebra.mul_left_comm.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "2234976e9a6d9da19f71e142e9f0f9fa15c72404c6c887a00dc95ab3084ddf57",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Algebra/MulLeftComm.lean",
+      "proof_body_sha256": "d0f3cb892162ce963d27d10af9040b45847046be1dc88caf8384856a72242def",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "theorem_lookup",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "mul_left_comm"
+    ],
+    "used_theorem_deps": [
+      "mul_left_comm"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "mul_left_comm"
+    ],
+    "transitive_dependency_count": 1,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "mul_left_comm"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "mul_left_comm",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "mul_left_comm",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 3,
     "tactic_count": 1
@@ -90,7 +144,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 54955b4a).",
   "hashes": {
-    "packet_sha256": "42061b6ac06923b9a7685301bdadc6202671a03c26d4f87e27effba1d5c3d1a6",
+    "packet_sha256": "6039a960b1fae9a823447faa566cfe820a474afe70732cd536c85e865c45edc9",
     "formal_statement_sha256": "2234976e9a6d9da19f71e142e9f0f9fa15c72404c6c887a00dc95ab3084ddf57",
     "proof_body_sha256": "d0f3cb892162ce963d27d10af9040b45847046be1dc88caf8384856a72242def"
   }

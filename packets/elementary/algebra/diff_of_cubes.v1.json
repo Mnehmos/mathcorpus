@@ -66,6 +66,41 @@
       "factoring"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.algebra.diff_of_cubes.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "3258b99bdf2b4fa6cf739e7827f5bb06d21e1d792db6b5a3ad6d0f4991e9bb11",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Algebra/DiffCubes.lean",
+      "proof_body_sha256": "095d425d81a36da6b5bc4dae6b0504cc1c3e43e60170fda9e6ffcff1e5c923d8",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "normalization",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [],
+    "used_theorem_deps": [],
+    "obligation_deps": [],
+    "verified_module_item_deps": [],
+    "transitive_dependency_count": 0,
+    "transitive_dependency_depth": 0,
+    "retrieval_candidates": [],
+    "retrieved_unused_candidates": [],
+    "claim_sources": []
+  },
   "metrics": {
     "loc": 3,
     "tactic_count": 1
@@ -94,7 +129,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 970fe8c1). Root statement proved: forall (a b : Int), a^3 - b^3 = (a - b) * (a^2 + a*b + b^2), by `intro a b; ring`.",
   "hashes": {
-    "packet_sha256": "d9ab94abc8e03d8c260fd28a7fb7cc7a89570f167691bea9587a719d0902bd12",
+    "packet_sha256": "8a030f21bbc092e83b91830f511d993bd122ca69a3889ee738509fba4a201c58",
     "formal_statement_sha256": "3258b99bdf2b4fa6cf739e7827f5bb06d21e1d792db6b5a3ad6d0f4991e9bb11",
     "proof_body_sha256": "095d425d81a36da6b5bc4dae6b0504cc1c3e43e60170fda9e6ffcff1e5c923d8"
   }

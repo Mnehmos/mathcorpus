@@ -64,6 +64,41 @@
       "prime"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.number_theory.prime_two.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "7d2fceb75283f6843f7f58310390551558a11a2beae349e4ae2c7ce7ec63787c",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/NumberTheory/PrimeTwo.lean",
+      "proof_body_sha256": "e3487124267710a1832de77af267ec8f6d3aa89748e4c4115020fdb24ff6d13c",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "normalization",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [],
+    "used_theorem_deps": [],
+    "obligation_deps": [],
+    "verified_module_item_deps": [],
+    "transitive_dependency_count": 0,
+    "transitive_dependency_depth": 0,
+    "retrieval_candidates": [],
+    "retrieved_unused_candidates": [],
+    "claim_sources": []
+  },
   "metrics": {
     "loc": 2,
     "tactic_count": 1
@@ -90,7 +125,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 86b4db53), kernel_verified on the first attempt. This domain's first primality (`Nat.Prime`) fact — closes the `prime_two` gap flagged in packets/elementary/number_theory/QUEUE.md (the domain had extensive coprime_*/gcd_*/even_or_odd coverage but no primality packets at all).",
   "hashes": {
-    "packet_sha256": "9bc5ecf320d2c71c4957497fbd2a93c626d9ec18624027c8a8bec898159e17a5",
+    "packet_sha256": "5f869ac18e63fca9d6732480c7c37919cef01afe278824800ab532b950b2cde4",
     "formal_statement_sha256": "7d2fceb75283f6843f7f58310390551558a11a2beae349e4ae2c7ce7ec63787c",
     "proof_body_sha256": "e3487124267710a1832de77af267ec8f6d3aa89748e4c4115020fdb24ff6d13c"
   }

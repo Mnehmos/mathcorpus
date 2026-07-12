@@ -65,6 +65,41 @@
       "coordinates"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.geometry.slope_cross_symm.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "fceccf17154918db9a4c83e8e251535afe50c69f07a3b66e7fff3d3d99bd557e",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Geometry/SlopeCrossSymm.lean",
+      "proof_body_sha256": "8164a1f23e660976c25accd5adba0f7e5988250c9c697cb37a31e2d4d5bda625",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "normalization",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [],
+    "used_theorem_deps": [],
+    "obligation_deps": [],
+    "verified_module_item_deps": [],
+    "transitive_dependency_count": 0,
+    "transitive_dependency_depth": 0,
+    "retrieval_candidates": [],
+    "retrieved_unused_candidates": [],
+    "claim_sources": []
+  },
   "metrics": {
     "loc": 3,
     "tactic_count": 1
@@ -90,7 +125,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode ffd08fc5).",
   "hashes": {
-    "packet_sha256": "81a3b82abd089bcf332f1de35bb419783ab0da2b4ade3f22b5ee0613452e12a0",
+    "packet_sha256": "cf5effec74a91d0ebeeb305e40deb7cc0f9d2650b392dc5e5465d92e57c1b96c",
     "formal_statement_sha256": "fceccf17154918db9a4c83e8e251535afe50c69f07a3b66e7fff3d3d99bd557e",
     "proof_body_sha256": "8164a1f23e660976c25accd5adba0f7e5988250c9c697cb37a31e2d4d5bda625"
   }

@@ -65,6 +65,60 @@
       "successor"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.number_theory.succ_ne_zero.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "e8d369dc1407258a48c6588813882e3541799b7d622c264c92377bc4d1adcf58",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/NumberTheory/SuccNeZero.lean",
+      "proof_body_sha256": "27994f4dcb3819f561a93c6a6ac9e3ee13e90ae629c3c038caf4331f83e10f4e",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "theorem_lookup",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "Nat.succ_ne_zero"
+    ],
+    "used_theorem_deps": [
+      "Nat.succ_ne_zero"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "Nat.succ_ne_zero"
+    ],
+    "transitive_dependency_count": 1,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "Nat.succ_ne_zero"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "Nat.succ_ne_zero",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.succ_ne_zero",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 3,
     "tactic_count": 1
@@ -91,7 +145,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode d9a8931d).",
   "hashes": {
-    "packet_sha256": "4340163b2c6ade0c12c678fd5ddba7289de4fc1a64a1e88c53651313e5ea1fbe",
+    "packet_sha256": "19bc12cc0072c795e279219e6f8b33393842ce7b6e4c2dc094195677ae5b0e86",
     "formal_statement_sha256": "e8d369dc1407258a48c6588813882e3541799b7d622c264c92377bc4d1adcf58",
     "proof_body_sha256": "27994f4dcb3819f561a93c6a6ac9e3ee13e90ae629c3c038caf4331f83e10f4e"
   }

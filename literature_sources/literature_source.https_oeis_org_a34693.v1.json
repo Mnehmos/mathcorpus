@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "literature_source",
+  "record_id": "literature_source.https_oeis_org_a34693.v1",
+  "packet_id": "frontier.formal_conjectures.oeis_a34693_exists_k_best_possible.v1",
+  "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+  "created_at": "2026-07-12T00:00:00Z",
+  "trust_status": "candidate_unverified",
+  "export_eligibility": "public",
+  "record_hash": "083b6abc3c15fac180340140b3149076b31300621653d98a680fe9bdfb8a8fb9",
+  "title": "https://oeis.org/A34693",
+  "authors": [],
+  "publication_year": null,
+  "venue": "OEIS",
+  "external_ids": {
+    "url": "https://oeis.org/A34693"
+  },
+  "source_sha256": null,
+  "access_note": "Formalized from this packet's own pre-existing source_provenance.source_refs (issue #8 follow-up); not independently re-verified."
+}

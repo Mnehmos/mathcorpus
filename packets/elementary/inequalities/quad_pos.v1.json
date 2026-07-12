@@ -66,6 +66,60 @@
       "completing_the_square"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.inequalities.quad_pos.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "9af49bff6bf9be417e71fd9c3a20ae12dbbcaa6b72016e5bcfbe603fd88af627",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Inequalities/QuadPos.lean",
+      "proof_body_sha256": "d35bb6fbce0ea0654dd590d264f2762170b42603b6a417859b78bf91d439f95f",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "arithmetic_automation",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": true,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "sq_nonneg"
+    ],
+    "used_theorem_deps": [
+      "sq_nonneg"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "sq_nonneg"
+    ],
+    "transitive_dependency_count": 1,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "sq_nonneg"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "sq_nonneg",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "sq_nonneg",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 3,
     "tactic_count": 1
@@ -91,7 +145,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode cff308a5).",
   "hashes": {
-    "packet_sha256": "82eb6f38feec5780f61e87a0b5c46461a6c64caeb8fa488a525d289705d95e28",
+    "packet_sha256": "5264a361d1b481f3b13bc3bde99705a619fd1d30e6bcf312f62c20697e77d880",
     "formal_statement_sha256": "9af49bff6bf9be417e71fd9c3a20ae12dbbcaa6b72016e5bcfbe603fd88af627",
     "proof_body_sha256": "d35bb6fbce0ea0654dd590d264f2762170b42603b6a417859b78bf91d439f95f"
   }

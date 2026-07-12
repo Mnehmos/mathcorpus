@@ -68,6 +68,74 @@
       "square"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.inequalities.add_one_div_ge_two.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "b17c92ae80c071fe716f673c43e60d1050b9cfa02e3435fa74c2d285fc42ec83",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Inequalities/AddOneDivGeTwo.lean",
+      "proof_body_sha256": "7acf88291216bb2bbf87a64119da1dafc5df99df63e208b21cb4d10a971dbdf9",
+      "proof_body_redacted": false,
+      "tactic_count": 6,
+      "proof_length": 6,
+      "proof_profile": {
+        "primary_proof_class": "normalization",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "ne_of_gt",
+      "sub_nonneg"
+    ],
+    "used_theorem_deps": [
+      "ne_of_gt",
+      "sub_nonneg"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "ne_of_gt",
+      "sub_nonneg"
+    ],
+    "transitive_dependency_count": 2,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "ne_of_gt",
+      "sub_nonneg"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "ne_of_gt",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "ne_of_gt",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "sub_nonneg",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "sub_nonneg",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 8,
     "tactic_count": 6
@@ -96,7 +164,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 81427648).",
   "hashes": {
-    "packet_sha256": "a8725ef63bdc447eb34c2dbe43a5c21531d408ad08dd094982452bbabd5fb6af",
+    "packet_sha256": "1fc3d51c33c29036c3ed3da9905c279d7a2d83a30592d6e32616929d19b32bcd",
     "formal_statement_sha256": "b17c92ae80c071fe716f673c43e60d1050b9cfa02e3435fa74c2d285fc42ec83",
     "proof_body_sha256": "7acf88291216bb2bbf87a64119da1dafc5df99df63e208b21cb4d10a971dbdf9"
   }

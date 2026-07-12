@@ -71,6 +71,130 @@
       "prime_factorization"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "frontier.erdos.erdos_1052_not_dvd_div_ordproj.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "f187ad28f61a366051ac1f3d0965218cc70702f08a69909b7ed2df03c0231e7d",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Frontier/Erdos/Erdos1052NotDvdDivOrdProj.lean",
+      "proof_body_sha256": "e9f41ce4279ea4eb8efa90959dab057d1367abaeb98f211508a48ba04a124439",
+      "proof_body_redacted": false,
+      "tactic_count": 12,
+      "proof_length": 12,
+      "proof_profile": {
+        "primary_proof_class": "normalization",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "Nat.Prime.pow_dvd_iff_le_factorization",
+      "Nat.mul_div_cancel'",
+      "hstep.trans",
+      "mul_dvd_mul_left",
+      "n.factorization",
+      "pow_succ"
+    ],
+    "used_theorem_deps": [
+      "Nat.Prime.pow_dvd_iff_le_factorization",
+      "Nat.mul_div_cancel'",
+      "hstep.trans",
+      "mul_dvd_mul_left",
+      "n.factorization",
+      "pow_succ"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "Nat.Prime.pow_dvd_iff_le_factorization",
+      "Nat.mul_div_cancel'",
+      "hstep.trans",
+      "mul_dvd_mul_left",
+      "n.factorization",
+      "pow_succ"
+    ],
+    "transitive_dependency_count": 6,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "Nat.Prime.pow_dvd_iff_le_factorization",
+      "Nat.mul_div_cancel'",
+      "hstep.trans",
+      "mul_dvd_mul_left",
+      "n.factorization",
+      "pow_succ"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "Nat.Prime.pow_dvd_iff_le_factorization",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.Prime.pow_dvd_iff_le_factorization",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.mul_div_cancel'",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.mul_div_cancel'",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "hstep.trans",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "hstep.trans",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "mul_dvd_mul_left",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "mul_dvd_mul_left",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "n.factorization",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "n.factorization",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "pow_succ",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "pow_succ",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 27,
     "tactic_count": 12
@@ -97,8 +221,36 @@
   },
   "notes": "ANTI-OVERCLAIM: this packet proves only bounded companion infrastructure, not Erdos #1052 itself (genuinely OPEN) and not the full known Subbarao-Warren 1966 companion result (unitary perfect numbers are even) -- that headline theorem still additionally needs filter_not_dvd_eq_uDiv_ordCompl, sum_uDiv_factor (a Finset.sum_bij' 5-argument bijection with deeply nested bullets), and sum_uDiv_even (a Finset.sum_involution 4-argument involution), all deferred to a future cycle. Proof authority: Lean kernel via the tracked proof-search loop (episode 2d9c2f64, problem_version ac4911a9-a44e-47a0-8a4f-d1df1330bdd9), submitted as a SubmitModule (1 def uDiv + 2 helper theorems mem_uDiv/ordProj_dvd_of_mem_uDiv + root theorem not_dvd_div_ordProj), kernel_verified on the FIRST attempt -- unlike the prior erdos_1052_proper_eq_erase packet, none of these three lemmas needed bullet-free rewriting (the sibling source already had no `.`-bullet case splits in them), so this was a near-verbatim transport with only the standard `have h := by tac1; tac2` -> `have h := (by tac1; tac2)` parenthesization fix applied once (in ordProj_dvd_of_mem_uDiv's `happ`) per the documented flattened-sequence lesson. Independently re-verified in THIS environment's own pinned toolchain rather than treated as evidence merely because the sibling repo already reports it kernel_verified there -- per this repo's evidence policy. training.eligibility: quarantined per the default-quarantine policy for open_problem_related packets pending real external review.",
   "hashes": {
-    "packet_sha256": "9fef8ae9071e7f1081dd6f601d969236623d2df885b135b55067ad9da45cc4b4",
+    "packet_sha256": "681314e8862d1fe596ffa1f7bb38288eebb4d2c55b680f85ec4e223ee10f20c6",
     "formal_statement_sha256": "f187ad28f61a366051ac1f3d0965218cc70702f08a69909b7ed2df03c0231e7d",
     "proof_body_sha256": "e9f41ce4279ea4eb8efa90959dab057d1367abaeb98f211508a48ba04a124439"
-  }
+  },
+  "idea_attributions": [
+    {
+      "attribution_id": "frontier.erdos.erdos_1052_not_dvd_div_ordproj.v1.attribution.1",
+      "formal_statement_sha256": "f187ad28f61a366051ac1f3d0965218cc70702f08a69909b7ed2df03c0231e7d",
+      "proof_variant_id": null,
+      "literature_source_id": "literature_source.erdosproblems_erdos_1052_proof_erdos1052.v1",
+      "external_claim_id": null,
+      "source_sha256_pin": "5e55a3cd4c383bdb7a321234ad486f89a9d20ce495c783651a106109c709923c",
+      "attribution_status": "directly_used",
+      "visibility": "model_visible",
+      "dependency_refs": [],
+      "reviewer": "The MathCorpus Authors",
+      "notes": "Formalized from source_provenance.source_refs[0] (pre-existing, not newly researched)."
+    },
+    {
+      "attribution_id": "frontier.erdos.erdos_1052_not_dvd_div_ordproj.v1.attribution.2",
+      "formal_statement_sha256": "f187ad28f61a366051ac1f3d0965218cc70702f08a69909b7ed2df03c0231e7d",
+      "proof_variant_id": null,
+      "literature_source_id": "literature_source.https_www_erdosproblems_com_1052.v1",
+      "external_claim_id": null,
+      "source_sha256_pin": "1ec07fe6dd7fe1261e26053086640404964ec4b22aa5244fd72b53719ff9413a",
+      "attribution_status": "background_only",
+      "visibility": "model_visible",
+      "dependency_refs": [],
+      "reviewer": "The MathCorpus Authors",
+      "notes": "Formalized from source_provenance.source_refs[1] (pre-existing, not newly researched)."
+    }
+  ]
 }

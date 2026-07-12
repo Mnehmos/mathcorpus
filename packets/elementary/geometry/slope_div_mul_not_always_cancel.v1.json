@@ -64,6 +64,41 @@
       "field"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.geometry.slope_div_mul_not_always_cancel.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "7173b09214bae73a28dd79e56610a92e1db15fa0fbfccfaea61c33c8cba6a3af",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Geometry/SlopeDivMulNotAlwaysCancel.lean",
+      "proof_body_sha256": "67724c51e8f05434917d9cc27db05bc14a4d57661802c96377d3b24a08fe0b97",
+      "proof_body_redacted": false,
+      "tactic_count": 3,
+      "proof_length": 3,
+      "proof_profile": {
+        "primary_proof_class": "normalization",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [],
+    "used_theorem_deps": [],
+    "obligation_deps": [],
+    "verified_module_item_deps": [],
+    "transitive_dependency_count": 0,
+    "transitive_dependency_depth": 0,
+    "retrieval_candidates": [],
+    "retrieved_unused_candidates": [],
+    "claim_sources": []
+  },
   "metrics": {
     "loc": 3,
     "tactic_count": 3
@@ -89,7 +124,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 9d78c78c, problem_version 4581a48a-8214-42e8-83e7-6b458eaa8f6a). Companion to the negative example negative.geometry.slope_div_mul.division_by_zero_unguarded.v1, which captures the natural-but-false direct attempt on the unconditional claim (field_simp, leaving an unsolved_goals residual) in a separate tracked episode (2409c443).",
   "hashes": {
-    "packet_sha256": "80b9e3bb78dfbb16199ec3e5e97990cc50bac6f33acb6e756048f91b602c10e2",
+    "packet_sha256": "41d1b60da4fbebe3686b7779fa3772e84df7eb2493ee5841fe6ec71cf8f0a62d",
     "formal_statement_sha256": "7173b09214bae73a28dd79e56610a92e1db15fa0fbfccfaea61c33c8cba6a3af",
     "proof_body_sha256": "67724c51e8f05434917d9cc27db05bc14a4d57661802c96377d3b24a08fe0b97"
   }

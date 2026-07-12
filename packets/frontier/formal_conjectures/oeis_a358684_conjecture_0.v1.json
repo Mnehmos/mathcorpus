@@ -77,6 +77,284 @@
       "case_split"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "frontier.formal_conjectures.oeis_a358684_conjecture_0.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "204683b6a5d6f26f93fb5105fc16d65cfe1e68ab2bc29e5da3b85a978c5e1bb7",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Frontier/FormalConjectures/OeisA358684Conjecture0.lean",
+      "proof_body_sha256": "43d50656d6d21f91291db832e76ccde728725b2b4fb8673684473fa4bfce4f79",
+      "proof_body_redacted": false,
+      "tactic_count": 14,
+      "proof_length": 14,
+      "proof_profile": {
+        "primary_proof_class": "normalization",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "Nat.fermatNumber_ne_one",
+      "Nat.le_log_of_pow_le",
+      "Nat.le_of_lt_succ",
+      "Nat.log2_eq_log_two",
+      "Nat.minFac_le",
+      "Nat.minFac_pos",
+      "Nat.minFac_prime",
+      "Nat.ordProj_le",
+      "Nat.sub_le",
+      "Nat.sub_ne_zero_of_lt",
+      "Nat.sub_sub_self",
+      "le_trans",
+      "log_lt_of_lt_pow",
+      "mul_two",
+      "one_lt",
+      "pow_add",
+      "trans_lt"
+    ],
+    "used_theorem_deps": [
+      "Nat.fermatNumber_ne_one",
+      "Nat.le_log_of_pow_le",
+      "Nat.le_of_lt_succ",
+      "Nat.log2_eq_log_two",
+      "Nat.minFac_le",
+      "Nat.minFac_pos",
+      "Nat.minFac_prime",
+      "Nat.ordProj_le",
+      "Nat.sub_le",
+      "Nat.sub_ne_zero_of_lt",
+      "Nat.sub_sub_self",
+      "le_trans",
+      "log_lt_of_lt_pow",
+      "mul_two",
+      "one_lt",
+      "pow_add",
+      "trans_lt"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "Nat.fermatNumber_ne_one",
+      "Nat.le_log_of_pow_le",
+      "Nat.le_of_lt_succ",
+      "Nat.log2_eq_log_two",
+      "Nat.minFac_le",
+      "Nat.minFac_pos",
+      "Nat.minFac_prime",
+      "Nat.ordProj_le",
+      "Nat.sub_le",
+      "Nat.sub_ne_zero_of_lt",
+      "Nat.sub_sub_self",
+      "le_trans",
+      "log_lt_of_lt_pow",
+      "mul_two",
+      "one_lt",
+      "pow_add",
+      "trans_lt"
+    ],
+    "transitive_dependency_count": 17,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "Nat.fermatNumber_ne_one",
+      "Nat.le_log_of_pow_le",
+      "Nat.le_of_lt_succ",
+      "Nat.log2_eq_log_two",
+      "Nat.minFac_le",
+      "Nat.minFac_pos",
+      "Nat.minFac_prime",
+      "Nat.ordProj_le",
+      "Nat.sub_le",
+      "Nat.sub_ne_zero_of_lt",
+      "Nat.sub_sub_self",
+      "le_trans",
+      "log_lt_of_lt_pow",
+      "mul_two",
+      "one_lt",
+      "pow_add",
+      "trans_lt"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "Nat.fermatNumber_ne_one",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.fermatNumber_ne_one",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.le_log_of_pow_le",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.le_log_of_pow_le",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.le_of_lt_succ",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.le_of_lt_succ",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.log2_eq_log_two",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.log2_eq_log_two",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.minFac_le",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.minFac_le",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.minFac_pos",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.minFac_pos",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.minFac_prime",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.minFac_prime",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.ordProj_le",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.ordProj_le",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.sub_le",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.sub_le",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.sub_ne_zero_of_lt",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.sub_ne_zero_of_lt",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.sub_sub_self",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.sub_sub_self",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "le_trans",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "le_trans",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "log_lt_of_lt_pow",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "log_lt_of_lt_pow",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "mul_two",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "mul_two",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "one_lt",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "one_lt",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "pow_add",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "pow_add",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "trans_lt",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "trans_lt",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 13,
     "tactic_count": 14
@@ -103,8 +381,49 @@
   },
   "notes": "ANTI-OVERCLAIM: this is a RESTATEMENT of the upstream oeis_358684_conjecture_0 with `a n` inlined as its closed form (2^n - Nat.log2 (Nat.minFac (Nat.fermatNumber n))) rather than kept as a separate `def`, since the root statement registered via problem_create must be a self-contained Prop with no dependency on a not-yet-defined local definition -- mathematically identical, not a simplification (checked by hand: substituting the upstream def literally into the theorem statement). Also NOTE the upstream source file's proof for this theorem begins with the line `delta fermatNumber and a` which appears to contain a stray, likely-erroneous extra identifier `and` (delta does not take an `and` combinator) -- this packet's proof does not use `delta` at all (unnecessary once `a n` is already inlined) and was independently constructed/verified through this repo's own tracked proof-search loop rather than trusting the upstream tactic script verbatim, so this discrepancy does not affect this packet's correctness, only the note that the upstream file's exact proof script may not compile as literally written. Three repairs were needed versus attempting the upstream tactic sequence verbatim: (1) unqualified `sub_le` -> `Nat.sub_le` (SubmitModule/Solve gives no `open Nat` preamble, matching the established lesson from the #494 Erdos packet's `Finset.mapEmbedding` case); (2) `(by norm_num)` cannot discharge `Nat.fermatNumber n ≠ 1` for symbolic `n` (norm_num only evaluates literals) -- replaced with the general lemma `Nat.fermatNumber_ne_one`; (3) `intro n` needed at the start since the root statement is a bare `∀`-quantified Prop, not a theorem with `n` as a named argument the way the upstream file has it. Kernel-verified on the third attempt (episode 8bf75cf7-35f9-4c10-8015-3a9411a6df52, step 3). This is a genuinely solved OEIS/formal-conjectures literature companion result (Sauras-Altuzarra 2022, Conjecture 3.4), not an open problem -- the file's other theorem (`seven : a 7 = 73`) remains `sorry` upstream and is untouched by this packet. training.eligibility: quarantined per this session's conservative default for adapted/restated frontier packets pending real external review. Completes the OEIS/ round-5 triage's flagged future-cycle candidate (see packets/frontier/formal_conjectures/SOLVED_QUEUE.md).",
   "hashes": {
-    "packet_sha256": "c4f2beb92d278cc055d8fc0d96600ad19eb40f7ffa8724ec142f282c9e776357",
+    "packet_sha256": "7e02e31a149ebe09647e25c72719af68db665637d8af36bae3bd0f1477608888",
     "formal_statement_sha256": "204683b6a5d6f26f93fb5105fc16d65cfe1e68ab2bc29e5da3b85a978c5e1bb7",
     "proof_body_sha256": "43d50656d6d21f91291db832e76ccde728725b2b4fb8673684473fa4bfce4f79"
-  }
+  },
+  "idea_attributions": [
+    {
+      "attribution_id": "frontier.formal_conjectures.oeis_a358684_conjecture_0.v1.attribution.1",
+      "formal_statement_sha256": "204683b6a5d6f26f93fb5105fc16d65cfe1e68ab2bc29e5da3b85a978c5e1bb7",
+      "proof_variant_id": null,
+      "literature_source_id": "literature_source.formalconjectures_oeis_358684_lean_oeis_.v1",
+      "external_claim_id": null,
+      "source_sha256_pin": "e7b74c6625ce93294f85bbf5e89f2f982ed4f20ab6b77a3fe3c51826f60c0e9b",
+      "attribution_status": "directly_used",
+      "visibility": "model_visible",
+      "dependency_refs": [],
+      "reviewer": "The MathCorpus Authors",
+      "notes": "Formalized from source_provenance.source_refs[0] (pre-existing, not newly researched)."
+    },
+    {
+      "attribution_id": "frontier.formal_conjectures.oeis_a358684_conjecture_0.v1.attribution.2",
+      "formal_statement_sha256": "204683b6a5d6f26f93fb5105fc16d65cfe1e68ab2bc29e5da3b85a978c5e1bb7",
+      "proof_variant_id": null,
+      "literature_source_id": "literature_source.https_oeis_org_a358684.v1",
+      "external_claim_id": null,
+      "source_sha256_pin": "f3272b796ca7c4de4a5f103d9a5ee7da028b136b39d60100b624749999e8f206",
+      "attribution_status": "background_only",
+      "visibility": "model_visible",
+      "dependency_refs": [],
+      "reviewer": "The MathCorpus Authors",
+      "notes": "Formalized from source_provenance.source_refs[1] (pre-existing, not newly researched)."
+    },
+    {
+      "attribution_id": "frontier.formal_conjectures.oeis_a358684_conjecture_0.v1.attribution.3",
+      "formal_statement_sha256": "204683b6a5d6f26f93fb5105fc16d65cfe1e68ab2bc29e5da3b85a978c5e1bb7",
+      "proof_variant_id": null,
+      "literature_source_id": "literature_source.some_properties_of_the_factors_of_fermat.v1",
+      "external_claim_id": null,
+      "source_sha256_pin": "7c6f74f560d08d5c700c38821b50a6b9d4285fa5d85e06a78f71af77161e7960",
+      "attribution_status": "background_only",
+      "visibility": "model_visible",
+      "dependency_refs": [],
+      "reviewer": "The MathCorpus Authors",
+      "notes": "Formalized from source_provenance.source_refs[2] (pre-existing, not newly researched)."
+    }
+  ]
 }

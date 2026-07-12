@@ -68,6 +68,74 @@
       "arithmetic_series"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.induction.gauss_sum.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "bc52dc7615f36b8cb821ecf26e5b2094aa4c505032e6e674b1446bd160e55b63",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Induction/GaussSum.lean",
+      "proof_body_sha256": "80fa206a7dd544b874da7cb4c7bc67559959da24195c7868f5d195795a79111c",
+      "proof_body_redacted": false,
+      "tactic_count": 4,
+      "proof_length": 4,
+      "proof_profile": {
+        "primary_proof_class": "induction",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": true,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "Finset.sum_range_succ",
+      "add_mul"
+    ],
+    "used_theorem_deps": [
+      "Finset.sum_range_succ",
+      "add_mul"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "Finset.sum_range_succ",
+      "add_mul"
+    ],
+    "transitive_dependency_count": 2,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "Finset.sum_range_succ",
+      "add_mul"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "Finset.sum_range_succ",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.sum_range_succ",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "add_mul",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "add_mul",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 6,
     "tactic_count": 4
@@ -96,7 +164,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 825f46f5).",
   "hashes": {
-    "packet_sha256": "16eb73f60f7916db7e93a120a56bc722041fa5c151b8308eaa424bcc2899e695",
+    "packet_sha256": "a85d58a29113c9946bbb9acd9386c5097bad5e570bba37dc8451e6fa1b5b68c1",
     "formal_statement_sha256": "bc52dc7615f36b8cb821ecf26e5b2094aa4c505032e6e674b1446bd160e55b63",
     "proof_body_sha256": "80fa206a7dd544b874da7cb4c7bc67559959da24195c7868f5d195795a79111c"
   }

@@ -65,6 +65,60 @@
       "multiplication"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.number_theory.nat_abs_mul.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "60ae47562013b28694c92716a1e1c63350e59cbbbaabef6ff8bc9f1fafc22cb9",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/NumberTheory/NatAbsMul.lean",
+      "proof_body_sha256": "78b9224bf3ecc1b9d8bbf53f0be6e81f37d5768271044824ecba01b59ec6aeaa",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "theorem_lookup",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "Int.natAbs_mul"
+    ],
+    "used_theorem_deps": [
+      "Int.natAbs_mul"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "Int.natAbs_mul"
+    ],
+    "transitive_dependency_count": 1,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "Int.natAbs_mul"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "Int.natAbs_mul",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Int.natAbs_mul",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 3,
     "tactic_count": 1
@@ -90,7 +144,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 7b2cf0c4).",
   "hashes": {
-    "packet_sha256": "9e80743d066c207bca1d41f211b39447b3e3af25e7614186e24b7b08aa3a94bd",
+    "packet_sha256": "764057d5eb0d837f322301f15aef4d9f12d0dae8d93707f9ee57e09faae128bf",
     "formal_statement_sha256": "60ae47562013b28694c92716a1e1c63350e59cbbbaabef6ff8bc9f1fafc22cb9",
     "proof_body_sha256": "78b9224bf3ecc1b9d8bbf53f0be6e81f37d5768271044824ecba01b59ec6aeaa"
   }

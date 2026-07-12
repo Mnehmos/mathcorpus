@@ -66,6 +66,60 @@
       "singleton"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.combinatorics.mem_singleton.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "488f5d6dd8c78148dcc210e7688bb42bfd2cfc72555d580eb7796b5eb934cf66",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Combinatorics/MemSingleton.lean",
+      "proof_body_sha256": "bdcb47112b2aafa710e0eb4789bed3d63f599d6da455b2629b7270b530f9dfd4",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "theorem_lookup",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "Finset.mem_singleton"
+    ],
+    "used_theorem_deps": [
+      "Finset.mem_singleton"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "Finset.mem_singleton"
+    ],
+    "transitive_dependency_count": 1,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "Finset.mem_singleton"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "Finset.mem_singleton",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.mem_singleton",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 3,
     "tactic_count": 1
@@ -91,7 +145,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 480be260).",
   "hashes": {
-    "packet_sha256": "7b8f98aedcb5f09211b9149c3500ba3b4fcc6404ea8c84fc2e19d08c49150bc0",
+    "packet_sha256": "0730aa51aa614e9b280710033e8b92e0e1336da184b347babac6b5a316988459",
     "formal_statement_sha256": "488f5d6dd8c78148dcc210e7688bb42bfd2cfc72555d580eb7796b5eb934cf66",
     "proof_body_sha256": "bdcb47112b2aafa710e0eb4789bed3d63f599d6da455b2629b7270b530f9dfd4"
   }

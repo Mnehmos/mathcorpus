@@ -70,6 +70,144 @@
       "clearing_denominators"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.inequalities.nesbitt_three_var.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "70e8eba5a20ec3a272ddb6d5d8499014e9bb6e18982892eec45213942f011eac",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Inequalities/NesbittThreeVar.lean",
+      "proof_body_sha256": "e73f20e27ac0d8812aaa5e4df25ca9e9943e796dc79fbae69c60d132da9cd6f0",
+      "proof_body_redacted": false,
+      "tactic_count": 6,
+      "proof_length": 6,
+      "proof_profile": {
+        "primary_proof_class": "arithmetic_automation",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": true,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "div_add_div",
+      "ge_iff_le",
+      "le_div_iff",
+      "mul_ne_zero",
+      "mul_pos",
+      "ne_of_gt",
+      "sq_nonneg"
+    ],
+    "used_theorem_deps": [
+      "div_add_div",
+      "ge_iff_le",
+      "le_div_iff",
+      "mul_ne_zero",
+      "mul_pos",
+      "ne_of_gt",
+      "sq_nonneg"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "div_add_div",
+      "ge_iff_le",
+      "le_div_iff",
+      "mul_ne_zero",
+      "mul_pos",
+      "ne_of_gt",
+      "sq_nonneg"
+    ],
+    "transitive_dependency_count": 7,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "div_add_div",
+      "ge_iff_le",
+      "le_div_iff",
+      "mul_ne_zero",
+      "mul_pos",
+      "ne_of_gt",
+      "sq_nonneg"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "div_add_div",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "div_add_div",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "ge_iff_le",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "ge_iff_le",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "le_div_iff",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "le_div_iff",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "mul_ne_zero",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "mul_ne_zero",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "mul_pos",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "mul_pos",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "ne_of_gt",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "ne_of_gt",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "sq_nonneg",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "sq_nonneg",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 8,
     "tactic_count": 6
@@ -98,7 +236,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode f300e689). Step 1 (bare nlinarith on the raw division goal) kernel-failed and is preserved as negative.inequalities.nesbitt_bare_nlinarith_division_failure.v1; step 2 hit the flattened-sequence inline-`by` trap (issue #67); step 3 used the wrong lemma name (`le_div_iff` instead of `le_div_iff₀` in this pinned Mathlib rev); step 4 (this proof) closed kernel_verified.",
   "hashes": {
-    "packet_sha256": "a5191596680e59466e3149cababdd11a78b996bfcc9613d72d802c9dd503f2c5",
+    "packet_sha256": "79b31ceef9f8293be4cec85bfcbd841e44792376788b70a0fe24f2df08861f51",
     "formal_statement_sha256": "70e8eba5a20ec3a272ddb6d5d8499014e9bb6e18982892eec45213942f011eac",
     "proof_body_sha256": "e73f20e27ac0d8812aaa5e4df25ca9e9943e796dc79fbae69c60d132da9cd6f0"
   }

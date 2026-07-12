@@ -66,6 +66,41 @@
       "coordinates"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.geometry.reflection_over_y_axis.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "4d43622aa13647b25968fa449818e52b1dd05d20ca27187582e7a88f58039db3",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Geometry/ReflectionOverYAxis.lean",
+      "proof_body_sha256": "55a21042a68525eb00e91ee8da9e7127f308f2919f30c9d8bdcea398a107442e",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "normalization",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [],
+    "used_theorem_deps": [],
+    "obligation_deps": [],
+    "verified_module_item_deps": [],
+    "transitive_dependency_count": 0,
+    "transitive_dependency_depth": 0,
+    "retrieval_candidates": [],
+    "retrieved_unused_candidates": [],
+    "claim_sources": []
+  },
   "metrics": {
     "loc": 3,
     "tactic_count": 1
@@ -92,7 +127,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode ecc942d6), kernel_verified on the first attempt. The y-axis companion to the existing `reflection_over_x_axis` (which only covers reflection across the x-axis) -- confirmed via `grep -rl y_axis packets/elementary/geometry/*.json` (no hits) before authoring. Picked as this cycle's target after confirming induction/inequalities/functions' elementary queues were all genuinely empty of concrete ready items and functions' domain focus was fully covered; geometry was the next-lowest domain with an easy, low-risk, real gap.",
   "hashes": {
-    "packet_sha256": "dc5f9da88e1300a5223be1546341a8c6cc4f86091f13299153dbd0f4a3796198",
+    "packet_sha256": "79590284bb17b77eb1cf76082fd76e55ac1278bf556dd2d6a147a07d5a9d34e6",
     "formal_statement_sha256": "4d43622aa13647b25968fa449818e52b1dd05d20ca27187582e7a88f58039db3",
     "proof_body_sha256": "55a21042a68525eb00e91ee8da9e7127f308f2919f30c9d8bdcea398a107442e"
   }

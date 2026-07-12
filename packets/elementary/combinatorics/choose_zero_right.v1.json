@@ -65,6 +65,60 @@
       "combination"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.combinatorics.choose_zero_right.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "f6c771e9335be4b2dd49d0e762e4d3ccf7baa353ecd2877e3fa7bc5aefb7d6bb",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Combinatorics/ChooseZeroRight.lean",
+      "proof_body_sha256": "b86d684bfed23e98836825805f79030658787ce5ce9dd86bc2eee9e25010e50f",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "theorem_lookup",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "Nat.choose_zero_right"
+    ],
+    "used_theorem_deps": [
+      "Nat.choose_zero_right"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "Nat.choose_zero_right"
+    ],
+    "transitive_dependency_count": 1,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "Nat.choose_zero_right"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "Nat.choose_zero_right",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.choose_zero_right",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 3,
     "tactic_count": 1
@@ -90,7 +144,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode dbba5471). First Nat.choose packet in the corpus, opening the roadmap's 'finite combinatorics basics' binomial-coefficient family; choose_self and choose_symm remain queued as follow-ups.",
   "hashes": {
-    "packet_sha256": "8b179ff0177742dc35b3ed46b2e90ff9e7abf54245170f9eedc78972fc3a5691",
+    "packet_sha256": "466993da1471039bb908bb68fecb57103be31f700f3f9fdf508ebf7adf7d7e8b",
     "formal_statement_sha256": "f6c771e9335be4b2dd49d0e762e4d3ccf7baa353ecd2877e3fa7bc5aefb7d6bb",
     "proof_body_sha256": "b86d684bfed23e98836825805f79030658787ce5ce9dd86bc2eee9e25010e50f"
   }

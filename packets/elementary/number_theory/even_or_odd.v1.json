@@ -66,6 +66,60 @@
       "odd"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.number_theory.even_or_odd.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "c83d791a07c17b6b6597786028eea717cda8eb9ae0465089a0766a66afb80eaa",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/NumberTheory/EvenOrOdd.lean",
+      "proof_body_sha256": "740117b7357ca53f53a227156344a9f291543778d98044568c702612aa60c5c9",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "theorem_lookup",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "Int.even_or_odd"
+    ],
+    "used_theorem_deps": [
+      "Int.even_or_odd"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "Int.even_or_odd"
+    ],
+    "transitive_dependency_count": 1,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "Int.even_or_odd"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "Int.even_or_odd",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Int.even_or_odd",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 3,
     "tactic_count": 1
@@ -91,7 +145,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 1a94185f).",
   "hashes": {
-    "packet_sha256": "e9079015a816690616982f934633673cabb9c2e303dc3289515a5d5821845a0b",
+    "packet_sha256": "a13c0f9202531eb14b48c2bb14c9ae12d856c05148348329959931f646e2c11a",
     "formal_statement_sha256": "c83d791a07c17b6b6597786028eea717cda8eb9ae0465089a0766a66afb80eaa",
     "proof_body_sha256": "740117b7357ca53f53a227156344a9f291543778d98044568c702612aa60c5c9"
   }

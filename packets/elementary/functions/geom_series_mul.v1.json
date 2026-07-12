@@ -67,6 +67,60 @@
       "telescoping"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.functions.geom_series_mul.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "2e687bdd3fd7aac5ea91e2b6762e36429b613dfde5e3b4a7e8264a240fd518ec",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Functions/GeomSeriesMul.lean",
+      "proof_body_sha256": "8e4df6bfea7db97c78687a3c484a065a3ebd3da3122c6d332c220dcf4f79e62d",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "theorem_lookup",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "geom_sum_mul"
+    ],
+    "used_theorem_deps": [
+      "geom_sum_mul"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "geom_sum_mul"
+    ],
+    "transitive_dependency_count": 1,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "geom_sum_mul"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "geom_sum_mul",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "geom_sum_mul",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 3,
     "tactic_count": 1
@@ -95,7 +149,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 94a27d2a).",
   "hashes": {
-    "packet_sha256": "ddf9fdf508d7173e432cb714da60ccbf5ff8dfa33aa68959572f1b759ccc913f",
+    "packet_sha256": "d4208fff53b9c43b08ce77447f8e7e32e88dcd8ebe5f62ff794d0eaa6e794833",
     "formal_statement_sha256": "2e687bdd3fd7aac5ea91e2b6762e36429b613dfde5e3b4a7e8264a240fd518ec",
     "proof_body_sha256": "8e4df6bfea7db97c78687a3c484a065a3ebd3da3122c6d332c220dcf4f79e62d"
   }

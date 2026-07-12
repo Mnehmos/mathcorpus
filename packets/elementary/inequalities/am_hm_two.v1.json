@@ -68,6 +68,130 @@
       "division"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.inequalities.am_hm_two.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "9397bb3d37fe0c8a68ccdaf9352bce06623e8269430b618df1ae062a67a62367",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Inequalities/AmHmTwo.lean",
+      "proof_body_sha256": "4c87938eab59224d793d8243cbae1f81ea272345d9b2fb3e522665c935f0ee6d",
+      "proof_body_redacted": false,
+      "tactic_count": 4,
+      "proof_length": 4,
+      "proof_profile": {
+        "primary_proof_class": "arithmetic_automation",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": true,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "div_add_div",
+      "div_div_eq_mul_div",
+      "div_le_div_iff",
+      "ha.ne'",
+      "hb.ne'",
+      "sq_nonneg"
+    ],
+    "used_theorem_deps": [
+      "div_add_div",
+      "div_div_eq_mul_div",
+      "div_le_div_iff",
+      "ha.ne'",
+      "hb.ne'",
+      "sq_nonneg"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "div_add_div",
+      "div_div_eq_mul_div",
+      "div_le_div_iff",
+      "ha.ne'",
+      "hb.ne'",
+      "sq_nonneg"
+    ],
+    "transitive_dependency_count": 6,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "div_add_div",
+      "div_div_eq_mul_div",
+      "div_le_div_iff",
+      "ha.ne'",
+      "hb.ne'",
+      "sq_nonneg"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "div_add_div",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "div_add_div",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "div_div_eq_mul_div",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "div_div_eq_mul_div",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "div_le_div_iff",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "div_le_div_iff",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "ha.ne'",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "ha.ne'",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "hb.ne'",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "hb.ne'",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "sq_nonneg",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "sq_nonneg",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 5,
     "tactic_count": 4
@@ -94,7 +218,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 62654695), kernel_verified on the second attempt. Completes this domain's power-mean chain (QM >= AM >= GM >= HM): `qm_am_bound`/`three_var_qm_am_bound` cover QM-AM, `am_gm_two`/`am_gm_four_term`/`three_var_am_gm`/`general_amgm` cover AM-GM, and this packet adds the missing AM-HM link -- confirmed via `grep -rl harmonic packets/elementary/inequalities/*.json` (no prior hits) before authoring. First attempt used `div_le_div_iff`, which no longer exists under that bare name in this Mathlib revision (renamed with a `₀` suffix for the GroupWithZero-generalized lemma family, alongside sibling names like `div_le_div_iff_of_pos_left`) -- `mathlib_search_declarations` surfaced the correct current name, `div_le_div_iff₀ (hb : 0 < b) (hd : 0 < d) : a / b <= c / d <-> a * d <= c * b`, which then went through immediately.",
   "hashes": {
-    "packet_sha256": "7b0eee0650a503ff3e34270ad85b7b030c101bf0b0c06effd64ea74906665c29",
+    "packet_sha256": "08c5ffea5d4e6ca3d133f134da2856838a1408b00d73754475c1b254ff8a3b54",
     "formal_statement_sha256": "9397bb3d37fe0c8a68ccdaf9352bce06623e8269430b618df1ae062a67a62367",
     "proof_body_sha256": "4c87938eab59224d793d8243cbae1f81ea272345d9b2fb3e522665c935f0ee6d"
   }

@@ -64,6 +64,60 @@
       "subset"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.functions.image_inter_subset.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "482e8f4e2ea90d38833b4652412de33d5c7a51dff7aaf3f0624c9ee048d9c1b2",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Functions/ImageInterSubset.lean",
+      "proof_body_sha256": "4635974269bd77888aba18ef3a0ea7b2d29092becb3105def45324ef66c1ed4d",
+      "proof_body_redacted": false,
+      "tactic_count": 2,
+      "proof_length": 2,
+      "proof_profile": {
+        "primary_proof_class": "multi_lemma_composition",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "Set.image_inter_subset"
+    ],
+    "used_theorem_deps": [
+      "Set.image_inter_subset"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "Set.image_inter_subset"
+    ],
+    "transitive_dependency_count": 1,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "Set.image_inter_subset"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "Set.image_inter_subset",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Set.image_inter_subset",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 2,
     "tactic_count": 2
@@ -90,7 +144,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 6eaaf620), kernel_verified on the first Solve attempt. Companion to image_union.v1 and preimage_inter.v1. This domain's QUEUE.md had flagged the equality version f '' (s ∩ t) = f '' s ∩ f '' t as needing either a counterexample-based negative example or an injectivity caveat since it is false in general; sidestepped that by authoring the always-true subset statement instead, which is the standard Mathlib-aligned formulation (Set.image_inter_subset). Closes the image_inter item in packets/elementary/functions/QUEUE.md.",
   "hashes": {
-    "packet_sha256": "0d3735e0ce8af9773f580509ac9dff37c8f0712408c8db4cc3731ac3dfe64e42",
+    "packet_sha256": "1445d86ae15a9080a23ad4d41ffc93b72c94551cfa54af00dd58197dc30de293",
     "formal_statement_sha256": "482e8f4e2ea90d38833b4652412de33d5c7a51dff7aaf3f0624c9ee048d9c1b2",
     "proof_body_sha256": "4635974269bd77888aba18ef3a0ea7b2d29092becb3105def45324ef66c1ed4d"
   }

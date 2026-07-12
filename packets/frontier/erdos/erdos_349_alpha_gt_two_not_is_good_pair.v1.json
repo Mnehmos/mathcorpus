@@ -75,6 +75,606 @@
       "frequently"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "frontier.erdos.erdos_349_alpha_gt_two_not_is_good_pair.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "032f8f3a717e1dbb8a666d19b319781a774fbd5e4aec5ee8f56f8da9a5ade881",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Frontier/Erdos/Erdos349AlphaGtTwoNotIsGoodPair.lean",
+      "proof_body_sha256": "878865ac0b130851e1946ccc42d04978531ca3106fd6f60a597ebae3a40526e4",
+      "proof_body_redacted": false,
+      "tactic_count": 91,
+      "proof_length": 91,
+      "proof_profile": {
+        "primary_proof_class": "case_analysis",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": true,
+        "uses_case_analysis": true
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "Filter.Tendsto",
+      "Filter.atTop",
+      "Filter.frequently_atTop",
+      "Filter.not_eventually",
+      "Filter.tendsto_add_atTop_nat",
+      "Filter.tendsto_atTop_add_const_right",
+      "Finset.mem_image",
+      "Finset.mem_range.mpr",
+      "Finset.mul_sum",
+      "Finset.range",
+      "Finset.single_le_sum",
+      "Finset.sum_image_le_of_nonneg",
+      "Finset.sum_le_sum",
+      "Finset.sum_le_sum_of_subset_of_nonneg",
+      "Int.floor_le",
+      "Int.floor_le_floor",
+      "Int.floor_nonneg.mpr",
+      "Int.sub_one_lt_floor",
+      "Set.range",
+      "_root_.div_pos",
+      "div_le_div_of_nonneg_right",
+      "exact_mod_cast",
+      "geom_sum_eq",
+      "h1.atTop_mul_const",
+      "hBsum_le",
+      "hpow.const_mul_atTop",
+      "htend.eventually_ge_atTop",
+      "htend2.eventually_ge_atTop",
+      "hterm_le",
+      "le_max_left",
+      "le_max_right",
+      "le_of_lt",
+      "le_trans",
+      "m1.le",
+      "mul_div_assoc",
+      "mul_le_mul_of_nonneg_left",
+      "not_lt.mp",
+      "pow_le_pow_right",
+      "sub_eq_add_neg",
+      "tendsto_pow_atTop_atTop_of_one_lt"
+    ],
+    "used_theorem_deps": [
+      "Filter.Tendsto",
+      "Filter.atTop",
+      "Filter.frequently_atTop",
+      "Filter.not_eventually",
+      "Filter.tendsto_add_atTop_nat",
+      "Filter.tendsto_atTop_add_const_right",
+      "Finset.mem_image",
+      "Finset.mem_range.mpr",
+      "Finset.mul_sum",
+      "Finset.range",
+      "Finset.single_le_sum",
+      "Finset.sum_image_le_of_nonneg",
+      "Finset.sum_le_sum",
+      "Finset.sum_le_sum_of_subset_of_nonneg",
+      "Int.floor_le",
+      "Int.floor_le_floor",
+      "Int.floor_nonneg.mpr",
+      "Int.sub_one_lt_floor",
+      "Set.range",
+      "_root_.div_pos",
+      "div_le_div_of_nonneg_right",
+      "exact_mod_cast",
+      "geom_sum_eq",
+      "h1.atTop_mul_const",
+      "hBsum_le",
+      "hpow.const_mul_atTop",
+      "htend.eventually_ge_atTop",
+      "htend2.eventually_ge_atTop",
+      "hterm_le",
+      "le_max_left",
+      "le_max_right",
+      "le_of_lt",
+      "le_trans",
+      "m1.le",
+      "mul_div_assoc",
+      "mul_le_mul_of_nonneg_left",
+      "not_lt.mp",
+      "pow_le_pow_right",
+      "sub_eq_add_neg",
+      "tendsto_pow_atTop_atTop_of_one_lt"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "Filter.Tendsto",
+      "Filter.atTop",
+      "Filter.frequently_atTop",
+      "Filter.not_eventually",
+      "Filter.tendsto_add_atTop_nat",
+      "Filter.tendsto_atTop_add_const_right",
+      "Finset.mem_image",
+      "Finset.mem_range.mpr",
+      "Finset.mul_sum",
+      "Finset.range",
+      "Finset.single_le_sum",
+      "Finset.sum_image_le_of_nonneg",
+      "Finset.sum_le_sum",
+      "Finset.sum_le_sum_of_subset_of_nonneg",
+      "Int.floor_le",
+      "Int.floor_le_floor",
+      "Int.floor_nonneg.mpr",
+      "Int.sub_one_lt_floor",
+      "Set.range",
+      "_root_.div_pos",
+      "div_le_div_of_nonneg_right",
+      "exact_mod_cast",
+      "geom_sum_eq",
+      "h1.atTop_mul_const",
+      "hBsum_le",
+      "hpow.const_mul_atTop",
+      "htend.eventually_ge_atTop",
+      "htend2.eventually_ge_atTop",
+      "hterm_le",
+      "le_max_left",
+      "le_max_right",
+      "le_of_lt",
+      "le_trans",
+      "m1.le",
+      "mul_div_assoc",
+      "mul_le_mul_of_nonneg_left",
+      "not_lt.mp",
+      "pow_le_pow_right",
+      "sub_eq_add_neg",
+      "tendsto_pow_atTop_atTop_of_one_lt"
+    ],
+    "transitive_dependency_count": 40,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "Filter.Tendsto",
+      "Filter.atTop",
+      "Filter.frequently_atTop",
+      "Filter.not_eventually",
+      "Filter.tendsto_add_atTop_nat",
+      "Filter.tendsto_atTop_add_const_right",
+      "Finset.mem_image",
+      "Finset.mem_range.mpr",
+      "Finset.mul_sum",
+      "Finset.range",
+      "Finset.single_le_sum",
+      "Finset.sum_image_le_of_nonneg",
+      "Finset.sum_le_sum",
+      "Finset.sum_le_sum_of_subset_of_nonneg",
+      "Int.floor_le",
+      "Int.floor_le_floor",
+      "Int.floor_nonneg.mpr",
+      "Int.sub_one_lt_floor",
+      "Set.range",
+      "_root_.div_pos",
+      "div_le_div_of_nonneg_right",
+      "exact_mod_cast",
+      "geom_sum_eq",
+      "h1.atTop_mul_const",
+      "hBsum_le",
+      "hpow.const_mul_atTop",
+      "htend.eventually_ge_atTop",
+      "htend2.eventually_ge_atTop",
+      "hterm_le",
+      "le_max_left",
+      "le_max_right",
+      "le_of_lt",
+      "le_trans",
+      "m1.le",
+      "mul_div_assoc",
+      "mul_le_mul_of_nonneg_left",
+      "not_lt.mp",
+      "pow_le_pow_right",
+      "sub_eq_add_neg",
+      "tendsto_pow_atTop_atTop_of_one_lt"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "Filter.Tendsto",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Filter.Tendsto",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Filter.atTop",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Filter.atTop",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Filter.frequently_atTop",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Filter.frequently_atTop",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Filter.not_eventually",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Filter.not_eventually",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Filter.tendsto_add_atTop_nat",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Filter.tendsto_add_atTop_nat",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Filter.tendsto_atTop_add_const_right",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Filter.tendsto_atTop_add_const_right",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.mem_image",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.mem_image",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.mem_range.mpr",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.mem_range.mpr",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.mul_sum",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.mul_sum",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.range",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.range",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.single_le_sum",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.single_le_sum",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.sum_image_le_of_nonneg",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.sum_image_le_of_nonneg",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.sum_le_sum",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.sum_le_sum",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.sum_le_sum_of_subset_of_nonneg",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.sum_le_sum_of_subset_of_nonneg",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Int.floor_le",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Int.floor_le",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Int.floor_le_floor",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Int.floor_le_floor",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Int.floor_nonneg.mpr",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Int.floor_nonneg.mpr",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Int.sub_one_lt_floor",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Int.sub_one_lt_floor",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Set.range",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Set.range",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "_root_.div_pos",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "_root_.div_pos",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "div_le_div_of_nonneg_right",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "div_le_div_of_nonneg_right",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "exact_mod_cast",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "exact_mod_cast",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "geom_sum_eq",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "geom_sum_eq",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "h1.atTop_mul_const",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "h1.atTop_mul_const",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "hBsum_le",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "hBsum_le",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "hpow.const_mul_atTop",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "hpow.const_mul_atTop",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "htend.eventually_ge_atTop",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "htend.eventually_ge_atTop",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "htend2.eventually_ge_atTop",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "htend2.eventually_ge_atTop",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "hterm_le",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "hterm_le",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "le_max_left",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "le_max_left",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "le_max_right",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "le_max_right",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "le_of_lt",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "le_of_lt",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "le_trans",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "le_trans",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "m1.le",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "m1.le",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "mul_div_assoc",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "mul_div_assoc",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "mul_le_mul_of_nonneg_left",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "mul_le_mul_of_nonneg_left",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "not_lt.mp",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "not_lt.mp",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "pow_le_pow_right",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "pow_le_pow_right",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "sub_eq_add_neg",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "sub_eq_add_neg",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "tendsto_pow_atTop_atTop_of_one_lt",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "tendsto_pow_atTop_atTop_of_one_lt",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 118,
     "tactic_count": 91
@@ -101,8 +701,36 @@
   },
   "notes": "ANTI-OVERCLAIM: this packet proves only the last of four infrastructure sublemmas toward the integer_isGoodPair_iff characterization for Erdos #349's integer case -- it does not resolve #349's general open question. Proof authority: Lean kernel via the tracked proof-search loop (episode 65b19a8e, problem_version 50945aea-f5ce-48e7-8580-8117df80b70f), a single Solve step (proof_format raw_lean_block to preserve the bullet/case-split structure), kernel_verified on the FIRST attempt despite being the largest single-theorem proof transported in this corpus's frontier lane so far (118 LOC, 91 tactics, involving Filter.Tendsto/geometric series/field_simp over reals) -- notably the sibling repo's own tracked episode needed 3 attempts to reach the same result, and this repo hit a 60-second wall-clock timeout on a much smaller, related field_simp-bearing proof earlier this session (see BLOCKERS.md), so this success was not a given. root_statement_hash confirmed byte-identical to the hash cited in the sibling repo's own source comment. Independently re-verified in THIS environment's own pinned toolchain rather than treated as evidence merely because the sibling repo (F:\\Github\\mnehmos.llm-driven-proof-search.environment\\ErdosProblems\\erdos-349\\proof\\Erdos349_alpha_gt_two_not_isGoodPair.lean) already reports it kernel_verified there -- per this repo's evidence policy. training.eligibility: quarantined per the default-quarantine policy for open_problem_related packets pending real external review. Seventh packet in the frontier/erdos lane; 4/7 of the integer_isGoodPair_iff cluster now packetized (exists_finset_sum_two_pow, one_two_is_good_pair, alpha_le_one_not_is_good_pair, alpha_gt_two_not_is_good_pair). Remaining: int_coeff_ge_two_not_isGoodPair.lean (35 lines) and the culminating integer_isGoodPair_iff.lean (279 lines, the final assembly).",
   "hashes": {
-    "packet_sha256": "48046f415b4174315bc93592e98ee37d61854d57ad5b360cf4d423b00fe98164",
+    "packet_sha256": "4aa732aea0a4fe1c347083327bf08626e1024173bd097bd527f8d6e4f31b537d",
     "formal_statement_sha256": "032f8f3a717e1dbb8a666d19b319781a774fbd5e4aec5ee8f56f8da9a5ade881",
     "proof_body_sha256": "878865ac0b130851e1946ccc42d04978531ca3106fd6f60a597ebae3a40526e4"
-  }
+  },
+  "idea_attributions": [
+    {
+      "attribution_id": "frontier.erdos.erdos_349_alpha_gt_two_not_is_good_pair.v1.attribution.1",
+      "formal_statement_sha256": "032f8f3a717e1dbb8a666d19b319781a774fbd5e4aec5ee8f56f8da9a5ade881",
+      "proof_variant_id": null,
+      "literature_source_id": "literature_source.erdosproblems_erdos_349_proof_erdos349_a.v1",
+      "external_claim_id": null,
+      "source_sha256_pin": "6282303ec9ff9280f84fafb112f0d22d431ce20782d374baa7221c53ac629ec4",
+      "attribution_status": "directly_used",
+      "visibility": "model_visible",
+      "dependency_refs": [],
+      "reviewer": "The MathCorpus Authors",
+      "notes": "Formalized from source_provenance.source_refs[0] (pre-existing, not newly researched)."
+    },
+    {
+      "attribution_id": "frontier.erdos.erdos_349_alpha_gt_two_not_is_good_pair.v1.attribution.2",
+      "formal_statement_sha256": "032f8f3a717e1dbb8a666d19b319781a774fbd5e4aec5ee8f56f8da9a5ade881",
+      "proof_variant_id": null,
+      "literature_source_id": "literature_source.https_www_erdosproblems_com_349.v1",
+      "external_claim_id": null,
+      "source_sha256_pin": "8a584115b5bd886cecd10e3c29fe1aa5c189b899af85ccfbd473b219ef71b39a",
+      "attribution_status": "background_only",
+      "visibility": "model_visible",
+      "dependency_refs": [],
+      "reviewer": "The MathCorpus Authors",
+      "notes": "Formalized from source_provenance.source_refs[1] (pre-existing, not newly researched)."
+    }
+  ]
 }

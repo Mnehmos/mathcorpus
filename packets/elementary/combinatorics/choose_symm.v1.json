@@ -66,6 +66,60 @@
       "subtraction"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.combinatorics.choose_symm.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "338f0d6dd24666f9a4f94f1219843aaf254c5ec69d637ead84107697312559c5",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Combinatorics/ChooseSymm.lean",
+      "proof_body_sha256": "441f229103a4eab0f18f4aca6733a7c7d426b16d47aaa0cc5d993f9fb161361a",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "theorem_lookup",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "Nat.choose_symm"
+    ],
+    "used_theorem_deps": [
+      "Nat.choose_symm"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "Nat.choose_symm"
+    ],
+    "transitive_dependency_count": 1,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "Nat.choose_symm"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "Nat.choose_symm",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.choose_symm",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 3,
     "tactic_count": 1
@@ -91,7 +145,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 2478c40d). Closes the roadmap's 'finite combinatorics basics' Nat.choose starter family alongside choose_zero_right' and choose_self'.",
   "hashes": {
-    "packet_sha256": "867e7da7c3a763f20f198d0f8cdc66c6b0ca52dc6823f732fd9893138d77c3c7",
+    "packet_sha256": "9e5f99223eb420e09cd891541e17701bb0dee593ac4f61a2c168106d147b2bb8",
     "formal_statement_sha256": "338f0d6dd24666f9a4f94f1219843aaf254c5ec69d637ead84107697312559c5",
     "proof_body_sha256": "441f229103a4eab0f18f4aca6733a7c7d426b16d47aaa0cc5d993f9fb161361a"
   }

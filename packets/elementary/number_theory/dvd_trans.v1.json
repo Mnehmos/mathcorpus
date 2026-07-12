@@ -64,6 +64,60 @@
       "divisibility"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.number_theory.dvd_trans.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "28c0223adb5e884536e4374d1f3a48aa1555a9616eec5998e74661b0246be3c9",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/NumberTheory/DvdTrans.lean",
+      "proof_body_sha256": "3b7afed1d0cc17c7b3eec1c0a98245a8f9c59f2831f24d8c4cc7046801d8634f",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "theorem_lookup",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "hab.trans"
+    ],
+    "used_theorem_deps": [
+      "hab.trans"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "hab.trans"
+    ],
+    "transitive_dependency_count": 1,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "hab.trans"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "hab.trans",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "hab.trans",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 3,
     "tactic_count": 1
@@ -92,7 +146,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 711c9c24).",
   "hashes": {
-    "packet_sha256": "a9e9aa5531cf570f5c82d92d7ba39c770ef1e3d986c81d6b8d99b37865eafa18",
+    "packet_sha256": "72437e5e983b35df040c2664f6fdc9e2aecaa319d58e9e8e442d21497b028e98",
     "formal_statement_sha256": "28c0223adb5e884536e4374d1f3a48aa1555a9616eec5998e74661b0246be3c9",
     "proof_body_sha256": "3b7afed1d0cc17c7b3eec1c0a98245a8f9c59f2831f24d8c4cc7046801d8634f"
   }

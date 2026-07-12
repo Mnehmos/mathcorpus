@@ -66,6 +66,60 @@
       "triangle_inequality"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.inequalities.abs_add_le.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "e81c08854b0e8d7069eb942234f92ce36e46beb51d14a12fabf4f3e53ee32dcd",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Inequalities/AbsAddLe.lean",
+      "proof_body_sha256": "6c73f8a2dfe90a5f9d8d795ce3d6b68fe09f258758af2c942133e2beaea0d322",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "case_analysis",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": true
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "abs_cases"
+    ],
+    "used_theorem_deps": [
+      "abs_cases"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "abs_cases"
+    ],
+    "transitive_dependency_count": 1,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "abs_cases"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "abs_cases",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "abs_cases",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 3,
     "tactic_count": 1
@@ -92,7 +146,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 0c084674), kernel_verified on the first attempt after an earlier problem_create was missing Mathlib.Data.Real.Basic in problem_imports (its absence produced 'failed to synthesize instance of type class HAdd/Lattice/AddCommGroup R' -- ℝ's algebraic/order structure instances live there, not in Mathlib.Algebra.Order.Group.Abs alone). Fills an L0 gap in a domain that was skewed toward L2_olympiad content (15 of 19 packets); this is the domain's first genuinely elementary absolute-value packet -- reverse_triangle.v1 (the reverse triangle inequality) was filed at L2 despite being comparably basic.",
   "hashes": {
-    "packet_sha256": "e6ec06f404569c5696d57da7c27f4eb08de6e533c8f6ac8cf5543fee271f45c3",
+    "packet_sha256": "e57bfc84aacfb28c8297bc77e04fde13f6c59c45a3f2b3536072d7ea2bdc93b5",
     "formal_statement_sha256": "e81c08854b0e8d7069eb942234f92ce36e46beb51d14a12fabf4f3e53ee32dcd",
     "proof_body_sha256": "6c73f8a2dfe90a5f9d8d795ce3d6b68fe09f258758af2c942133e2beaea0d322"
   }

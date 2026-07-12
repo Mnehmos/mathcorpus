@@ -64,6 +64,41 @@
       "function_composition"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.functions.injective_comp.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "5324e2d3826e730617aaf91816fe11504daa111c16932887d736a22b3c22cd73",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Functions/InjectiveComp.lean",
+      "proof_body_sha256": "4fa9927dc26b46da9d070083ce893a968b1b2e165ad5e8a6d239a9a69a2b9901",
+      "proof_body_redacted": false,
+      "tactic_count": 4,
+      "proof_length": 4,
+      "proof_profile": {
+        "primary_proof_class": "multi_lemma_composition",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [],
+    "used_theorem_deps": [],
+    "obligation_deps": [],
+    "verified_module_item_deps": [],
+    "transitive_dependency_count": 0,
+    "transitive_dependency_depth": 0,
+    "retrieval_candidates": [],
+    "retrieved_unused_candidates": [],
+    "claim_sources": []
+  },
   "metrics": {
     "loc": 4,
     "tactic_count": 4
@@ -90,7 +125,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode ab41c15c). Step 1 kernel-failed on a binder-arity slip (forgot to `intro` the three implicit type variables alpha/beta/gamma before the value/hypothesis arguments); step 2 fixed the intro list and reached kernel_verified. Not packaged as a separate negative_example: the failure is a plain authoring slip (miscounted binders), not a tactic-mismatch or automation hazard with independent training value, unlike e.g. the pow_succ/omega negative examples elsewhere in the corpus. Fills a real content gap in packets/elementary/functions/: all 16 prior packets in this domain were abs/max/min identities despite the domain's stated focus (injective/surjective/composition/inverse/monotone/fixed-point basics) having zero prior coverage; this is the first packet on that stated focus.",
   "hashes": {
-    "packet_sha256": "a878930132bb29d36a62a27813ad1d23ed963b00ce50008d1589f2a458f53aae",
+    "packet_sha256": "d00051cee3709a5490980103c0bf0ba570e89a804763ca06ad86f92059ad0296",
     "formal_statement_sha256": "5324e2d3826e730617aaf91816fe11504daa111c16932887d736a22b3c22cd73",
     "proof_body_sha256": "4fa9927dc26b46da9d070083ce893a968b1b2e165ad5e8a6d239a9a69a2b9901"
   }

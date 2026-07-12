@@ -64,6 +64,60 @@
       "order"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.number_theory.lt_irrefl.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "6fcc8cbcf4a7df963b2a4fea3d7622d4a26fda10e1dde96c8c49832ad21352ec",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/NumberTheory/LtIrrefl.lean",
+      "proof_body_sha256": "5d49b3d080eea53b66f04c5bd01a237858d8e296daf6a554c22362ed00802171",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "theorem_lookup",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "lt_irrefl"
+    ],
+    "used_theorem_deps": [
+      "lt_irrefl"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "lt_irrefl"
+    ],
+    "transitive_dependency_count": 1,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "lt_irrefl"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "lt_irrefl",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "lt_irrefl",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 3,
     "tactic_count": 1
@@ -89,7 +143,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 8d1e09b2).",
   "hashes": {
-    "packet_sha256": "bfc9502e3dd9377725ca490bcdceb03e459f4d370a3532e5f65e683d2ca71dc8",
+    "packet_sha256": "8994e6416c20fe8d5bed84508509449edeea22b049d2c01b38de025926d8631f",
     "formal_statement_sha256": "6fcc8cbcf4a7df963b2a4fea3d7622d4a26fda10e1dde96c8c49832ad21352ec",
     "proof_body_sha256": "5d49b3d080eea53b66f04c5bd01a237858d8e296daf6a554c22362ed00802171"
   }

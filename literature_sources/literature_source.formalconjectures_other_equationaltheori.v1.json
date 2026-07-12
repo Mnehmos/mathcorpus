@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "literature_source",
+  "record_id": "literature_source.formalconjectures_other_equationaltheori.v1",
+  "packet_id": "frontier.formal_conjectures.equational_theories_677_255_class_free.v1",
+  "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+  "created_at": "2026-07-12T00:00:00Z",
+  "trust_status": "candidate_unverified",
+  "export_eligibility": "public",
+  "record_hash": "80b7a428232f30fb0fc033154692d1ed5a2e1d95ceaa9a70b5dd1f845f7cdf2c",
+  "title": "FormalConjectures/Other/EquationalTheories_677_255.lean::Equation255_not_implies_Equation677",
+  "authors": [],
+  "publication_year": null,
+  "venue": "sibling repo mnehmos.llm-driven-proof-search.environment/formal-conjectures",
+  "external_ids": {
+    "repo_path": "FormalConjectures/Other/EquationalTheories_677_255.lean::Equation255_not_implies_Equation677"
+  },
+  "source_sha256": null,
+  "access_note": "Formalized from this packet's own pre-existing source_provenance.source_refs (issue #8 follow-up); not independently re-verified."
+}

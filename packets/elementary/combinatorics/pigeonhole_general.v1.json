@@ -67,6 +67,60 @@
       "function"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.combinatorics.pigeonhole_general.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "bef7adde8ebcec977a4a64b5d29a07e8d5264e2428065dacecbfca2b8ff78f28",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Combinatorics/PigeonholeGeneral.lean",
+      "proof_body_sha256": "77a5bc0f58fa989f765bd577567750ebf13c91f42c38d95ea89abf1d44c05740",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "theorem_lookup",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "Finset.exists_ne_map_eq_of_card_lt_of_maps_to"
+    ],
+    "used_theorem_deps": [
+      "Finset.exists_ne_map_eq_of_card_lt_of_maps_to"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "Finset.exists_ne_map_eq_of_card_lt_of_maps_to"
+    ],
+    "transitive_dependency_count": 1,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "Finset.exists_ne_map_eq_of_card_lt_of_maps_to"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "Finset.exists_ne_map_eq_of_card_lt_of_maps_to",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.exists_ne_map_eq_of_card_lt_of_maps_to",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 3,
     "tactic_count": 1
@@ -92,7 +146,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode d9b60f62). Generalizes the domain's existing concrete pigeonhole_3_into_2 instance to arbitrary finite sets and cardinalities; closes packets/elementary/combinatorics/QUEUE.md's last remaining item.",
   "hashes": {
-    "packet_sha256": "93fff951e2fe15fa00a6e6e2018809db08833ca37e948a23bab3eb8fda351cc0",
+    "packet_sha256": "1cadd4db226bd7dd310f5b3794ac9bed8550826d2c5141b1554d9d3edcfa18af",
     "formal_statement_sha256": "bef7adde8ebcec977a4a64b5d29a07e8d5264e2428065dacecbfca2b8ff78f28",
     "proof_body_sha256": "77a5bc0f58fa989f765bd577567750ebf13c91f42c38d95ea89abf1d44c05740"
   }

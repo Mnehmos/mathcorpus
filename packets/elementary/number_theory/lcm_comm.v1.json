@@ -63,6 +63,60 @@
       "commutativity"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.number_theory.lcm_comm.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "ec8428d6ced9628900dea10e3edabfb5e7100f4429dfa3886090a40688795288",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/NumberTheory/LcmComm.lean",
+      "proof_body_sha256": "804b5dc7242db5f5afb1cb6d7fe491cd5540f067b6679de88d9ff3ebf4395217",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "theorem_lookup",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "Nat.lcm_comm"
+    ],
+    "used_theorem_deps": [
+      "Nat.lcm_comm"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "Nat.lcm_comm"
+    ],
+    "transitive_dependency_count": 1,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "Nat.lcm_comm"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "Nat.lcm_comm",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.lcm_comm",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 1,
     "tactic_count": 1
@@ -89,7 +143,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 38f8f47e), kernel_verified on the first attempt. Closes packets/elementary/number_theory/QUEUE.md's flagged 'biggest single naming gap' -- a full gcd_* family existed but no lcm_* packets at all; this is the domain's first. Opens the door for the queue's paired dvd_lcm_left/dvd_lcm_right and gcd_mul_lcm targets.",
   "hashes": {
-    "packet_sha256": "02b5fbe0b821783efe48faecedd809906a3f611539056747d1ad1115d9e6ec43",
+    "packet_sha256": "7c136defa8d506446c43c4c35c98d2b97e361968114d1ccd6f8f67ad3db0413b",
     "formal_statement_sha256": "ec8428d6ced9628900dea10e3edabfb5e7100f4429dfa3886090a40688795288",
     "proof_body_sha256": "804b5dc7242db5f5afb1cb6d7fe491cd5540f067b6679de88d9ff3ebf4395217"
   }

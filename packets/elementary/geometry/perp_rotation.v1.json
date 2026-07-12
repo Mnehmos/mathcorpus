@@ -65,6 +65,41 @@
       "dot_product"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.geometry.perp_rotation.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "c24b747aa4e41fd446725b2d153f18742bbf7efeef87ce71654859e31a6e7e33",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Geometry/PerpRotation.lean",
+      "proof_body_sha256": "f4723de7b42980c51a9058bdce34273ddce40e2f4edbfacf853d0b46f987eaeb",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "normalization",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [],
+    "used_theorem_deps": [],
+    "obligation_deps": [],
+    "verified_module_item_deps": [],
+    "transitive_dependency_count": 0,
+    "transitive_dependency_depth": 0,
+    "retrieval_candidates": [],
+    "retrieved_unused_candidates": [],
+    "claim_sources": []
+  },
   "metrics": {
     "loc": 3,
     "tactic_count": 1
@@ -90,7 +125,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode ba6d1c03).",
   "hashes": {
-    "packet_sha256": "b8899e9332f2b5f030c680702b58b995b0aea90e0252f6e87f75b07cd20e42c4",
+    "packet_sha256": "4c1c3024de3a02f27b5c021f410cbb832d4791b2483d3e00ee8e2e2be54d97c3",
     "formal_statement_sha256": "c24b747aa4e41fd446725b2d153f18742bbf7efeef87ce71654859e31a6e7e33",
     "proof_body_sha256": "f4723de7b42980c51a9058bdce34273ddce40e2f4edbfacf853d0b46f987eaeb"
   }

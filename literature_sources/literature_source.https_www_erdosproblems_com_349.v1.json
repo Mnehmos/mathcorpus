@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "literature_source",
+  "record_id": "literature_source.https_www_erdosproblems_com_349.v1",
+  "packet_id": "frontier.erdos.erdos_349_alpha_gt_two_not_is_good_pair.v1",
+  "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+  "created_at": "2026-07-12T00:00:00Z",
+  "trust_status": "candidate_unverified",
+  "export_eligibility": "public",
+  "record_hash": "8a584115b5bd886cecd10e3c29fe1aa5c189b899af85ccfbd473b219ef71b39a",
+  "title": "https://www.erdosproblems.com/349",
+  "authors": [],
+  "publication_year": null,
+  "venue": "Erdős Problems",
+  "external_ids": {
+    "url": "https://www.erdosproblems.com/349"
+  },
+  "source_sha256": null,
+  "access_note": "Formalized from this packet's own pre-existing source_provenance.source_refs (issue #8 follow-up); not independently re-verified."
+}

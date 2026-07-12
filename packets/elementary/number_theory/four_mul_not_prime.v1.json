@@ -68,6 +68,60 @@
       "even_number"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.number_theory.four_mul_not_prime.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "b5b66044f1342e98ac0bed9375b6ace5c0414022adc59610345f082e40c47539",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/NumberTheory/FourMulNotPrime.lean",
+      "proof_body_sha256": "1b129fc5710a66790d87824da8876e4f4b8476f6ca129de3b82518d373a824d1",
+      "proof_body_redacted": false,
+      "tactic_count": 4,
+      "proof_length": 4,
+      "proof_profile": {
+        "primary_proof_class": "normalization",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "hp.eq_one_or_self_of_dvd"
+    ],
+    "used_theorem_deps": [
+      "hp.eq_one_or_self_of_dvd"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "hp.eq_one_or_self_of_dvd"
+    ],
+    "transitive_dependency_count": 1,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "hp.eq_one_or_self_of_dvd"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "hp.eq_one_or_self_of_dvd",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "hp.eq_one_or_self_of_dvd",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 5,
     "tactic_count": 4
@@ -93,7 +147,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 3148ceed, problem_version e6dee3bb-782e-412d-90e2-12a0e742b723). Step 1 (bare `decide`) hit kernel_fail (no Decidable instance for an unbounded universal over ℕ) -- packetized separately as the companion negative example negative.number_theory.decide_unbounded_prime_universal.v1. Step 2 (the proof above) reached kernel_verified. Companion pair authored together per this domain's standard practice of pairing a negative_example failure mode with its working positive repair.",
   "hashes": {
-    "packet_sha256": "d4274a41b769ec09a4d9608164e7601d743fb24f7fe754712a5c3bfd9855f9a6",
+    "packet_sha256": "b93adf7433dabf238a3d6f9f189f259d3ab7a3b5644e1d1b3fac19a60f1c34ea",
     "formal_statement_sha256": "b5b66044f1342e98ac0bed9375b6ace5c0414022adc59610345f082e40c47539",
     "proof_body_sha256": "1b129fc5710a66790d87824da8876e4f4b8476f6ca129de3b82518d373a824d1"
   }

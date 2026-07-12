@@ -64,6 +64,41 @@
       "fixed_point"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.functions.fixed_point_id.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "b53e0b3a8af964d50be32e3491fa1209eb42c172060a6943d738de36eece93c3",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Functions/FixedPointId.lean",
+      "proof_body_sha256": "bf5a9739fd43f237acbf9cb50e2659b4febc9f3279eda3fd891371e5d37c6f08",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "normalization",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [],
+    "used_theorem_deps": [],
+    "obligation_deps": [],
+    "verified_module_item_deps": [],
+    "transitive_dependency_count": 0,
+    "transitive_dependency_depth": 0,
+    "retrieval_candidates": [],
+    "retrieved_unused_candidates": [],
+    "claim_sources": []
+  },
   "metrics": {
     "loc": 1,
     "tactic_count": 1
@@ -90,7 +125,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 3952d582), kernel_verified on the first attempt. Closes the fixed_point_id item in packets/elementary/functions/QUEUE.md -- the last open item on this domain's stated 'fixed point basics' focus.",
   "hashes": {
-    "packet_sha256": "f7a8759de6fdab9f539db4b0a48aa7feba4ab4180cd156f57193e10887aa10d0",
+    "packet_sha256": "d7639d42d143f45cd64ea6e567ec87b9f41c5247c6324e6d26b278089c4f18b4",
     "formal_statement_sha256": "b53e0b3a8af964d50be32e3491fa1209eb42c172060a6943d738de36eece93c3",
     "proof_body_sha256": "bf5a9739fd43f237acbf9cb50e2659b4febc9f3279eda3fd891371e5d37c6f08"
   }

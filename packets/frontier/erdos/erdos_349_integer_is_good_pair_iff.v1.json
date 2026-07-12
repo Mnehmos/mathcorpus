@@ -75,6 +75,1068 @@
       "binary_representation"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "frontier.erdos.erdos_349_integer_is_good_pair_iff.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "5036aa53f8a068459fad6bdc89d50cc63828274d8868c266f861c5a0744278f1",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Frontier/Erdos/Erdos349IntegerIsGoodPairIff.lean",
+      "proof_body_sha256": "ab6ffdb5bf94294484a0f9c40b2028266474609d17966b66d0d6063881873c32",
+      "proof_body_redacted": false,
+      "tactic_count": 210,
+      "proof_length": 210,
+      "proof_profile": {
+        "primary_proof_class": "case_analysis",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": true,
+        "uses_case_analysis": true
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "E.image",
+      "Filter.Tendsto",
+      "Filter.atTop",
+      "Filter.eventually_atTop",
+      "Filter.frequently_atTop",
+      "Filter.not_eventually",
+      "Filter.tendsto_add_atTop_nat",
+      "Filter.tendsto_atTop_add_const_right",
+      "Finset.Icc",
+      "Finset.coe_Icc",
+      "Finset.coe_image",
+      "Finset.dvd_sum",
+      "Finset.mem_Icc.mp",
+      "Finset.mem_coe",
+      "Finset.mem_image",
+      "Finset.mem_range.mpr",
+      "Finset.mul_sum",
+      "Finset.range",
+      "Finset.single_le_sum",
+      "Finset.sum_image",
+      "Finset.sum_image_le_of_nonneg",
+      "Finset.sum_le_sum",
+      "Finset.sum_le_sum_of_subset_of_nonneg",
+      "Finset.sum_toFinset_bitIndices_two_pow",
+      "Function.Injective",
+      "Int.cast_one",
+      "Int.floor_intCast",
+      "Int.floor_le",
+      "Int.floor_le_floor",
+      "Int.floor_nonneg.mpr",
+      "Int.le_natAbs",
+      "Int.le_of_dvd",
+      "Int.natCast_nonneg",
+      "Int.sub_one_lt_floor",
+      "Int.toNat_of_nonneg",
+      "N.natAbs",
+      "Nat.pow_right_injective",
+      "Set.mem_Icc",
+      "Set.mem_image",
+      "Set.range",
+      "_root_.div_pos",
+      "alpha_gt_two_not_isGoodPair",
+      "alpha_le_one_not_isGoodPair",
+      "div_le_div_of_nonneg_right",
+      "exact_mod_cast",
+      "geom_sum_eq",
+      "h1.atTop_mul_const",
+      "hBsum_le",
+      "hpos.le",
+      "hpow.const_mul_atTop",
+      "hpow_pos",
+      "htend.eventually_ge_atTop",
+      "htend2.eventually_ge_atTop",
+      "hterm_le",
+      "int_coeff_ge_two_not_isGoodPair",
+      "k.toNat",
+      "k.toNat.bitIndices.toFinset",
+      "le_max_left",
+      "le_max_right",
+      "le_of_lt",
+      "le_refl",
+      "le_trans",
+      "m1.le",
+      "mul_div_assoc",
+      "mul_le_mul_of_nonneg_left",
+      "not_lt.mp",
+      "one_pos",
+      "one_two_isGoodPair",
+      "pow_le_one",
+      "pow_le_pow_right",
+      "pow_pos",
+      "sub_eq_add_neg",
+      "tendsto_pow_atTop_atTop_of_one_lt"
+    ],
+    "used_theorem_deps": [
+      "E.image",
+      "Filter.Tendsto",
+      "Filter.atTop",
+      "Filter.eventually_atTop",
+      "Filter.frequently_atTop",
+      "Filter.not_eventually",
+      "Filter.tendsto_add_atTop_nat",
+      "Filter.tendsto_atTop_add_const_right",
+      "Finset.Icc",
+      "Finset.coe_Icc",
+      "Finset.coe_image",
+      "Finset.dvd_sum",
+      "Finset.mem_Icc.mp",
+      "Finset.mem_coe",
+      "Finset.mem_image",
+      "Finset.mem_range.mpr",
+      "Finset.mul_sum",
+      "Finset.range",
+      "Finset.single_le_sum",
+      "Finset.sum_image",
+      "Finset.sum_image_le_of_nonneg",
+      "Finset.sum_le_sum",
+      "Finset.sum_le_sum_of_subset_of_nonneg",
+      "Finset.sum_toFinset_bitIndices_two_pow",
+      "Function.Injective",
+      "Int.cast_one",
+      "Int.floor_intCast",
+      "Int.floor_le",
+      "Int.floor_le_floor",
+      "Int.floor_nonneg.mpr",
+      "Int.le_natAbs",
+      "Int.le_of_dvd",
+      "Int.natCast_nonneg",
+      "Int.sub_one_lt_floor",
+      "Int.toNat_of_nonneg",
+      "N.natAbs",
+      "Nat.pow_right_injective",
+      "Set.mem_Icc",
+      "Set.mem_image",
+      "Set.range",
+      "_root_.div_pos",
+      "alpha_gt_two_not_isGoodPair",
+      "alpha_le_one_not_isGoodPair",
+      "div_le_div_of_nonneg_right",
+      "exact_mod_cast",
+      "geom_sum_eq",
+      "h1.atTop_mul_const",
+      "hBsum_le",
+      "hpos.le",
+      "hpow.const_mul_atTop",
+      "hpow_pos",
+      "htend.eventually_ge_atTop",
+      "htend2.eventually_ge_atTop",
+      "hterm_le",
+      "int_coeff_ge_two_not_isGoodPair",
+      "k.toNat",
+      "k.toNat.bitIndices.toFinset",
+      "le_max_left",
+      "le_max_right",
+      "le_of_lt",
+      "le_refl",
+      "le_trans",
+      "m1.le",
+      "mul_div_assoc",
+      "mul_le_mul_of_nonneg_left",
+      "not_lt.mp",
+      "one_pos",
+      "one_two_isGoodPair",
+      "pow_le_one",
+      "pow_le_pow_right",
+      "pow_pos",
+      "sub_eq_add_neg",
+      "tendsto_pow_atTop_atTop_of_one_lt"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "E.image",
+      "Filter.Tendsto",
+      "Filter.atTop",
+      "Filter.eventually_atTop",
+      "Filter.frequently_atTop",
+      "Filter.not_eventually",
+      "Filter.tendsto_add_atTop_nat",
+      "Filter.tendsto_atTop_add_const_right",
+      "Finset.Icc",
+      "Finset.coe_Icc",
+      "Finset.coe_image",
+      "Finset.dvd_sum",
+      "Finset.mem_Icc.mp",
+      "Finset.mem_coe",
+      "Finset.mem_image",
+      "Finset.mem_range.mpr",
+      "Finset.mul_sum",
+      "Finset.range",
+      "Finset.single_le_sum",
+      "Finset.sum_image",
+      "Finset.sum_image_le_of_nonneg",
+      "Finset.sum_le_sum",
+      "Finset.sum_le_sum_of_subset_of_nonneg",
+      "Finset.sum_toFinset_bitIndices_two_pow",
+      "Function.Injective",
+      "Int.cast_one",
+      "Int.floor_intCast",
+      "Int.floor_le",
+      "Int.floor_le_floor",
+      "Int.floor_nonneg.mpr",
+      "Int.le_natAbs",
+      "Int.le_of_dvd",
+      "Int.natCast_nonneg",
+      "Int.sub_one_lt_floor",
+      "Int.toNat_of_nonneg",
+      "N.natAbs",
+      "Nat.pow_right_injective",
+      "Set.mem_Icc",
+      "Set.mem_image",
+      "Set.range",
+      "_root_.div_pos",
+      "alpha_gt_two_not_isGoodPair",
+      "alpha_le_one_not_isGoodPair",
+      "div_le_div_of_nonneg_right",
+      "exact_mod_cast",
+      "geom_sum_eq",
+      "h1.atTop_mul_const",
+      "hBsum_le",
+      "hpos.le",
+      "hpow.const_mul_atTop",
+      "hpow_pos",
+      "htend.eventually_ge_atTop",
+      "htend2.eventually_ge_atTop",
+      "hterm_le",
+      "int_coeff_ge_two_not_isGoodPair",
+      "k.toNat",
+      "k.toNat.bitIndices.toFinset",
+      "le_max_left",
+      "le_max_right",
+      "le_of_lt",
+      "le_refl",
+      "le_trans",
+      "m1.le",
+      "mul_div_assoc",
+      "mul_le_mul_of_nonneg_left",
+      "not_lt.mp",
+      "one_pos",
+      "one_two_isGoodPair",
+      "pow_le_one",
+      "pow_le_pow_right",
+      "pow_pos",
+      "sub_eq_add_neg",
+      "tendsto_pow_atTop_atTop_of_one_lt"
+    ],
+    "transitive_dependency_count": 73,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "E.image",
+      "Filter.Tendsto",
+      "Filter.atTop",
+      "Filter.eventually_atTop",
+      "Filter.frequently_atTop",
+      "Filter.not_eventually",
+      "Filter.tendsto_add_atTop_nat",
+      "Filter.tendsto_atTop_add_const_right",
+      "Finset.Icc",
+      "Finset.coe_Icc",
+      "Finset.coe_image",
+      "Finset.dvd_sum",
+      "Finset.mem_Icc.mp",
+      "Finset.mem_coe",
+      "Finset.mem_image",
+      "Finset.mem_range.mpr",
+      "Finset.mul_sum",
+      "Finset.range",
+      "Finset.single_le_sum",
+      "Finset.sum_image",
+      "Finset.sum_image_le_of_nonneg",
+      "Finset.sum_le_sum",
+      "Finset.sum_le_sum_of_subset_of_nonneg",
+      "Finset.sum_toFinset_bitIndices_two_pow",
+      "Function.Injective",
+      "Int.cast_one",
+      "Int.floor_intCast",
+      "Int.floor_le",
+      "Int.floor_le_floor",
+      "Int.floor_nonneg.mpr",
+      "Int.le_natAbs",
+      "Int.le_of_dvd",
+      "Int.natCast_nonneg",
+      "Int.sub_one_lt_floor",
+      "Int.toNat_of_nonneg",
+      "N.natAbs",
+      "Nat.pow_right_injective",
+      "Set.mem_Icc",
+      "Set.mem_image",
+      "Set.range",
+      "_root_.div_pos",
+      "alpha_gt_two_not_isGoodPair",
+      "alpha_le_one_not_isGoodPair",
+      "div_le_div_of_nonneg_right",
+      "exact_mod_cast",
+      "geom_sum_eq",
+      "h1.atTop_mul_const",
+      "hBsum_le",
+      "hpos.le",
+      "hpow.const_mul_atTop",
+      "hpow_pos",
+      "htend.eventually_ge_atTop",
+      "htend2.eventually_ge_atTop",
+      "hterm_le",
+      "int_coeff_ge_two_not_isGoodPair",
+      "k.toNat",
+      "k.toNat.bitIndices.toFinset",
+      "le_max_left",
+      "le_max_right",
+      "le_of_lt",
+      "le_refl",
+      "le_trans",
+      "m1.le",
+      "mul_div_assoc",
+      "mul_le_mul_of_nonneg_left",
+      "not_lt.mp",
+      "one_pos",
+      "one_two_isGoodPair",
+      "pow_le_one",
+      "pow_le_pow_right",
+      "pow_pos",
+      "sub_eq_add_neg",
+      "tendsto_pow_atTop_atTop_of_one_lt"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "E.image",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "E.image",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Filter.Tendsto",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Filter.Tendsto",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Filter.atTop",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Filter.atTop",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Filter.eventually_atTop",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Filter.eventually_atTop",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Filter.frequently_atTop",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Filter.frequently_atTop",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Filter.not_eventually",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Filter.not_eventually",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Filter.tendsto_add_atTop_nat",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Filter.tendsto_add_atTop_nat",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Filter.tendsto_atTop_add_const_right",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Filter.tendsto_atTop_add_const_right",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.Icc",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.Icc",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.coe_Icc",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.coe_Icc",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.coe_image",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.coe_image",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.dvd_sum",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.dvd_sum",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.mem_Icc.mp",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.mem_Icc.mp",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.mem_coe",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.mem_coe",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.mem_image",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.mem_image",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.mem_range.mpr",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.mem_range.mpr",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.mul_sum",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.mul_sum",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.range",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.range",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.single_le_sum",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.single_le_sum",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.sum_image",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.sum_image",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.sum_image_le_of_nonneg",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.sum_image_le_of_nonneg",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.sum_le_sum",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.sum_le_sum",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.sum_le_sum_of_subset_of_nonneg",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.sum_le_sum_of_subset_of_nonneg",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.sum_toFinset_bitIndices_two_pow",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.sum_toFinset_bitIndices_two_pow",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Function.Injective",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Function.Injective",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Int.cast_one",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Int.cast_one",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Int.floor_intCast",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Int.floor_intCast",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Int.floor_le",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Int.floor_le",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Int.floor_le_floor",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Int.floor_le_floor",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Int.floor_nonneg.mpr",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Int.floor_nonneg.mpr",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Int.le_natAbs",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Int.le_natAbs",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Int.le_of_dvd",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Int.le_of_dvd",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Int.natCast_nonneg",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Int.natCast_nonneg",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Int.sub_one_lt_floor",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Int.sub_one_lt_floor",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Int.toNat_of_nonneg",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Int.toNat_of_nonneg",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "N.natAbs",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "N.natAbs",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.pow_right_injective",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.pow_right_injective",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Set.mem_Icc",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Set.mem_Icc",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Set.mem_image",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Set.mem_image",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Set.range",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Set.range",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "_root_.div_pos",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "_root_.div_pos",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "alpha_gt_two_not_isGoodPair",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "alpha_gt_two_not_isGoodPair",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "alpha_le_one_not_isGoodPair",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "alpha_le_one_not_isGoodPair",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "div_le_div_of_nonneg_right",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "div_le_div_of_nonneg_right",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "exact_mod_cast",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "exact_mod_cast",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "geom_sum_eq",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "geom_sum_eq",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "h1.atTop_mul_const",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "h1.atTop_mul_const",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "hBsum_le",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "hBsum_le",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "hpos.le",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "hpos.le",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "hpow.const_mul_atTop",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "hpow.const_mul_atTop",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "hpow_pos",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "hpow_pos",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "htend.eventually_ge_atTop",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "htend.eventually_ge_atTop",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "htend2.eventually_ge_atTop",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "htend2.eventually_ge_atTop",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "hterm_le",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "hterm_le",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "int_coeff_ge_two_not_isGoodPair",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "int_coeff_ge_two_not_isGoodPair",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "k.toNat",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "k.toNat",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "k.toNat.bitIndices.toFinset",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "k.toNat.bitIndices.toFinset",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "le_max_left",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "le_max_left",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "le_max_right",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "le_max_right",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "le_of_lt",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "le_of_lt",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "le_refl",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "le_refl",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "le_trans",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "le_trans",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "m1.le",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "m1.le",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "mul_div_assoc",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "mul_div_assoc",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "mul_le_mul_of_nonneg_left",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "mul_le_mul_of_nonneg_left",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "not_lt.mp",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "not_lt.mp",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "one_pos",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "one_pos",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "one_two_isGoodPair",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "one_two_isGoodPair",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "pow_le_one",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "pow_le_one",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "pow_le_pow_right",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "pow_le_pow_right",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "pow_pos",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "pow_pos",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "sub_eq_add_neg",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "sub_eq_add_neg",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "tendsto_pow_atTop_atTop_of_one_lt",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "tendsto_pow_atTop_atTop_of_one_lt",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 280,
     "tactic_count": 210
@@ -101,8 +1163,36 @@
   },
   "notes": "ANTI-OVERCLAIM: this packet proves a full characterization of good pairs among POSITIVE INTEGERS for Erdos #349's integer_isGoodPair_iff, not a resolution of #349's general open question over all reals t, alpha (which remains genuinely OPEN per the sibling repo's own whitepaper). Proof authority: Lean kernel via the tracked proof-search loop (episode 5edbb136, problem_version f2c5cd7e-377a-42c5-a871-0785d3a4c2aa), a single Solve step (proof_format raw_lean_block), kernel_verified on the FIRST attempt despite being by far the largest single proof transported in this corpus's frontier lane (280 LOC, ~210 tactics) -- it combines all four previously-packetized assembly-piece sublemmas (int_coeff_ge_two_not_isGoodPair, alpha_le_one_not_isGoodPair, one_two_isGoodPair, alpha_gt_two_not_isGoodPair) re-embedded as local `have`s within one theorem, exactly mirroring the sibling repo's own structure, since the tracked pipeline verifies each problem_version in isolation with no cross-problem-version import mechanism. Each embedded sublemma's tactic script was independently debugged and kernel-verified as its own standalone packet earlier this session (frontier.erdos.erdos_349_int_coeff_ge_two_not_is_good_pair.v1, frontier.erdos.erdos_349_alpha_le_one_not_is_good_pair.v1, frontier.erdos.erdos_349_one_two_is_good_pair.v1, frontier.erdos.erdos_349_alpha_gt_two_not_is_good_pair.v1), which substantially de-risked this combined attempt. root_statement_hash did not match the hash cited in the sibling repo's own source comment (same as the int_coeff_ge_two packet -- see that packet's notes), so statement_fidelity is recorded as adapted_with_review. Independently re-verified in THIS environment's own pinned toolchain rather than treated as evidence merely because the sibling repo (F:\\Github\\mnehmos.llm-driven-proof-search.environment\\ErdosProblems\\erdos-349\\proof\\Erdos349_integer_isGoodPair_iff.lean) already reports it kernel_verified there -- per this repo's evidence policy. training.eligibility: quarantined per the default-quarantine policy for open_problem_related packets pending real external review. Ninth packet in the frontier/erdos lane; this completes the #349 integer_isGoodPair_iff cluster's headline theorem (6/7 of the original 7-file breakdown now packetized, counting this culminating assembly plus the four sublemmas plus the exists_finset_sum_two_pow sublemma -- only the sibling repo's own auxiliary infrastructure files, if any remain unlisted, would be left).",
   "hashes": {
-    "packet_sha256": "4570bf40ebd0e7d330806805e404fb52ff1464bc8a992bc47e9ef3d5c55e0c04",
+    "packet_sha256": "dcfc321ce1efb6886046fb7a1bd95b53efd3cce88f98211b0c3b6b71c2874607",
     "formal_statement_sha256": "5036aa53f8a068459fad6bdc89d50cc63828274d8868c266f861c5a0744278f1",
     "proof_body_sha256": "ab6ffdb5bf94294484a0f9c40b2028266474609d17966b66d0d6063881873c32"
-  }
+  },
+  "idea_attributions": [
+    {
+      "attribution_id": "frontier.erdos.erdos_349_integer_is_good_pair_iff.v1.attribution.1",
+      "formal_statement_sha256": "5036aa53f8a068459fad6bdc89d50cc63828274d8868c266f861c5a0744278f1",
+      "proof_variant_id": null,
+      "literature_source_id": "literature_source.erdosproblems_erdos_349_proof_erdos349_i_2.v1",
+      "external_claim_id": null,
+      "source_sha256_pin": "f2f8367ef04c536f4e3a8a7e442dbf369bcfc60c4caae2e0fb2fa480ce31dbd4",
+      "attribution_status": "directly_used",
+      "visibility": "model_visible",
+      "dependency_refs": [],
+      "reviewer": "The MathCorpus Authors",
+      "notes": "Formalized from source_provenance.source_refs[0] (pre-existing, not newly researched)."
+    },
+    {
+      "attribution_id": "frontier.erdos.erdos_349_integer_is_good_pair_iff.v1.attribution.2",
+      "formal_statement_sha256": "5036aa53f8a068459fad6bdc89d50cc63828274d8868c266f861c5a0744278f1",
+      "proof_variant_id": null,
+      "literature_source_id": "literature_source.https_www_erdosproblems_com_349.v1",
+      "external_claim_id": null,
+      "source_sha256_pin": "8a584115b5bd886cecd10e3c29fe1aa5c189b899af85ccfbd473b219ef71b39a",
+      "attribution_status": "background_only",
+      "visibility": "model_visible",
+      "dependency_refs": [],
+      "reviewer": "The MathCorpus Authors",
+      "notes": "Formalized from source_provenance.source_refs[1] (pre-existing, not newly researched)."
+    }
+  ]
 }

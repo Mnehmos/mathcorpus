@@ -66,6 +66,88 @@
       "extended_euclidean_algorithm"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.number_theory.bezout.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "58923052155b3206947a1b724f389baae3ebdb16997a75c517e8f6850dfd06c7",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/NumberTheory/Bezout.lean",
+      "proof_body_sha256": "5604d866b0f6a883c77117e19e5039129fec3e27951840e15565de26dbbc8096",
+      "proof_body_redacted": false,
+      "tactic_count": 2,
+      "proof_length": 2,
+      "proof_profile": {
+        "primary_proof_class": "multi_lemma_composition",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "Int.gcdA",
+      "Int.gcdB",
+      "Int.gcd_eq_gcd_ab"
+    ],
+    "used_theorem_deps": [
+      "Int.gcdA",
+      "Int.gcdB",
+      "Int.gcd_eq_gcd_ab"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "Int.gcdA",
+      "Int.gcdB",
+      "Int.gcd_eq_gcd_ab"
+    ],
+    "transitive_dependency_count": 3,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "Int.gcdA",
+      "Int.gcdB",
+      "Int.gcd_eq_gcd_ab"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "Int.gcdA",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Int.gcdA",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Int.gcdB",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Int.gcdB",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Int.gcd_eq_gcd_ab",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Int.gcd_eq_gcd_ab",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 2,
     "tactic_count": 2
@@ -92,7 +174,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 5d1a3305), kernel_verified on the first Solve attempt. This domain's first Int-based (as opposed to Nat-only) gcd fact; closes the Bezout-style backlog item in packets/elementary/number_theory/QUEUE.md, its only remaining open item at the time of authoring.",
   "hashes": {
-    "packet_sha256": "0dd9e2ff559c36e6bf16b0254dee63debeae59e33fa7745e818ca7544163559f",
+    "packet_sha256": "cd0ef1e451b748422d3b955e472e6bfcf99bcb26832863bff5e9be5181f78f74",
     "formal_statement_sha256": "58923052155b3206947a1b724f389baae3ebdb16997a75c517e8f6850dfd06c7",
     "proof_body_sha256": "5604d866b0f6a883c77117e19e5039129fec3e27951840e15565de26dbbc8096"
   }

@@ -70,6 +70,60 @@
       "counterexample"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "frontier.formal_conjectures.equational_theories_677_255_class_free.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "aa21d04c6ddebc1616ce847dc491f24c46833696fce3bb8af520b031af802d1c",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Frontier/FormalConjectures/EquationalTheories677NotImplies255ClassFree.lean",
+      "proof_body_sha256": "a2206c2caeefe17e3433674b3ff0850099542cd58e70b05f53f9c6520a044616",
+      "proof_body_redacted": false,
+      "tactic_count": 3,
+      "proof_length": 3,
+      "proof_profile": {
+        "primary_proof_class": "witness_construction",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": true,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "fin_cases"
+    ],
+    "used_theorem_deps": [
+      "fin_cases"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "fin_cases"
+    ],
+    "transitive_dependency_count": 1,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "fin_cases"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "fin_cases",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "fin_cases",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 6,
     "tactic_count": 3
@@ -96,8 +150,36 @@
   },
   "notes": "ANTI-OVERCLAIM: this is a RESTATEMENT of the upstream Equation255_not_implies_Equation677 result avoiding the Magma typeclass layer, not a verbatim transport of the upstream proof term -- the upstream proof uses `class Magma (alpha) where op : alpha -> alpha -> alpha` plus `abbrev`s for Equation255/Equation677, which SubmitModule cannot transport (LeanModuleItem has no inductive/class/structure item kind; see packets/frontier/formal_conjectures/BLOCKERS.md). This packet's statement was checked by hand to be definitionally identical to the upstream one after unfolding Magma.op/Equation255/Equation677 (the class is purely notational sugar; the upstream proof never pattern-matches Magma as a class, only ever uses Magma.op as a plain function) -- this is a genuine, previously-solved literature result (Equational Theories project, Tao et al.), NOT an open problem, and this packet does not resolve or touch the file's actual open conjectures (Finite.Equation677_not_implies_Equation255, Finite.Equation677_implies_Equation255, still sorry upstream). Found via a concurrent agent's triage recorded in packets/frontier/formal_conjectures/SOLVED_QUEUE.md (round 3, commit 7456692) as a ready-to-attempt candidate; this packet executes that sketch through the tracked proof-search loop end to end (problem_create -> episode_create -> attempt_claim -> episode_step, kernel_verified on the first Solve attempt). training.eligibility: quarantined out of caution (consistent with this session's default-quarantine policy for adapted/restated frontier packets pending real external review), even though open_problem_related is false for this specific theorem -- first packet authored in the formal_conjectures lane, so no established public_train precedent exists yet for this lane's solved-upstream category.",
   "hashes": {
-    "packet_sha256": "ee14110b4df9a3f9cfc08f153451a4b056e9f46cadd4bbc0e3e9399734491d2b",
+    "packet_sha256": "0f08cc9c74abe4289f1031a7f7441f00c24f4a2be4f10f96d9b9ccb13be13529",
     "formal_statement_sha256": "aa21d04c6ddebc1616ce847dc491f24c46833696fce3bb8af520b031af802d1c",
     "proof_body_sha256": "a2206c2caeefe17e3433674b3ff0850099542cd58e70b05f53f9c6520a044616"
-  }
+  },
+  "idea_attributions": [
+    {
+      "attribution_id": "frontier.formal_conjectures.equational_theories_677_255_class_free.v1.attribution.1",
+      "formal_statement_sha256": "aa21d04c6ddebc1616ce847dc491f24c46833696fce3bb8af520b031af802d1c",
+      "proof_variant_id": null,
+      "literature_source_id": "literature_source.formalconjectures_other_equationaltheori.v1",
+      "external_claim_id": null,
+      "source_sha256_pin": "80b7a428232f30fb0fc033154692d1ed5a2e1d95ceaa9a70b5dd1f845f7cdf2c",
+      "attribution_status": "directly_used",
+      "visibility": "model_visible",
+      "dependency_refs": [],
+      "reviewer": "The MathCorpus Authors",
+      "notes": "Formalized from source_provenance.source_refs[0] (pre-existing, not newly researched)."
+    },
+    {
+      "attribution_id": "frontier.formal_conjectures.equational_theories_677_255_class_free.v1.attribution.2",
+      "formal_statement_sha256": "aa21d04c6ddebc1616ce847dc491f24c46833696fce3bb8af520b031af802d1c",
+      "proof_variant_id": null,
+      "literature_source_id": "literature_source.https_teorth_github_io_equational_theori.v1",
+      "external_claim_id": null,
+      "source_sha256_pin": "42154338dc73ef756c2220ea74530ae50a4600270898659e2dad95447418ba1f",
+      "attribution_status": "background_only",
+      "visibility": "model_visible",
+      "dependency_refs": [],
+      "reviewer": "The MathCorpus Authors",
+      "notes": "Formalized from source_provenance.source_refs[1] (pre-existing, not newly researched)."
+    }
+  ]
 }

@@ -69,6 +69,41 @@
       "finset_card"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "frontier.formal_conjectures.union_closed_univ_card_two.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "55bc833b6cfc09a473a4144552efe4e76fd962b47a790c9495098dda93b5dc2f",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Frontier/FormalConjectures/UnionClosedUnivCardTwo.lean",
+      "proof_body_sha256": "1c9acbc41dd2d0e1622b98847f7c733d288285de9db81a732082cb3d1f8fa619",
+      "proof_body_redacted": false,
+      "tactic_count": 2,
+      "proof_length": 2,
+      "proof_profile": {
+        "primary_proof_class": "normalization",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [],
+    "used_theorem_deps": [],
+    "obligation_deps": [],
+    "verified_module_item_deps": [],
+    "transitive_dependency_count": 0,
+    "transitive_dependency_depth": 0,
+    "retrieval_candidates": [],
+    "retrieved_unused_candidates": [],
+    "claim_sources": []
+  },
   "metrics": {
     "loc": 4,
     "tactic_count": 2
@@ -95,8 +130,36 @@
   },
   "notes": "ANTI-OVERCLAIM: this packet proves ONLY the |universe|=2 special case of the union-closed sets conjecture (Frankl's conjecture); the general conjecture (arbitrary finite ambient type) remains open, untouched by this packet -- the upstream sibling file's general statement (`union_closed`) is `sorry`/`research open`. This is a RESTATEMENT, not a byte-for-byte transport: the upstream `IsUnionClosed A` is a transparent `abbrev` for `∀ᵉ (X ∈ A) (Y ∈ A), X ∪ Y ∈ A`, inlined directly into this packet's root statement since abbrevs are not separate declarations `SubmitModule` needs to transport; the upstream `#A` / set-builder-filter notation (`#{x ∈ A | i ∈ x}`) is spelled out as plain `.card`/`.filter` since both are `scoped` behind `open Finset` in the sibling file and this environment's `problem_create` registers statements without that open context. Companion packet in the same file/cluster: `frontier.formal_conjectures.union_closed_singleton_mem.v1` (a different special case, authored in an earlier cycle by a concurrent agent, episode `ff2e3924-a37c-44aa-9c0d-b60e3bf4e81f`); a third proof-complete special case in the same file (`union_closed.variants.sharpness`, ~45 lines, showing the 1/2 constant cannot be improved) remains flagged as a candidate for a future cycle -- see `SOLVED_QUEUE.md`. Transported essentially verbatim (`intro A hA hUC; decide +revert +kernel`), kernel_verified on the FIRST attempt (episode 62b2eaf2-50d7-47ca-96ce-4a180fcf2cb4). training.eligibility: quarantined per this session's conservative default; open_problem_related: true since the general conjecture remains open.",
   "hashes": {
-    "packet_sha256": "334d4abe5b2e4b9666cb3a270cf437d1b562d38c3fdd1bb1c8dffedea94cc6ec",
+    "packet_sha256": "cbd525e6874a774e52a9ef0f67e946135dae7145836301deeb86708f80888991",
     "formal_statement_sha256": "55bc833b6cfc09a473a4144552efe4e76fd962b47a790c9495098dda93b5dc2f",
     "proof_body_sha256": "1c9acbc41dd2d0e1622b98847f7c733d288285de9db81a732082cb3d1f8fa619"
-  }
+  },
+  "idea_attributions": [
+    {
+      "attribution_id": "frontier.formal_conjectures.union_closed_univ_card_two.v1.attribution.1",
+      "formal_statement_sha256": "55bc833b6cfc09a473a4144552efe4e76fd962b47a790c9495098dda93b5dc2f",
+      "proof_variant_id": null,
+      "literature_source_id": "literature_source.formalconjectures_wikipedia_unionclosed__2.v1",
+      "external_claim_id": null,
+      "source_sha256_pin": "568565f301fbcabaae6558ee38212d29b8a57461ff44ce48916f2e0188d76dfb",
+      "attribution_status": "directly_used",
+      "visibility": "model_visible",
+      "dependency_refs": [],
+      "reviewer": "The MathCorpus Authors",
+      "notes": "Formalized from source_provenance.source_refs[0] (pre-existing, not newly researched)."
+    },
+    {
+      "attribution_id": "frontier.formal_conjectures.union_closed_univ_card_two.v1.attribution.2",
+      "formal_statement_sha256": "55bc833b6cfc09a473a4144552efe4e76fd962b47a790c9495098dda93b5dc2f",
+      "proof_variant_id": null,
+      "literature_source_id": "literature_source.wikipedia_union_closed_sets.v1",
+      "external_claim_id": null,
+      "source_sha256_pin": "c89da31b27e3b9c3fc60a7f464a94bd0d8a8d6ee2f5624e0bda7a70b13a1e17d",
+      "attribution_status": "background_only",
+      "visibility": "model_visible",
+      "dependency_refs": [],
+      "reviewer": "The MathCorpus Authors",
+      "notes": "Formalized from source_provenance.source_refs[1] (pre-existing, not newly researched)."
+    }
+  ]
 }

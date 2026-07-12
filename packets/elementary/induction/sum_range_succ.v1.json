@@ -66,6 +66,60 @@
       "induction"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.induction.sum_range_succ.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "7f2ed8ac857f6d133b47784eea1600e1ed45cc35ac5e258fc1a54d2efd1b39f9",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Induction/SumRangeSucc.lean",
+      "proof_body_sha256": "c2218c2997a9621ef5c025e3038fb4089a84b4fcc6493690e205d995645bfac9",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "theorem_lookup",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "Finset.sum_range_succ"
+    ],
+    "used_theorem_deps": [
+      "Finset.sum_range_succ"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "Finset.sum_range_succ"
+    ],
+    "transitive_dependency_count": 1,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "Finset.sum_range_succ"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "Finset.sum_range_succ",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.sum_range_succ",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 3,
     "tactic_count": 1
@@ -91,7 +145,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 1dc9ab33).",
   "hashes": {
-    "packet_sha256": "78b9e7c1e3e6651a1092759526eea5e0e0f3e28d924c447268c20ab9ead5b967",
+    "packet_sha256": "b39776b6a9aedf82fdb2035734ac3d90f2bb1e3fc19ae458608c90c8f7f313f7",
     "formal_statement_sha256": "7f2ed8ac857f6d133b47784eea1600e1ed45cc35ac5e258fc1a54d2efd1b39f9",
     "proof_body_sha256": "c2218c2997a9621ef5c025e3038fb4089a84b4fcc6493690e205d995645bfac9"
   }

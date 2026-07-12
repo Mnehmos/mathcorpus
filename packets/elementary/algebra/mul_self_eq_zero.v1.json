@@ -65,6 +65,60 @@
       "zero_divisors"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.algebra.mul_self_eq_zero.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "dd23779dc4af3751793464efe8da07b1f7645edb362338adb585695e0b3f0702",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Algebra/MulSelfEqZero.lean",
+      "proof_body_sha256": "9862e9a2882f8dba59a406a88379cbfab84e8c0e1c3ed48a27db31b934ae8bb9",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "theorem_lookup",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "_root_.mul_self_eq_zero"
+    ],
+    "used_theorem_deps": [
+      "_root_.mul_self_eq_zero"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "_root_.mul_self_eq_zero"
+    ],
+    "transitive_dependency_count": 1,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "_root_.mul_self_eq_zero"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "_root_.mul_self_eq_zero",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "_root_.mul_self_eq_zero",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 3,
     "tactic_count": 1
@@ -91,7 +145,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 152b51e8).",
   "hashes": {
-    "packet_sha256": "99d9599ec3490bd9eb5f7dc836b08caf9061725b92fa6b07f58edf9546b72f60",
+    "packet_sha256": "4b3ddf49b79f567ff948e76ff882a4a72c08af75d143bf33b2a278f88976b7fd",
     "formal_statement_sha256": "dd23779dc4af3751793464efe8da07b1f7645edb362338adb585695e0b3f0702",
     "proof_body_sha256": "9862e9a2882f8dba59a406a88379cbfab84e8c0e1c3ed48a27db31b934ae8bb9"
   }

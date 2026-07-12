@@ -65,6 +65,41 @@
       "parity"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.number_theory.emod_two.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "70ea00568b680a8cf7512dcab4d29c35e90866bbbc874b8b91f7bdfb4dad7c02",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/NumberTheory/EmodTwo.lean",
+      "proof_body_sha256": "53358697af0b1f0309c4f2a4039a7547f4a0fa56c4b0c8e56e193330f58566fe",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "normalization",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [],
+    "used_theorem_deps": [],
+    "obligation_deps": [],
+    "verified_module_item_deps": [],
+    "transitive_dependency_count": 0,
+    "transitive_dependency_depth": 0,
+    "retrieval_candidates": [],
+    "retrieved_unused_candidates": [],
+    "claim_sources": []
+  },
   "metrics": {
     "loc": 3,
     "tactic_count": 1
@@ -90,7 +125,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 7030ea27).",
   "hashes": {
-    "packet_sha256": "4069f601a841c3aa1a623c1cd90a6c9c8437937661c501d226b6b9226e94b23d",
+    "packet_sha256": "6339403bfc6bdfffbc55014c0cce4fbb2a58b0579b4fda46c129c2bc4a8126ba",
     "formal_statement_sha256": "70ea00568b680a8cf7512dcab4d29c35e90866bbbc874b8b91f7bdfb4dad7c02",
     "proof_body_sha256": "53358697af0b1f0309c4f2a4039a7547f4a0fa56c4b0c8e56e193330f58566fe"
   }

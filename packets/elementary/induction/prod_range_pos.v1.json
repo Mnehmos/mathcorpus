@@ -67,6 +67,130 @@
       "positivity"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.induction.prod_range_pos.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "7e2996bbb4d82e7ba078a741cd2e74ca40a3536b1f744f947de06b23b47dafab",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Induction/ProdRangePos.lean",
+      "proof_body_sha256": "a7a0560048d0c3be610c6a6a6eabe5c5c39ab953eae9beaf0efe76ee2e89632b",
+      "proof_body_redacted": false,
+      "tactic_count": 6,
+      "proof_length": 6,
+      "proof_profile": {
+        "primary_proof_class": "induction",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": true,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "Finset.mem_range.mp",
+      "Finset.mem_range.mpr",
+      "Finset.prod_range_succ",
+      "Finset.self_mem_range_succ",
+      "Nat.lt_succ_of_lt",
+      "Nat.mul_pos"
+    ],
+    "used_theorem_deps": [
+      "Finset.mem_range.mp",
+      "Finset.mem_range.mpr",
+      "Finset.prod_range_succ",
+      "Finset.self_mem_range_succ",
+      "Nat.lt_succ_of_lt",
+      "Nat.mul_pos"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "Finset.mem_range.mp",
+      "Finset.mem_range.mpr",
+      "Finset.prod_range_succ",
+      "Finset.self_mem_range_succ",
+      "Nat.lt_succ_of_lt",
+      "Nat.mul_pos"
+    ],
+    "transitive_dependency_count": 6,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "Finset.mem_range.mp",
+      "Finset.mem_range.mpr",
+      "Finset.prod_range_succ",
+      "Finset.self_mem_range_succ",
+      "Nat.lt_succ_of_lt",
+      "Nat.mul_pos"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "Finset.mem_range.mp",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.mem_range.mp",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.mem_range.mpr",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.mem_range.mpr",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.prod_range_succ",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.prod_range_succ",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.self_mem_range_succ",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.self_mem_range_succ",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.lt_succ_of_lt",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.lt_succ_of_lt",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.mul_pos",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.mul_pos",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 8,
     "tactic_count": 6
@@ -93,7 +217,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode bdbcc4ba), kernel_verified on the first Solve attempt. Deliberately bullet-free (uses only the | zero => ... | succ k ih => ... case-split form, no nested `·` bullets) to avoid the flat_tactic_sequence transport hazard hit repeatedly elsewhere in this corpus. General reusable lemma complementing prod_range_succ/prod_range_monotone.",
   "hashes": {
-    "packet_sha256": "40e2a0e22834e8ec96848ed37eaee49e78b9a5860a9937a6df8d806e4b6ea0ba",
+    "packet_sha256": "91315a5682405fad65d043d44ae3deeb94a4970b18c6a0def5d6384c07c95b8b",
     "formal_statement_sha256": "7e2996bbb4d82e7ba078a741cd2e74ca40a3536b1f744f947de06b23b47dafab",
     "proof_body_sha256": "a7a0560048d0c3be610c6a6a6eabe5c5c39ab953eae9beaf0efe76ee2e89632b"
   }

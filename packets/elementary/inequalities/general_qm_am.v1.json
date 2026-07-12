@@ -64,6 +64,60 @@
       "cauchy_schwarz"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.inequalities.general_qm_am.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "dac3802a6e2817a2979b97d22e87021d81bbe3579b1fbe695c5361763bf1e9bb",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Inequalities/GeneralQmAm.lean",
+      "proof_body_sha256": "3c1949fcc1dbb260ffcb96b612adcdb71e6bfc0287f3206f38cd78e6a4294509",
+      "proof_body_redacted": false,
+      "tactic_count": 2,
+      "proof_length": 2,
+      "proof_profile": {
+        "primary_proof_class": "multi_lemma_composition",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "sq_sum_le_card_mul_sum_sq"
+    ],
+    "used_theorem_deps": [
+      "sq_sum_le_card_mul_sum_sq"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "sq_sum_le_card_mul_sum_sq"
+    ],
+    "transitive_dependency_count": 1,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "sq_sum_le_card_mul_sum_sq"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "sq_sum_le_card_mul_sum_sq",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "sq_sum_le_card_mul_sum_sq",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 3,
     "tactic_count": 2
@@ -90,7 +144,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 0916c5cb), kernel_verified on the second attempt. Extends `qm_am_bound`/`three_var_qm_am_bound`'s fixed small arities to the general n-term/Finset case, completing the same 'general_X' ladder-extension pattern as `general_amgm` and `general_cauchy_schwarz` this session. First attempt tried `Finset.sq_sum_le_card_mul_sum_sq` (namespaced, matching the `mathlib_search_declarations` file path `Mathlib/Algebra/Order/Chebyshev.lean`), which failed with 'unknown constant' -- the lemma is actually NOT under the `Finset` namespace despite operating on `Finset.sum`; the bare name `sq_sum_le_card_mul_sum_sq` (no prefix) resolved correctly on the second attempt. Worth remembering: a Finset-indexed lemma is not always declared inside the `Finset` namespace.",
   "hashes": {
-    "packet_sha256": "c0d418097ea5b8d63ac6397eca6a114590c295319bb3c5ae8793c78da234aeb6",
+    "packet_sha256": "9a14b2783d75ea8482719543b2c4435252487aaffbd610b85312f39e3535ff6d",
     "formal_statement_sha256": "dac3802a6e2817a2979b97d22e87021d81bbe3579b1fbe695c5361763bf1e9bb",
     "proof_body_sha256": "3c1949fcc1dbb260ffcb96b612adcdb71e6bfc0287f3206f38cd78e6a4294509"
   }

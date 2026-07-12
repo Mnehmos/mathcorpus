@@ -66,6 +66,41 @@
       "binomial"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.algebra.binomial_cube.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "5f36dad93d719115a9e57c95258d9bc6ed72a92922bf52421297d6d640c2bf5e",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Algebra/BinomialCube.lean",
+      "proof_body_sha256": "f4eeb4de2ecd301fbe53ab77975e3bc8f272b5151f3d9356f5faeca8b5460e51",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "normalization",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [],
+    "used_theorem_deps": [],
+    "obligation_deps": [],
+    "verified_module_item_deps": [],
+    "transitive_dependency_count": 0,
+    "transitive_dependency_depth": 0,
+    "retrieval_candidates": [],
+    "retrieved_unused_candidates": [],
+    "claim_sources": []
+  },
   "metrics": {
     "loc": 3,
     "tactic_count": 1
@@ -94,7 +129,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode fae80a61).",
   "hashes": {
-    "packet_sha256": "b10eda3d483ba5551e7fb194bfdd3b15a107be01268f75068bb7a5b313b5cf5e",
+    "packet_sha256": "898bda7aa0257690033155270a0a0aa58668b649484fd4bad5d482f1e90685ef",
     "formal_statement_sha256": "5f36dad93d719115a9e57c95258d9bc6ed72a92922bf52421297d6d640c2bf5e",
     "proof_body_sha256": "f4eeb4de2ecd301fbe53ab77975e3bc8f272b5151f3d9356f5faeca8b5460e51"
   }

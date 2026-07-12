@@ -65,6 +65,60 @@
       "irrationality_proof_pattern"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.number_theory.even_sq.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "b175d96577e0e933cff3b2deb0ba640ec1df1f80036a611b8537e5929f3fe08c",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/NumberTheory/EvenSq.lean",
+      "proof_body_sha256": "85ff94eec22b708612b3375a3ecc3c5885aa67e0a503b936ae0bac2a1ee9c47d",
+      "proof_body_redacted": false,
+      "tactic_count": 2,
+      "proof_length": 2,
+      "proof_profile": {
+        "primary_proof_class": "normalization",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "Nat.even_pow'"
+    ],
+    "used_theorem_deps": [
+      "Nat.even_pow'"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "Nat.even_pow'"
+    ],
+    "transitive_dependency_count": 1,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "Nat.even_pow'"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "Nat.even_pow'",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.even_pow'",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 2,
     "tactic_count": 2
@@ -91,7 +145,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 5bbacd66), kernel_verified on the first Solve attempt. Closes the even_sq item in packets/elementary/number_theory/QUEUE.md's Next targets, the classic parity-of-squares fact used in the standard irrationality-of-sqrt-2 proof pattern.",
   "hashes": {
-    "packet_sha256": "0a48d371e1ab82bc86848973bcd3eda9fcb78311e5bfb1a4d263e1c963aaafbc",
+    "packet_sha256": "783d87f2a8f3534e1a988fb618efb634826adf29468e9232986d122eb917c91d",
     "formal_statement_sha256": "b175d96577e0e933cff3b2deb0ba640ec1df1f80036a611b8537e5929f3fe08c",
     "proof_body_sha256": "85ff94eec22b708612b3375a3ecc3c5885aa67e0a503b936ae0bac2a1ee9c47d"
   }

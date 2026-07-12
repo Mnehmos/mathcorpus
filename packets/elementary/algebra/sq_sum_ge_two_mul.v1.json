@@ -66,6 +66,60 @@
       "real_number_order"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.algebra.sq_sum_ge_two_mul.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "e5b4426be958e0568fe453f696634c611c11159738afc3855249c3e1f9b2c857",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Algebra/SqSumGeTwoMul.lean",
+      "proof_body_sha256": "46e27001fadf7979a92f41edb067da850626e3fc43a3297b14b9ec8b3f196fcd",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "arithmetic_automation",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": true,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "sq_nonneg"
+    ],
+    "used_theorem_deps": [
+      "sq_nonneg"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "sq_nonneg"
+    ],
+    "transitive_dependency_count": 1,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "sq_nonneg"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "sq_nonneg",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "sq_nonneg",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 2,
     "tactic_count": 1
@@ -91,7 +145,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 42da9f6e, problem_version 5512873f-9dbe-46b3-bd0f-f082e214e7d4). The winning attempt was the second step in the episode; the first step (bare nlinarith, no hints) kernel-failed and is preserved as negative.algebra.sq_sum_bare_nlinarith.missing_sos_hint.v1.",
   "hashes": {
-    "packet_sha256": "4f867a72c02849fd3f1e23ab052b38e557e6653c00ba291bc24868d5d111c39c",
+    "packet_sha256": "94578b0d260e82ec56a3e7a2e0785a090511eeaaeac21b2bbfd9403b3fc1408c",
     "formal_statement_sha256": "e5b4426be958e0568fe453f696634c611c11159738afc3855249c3e1f9b2c857",
     "proof_body_sha256": "46e27001fadf7979a92f41edb067da850626e3fc43a3297b14b9ec8b3f196fcd"
   }

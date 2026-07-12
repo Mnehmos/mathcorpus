@@ -69,6 +69,41 @@
       "explicit_witness"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "frontier.formal_conjectures.euler_sum_of_powers_false_for_k4.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "7101fe459fc8764ed2379b370bbc84d0b62d784fc702e7d3cbd4540f2eaf83e8",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Frontier/FormalConjectures/EulerSumOfPowersFalseForK4.lean",
+      "proof_body_sha256": "4adf803f7144e446140b324a9e7f98342511a81b793581646292649302227ffc",
+      "proof_body_redacted": false,
+      "tactic_count": 5,
+      "proof_length": 5,
+      "proof_profile": {
+        "primary_proof_class": "normalization",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [],
+    "used_theorem_deps": [],
+    "obligation_deps": [],
+    "verified_module_item_deps": [],
+    "transitive_dependency_count": 0,
+    "transitive_dependency_depth": 0,
+    "retrieval_candidates": [],
+    "retrieved_unused_candidates": [],
+    "claim_sources": []
+  },
   "metrics": {
     "loc": 6,
     "tactic_count": 5
@@ -95,8 +130,62 @@
   },
   "notes": "ANTI-OVERCLAIM: this packet disproves ONLY the k=4 instance of Euler's sum of powers conjecture. The general conjecture remains open for k >= 6 (not addressed here or anywhere in this corpus); the upstream sibling-repo file's k>=6 statement (`eulers_sum_of_powers_conjecture`) is `sorry`/`research open`. Round-8 (`Wikipedia/`) triage found this file (`EulerSumOfPowers.lean`, tags=2, sorries=1) via the bulk grep-count shortcut established in round 7: BOTH `research solved`-tagged theorems in the file (`false_for_k4`, `false_for_k5`) are genuinely `sorry`-free, self-contained, verbatim-transportable proofs -- no custom types, no infrastructure, exactly the Erdos-lane win pattern. Transported essentially verbatim from the upstream proof term, kernel_verified on the FIRST attempt (episode 67410574-3463-4255-b72a-b4f1b430e410). `statement_fidelity: canonical_statement_hash_match` since `problem_create`'s returned `root_statement_hash` was not independently cross-checked against an upstream-cited hash (none was cited in the source comment), but the statement is a character-for-character transcription of the upstream Lean source with only whitespace normalization. Companion packet: `frontier.formal_conjectures.euler_sum_of_powers_false_for_k5.v1` (same file, k=5 case, authored together this cycle). `open_problem_related: true` since both are specific-k instances of a conjecture family that remains open for k>=6 in the literature and in this corpus, following the same convention as `degiorgi_conjecture_dim_one.v1`.",
   "hashes": {
-    "packet_sha256": "c38f9d8eca972043cea58957146befc04bd6fb79ab48a1ab2889abf57fa70100",
+    "packet_sha256": "720d5f286b4c6f9c7ca1fd3ec0264430ead5fcccadfc85514656a4a8d9c9d797",
     "formal_statement_sha256": "7101fe459fc8764ed2379b370bbc84d0b62d784fc702e7d3cbd4540f2eaf83e8",
     "proof_body_sha256": "4adf803f7144e446140b324a9e7f98342511a81b793581646292649302227ffc"
-  }
+  },
+  "idea_attributions": [
+    {
+      "attribution_id": "frontier.formal_conjectures.euler_sum_of_powers_false_for_k4.v1.attribution.1",
+      "formal_statement_sha256": "7101fe459fc8764ed2379b370bbc84d0b62d784fc702e7d3cbd4540f2eaf83e8",
+      "proof_variant_id": null,
+      "literature_source_id": "literature_source.formalconjectures_wikipedia_eulersumofpo.v1",
+      "external_claim_id": null,
+      "source_sha256_pin": "f2bd04a6af61d0a76eb6768f1795c840fe193812345b32cd9241b7598367fb7d",
+      "attribution_status": "directly_used",
+      "visibility": "model_visible",
+      "dependency_refs": [],
+      "reviewer": "The MathCorpus Authors",
+      "notes": "Formalized from source_provenance.source_refs[0] (pre-existing, not newly researched)."
+    },
+    {
+      "attribution_id": "frontier.formal_conjectures.euler_sum_of_powers_false_for_k4.v1.attribution.2",
+      "formal_statement_sha256": "7101fe459fc8764ed2379b370bbc84d0b62d784fc702e7d3cbd4540f2eaf83e8",
+      "proof_variant_id": null,
+      "literature_source_id": "literature_source.https_en_wikipedia_org_wiki_euler_s_sum_.v1",
+      "external_claim_id": null,
+      "source_sha256_pin": "aadca3334b23504d5497a531c4ece9bf202003b95b9d356c66286912fd809a1b",
+      "attribution_status": "background_only",
+      "visibility": "model_visible",
+      "dependency_refs": [],
+      "reviewer": "The MathCorpus Authors",
+      "notes": "Formalized from source_provenance.source_refs[1] (pre-existing, not newly researched)."
+    },
+    {
+      "attribution_id": "frontier.formal_conjectures.euler_sum_of_powers_false_for_k4.v1.attribution.3",
+      "formal_statement_sha256": "7101fe459fc8764ed2379b370bbc84d0b62d784fc702e7d3cbd4540f2eaf83e8",
+      "proof_variant_id": null,
+      "literature_source_id": "literature_source.counterexample_search_for_euler_s_sum_of.v1",
+      "external_claim_id": null,
+      "source_sha256_pin": "f50101f201040b5c4ed4b87e6b8d30d4d914c0aa5958504ac48fb723755c9499",
+      "attribution_status": "background_only",
+      "visibility": "model_visible",
+      "dependency_refs": [],
+      "reviewer": "The MathCorpus Authors",
+      "notes": "Formalized from source_provenance.source_refs[2] (pre-existing, not newly researched)."
+    },
+    {
+      "attribution_id": "frontier.formal_conjectures.euler_sum_of_powers_false_for_k4.v1.attribution.4",
+      "formal_statement_sha256": "7101fe459fc8764ed2379b370bbc84d0b62d784fc702e7d3cbd4540f2eaf83e8",
+      "proof_variant_id": null,
+      "literature_source_id": "literature_source.existence_proof_for_a_counterexample_to_.v1",
+      "external_claim_id": null,
+      "source_sha256_pin": "54927feb5a810d10917fe2b8e6c98dc8cda3f0516cb51ad5b9535b366b642586",
+      "attribution_status": "background_only",
+      "visibility": "model_visible",
+      "dependency_refs": [],
+      "reviewer": "The MathCorpus Authors",
+      "notes": "Formalized from source_provenance.source_refs[3] (pre-existing, not newly researched)."
+    }
+  ]
 }

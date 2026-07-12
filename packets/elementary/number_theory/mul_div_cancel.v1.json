@@ -65,6 +65,60 @@
       "division"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.number_theory.mul_div_cancel.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "0d60e32f913aee1f8703c7ed984c5e0610ecee4ce8b043aca4c44f5bae421cb8",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/NumberTheory/MulDivCancel.lean",
+      "proof_body_sha256": "476d8f874d1ddf6456a376cb4273ebe91d92ba1f47116249de7d4f01a01046b7",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "theorem_lookup",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "Nat.mul_div_cancel'"
+    ],
+    "used_theorem_deps": [
+      "Nat.mul_div_cancel'"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "Nat.mul_div_cancel'"
+    ],
+    "transitive_dependency_count": 1,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "Nat.mul_div_cancel'"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "Nat.mul_div_cancel'",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.mul_div_cancel'",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 3,
     "tactic_count": 1
@@ -90,7 +144,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 66c0439a).",
   "hashes": {
-    "packet_sha256": "5f07f34404e5ea91a0830ffde18a75ed2d0f61de5f729bd555fd0dcbcd77f656",
+    "packet_sha256": "f6974c1cadb1939cf0b6930a56b7b2d33d052f1acfb3ab524aa1df6dd3ac06ac",
     "formal_statement_sha256": "0d60e32f913aee1f8703c7ed984c5e0610ecee4ce8b043aca4c44f5bae421cb8",
     "proof_body_sha256": "476d8f874d1ddf6456a376cb4273ebe91d92ba1f47116249de7d4f01a01046b7"
   }

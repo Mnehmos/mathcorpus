@@ -65,6 +65,60 @@
       "linear_function"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.functions.linear_injective_concrete_instance.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "c31dfbddfe16ba4b7ba47a3c72c8fe1b8b6253f8c1aac122b0bdb92f0227d57b",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Functions/LinearInjectiveConcreteInstance.lean",
+      "proof_body_sha256": "832ce566bbf667fb9fe1d7133e861ec1cca603bf8945a91b302dc33098ef155a",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "normalization",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "Function.Injective"
+    ],
+    "used_theorem_deps": [
+      "Function.Injective"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "Function.Injective"
+    ],
+    "transitive_dependency_count": 1,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "Function.Injective"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "Function.Injective",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Function.Injective",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 2,
     "tactic_count": 1
@@ -90,7 +144,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 9c3f7163, problem_version 111758fa-4f09-4b9a-8c75-981bd370d773). Originally attempted as the negative example queued in packets/negative/functions/QUEUE.md ('simp-unfold on Function.Injective leaves an open goal'): the intended natural-but-wrong attempt (`simp [Function.Injective]` with no follow-up algebra) actually kernel-verified on the first step -- simp's default simp set closes the resulting linear cancellation directly. Per this domain's own queue policy, a hypothesis that turns out provable is not a valid negative example -- authored as a positive packet instead. domain: algebra is intentional, matching every other packet filed under the `functions` folder, since `functions` is not a valid domain enum value in schema/packet.schema.json.",
   "hashes": {
-    "packet_sha256": "132d2f7a55d776e7f65428d75e919362620cf030812bc085035bd96e66318cbf",
+    "packet_sha256": "af90c4d712690d695182fa02d4a20a9209f2734f1c3eeae141c1fbdba54a16a0",
     "formal_statement_sha256": "c31dfbddfe16ba4b7ba47a3c72c8fe1b8b6253f8c1aac122b0bdb92f0227d57b",
     "proof_body_sha256": "832ce566bbf667fb9fe1d7133e861ec1cca603bf8945a91b302dc33098ef155a"
   }

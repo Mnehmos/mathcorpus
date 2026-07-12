@@ -72,6 +72,158 @@
       "finite_sum"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "frontier.erdos.erdos_349_int_coeff_ge_two_not_is_good_pair.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "7a142d73d01a63ada119fd3beaf107b3d520d482b1547f3dfcabe8a7486643d7",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Frontier/Erdos/Erdos349IntCoeffGeTwoNotIsGoodPair.lean",
+      "proof_body_sha256": "4e08c97041c1fb8ddad2de18b61c7df06149cf0f5f9ae00f03bbff3c9d6dc024",
+      "proof_body_redacted": false,
+      "tactic_count": 17,
+      "proof_length": 17,
+      "proof_profile": {
+        "primary_proof_class": "witness_construction",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": true,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "Filter.eventually_atTop",
+      "Finset.dvd_sum",
+      "Int.floor_intCast",
+      "Int.le_natAbs",
+      "Int.le_of_dvd",
+      "Int.natCast_nonneg",
+      "N.natAbs",
+      "one_pos"
+    ],
+    "used_theorem_deps": [
+      "Filter.eventually_atTop",
+      "Finset.dvd_sum",
+      "Int.floor_intCast",
+      "Int.le_natAbs",
+      "Int.le_of_dvd",
+      "Int.natCast_nonneg",
+      "N.natAbs",
+      "one_pos"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "Filter.eventually_atTop",
+      "Finset.dvd_sum",
+      "Int.floor_intCast",
+      "Int.le_natAbs",
+      "Int.le_of_dvd",
+      "Int.natCast_nonneg",
+      "N.natAbs",
+      "one_pos"
+    ],
+    "transitive_dependency_count": 8,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "Filter.eventually_atTop",
+      "Finset.dvd_sum",
+      "Int.floor_intCast",
+      "Int.le_natAbs",
+      "Int.le_of_dvd",
+      "Int.natCast_nonneg",
+      "N.natAbs",
+      "one_pos"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "Filter.eventually_atTop",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Filter.eventually_atTop",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.dvd_sum",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.dvd_sum",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Int.floor_intCast",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Int.floor_intCast",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Int.le_natAbs",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Int.le_natAbs",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Int.le_of_dvd",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Int.le_of_dvd",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Int.natCast_nonneg",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Int.natCast_nonneg",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "N.natAbs",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "N.natAbs",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "one_pos",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "one_pos",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 22,
     "tactic_count": 17
@@ -98,8 +250,36 @@
   },
   "notes": "ANTI-OVERCLAIM: this packet proves only an infrastructure sublemma toward the integer_isGoodPair_iff characterization for Erdos #349's integer case -- it does not resolve #349's general open question. Proof authority: Lean kernel via the tracked proof-search loop (episode 13b04fb7, problem_version 6209ac23-8db7-4bf3-b6c8-e1e1e061e694), a single Solve step (proof_format raw_lean_block for consistency), kernel_verified on the first attempt. Note: unlike the three earlier #349 sublemmas this cycle, this packet's root_statement_hash (ce26dcea556e26783c48ae7f413d3180adf2c1b5408247078410d9b8e695de61) did NOT match the hash cited in the sibling repo's own source comment (444d78b6081aa380d9260f96fb8501f05347817736672fdc2f0a9a08f769747f) despite a careful character-for-character transcription -- statement_fidelity is therefore recorded as adapted_with_review rather than canonical_statement_hash_match; the mismatch is most likely a subtle whitespace/encoding difference in how the two environments render the statement string, not a mathematical discrepancy (the proof, transcribed identically from the same source, kernel_verified cleanly against this environment's own registered statement). Independently re-verified in THIS environment's own pinned toolchain rather than treated as evidence merely because the sibling repo (F:\\Github\\mnehmos.llm-driven-proof-search.environment\\ErdosProblems\\erdos-349\\proof\\Erdos349_int_coeff_ge_two_not_isGoodPair.lean) already reports it kernel_verified there -- per this repo's evidence policy. training.eligibility: quarantined per the default-quarantine policy for open_problem_related packets pending real external review. Eighth packet in the frontier/erdos lane (this agent's contribution -- a concurrent agent has also been landing #1052 packets this cycle, see git log); 5/7 of the integer_isGoodPair_iff cluster now packetized. Remaining: the culminating Erdos349_integer_isGoodPair_iff.lean (279 lines, the final assembly).",
   "hashes": {
-    "packet_sha256": "3b29738e0abb6c3fe876b5d85ceabbdeb027da11b1ef93c1d67260c91c8ed65a",
+    "packet_sha256": "7c45f6b66b183328d4825e59392b6544d4c8a6bcc559fe4efdff15cb0a7e8d9d",
     "formal_statement_sha256": "7a142d73d01a63ada119fd3beaf107b3d520d482b1547f3dfcabe8a7486643d7",
     "proof_body_sha256": "4e08c97041c1fb8ddad2de18b61c7df06149cf0f5f9ae00f03bbff3c9d6dc024"
-  }
+  },
+  "idea_attributions": [
+    {
+      "attribution_id": "frontier.erdos.erdos_349_int_coeff_ge_two_not_is_good_pair.v1.attribution.1",
+      "formal_statement_sha256": "7a142d73d01a63ada119fd3beaf107b3d520d482b1547f3dfcabe8a7486643d7",
+      "proof_variant_id": null,
+      "literature_source_id": "literature_source.erdosproblems_erdos_349_proof_erdos349_i.v1",
+      "external_claim_id": null,
+      "source_sha256_pin": "db1f2ad73e24f9a916417510bf9f5b07be49d22ff307ecf8fd13a0cc51817e40",
+      "attribution_status": "directly_used",
+      "visibility": "model_visible",
+      "dependency_refs": [],
+      "reviewer": "The MathCorpus Authors",
+      "notes": "Formalized from source_provenance.source_refs[0] (pre-existing, not newly researched)."
+    },
+    {
+      "attribution_id": "frontier.erdos.erdos_349_int_coeff_ge_two_not_is_good_pair.v1.attribution.2",
+      "formal_statement_sha256": "7a142d73d01a63ada119fd3beaf107b3d520d482b1547f3dfcabe8a7486643d7",
+      "proof_variant_id": null,
+      "literature_source_id": "literature_source.https_www_erdosproblems_com_349.v1",
+      "external_claim_id": null,
+      "source_sha256_pin": "8a584115b5bd886cecd10e3c29fe1aa5c189b899af85ccfbd473b219ef71b39a",
+      "attribution_status": "background_only",
+      "visibility": "model_visible",
+      "dependency_refs": [],
+      "reviewer": "The MathCorpus Authors",
+      "notes": "Formalized from source_provenance.source_refs[1] (pre-existing, not newly researched)."
+    }
+  ]
 }

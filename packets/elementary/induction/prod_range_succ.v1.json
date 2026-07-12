@@ -66,6 +66,60 @@
       "induction"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.induction.prod_range_succ.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "2f7951993ee7545757dc6410cf2abbea985acbd5257f1577143f8ed0bb247864",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Induction/ProdRangeSucc.lean",
+      "proof_body_sha256": "9807a652e56c0f7896ec68833f2f7f75452efa28917ad53ab6b17c4abcfbf1fc",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "theorem_lookup",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "Finset.prod_range_succ"
+    ],
+    "used_theorem_deps": [
+      "Finset.prod_range_succ"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "Finset.prod_range_succ"
+    ],
+    "transitive_dependency_count": 1,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "Finset.prod_range_succ"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "Finset.prod_range_succ",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.prod_range_succ",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 3,
     "tactic_count": 1
@@ -91,7 +145,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode ffcacd28).",
   "hashes": {
-    "packet_sha256": "b08f0795c5fec4e33c3ff9d14c65bcd5e9ad3cebc241fe3836e05324a042f24a",
+    "packet_sha256": "be8974d7bab61fb226f7aad722a9369429d85deec948198d06eeb8d3ecc6d4e0",
     "formal_statement_sha256": "2f7951993ee7545757dc6410cf2abbea985acbd5257f1577143f8ed0bb247864",
     "proof_body_sha256": "9807a652e56c0f7896ec68833f2f7f75452efa28917ad53ab6b17c4abcfbf1fc"
   }

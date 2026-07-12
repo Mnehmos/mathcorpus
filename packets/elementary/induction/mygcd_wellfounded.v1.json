@@ -71,6 +71,60 @@
       "gcd"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.induction.mygcd_wellfounded.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "bc2483b57e6866d7e88b68a839bca41b8b0c2c183aa3dd25509097c45857c9ed",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Induction/MyGcdWellFounded.lean",
+      "proof_body_sha256": "b605a51676de29ae20cb6cee2038e1aff997801813f8e95dbf6e649473f7f680",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "normalization",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "Nat.strongRecOn_eq"
+    ],
+    "used_theorem_deps": [
+      "Nat.strongRecOn_eq"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "Nat.strongRecOn_eq"
+    ],
+    "transitive_dependency_count": 1,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "Nat.strongRecOn_eq"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "Nat.strongRecOn_eq",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.strongRecOn_eq",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 10,
     "tactic_count": 1
@@ -97,7 +151,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 7e36dbd3), kernel_verified on the third submit_module attempt. Step 1: ordinary equation-compiler pattern syntax for myGcd kernel-failed with 'Could not find a decreasing measure' / 'Please use termination_by' -- confirming SubmitModule's expression-only def items cannot express genuinely well-founded recursion via the equation compiler's automatic termination checker. Step 2: switched to an explicit Nat.strongRecOn term, which compiled, but the base-case rfl failed since Nat.strongRecOn (built on WellFounded.fix) is not definitionally reducible. Step 3: replaced rfl with simp [myGcd, Nat.strongRecOn_eq], which closed it. Closes the 'well-founded (non-structural) recursion via SubmitModule' backlog item in packets/elementary/induction/QUEUE.md -- every LOOP.md-listed recursion technique (structural, mutual, well-founded) is now demonstrated in this domain.",
   "hashes": {
-    "packet_sha256": "73ccff8b17cd58ddaeb33224b90f854adf03b550d083e4cd894cd81ac1e6eae3",
+    "packet_sha256": "f80f3693be16c30a318eee7171be53089bc6bbe0d9de2cf47abcd4184590b3e9",
     "formal_statement_sha256": "bc2483b57e6866d7e88b68a839bca41b8b0c2c183aa3dd25509097c45857c9ed",
     "proof_body_sha256": "b605a51676de29ae20cb6cee2038e1aff997801813f8e95dbf6e649473f7f680"
   }

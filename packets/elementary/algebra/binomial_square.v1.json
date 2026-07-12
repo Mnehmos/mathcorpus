@@ -66,6 +66,41 @@
       "binomial"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.algebra.binomial_square.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "fdacd232fcd5149d32e38164b0fc719eb0f9b3c581248ad741b65e018d904f03",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Algebra/BinomialSquare.lean",
+      "proof_body_sha256": "c5420e0b77bafa5cd68d43a598c04898c878c603d3bac99048f7ddc5f925f1db",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "normalization",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [],
+    "used_theorem_deps": [],
+    "obligation_deps": [],
+    "verified_module_item_deps": [],
+    "transitive_dependency_count": 0,
+    "transitive_dependency_depth": 0,
+    "retrieval_candidates": [],
+    "retrieved_unused_candidates": [],
+    "claim_sources": []
+  },
   "metrics": {
     "loc": 3,
     "tactic_count": 1
@@ -94,7 +129,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 63611206). Root statement proved: forall (a b : Int), (a + b)^2 = a^2 + 2*a*b + b^2, by `intro a b; ring`.",
   "hashes": {
-    "packet_sha256": "8b2e01526502c462610f22f95184ed510b68cd00feb86fb74b04885e78994dc9",
+    "packet_sha256": "0d86483c8546d90db020f24e39e0bbade3565432e95897b4f17a2753c6cf1964",
     "formal_statement_sha256": "fdacd232fcd5149d32e38164b0fc719eb0f9b3c581248ad741b65e018d904f03",
     "proof_body_sha256": "c5420e0b77bafa5cd68d43a598c04898c878c603d3bac99048f7ddc5f925f1db"
   }

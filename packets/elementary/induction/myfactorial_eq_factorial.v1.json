@@ -69,6 +69,74 @@
       "definitional_equality"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.induction.myfactorial_eq_factorial.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "13b5f8e9a43d144280cc4bd02d9f86d48c25e069f78ca3ffa3f5ffd4b9d18766",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Induction/MyFactorialEqFactorial.lean",
+      "proof_body_sha256": "0ea1ca368d2fe7793fb09030063e60ce491a1479584544ae11a80ebf84ed12ac",
+      "proof_body_redacted": false,
+      "tactic_count": 4,
+      "proof_length": 4,
+      "proof_profile": {
+        "primary_proof_class": "induction",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": true,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "Nat.factorial",
+      "Nat.factorial_succ"
+    ],
+    "used_theorem_deps": [
+      "Nat.factorial",
+      "Nat.factorial_succ"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "Nat.factorial",
+      "Nat.factorial_succ"
+    ],
+    "transitive_dependency_count": 2,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "Nat.factorial",
+      "Nat.factorial_succ"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "Nat.factorial",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.factorial",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.factorial_succ",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.factorial_succ",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 8,
     "tactic_count": 4
@@ -95,7 +163,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 99b8de59), kernel_verified on the first attempt via a SubmitModule action (one helper `def myFactorial` + the root theorem), not a single Solve tactic block. This is the induction domain's first packet produced via SubmitModule -- every prior packet used Solve only, so recursion / helper-definition authoring was previously undemonstrated in this domain. The packaged Lean file states `n` as an explicit theorem parameter (dropping the tracked episode's leading `intro n`), matching this repo's established convention that a theorem header's explicit binders are already in scope before the tactic block starts, identical to the post-`intro` state.",
   "hashes": {
-    "packet_sha256": "b665b1259ca6cf7c8b073a307f31ebf00237f1b7a51a78d3d035039aad079fdd",
+    "packet_sha256": "0121af09b7ede5d3c5e93e0480770784cd06d75e98d98a2395aea87df12a73bb",
     "formal_statement_sha256": "13b5f8e9a43d144280cc4bd02d9f86d48c25e069f78ca3ffa3f5ffd4b9d18766",
     "proof_body_sha256": "0ea1ca368d2fe7793fb09030063e60ce491a1479584544ae11a80ebf84ed12ac"
   }

@@ -66,6 +66,60 @@
       "pascals_rule"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.combinatorics.choose_succ_succ.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "bc13fceea0552d336b769a487aa861e5b724681eb5918e48d954061de96fed1a",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Combinatorics/ChooseSuccSucc.lean",
+      "proof_body_sha256": "49afc6f83ec19c31309f6bea039dd04899ea220ee8169c21322899e86a3aadfe",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "theorem_lookup",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "Nat.choose_succ_succ'"
+    ],
+    "used_theorem_deps": [
+      "Nat.choose_succ_succ'"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "Nat.choose_succ_succ'"
+    ],
+    "transitive_dependency_count": 1,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "Nat.choose_succ_succ'"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "Nat.choose_succ_succ'",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.choose_succ_succ'",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 3,
     "tactic_count": 1
@@ -91,7 +145,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 53ff8716). Closes the choose_succ_succ item in packets/elementary/combinatorics/QUEUE.md, extending the Nat.choose starter family beyond the basics (choose_zero_right'/choose_self'/choose_symm').",
   "hashes": {
-    "packet_sha256": "6a66860fe4b590e3fae077e37a6528551032d48daebeb3a03db4d2da6509c346",
+    "packet_sha256": "7b112b5b6d2bec7d7b579ce04bdd9e130fbcb890a4b0b4d81a0077deee459457",
     "formal_statement_sha256": "bc13fceea0552d336b769a487aa861e5b724681eb5918e48d954061de96fed1a",
     "proof_body_sha256": "49afc6f83ec19c31309f6bea039dd04899ea220ee8169c21322899e86a3aadfe"
   }

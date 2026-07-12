@@ -66,6 +66,60 @@
       "subset"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.combinatorics.inter_subset_right.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "10edbb97fd5ab42e9f3082c4a3617d98c15723aaf63f970824d93ca26e1a3d34",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Combinatorics/InterSubsetRight.lean",
+      "proof_body_sha256": "5cb3c03e08b187ec7d045dca097980c27a5dcb999727eaaf275b390b2a849dae",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "theorem_lookup",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "Finset.inter_subset_right"
+    ],
+    "used_theorem_deps": [
+      "Finset.inter_subset_right"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "Finset.inter_subset_right"
+    ],
+    "transitive_dependency_count": 1,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "Finset.inter_subset_right"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "Finset.inter_subset_right",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.inter_subset_right",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 3,
     "tactic_count": 1
@@ -91,7 +145,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 3aaa23e2).",
   "hashes": {
-    "packet_sha256": "5e6858462f9231121bd31ddc191f18f745ab0215893a91dc0ba9404b8774b889",
+    "packet_sha256": "0929f29e39c09fd9132c347f1c709efff19af0d201323a25c78a32e6d2d5d8bf",
     "formal_statement_sha256": "10edbb97fd5ab42e9f3082c4a3617d98c15723aaf63f970824d93ca26e1a3d34",
     "proof_body_sha256": "5cb3c03e08b187ec7d045dca097980c27a5dcb999727eaaf275b390b2a849dae"
   }

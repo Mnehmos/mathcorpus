@@ -69,6 +69,88 @@
       "monotonicity"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.induction.sum_range_monotone.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "5c50be930886c2ec68069ffea8f401c37fba28976d46033df8c0119c816c30ba",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Induction/SumRangeMonotone.lean",
+      "proof_body_sha256": "f3e0624d87a918c981dc1e24675fb540cdd9351609e5db97ceeb38a6b3958641",
+      "proof_body_redacted": false,
+      "tactic_count": 3,
+      "proof_length": 3,
+      "proof_profile": {
+        "primary_proof_class": "induction",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": true,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "Finset.sum_range_succ",
+      "Nat.le_add_right",
+      "le_trans"
+    ],
+    "used_theorem_deps": [
+      "Finset.sum_range_succ",
+      "Nat.le_add_right",
+      "le_trans"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "Finset.sum_range_succ",
+      "Nat.le_add_right",
+      "le_trans"
+    ],
+    "transitive_dependency_count": 3,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "Finset.sum_range_succ",
+      "Nat.le_add_right",
+      "le_trans"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "Finset.sum_range_succ",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.sum_range_succ",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.le_add_right",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.le_add_right",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "le_trans",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "le_trans",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 5,
     "tactic_count": 3
@@ -95,7 +177,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 3280a193), kernel_verified on the first attempt. Fills the induction domain's stated 'monotonicity by induction' focus gap (packets/elementary/induction/LOOP.md) -- the only prior monotonicity-adjacent packet was two_pow_gt_self (a strict-inequality growth fact, not partial-sum monotonicity). General-purpose lemma: reusable as a building block for future partial-sum/series comparison packets.",
   "hashes": {
-    "packet_sha256": "d962ea27cca79433e533f9d54678c93d993eac92889f1e4487f69416f4638c2d",
+    "packet_sha256": "7a900b5dc34a4a47eb81ba39367fab9fedf0781d8bbf10cf02f9e87eaa0363ce",
     "formal_statement_sha256": "5c50be930886c2ec68069ffea8f401c37fba28976d46033df8c0119c816c30ba",
     "proof_body_sha256": "f3e0624d87a918c981dc1e24675fb540cdd9351609e5db97ceeb38a6b3958641"
   }

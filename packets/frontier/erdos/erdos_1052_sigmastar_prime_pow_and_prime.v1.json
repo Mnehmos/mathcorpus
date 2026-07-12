@@ -72,6 +72,74 @@
       "divisibility"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "frontier.erdos.erdos_1052_sigmastar_prime_pow_and_prime.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "3c1b90a7dd19ac590d508343082147d627ba7b5c0e133984707cc223fcdb33f0",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Frontier/Erdos/Erdos1052SigmaStarPrimePowAndPrime.lean",
+      "proof_body_sha256": "d6101178610d1fd21c02da0a72855a1e80dac5b2072db4e284cf29e3b5c398d0",
+      "proof_body_redacted": false,
+      "tactic_count": 30,
+      "proof_length": 30,
+      "proof_profile": {
+        "primary_proof_class": "multi_lemma_composition",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "le_refl",
+      "sigmaStar_prime_pow"
+    ],
+    "used_theorem_deps": [
+      "le_refl",
+      "sigmaStar_prime_pow"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "le_refl",
+      "sigmaStar_prime_pow"
+    ],
+    "transitive_dependency_count": 2,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "le_refl",
+      "sigmaStar_prime_pow"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "le_refl",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "le_refl",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "sigmaStar_prime_pow",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "sigmaStar_prime_pow",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 65,
     "tactic_count": 30
@@ -99,8 +167,36 @@
   },
   "notes": "ANTI-OVERCLAIM: this packet proves only bounded companion infrastructure (sigma-star's value on prime powers and primes), not Erdos #1052 itself (genuinely OPEN), and not the general sigmaStar_mul_of_coprime multiplicativity theorem or the omega_odd_le_two_adic_add_one structural bound that depends on it -- both present, already kernel_verified, in the sibling repo's source file, but deferred here since sigmaStar_mul_of_coprime's proof (a 5-branch Finset.sum_nbij' with nested `.`-bullet case splits) is a substantially bigger bullet-free rewrite than this cycle's scope; a future cycle should attempt it, recording any blocker in packets/frontier/erdos/BLOCKERS.md rather than re-discovering this scoping decision from scratch. Proof authority: Lean kernel via the tracked proof-search loop (episode 0eb1d5e8, problem_version ae154ca2-2f0a-4000-9324-bf3ef48af1e4), submitted as a SubmitModule (2 defs uDiv/sigmaStar + 2 helper theorems mem_uDiv/sigmaStar_prime_pow + root theorem sigmaStar_prime), kernel_verified on the FIRST attempt. sigmaStar_prime_pow's original sibling-repo proof used nested `.`-bullet case splits (constructor; two bulleted branches, one further split by rcases); rewritten entirely bullet-free (bare sequential tactics per branch, since Lean processes unbulleted goals left-to-right and each branch's tactics fully close their own goal before the next begins) plus proactive parenthesization of every `have h := by tac1; tac2` followed by sibling tactics (issue #67's flattened-sequence trap) -- no other mathematical content changed from the sibling source. Independently re-verified in THIS environment's own pinned toolchain rather than treated as evidence merely because the sibling repo (F:\\Github\\mnehmos.llm-driven-proof-search.environment\\ErdosProblems\\erdos-1052\\proof\\Erdos1052_sigmaStar_and_bounds.lean) already reports it kernel_verified there -- per this repo's evidence policy. training.eligibility: quarantined per the default-quarantine policy for open_problem_related packets pending real external review (same policy as this lane's other packets).",
   "hashes": {
-    "packet_sha256": "b995d94b8e5dddcaa0cbad1b3b6b395244999ae57a772977aef734c44a21bb07",
+    "packet_sha256": "27912b85059e009f3152f9f8906634e17701d5c171ba0b5145dd54b666954af0",
     "formal_statement_sha256": "3c1b90a7dd19ac590d508343082147d627ba7b5c0e133984707cc223fcdb33f0",
     "proof_body_sha256": "d6101178610d1fd21c02da0a72855a1e80dac5b2072db4e284cf29e3b5c398d0"
-  }
+  },
+  "idea_attributions": [
+    {
+      "attribution_id": "frontier.erdos.erdos_1052_sigmastar_prime_pow_and_prime.v1.attribution.1",
+      "formal_statement_sha256": "3c1b90a7dd19ac590d508343082147d627ba7b5c0e133984707cc223fcdb33f0",
+      "proof_variant_id": null,
+      "literature_source_id": "literature_source.erdosproblems_erdos_1052_proof_erdos1052_2.v1",
+      "external_claim_id": null,
+      "source_sha256_pin": "9b26f246ca0abf1082af5962ff5de4243457a76032b58944ba002ac6861f73d2",
+      "attribution_status": "directly_used",
+      "visibility": "model_visible",
+      "dependency_refs": [],
+      "reviewer": "The MathCorpus Authors",
+      "notes": "Formalized from source_provenance.source_refs[0] (pre-existing, not newly researched)."
+    },
+    {
+      "attribution_id": "frontier.erdos.erdos_1052_sigmastar_prime_pow_and_prime.v1.attribution.2",
+      "formal_statement_sha256": "3c1b90a7dd19ac590d508343082147d627ba7b5c0e133984707cc223fcdb33f0",
+      "proof_variant_id": null,
+      "literature_source_id": "literature_source.https_www_erdosproblems_com_1052.v1",
+      "external_claim_id": null,
+      "source_sha256_pin": "1ec07fe6dd7fe1261e26053086640404964ec4b22aa5244fd72b53719ff9413a",
+      "attribution_status": "background_only",
+      "visibility": "model_visible",
+      "dependency_refs": [],
+      "reviewer": "The MathCorpus Authors",
+      "notes": "Formalized from source_provenance.source_refs[1] (pre-existing, not newly researched)."
+    }
+  ]
 }

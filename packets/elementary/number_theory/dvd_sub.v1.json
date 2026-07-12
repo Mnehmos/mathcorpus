@@ -65,6 +65,60 @@
       "subtraction"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.number_theory.dvd_sub.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "96c207c276f390e68bb86f8de6688d70ee603d4fe98852949a6c3808d589e091",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/NumberTheory/DvdSub.lean",
+      "proof_body_sha256": "156f178a180a0af3bce6fddb49558f158ed0f8910601e14c2b099e426e590421",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "theorem_lookup",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "Nat.dvd_sub"
+    ],
+    "used_theorem_deps": [
+      "Nat.dvd_sub"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "Nat.dvd_sub"
+    ],
+    "transitive_dependency_count": 1,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "Nat.dvd_sub"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "Nat.dvd_sub",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.dvd_sub",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 3,
     "tactic_count": 1
@@ -90,7 +144,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 9549fb69), 2 steps: `Nat.dvd_sub'` is an unknown constant in this mathlib (removed); looked up and repaired to the unconditional `Nat.dvd_sub`.",
   "hashes": {
-    "packet_sha256": "aeaeb9ac012b3135b63cdb3d4c1d54ba0eeb73e62cb2af6ea61db4f2f8827dec",
+    "packet_sha256": "84136bcb2d1988ffad975391efca3e22a4d5b173073a8e31d7fa7f49fe7a7f7e",
     "formal_statement_sha256": "96c207c276f390e68bb86f8de6688d70ee603d4fe98852949a6c3808d589e091",
     "proof_body_sha256": "156f178a180a0af3bce6fddb49558f158ed0f8910601e14c2b099e426e590421"
   }

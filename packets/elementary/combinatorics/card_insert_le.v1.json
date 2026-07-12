@@ -66,6 +66,60 @@
       "insert"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.combinatorics.card_insert_le.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "3b956a34fa6f2a1bf516562560c9b284a725bb6fdf4a583ec77a1443f8f548ff",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Combinatorics/CardInsertLe.lean",
+      "proof_body_sha256": "b45b40eb7bd2cbf0467091f314898b453c8ca275fd67ce76d0c8773fd4139b7e",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "theorem_lookup",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "Finset.card_insert_le"
+    ],
+    "used_theorem_deps": [
+      "Finset.card_insert_le"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "Finset.card_insert_le"
+    ],
+    "transitive_dependency_count": 1,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "Finset.card_insert_le"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "Finset.card_insert_le",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.card_insert_le",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 3,
     "tactic_count": 1
@@ -91,7 +145,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode cba8ec77).",
   "hashes": {
-    "packet_sha256": "ff38eb47b0c09121f07f8996da510cf68992109846102d3f8e73b0f82b6bd0ed",
+    "packet_sha256": "cf26868afa14556355eb8de43fd94437c6f8cd9fd904962790d8d157c3ae1172",
     "formal_statement_sha256": "3b956a34fa6f2a1bf516562560c9b284a725bb6fdf4a583ec77a1443f8f548ff",
     "proof_body_sha256": "b45b40eb7bd2cbf0467091f314898b453c8ca275fd67ce76d0c8773fd4139b7e"
   }

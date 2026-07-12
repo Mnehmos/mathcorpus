@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "literature_source",
+  "record_id": "literature_source.https_teorth_github_io_equational_theori.v1",
+  "packet_id": "frontier.formal_conjectures.equational_theories_677_255_class_free.v1",
+  "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+  "created_at": "2026-07-12T00:00:00Z",
+  "trust_status": "candidate_unverified",
+  "export_eligibility": "public",
+  "record_hash": "42154338dc73ef756c2220ea74530ae50a4600270898659e2dad95447418ba1f",
+  "title": "https://teorth.github.io/equational_theories/implications/?677&finite",
+  "authors": [],
+  "publication_year": null,
+  "venue": "Equational Theories project",
+  "external_ids": {
+    "url": "https://teorth.github.io/equational_theories/implications/?677&finite"
+  },
+  "source_sha256": null,
+  "access_note": "Formalized from this packet's own pre-existing source_provenance.source_refs (issue #8 follow-up); not independently re-verified."
+}

@@ -71,6 +71,74 @@
       "power_of_two"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "frontier.erdos.erdos_349_exists_finset_sum_two_pow.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "4175dd3774af8b005a7a8812ea9a0548b7c8e6085642b898ae893c5123abac01",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Frontier/Erdos/Erdos349ExistsFinsetSumTwoPow.lean",
+      "proof_body_sha256": "ecb16eb579f096f57737e9821d912706e319a2146330d77cf4c210d4bd8d4572",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "theorem_lookup",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "Finset.sum_toFinset_bitIndices_two_pow",
+      "k.bitIndices.toFinset"
+    ],
+    "used_theorem_deps": [
+      "Finset.sum_toFinset_bitIndices_two_pow",
+      "k.bitIndices.toFinset"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "Finset.sum_toFinset_bitIndices_two_pow",
+      "k.bitIndices.toFinset"
+    ],
+    "transitive_dependency_count": 2,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "Finset.sum_toFinset_bitIndices_two_pow",
+      "k.bitIndices.toFinset"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "Finset.sum_toFinset_bitIndices_two_pow",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.sum_toFinset_bitIndices_two_pow",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "k.bitIndices.toFinset",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "k.bitIndices.toFinset",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 2,
     "tactic_count": 1
@@ -97,8 +165,49 @@
   },
   "notes": "ANTI-OVERCLAIM: this packet proves only an infrastructure sublemma used toward the integer_isGoodPair_iff characterization, which itself is a companion/partial result for Erdos #349's INTEGER case -- it does not resolve Erdos #349's general open question (for which real t, alpha is floor(t*alpha^n) additively complete), which the sibling repo's own whitepaper explicitly states remains OPEN and is not attacked by this line of work. Proof authority: Lean kernel via the tracked proof-search loop (episode a6801189, problem_version 420dd077-4bed-4b31-835e-6f47617b3e40), a single Solve step, kernel_verified on the first attempt. Notably, problem_create's returned root_statement_hash (2328323a2b3bbeba5fa2318fbc84fd47675231f738edc38166e21687ced920ed) exactly matches the hash cited in the sibling repo's own source comment for the upstream google-deepmind/formal-conjectures statement -- strong evidence of byte-identical statement fidelity, hence statement_fidelity: canonical_statement_hash_match rather than adapted_with_review. Independently re-verified in THIS environment's own pinned toolchain rather than treated as evidence merely because the sibling repo (F:\\Github\\mnehmos.llm-driven-proof-search.environment\\ErdosProblems\\erdos-349\\proof\\Erdos349_exists_finset_sum_two_pow.lean, its own tracked episode 844e5846-fc4b-4651-b1dd-9e0735a643ce) already reports it kernel_verified there -- per this repo's evidence policy. training.eligibility: quarantined per the default-quarantine policy for open_problem_related packets pending real external review (same policy applied to frontier.erdos.erdos_399_cambie.v1). Second packet in the frontier/erdos lane.",
   "hashes": {
-    "packet_sha256": "17a01e90a051f1e3caeba35ff62f10f71bb16e7adc24a3cb4572e8dcf7cc485e",
+    "packet_sha256": "2e50c41d53b1979e447adef508649a1e72fb7db8aadee70d87bbfd1ce1ee2493",
     "formal_statement_sha256": "4175dd3774af8b005a7a8812ea9a0548b7c8e6085642b898ae893c5123abac01",
     "proof_body_sha256": "ecb16eb579f096f57737e9821d912706e319a2146330d77cf4c210d4bd8d4572"
-  }
+  },
+  "idea_attributions": [
+    {
+      "attribution_id": "frontier.erdos.erdos_349_exists_finset_sum_two_pow.v1.attribution.1",
+      "formal_statement_sha256": "4175dd3774af8b005a7a8812ea9a0548b7c8e6085642b898ae893c5123abac01",
+      "proof_variant_id": null,
+      "literature_source_id": "literature_source.erdosproblems_erdos_349_proof_erdos349_e.v1",
+      "external_claim_id": null,
+      "source_sha256_pin": "6c93895fe474bdd4f5200ca649bf718c79df6a988d19f7d92fda69f2e6086ecc",
+      "attribution_status": "directly_used",
+      "visibility": "model_visible",
+      "dependency_refs": [],
+      "reviewer": "The MathCorpus Authors",
+      "notes": "Formalized from source_provenance.source_refs[0] (pre-existing, not newly researched)."
+    },
+    {
+      "attribution_id": "frontier.erdos.erdos_349_exists_finset_sum_two_pow.v1.attribution.2",
+      "formal_statement_sha256": "4175dd3774af8b005a7a8812ea9a0548b7c8e6085642b898ae893c5123abac01",
+      "proof_variant_id": null,
+      "literature_source_id": "literature_source.formalconjectures_erdosproblems_349_lean.v1",
+      "external_claim_id": null,
+      "source_sha256_pin": "fc3b510ecac8ed7895d32adac1280b9d3bf8ddf930e67cbf231a0fbe8e2d5b0f",
+      "attribution_status": "background_only",
+      "visibility": "model_visible",
+      "dependency_refs": [],
+      "reviewer": "The MathCorpus Authors",
+      "notes": "Formalized from source_provenance.source_refs[1] (pre-existing, not newly researched)."
+    },
+    {
+      "attribution_id": "frontier.erdos.erdos_349_exists_finset_sum_two_pow.v1.attribution.3",
+      "formal_statement_sha256": "4175dd3774af8b005a7a8812ea9a0548b7c8e6085642b898ae893c5123abac01",
+      "proof_variant_id": null,
+      "literature_source_id": "literature_source.https_www_erdosproblems_com_349.v1",
+      "external_claim_id": null,
+      "source_sha256_pin": "8a584115b5bd886cecd10e3c29fe1aa5c189b899af85ccfbd473b219ef71b39a",
+      "attribution_status": "background_only",
+      "visibility": "model_visible",
+      "dependency_refs": [],
+      "reviewer": "The MathCorpus Authors",
+      "notes": "Formalized from source_provenance.source_refs[2] (pre-existing, not newly researched)."
+    }
+  ]
 }

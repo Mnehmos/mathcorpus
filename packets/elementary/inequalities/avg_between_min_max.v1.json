@@ -70,6 +70,116 @@
       "case_split"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.inequalities.avg_between_min_max.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "992f52d056093e9b3b49e3e6b30e9e940db1b27f460905887be527a32571c3af",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Inequalities/AvgBetweenMinMax.lean",
+      "proof_body_sha256": "e808323cf9f1dad2c13ed6338d45c11951af5e98f88c5bee3434a3cb2ecfee75",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "case_analysis",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": true
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "le_total",
+      "max_eq_left",
+      "max_eq_right",
+      "min_eq_left",
+      "min_eq_right"
+    ],
+    "used_theorem_deps": [
+      "le_total",
+      "max_eq_left",
+      "max_eq_right",
+      "min_eq_left",
+      "min_eq_right"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "le_total",
+      "max_eq_left",
+      "max_eq_right",
+      "min_eq_left",
+      "min_eq_right"
+    ],
+    "transitive_dependency_count": 5,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "le_total",
+      "max_eq_left",
+      "max_eq_right",
+      "min_eq_left",
+      "min_eq_right"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "le_total",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "le_total",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "max_eq_left",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "max_eq_left",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "max_eq_right",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "max_eq_right",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "min_eq_left",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "min_eq_left",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "min_eq_right",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "min_eq_right",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 3,
     "tactic_count": 1
@@ -96,7 +206,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode c5bd7202), kernel_verified on the first attempt. This domain's first min/max packet; deliberately picked at D0/L0 to continue offsetting the domain's L2_olympiad skew (16 of 25 packets before this one).",
   "hashes": {
-    "packet_sha256": "bd401fa60e84877235c66d22580d28e3fa071c21dec5da68dfd364faeedde9da",
+    "packet_sha256": "cd3db55ce00e51b72bbb4ba29e480f2c7aa217fcce93ff8f85d289cf5b660079",
     "formal_statement_sha256": "992f52d056093e9b3b49e3e6b30e9e940db1b27f460905887be527a32571c3af",
     "proof_body_sha256": "e808323cf9f1dad2c13ed6338d45c11951af5e98f88c5bee3434a3cb2ecfee75"
   }

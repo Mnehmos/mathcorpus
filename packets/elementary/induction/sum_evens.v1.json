@@ -68,6 +68,60 @@
       "even_numbers"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.induction.sum_evens.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "29759fdf8fc0e7cae57d0750a7b28103d3e3851701ce05f399645ab2602d111f",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Induction/SumEvens.lean",
+      "proof_body_sha256": "b678f5cf93709611e3c104c06f997cba6259e8c1320e0f815b338ca51de964bb",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "induction",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": true,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "Finset.sum_range_succ"
+    ],
+    "used_theorem_deps": [
+      "Finset.sum_range_succ"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "Finset.sum_range_succ"
+    ],
+    "transitive_dependency_count": 1,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "Finset.sum_range_succ"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "Finset.sum_range_succ",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.sum_range_succ",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 3,
     "tactic_count": 1
@@ -94,7 +148,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 7c564d42).",
   "hashes": {
-    "packet_sha256": "47b0f6f421ab4780ca2dd26cefa48c43d2fbee7c037dbc6e70eae1f4321c74b2",
+    "packet_sha256": "d3f8e27262cc06c325b8a84bfdbdd3ce2480ef8fd869d96a6494cc8117eca2d2",
     "formal_statement_sha256": "29759fdf8fc0e7cae57d0750a7b28103d3e3851701ce05f399645ab2602d111f",
     "proof_body_sha256": "b678f5cf93709611e3c104c06f997cba6259e8c1320e0f815b338ca51de964bb"
   }

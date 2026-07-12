@@ -66,6 +66,60 @@
       "positivity"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.induction.one_le_two_pow.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "88a29ca87fe9b3a9cce25977f252056e23656f91f44e315bc00037e99209d5d0",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Induction/OneLeTwoPow.lean",
+      "proof_body_sha256": "144373e972261c9ae498f6e0d4f8fe47a8ec56009f4843661d43136d0c37d857",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "induction",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": true,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "pow_succ"
+    ],
+    "used_theorem_deps": [
+      "pow_succ"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "pow_succ"
+    ],
+    "transitive_dependency_count": 1,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "pow_succ"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "pow_succ",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "pow_succ",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 3,
     "tactic_count": 1
@@ -92,7 +146,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 5a603590), kernel_verified on the first attempt. Deliberately picked at the lowest difficulty tier (D0/L0): this domain's level distribution was 24 L1_proof_basics to only 1 L0_elementary packet (two_pow_gt_self) before this one. A genuinely simpler, distinct fact from two_pow_gt_self (n < 2^n) -- this is the unconditional lower bound 1 <= 2^n with no comparison to n.",
   "hashes": {
-    "packet_sha256": "be384b9a508a87cc6b77db389e66b373b2bad217d60ebf06a1338140f97599a5",
+    "packet_sha256": "4e319d77e45cb2b2a8ea7170f19aebebba8ee8e89c3e29d2cd31ee558b8a20fb",
     "formal_statement_sha256": "88a29ca87fe9b3a9cce25977f252056e23656f91f44e315bc00037e99209d5d0",
     "proof_body_sha256": "144373e972261c9ae498f6e0d4f8fe47a8ec56009f4843661d43136d0c37d857"
   }

@@ -71,6 +71,214 @@
       "list_product"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.induction.exists_prime_factorization.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "8d6f7df4e93d47c88a0211330560fab119370775644b27827e9b239874f035ae",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Induction/ExistsPrimeFactorization.lean",
+      "proof_body_sha256": "186af0e8aec641382ab934afe990dc9f9953cdbcf878b82168220ea9b1c53a98",
+      "proof_body_redacted": false,
+      "tactic_count": 13,
+      "proof_length": 13,
+      "proof_profile": {
+        "primary_proof_class": "induction",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": true,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "List.mem_cons.mp",
+      "List.prod_cons",
+      "Nat.div_lt_self",
+      "Nat.div_pos",
+      "Nat.minFac_dvd",
+      "Nat.minFac_le",
+      "Nat.minFac_prime",
+      "Nat.mul_div_cancel'",
+      "Nat.strong_induction_on",
+      "hp.one_lt",
+      "hp.pos",
+      "n.minFac"
+    ],
+    "used_theorem_deps": [
+      "List.mem_cons.mp",
+      "List.prod_cons",
+      "Nat.div_lt_self",
+      "Nat.div_pos",
+      "Nat.minFac_dvd",
+      "Nat.minFac_le",
+      "Nat.minFac_prime",
+      "Nat.mul_div_cancel'",
+      "Nat.strong_induction_on",
+      "hp.one_lt",
+      "hp.pos",
+      "n.minFac"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "List.mem_cons.mp",
+      "List.prod_cons",
+      "Nat.div_lt_self",
+      "Nat.div_pos",
+      "Nat.minFac_dvd",
+      "Nat.minFac_le",
+      "Nat.minFac_prime",
+      "Nat.mul_div_cancel'",
+      "Nat.strong_induction_on",
+      "hp.one_lt",
+      "hp.pos",
+      "n.minFac"
+    ],
+    "transitive_dependency_count": 12,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "List.mem_cons.mp",
+      "List.prod_cons",
+      "Nat.div_lt_self",
+      "Nat.div_pos",
+      "Nat.minFac_dvd",
+      "Nat.minFac_le",
+      "Nat.minFac_prime",
+      "Nat.mul_div_cancel'",
+      "Nat.strong_induction_on",
+      "hp.one_lt",
+      "hp.pos",
+      "n.minFac"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "List.mem_cons.mp",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "List.mem_cons.mp",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "List.prod_cons",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "List.prod_cons",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.div_lt_self",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.div_lt_self",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.div_pos",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.div_pos",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.minFac_dvd",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.minFac_dvd",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.minFac_le",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.minFac_le",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.minFac_prime",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.minFac_prime",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.mul_div_cancel'",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.mul_div_cancel'",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.strong_induction_on",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.strong_induction_on",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "hp.one_lt",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "hp.one_lt",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "hp.pos",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "hp.pos",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "n.minFac",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "n.minFac",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 17,
     "tactic_count": 13
@@ -97,7 +305,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode f53c8d62), kernel_verified on the fourth attempt. Extends the domain's existing `exists_prime_factor` (existence of A single prime factor, via Nat.exists_dvd_of_not_prime2) to a full factorization list, matching LOOP.md's 'strong induction' domain focus. Three real issues hit along the way, all recorded here for future reference: (1) the first attempt bound `hn : 1 <= n` before calling `induction n using Nat.strong_induction_on` and used `rcases eq_or_lt_of_le hn`, and timed out at the full 60s wall-clock cap with no diagnostic detail at all -- switching to `intro n; induction n ...; intro hn` (deferring hn's introduction to inside the induction case) plus replacing `eq_or_lt_of_le` with a plain `by_cases hn1 : n = 1` fixed it (elapsed dropped to 13-46s on subsequent attempts); the exact culprit between these two simultaneous changes was not isolated, so both are noted as suspects for future proofs using `Nat.strong_induction_on` in this environment. (2) `rcases hq with rfl | hq` on a raw `List.Mem` hypothesis (`hq : q ∈ p :: l`) failed with a confusing `subst` error blaming a `List ℕ`-typed equality -- fixed by first converting via `List.mem_cons.mp hq : q = p ∨ q ∈ l` (a plain `Or`) before rcases-ing on that. (3) splitting a `refine ⟨_, ?_, ?_⟩`'s two goals via a flat, unbulleted sequence of tactics silently left the second goal (`(p :: l).prod = n`) untouched even though no tactic error was reported (category `unsolved_goals`, not a tactic failure) -- wrapping each of the two `refine` goals in its own single-level `·` bullet fixed it; flat sequential tactic consumption across a multi-goal `refine` is not reliable in this environment even without nested bullets, always bullet each goal explicitly.",
   "hashes": {
-    "packet_sha256": "ed2cd63dbc2995732abcad4f30a19ef148687a11d8047d6adcb1d22ef74ba3bb",
+    "packet_sha256": "689b2950498c0b196a52208a200ccbbbb6aad3494b91579c01532b7930a46f77",
     "formal_statement_sha256": "8d6f7df4e93d47c88a0211330560fab119370775644b27827e9b239874f035ae",
     "proof_body_sha256": "186af0e8aec641382ab934afe990dc9f9953cdbcf878b82168220ea9b1c53a98"
   }

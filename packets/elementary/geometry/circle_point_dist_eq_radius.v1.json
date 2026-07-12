@@ -65,6 +65,88 @@
       "squared_distance"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.geometry.circle_point_dist_eq_radius.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "e2ea6ff5f4354e374754c6737704958da30b24db3552dd1e6e32c2d4745f7af8",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Geometry/CirclePointDistEqRadius.lean",
+      "proof_body_sha256": "49b60539d5e92266bba37d42e31357e33f18c81a9aa6b3bd78fe871e4f4b0641",
+      "proof_body_redacted": false,
+      "tactic_count": 3,
+      "proof_length": 3,
+      "proof_profile": {
+        "primary_proof_class": "arithmetic_automation",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": true,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "Real.cos",
+      "Real.sin",
+      "Real.sin_sq_add_cos_sq"
+    ],
+    "used_theorem_deps": [
+      "Real.cos",
+      "Real.sin",
+      "Real.sin_sq_add_cos_sq"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "Real.cos",
+      "Real.sin",
+      "Real.sin_sq_add_cos_sq"
+    ],
+    "transitive_dependency_count": 3,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "Real.cos",
+      "Real.sin",
+      "Real.sin_sq_add_cos_sq"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "Real.cos",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Real.cos",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Real.sin",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Real.sin",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Real.sin_sq_add_cos_sq",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Real.sin_sq_add_cos_sq",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 3,
     "tactic_count": 3
@@ -91,7 +173,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode d3dedd8a), kernel_verified on the first Solve attempt. Fills the circle_point_dist_eq_radius gap in packets/elementary/geometry/QUEUE.md (no circle-equation packet existed before this); pairs naturally with the existing midpoint_equidist. Phrased as the cosine/sine parametrization (rather than 'point p with dist p c = r') to stay consistent with this domain's squared-distance convention (avoids Real.sqrt, matching midpoint_equidist and reflection_dist) while still being a genuine, non-trivial circle fact rather than a restatement of the defining equation.",
   "hashes": {
-    "packet_sha256": "2db7a6e6c688459bb44d645f2abcb4ff98cc9463b1c4d6dae73b96812d2916a3",
+    "packet_sha256": "27884cf965643d156622a996bc6a8a4d309882260b91d62d2a4808cae30b9fd8",
     "formal_statement_sha256": "e2ea6ff5f4354e374754c6737704958da30b24db3552dd1e6e32c2d4745f7af8",
     "proof_body_sha256": "49b60539d5e92266bba37d42e31357e33f18c81a9aa6b3bd78fe871e4f4b0641"
   }

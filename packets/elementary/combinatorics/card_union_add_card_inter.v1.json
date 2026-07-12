@@ -67,6 +67,60 @@
       "intersection"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.combinatorics.card_union_add_card_inter.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "d13a69bed1cea310354189b2c8b2a80106be647692d46c881a15ee3d5722d729",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Combinatorics/CardUnionAddCardInter.lean",
+      "proof_body_sha256": "c2915a479f3caadce7f2a405e889e89f812848953a95addc3f6c0e90c56bf8b7",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "theorem_lookup",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "Finset.card_union_add_card_inter"
+    ],
+    "used_theorem_deps": [
+      "Finset.card_union_add_card_inter"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "Finset.card_union_add_card_inter"
+    ],
+    "transitive_dependency_count": 1,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "Finset.card_union_add_card_inter"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "Finset.card_union_add_card_inter",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.card_union_add_card_inter",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 3,
     "tactic_count": 1
@@ -92,7 +146,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 23c3ba16). Fills the gap flagged by the paired negative example negative.combinatorics.finset_card_atoms.omega_failure.v1, which showed omega cannot derive this identity on its own.",
   "hashes": {
-    "packet_sha256": "1a143969faae7bdf1720b0644cb3210646d8a101ace83a1616476f043799befe",
+    "packet_sha256": "931b2a90cf1ec6c85ee175873caa489469dc981b452d533f8d7c3aa321151147",
     "formal_statement_sha256": "d13a69bed1cea310354189b2c8b2a80106be647692d46c881a15ee3d5722d729",
     "proof_body_sha256": "c2915a479f3caadce7f2a405e889e89f812848953a95addc3f6c0e90c56bf8b7"
   }

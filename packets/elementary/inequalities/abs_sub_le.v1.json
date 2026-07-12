@@ -66,6 +66,60 @@
       "metric_distance"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.inequalities.abs_sub_le.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "23e5074d662fd76680930c40358eb5d787d88b1baf27f418f3d2c87844207ef8",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Inequalities/AbsSubLe.lean",
+      "proof_body_sha256": "1766b493118b94045fbdcaf8097d3ad7d18f02705e5d329d238fcd8980276481",
+      "proof_body_redacted": false,
+      "tactic_count": 4,
+      "proof_length": 4,
+      "proof_profile": {
+        "primary_proof_class": "case_analysis",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": true
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "abs_cases"
+    ],
+    "used_theorem_deps": [
+      "abs_cases"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "abs_cases"
+    ],
+    "transitive_dependency_count": 1,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "abs_cases"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "abs_cases",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "abs_cases",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 4,
     "tactic_count": 4
@@ -92,7 +146,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode a7e193b6), kernel_verified on the first Solve attempt. Uses the same abs_cases-based case-split technique established by abs_add_le/abs_add_three, this time over 3 sign cases (a-b, b-c, a-c, 8 branches) closed by plain linarith rather than nlinarith since every branch is purely linear once the absolute values unfold. Distinct from abs_add_le/abs_add_three (sum form, |a+b|<=|a|+|b|) and reverse_triangle (||a|-|b||<=|a-b|); this is the classic metric-distance triangle inequality. Deliberately picked to continue offsetting this domain's L1_proof_basics coverage gap (2 of 21 packets before this one).",
   "hashes": {
-    "packet_sha256": "37af031b3241e3c3bf146834fe9109cb3b39f0cafc71f6f4f900ae70f36b830a",
+    "packet_sha256": "915851211dc9c04cc8d266ceddc7410afafca039b6e717d0571c2f2c79c97c47",
     "formal_statement_sha256": "23e5074d662fd76680930c40358eb5d787d88b1baf27f418f3d2c87844207ef8",
     "proof_body_sha256": "1766b493118b94045fbdcaf8097d3ad7d18f02705e5d329d238fcd8980276481"
   }

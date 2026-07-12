@@ -65,6 +65,60 @@
       "cardinality"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.combinatorics.card_singleton.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "4a0f215e5b3aadc64b8d8b71350951a816034b4454eaeac921ca64d847721eb4",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Combinatorics/CardSingleton.lean",
+      "proof_body_sha256": "fac79ee176a8b75c6ee2c96b563f1fd7a67c5b31fda7b9415c2bc1347f0e0fad",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "theorem_lookup",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "Finset.card_singleton"
+    ],
+    "used_theorem_deps": [
+      "Finset.card_singleton"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "Finset.card_singleton"
+    ],
+    "transitive_dependency_count": 1,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "Finset.card_singleton"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "Finset.card_singleton",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.card_singleton",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 3,
     "tactic_count": 1
@@ -90,7 +144,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 26f44454).",
   "hashes": {
-    "packet_sha256": "d24e76161c5ca2252cda8e7cd92b808a70055728af1dfb7d99b1adbd0fc654d7",
+    "packet_sha256": "a6f5798f5c9bfd931fb7754e36ad29403e6bf93f625eafb48bd5236962630913",
     "formal_statement_sha256": "4a0f215e5b3aadc64b8d8b71350951a816034b4454eaeac921ca64d847721eb4",
     "proof_body_sha256": "fac79ee176a8b75c6ee2c96b563f1fd7a67c5b31fda7b9415c2bc1347f0e0fad"
   }

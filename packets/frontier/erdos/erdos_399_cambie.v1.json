@@ -74,6 +74,298 @@
       "parity"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "frontier.erdos.erdos_399_cambie.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "d463d124f7d1ad4511c29e19edf345ea0c7a9b939e9d63e2e37183d422ffbf13",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Frontier/Erdos/Erdos399Cambie.lean",
+      "proof_body_sha256": "4cd4e8c25e1e582c45b86b990b1754e4368c447efbc5c15931b3734a111a8237",
+      "proof_body_redacted": false,
+      "tactic_count": 26,
+      "proof_length": 26,
+      "proof_profile": {
+        "primary_proof_class": "case_analysis",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": true,
+        "uses_case_analysis": true
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "Nat.Coprime",
+      "Nat.add_mod",
+      "Nat.dvd_gcd",
+      "Nat.dvd_iff_mod_eq_zero",
+      "Nat.eq_zero_or_pos",
+      "Nat.factorial",
+      "Nat.factorial_dvd_factorial",
+      "Nat.factorial_le",
+      "Nat.gcd",
+      "Nat.lt_or_ge",
+      "Nat.mod_lt",
+      "Nat.mul_le_mul",
+      "Nat.one_le_pow",
+      "Nat.pow_le_pow_left",
+      "hdvd4.trans",
+      "not_le",
+      "not_or",
+      "pow4_mod8"
+    ],
+    "used_theorem_deps": [
+      "Nat.Coprime",
+      "Nat.add_mod",
+      "Nat.dvd_gcd",
+      "Nat.dvd_iff_mod_eq_zero",
+      "Nat.eq_zero_or_pos",
+      "Nat.factorial",
+      "Nat.factorial_dvd_factorial",
+      "Nat.factorial_le",
+      "Nat.gcd",
+      "Nat.lt_or_ge",
+      "Nat.mod_lt",
+      "Nat.mul_le_mul",
+      "Nat.one_le_pow",
+      "Nat.pow_le_pow_left",
+      "hdvd4.trans",
+      "not_le",
+      "not_or",
+      "pow4_mod8"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "Nat.Coprime",
+      "Nat.add_mod",
+      "Nat.dvd_gcd",
+      "Nat.dvd_iff_mod_eq_zero",
+      "Nat.eq_zero_or_pos",
+      "Nat.factorial",
+      "Nat.factorial_dvd_factorial",
+      "Nat.factorial_le",
+      "Nat.gcd",
+      "Nat.lt_or_ge",
+      "Nat.mod_lt",
+      "Nat.mul_le_mul",
+      "Nat.one_le_pow",
+      "Nat.pow_le_pow_left",
+      "hdvd4.trans",
+      "not_le",
+      "not_or",
+      "pow4_mod8"
+    ],
+    "transitive_dependency_count": 18,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "Nat.Coprime",
+      "Nat.add_mod",
+      "Nat.dvd_gcd",
+      "Nat.dvd_iff_mod_eq_zero",
+      "Nat.eq_zero_or_pos",
+      "Nat.factorial",
+      "Nat.factorial_dvd_factorial",
+      "Nat.factorial_le",
+      "Nat.gcd",
+      "Nat.lt_or_ge",
+      "Nat.mod_lt",
+      "Nat.mul_le_mul",
+      "Nat.one_le_pow",
+      "Nat.pow_le_pow_left",
+      "hdvd4.trans",
+      "not_le",
+      "not_or",
+      "pow4_mod8"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "Nat.Coprime",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.Coprime",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.add_mod",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.add_mod",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.dvd_gcd",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.dvd_gcd",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.dvd_iff_mod_eq_zero",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.dvd_iff_mod_eq_zero",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.eq_zero_or_pos",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.eq_zero_or_pos",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.factorial",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.factorial",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.factorial_dvd_factorial",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.factorial_dvd_factorial",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.factorial_le",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.factorial_le",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.gcd",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.gcd",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.lt_or_ge",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.lt_or_ge",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.mod_lt",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.mod_lt",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.mul_le_mul",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.mul_le_mul",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.one_le_pow",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.one_le_pow",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.pow_le_pow_left",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.pow_le_pow_left",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "hdvd4.trans",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "hdvd4.trans",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "not_le",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "not_le",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "not_or",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "not_or",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "pow4_mod8",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "pow4_mod8",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 42,
     "tactic_count": 26
@@ -100,8 +392,36 @@
   },
   "notes": "ANTI-OVERCLAIM: this packet proves only a known COMPANION result to Erdos #399, not Erdos #399 itself. Erdos #399 (n! = x^k +/- y^k, xy>1, k>2) is already known to be NOT solution-free in general via Barfield's construction 10! = 48^4 - 36^4 (unrelated to this proof). This packet's theorem is the narrower Cambie companion (no n! = x^4+y^4 with gcd(x,y)=1, xy>1) and makes no claim about the general problem. Proof authority: Lean kernel via the tracked proof-search loop (episode d2aaae74, problem_version 8ee2e559-41dd-4bd6-ad6b-df16125a0966), submitted as a SubmitModule (helper theorem pow4_mod8 + root theorem erdos_399_cambie), kernel_verified on the first submission after one transport-format retry (root_theorem.proof_format=raw_lean_block was required to preserve the bullet/case-split structure; the first attempt used the postfix '!' factorial notation and hit an unrelated parser ambiguity between '!' and '≠' in the SubmitModule file-assembly context -- switched to the unambiguous Nat.factorial spelling, which resolved it cleanly). Independently re-verified in THIS environment's own pinned toolchain (Lean v4.32.0-rc1, mathlib 360da6fa) rather than treated as evidence merely because the sibling repo (F:\\Github\\mnehmos.llm-driven-proof-search.environment\\ErdosProblems\\erdos-399\\proof\\Erdos399_cambie.lean) already reports it kernel_verified there -- per this repo's evidence policy (docs/proofsearch-integration.md), a proof checked some other way is a candidate, not evidence, until this pinned kernel checks it inside a tracked episode. First packet in the frontier/erdos lane (previously 0 packets, Phase 5 not started). training.eligibility is quarantined by default (not public_train) per the roadmap's conservative-import/default-quarantine policy for open_problem_related packets -- this is a companion result, not a solved open problem, but it has not gone through a formal external review (fidelity_status remains 'attested', not 'verified'), so it stays quarantined until that review happens.",
   "hashes": {
-    "packet_sha256": "1a3573b9a9ebe3e57d47964a0d9e8aa019a50aa9548743f2e171f5bb6c3828ff",
+    "packet_sha256": "7aa230e1545a4c3124ccc5ceeb7494a5eab8240263d01bdbb16c36afa1007c94",
     "formal_statement_sha256": "d463d124f7d1ad4511c29e19edf345ea0c7a9b939e9d63e2e37183d422ffbf13",
     "proof_body_sha256": "4cd4e8c25e1e582c45b86b990b1754e4368c447efbc5c15931b3734a111a8237"
-  }
+  },
+  "idea_attributions": [
+    {
+      "attribution_id": "frontier.erdos.erdos_399_cambie.v1.attribution.1",
+      "formal_statement_sha256": "d463d124f7d1ad4511c29e19edf345ea0c7a9b939e9d63e2e37183d422ffbf13",
+      "proof_variant_id": null,
+      "literature_source_id": "literature_source.erdosproblems_erdos_399_proof_erdos399_c.v1",
+      "external_claim_id": null,
+      "source_sha256_pin": "306f9b1c715712183700d38dc8795cfdfacb01f7c0df2c9a6279615ee5073ed8",
+      "attribution_status": "directly_used",
+      "visibility": "model_visible",
+      "dependency_refs": [],
+      "reviewer": "The MathCorpus Authors",
+      "notes": "Formalized from source_provenance.source_refs[0] (pre-existing, not newly researched)."
+    },
+    {
+      "attribution_id": "frontier.erdos.erdos_399_cambie.v1.attribution.2",
+      "formal_statement_sha256": "d463d124f7d1ad4511c29e19edf345ea0c7a9b939e9d63e2e37183d422ffbf13",
+      "proof_variant_id": null,
+      "literature_source_id": "literature_source.https_www_erdosproblems_com_399.v1",
+      "external_claim_id": null,
+      "source_sha256_pin": "ee40fb5966198c3ba32bb4662e73f8c2dc85796677c4aee5640f678368e5e75f",
+      "attribution_status": "background_only",
+      "visibility": "model_visible",
+      "dependency_refs": [],
+      "reviewer": "The MathCorpus Authors",
+      "notes": "Formalized from source_provenance.source_refs[1] (pre-existing, not newly researched)."
+    }
+  ]
 }

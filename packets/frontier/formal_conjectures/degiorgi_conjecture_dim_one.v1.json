@@ -78,6 +78,200 @@
       "euclidean_space"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "frontier.formal_conjectures.degiorgi_conjecture_dim_one.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "db43222708e8a136330d7432fa5326a60c1b919d2df0f4d332c102dc3c6e2a0c",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Frontier/FormalConjectures/DeGiorgiConjectureDimOne.lean",
+      "proof_body_sha256": "9656df9009a700c4b9561e723e35dbb3ea01dd2b6669b42b6b00bb126d022057",
+      "proof_body_redacted": false,
+      "tactic_count": 14,
+      "proof_length": 14,
+      "proof_profile": {
+        "primary_proof_class": "witness_construction",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": true,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "AffineSubspace.coe_affineSpan_singleton",
+      "EuclideanSpace.single",
+      "Function.Injective.of_comp_right",
+      "Function.comp_def",
+      "Set.image_singleton",
+      "Set.preimage_image_eq",
+      "deriv_comp_const_add",
+      "direction_affineSpan",
+      "fin_cases",
+      "hu_deriv",
+      "strictMono_of_deriv_pos"
+    ],
+    "used_theorem_deps": [
+      "AffineSubspace.coe_affineSpan_singleton",
+      "EuclideanSpace.single",
+      "Function.Injective.of_comp_right",
+      "Function.comp_def",
+      "Set.image_singleton",
+      "Set.preimage_image_eq",
+      "deriv_comp_const_add",
+      "direction_affineSpan",
+      "fin_cases",
+      "hu_deriv",
+      "strictMono_of_deriv_pos"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "AffineSubspace.coe_affineSpan_singleton",
+      "EuclideanSpace.single",
+      "Function.Injective.of_comp_right",
+      "Function.comp_def",
+      "Set.image_singleton",
+      "Set.preimage_image_eq",
+      "deriv_comp_const_add",
+      "direction_affineSpan",
+      "fin_cases",
+      "hu_deriv",
+      "strictMono_of_deriv_pos"
+    ],
+    "transitive_dependency_count": 11,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "AffineSubspace.coe_affineSpan_singleton",
+      "EuclideanSpace.single",
+      "Function.Injective.of_comp_right",
+      "Function.comp_def",
+      "Set.image_singleton",
+      "Set.preimage_image_eq",
+      "deriv_comp_const_add",
+      "direction_affineSpan",
+      "fin_cases",
+      "hu_deriv",
+      "strictMono_of_deriv_pos"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "AffineSubspace.coe_affineSpan_singleton",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "AffineSubspace.coe_affineSpan_singleton",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "EuclideanSpace.single",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "EuclideanSpace.single",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Function.Injective.of_comp_right",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Function.Injective.of_comp_right",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Function.comp_def",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Function.comp_def",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Set.image_singleton",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Set.image_singleton",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Set.preimage_image_eq",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Set.preimage_image_eq",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "deriv_comp_const_add",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "deriv_comp_const_add",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "direction_affineSpan",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "direction_affineSpan",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "fin_cases",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "fin_cases",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "hu_deriv",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "hu_deriv",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "strictMono_of_deriv_pos",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "strictMono_of_deriv_pos",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 16,
     "tactic_count": 14
@@ -104,8 +298,62 @@
   },
   "notes": "ANTI-OVERCLAIM: this packet proves ONLY the dimension n=1 case of De Giorgi's conjecture, which the upstream sibling-repo file itself describes as trivially holding (u injective since its directional derivative is everywhere positive). De Giorgi's conjecture AS A WHOLE remains open in dimensions 4-8 (the upstream file's DeGiorgi_four through DeGiorgi_eight theorems are all `sorry`, tagged `research open`); the n=2 (Ghoussoub-Gui) and n=3 (Ambrosio-Cabre) cases are also `sorry` upstream (tagged `research solved` there, i.e. proved in the literature but not yet formalized in that repo) and are NOT touched by this packet. This is a RESTATEMENT, not a verbatim transport: the upstream `DeGiorgi_one` theorem is stated in terms of file-local declarations (`structure IsBoundedSolution : Prop`, `def HasPositiveDeriv`, `def HasHyperplaneLevelSets`, `def DeGiorgi_conclusion`, and a local notation `ℝ^n` for `EuclideanSpace ℝ (Fin n)` defined in that repo's own `FormalConjecturesForMathlib` extension) that do not exist in this repo -- this packet inlines all of them directly into one self-contained Prop over `EuclideanSpace ℝ (Fin 1)`, checked by hand to be definitionally identical to the upstream statement after unfolding. The upstream file's own proof term happened to typecheck essentially verbatim after this inlining plus two mechanical fixes: (1) the initial attempt omitted an explicit import for `Mathlib.Analysis.Calculus.LineDeriv.Basic`, causing Lean's `autoImplicit` to silently auto-bind the unresolved `lineDeriv` identifier as an opaque implicit variable in the registered root statement instead of erroring immediately (a genuine trap distinct from prior rounds' API-drift blockers -- caught only because a later `unfold lineDeriv` tactic-level reference failed with 'unknown identifier', which triggered re-examination; anyone relying only on `problem_create` succeeding without a follow-up name-level check could silently register and 'prove' the wrong statement). (2) the proof's original upstream indentation (2-space-indented from the start, as it sits inside a `by` block after other theorem-level indentation in the sibling file) needed re-flattening to start at column 0 for this environment's `raw_lean_block` transport -- the mismatched leading indentation on the first two lines caused an `introN`/parse failure on the first attempt. No mathematical change to the upstream proof strategy was needed; `strictMono_of_deriv_pos`, `deriv_comp_const_add`, `Function.Injective.of_comp_right`, `AffineSubspace.coe_affineSpan_singleton`, `direction_affineSpan`, and `EuclideanSpace.single` all resolved as expected under this repo's pinned Mathlib. Kernel-verified on the third episode_step attempt (episode fb137309-7985-4cb7-805e-6305ae6e1872, 2 counted environment steps after the import-manifest fix required a fresh problem_version). training.eligibility: quarantined per this session's conservative default for adapted/restated frontier packets pending real external review; open_problem_related is true here (unlike the equational_theories/OEIS packets) since this theorem is one case of a conjecture whose full statement (all dimensions) remains genuinely open in this corpus and in the literature.",
   "hashes": {
-    "packet_sha256": "6bd068564027b663727bbb678dbc1465d34dcd9dadb17f19c757d43a8c016574",
+    "packet_sha256": "c4c0579c6fccebd8a737eac53dcc34378bc868e63affc7bccd17405d567cc622",
     "formal_statement_sha256": "db43222708e8a136330d7432fa5326a60c1b919d2df0f4d332c102dc3c6e2a0c",
     "proof_body_sha256": "9656df9009a700c4b9561e723e35dbb3ea01dd2b6669b42b6b00bb126d022057"
-  }
+  },
+  "idea_attributions": [
+    {
+      "attribution_id": "frontier.formal_conjectures.degiorgi_conjecture_dim_one.v1.attribution.1",
+      "formal_statement_sha256": "db43222708e8a136330d7432fa5326a60c1b919d2df0f4d332c102dc3c6e2a0c",
+      "proof_variant_id": null,
+      "literature_source_id": "literature_source.formalconjectures_paper_degiorgi_lean_de.v1",
+      "external_claim_id": null,
+      "source_sha256_pin": "1f6000ca4b18e0060cd6eb571d59fa1815c78ed567e7767b26665ec6da0a6582",
+      "attribution_status": "directly_used",
+      "visibility": "model_visible",
+      "dependency_refs": [],
+      "reviewer": "The MathCorpus Authors",
+      "notes": "Formalized from source_provenance.source_refs[0] (pre-existing, not newly researched)."
+    },
+    {
+      "attribution_id": "frontier.formal_conjectures.degiorgi_conjecture_dim_one.v1.attribution.2",
+      "formal_statement_sha256": "db43222708e8a136330d7432fa5326a60c1b919d2df0f4d332c102dc3c6e2a0c",
+      "proof_variant_id": null,
+      "literature_source_id": "literature_source.n_2_case_not_covered_here.v1",
+      "external_claim_id": null,
+      "source_sha256_pin": "3470a753551110a7dd5dd6ac540a908b491a6c1a0fa314a94005c03e87cd9596",
+      "attribution_status": "background_only",
+      "visibility": "model_visible",
+      "dependency_refs": [],
+      "reviewer": "The MathCorpus Authors",
+      "notes": "Formalized from source_provenance.source_refs[1] (pre-existing, not newly researched)."
+    },
+    {
+      "attribution_id": "frontier.formal_conjectures.degiorgi_conjecture_dim_one.v1.attribution.3",
+      "formal_statement_sha256": "db43222708e8a136330d7432fa5326a60c1b919d2df0f4d332c102dc3c6e2a0c",
+      "proof_variant_id": null,
+      "literature_source_id": "literature_source.n_3_case_not_covered_here.v1",
+      "external_claim_id": null,
+      "source_sha256_pin": "9c78591b965fb2f9d00bf8ed375d40f11c4f4f6732174cdc67f9c8f6c0ac288c",
+      "attribution_status": "background_only",
+      "visibility": "model_visible",
+      "dependency_refs": [],
+      "reviewer": "The MathCorpus Authors",
+      "notes": "Formalized from source_provenance.source_refs[2] (pre-existing, not newly researched)."
+    },
+    {
+      "attribution_id": "frontier.formal_conjectures.degiorgi_conjecture_dim_one.v1.attribution.4",
+      "formal_statement_sha256": "db43222708e8a136330d7432fa5326a60c1b919d2df0f4d332c102dc3c6e2a0c",
+      "proof_variant_id": null,
+      "literature_source_id": "literature_source.n_9_counterexample_not_covered_here.v1",
+      "external_claim_id": null,
+      "source_sha256_pin": "9154714131fd8ae6bd235bcb1b72308a1932e943600e8fec63fdeaf996a10e79",
+      "attribution_status": "background_only",
+      "visibility": "model_visible",
+      "dependency_refs": [],
+      "reviewer": "The MathCorpus Authors",
+      "notes": "Formalized from source_provenance.source_refs[3] (pre-existing, not newly researched)."
+    }
+  ]
 }

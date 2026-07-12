@@ -68,6 +68,60 @@
       "finite_sum"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.combinatorics.card_bi_union_le.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "8aa54ca6deed303cbcc2720dca993058e4a3ea687ed2f1d84d325da401cd6f8a",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Combinatorics/CardBiUnionLe.lean",
+      "proof_body_sha256": "e9419bae1d600d804b9c43d394e97d1f281e0109af4916fe4dd31db5f0e43312",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "theorem_lookup",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "Finset.card_biUnion_le"
+    ],
+    "used_theorem_deps": [
+      "Finset.card_biUnion_le"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "Finset.card_biUnion_le"
+    ],
+    "transitive_dependency_count": 1,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "Finset.card_biUnion_le"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "Finset.card_biUnion_le",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.card_biUnion_le",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 3,
     "tactic_count": 1
@@ -93,7 +147,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode e3c5ed4b). Closes the last item in packets/elementary/combinatorics/QUEUE.md's next-targets, the indexed-union generalization of the domain's existing card_union_le'.",
   "hashes": {
-    "packet_sha256": "e6287d2fb65ffac79ed8cd4cd9def93296cecc28b0e1341db7ca78ca3c6a907e",
+    "packet_sha256": "e3551286007b045908a1817f8738d0c7fd5e95e674dfd099abd2df4db90fb01d",
     "formal_statement_sha256": "8aa54ca6deed303cbcc2720dca993058e4a3ea687ed2f1d84d325da401cd6f8a",
     "proof_body_sha256": "e9419bae1d600d804b9c43d394e97d1f281e0109af4916fe4dd31db5f0e43312"
   }

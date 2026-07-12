@@ -67,6 +67,74 @@
       "trichotomy"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.functions.strictmono_injective.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "ec30fd981b951984684290af37c13d2382c8e2474b3a21a2c10d16e2207ade2e",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Functions/StrictMonoInjective.lean",
+      "proof_body_sha256": "178f62784b99ea4cf13740da5d28a55d0ccf46f070bf34552e7afd9d6e934f47",
+      "proof_body_redacted": false,
+      "tactic_count": 5,
+      "proof_length": 5,
+      "proof_profile": {
+        "primary_proof_class": "case_analysis",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": true,
+        "uses_case_analysis": true
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "lt_trichotomy",
+      "ne_of_lt"
+    ],
+    "used_theorem_deps": [
+      "lt_trichotomy",
+      "ne_of_lt"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "lt_trichotomy",
+      "ne_of_lt"
+    ],
+    "transitive_dependency_count": 2,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "lt_trichotomy",
+      "ne_of_lt"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "lt_trichotomy",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "lt_trichotomy",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "ne_of_lt",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "ne_of_lt",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 6,
     "tactic_count": 5
@@ -93,7 +161,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode aef62b6e), kernel_verified on the first attempt. Proved directly via lt_trichotomy rather than one-line-citing Mathlib's StrictMono.injective, for instructional value (mirrors the injective_comp packet's choice to unfold rather than cite). Connects this domain's 'monotone' and 'injective' stated focus topics directly, per packets/elementary/functions/QUEUE.md. Closes the strictMono_injective item in that queue.",
   "hashes": {
-    "packet_sha256": "2981767e9cdd98029917eec4acb01132ad7331673af5fb72f8a4d588da6d014f",
+    "packet_sha256": "d820e312507739defcd65e893555e4529ffaaceac1908d74362813488d2aec88",
     "formal_statement_sha256": "ec30fd981b951984684290af37c13d2382c8e2474b3a21a2c10d16e2207ade2e",
     "proof_body_sha256": "178f62784b99ea4cf13740da5d28a55d0ccf46f070bf34552e7afd9d6e934f47"
   }

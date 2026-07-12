@@ -65,6 +65,41 @@
       "bisector"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.geometry.angle_bisector_double.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "faa7dd0d230e76112a60a4d764aac71fa76cfb3f16124ba3f7da1b7a0c8398ce",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Geometry/AngleBisector.lean",
+      "proof_body_sha256": "14c9c66021db5008470cebb0c4ce8973655f60cfdf18bfc266cacbd65e64add0",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "normalization",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [],
+    "used_theorem_deps": [],
+    "obligation_deps": [],
+    "verified_module_item_deps": [],
+    "transitive_dependency_count": 0,
+    "transitive_dependency_depth": 0,
+    "retrieval_candidates": [],
+    "retrieved_unused_candidates": [],
+    "claim_sources": []
+  },
   "metrics": {
     "loc": 3,
     "tactic_count": 1
@@ -90,7 +125,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 73361c37).",
   "hashes": {
-    "packet_sha256": "53a1f7e143ef0a75547391f11d1baf3a881c5d1114f8f976d7847e2fb57fdb84",
+    "packet_sha256": "4fd83daeefe6d3afd0a5d83d824c240f4313965504d76fbb71d5498dbca58c68",
     "formal_statement_sha256": "faa7dd0d230e76112a60a4d764aac71fa76cfb3f16124ba3f7da1b7a0c8398ce",
     "proof_body_sha256": "14c9c66021db5008470cebb0c4ce8973655f60cfdf18bfc266cacbd65e64add0"
   }

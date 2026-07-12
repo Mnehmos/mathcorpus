@@ -73,6 +73,704 @@
       "optimality"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "frontier.formal_conjectures.union_closed_sharpness.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "bf14dc3355c5c97c59a6647b64f772d43139419c1904f7c523d8ef66de0be90c",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Frontier/FormalConjectures/UnionClosedSharpness.lean",
+      "proof_body_sha256": "7b364f13cb8d981cd2d75de87cfc26e1dc10d7d9561ce9b4678ec01336ee59b1",
+      "proof_body_redacted": false,
+      "tactic_count": 30,
+      "proof_length": 30,
+      "proof_profile": {
+        "primary_proof_class": "witness_construction",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": true,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "A.card",
+      "CharP.cast_eq_zero",
+      "Decidable.not_not",
+      "Finset.card_empty",
+      "Finset.card_image_of_injOn",
+      "Finset.card_powerset",
+      "Finset.card_univ",
+      "Finset.coe_erase",
+      "Finset.coe_powerset",
+      "Finset.coe_univ",
+      "Finset.erase_insert",
+      "Finset.filter_empty",
+      "Finset.mem_coe",
+      "Finset.mem_filter",
+      "Finset.mem_image",
+      "Finset.mem_powerset",
+      "Finset.mem_univ",
+      "Finset.notMem_empty",
+      "Finset.subset_erase",
+      "Finset.subset_univ",
+      "Finset.univ",
+      "Finset.univ.erase",
+      "Finset.univ.filter",
+      "Fintype.card",
+      "Fintype.card_finset",
+      "Fintype.card_pos",
+      "IsEmpty.exists_iff",
+      "Nat.add_one_le_iff",
+      "Nat.cast_ofNat",
+      "Nat.cast_pow",
+      "Set.disjoint_singleton_right",
+      "Set.mem_powerset_iff",
+      "Set.mem_preimage",
+      "Set.subset_diff",
+      "Set.subset_univ",
+      "exists_const",
+      "h_ne_singleton_empty",
+      "imp_false",
+      "isEmpty_or_nonempty",
+      "le_refl",
+      "mul_zero",
+      "ne_eq",
+      "not_forall",
+      "pow_sub",
+      "powerset.image",
+      "true_and",
+      "x.erase"
+    ],
+    "used_theorem_deps": [
+      "A.card",
+      "CharP.cast_eq_zero",
+      "Decidable.not_not",
+      "Finset.card_empty",
+      "Finset.card_image_of_injOn",
+      "Finset.card_powerset",
+      "Finset.card_univ",
+      "Finset.coe_erase",
+      "Finset.coe_powerset",
+      "Finset.coe_univ",
+      "Finset.erase_insert",
+      "Finset.filter_empty",
+      "Finset.mem_coe",
+      "Finset.mem_filter",
+      "Finset.mem_image",
+      "Finset.mem_powerset",
+      "Finset.mem_univ",
+      "Finset.notMem_empty",
+      "Finset.subset_erase",
+      "Finset.subset_univ",
+      "Finset.univ",
+      "Finset.univ.erase",
+      "Finset.univ.filter",
+      "Fintype.card",
+      "Fintype.card_finset",
+      "Fintype.card_pos",
+      "IsEmpty.exists_iff",
+      "Nat.add_one_le_iff",
+      "Nat.cast_ofNat",
+      "Nat.cast_pow",
+      "Set.disjoint_singleton_right",
+      "Set.mem_powerset_iff",
+      "Set.mem_preimage",
+      "Set.subset_diff",
+      "Set.subset_univ",
+      "exists_const",
+      "h_ne_singleton_empty",
+      "imp_false",
+      "isEmpty_or_nonempty",
+      "le_refl",
+      "mul_zero",
+      "ne_eq",
+      "not_forall",
+      "pow_sub",
+      "powerset.image",
+      "true_and",
+      "x.erase"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "A.card",
+      "CharP.cast_eq_zero",
+      "Decidable.not_not",
+      "Finset.card_empty",
+      "Finset.card_image_of_injOn",
+      "Finset.card_powerset",
+      "Finset.card_univ",
+      "Finset.coe_erase",
+      "Finset.coe_powerset",
+      "Finset.coe_univ",
+      "Finset.erase_insert",
+      "Finset.filter_empty",
+      "Finset.mem_coe",
+      "Finset.mem_filter",
+      "Finset.mem_image",
+      "Finset.mem_powerset",
+      "Finset.mem_univ",
+      "Finset.notMem_empty",
+      "Finset.subset_erase",
+      "Finset.subset_univ",
+      "Finset.univ",
+      "Finset.univ.erase",
+      "Finset.univ.filter",
+      "Fintype.card",
+      "Fintype.card_finset",
+      "Fintype.card_pos",
+      "IsEmpty.exists_iff",
+      "Nat.add_one_le_iff",
+      "Nat.cast_ofNat",
+      "Nat.cast_pow",
+      "Set.disjoint_singleton_right",
+      "Set.mem_powerset_iff",
+      "Set.mem_preimage",
+      "Set.subset_diff",
+      "Set.subset_univ",
+      "exists_const",
+      "h_ne_singleton_empty",
+      "imp_false",
+      "isEmpty_or_nonempty",
+      "le_refl",
+      "mul_zero",
+      "ne_eq",
+      "not_forall",
+      "pow_sub",
+      "powerset.image",
+      "true_and",
+      "x.erase"
+    ],
+    "transitive_dependency_count": 47,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "A.card",
+      "CharP.cast_eq_zero",
+      "Decidable.not_not",
+      "Finset.card_empty",
+      "Finset.card_image_of_injOn",
+      "Finset.card_powerset",
+      "Finset.card_univ",
+      "Finset.coe_erase",
+      "Finset.coe_powerset",
+      "Finset.coe_univ",
+      "Finset.erase_insert",
+      "Finset.filter_empty",
+      "Finset.mem_coe",
+      "Finset.mem_filter",
+      "Finset.mem_image",
+      "Finset.mem_powerset",
+      "Finset.mem_univ",
+      "Finset.notMem_empty",
+      "Finset.subset_erase",
+      "Finset.subset_univ",
+      "Finset.univ",
+      "Finset.univ.erase",
+      "Finset.univ.filter",
+      "Fintype.card",
+      "Fintype.card_finset",
+      "Fintype.card_pos",
+      "IsEmpty.exists_iff",
+      "Nat.add_one_le_iff",
+      "Nat.cast_ofNat",
+      "Nat.cast_pow",
+      "Set.disjoint_singleton_right",
+      "Set.mem_powerset_iff",
+      "Set.mem_preimage",
+      "Set.subset_diff",
+      "Set.subset_univ",
+      "exists_const",
+      "h_ne_singleton_empty",
+      "imp_false",
+      "isEmpty_or_nonempty",
+      "le_refl",
+      "mul_zero",
+      "ne_eq",
+      "not_forall",
+      "pow_sub",
+      "powerset.image",
+      "true_and",
+      "x.erase"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "A.card",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "A.card",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "CharP.cast_eq_zero",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "CharP.cast_eq_zero",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Decidable.not_not",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Decidable.not_not",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.card_empty",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.card_empty",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.card_image_of_injOn",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.card_image_of_injOn",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.card_powerset",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.card_powerset",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.card_univ",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.card_univ",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.coe_erase",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.coe_erase",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.coe_powerset",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.coe_powerset",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.coe_univ",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.coe_univ",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.erase_insert",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.erase_insert",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.filter_empty",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.filter_empty",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.mem_coe",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.mem_coe",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.mem_filter",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.mem_filter",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.mem_image",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.mem_image",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.mem_powerset",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.mem_powerset",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.mem_univ",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.mem_univ",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.notMem_empty",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.notMem_empty",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.subset_erase",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.subset_erase",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.subset_univ",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.subset_univ",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.univ",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.univ",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.univ.erase",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.univ.erase",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.univ.filter",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.univ.filter",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Fintype.card",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Fintype.card",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Fintype.card_finset",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Fintype.card_finset",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Fintype.card_pos",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Fintype.card_pos",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "IsEmpty.exists_iff",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "IsEmpty.exists_iff",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.add_one_le_iff",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.add_one_le_iff",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.cast_ofNat",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.cast_ofNat",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.cast_pow",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.cast_pow",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Set.disjoint_singleton_right",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Set.disjoint_singleton_right",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Set.mem_powerset_iff",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Set.mem_powerset_iff",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Set.mem_preimage",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Set.mem_preimage",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Set.subset_diff",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Set.subset_diff",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Set.subset_univ",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Set.subset_univ",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "exists_const",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "exists_const",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "h_ne_singleton_empty",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "h_ne_singleton_empty",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "imp_false",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "imp_false",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "isEmpty_or_nonempty",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "isEmpty_or_nonempty",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "le_refl",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "le_refl",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "mul_zero",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "mul_zero",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "ne_eq",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "ne_eq",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "not_forall",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "not_forall",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "pow_sub",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "pow_sub",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "powerset.image",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "powerset.image",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "true_and",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "true_and",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "x.erase",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "x.erase",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 47,
     "tactic_count": 30
@@ -99,7 +797,7 @@
   },
   "notes": "ANTI-OVERCLAIM: this packet proves only that the constant 1/2 in the union-closed sets conjecture is sharp (cannot be replaced by any larger constant), not the conjecture itself, which remains open in general (the upstream file's own `union_closed` theorem for the general case is `sorry`/`research open`, and this corpus's best transported general bound is Yu 2023's ~0.38234 constant via a different, still-open-in-general theorem). Third and largest of `UnionClosed.lean`'s three proof-complete theorems transported this cycle/session (companions: `union_closed_singleton_mem.v1`, `union_closed_univ_card_two.v1` -- the latter authored independently by a concurrent agent in this same cycle). Restated (not verbatim) in the same two respects as its companions: the upstream `IsUnionClosed` abbrev is inlined directly as `∀ X ∈ A, ∀ Y ∈ A, X ∪ Y ∈ A`, and the upstream `#`/set-builder-filter notation (confirmed `scoped` behind `open Finset` by grepping the vendored Mathlib source) is spelled out as plain `Finset.card`/`Finset.filter` applications, plus the file-local helper `isUnionClosed_univ n` (used to show `Finset.univ` is union-closed) is inlined as a one-line anonymous proof `(by intro X _ Y _; exact Finset.mem_univ _)` at its single call site rather than transported as a separate helper theorem. Otherwise the proof term is essentially verbatim (only variable renames to avoid ambiguous repeated `this`/anonymous `have`s during manual transcription). Kernel-verified on the FIRST attempt (episode d3e6c1ee-ddc3-49e6-b774-6e63e9f8db8e) using `proof_format: raw_lean_block` to preserve the upstream proof's bullet structure exactly (two top-level bullets for the `isEmpty_or_nonempty` case split, plus a nested `constructor`/two-bullet split and a final unbulleted-continuation pattern inside the `hcardi` sub-proof, all copied verbatim). `training.eligibility: quarantined` per this session's default policy for adapted/restated frontier packets; `open_problem_related: true` since the underlying conjecture remains open in general.",
   "hashes": {
-    "packet_sha256": "e8511163db20045166dde65b9d06f8cee1c2efc4b314d878fe030fe6f7882e20",
+    "packet_sha256": "94dfa902b158008c494c4cff6764334c5bd736373077cfe87a740b2569203f9f",
     "formal_statement_sha256": "bf14dc3355c5c97c59a6647b64f772d43139419c1904f7c523d8ef66de0be90c",
     "proof_body_sha256": "7b364f13cb8d981cd2d75de87cfc26e1dc10d7d9561ce9b4678ec01336ee59b1"
   },

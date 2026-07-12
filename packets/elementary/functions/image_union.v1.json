@@ -64,6 +64,60 @@
       "function"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.functions.image_union.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "9af42aea0c038eb51c9dbcff549ce90983ed47e0d08abba15305313837fa2ccd",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Functions/ImageUnion.lean",
+      "proof_body_sha256": "0c69f52ee053e2834d5174fd9730972c759e742f9546db3c0f57b2ce00092f17",
+      "proof_body_redacted": false,
+      "tactic_count": 2,
+      "proof_length": 2,
+      "proof_profile": {
+        "primary_proof_class": "multi_lemma_composition",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "Set.image_union"
+    ],
+    "used_theorem_deps": [
+      "Set.image_union"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "Set.image_union"
+    ],
+    "transitive_dependency_count": 1,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "Set.image_union"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "Set.image_union",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Set.image_union",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 2,
     "tactic_count": 2
@@ -90,7 +144,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 5ca732f2), kernel_verified on the third Solve attempt. Steps 1-2: a hand-unfolded set-extensionality proof with nested `·` bullets kernel-failed twice, once under default flat_tactic_sequence transport (bullet structure lost, 'Unknown identifier hx') and once under raw_lean_block (a leading-indentation mismatch produced 'introN failed: no additional binders'). Step 3 switched to directly citing Set.image_union, which kernel-verified cleanly. Fills the 'image/preimage' gap explicitly named in packets/elementary/functions' README stated focus but never covered by a prior packet; closes the corresponding backlog item in packets/elementary/functions/QUEUE.md.",
   "hashes": {
-    "packet_sha256": "63b17f472fe0c7374225da52b7088f3e6b806fd29b3274fe5dacd0502fa1e028",
+    "packet_sha256": "86ebd1fe3cc9095d4ffb9a60e64513724c6b30275fb035b80f6601f2444ede21",
     "formal_statement_sha256": "9af42aea0c038eb51c9dbcff549ce90983ed47e0d08abba15305313837fa2ccd",
     "proof_body_sha256": "0c69f52ee053e2834d5174fd9730972c759e742f9546db3c0f57b2ce00092f17"
   }

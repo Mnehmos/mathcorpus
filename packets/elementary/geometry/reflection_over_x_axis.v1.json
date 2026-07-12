@@ -66,6 +66,41 @@
       "coordinates"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.geometry.reflection_over_x_axis.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "1992112e9ae9a78c971d0084c4b82304ddb8242dfb3a61c521a78b61732f7dee",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Geometry/ReflectionOverXAxis.lean",
+      "proof_body_sha256": "d848085976f50bd3d782c238214904744e1e6eab447bc0a70c3a131960a68ca7",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "normalization",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [],
+    "used_theorem_deps": [],
+    "obligation_deps": [],
+    "verified_module_item_deps": [],
+    "transitive_dependency_count": 0,
+    "transitive_dependency_depth": 0,
+    "retrieval_candidates": [],
+    "retrieved_unused_candidates": [],
+    "claim_sources": []
+  },
   "metrics": {
     "loc": 2,
     "tactic_count": 1
@@ -92,7 +127,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 66dcb53d). A first problem_version registered without an explicit `problem_imports: [\"Mathlib\"]` resolved to a bare Ring+NormNum manifest and hit a spurious `HSub ℝ ℝ ?m` typeclass-resolution failure on the identical tactic — a tooling/import-manifest artifact, not a genuine tactic-mismatch lesson (consistent with this repo's other documented import-manifest gotchas), so not packaged as a negative example. Re-registering with `problem_imports: [\"Mathlib\"]` (the standard import manifest hash used by every other packet in this repo) let `ring` close it on the first real attempt. Concrete coordinate D0 on-ramp flagged in packets/elementary/geometry/QUEUE.md.",
   "hashes": {
-    "packet_sha256": "6246fd352e0d577935cd16161392f79528949c8c77923b577fc38ca13662b329",
+    "packet_sha256": "455af3a556e7b5e769e76fc5401045649a59344e520bd18426adaee453a9b550",
     "formal_statement_sha256": "1992112e9ae9a78c971d0084c4b82304ddb8242dfb3a61c521a78b61732f7dee",
     "proof_body_sha256": "d848085976f50bd3d782c238214904744e1e6eab447bc0a70c3a131960a68ca7"
   }

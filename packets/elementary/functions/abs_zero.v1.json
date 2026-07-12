@@ -62,6 +62,60 @@
       "absolute_value"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.functions.abs_zero.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "6715a0c36c6badf4e173b64d9fac2673a8e8de9c71a8f5c1bdf3bb74fcb11b95",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Functions/AbsZero.lean",
+      "proof_body_sha256": "6ab94159042b19e72f5610c5cd8ee91b8997d473e622a83938a7dd77546ddfdb",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "theorem_lookup",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "abs_zero"
+    ],
+    "used_theorem_deps": [
+      "abs_zero"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "abs_zero"
+    ],
+    "transitive_dependency_count": 1,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "abs_zero"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "abs_zero",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "abs_zero",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 3,
     "tactic_count": 1
@@ -87,7 +141,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 5443bddb).",
   "hashes": {
-    "packet_sha256": "f0c4aee177e6330c26d105c74e3cacf0374e3dda002029f2405e9c9cc8746b18",
+    "packet_sha256": "dc895e16c394913ce22a6de361ea7aa7cf2ba5e92bd7e19670264c943dcafce5",
     "formal_statement_sha256": "6715a0c36c6badf4e173b64d9fac2673a8e8de9c71a8f5c1bdf3bb74fcb11b95",
     "proof_body_sha256": "6ab94159042b19e72f5610c5cd8ee91b8997d473e622a83938a7dd77546ddfdb"
   }

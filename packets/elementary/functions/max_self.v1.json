@@ -62,6 +62,60 @@
       "max"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.functions.max_self.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "856e830522eb8c9afdb49465b966819bf6c9136dd92259a0a51c7b3a474ae0d2",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Functions/MaxSelf.lean",
+      "proof_body_sha256": "865ac07bbb58f07bfaaf7fb5ce43c865841bc69032d5676dc23346a14c310f9c",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "theorem_lookup",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "max_self"
+    ],
+    "used_theorem_deps": [
+      "max_self"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "max_self"
+    ],
+    "transitive_dependency_count": 1,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "max_self"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "max_self",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "max_self",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 3,
     "tactic_count": 1
@@ -87,7 +141,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode de1b9e3f).",
   "hashes": {
-    "packet_sha256": "4ebe20dfd42505be9be64ab0a5ef457a1a377a27b544c22194a1cf4646983121",
+    "packet_sha256": "f14b4ae33025ef240d72a0a25a1c3c8349df99aaa50854ca18cbcf72d30c7c0f",
     "formal_statement_sha256": "856e830522eb8c9afdb49465b966819bf6c9136dd92259a0a51c7b3a474ae0d2",
     "proof_body_sha256": "865ac07bbb58f07bfaaf7fb5ce43c865841bc69032d5676dc23346a14c310f9c"
   }

@@ -64,6 +64,60 @@
       "factorial"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.number_theory.factorial_pos.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "efc68078c4e930f9dd3e0fbed8638f4db228efa48dc541db5d780db6424abe9b",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/NumberTheory/FactorialPos.lean",
+      "proof_body_sha256": "f9fe60621d852cfd8a58fe7a352ea6933ae665ab74c6ddffd6a45d4905dee7f5",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "theorem_lookup",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "Nat.factorial_pos"
+    ],
+    "used_theorem_deps": [
+      "Nat.factorial_pos"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "Nat.factorial_pos"
+    ],
+    "transitive_dependency_count": 1,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "Nat.factorial_pos"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "Nat.factorial_pos",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Nat.factorial_pos",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 3,
     "tactic_count": 1
@@ -89,7 +143,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 53b01247).",
   "hashes": {
-    "packet_sha256": "f2f567c21184befba67cc0570e8777cd0fe2227deb8acb722d8cb011385e94c6",
+    "packet_sha256": "2dccd4f6a05548af6b45a4cae1b3e4bfb9d8b5b7f5bfda3356e238251dfa203a",
     "formal_statement_sha256": "efc68078c4e930f9dd3e0fbed8638f4db228efa48dc541db5d780db6424abe9b",
     "proof_body_sha256": "f9fe60621d852cfd8a58fe7a352ea6933ae665ab74c6ddffd6a45d4905dee7f5"
   }

@@ -65,6 +65,60 @@
       "multiplication"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.inequalities.mul_pos.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "b7757c60ea96beb9812bda80f7cb9a97344c55fcf8efe163381cfa3301ed6015",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Inequalities/MulPos.lean",
+      "proof_body_sha256": "5018a682d75c0002eaab15db1a8cd8d589c40725dafb94a2a19c1836f9012f34",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "theorem_lookup",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "mul_pos"
+    ],
+    "used_theorem_deps": [
+      "mul_pos"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "mul_pos"
+    ],
+    "transitive_dependency_count": 1,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "mul_pos"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "mul_pos",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "mul_pos",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
   "metrics": {
     "loc": 3,
     "tactic_count": 1
@@ -90,7 +144,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode e5e47652).",
   "hashes": {
-    "packet_sha256": "6dff07ff96d56f6d820501799cea085c95b20ebb0d670b52ec62bed28aadb78e",
+    "packet_sha256": "83576f1f734406a3fd2789a9c988419745e0a53722f92fb21f888878a27c5269",
     "formal_statement_sha256": "b7757c60ea96beb9812bda80f7cb9a97344c55fcf8efe163381cfa3301ed6015",
     "proof_body_sha256": "5018a682d75c0002eaab15db1a8cd8d589c40725dafb94a2a19c1836f9012f34"
   }
