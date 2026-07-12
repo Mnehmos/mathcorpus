@@ -22,33 +22,13 @@ from typing import Any
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-from mathcorpus.mcip import RECORD_TYPE_TO_SCHEMA_FILE, record_hash  # noqa: E402
+from mathcorpus.mcip import (  # noqa: E402
+    RECORD_TYPE_TO_SCHEMA_FILE,
+    build_schema_registry,
+    record_hash,
+)
 
-SCHEMA_DIR = Path(__file__).resolve().parent.parent / "schema" / "mcip" / "v1"
 BUNDLE_SCHEMA_FILE = "bundle.schema.json"
-
-
-def _load_jsonschema():
-    try:
-        import jsonschema
-        from referencing import Registry, Resource
-        from referencing.jsonschema import DRAFT202012
-    except ImportError:
-        print("ERROR: jsonschema not installed. `pip install -r tools/requirements.txt`", file=sys.stderr)
-        raise SystemExit(2)
-    return jsonschema, Registry, Resource, DRAFT202012
-
-
-def _build_registry(jsonschema_mod, Registry, Resource, DRAFT202012):
-    schemas: dict[str, dict[str, Any]] = {}
-    resources = []
-    for path in sorted(SCHEMA_DIR.glob("*.schema.json")):
-        contents = json.loads(path.read_text(encoding="utf-8"))
-        schemas[path.name] = contents
-        resource = Resource.from_contents(contents, default_specification=DRAFT202012)
-        resources.append((contents["$id"], resource))
-    registry = Registry().with_resources(resources)
-    return schemas, registry
 
 
 def _validator_for(jsonschema_mod, registry, schema: dict[str, Any]):
@@ -73,8 +53,9 @@ def main() -> int:
     ap.add_argument("--warn-as-error", action="store_true", help="Treat warnings as errors.")
     args = ap.parse_args()
 
-    jsonschema_mod, Registry, Resource, DRAFT202012 = _load_jsonschema()
-    schemas, registry = _build_registry(jsonschema_mod, Registry, Resource, DRAFT202012)
+    import jsonschema as jsonschema_mod
+
+    schemas, registry = build_schema_registry()
 
     bundle_validator = _validator_for(jsonschema_mod, registry, schemas[BUNDLE_SCHEMA_FILE])
     record_validators = {

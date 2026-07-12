@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "restriction_profile",
+  "record_id": "restriction_profile.no_ring_automation.v1",
+  "packet_id": "shared.restriction_profile_catalog.v1",
+  "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+  "created_at": "2026-07-11T00:00:00Z",
+  "trust_status": "candidate_unverified",
+  "export_eligibility": "public",
+  "record_hash": "02bbaa3661b341323f039933bb07ac13edfc26bc2ad680c5286e90c9ee843934",
+  "name": "no-ring-automation",
+  "forbidden_tactics": [
+    "ring",
+    "ring_nf",
+    "noncomm_ring"
+  ],
+  "allowed_tactics": null,
+  "allowed_dependency_set": null,
+  "max_tactic_count": null,
+  "max_dependency_count": null,
+  "requires_explicit_intermediate_claims": true
+}

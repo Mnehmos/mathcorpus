@@ -54,6 +54,41 @@ tactics · `D3` structured multi-lemma · `D4` certificate-backed/known theorem 
 - `certificate_checker`: `bv_decide_lrat`, `lrat_import`, `model_eval`, `none`
 - `memory_class`: `small`, `medium`, `large`
 
+## `proof_variants[]`
+
+Zero or more additional proofs of a packet's statement (`$defs/proof_variant`). Adding a
+variant never changes the packet's own canonical `theorem_name` /
+`formal_statement_pp` / `hashes.proof_body_sha256` — those stay defined by the packet's own
+top-level fields regardless of how many variants exist. Cross-field checks live in
+`tools/mathcorpus/policy.check_proof_variants`:
+
+- a variant's `formal_statement_sha256` / `environment_hash` must match the parent packet's
+  `hashes.formal_statement_sha256` / `verification.environment_hash` when both are set;
+- a `canonical`-styled variant's `proof_body_sha256` must match the parent packet's
+  `hashes.proof_body_sha256`.
+
+- `variant_style`: `canonical`, `shortest`, `pedagogical`, `restricted`, `interactive`,
+  `alternate_model`. A `restricted` variant requires `restriction_profile_id` +
+  `restriction_profile_sha256`.
+- `source`: `human_authored`, `proof_search`, `imported`.
+- `proof_profile.primary_proof_class` / `secondary_proof_classes`: `theorem_lookup`,
+  `normalization`, `arithmetic_automation`, `induction`, `witness_construction`,
+  `case_analysis`, `multi_lemma_composition`.
+- `proof_profile.automation_level`: `none`, `assisted`, `semi_automated`,
+  `fully_automated`.
+
+## Restriction profiles (`restriction_profiles/`)
+
+A restriction profile is a hash-pinned, reusable constraint set (forbidden/allowed
+tactics, dependency budget) that a `restricted` proof variant was checked against. Profiles
+are their own catalog — `restriction_profiles/<id>.v1.json`, one file per profile,
+conforming to [`mcip/v1/restriction_profile.schema.json`](mcip/v1/restriction_profile.schema.json)
+— not embedded per-packet, so the same profile can be referenced by many packets'
+`proof_variants[].restriction_profile_id`. `tools/stamp_restriction_profiles.py` computes
+each entry's `record_hash`; `tools/validate_packets.py` structurally validates the catalog
+and checks that every packet's `restriction_profile_id` + `restriction_profile_sha256` pin
+resolves to a current catalog entry (`tools/mathcorpus/policy.check_restriction_profile_refs`).
+
 ## `source_provenance`
 - `source_kind`: `author_written`, `adapted_public_source`, `formal_conjectures`,
   `erdos_problems`, `proofnet_style`, `repo_original`, `imported_open_repo`,

@@ -65,6 +65,47 @@
       "distributivity"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.algebra.add_mul.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "80755410d29c5c7c2e8cb7f7af7bc4f840986eb87b59b07bc97c7699413be0b2",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Algebra/AddMul.lean",
+      "proof_body_sha256": "995c79e85bc454a7be9c4110527c940d40cfe47e7c1b3839f9a899edc93c09fa",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "theorem_lookup",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "retrieval_depth": 1,
+        "planning_depth": 0,
+        "branch_count": 0,
+        "dependency_composition_depth": 1,
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    },
+    {
+      "variant_id": "elementary.algebra.add_mul.v1.variant.restricted_no_ring",
+      "variant_style": "restricted",
+      "formal_statement_sha256": "80755410d29c5c7c2e8cb7f7af7bc4f840986eb87b59b07bc97c7699413be0b2",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Algebra/AddMul.lean",
+      "proof_body_sha256": "995c79e85bc454a7be9c4110527c940d40cfe47e7c1b3839f9a899edc93c09fa",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "restriction_profile_id": "restriction_profile.no_ring_automation.v1",
+      "restriction_profile_sha256": "02bbaa3661b341323f039933bb07ac13edfc26bc2ad680c5286e90c9ee843934",
+      "source": "proof_search"
+    }
+  ],
   "metrics": {
     "loc": 3,
     "tactic_count": 1
@@ -90,7 +131,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 0d2009b2).",
   "hashes": {
-    "packet_sha256": "18f3ea7c2d9566bc2b5521710559b1e14f9b354fefaecce907fb790a269ba435",
+    "packet_sha256": "1da1867c664924f2a872a4e7c7a3faea00a36abf9b6e4e22357c0663af967455",
     "formal_statement_sha256": "80755410d29c5c7c2e8cb7f7af7bc4f840986eb87b59b07bc97c7699413be0b2",
     "proof_body_sha256": "995c79e85bc454a7be9c4110527c940d40cfe47e7c1b3839f9a899edc93c09fa"
   }

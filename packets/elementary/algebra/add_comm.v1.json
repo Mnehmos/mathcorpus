@@ -65,6 +65,33 @@
       "commutativity"
     ]
   },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.algebra.add_comm.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "ba34846d1ad72deb7883571c3ce7f9e6192df2f7d40b3736ffbf1cd5ff62b7a2",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Algebra/AddComm.lean",
+      "proof_body_sha256": "6cf0480a23a8ab2f8c9d7da2ee6183f78762c96b0fbc7ca5a44dd4ae64dc13a2",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "proof_profile": {
+        "primary_proof_class": "theorem_lookup",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "retrieval_depth": 1,
+        "planning_depth": 0,
+        "branch_count": 0,
+        "dependency_composition_depth": 1,
+        "uses_witness_invention": false,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
   "metrics": {
     "loc": 3,
     "tactic_count": 1
@@ -90,7 +117,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 41a3a963).",
   "hashes": {
-    "packet_sha256": "e08ead12d116a35afc68580e74b304ef25f8280f2878fa22b3bb863159c9c314",
+    "packet_sha256": "cfd2e8ed2d323ac882121925eb823da1c4314cdb08988f547a73080acdc0e7be",
     "formal_statement_sha256": "ba34846d1ad72deb7883571c3ce7f9e6192df2f7d40b3736ffbf1cd5ff62b7a2",
     "proof_body_sha256": "6cf0480a23a8ab2f8c9d7da2ee6183f78762c96b0fbc7ca5a44dd4ae64dc13a2"
   }

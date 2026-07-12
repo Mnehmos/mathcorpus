@@ -23,6 +23,19 @@ reference a Lean proof under `lean/` via `lean_module` / `proof_body_path`.
 4. **Validate.** `python tools/validate_packets.py packets/<path>.json`
 5. **Open a PR.** CI must be green (see gates below).
 
+### Optional: additional proof variants
+
+A packet may record extra proofs of its own statement under `proof_variants` — e.g. a
+shortest form, a pedagogical rewrite, or a proof checked against a tactic/dependency
+restriction (see [`schema/ENUMS.md`](schema/ENUMS.md#proof_variants) for the vocabulary).
+Adding variants never changes the packet's own canonical proof; each variant's statement,
+environment, and (for `canonical`-styled variants) proof hash must match the parent
+packet's own recorded evidence, or validation rejects it. A `restricted` variant must
+hash-pin an entry from the shared `restriction_profiles/` catalog — add a new profile there
+(then `python tools/stamp_restriction_profiles.py restriction_profiles/`) rather than
+inlining restriction rules per packet, so profiles stay reusable and auditable across the
+corpus.
+
 ## PR gates (CI, on any change to `packets/`, `schema/`, or `tools/`)
 
 - schema validation;

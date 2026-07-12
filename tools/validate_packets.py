@@ -19,8 +19,11 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from mathcorpus import loader, policy  # noqa: E402
+from mathcorpus.mcip import record_hash as mcip_record_hash  # noqa: E402
+from mathcorpus.mcip import validator_for_schema_file  # noqa: E402
 
 SCHEMA_PATH = Path(__file__).resolve().parent.parent / "schema" / "packet.schema.json"
+RESTRICTION_PROFILES_DIR = Path(__file__).resolve().parent.parent / "restriction_profiles"
 
 
 def _load_schema_validator():
@@ -87,6 +90,38 @@ def main() -> int:
                 n_error += 1
             else:
                 n_warn += 1
+
+    # Restriction-profile catalog: structural validation + hash-pin resolution.
+    if RESTRICTION_PROFILES_DIR.is_dir():
+        rp_validator = validator_for_schema_file("restriction_profile.schema.json")
+        restriction_profiles: dict[str, dict] = {}
+        for rp_file in loader.load_all([str(RESTRICTION_PROFILES_DIR)]):
+            rp_findings: list[str] = []
+            for e in sorted(rp_validator.iter_errors(rp_file.data), key=lambda e: e.path):
+                loc = "/".join(str(x) for x in e.path) or "<root>"
+                rp_findings.append(f"  [error] schema at {loc}: {e.message}")
+                n_error += 1
+            if args.check_hashes:
+                expected = mcip_record_hash(rp_file.data)
+                if rp_file.data.get("record_hash") != expected:
+                    rp_findings.append(
+                        "  [error] record_hash does not match recompute "
+                        "(run tools/stamp_restriction_profiles.py)"
+                    )
+                    n_error += 1
+            if rp_findings:
+                print(f"{rp_file.path}:")
+                print("\n".join(rp_findings))
+            record_id = rp_file.data.get("record_id")
+            if record_id:
+                restriction_profiles[record_id] = rp_file.data
+
+        rp_ref_findings = policy.check_restriction_profile_refs(corpus_data, restriction_profiles)
+        if rp_ref_findings:
+            print("<restriction_profiles>:")
+            for f in rp_ref_findings:
+                print(f"  {f}")
+                n_error += 1  # check_restriction_profile_refs only ever emits errors
 
     total = len(packets)
     print(f"\nChecked {total} packet(s): {n_error} error(s), {n_warn} warning(s).")

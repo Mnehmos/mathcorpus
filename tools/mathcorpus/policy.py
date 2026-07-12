@@ -185,6 +185,83 @@ def check_packet(packet: dict[str, Any]) -> list[Finding]:
         findings.append(_warn("benchmark_public",
                               "benchmark_tags present but eligibility is public_*; consider quarantine"))
 
+    # 10. Proof variants must not silently disagree with their parent packet's own evidence.
+    findings.extend(check_proof_variants(packet))
+
+    return findings
+
+
+def check_proof_variants(packet: dict[str, Any]) -> list[Finding]:
+    """A variant's statement/environment/proof hash must match its parent packet.
+
+    A variant is *additional* evidence — it may never claim to prove a different
+    statement, under a different environment, than the packet it is attached to. The
+    canonical variant additionally must reproduce the packet's own recorded proof hash,
+    since 'canonical' means 'the packet's own proof, restated as a variant record'.
+    """
+    findings: list[Finding] = []
+    variants = packet.get("proof_variants")
+    if not variants:
+        return findings
+
+    hashes = packet.get("hashes") or {}
+    packet_fsh = hashes.get("formal_statement_sha256")
+    packet_env = (packet.get("verification") or {}).get("environment_hash")
+    packet_proof_sha = hashes.get("proof_body_sha256")
+
+    for i, v in enumerate(variants):
+        vid = v.get("variant_id", f"#{i}")
+        vfsh = v.get("formal_statement_sha256")
+        if vfsh is not None and packet_fsh is not None and vfsh != packet_fsh:
+            findings.append(_err("variant_statement_hash_mismatch",
+                                 f"proof_variants[{vid}].formal_statement_sha256 does not match "
+                                 "the parent packet's hashes.formal_statement_sha256"))
+        venv = v.get("environment_hash")
+        if venv is not None and packet_env is not None and venv != packet_env:
+            findings.append(_err("variant_environment_hash_mismatch",
+                                 f"proof_variants[{vid}].environment_hash does not match "
+                                 "the parent packet's verification.environment_hash"))
+        if v.get("variant_style") == "canonical":
+            vproof = v.get("proof_body_sha256")
+            if vproof is not None and packet_proof_sha is not None and vproof != packet_proof_sha:
+                findings.append(_err("variant_proof_hash_mismatch",
+                                     f"proof_variants[{vid}] is styled 'canonical' but its "
+                                     "proof_body_sha256 does not match the parent packet's "
+                                     "hashes.proof_body_sha256"))
+
+    return findings
+
+
+# --- restriction-profile catalog checks --------------------------------------------
+
+def check_restriction_profile_refs(
+    packets: list[dict[str, Any]], restriction_profiles: dict[str, dict[str, Any]]
+) -> list[Finding]:
+    """Every restricted variant's (id, hash) pin must resolve in the shared catalog.
+
+    ``restriction_profiles`` maps ``record_id`` -> the loaded restriction_profile record
+    (see ``restriction_profiles/`` and ``schema/mcip/v1/restriction_profile.schema.json``).
+    """
+    findings: list[Finding] = []
+    for p in packets:
+        pid = p.get("packet_id", "<unknown>")
+        for v in p.get("proof_variants") or []:
+            rp_id = v.get("restriction_profile_id")
+            if rp_id is None:
+                continue
+            entry = restriction_profiles.get(rp_id)
+            if entry is None:
+                findings.append(_err("restriction_profile_dangling",
+                                     f"{pid}: proof_variants references restriction_profile_id "
+                                     f"'{rp_id}' which is not in the restriction_profiles/ catalog"))
+                continue
+            pinned = v.get("restriction_profile_sha256")
+            actual = entry.get("record_hash")
+            if pinned is not None and pinned != actual:
+                findings.append(_err("restriction_profile_hash_stale",
+                                     f"{pid}: proof_variants pins restriction_profile_id '{rp_id}' "
+                                     f"at hash {pinned}, but the catalog entry's current record_hash "
+                                     f"is {actual} (run tools/stamp_restriction_profiles.py or update the pin)"))
     return findings
 
 

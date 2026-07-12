@@ -30,6 +30,64 @@
         { "$ref": "#/$defs/sha256" },
         { "type": "null" }
       ]
+    },
+    "proof_class": {
+      "type": "string",
+      "enum": [
+        "theorem_lookup", "normalization", "arithmetic_automation", "induction",
+        "witness_construction", "case_analysis", "multi_lemma_composition"
+      ]
+    },
+    "proof_profile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["primary_proof_class"],
+      "properties": {
+        "primary_proof_class": { "$ref": "#/$defs/proof_class" },
+        "secondary_proof_classes": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/proof_class" },
+          "uniqueItems": true
+        },
+        "automation_level": { "type": "string", "enum": ["none", "assisted", "semi_automated", "fully_automated"] },
+        "retrieval_depth": { "type": "integer", "minimum": 0 },
+        "planning_depth": { "type": "integer", "minimum": 0 },
+        "branch_count": { "type": "integer", "minimum": 0 },
+        "dependency_composition_depth": { "type": "integer", "minimum": 0 },
+        "uses_witness_invention": { "type": "boolean" },
+        "uses_induction": { "type": "boolean" },
+        "uses_contradiction": { "type": "boolean" },
+        "uses_case_analysis": { "type": "boolean" }
+      }
+    },
+    "proof_variant": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["variant_id", "variant_style", "proof_body_redacted", "source"],
+      "properties": {
+        "variant_id": { "type": "string", "minLength": 1 },
+        "variant_style": {
+          "type": "string",
+          "enum": ["canonical", "shortest", "pedagogical", "restricted", "interactive", "alternate_model"]
+        },
+        "formal_statement_sha256": { "$ref": "#/$defs/sha256_or_null" },
+        "environment_hash": { "type": "string" },
+        "proof_body_path": { "type": "string" },
+        "proof_body_sha256": { "$ref": "#/$defs/sha256_or_null" },
+        "proof_body_redacted": { "type": "boolean" },
+        "tactic_count": { "type": ["integer", "null"], "minimum": 0 },
+        "proof_length": { "type": ["integer", "null"], "minimum": 0 },
+        "restriction_profile_id": { "type": ["string", "null"] },
+        "restriction_profile_sha256": { "$ref": "#/$defs/sha256_or_null" },
+        "proof_profile": { "$ref": "#/$defs/proof_profile" },
+        "source": { "type": "string", "enum": ["human_authored", "proof_search", "imported"] }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "variant_style": { "const": "restricted" } } },
+          "then": { "required": ["restriction_profile_id", "restriction_profile_sha256"] }
+        }
+      ]
     }
   },
   "properties": {
@@ -223,6 +281,11 @@
         "tactic_tags": { "type": "array", "items": { "type": "string" } },
         "prerequisite_concepts": { "type": "array", "items": { "type": "string" } }
       }
+    },
+    "proof_variants": {
+      "type": "array",
+      "description": "Zero or more additional proofs of this packet's statement, in styles other than (or including) the canonical proof_body_path. Adding variants never mutates the packet's own canonical identity/hash fields. See schema/mcip/v1/README.md — these mirror the MCIP ProofVariant/ProofProfile shapes. Cross-field checks (statement/environment/proof hash must match parent evidence; restricted variants must hash-pin a resolvable restriction profile) are enforced by tools/validate_packets.py.",
+      "items": { "$ref": "#/$defs/proof_variant" }
     },
     "metrics": {
       "type": "object",
