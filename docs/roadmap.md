@@ -41,6 +41,17 @@ no retained Proof Search trajectory database is reachable from this repo. See
 This is infrastructure, not corpus growth — it changes what a packet *can* carry, not how
 many packets exist.
 
+## RL transition dataset (issue #9, in progress — blocked on upstream)
+
+A canonical RL transition (`state -> action -> reward -> next_state`) export, kept entirely
+separate from `packets.jsonl`/`train.jsonl`. Schema (`schema/mcip/v1/rl_transition.schema.json`),
+validator/policy module (`tools/mathcorpus/rl_transitions.py`), and exporter
+(`tools/export_rl_transitions.py`) are built and pass their conformance fixtures. Real
+end-to-end use is blocked on two open `llm-driven-proof-search` issues neither of which has
+shipped: `#238` (the actual transition exporter this schema consumes) and its own prerequisite
+`#231` (persisting real reward/terminal/observation values in the runtime). See
+[`rl-transitions.md`](rl-transitions.md) for the full cross-repo status.
+
 ## Elementary spine starter families (Phase 2)
 
 Arithmetic identities (25) · divisibility & parity (20) · induction (20) · equations &

@@ -336,6 +336,130 @@ def multi_model_aggregate_bundle() -> dict[str, Any]:
     return _bundle("fixture.multi_model_aggregate.v1", [identity, run_a, run_b, aggregate])
 
 
+def rl_episode_success_bundle() -> dict[str, Any]:
+    """A clean, fully-populated 2-step episode: a non-terminal fail, then a verified close.
+
+    Synthetic conformance data for the rl_transition schema/exporter added in #9 --
+    llm-driven-proof-search#238 has not shipped a real producer yet (see
+    docs/rl-transitions.md), so this proves the MathCorpus-side pipeline (schema validation,
+    record_hash, packet join, episode contiguity, export) works, not real trajectory data.
+    export_eligibility is deliberately private_only so it can never be mistaken for a public
+    row even if this fixtures/ directory is pointed at tools/export_rl_transitions.py directly.
+    """
+    episode_id = "fixture-rl-episode-1111-2222-3333-444444444444"
+    step0 = _finalize({
+        **_envelope("rl_transition", "rlt.fixture_episode.0", trust_status="candidate_unverified", export_eligibility="private_only"),
+        "formal_statement_sha256": FORMAL_STATEMENT_SHA,
+        "episode_id": episode_id,
+        "problem_version_id": "pv.add_assoc.2026_07",
+        "step_index": 0,
+        "state": {"artifact_hash": _fake_sha256("rl fixture state 0"), "inline": None},
+        "action": {"kind": "tactic", "text": "add_comm"},
+        "reward": -0.05,
+        "next_state": {"artifact_hash": _fake_sha256("rl fixture state 1"), "inline": None},
+        "terminated": False,
+        "truncated": False,
+        "termination_reason": None,
+        "truncation_reason": None,
+        "outcome": "kernel_fail",
+        "verifier_version": "lean4-verifier-2026.07",
+        "action_space_version": "tactic-space-v1",
+        "observation_space_version": "goal-state-v1",
+        "reward_policy_version": "reward-policy-2026.07",
+        "restriction_profile_id": None,
+        "restriction_profile_hash": None,
+        "model_config_hash": _fake_sha256("proofsearch model config 2026-07"),
+        "tokens": 260,
+        "cost": 0.0019,
+        "wall_time_ms": 410.0,
+        "lean_cpu_time_ms": 88.0,
+        "diagnostic_refs": [],
+        "dependency_artifact_refs": [],
+        "public_metadata": {"summary": "Tried add_comm; goal direction did not match."},
+    })
+    step1 = _finalize({
+        **_envelope("rl_transition", "rlt.fixture_episode.1", trust_status="candidate_unverified", export_eligibility="private_only"),
+        "formal_statement_sha256": FORMAL_STATEMENT_SHA,
+        "episode_id": episode_id,
+        "problem_version_id": "pv.add_assoc.2026_07",
+        "step_index": 1,
+        "state": {"artifact_hash": _fake_sha256("rl fixture state 1"), "inline": None},
+        "action": {"kind": "tactic", "text": "add_assoc"},
+        "reward": 1.0,
+        "next_state": {"artifact_hash": None, "inline": "no goals"},
+        "terminated": True,
+        "truncated": False,
+        "termination_reason": "kernel_verified",
+        "truncation_reason": None,
+        "outcome": "kernel_verified",
+        "verifier_version": "lean4-verifier-2026.07",
+        "action_space_version": "tactic-space-v1",
+        "observation_space_version": "goal-state-v1",
+        "reward_policy_version": "reward-policy-2026.07",
+        "restriction_profile_id": None,
+        "restriction_profile_hash": None,
+        "model_config_hash": _fake_sha256("proofsearch model config 2026-07"),
+        "tokens": 190,
+        "cost": 0.0013,
+        "wall_time_ms": 305.0,
+        "lean_cpu_time_ms": 61.0,
+        "diagnostic_refs": [],
+        "dependency_artifact_refs": [],
+        "public_metadata": {"summary": "Closed by add_assoc directly."},
+    })
+    return _bundle("fixture.rl_episode_success.v1", [step0, step1])
+
+
+def rl_episode_legacy_gap_bundle() -> dict[str, Any]:
+    """A single-step legacy-style transition with honestly-marked missing core fields.
+
+    Exercises the missing_field_reasons path: reward/terminated/truncated/outcome are all
+    None/'unknown' but each is named in missing_field_reasons, so
+    tools/mathcorpus/rl_transitions.check_transition_record reports zero findings for it --
+    proving the honesty mechanism itself round-trips, not just the happy path.
+    """
+    step = _finalize({
+        **_envelope("rl_transition", "rlt.fixture_legacy.0", trust_status="candidate_unverified", export_eligibility="private_only"),
+        "formal_statement_sha256": FORMAL_STATEMENT_SHA,
+        "episode_id": "fixture-rl-legacy-5555-6666-7777-888888888888",
+        "problem_version_id": "pv.add_assoc.2025_11",
+        "step_index": 0,
+        "state": None,
+        "action": None,
+        "reward": None,
+        "next_state": None,
+        "terminated": None,
+        "truncated": None,
+        "termination_reason": None,
+        "truncation_reason": None,
+        "outcome": "unknown",
+        "verifier_version": None,
+        "action_space_version": None,
+        "observation_space_version": None,
+        "reward_policy_version": None,
+        "restriction_profile_id": None,
+        "restriction_profile_hash": None,
+        "model_config_hash": None,
+        "tokens": None,
+        "cost": None,
+        "wall_time_ms": None,
+        "lean_cpu_time_ms": None,
+        "diagnostic_refs": [],
+        "dependency_artifact_refs": [],
+        "missing_field_reasons": {
+            "reward": "legacy episode predates reward persistence, see llm-driven-proof-search#231",
+            "terminated": "legacy episode predates terminal-flag persistence, see llm-driven-proof-search#231",
+            "truncated": "legacy episode predates terminal-flag persistence, see llm-driven-proof-search#231",
+            "action": "legacy episode predates durable tactic-text persistence, see llm-driven-proof-search#231",
+            "state": "legacy episode predates observation-artifact persistence, see llm-driven-proof-search#231",
+            "next_state": "legacy episode predates observation-artifact persistence, see llm-driven-proof-search#231",
+            "outcome": "legacy episode predates explicit per-step outcome tagging, see llm-driven-proof-search#231",
+        },
+        "public_metadata": {},
+    })
+    return _bundle("fixture.rl_episode_legacy_gap.v1", [step])
+
+
 def main() -> int:
     FIXTURES_DIR.mkdir(parents=True, exist_ok=True)
     bundles = {
@@ -343,6 +467,8 @@ def main() -> int:
         "failed_attempt.bundle.json": failed_attempt_bundle(),
         "repair_chain.bundle.json": repair_chain_bundle(),
         "multi_model_aggregate.bundle.json": multi_model_aggregate_bundle(),
+        "rl_episode_success.bundle.json": rl_episode_success_bundle(),
+        "rl_episode_legacy_gap.bundle.json": rl_episode_legacy_gap_bundle(),
     }
     for name, bundle in bundles.items():
         path = FIXTURES_DIR / name

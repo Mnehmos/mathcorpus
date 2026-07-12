@@ -16,7 +16,7 @@ into a packet's own child records. A bundle that fails validation, or whose hash
 match the packet it claims to describe, must be rejected or quarantined — never partially
 applied.
 
-Ten record types, one per file in this directory:
+Eighteen record types, one per file in this directory:
 
 | Record type | File | Purpose |
 |---|---|---|
@@ -30,6 +30,14 @@ Ten record types, one per file in this directory:
 | `repair_trajectory` | `repair_trajectory.schema.json` | Ordered, hash-linked chain from failure(s) to a terminus. |
 | `model_run` | `model_run.schema.json` | One model's evaluation run under a pinned suite/policy. |
 | `empirical_difficulty_aggregate` | `empirical_difficulty_aggregate.schema.json` | Difficulty observed across model runs, kept apart from author-assigned difficulty. |
+| `literature_source` | `literature_source.schema.json` | A catalog entry for an external paper, repo, or claim. |
+| `retrieved_passage` | `retrieved_passage.schema.json` | A specific passage retrieved from a `literature_source`. |
+| `external_claim` | `external_claim.schema.json` | A specific claim attributed to a `literature_source`. |
+| `idea_attribution` | `idea_attribution.schema.json` | Links a packet's proof idea to the literature it came from. |
+| `prior_art_match` | `prior_art_match.schema.json` | A detected prior-art overlap with a packet's result. |
+| `citation_review` | `citation_review.schema.json` | Human review of a packet's literature lineage. |
+| `contribution_statement` | `contribution_statement.schema.json` | What, if anything, is novel about a packet's result. |
+| `rl_transition` | `rl_transition.schema.json` | One `state -> action -> reward -> next_state` environment step from an RL episode (#9). |
 
 `_defs.schema.json` holds shared `$defs` only — it is not a record type and never appears as
 a `record_type` value. `bundle.schema.json` is the transport envelope: `{mcip_version,
@@ -40,9 +48,14 @@ bundle_id, created_at, producer?, records: [...]}`.
 `schema_version`, `record_type`, `record_id`, `packet_id`, `environment_hash`, `created_at`,
 `trust_status`, `export_eligibility`, `record_hash`, and (record-type permitting)
 `artifact_hashes`. Model-related records (`attempt_record`, `model_run`,
-`empirical_difficulty_aggregate`) additionally carry `model_config_hash` and a
+`empirical_difficulty_aggregate`, `rl_transition`) additionally carry `model_config_hash` and a
 `public_metadata` object — the redaction-aware subset of the record safe to export publicly
 even when the full record is `restricted` or `private_only`.
+
+`rl_transition` is unlike every other record type in one respect: it is never folded into a
+packet's own child records (a packet has one proof, but an episode can have thousands of
+steps). It is instead exported as its own dataset by `tools/export_rl_transitions.py` — see
+`docs/rl-transitions.md`.
 
 ## Canonical serialization and hashing
 
@@ -102,5 +115,11 @@ which generates them deterministically so their `record_hash` values are always 
   one-step repair trajectory.
 - `multi_model_aggregate.bundle.json` — two models' runs against the same packet plus their
   empirical difficulty aggregate.
+- `rl_episode_success.bundle.json` — a 2-step RL episode (one non-terminal fail, one verified
+  close), fully populated. Synthetic: `llm-driven-proof-search#238` has not shipped a real
+  producer yet, see `docs/rl-transitions.md`.
+- `rl_episode_legacy_gap.bundle.json` — a single step with every core RL field null, each
+  justified by a `missing_field_reasons` entry, proving the honesty mechanism itself
+  round-trips through validation cleanly (not just the happy path).
 
 Regenerate after any schema change: `python tools/gen_mcip_fixtures.py`.

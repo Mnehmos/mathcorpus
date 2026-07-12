@@ -302,6 +302,47 @@ each entry's `record_hash`; `tools/validate_packets.py` structurally validates t
 and checks that every packet's `restriction_profile_id` + `restriction_profile_sha256` pin
 resolves to a current catalog entry (`tools/mathcorpus/policy.check_restriction_profile_refs`).
 
+## RL transitions (`rl_transition` MCIP records, #9)
+
+`schema/mcip/v1/rl_transition.schema.json` defines one committed or rejected environment
+step (`state -> action -> reward -> next_state`) from a Proof Search RL episode. Unlike every
+other MCIP record type, `rl_transition` records are **not** folded into a packet's own child
+fields — an episode can have thousands of steps, a packet has one proof — they are exported
+as their own dataset by `tools/export_rl_transitions.py` into `rl_transitions.jsonl` +
+`rl_episode_manifest.json`, kept entirely separate from `packets.jsonl`/`train.jsonl` and
+never confused with them.
+
+- **Cross-repo status**: this schema consumes the transition contract proposed by
+  `llm-driven-proof-search#238`, which itself depends on runtime persistence work in
+  `llm-driven-proof-search#231`. Neither has shipped as of this schema's authoring — see
+  [`../docs/rl-transitions.md`](../docs/rl-transitions.md) for what that means for anyone
+  trying to actually run the exporter today (nothing, yet — only the synthetic conformance
+  fixtures round-trip).
+- **Required-but-nullable fields**: `reward`, `terminated`, `truncated`, `action`, `state`,
+  `next_state`, `outcome` (`"unknown"` stands in for null here since it's a string enum), and
+  several version/hash fields are all *required keys* on every record but individually
+  nullable — the schema forces a producer to make an explicit per-field choice rather than
+  silently omitting a key. A null value in this set is only accepted by
+  `tools/mathcorpus/rl_transitions.check_transition_record` when the record's own
+  `missing_field_reasons` names that field with a human-readable reason (e.g. "legacy episode
+  predates reward persistence, see llm-driven-proof-search#231") — never a silently
+  fabricated `0`/`false`. This is distinct from `model_run.censored_fields[]`, which marks a
+  field withheld by export policy despite its true value being known.
+- **Packet join**: every transition is bound to a packet by both `packet_id` and
+  `formal_statement_sha256`; `tools/mathcorpus/rl_transitions.join_transition_to_packet`
+  rejects a transition whose statement hash disagrees with the packet it claims to be about.
+- **Publication is never more permissive than the packet**: `is_publicly_exportable` requires
+  both the transition's own `export_eligibility == "public"` *and* the joined packet's
+  `training.eligibility` to already be public/heldout-public — a quarantined or
+  `private_audit_only` packet's steps never leak into the public transition dataset even if
+  the transition record itself was stamped public.
+- **Episode structure**: `tools/mathcorpus/rl_transitions.check_episode_contiguity` requires
+  each episode's `step_index` values to be a gap-free `0..N-1` sequence, and that only the
+  last step in an episode is marked `terminated`/`truncated`.
+- **Not yet built**: Parquet export with native scalar columns and dataset-card/aggregate
+  statistics generation (both in scope per #9) are deferred until real transition data exists
+  to validate the column/stat choices against, rather than guessing a shape now.
+
 ## `superseded_by`
 
 Points a packet at its replacement (e.g. after a naming or identity correction found in

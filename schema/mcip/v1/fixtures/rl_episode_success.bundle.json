@@ -1,0 +1,106 @@
+{
+  "mcip_version": "1.0.0",
+  "bundle_id": "fixture.rl_episode_success.v1",
+  "created_at": "2026-07-11T00:00:00Z",
+  "producer": "llm-driven-proof-search",
+  "records": [
+    {
+      "schema_version": "1.0.0",
+      "record_type": "rl_transition",
+      "record_id": "rlt.fixture_episode.0",
+      "packet_id": "elementary.algebra.add_assoc.v1",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "created_at": "2026-07-11T00:00:00Z",
+      "trust_status": "candidate_unverified",
+      "export_eligibility": "private_only",
+      "formal_statement_sha256": "b90182e61b67b4c1f0c7706c0265f96a2db4ffd7cbf629202d37f4adb1f503f7",
+      "episode_id": "fixture-rl-episode-1111-2222-3333-444444444444",
+      "problem_version_id": "pv.add_assoc.2026_07",
+      "step_index": 0,
+      "state": {
+        "artifact_hash": "84dc15437d65f8f0b46c828a5a7b29730b5790d64122f2cfe3db594845d212cb",
+        "inline": null
+      },
+      "action": {
+        "kind": "tactic",
+        "text": "add_comm"
+      },
+      "reward": -0.05,
+      "next_state": {
+        "artifact_hash": "7ba7c9c945cf85d5da4c173c39116e841b3f2a224ad218c788bb1b4e4b845c01",
+        "inline": null
+      },
+      "terminated": false,
+      "truncated": false,
+      "termination_reason": null,
+      "truncation_reason": null,
+      "outcome": "kernel_fail",
+      "verifier_version": "lean4-verifier-2026.07",
+      "action_space_version": "tactic-space-v1",
+      "observation_space_version": "goal-state-v1",
+      "reward_policy_version": "reward-policy-2026.07",
+      "restriction_profile_id": null,
+      "restriction_profile_hash": null,
+      "model_config_hash": "4758564a6444ab6a4e46d3604a1bcf8cb9d4004ce83994967d687bc74837922a",
+      "tokens": 260,
+      "cost": 0.0019,
+      "wall_time_ms": 410.0,
+      "lean_cpu_time_ms": 88.0,
+      "diagnostic_refs": [],
+      "dependency_artifact_refs": [],
+      "public_metadata": {
+        "summary": "Tried add_comm; goal direction did not match."
+      },
+      "record_hash": "e91bff69b7ad5cad6dbbcaf1665f1f277cdb8dee088c62708b697e3fe0ba2676"
+    },
+    {
+      "schema_version": "1.0.0",
+      "record_type": "rl_transition",
+      "record_id": "rlt.fixture_episode.1",
+      "packet_id": "elementary.algebra.add_assoc.v1",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "created_at": "2026-07-11T00:00:00Z",
+      "trust_status": "candidate_unverified",
+      "export_eligibility": "private_only",
+      "formal_statement_sha256": "b90182e61b67b4c1f0c7706c0265f96a2db4ffd7cbf629202d37f4adb1f503f7",
+      "episode_id": "fixture-rl-episode-1111-2222-3333-444444444444",
+      "problem_version_id": "pv.add_assoc.2026_07",
+      "step_index": 1,
+      "state": {
+        "artifact_hash": "7ba7c9c945cf85d5da4c173c39116e841b3f2a224ad218c788bb1b4e4b845c01",
+        "inline": null
+      },
+      "action": {
+        "kind": "tactic",
+        "text": "add_assoc"
+      },
+      "reward": 1.0,
+      "next_state": {
+        "artifact_hash": null,
+        "inline": "no goals"
+      },
+      "terminated": true,
+      "truncated": false,
+      "termination_reason": "kernel_verified",
+      "truncation_reason": null,
+      "outcome": "kernel_verified",
+      "verifier_version": "lean4-verifier-2026.07",
+      "action_space_version": "tactic-space-v1",
+      "observation_space_version": "goal-state-v1",
+      "reward_policy_version": "reward-policy-2026.07",
+      "restriction_profile_id": null,
+      "restriction_profile_hash": null,
+      "model_config_hash": "4758564a6444ab6a4e46d3604a1bcf8cb9d4004ce83994967d687bc74837922a",
+      "tokens": 190,
+      "cost": 0.0013,
+      "wall_time_ms": 305.0,
+      "lean_cpu_time_ms": 61.0,
+      "diagnostic_refs": [],
+      "dependency_artifact_refs": [],
+      "public_metadata": {
+        "summary": "Closed by add_assoc directly."
+      },
+      "record_hash": "2f49d24f1938c00e08605248cf5fb1c6bdbd449143fb4f41b2c6cfee0b582b8d"
+    }
+  ]
+}

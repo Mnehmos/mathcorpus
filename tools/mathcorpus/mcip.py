@@ -36,6 +36,7 @@ RECORD_TYPE_TO_SCHEMA_FILE = {
     "prior_art_match": "prior_art_match.schema.json",
     "citation_review": "citation_review.schema.json",
     "contribution_statement": "contribution_statement.schema.json",
+    "rl_transition": "rl_transition.schema.json",
 }
 
 SCHEMA_DIR = Path(__file__).resolve().parent.parent.parent / "schema" / "mcip" / "v1"

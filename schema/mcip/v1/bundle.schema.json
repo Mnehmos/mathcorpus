@@ -28,7 +28,8 @@
               "dependency_manifest", "attempt_record", "negative_example",
               "repair_trajectory", "model_run", "empirical_difficulty_aggregate",
               "literature_source", "retrieved_passage", "external_claim",
-              "idea_attribution", "prior_art_match", "citation_review", "contribution_statement"
+              "idea_attribution", "prior_art_match", "citation_review", "contribution_statement",
+              "rl_transition"
             ]
           }
         }

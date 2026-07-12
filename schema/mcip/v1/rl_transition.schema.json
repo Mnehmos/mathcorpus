@@ -1,0 +1,114 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Mnehmos/mathcorpus/schema/mcip/v1/rl_transition.schema.json",
+  "title": "MCIP RlTransition v1",
+  "description": "One committed or rejected environment step from a Proof Search RL episode: state -> action -> reward -> next_state, never a packet record reinterpreted as a transition. Consumes the transition contract proposed by llm-driven-proof-search#238 (itself blocked on runtime persistence work in llm-driven-proof-search#231 as of this schema's authoring — see mathcorpus#9). Model-related: carries model_config_hash and redaction-aware public_metadata. Every field that #238/#9 require 'or explicitly mark unavailable' is required at the envelope level but individually nullable, so a producer must make an explicit per-field choice rather than silently omitting a key; missing_field_reasons documents *why* a required field is null for a given record (e.g. a legacy episode that predates #231) instead of leaving the gap unexplained.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "record_type", "record_id", "packet_id", "formal_statement_sha256",
+    "environment_hash", "created_at", "trust_status", "export_eligibility", "record_hash",
+    "episode_id", "problem_version_id", "step_index",
+    "state", "action", "reward", "next_state",
+    "terminated", "truncated", "termination_reason", "truncation_reason", "outcome",
+    "verifier_version", "action_space_version", "observation_space_version",
+    "reward_policy_version", "restriction_profile_id", "restriction_profile_hash",
+    "model_config_hash", "tokens", "cost", "wall_time_ms", "lean_cpu_time_ms"
+  ],
+  "properties": {
+    "schema_version": { "$ref": "_defs.schema.json#/$defs/mcip_version" },
+    "record_type": { "const": "rl_transition" },
+    "record_id": { "$ref": "_defs.schema.json#/$defs/record_id" },
+    "packet_id": { "$ref": "_defs.schema.json#/$defs/packet_id" },
+    "formal_statement_sha256": { "$ref": "_defs.schema.json#/$defs/sha256" },
+    "environment_hash": { "type": "string", "minLength": 1 },
+    "artifact_hashes": { "$ref": "_defs.schema.json#/$defs/artifact_hashes" },
+    "created_at": { "$ref": "_defs.schema.json#/$defs/iso_timestamp" },
+    "trust_status": { "$ref": "_defs.schema.json#/$defs/trust_status" },
+    "export_eligibility": { "$ref": "_defs.schema.json#/$defs/export_eligibility" },
+    "record_hash": { "$ref": "_defs.schema.json#/$defs/sha256" },
+
+    "episode_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Proof Search episode identifier this step belongs to (matches the episode_id convention already used by packet.verification.episode_id and MCIP attempt_record.episode_id)."
+    },
+    "problem_version_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Proof Search's own problem-version identifier. Distinct from packet_id: a problem may be versioned in Proof Search before MathCorpus packages a packet for it."
+    },
+    "step_index": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "0-based position of this transition within its episode. tools/mathcorpus/rl_transitions.py checks that an episode's step_index values are contiguous and gap-free."
+    },
+
+    "state": { "$ref": "#/$defs/state_ref" },
+    "action": {
+      "description": "Deliberately unconstrained: the action space (tactic text, retrieval query, whole-proof submission, ...) is defined by the producing environment, not MCIP. Non-null is a business rule (tools/mathcorpus/rl_transitions.py), not a schema constraint, since a legacy record may legitimately have none (see missing_field_reasons)."
+    },
+    "reward": {
+      "type": ["number", "null"],
+      "description": "Scalar reward for this step. Never silently defaulted to 0 for missing data (llm-driven-proof-search#231 acceptance criteria) -- a null here must be explained in missing_field_reasons unless the record's trust_status/export_eligibility already marks it as a fixture."
+    },
+    "next_state": { "$ref": "#/$defs/state_ref" },
+
+    "terminated": { "type": ["boolean", "null"] },
+    "truncated": { "type": ["boolean", "null"] },
+    "termination_reason": { "type": ["string", "null"] },
+    "truncation_reason": { "type": ["string", "null"] },
+    "outcome": {
+      "type": "string",
+      "enum": [
+        "kernel_verified", "kernel_fail", "rejected", "timeout", "cancelled", "error", "unknown"
+      ],
+      "description": "Explicit per-step verifier outcome. 'unknown' is the honest placeholder for legacy data (paired with a missing_field_reasons entry), never silently coerced to a success/failure guess."
+    },
+
+    "verifier_version": { "type": ["string", "null"] },
+    "action_space_version": { "type": ["string", "null"] },
+    "observation_space_version": { "type": ["string", "null"] },
+    "reward_policy_version": { "type": ["string", "null"] },
+    "restriction_profile_id": {
+      "type": ["string", "null"],
+      "description": "Pins to restriction_profiles/ by record_id, same pattern as proof_variant.restriction_profile_id."
+    },
+    "restriction_profile_hash": { "$ref": "_defs.schema.json#/$defs/sha256_or_null" },
+
+    "model_config_hash": { "$ref": "_defs.schema.json#/$defs/sha256_or_null" },
+    "tokens": { "type": ["integer", "null"], "minimum": 0 },
+    "cost": { "type": ["number", "null"], "minimum": 0 },
+    "wall_time_ms": { "type": ["number", "null"], "minimum": 0 },
+    "lean_cpu_time_ms": { "type": ["number", "null"], "minimum": 0 },
+
+    "diagnostic_refs": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Best-effort references (ids or hashes) to diagnostic artifacts for this step, where available. Not required -- absence just means none were captured, distinct from the required-field missing_field_reasons mechanism above."
+    },
+    "dependency_artifact_refs": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "missing_field_reasons": {
+      "type": "object",
+      "additionalProperties": { "type": "string", "minLength": 1 },
+      "description": "Map of field-name -> honest, human-readable reason a required field above is null on this record (e.g. {\"reward\": \"legacy episode predates reward persistence, see llm-driven-proof-search#231\"}). Distinct from model_run.censored_fields[], which marks fields withheld by export policy despite being known."
+    },
+    "public_metadata": { "$ref": "_defs.schema.json#/$defs/public_metadata" }
+  },
+  "$defs": {
+    "state_ref": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "properties": {
+        "artifact_hash": { "$ref": "_defs.schema.json#/$defs/sha256_or_null" },
+        "inline": {
+          "type": ["object", "string", "null"],
+          "description": "Raw or structured proof-state content when not artifact-referenced. A conformant transition sets exactly one of artifact_hash/inline; this schema does not enforce that cross-field rule (see tools/mathcorpus/rl_transitions.py)."
+        }
+      }
+    }
+  }
+}
