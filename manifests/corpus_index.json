@@ -1,7 +1,7 @@
 {
-  "packet_count": 367,
+  "packet_count": 368,
   "by_domain": {
-    "logic": 3,
+    "logic": 4,
     "algebra": 171,
     "combinatorics": 57,
     "geometry": 40,
@@ -13,7 +13,7 @@
     "topology": 2
   },
   "by_level": {
-    "L0_elementary": 111,
+    "L0_elementary": 112,
     "L1_proof_basics": 187,
     "L2_olympiad": 36,
     "L7_frontier": 25,
@@ -21,12 +21,12 @@
   },
   "by_kind": {
     "concept": 296,
-    "theorem": 43,
+    "theorem": 44,
     "negative_example": 28
   },
   "by_status": {
     "empirical_only": 2,
-    "kernel_verified": 337,
+    "kernel_verified": 338,
     "failed_attempt": 28
   },
   "packets": [
@@ -3339,6 +3339,16 @@
       "status": "kernel_verified",
       "eligibility": "quarantined",
       "packet_sha256": "4d28aefc6344bf8c8b82b7ebffb3753268f7058e741f2509b7f81d4b6ecf1108"
+    },
+    {
+      "packet_id": "logic.set.inter_self.v1",
+      "title": "Intersection of a set with itself is itself",
+      "domain": "logic",
+      "level": "L0_elementary",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "4622389bca5a2f2efcef1b724841d1b58e700cc8c0fc2d5cd8db6700eb574d1b"
     },
     {
       "packet_id": "negative.algebra.div_mul_cancel_bare_ring_no_hypothesis_failure.v1",

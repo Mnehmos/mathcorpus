@@ -1987,6 +1987,12 @@
       "source_kind": "formal_conjectures"
     },
     {
+      "packet_id": "logic.set.inter_self.v1",
+      "license_spdx": "Apache-2.0",
+      "license_content": "CC-BY-4.0",
+      "source_kind": "author_written"
+    },
+    {
       "packet_id": "negative.algebra.div_mul_cancel_bare_ring_no_hypothesis_failure.v1",
       "license_spdx": "Apache-2.0",
       "license_content": "CC-BY-4.0",

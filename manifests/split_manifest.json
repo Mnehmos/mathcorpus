@@ -1,10 +1,10 @@
 {
-  "packet_count": 367,
+  "packet_count": 368,
   "split_family_counts": {
     "negative_example_only": 28,
     "private_audit_only": 2,
     "quarantined": 26,
-    "train": 311
+    "train": 312
   },
   "entries": [
     {
@@ -2323,6 +2323,13 @@
       "split_family": "quarantined",
       "template_family_id": "frontier.jacobian_counterexample",
       "dedupe_cluster_id": "frontier.jacobian_dim3_refutation"
+    },
+    {
+      "packet_id": "logic.set.inter_self.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "logic.set_theory",
+      "dedupe_cluster_id": "logic.set_inter_self"
     },
     {
       "packet_id": "negative.algebra.div_mul_cancel_bare_ring_no_hypothesis_failure.v1",

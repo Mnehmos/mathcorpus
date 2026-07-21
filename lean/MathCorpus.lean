@@ -199,5 +199,7 @@ import MathCorpus.Undergrad.AbstractAlgebra.GroupInvInv
 import MathCorpus.Undergrad.AbstractAlgebra.GroupMulInvRev
 import MathCorpus.Undergrad.LinearAlgebra.SmulZeroVector
 import MathCorpus.Undergrad.Logic.DoubleNegationElim
+import MathCorpus.Elementary.Logic.SetInterSelf
+
 
 

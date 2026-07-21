@@ -245,6 +245,7 @@
     "elementary.inequalities.two_a_le_sq_add_one.v1",
     "elementary.inequalities.two_mul_le_add_sq.v1",
     "elementary.inequalities.two_sq_prod_le.v1",
+    "logic.set.inter_self.v1",
     "elementary.number_theory.add_mod.v1",
     "elementary.number_theory.bezout.v1",
     "elementary.number_theory.coprime_comm.v1",
@@ -5419,6 +5420,12 @@
         "type": "prerequisite_concepts"
       }
     ],
+    "logic.set.inter_self.v1": [
+      {
+        "to": "set_intersection",
+        "type": "prerequisite_concepts"
+      }
+    ],
     "negative.algebra.frac_sum_bare_ring.missing_field_simp.v1": [
       {
         "to": "reciprocal",
@@ -5813,7 +5820,7 @@
     ]
   },
   "dependency_manifest_summary": {
-    "packets_with_manifest": 329,
+    "packets_with_manifest": 330,
     "frequency_by_category": {
       "declared": {
         "sq_nonneg": 29,
@@ -7767,8 +7774,8 @@
     "transitive_depth": {
       "min": 0,
       "max": 1,
-      "avg": 0.7781155015197568,
-      "n": 329
+      "avg": 0.7757575757575758,
+      "n": 330
     }
   }
 }
