@@ -3392,7 +3392,7 @@
       "kind": "theorem",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "4622389bca5a2f2efcef1b724841d1b58e700cc8c0fc2d5cd8db6700eb574d1b"
+      "packet_sha256": "374394e4877318a5a9e0fd182d0a7d9435591c5ed50b726170372fb7a285907f"
     },
     {
       "packet_id": "measure_theory.borel_space_is_open_measurable.v1",
@@ -3402,7 +3402,7 @@
       "kind": "theorem",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "6c0cd9251ada7d309aa7bd45def7f638c58f12b94b511c16cdd4ee8eeedca558"
+      "packet_sha256": "ab7410292533e5ed89800969786531391116ef28420f1dc51be80097841daf10"
     },
     {
       "packet_id": "negative.algebra.div_mul_cancel_bare_ring_no_hypothesis_failure.v1",

@@ -3457,7 +3457,7 @@
       "packet_id": "measure_theory.borel_space_is_open_measurable.v1",
       "source_kind": "author_written",
       "source_refs": [
-        "Mathlib.MeasureTheory.Constriction.BorelSpace.Basic"
+        "Mathlib.MeasureTheory.Constructions.BorelSpace.Basic"
       ],
       "authors": [
         "The MathCorpus Authors"

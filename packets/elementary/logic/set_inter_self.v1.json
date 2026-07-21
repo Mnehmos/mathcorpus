@@ -31,7 +31,7 @@
   },
   "informal_statement": "The intersection of a set with itself equals the set.",
   "informal_proof_idea": "Apply Set.inter_self to set s.",
-  "formal_statement_pp": "theorem set_inter_self' : \u2200 {\u03b1 : Type*} (s : Set \u03b1), s \u2229 s = s",
+  "formal_statement_pp": "theorem set_inter_self' : ∀ {α : Type*} (s : Set α), s ∩ s = s",
   "proof_body_path": "lean/MathCorpus/Elementary/Logic/SetInterSelf.lean",
   "proof_body_redacted": false,
   "trust": {
@@ -66,7 +66,7 @@
   },
   "metrics": {
     "loc": 3,
-    "tactic_count": 1
+    "tactic_count": 2
   },
   "artifacts": {
     "public_files": [
@@ -90,7 +90,7 @@
   },
   "notes": "Verified through tracked proof-search episode 9b43e390-9420-4748-8fd1-2ca7917a3b97.",
   "hashes": {
-    "packet_sha256": "4622389bca5a2f2efcef1b724841d1b58e700cc8c0fc2d5cd8db6700eb574d1b",
+    "packet_sha256": "374394e4877318a5a9e0fd182d0a7d9435591c5ed50b726170372fb7a285907f",
     "formal_statement_sha256": "329961a36ddb30defe7088a450c1388590b58addbc16cd1c8630649d624a3b7b",
     "proof_body_sha256": "7cac55c03a9576c61ac16c7c81ee32c239517083afff99314a9a481e035340d4"
   },
@@ -98,7 +98,9 @@
     "obligation_deps": [],
     "transitive_dependency_count": 0,
     "transitive_dependency_depth": 0,
-    "used_theorem_deps": []
+    "used_theorem_deps": [
+      "Set.inter_self"
+    ]
   },
   "proof_variants": [
     {

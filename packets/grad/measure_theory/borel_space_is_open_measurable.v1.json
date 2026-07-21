@@ -19,7 +19,7 @@
   "source_provenance": {
     "source_kind": "author_written",
     "source_refs": [
-      "Mathlib.MeasureTheory.Constriction.BorelSpace.Basic"
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Basic"
     ],
     "authors": [
       "The MathCorpus Authors"
@@ -92,7 +92,7 @@
   },
   "notes": "Verified through tracked proof-search episode da23697b-4fa8-4a1d-a69b-d1abddb2bfee.",
   "hashes": {
-    "packet_sha256": "6c0cd9251ada7d309aa7bd45def7f638c58f12b94b511c16cdd4ee8eeedca558",
+    "packet_sha256": "ab7410292533e5ed89800969786531391116ef28420f1dc51be80097841daf10",
     "formal_statement_sha256": "c211c83c7eced032ef5d8a088977531a26c06c8abe7d4c14b3c70423507d379f",
     "proof_body_sha256": "a9a247354a20c8aa61d71235fad184d82fc7fdb877b69545ce513e0c2078e07a"
   },

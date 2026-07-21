@@ -6682,6 +6682,7 @@
         "le_div_iff": 1,
         "abs_sub_abs_le_abs_sub": 1,
         "mul_nonneg": 1,
+        "Set.inter_self": 1,
         "Int.gcdA": 1,
         "Int.gcdB": 1,
         "Int.gcd_eq_gcd_ab": 1,
