@@ -7,7 +7,7 @@ open MvPolynomial
 Packet: `frontier.jacobian.jacobian_conjecture_false_dim_three.v1`
 Level:  L7_frontier · Domain: frontier · Trust rung 1 (Lean kernel).
 
-The Jacobian Conjecture (Keller 1939) is FALSE in dimension 3: there is a polynomial map F : C^3 -> C^3 with a nonzero constant Jacobian determinant (a Keller map) that is not invertible. This packet certifies exactly the negated formal-conjectures instance `jacobian_conjecture` in dimension 3 - the explicit witness is F(x,y,z) = ((1+xy)^3 z + y^2(1+xy)(4+3xy), y + 3x(1+xy)^2 z + 3xy^2(4+3xy), 2x - 3x^2 y - x^3 z), with det Jac F = -2. It does NOT resolve the dimension-2 problem (open), the map's fiber/image geometry, general-n stabilization, or the Dixmier/Mathieu/Zhao/cubic-reduction bridges (open or only conditionally proved elsewhere).
+The Jacobian Conjecture (Keller 1939) is FALSE in dimension 3: there is a polynomial map F : C^3 -> C^3 with a nonzero constant Jacobian determinant (a Keller map) that is not invertible. This packet certifies exactly the negated formal-conjectures instance jacobian_conjecture in dimension 3 - witness F(x,y,z) = ((1+xy)^3 z + y^2(1+xy)(4+3xy), y + 3x(1+xy)^2 z + 3xy^2(4+3xy), 2x - 3x^2 y - x^3 z), det Jac F = -2. It does NOT resolve the dimension-2 problem (open), the map's fiber/image geometry, general-n stabilization, or the Dixmier/Mathieu/Zhao/cubic-reduction bridges (open or only conditionally proved elsewhere).
 Kernel-verified through the tracked proof-search loop (episode 1f9dfbee).
 -/
 

@@ -34,7 +34,7 @@
     "external_claim_id": { "type": ["string", "null"] },
     "source_sha256_pin": {
       "$ref": "_defs.schema.json#/$defs/sha256",
-      "description": "Hash-pin of the referenced LiteratureSource.source_sha256 or RetrievedPassage.passage_sha256 at attribution time — the same hash-pin pattern as proof_variants[].restriction_profile_sha256. Detects drift if the underlying catalog entry changes."
+      "description": "Hash-pin of the referenced literature_sources/ catalog ENTRY's record_hash (i.e. the LiteratureSource/RetrievedPassage record's own record_hash) at attribution time — the value policy.check_literature_source_refs validates against, the same hash-pin pattern as proof_variants[].restriction_profile_sha256 (which pins a restriction_profile record's hash, not raw content). NOT the paper's own source_sha256 content hash, which lives on the catalog entry itself. Detects drift if the underlying catalog entry changes. (#264: resolved a prior mismatch where this description said source_sha256 while the executable validator checked record_hash.)"
     },
     "attribution_status": {
       "type": "string",

@@ -42,11 +42,16 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from mathcorpus import loader  # noqa: E402
 from mathcorpus.hashing import compute_hashes  # noqa: E402
 from mathcorpus.mcip import RECORD_TYPE_TO_SCHEMA_FILE, build_schema_registry, record_hash  # noqa: E402
-from mathcorpus.mcip_import import fold_bundle_into_packet, import_restriction_profile  # noqa: E402
+from mathcorpus.mcip_import import (  # noqa: E402
+    fold_bundle_into_packet,
+    import_literature_source,
+    import_restriction_profile,
+)
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 PACKETS_DIR_DEFAULT = REPO_ROOT / "packets"
 RESTRICTION_PROFILES_DIR_DEFAULT = REPO_ROOT / "restriction_profiles"
+LITERATURE_SOURCES_DIR_DEFAULT = REPO_ROOT / "literature_sources"
 BUNDLE_SCHEMA_FILE = "bundle.schema.json"
 
 
@@ -97,6 +102,7 @@ def main() -> int:
     ap.add_argument("paths", nargs="+", help="Bundle files or a directory of bundle files.")
     ap.add_argument("--packets-dir", default=str(PACKETS_DIR_DEFAULT))
     ap.add_argument("--restriction-profiles-dir", default=str(RESTRICTION_PROFILES_DIR_DEFAULT))
+    ap.add_argument("--literature-sources-dir", default=str(LITERATURE_SOURCES_DIR_DEFAULT))
     ap.add_argument("--apply", action="store_true", help="Write changes. Default is dry-run (report only).")
     ap.add_argument("--quarantine-report", default=None, help="Write a JSON report of quarantined records/bundles here.")
     args = ap.parse_args()
@@ -119,6 +125,7 @@ def main() -> int:
     n_applied = n_skipped = n_conflicts = n_bundle_quarantined = n_packets_written = 0
     quarantine_report: list[dict[str, Any]] = []
     restriction_profiles_dir = Path(args.restriction_profiles_dir)
+    literature_sources_dir = Path(args.literature_sources_dir)
 
     for bpath in bundle_paths:
         try:
@@ -202,6 +209,26 @@ def main() -> int:
                 print(f"{bpath}: ! restriction_profile {rid} CONFLICT with existing catalog entry — quarantined")
                 quarantine_report.append({
                     "bundle": str(bpath), "field": "restriction_profiles", "record_id": rid,
+                    "reason": "differs from existing catalog entry",
+                })
+
+        for ls_record in result.literature_sources:
+            rid = ls_record["record_id"]
+            if not args.apply:
+                print(f"{bpath}: + literature_source {rid} (dry-run)")
+                continue
+            status, rid = import_literature_source(ls_record, literature_sources_dir)
+            if status == "applied":
+                n_applied += 1
+                print(f"{bpath}: + literature_source {rid}")
+            elif status == "skipped_idempotent":
+                n_skipped += 1
+                print(f"{bpath}: = literature_source {rid} (already in catalog, no-op)")
+            else:
+                n_conflicts += 1
+                print(f"{bpath}: ! literature_source {rid} CONFLICT with existing catalog entry — quarantined")
+                quarantine_report.append({
+                    "bundle": str(bpath), "field": "literature_sources", "record_id": rid,
                     "reason": "differs from existing catalog entry",
                 })
 

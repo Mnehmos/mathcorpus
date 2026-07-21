@@ -69,6 +69,26 @@ def fold_negative_example(record: dict[str, Any]) -> dict[str, Any]:
     return {"negative_id": record["record_id"], **body}
 
 
+def fold_idea_attribution(record: dict[str, Any]) -> dict[str, Any]:
+    """#264: an MCIP idea_attribution -> a packet idea_attributions[] entry.
+
+    The record's ``literature_source_id`` already points at the shared
+    literature_sources/ catalog record id, and ``source_sha256_pin`` already pins that
+    catalog record's own ``record_hash`` (what policy.check_literature_source_refs
+    validates) — the emitter produces catalog-consistent linkage, so folding is a
+    straight envelope strip plus the packet's optional-field defaults.
+    """
+    body = _strip_envelope(record)
+    out = {
+        "attribution_id": record["record_id"],
+        "proof_variant_id": body.pop("proof_variant_id", None),
+        "external_claim_id": body.pop("external_claim_id", None),
+        "dependency_refs": body.pop("dependency_refs", []),
+        **body,
+    }
+    return out
+
+
 def fold_repair_trajectory(record: dict[str, Any]) -> dict[str, Any]:
     body = _strip_envelope(record)
     return {"trajectory_id": record["record_id"], **body}
@@ -98,14 +118,14 @@ _PACKET_FIELD_BY_RECORD_TYPE = {
     "repair_trajectory": ("repair_trajectories", "trajectory_id", False),
     "model_run": ("model_runs", "model_run_id", False),
     "empirical_difficulty_aggregate": ("empirical_difficulty_aggregates", "aggregate_id", False),
+    "idea_attribution": ("idea_attributions", "attribution_id", False),
 }
 
-# MCIP record types a real proof-search bundle legitimately carries but this importer does
-# not fold onto a packet: rl_transitions are RL training data exported separately, and
-# literature_source/idea_attribution provenance folds only once its cross-repo catalog
-# linkage is aligned (see the #263 follow-up). Recognized-and-skipped, never an error — so
-# their presence does not abort the fold of the proof/dependency/attempt evidence.
-_RECOGNIZED_NOT_FOLDED = frozenset({"rl_transition", "literature_source", "idea_attribution"})
+# MCIP record types a real proof-search bundle carries but this importer does not fold onto
+# a packet: rl_transitions are RL training data exported separately, never a packet field.
+# (literature_source is routed to the shared literature_sources/ catalog, and idea_attribution
+# folds onto the packet -- see #264.) Recognized-and-skipped, never an error.
+_RECOGNIZED_NOT_FOLDED = frozenset({"rl_transition"})
 
 
 @dataclass
@@ -114,6 +134,7 @@ class ImportResult:
     skipped_idempotent: list[tuple[str, str]] = field(default_factory=list)  # already present, identical
     conflicts: list[tuple[str, str, str]] = field(default_factory=list)   # (field, id, reason)
     restriction_profiles: list[dict[str, Any]] = field(default_factory=list)
+    literature_sources: list[dict[str, Any]] = field(default_factory=list)
     skipped_unfolded: list[tuple[str, str]] = field(default_factory=list)  # (record_type, id) recognized, not folded
     errors: list[str] = field(default_factory=list)
 
@@ -177,6 +198,11 @@ def fold_bundle_into_packet(bundle: dict[str, Any], packet: dict[str, Any]) -> I
         if rtype == "restriction_profile":
             result.restriction_profiles.append(r)
             continue
+        if rtype == "literature_source":
+            # Goes to the shared literature_sources/ catalog, not onto the packet — the
+            # packet's idea_attributions reference it by its catalog record id (#264).
+            result.literature_sources.append(r)
+            continue
         if rtype in _RECOGNIZED_NOT_FOLDED:
             # A real proof-search bundle carries these, but a packet does not store them
             # as foldable child records: rl_transitions are exported as RL training data,
@@ -211,6 +237,8 @@ def fold_bundle_into_packet(bundle: dict[str, Any], packet: dict[str, Any]) -> I
             folded = fold_model_run(r)
         elif rtype == "empirical_difficulty_aggregate":
             folded = fold_empirical_difficulty_aggregate(r)
+        elif rtype == "idea_attribution":
+            folded = fold_idea_attribution(r)
         else:  # pragma: no cover - guarded by the membership check above
             continue
 
@@ -252,6 +280,30 @@ def import_restriction_profile(record: dict[str, Any], out_dir: Path) -> tuple[s
     # Prefer an existing file with this record_id if one is already in the catalog under a
     # different filename (e.g. the hand-authored naming convention), so re-imports don't
     # create duplicate catalog files.
+    for existing in out_dir.glob("*.json") if out_dir.is_dir() else []:
+        try:
+            data = json.loads(existing.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            continue
+        if data.get("record_id") == record_id:
+            if data == record:
+                return "skipped_idempotent", record_id
+            return "conflict", record_id
+    out_dir.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(record, indent=2, ensure_ascii=False) + "\n", encoding="utf-8", newline="\n")
+    return "applied", record_id
+
+
+def import_literature_source(record: dict[str, Any], out_dir: Path) -> tuple[str, str]:
+    """#264: write/verify one literature_source record against the shared
+    literature_sources/ catalog. Same idempotent, never-overwrite contract as
+    import_restriction_profile: re-importing an identical record is a no-op, and an
+    existing entry with the same record_id but different content is quarantined, never
+    silently replaced. The record_id is emitted colon-free (literature_source.<id>) so it
+    is a safe catalog filename on every OS.
+    """
+    record_id = record["record_id"]
+    path = out_dir / f"{record_id}.json"
     for existing in out_dir.glob("*.json") if out_dir.is_dir() else []:
         try:
             data = json.loads(existing.read_text(encoding="utf-8"))

@@ -74,7 +74,11 @@ from pathlib import Path
 REPO = Path(__file__).resolve().parent.parent
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from mathcorpus.mcip_import import fold_bundle_into_packet, import_restriction_profile  # noqa: E402
+from mathcorpus.mcip_import import (  # noqa: E402
+    fold_bundle_into_packet,
+    import_literature_source,
+    import_restriction_profile,
+)
 
 # Must match schema/packet.schema.json's packet_id pattern (lowercase, dot/underscore).
 PACKET_ID_RE = re.compile(r"^[a-z0-9]+([._][a-z0-9]+)*\.v[0-9]+$")
@@ -252,6 +256,14 @@ def _fold_verifier_export(packet: dict, spec: dict) -> None:
                   "an existing catalog entry — not applied", file=sys.stderr)
         else:
             print(f"  + restriction_profile {rid} ({status})")
+
+    for ls_record in result.literature_sources:
+        status, rid = import_literature_source(ls_record, REPO / "literature_sources")
+        if status == "conflict":
+            print(f"WARNING: {spec['packet_id']}: literature_source '{rid}' conflicts with "
+                  "an existing catalog entry — not applied", file=sys.stderr)
+        else:
+            print(f"  + literature_source {rid} ({status})")
 
 
 def main() -> int:

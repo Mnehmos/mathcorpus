@@ -31,8 +31,8 @@
     "license_content": "CC-BY-4.0",
     "statement_fidelity": "adapted_with_review"
   },
-  "informal_statement": "The Jacobian Conjecture (Keller 1939) is FALSE in dimension 3: there is a polynomial map F : C^3 -> C^3 with a nonzero constant Jacobian determinant (a Keller map) that is not invertible. This packet certifies exactly the negated formal-conjectures instance `jacobian_conjecture` in dimension 3 - the explicit witness is F(x,y,z) = ((1+xy)^3 z + y^2(1+xy)(4+3xy), y + 3x(1+xy)^2 z + 3xy^2(4+3xy), 2x - 3x^2 y - x^3 z), with det Jac F = -2. It does NOT resolve the dimension-2 problem (open), the map's fiber/image geometry, general-n stabilization, or the Dixmier/Mathieu/Zhao/cubic-reduction bridges (open or only conditionally proved elsewhere).",
-  "informal_proof_idea": "Instantiate the universally-quantified claim at the explicit Keller map F. Its Jacobian determinant is the nonzero constant -2 (kernel-checked: expand det via Matrix.det_fin_three, differentiate with pderiv, close with ring), so F satisfies the Keller hypothesis IsUnit (det Jac F). If F had a polynomial inverse G, evaluation composition would recover every point p from aeval p (F) via G; but F collapses the two distinct points (0,0,-1/4) and (1,-3/2,13/2) to the same image (-1/4,0,0) (kernel-checked by fin_cases + norm_num on the aeval evaluations), so recovering the first coordinate forces 0 = 1, a contradiction. Hence no such G exists and the instance is refuted.",
+  "informal_statement": "The Jacobian Conjecture (Keller 1939) is FALSE in dimension 3: there is a polynomial map F : C^3 -> C^3 with a nonzero constant Jacobian determinant (a Keller map) that is not invertible. This packet certifies exactly the negated formal-conjectures instance jacobian_conjecture in dimension 3 - witness F(x,y,z) = ((1+xy)^3 z + y^2(1+xy)(4+3xy), y + 3x(1+xy)^2 z + 3xy^2(4+3xy), 2x - 3x^2 y - x^3 z), det Jac F = -2. It does NOT resolve the dimension-2 problem (open), the map's fiber/image geometry, general-n stabilization, or the Dixmier/Mathieu/Zhao/cubic-reduction bridges (open or only conditionally proved elsewhere).",
+  "informal_proof_idea": "Instantiate the universally-quantified claim at the explicit Keller map F. Its Jacobian determinant is the nonzero constant -2 (kernel-checked: expand det via Matrix.det_fin_three, differentiate with pderiv, close with ring), so F satisfies the Keller hypothesis IsUnit (det Jac F). If F had a polynomial inverse G, evaluation composition would recover every point p from aeval p (F) via G; but F collapses the two distinct points (0,0,-1/4) and (1,-3/2,13/2) to the same image (-1/4,0,0) (kernel-checked by fin_cases + norm_num), so recovering the first coordinate forces 0 = 1, contradiction. Hence no such G exists and the instance is refuted.",
   "formal_statement_pp": "theorem jacobian_conjecture_false_dim_three :\n    ¬ (∀ F : Fin 3 → MvPolynomial (Fin 3) ℂ,\n         IsUnit (Matrix.of fun i j => pderiv i (F j)).det →\n         ∃ G : Fin 3 → MvPolynomial (Fin 3) ℂ,\n           (fun i => bind₁ G (F i)) = X ∧ (fun i => bind₁ F (G i)) = X)",
   "proof_body_path": "lean/MathCorpus/Frontier/Jacobian/JacobianConjectureFalseDimThree.lean",
   "proof_body_redacted": false,
@@ -105,8 +105,155 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 1f9dfbee).",
   "hashes": {
-    "packet_sha256": "9682902526a3b822073b23c494e26da92d1069d742993e6aed49bad925ef0dae",
+    "packet_sha256": "4d28aefc6344bf8c8b82b7ebffb3753268f7058e741f2509b7f81d4b6ecf1108",
     "formal_statement_sha256": "eb48f52d0b0d5540366f579c566792c0c62bf07c5b6df629aa6b7ca0c0fdda48",
-    "proof_body_sha256": "a18ed689c8ba58d298c4a9fdba93318fcfc199abe8ba115f8229a8682dd69df4"
-  }
+    "proof_body_sha256": "addb06cddbe4c85fd9640d75fc877258103d650a4e8ff0801351550413545311"
+  },
+  "proof_variants": [
+    {
+      "variant_id": "pv.2aafe4b6-f12c-4464-8a52-1d6a8967af7d.canonical",
+      "formal_statement_sha256": "b00dcb7b787c0ab9928b8ac6087649b5a0b0af6a7ee6e037cabd8b81e6fd22b2",
+      "proof_body_redacted": false,
+      "source": "proof_search",
+      "variant_style": "canonical",
+      "proof_profile": {
+        "automation_level": "semi_automated",
+        "branch_count": 3,
+        "dependency_composition_depth": 0,
+        "primary_proof_class": "case_analysis",
+        "retrieval_depth": 0,
+        "secondary_proof_classes": [
+          "witness_construction"
+        ],
+        "uses_case_analysis": true,
+        "uses_contradiction": false,
+        "uses_induction": false,
+        "uses_witness_invention": true
+      }
+    }
+  ],
+  "dependency_manifest": {
+    "obligation_deps": [],
+    "transitive_dependency_count": 0,
+    "transitive_dependency_depth": 0,
+    "used_theorem_deps": []
+  },
+  "attempts": [
+    {
+      "attempt_id": "ar.759b17cd-728e-4292-a673-eb126908c2f1",
+      "diagnostic_category": null,
+      "episode_id": "1f9dfbee-aa77-4741-8775-5e2d9c00eef6",
+      "outcome": "failed"
+    },
+    {
+      "attempt_id": "ar.52f43b6f-c7f1-4a54-9bfb-5eece08f9dba",
+      "diagnostic_category": null,
+      "episode_id": "1f9dfbee-aa77-4741-8775-5e2d9c00eef6",
+      "outcome": "succeeded"
+    }
+  ],
+  "negative_examples": [
+    {
+      "negative_id": "neg.2aafe4b6-f12c-4464-8a52-1d6a8967af7d.0",
+      "attempt_id": "ar.52f43b6f-c7f1-4a54-9bfb-5eece08f9dba",
+      "can_export_diagnostics": true,
+      "can_export_metadata": true,
+      "can_export_model_identity": false,
+      "can_export_proof_text": false,
+      "candidate_source_ref": null,
+      "diagnostic_category": "unknown_identifier",
+      "origin": "controlled_mutation",
+      "proof_authority": "none"
+    },
+    {
+      "negative_id": "neg.2aafe4b6-f12c-4464-8a52-1d6a8967af7d.1",
+      "attempt_id": "ar.52f43b6f-c7f1-4a54-9bfb-5eece08f9dba",
+      "can_export_diagnostics": true,
+      "can_export_metadata": true,
+      "can_export_model_identity": false,
+      "can_export_proof_text": false,
+      "candidate_source_ref": null,
+      "diagnostic_category": "kernel_fail",
+      "origin": "controlled_mutation",
+      "proof_authority": "none"
+    },
+    {
+      "negative_id": "neg.2aafe4b6-f12c-4464-8a52-1d6a8967af7d.2",
+      "attempt_id": "ar.52f43b6f-c7f1-4a54-9bfb-5eece08f9dba",
+      "can_export_diagnostics": true,
+      "can_export_metadata": true,
+      "can_export_model_identity": false,
+      "can_export_proof_text": false,
+      "candidate_source_ref": null,
+      "diagnostic_category": "kernel_fail",
+      "origin": "controlled_mutation",
+      "proof_authority": "none"
+    },
+    {
+      "negative_id": "neg.2aafe4b6-f12c-4464-8a52-1d6a8967af7d.3",
+      "attempt_id": "ar.52f43b6f-c7f1-4a54-9bfb-5eece08f9dba",
+      "can_export_diagnostics": true,
+      "can_export_metadata": true,
+      "can_export_model_identity": false,
+      "can_export_proof_text": false,
+      "candidate_source_ref": null,
+      "diagnostic_category": "kernel_fail",
+      "origin": "controlled_mutation",
+      "proof_authority": "none"
+    },
+    {
+      "negative_id": "neg.2aafe4b6-f12c-4464-8a52-1d6a8967af7d.4",
+      "attempt_id": "ar.52f43b6f-c7f1-4a54-9bfb-5eece08f9dba",
+      "can_export_diagnostics": true,
+      "can_export_metadata": true,
+      "can_export_model_identity": false,
+      "can_export_proof_text": false,
+      "candidate_source_ref": null,
+      "diagnostic_category": "parse_error",
+      "origin": "controlled_mutation",
+      "proof_authority": "none"
+    },
+    {
+      "negative_id": "neg.2aafe4b6-f12c-4464-8a52-1d6a8967af7d.5",
+      "attempt_id": "ar.52f43b6f-c7f1-4a54-9bfb-5eece08f9dba",
+      "can_export_diagnostics": true,
+      "can_export_metadata": true,
+      "can_export_model_identity": false,
+      "can_export_proof_text": false,
+      "candidate_source_ref": null,
+      "diagnostic_category": "unsolved_goals",
+      "origin": "controlled_mutation",
+      "proof_authority": "none"
+    }
+  ],
+  "repair_trajectories": [
+    {
+      "trajectory_id": "rt.2aafe4b6-f12c-4464-8a52-1d6a8967af7d",
+      "steps": [
+        {
+          "diagnostic_category_addressed": null,
+          "from_attempt_id": "ar.759b17cd-728e-4292-a673-eb126908c2f1",
+          "repair_action": "revised_submission",
+          "step_hash": "6fc9063e4c8dbb4f1c3ec973df72f9e2b1a4c4deb68eeea290675a244274b5c8",
+          "step_index": 0,
+          "to_ref": "ar.52f43b6f-c7f1-4a54-9bfb-5eece08f9dba"
+        }
+      ],
+      "terminal_outcome": "verified_proof",
+      "terminal_ref": "pv.2aafe4b6-f12c-4464-8a52-1d6a8967af7d.canonical"
+    }
+  ],
+  "idea_attributions": [
+    {
+      "attribution_id": "2aafe4b6-f12c-4464-8a52-1d6a8967af7d.d8570047-b53c-4e54-9ce2-a0a8a57e49e9.idea_attribution.0",
+      "proof_variant_id": null,
+      "external_claim_id": null,
+      "dependency_refs": [],
+      "attribution_status": "directly_used",
+      "formal_statement_sha256": "b00dcb7b787c0ab9928b8ac6087649b5a0b0af6a7ee6e037cabd8b81e6fd22b2",
+      "literature_source_id": "literature_source.chojecki_2026_jacobian",
+      "source_sha256_pin": "cfe03c08b48cb1ce574b6cc6dfaab61a632a5a3fbcf1a3ea86eb27bc6a90f12b",
+      "visibility": "model_visible"
+    }
+  ]
 }
