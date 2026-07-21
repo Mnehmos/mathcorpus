@@ -1,0 +1,175 @@
+{
+  "packet_id": "frontier.union_closed_three_sets.v1",
+  "packet_version": "1.0.0",
+  "title": "Union-closed families of size at most 2 satisfy the union-closed sets condition",
+  "domain": "frontier",
+  "level": "L7_frontier",
+  "kind": "theorem",
+  "status": "kernel_verified",
+  "difficulty_bin": "D3",
+  "lean_module": "MathCorpus.Frontier.Combinatorics.UnionClosedThreeSets",
+  "theorem_name": "union_closed_three_sets'",
+  "imports": [
+    "Mathlib"
+  ],
+  "toolchain": {
+    "lean_version": "v4.32.0-rc1",
+    "mathlib_rev": "360da6fa66c1273b76b6b2d8c5666fd5ac2e3b56"
+  },
+  "source_provenance": {
+    "source_kind": "author_written",
+    "source_refs": [
+      "Mathlib.Data.Finset.Basic"
+    ],
+    "authors": [
+      "The MathCorpus Authors"
+    ],
+    "copyright_holder": "The MathCorpus Authors",
+    "license_spdx": "Apache-2.0",
+    "license_content": "CC-BY-4.0",
+    "statement_fidelity": "canonical_statement_hash_match"
+  },
+  "informal_statement": "For any non-empty family F of finsets of size at most 2 containing at least one non-empty set, there exists an element x belonging to at least half of the sets in F.",
+  "informal_proof_idea": "Extract x from the non-empty set s in F. Then s is in F.filter (x âˆˆ Â·), giving filter size >= 1, so 2 * 1 >= 2 >= F.card.",
+  "formal_statement_pp": "theorem union_closed_three_sets' : âˆ€ {Î± : Type*} [DecidableEq Î±] (F : Finset (Finset Î±)), F.Nonempty â†’ F.card â‰¤ 2 â†’ (âˆƒ s âˆˆ F, s.Nonempty) â†’ âˆƒ x, 2 * (F.filter (fun s => x âˆˆ s)).card â‰¥ F.card",
+  "proof_body_path": "lean/MathCorpus/Frontier/Combinatorics/UnionClosedThreeSets.lean",
+  "proof_body_redacted": false,
+  "trust": {
+    "rung": 1,
+    "proof_authority": "lean_kernel",
+    "certificate_checker": "kernel_decide",
+    "encoding_required": false,
+    "encoding_soundness_status": "not_applicable",
+    "independent_review_status": "repo_reviewed",
+    "public_claim_class": "public_safe"
+  },
+  "training": {
+    "eligibility": "public_train",
+    "reason_codes": [
+      "public",
+      "non_benchmark",
+      "unredacted"
+    ],
+    "dedupe_cluster_id": "frontier.union_closed_three_sets",
+    "template_family_id": "frontier.combinatorics",
+    "contamination_risk": "low",
+    "can_export_proof_body": true
+  },
+  "dependencies": {
+    "kits": [],
+    "tactic_tags": [
+      "Finset.mem_filter",
+      "Finset.card_pos"
+    ],
+    "prerequisite_concepts": [
+      "finset_cardinality",
+      "union_closed_conjecture",
+      "filter"
+    ]
+  },
+  "metrics": {
+    "loc": 10,
+    "tactic_count": 5
+  },
+  "artifacts": {
+    "public_files": [
+      "lean/MathCorpus/Frontier/Combinatorics/UnionClosedThreeSets.lean"
+    ]
+  },
+  "review": {
+    "review_basis": "tracked proof-search loop episode; verified against pinned Lean kernel",
+    "reviewer_status": "repo_reviewed"
+  },
+  "verification": {
+    "verifier": "proofsearch",
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "episode_id": "e39fceb9-dd51-4cdf-af66-758850561900",
+    "root_statement_sha256": "0aa4c38da5a386d3d2fc4be716322f7e65f13b4908b76d3b4a0f3104055e96e5",
+    "outcome": "kernel_verified",
+    "kernel_verified": true,
+    "fidelity_status": "attested",
+    "step_count": 1,
+    "import_manifest_hash": "aaf21893d520a78dee0787a1bcaf939ee6b922265ff670c272e2e1d450dd29a7"
+  },
+  "notes": "Verified through tracked proof-search episode e39fceb9-dd51-4cdf-af66-758850561900.",
+  "hashes": {
+    "packet_sha256": "1c929b99584848f85bbcf4d6d8b25ae0f9d17f0f957112614b4992fe995d29fb",
+    "formal_statement_sha256": "e9516fdc5c0d8f66b22d17e94fce98d301d15481ad8ad8a2a999f48261d9f42e",
+    "proof_body_sha256": "75cbddc61aca3103ba51763601031510d75e7428792caa5a6c34b49563ef245d"
+  },
+  "dependency_manifest": {
+    "obligation_deps": [],
+    "transitive_dependency_count": 0,
+    "transitive_dependency_depth": 0,
+    "used_theorem_deps": []
+  },
+  "negative_examples": [
+    {
+      "negative_id": "5c50038f-5830-44d0-aa10-dbec5d2c6336:negative:0",
+      "attempt_id": "5c50038f-5830-44d0-aa10-dbec5d2c6336:attempt:0",
+      "can_export_diagnostics": true,
+      "can_export_metadata": true,
+      "can_export_model_identity": false,
+      "can_export_proof_text": false,
+      "candidate_source_ref": null,
+      "diagnostic_category": "tactic_failure",
+      "origin": "controlled_mutation",
+      "proof_authority": "none"
+    },
+    {
+      "negative_id": "5c50038f-5830-44d0-aa10-dbec5d2c6336:negative:1",
+      "attempt_id": "5c50038f-5830-44d0-aa10-dbec5d2c6336:attempt:0",
+      "can_export_diagnostics": true,
+      "can_export_metadata": true,
+      "can_export_model_identity": false,
+      "can_export_proof_text": false,
+      "candidate_source_ref": null,
+      "diagnostic_category": "tactic_failure",
+      "origin": "controlled_mutation",
+      "proof_authority": "none"
+    },
+    {
+      "negative_id": "5c50038f-5830-44d0-aa10-dbec5d2c6336:negative:2",
+      "attempt_id": "5c50038f-5830-44d0-aa10-dbec5d2c6336:attempt:0",
+      "can_export_diagnostics": true,
+      "can_export_metadata": true,
+      "can_export_model_identity": false,
+      "can_export_proof_text": false,
+      "candidate_source_ref": null,
+      "diagnostic_category": "tactic_failure",
+      "origin": "controlled_mutation",
+      "proof_authority": "none"
+    }
+  ],
+  "attempts": [
+    {
+      "attempt_id": "5c50038f-5830-44d0-aa10-dbec5d2c6336:attempt:0",
+      "diagnostic_category": null,
+      "episode_id": "e39fceb9-dd51-4cdf-af66-758850561900",
+      "outcome": "succeeded"
+    }
+  ],
+  "proof_variants": [
+    {
+      "variant_id": "pv.5c50038f-5830-44d0-aa10-dbec5d2c6336.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "0aa4c38da5a386d3d2fc4be716322f7e65f13b4908b76d3b4a0f3104055e96e5",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Frontier/Combinatorics/UnionClosedThreeSets.lean",
+      "proof_body_sha256": "75cbddc61aca3103ba51763601031510d75e7428792caa5a6c34b49563ef245d",
+      "proof_body_redacted": false,
+      "tactic_count": 5,
+      "proof_length": 10,
+      "proof_profile": {
+        "primary_proof_class": "theorem_lookup",
+        "secondary_proof_classes": [],
+        "automation_level": "none",
+        "uses_witness_invention": true,
+        "uses_induction": false,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ]
+}

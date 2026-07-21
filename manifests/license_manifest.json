@@ -1,6 +1,18 @@
 {
   "entries": [
     {
+      "packet_id": "algebra.group_hom_kernel_subgroup.v1",
+      "license_spdx": "Apache-2.0",
+      "license_content": "CC-BY-4.0",
+      "source_kind": "author_written"
+    },
+    {
+      "packet_id": "analysis.metric_space_continuous_dist.v1",
+      "license_spdx": "Apache-2.0",
+      "license_content": "CC-BY-4.0",
+      "source_kind": "author_written"
+    },
+    {
       "packet_id": "elementary.algebra.add_assoc.v1",
       "license_spdx": "Apache-2.0",
       "license_content": "CC-BY-4.0",
@@ -1987,7 +1999,25 @@
       "source_kind": "formal_conjectures"
     },
     {
+      "packet_id": "frontier.union_closed_three_sets.v1",
+      "license_spdx": "Apache-2.0",
+      "license_content": "CC-BY-4.0",
+      "source_kind": "author_written"
+    },
+    {
+      "packet_id": "logic.functions.injective_comp_self.v1",
+      "license_spdx": "Apache-2.0",
+      "license_content": "CC-BY-4.0",
+      "source_kind": "author_written"
+    },
+    {
       "packet_id": "logic.set.inter_self.v1",
+      "license_spdx": "Apache-2.0",
+      "license_content": "CC-BY-4.0",
+      "source_kind": "author_written"
+    },
+    {
+      "packet_id": "measure_theory.borel_space_is_open_measurable.v1",
       "license_spdx": "Apache-2.0",
       "license_content": "CC-BY-4.0",
       "source_kind": "author_written"
@@ -2159,6 +2189,18 @@
       "license_spdx": "Apache-2.0",
       "license_content": "CC-BY-4.0",
       "source_kind": "repo_original"
+    },
+    {
+      "packet_id": "number_theory.induction.two_pow_le_factorial_four.v1",
+      "license_spdx": "Apache-2.0",
+      "license_content": "CC-BY-4.0",
+      "source_kind": "author_written"
+    },
+    {
+      "packet_id": "topology.continuous_id.v1",
+      "license_spdx": "Apache-2.0",
+      "license_content": "CC-BY-4.0",
+      "source_kind": "author_written"
     },
     {
       "packet_id": "undergrad.abstract_algebra.group_inv_inv.v1",
