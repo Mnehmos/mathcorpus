@@ -1,0 +1,21 @@
+{
+  "authors": [
+    "P. Chojecki"
+  ],
+  "created_at": "2026-07-21T17:20:39Z",
+  "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+  "export_eligibility": "restricted",
+  "external_ids": {
+    "url": "https://x.com/prz_chojecki"
+  },
+  "packet_id": "frontier.jacobian.jacobian_conjecture_false_dim_three.v1",
+  "publication_year": 2026,
+  "record_hash": "cfe03c08b48cb1ce574b6cc6dfaab61a632a5a3fbcf1a3ea86eb27bc6a90f12b",
+  "record_id": "literature_source.chojecki_2026_jacobian",
+  "record_type": "literature_source",
+  "schema_version": "1.0.0",
+  "source_sha256": "fcc91582150fa5ed7914bce443080c926771378b8e9bea7b9c2b866ddc6419b2",
+  "title": "A Counterexample to the Jacobian Conjecture",
+  "trust_status": "kernel_verified",
+  "venue": "ulam.ai research write-up"
+}

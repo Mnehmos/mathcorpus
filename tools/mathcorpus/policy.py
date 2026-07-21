@@ -83,6 +83,28 @@ def _warn(code: str, msg: str) -> Finding:
     return Finding("warn", code, msg)
 
 
+def _acceptable_statement_hashes(packet: dict[str, Any]) -> set[str]:
+    """Statement hashes a child record's ``formal_statement_sha256`` may match.
+
+    Two conventions coexist (#264): the packet's own canonical
+    ``hashes.formal_statement_sha256`` (a canonical-JSON hash over
+    {theorem_name, formal_statement_pp, toolchain}), and — for a packet produced
+    through the proof-search loop — ``verification.root_statement_sha256``, the RAW
+    SHA-256 of the environment's registered statement, which is exactly the value the
+    MCIP bundle binds its proof_variant / idea_attribution / prior_art records to. A
+    child record's formal_statement_sha256 may legitimately equal either; requiring the
+    canonical one alone quarantines every real proof-search bundle.
+    """
+    out: set[str] = set()
+    fsh = (packet.get("hashes") or {}).get("formal_statement_sha256")
+    if fsh:
+        out.add(fsh)
+    root = (packet.get("verification") or {}).get("root_statement_sha256")
+    if root:
+        out.add(root)
+    return out
+
+
 def is_formal(packet: dict[str, Any]) -> bool:
     """A packet is 'formal' if its kind requires a proof, or it names a Lean artifact."""
     if packet.get("kind") in FORMAL_KINDS:
@@ -299,24 +321,26 @@ def check_literature_lineage(packet: dict[str, Any]) -> list[Finding]:
     own, when both are set, same as proof_variants.
     """
     findings: list[Finding] = []
-    packet_fsh = (packet.get("hashes") or {}).get("formal_statement_sha256")
+    acceptable_fsh = _acceptable_statement_hashes(packet)
 
     attribution_ids = {a.get("attribution_id") for a in (packet.get("idea_attributions") or []) if a.get("attribution_id")}
     prior_art_ids = {m.get("match_id") for m in (packet.get("prior_art_matches") or []) if m.get("match_id")}
 
     for i, a in enumerate(packet.get("idea_attributions") or []):
         fsh = a.get("formal_statement_sha256")
-        if fsh is not None and packet_fsh is not None and fsh != packet_fsh:
+        if fsh is not None and acceptable_fsh and fsh not in acceptable_fsh:
             findings.append(_err("idea_attribution_statement_hash_mismatch",
-                                 f"idea_attributions[{i}].formal_statement_sha256 does not match "
-                                 "the parent packet's hashes.formal_statement_sha256"))
+                                 f"idea_attributions[{i}].formal_statement_sha256 matches neither the "
+                                 "parent packet's hashes.formal_statement_sha256 nor its "
+                                 "verification.root_statement_sha256"))
 
     for i, m in enumerate(packet.get("prior_art_matches") or []):
         fsh = m.get("formal_statement_sha256")
-        if fsh is not None and packet_fsh is not None and fsh != packet_fsh:
+        if fsh is not None and acceptable_fsh and fsh not in acceptable_fsh:
             findings.append(_err("prior_art_match_statement_hash_mismatch",
-                                 f"prior_art_matches[{i}].formal_statement_sha256 does not match "
-                                 "the parent packet's hashes.formal_statement_sha256"))
+                                 f"prior_art_matches[{i}].formal_statement_sha256 matches neither the "
+                                 "parent packet's hashes.formal_statement_sha256 nor its "
+                                 "verification.root_statement_sha256"))
 
     review_ids_all = {r.get("review_id") for r in (packet.get("citation_reviews") or []) if r.get("review_id")}
     for i, r in enumerate(packet.get("citation_reviews") or []):
@@ -706,17 +730,18 @@ def check_proof_variants(packet: dict[str, Any]) -> list[Finding]:
         return findings
 
     hashes = packet.get("hashes") or {}
-    packet_fsh = hashes.get("formal_statement_sha256")
+    acceptable_fsh = _acceptable_statement_hashes(packet)
     packet_env = (packet.get("verification") or {}).get("environment_hash")
     packet_proof_sha = hashes.get("proof_body_sha256")
 
     for i, v in enumerate(variants):
         vid = v.get("variant_id", f"#{i}")
         vfsh = v.get("formal_statement_sha256")
-        if vfsh is not None and packet_fsh is not None and vfsh != packet_fsh:
+        if vfsh is not None and acceptable_fsh and vfsh not in acceptable_fsh:
             findings.append(_err("variant_statement_hash_mismatch",
-                                 f"proof_variants[{vid}].formal_statement_sha256 does not match "
-                                 "the parent packet's hashes.formal_statement_sha256"))
+                                 f"proof_variants[{vid}].formal_statement_sha256 matches neither the "
+                                 "parent packet's hashes.formal_statement_sha256 nor its "
+                                 "verification.root_statement_sha256"))
         venv = v.get("environment_hash")
         if venv is not None and packet_env is not None and venv != packet_env:
             findings.append(_err("variant_environment_hash_mismatch",

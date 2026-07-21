@@ -34,6 +34,9 @@ jobs:
       - name: MCIP import dry-run against real packets (issue #6)
         run: python tools/import_mcip.py schema/mcip/v1/fixtures/ --packets-dir packets/
 
+      - name: MCIP golden path — real proof-search bundle folds cleanly + idempotently (#264)
+        run: python tools/test_mcip_golden_path.py
+
       - name: Build manifests
         run: |
           python tools/build_manifests.py packets/ --out manifests/
