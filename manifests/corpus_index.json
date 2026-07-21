@@ -20,8 +20,8 @@
     "L3_undergrad": 8
   },
   "by_kind": {
-    "concept": 297,
-    "theorem": 42,
+    "concept": 296,
+    "theorem": 43,
     "negative_example": 28
   },
   "by_status": {
@@ -2025,10 +2025,10 @@
       "title": "Nicomachus's theorem (sum of cubes equals square of the sum)",
       "domain": "algebra",
       "level": "L1_proof_basics",
-      "kind": "concept",
+      "kind": "theorem",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "0a549fff972c2438c079ac5a5e55b0344117d74df5fb318389152cacfd932b11"
+      "packet_sha256": "1e2b149889057622a5738687b0d9715c8cb647d93adb18f220c2ea48505f92da"
     },
     {
       "packet_id": "elementary.induction.sum_evens.v1",
@@ -3628,7 +3628,7 @@
       "kind": "theorem",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "a2220b4d87e450ecfe3baa2f38d6bc5e76a18723e34bf90fd5b52ed277906eb5"
+      "packet_sha256": "b08f3bfaa8c3436d791d3d55468a6f2bef7e63a723cb5c658692e16bcf3d37de"
     },
     {
       "packet_id": "undergrad.abstract_algebra.group_mul_inv_rev.v1",
@@ -3638,7 +3638,7 @@
       "kind": "theorem",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "f103b634518e667f93d9e2e0f9b05cc6823da739f9387a83e20e6d80cb2dae7f"
+      "packet_sha256": "40a8d20eb1f8f6e45726e14b0f5c283333a96553cf47c4700e472fc0eb4e4644"
     },
     {
       "packet_id": "undergrad.linear_algebra.smul_zero_vector.v1",
@@ -3648,7 +3648,7 @@
       "kind": "theorem",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "7c28ae4d783be1f8499a4008473b2ddb155ab37f03513cf4c59ef57261eba8e1"
+      "packet_sha256": "abe512a186526dcd43b81320920c64e215c8c3a7347d88df059b54cd56903836"
     },
     {
       "packet_id": "undergrad.logic.double_negation_elim.v1",
@@ -3658,7 +3658,7 @@
       "kind": "theorem",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "665a783fccd2dab6931e3c021584e6d855c61e0dac04ef5099b8efe5bacc614b"
+      "packet_sha256": "1620ca94e07cf29b4fb044b1296f6089b0883ebc141e51356077e8c9f9eee863"
     },
     {
       "packet_id": "undergrad.real_analysis.continuous_add.v1",
@@ -3668,7 +3668,7 @@
       "kind": "theorem",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "40acb5cbbdcb129c360ceef206ce0d41a99aabcf6b6fb87d2ef3d7f81f0bef60"
+      "packet_sha256": "f814f2b0e7d3299168c22880ca2c50c6ad634d8d54a0ca6b3a7ca0105caac150"
     },
     {
       "packet_id": "undergrad.real_analysis.continuous_mul.v1",
@@ -3678,7 +3678,7 @@
       "kind": "theorem",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "5464ab9f7c456f3934fec31d7facea5016f7d3c9fe02b2c1b2a01ace65787b17"
+      "packet_sha256": "574e20bcb60c7020e60f19060add9dc3580bb73843ce6f23220afa5a0e76cf12"
     },
     {
       "packet_id": "undergrad.topology.is_closed_inter.v1",
@@ -3688,7 +3688,7 @@
       "kind": "theorem",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "6d53e480fdef34b833fa31b708ab1d89fcbc18523d22c43c4b195383d3316a10"
+      "packet_sha256": "06b4dc626f3e4d1cb6db57fba5db8b87fb3730a218dd0ed9f1d84e79eae0f720"
     },
     {
       "packet_id": "undergrad.topology.is_open_union.v1",
@@ -3698,7 +3698,7 @@
       "kind": "theorem",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "a2e8106c425037fc0a91b2c5e98fe4db5c79f03439a17a57eb0c70ca8f0786ac"
+      "packet_sha256": "1f8005f9724835f8d094f93d2494c19c903d5c4c493856175a6ee4ce28762426"
     }
   ]
 }

@@ -1,5 +1,8 @@
 {
   "inventory_version": "v1.0",
+  "inventory_type": "pre_fill_baseline",
+  "base_commit": "a9b3267727142475e7a9e69147e8529241b31273",
+  "base_commit_short": "a9b3267",
   "generated_at": "2026-07-21",
   "total_packets": 359,
   "domain_counts": {

@@ -56,7 +56,7 @@
   "dependencies": {
     "kits": [],
     "tactic_tags": [
-      "double_negation_elim"
+      "Classical.byContradiction"
     ],
     "prerequisite_concepts": [
       "classical_logic"
@@ -72,22 +72,19 @@
     ]
   },
   "review": {
-    "review_basis": "repo self-review; kernel-verified undergrad spine contribution",
+    "review_basis": "author-written mathlib wrapper; verified locally via pinned lake build environment",
     "reviewer_status": "repo_reviewed"
   },
   "verification": {
-    "verifier": "proofsearch",
+    "verifier": "lake_build",
     "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
-    "episode_id": "3a118800-0001-4000-a000-000000000008",
     "outcome": "kernel_verified",
     "kernel_verified": true,
-    "fidelity_status": "attested",
-    "step_count": 1,
-    "import_manifest_hash": "aaf21893d520a78dee0787a1bcaf939ee6b922265ff670c272e2e1d450dd29a7"
+    "fidelity_status": "attested"
   },
-  "notes": "Undergrad spine packet introducing classical logic double negation elimination.",
+  "notes": "Author-written Mathlib wrapper packet verified directly under the pinned Lean 4 lake build environment.",
   "hashes": {
-    "packet_sha256": "665a783fccd2dab6931e3c021584e6d855c61e0dac04ef5099b8efe5bacc614b",
+    "packet_sha256": "1620ca94e07cf29b4fb044b1296f6089b0883ebc141e51356077e8c9f9eee863",
     "formal_statement_sha256": "daab563dbbce3f6c32b9d9adbaf87c1f33dba8174f1719a93e6695c4b9e56444",
     "proof_body_sha256": "25bd79ee4851765f69d4040536cc2f9b90aa3bb30a8ecb9ae1faec6a4f84af63"
   }

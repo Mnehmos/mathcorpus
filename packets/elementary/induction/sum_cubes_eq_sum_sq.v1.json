@@ -4,7 +4,7 @@
   "title": "Nicomachus's theorem (sum of cubes equals square of the sum)",
   "domain": "algebra",
   "level": "L1_proof_basics",
-  "kind": "concept",
+  "kind": "theorem",
   "status": "kernel_verified",
   "difficulty_bin": "D2",
   "lean_module": "MathCorpus.Elementary.Induction.SumCubesEqSumSq",
@@ -174,7 +174,7 @@
   },
   "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 7b9d236e), kernel_verified on the second attempt. The domain already has `gauss_sum` (sum*2=n(n+1)) and `sum_cubes` (sum-of-cubes*4=(n(n+1))^2) as SEPARATE packets in their division-free forms, but never the direct relationship between them (the classically famous form of Nicomachus's theorem) -- confirmed via grep before authoring. Since tracked proof-search episodes cannot reference another already-authored packet's Lean theorem (each episode is self-contained against Mathlib only), both helper facts had to be re-derived inline as local `have`s rather than imported. First attempt stated the two helper `have`s directly over the theorem's own outer `n` (matching the exact tactic scripts from the existing `gauss_sum`/`sum_cubes` packets) and hit the SAME auto-generalization pitfall recorded earlier this session (`exists_prime_factorization`, `two_pow_strictmono`): the first `have`'s conclusion (depending on `n`) was still in context when the second `have`'s `induction n` ran, so Lean auto-reverted it into the second induction's motive, leaving an extra, unproved sub-goal in the `succ` case. Fixed by stating each helper as a `∀ m : ℕ, ...` fact proved via `intro m; induction m` on a FRESH bound variable with no pre-existing same-named hypothesis in context, then instantiating both at `n` afterward -- the general, reusable fix for this whole class of bug: never let a hypothesis mentioning the induction target already be in context before calling `induction`; quantify the helper over its own fresh variable instead.",
   "hashes": {
-    "packet_sha256": "0a549fff972c2438c079ac5a5e55b0344117d74df5fb318389152cacfd932b11",
+    "packet_sha256": "1e2b149889057622a5738687b0d9715c8cb647d93adb18f220c2ea48505f92da",
     "formal_statement_sha256": "7714f38bd2ab87c2f6efee0c485fbcd5ced322c242b5e5bac407ffdd17b41726",
     "proof_body_sha256": "5b53be320fb4b229ae18493117eaef7488ad1d601a8e8190a81087c1220d8b29"
   }
