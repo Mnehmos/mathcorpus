@@ -1,0 +1,213 @@
+{
+  "inventory_version": "v1.0",
+  "inventory_type": "pre_fill_baseline",
+  "base_commit": "a9b3267727142475e7a9e69147e8529241b31273",
+  "base_commit_short": "a9b3267",
+  "generated_at": "2026-07-21",
+  "total_packets": 359,
+  "domain_counts": {
+    "algebra": 171,
+    "number_theory": 64,
+    "combinatorics": 57,
+    "geometry": 40,
+    "frontier": 25,
+    "logic": 2,
+    "analysis": 0,
+    "real_analysis": 0,
+    "topology": 0,
+    "linear_algebra": 0,
+    "abstract_algebra": 0,
+    "set_theory": 0,
+    "probability": 0,
+    "arithmetic": 0
+  },
+  "level_counts": {
+    "L0_elementary": 111,
+    "L1_proof_basics": 187,
+    "L2_olympiad": 36,
+    "L3_undergrad": 0,
+    "L4_advanced_undergrad": 0,
+    "L5_grad": 0,
+    "L6_known_theorem": 0,
+    "L7_frontier": 25
+  },
+  "gaps": [
+    {
+      "domain": "real_analysis",
+      "subdomain": "limits_and_continuity",
+      "target_level": "L3_undergrad",
+      "packet_family_role": "core_undergrad_spine",
+      "current_packet_count": 0,
+      "prerequisite_families": ["elementary.functions", "elementary.inequalities"],
+      "expected_mathlib_coverage": "Mathlib.Topology.ContinuousOn, Mathlib.Analysis.Calculus.Deriv.Basic",
+      "missing_infrastructure": "Undergrad analysis starter packets and standard topology bridge definitions",
+      "candidate_statements": [
+        "Continuous.add",
+        "Continuous.mul",
+        "Continuous.comp"
+      ],
+      "likely_proof_method": "theorem_lookup / direct_tactic",
+      "contamination_risk": "low",
+      "fidelity_risk": "low",
+      "estimated_difficulty": "D1",
+      "recommended_compute_tier": "TIER_A"
+    },
+    {
+      "domain": "topology",
+      "subdomain": "topological_spaces",
+      "target_level": "L3_undergrad",
+      "packet_family_role": "core_undergrad_spine",
+      "current_packet_count": 0,
+      "prerequisite_families": ["elementary.functions"],
+      "expected_mathlib_coverage": "Mathlib.Topology.Basic",
+      "missing_infrastructure": "Basic point-set topology starter packets (open/closed sets, compactness basics)",
+      "candidate_statements": [
+        "IsClosed.inter",
+        "IsOpen.union",
+        "isClosed_empty"
+      ],
+      "likely_proof_method": "theorem_lookup / direct_tactic",
+      "contamination_risk": "low",
+      "fidelity_risk": "low",
+      "estimated_difficulty": "D1",
+      "recommended_compute_tier": "TIER_A"
+    },
+    {
+      "domain": "abstract_algebra",
+      "subdomain": "group_theory",
+      "target_level": "L3_undergrad",
+      "packet_family_role": "core_undergrad_spine",
+      "current_packet_count": 0,
+      "prerequisite_families": ["elementary.algebra"],
+      "expected_mathlib_coverage": "Mathlib.Algebra.Group.Basic, Mathlib.Algebra.Group.Defs",
+      "missing_infrastructure": "Group theory and ring theory introductory packets",
+      "candidate_statements": [
+        "inv_inv",
+        "mul_inv_rev",
+        "one_mul"
+      ],
+      "likely_proof_method": "arithmetic_automation / theorem_lookup",
+      "contamination_risk": "low",
+      "fidelity_risk": "low",
+      "estimated_difficulty": "D0",
+      "recommended_compute_tier": "TIER_A"
+    },
+    {
+      "domain": "linear_algebra",
+      "subdomain": "vector_spaces",
+      "target_level": "L3_undergrad",
+      "packet_family_role": "core_undergrad_spine",
+      "current_packet_count": 0,
+      "prerequisite_families": ["elementary.algebra"],
+      "expected_mathlib_coverage": "Mathlib.Algebra.Module.Basic",
+      "missing_infrastructure": "Vector space and module axiom starter packets",
+      "candidate_statements": [
+        "smul_zero",
+        "zero_smul",
+        "smul_add"
+      ],
+      "likely_proof_method": "arithmetic_automation / theorem_lookup",
+      "contamination_risk": "low",
+      "fidelity_risk": "low",
+      "estimated_difficulty": "D0",
+      "recommended_compute_tier": "TIER_A"
+    },
+    {
+      "domain": "logic",
+      "subdomain": "propositional_logic",
+      "target_level": "L3_undergrad",
+      "packet_family_role": "core_undergrad_spine",
+      "current_packet_count": 2,
+      "prerequisite_families": ["elementary.proof_basics"],
+      "expected_mathlib_coverage": "Mathlib.Logic.Basic",
+      "missing_infrastructure": "Classical and constructive logic axiom variants",
+      "candidate_statements": [
+        "not_not",
+        "classical_em",
+        "not_and_or"
+      ],
+      "likely_proof_method": "case_analysis / direct_tactic",
+      "contamination_risk": "low",
+      "fidelity_risk": "low",
+      "estimated_difficulty": "D0",
+      "recommended_compute_tier": "TIER_A"
+    },
+    {
+      "domain": "set_theory",
+      "subdomain": "set_operations",
+      "target_level": "L3_undergrad",
+      "packet_family_role": "core_undergrad_spine",
+      "current_packet_count": 0,
+      "prerequisite_families": ["elementary.functions"],
+      "expected_mathlib_coverage": "Mathlib.Data.Set.Basic",
+      "missing_infrastructure": "Set algebra and function image/preimage packets",
+      "candidate_statements": [
+        "Set.subset_inter",
+        "Set.union_comm",
+        "Set.compl_compl"
+      ],
+      "likely_proof_method": "direct_tactic / ext",
+      "contamination_risk": "low",
+      "fidelity_risk": "low",
+      "estimated_difficulty": "D1",
+      "recommended_compute_tier": "TIER_A"
+    },
+    {
+      "domain": "probability",
+      "subdomain": "measure_theory_basics",
+      "target_level": "L4_advanced_undergrad",
+      "packet_family_role": "undergrad_advanced_spine",
+      "current_packet_count": 0,
+      "prerequisite_families": ["real_analysis", "topology"],
+      "expected_mathlib_coverage": "Mathlib.Probability.ProbabilityMassFunction.Basic, Mathlib.MeasureTheory.Measure.MeasureSpace",
+      "missing_infrastructure": "Measure theory and random variable definitions bridge",
+      "candidate_statements": [
+        "measure_empty",
+        "measure_union"
+      ],
+      "likely_proof_method": "multi_lemma_composition",
+      "contamination_risk": "medium",
+      "fidelity_risk": "medium",
+      "estimated_difficulty": "D2",
+      "recommended_compute_tier": "TIER_B"
+    },
+    {
+      "domain": "analysis",
+      "subdomain": "metric_spaces",
+      "target_level": "L4_advanced_undergrad",
+      "packet_family_role": "undergrad_advanced_spine",
+      "current_packet_count": 0,
+      "prerequisite_families": ["topology", "real_analysis"],
+      "expected_mathlib_coverage": "Mathlib.Topology.MetricSpace.Basic",
+      "missing_infrastructure": "Metric space topology and distance bounds",
+      "candidate_statements": [
+        "dist_self",
+        "dist_triangle"
+      ],
+      "likely_proof_method": "theorem_lookup",
+      "contamination_risk": "low",
+      "fidelity_risk": "low",
+      "estimated_difficulty": "D1",
+      "recommended_compute_tier": "TIER_A"
+    },
+    {
+      "domain": "frontier",
+      "subdomain": "formal_conjectures",
+      "target_level": "L7_frontier",
+      "packet_family_role": "frontier_spine",
+      "current_packet_count": 25,
+      "prerequisite_families": ["number_theory", "combinatorics"],
+      "expected_mathlib_coverage": "Mathlib.Data.Real.Basic, Mathlib.NumberTheory.Padics.PadicVal",
+      "missing_infrastructure": "Custom inductive handling in SubmitModule, cross-revision Mathlib API shims",
+      "candidate_statements": [
+        "OEIS/358684.lean::oeis_358684_conjecture_0",
+        "Wikipedia/UnionClosed.lean::union_closed.variants.sharpness"
+      ],
+      "likely_proof_method": "multi_lemma_composition / witness_construction",
+      "contamination_risk": "high",
+      "fidelity_risk": "high",
+      "estimated_difficulty": "D4",
+      "recommended_compute_tier": "TIER_C"
+    }
+  ]
+}

@@ -1,27 +1,32 @@
 {
-  "packet_count": 358,
+  "packet_count": 367,
   "by_domain": {
-    "logic": 2,
+    "logic": 3,
     "algebra": 171,
     "combinatorics": 57,
     "geometry": 40,
     "number_theory": 64,
-    "frontier": 24
+    "frontier": 25,
+    "abstract_algebra": 2,
+    "linear_algebra": 1,
+    "real_analysis": 2,
+    "topology": 2
   },
   "by_level": {
     "L0_elementary": 111,
     "L1_proof_basics": 187,
     "L2_olympiad": 36,
-    "L7_frontier": 24
+    "L7_frontier": 25,
+    "L3_undergrad": 8
   },
   "by_kind": {
-    "concept": 297,
-    "theorem": 33,
+    "concept": 296,
+    "theorem": 43,
     "negative_example": 28
   },
   "by_status": {
     "empirical_only": 2,
-    "kernel_verified": 328,
+    "kernel_verified": 337,
     "failed_attempt": 28
   },
   "packets": [
@@ -2020,10 +2025,10 @@
       "title": "Nicomachus's theorem (sum of cubes equals square of the sum)",
       "domain": "algebra",
       "level": "L1_proof_basics",
-      "kind": "concept",
+      "kind": "theorem",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "0a549fff972c2438c079ac5a5e55b0344117d74df5fb318389152cacfd932b11"
+      "packet_sha256": "1e2b149889057622a5738687b0d9715c8cb647d93adb18f220c2ea48505f92da"
     },
     {
       "packet_id": "elementary.induction.sum_evens.v1",
@@ -3326,6 +3331,16 @@
       "packet_sha256": "cbd525e6874a774e52a9ef0f67e946135dae7145836301deeb86708f80888991"
     },
     {
+      "packet_id": "frontier.jacobian.jacobian_conjecture_false_dim_three.v1",
+      "title": "Jacobian Conjecture is false in dimension 3 (certified refutation of the formal-conjectures instance)",
+      "domain": "frontier",
+      "level": "L7_frontier",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "eligibility": "quarantined",
+      "packet_sha256": "4d28aefc6344bf8c8b82b7ebffb3753268f7058e741f2509b7f81d4b6ecf1108"
+    },
+    {
       "packet_id": "negative.algebra.div_mul_cancel_bare_ring_no_hypothesis_failure.v1",
       "title": "ring fails on a division-cancellation identity despite a true nonzero hypothesis",
       "domain": "algebra",
@@ -3604,6 +3619,86 @@
       "status": "failed_attempt",
       "eligibility": "negative_example_only",
       "packet_sha256": "1180e83178294b0387609a870da22e0f19e3b217e24f6abf21d59886cf708b5c"
+    },
+    {
+      "packet_id": "undergrad.abstract_algebra.group_inv_inv.v1",
+      "title": "Double inverse in a group",
+      "domain": "abstract_algebra",
+      "level": "L3_undergrad",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "b08f3bfaa8c3436d791d3d55468a6f2bef7e63a723cb5c658692e16bcf3d37de"
+    },
+    {
+      "packet_id": "undergrad.abstract_algebra.group_mul_inv_rev.v1",
+      "title": "Inverse of a product in a group",
+      "domain": "abstract_algebra",
+      "level": "L3_undergrad",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "40a8d20eb1f8f6e45726e14b0f5c283333a96553cf47c4700e472fc0eb4e4644"
+    },
+    {
+      "packet_id": "undergrad.linear_algebra.smul_zero_vector.v1",
+      "title": "Scalar multiplication with zero vector",
+      "domain": "linear_algebra",
+      "level": "L3_undergrad",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "abe512a186526dcd43b81320920c64e215c8c3a7347d88df059b54cd56903836"
+    },
+    {
+      "packet_id": "undergrad.logic.double_negation_elim.v1",
+      "title": "Double negation elimination",
+      "domain": "logic",
+      "level": "L3_undergrad",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "1620ca94e07cf29b4fb044b1296f6089b0883ebc141e51356077e8c9f9eee863"
+    },
+    {
+      "packet_id": "undergrad.real_analysis.continuous_add.v1",
+      "title": "Continuous sum of continuous functions",
+      "domain": "real_analysis",
+      "level": "L3_undergrad",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "f814f2b0e7d3299168c22880ca2c50c6ad634d8d54a0ca6b3a7ca0105caac150"
+    },
+    {
+      "packet_id": "undergrad.real_analysis.continuous_mul.v1",
+      "title": "Continuous product of continuous functions",
+      "domain": "real_analysis",
+      "level": "L3_undergrad",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "574e20bcb60c7020e60f19060add9dc3580bb73843ce6f23220afa5a0e76cf12"
+    },
+    {
+      "packet_id": "undergrad.topology.is_closed_inter.v1",
+      "title": "Intersection of two closed sets is closed",
+      "domain": "topology",
+      "level": "L3_undergrad",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "06b4dc626f3e4d1cb6db57fba5db8b87fb3730a218dd0ed9f1d84e79eae0f720"
+    },
+    {
+      "packet_id": "undergrad.topology.is_open_union.v1",
+      "title": "Union of two open sets is open",
+      "domain": "topology",
+      "level": "L3_undergrad",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "1f8005f9724835f8d094f93d2494c19c903d5c4c493856175a6ee4ce28762426"
     }
   ]
 }

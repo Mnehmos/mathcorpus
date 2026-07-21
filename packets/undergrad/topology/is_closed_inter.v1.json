@@ -1,0 +1,91 @@
+{
+  "packet_id": "undergrad.topology.is_closed_inter.v1",
+  "packet_version": "1.0.0",
+  "title": "Intersection of two closed sets is closed",
+  "domain": "topology",
+  "level": "L3_undergrad",
+  "kind": "theorem",
+  "status": "kernel_verified",
+  "difficulty_bin": "D1",
+  "lean_module": "MathCorpus.Undergrad.Topology.IsClosedInter",
+  "theorem_name": "is_closed_inter'",
+  "imports": [
+    "Mathlib"
+  ],
+  "toolchain": {
+    "lean_version": "v4.32.0-rc1",
+    "mathlib_rev": "360da6fa66c1273b76b6b2d8c5666fd5ac2e3b56"
+  },
+  "source_provenance": {
+    "source_kind": "author_written",
+    "source_refs": [],
+    "authors": [
+      "The MathCorpus Authors"
+    ],
+    "copyright_holder": "The MathCorpus Authors",
+    "license_spdx": "Apache-2.0",
+    "license_content": "CC-BY-4.0",
+    "statement_fidelity": "author_written"
+  },
+  "informal_statement": "The intersection of two closed sets in a topological space is closed.",
+  "informal_proof_idea": "Apply IsClosed.inter to closed hypotheses hs and ht.",
+  "formal_statement_pp": "theorem is_closed_inter' {α : Type*} [TopologicalSpace α] {s t : Set α} (hs : IsClosed s) (ht : IsClosed t) : IsClosed (s ∩ t)",
+  "proof_body_path": "lean/MathCorpus/Undergrad/Topology/IsClosedInter.lean",
+  "proof_body_redacted": false,
+  "trust": {
+    "rung": 1,
+    "proof_authority": "lean_kernel",
+    "certificate_checker": "kernel_decide",
+    "encoding_required": false,
+    "encoding_soundness_status": "not_applicable",
+    "independent_review_status": "repo_reviewed",
+    "public_claim_class": "public_safe"
+  },
+  "training": {
+    "eligibility": "public_train",
+    "reason_codes": [
+      "public",
+      "non_benchmark",
+      "unredacted"
+    ],
+    "dedupe_cluster_id": "topology.is_closed_inter",
+    "template_family_id": "topology.closed_sets",
+    "contamination_risk": "low",
+    "can_export_proof_body": true
+  },
+  "dependencies": {
+    "kits": [],
+    "tactic_tags": [
+      "IsClosed.inter"
+    ],
+    "prerequisite_concepts": [
+      "closed_set"
+    ]
+  },
+  "metrics": {
+    "loc": 3,
+    "tactic_count": 1
+  },
+  "artifacts": {
+    "public_files": [
+      "lean/MathCorpus/Undergrad/Topology/IsClosedInter.lean"
+    ]
+  },
+  "review": {
+    "review_basis": "author-written mathlib wrapper; verified locally via pinned lake build environment",
+    "reviewer_status": "repo_reviewed"
+  },
+  "verification": {
+    "verifier": "lake_build",
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "outcome": "kernel_verified",
+    "kernel_verified": true,
+    "fidelity_status": "attested"
+  },
+  "notes": "Author-written Mathlib wrapper packet verified directly under the pinned Lean 4 lake build environment.",
+  "hashes": {
+    "packet_sha256": "06b4dc626f3e4d1cb6db57fba5db8b87fb3730a218dd0ed9f1d84e79eae0f720",
+    "formal_statement_sha256": "f72902aab16fa526e9842cfb6ebced5b18957a504fd8153d5c80e74478860f22",
+    "proof_body_sha256": "e9512a571bf92c6a10d4aa79356ea1a1b0df60310380a7245727c61f4d87ece1"
+  }
+}
