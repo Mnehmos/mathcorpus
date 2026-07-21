@@ -1,27 +1,32 @@
 {
-  "packet_count": 358,
+  "packet_count": 367,
   "by_domain": {
-    "logic": 2,
+    "logic": 3,
     "algebra": 171,
     "combinatorics": 57,
     "geometry": 40,
     "number_theory": 64,
-    "frontier": 24
+    "frontier": 25,
+    "abstract_algebra": 2,
+    "linear_algebra": 1,
+    "real_analysis": 2,
+    "topology": 2
   },
   "by_level": {
     "L0_elementary": 111,
     "L1_proof_basics": 187,
     "L2_olympiad": 36,
-    "L7_frontier": 24
+    "L7_frontier": 25,
+    "L3_undergrad": 8
   },
   "by_kind": {
     "concept": 297,
-    "theorem": 33,
+    "theorem": 42,
     "negative_example": 28
   },
   "by_status": {
     "empirical_only": 2,
-    "kernel_verified": 328,
+    "kernel_verified": 337,
     "failed_attempt": 28
   },
   "packets": [
@@ -3326,6 +3331,16 @@
       "packet_sha256": "cbd525e6874a774e52a9ef0f67e946135dae7145836301deeb86708f80888991"
     },
     {
+      "packet_id": "frontier.jacobian.jacobian_conjecture_false_dim_three.v1",
+      "title": "Jacobian Conjecture is false in dimension 3 (certified refutation of the formal-conjectures instance)",
+      "domain": "frontier",
+      "level": "L7_frontier",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "eligibility": "quarantined",
+      "packet_sha256": "4d28aefc6344bf8c8b82b7ebffb3753268f7058e741f2509b7f81d4b6ecf1108"
+    },
+    {
       "packet_id": "negative.algebra.div_mul_cancel_bare_ring_no_hypothesis_failure.v1",
       "title": "ring fails on a division-cancellation identity despite a true nonzero hypothesis",
       "domain": "algebra",
@@ -3604,6 +3619,86 @@
       "status": "failed_attempt",
       "eligibility": "negative_example_only",
       "packet_sha256": "1180e83178294b0387609a870da22e0f19e3b217e24f6abf21d59886cf708b5c"
+    },
+    {
+      "packet_id": "undergrad.abstract_algebra.group_inv_inv.v1",
+      "title": "Double inverse in a group",
+      "domain": "abstract_algebra",
+      "level": "L3_undergrad",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "a2220b4d87e450ecfe3baa2f38d6bc5e76a18723e34bf90fd5b52ed277906eb5"
+    },
+    {
+      "packet_id": "undergrad.abstract_algebra.group_mul_inv_rev.v1",
+      "title": "Inverse of a product in a group",
+      "domain": "abstract_algebra",
+      "level": "L3_undergrad",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "f103b634518e667f93d9e2e0f9b05cc6823da739f9387a83e20e6d80cb2dae7f"
+    },
+    {
+      "packet_id": "undergrad.linear_algebra.smul_zero_vector.v1",
+      "title": "Scalar multiplication with zero vector",
+      "domain": "linear_algebra",
+      "level": "L3_undergrad",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "7c28ae4d783be1f8499a4008473b2ddb155ab37f03513cf4c59ef57261eba8e1"
+    },
+    {
+      "packet_id": "undergrad.logic.double_negation_elim.v1",
+      "title": "Double negation elimination",
+      "domain": "logic",
+      "level": "L3_undergrad",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "665a783fccd2dab6931e3c021584e6d855c61e0dac04ef5099b8efe5bacc614b"
+    },
+    {
+      "packet_id": "undergrad.real_analysis.continuous_add.v1",
+      "title": "Continuous sum of continuous functions",
+      "domain": "real_analysis",
+      "level": "L3_undergrad",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "40acb5cbbdcb129c360ceef206ce0d41a99aabcf6b6fb87d2ef3d7f81f0bef60"
+    },
+    {
+      "packet_id": "undergrad.real_analysis.continuous_mul.v1",
+      "title": "Continuous product of continuous functions",
+      "domain": "real_analysis",
+      "level": "L3_undergrad",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "5464ab9f7c456f3934fec31d7facea5016f7d3c9fe02b2c1b2a01ace65787b17"
+    },
+    {
+      "packet_id": "undergrad.topology.is_closed_inter.v1",
+      "title": "Intersection of two closed sets is closed",
+      "domain": "topology",
+      "level": "L3_undergrad",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "6d53e480fdef34b833fa31b708ab1d89fcbc18523d22c43c4b195383d3316a10"
+    },
+    {
+      "packet_id": "undergrad.topology.is_open_union.v1",
+      "title": "Union of two open sets is open",
+      "domain": "topology",
+      "level": "L3_undergrad",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "a2e8106c425037fc0a91b2c5e98fe4db5c79f03439a17a57eb0c70ca8f0786ac"
     }
   ]
 }

@@ -1,0 +1,94 @@
+{
+  "packet_id": "undergrad.linear_algebra.smul_zero_vector.v1",
+  "packet_version": "1.0.0",
+  "title": "Scalar multiplication with zero vector",
+  "domain": "linear_algebra",
+  "level": "L3_undergrad",
+  "kind": "theorem",
+  "status": "kernel_verified",
+  "difficulty_bin": "D1",
+  "lean_module": "MathCorpus.Undergrad.LinearAlgebra.SmulZeroVector",
+  "theorem_name": "smul_zero_vector'",
+  "imports": [
+    "Mathlib"
+  ],
+  "toolchain": {
+    "lean_version": "v4.32.0-rc1",
+    "mathlib_rev": "360da6fa66c1273b76b6b2d8c5666fd5ac2e3b56"
+  },
+  "source_provenance": {
+    "source_kind": "author_written",
+    "source_refs": [],
+    "authors": [
+      "The MathCorpus Authors"
+    ],
+    "copyright_holder": "The MathCorpus Authors",
+    "license_spdx": "Apache-2.0",
+    "license_content": "CC-BY-4.0",
+    "statement_fidelity": "author_written"
+  },
+  "informal_statement": "Scalar multiplication of any scalar with the zero vector in a module yields the zero vector.",
+  "informal_proof_idea": "Apply smul_zero to scalar c.",
+  "formal_statement_pp": "theorem smul_zero_vector' {R V : Type*} [Semiring R] [AddCommMonoid V] [Module R V] (c : R) : c • (0 : V) = 0",
+  "proof_body_path": "lean/MathCorpus/Undergrad/LinearAlgebra/SmulZeroVector.lean",
+  "proof_body_redacted": false,
+  "trust": {
+    "rung": 1,
+    "proof_authority": "lean_kernel",
+    "certificate_checker": "kernel_decide",
+    "encoding_required": false,
+    "encoding_soundness_status": "not_applicable",
+    "independent_review_status": "repo_reviewed",
+    "public_claim_class": "public_safe"
+  },
+  "training": {
+    "eligibility": "public_train",
+    "reason_codes": [
+      "public",
+      "non_benchmark",
+      "unredacted"
+    ],
+    "dedupe_cluster_id": "linear_algebra.smul_zero_vector",
+    "template_family_id": "linear_algebra.module_basics",
+    "contamination_risk": "low",
+    "can_export_proof_body": true
+  },
+  "dependencies": {
+    "kits": [],
+    "tactic_tags": [
+      "smul_zero_vector"
+    ],
+    "prerequisite_concepts": [
+      "module_theory"
+    ]
+  },
+  "metrics": {
+    "loc": 3,
+    "tactic_count": 1
+  },
+  "artifacts": {
+    "public_files": [
+      "lean/MathCorpus/Undergrad/LinearAlgebra/SmulZeroVector.lean"
+    ]
+  },
+  "review": {
+    "review_basis": "repo self-review; kernel-verified undergrad spine contribution",
+    "reviewer_status": "repo_reviewed"
+  },
+  "verification": {
+    "verifier": "proofsearch",
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "episode_id": "3a118800-0001-4000-a000-000000000007",
+    "outcome": "kernel_verified",
+    "kernel_verified": true,
+    "fidelity_status": "attested",
+    "step_count": 1,
+    "import_manifest_hash": "aaf21893d520a78dee0787a1bcaf939ee6b922265ff670c272e2e1d450dd29a7"
+  },
+  "notes": "Undergrad spine packet introducing module scalar multiplication with zero.",
+  "hashes": {
+    "packet_sha256": "7c28ae4d783be1f8499a4008473b2ddb155ab37f03513cf4c59ef57261eba8e1",
+    "formal_statement_sha256": "9286f7b3369e1cacfffac399f2f6d70ccc0b4084b0fbfe1b3c2ac0e1457bba3a",
+    "proof_body_sha256": "98d15991a11f6b23d30e4201e22ae9da23a7918c5cfc495ca7343594d1f274a5"
+  }
+}

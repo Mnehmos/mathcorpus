@@ -1,0 +1,181 @@
+{
+  "packet_id": "elementary.induction.sum_cubes_eq_sum_sq.v1",
+  "packet_version": "1.0.0",
+  "title": "Nicomachus's theorem (sum of cubes equals square of the sum)",
+  "domain": "algebra",
+  "level": "L1_proof_basics",
+  "kind": "concept",
+  "status": "kernel_verified",
+  "difficulty_bin": "D2",
+  "lean_module": "MathCorpus.Elementary.Induction.SumCubesEqSumSq",
+  "theorem_name": "sum_cubes_eq_sum_sq",
+  "imports": [
+    "Mathlib"
+  ],
+  "toolchain": {
+    "lean_version": "v4.32.0-rc1",
+    "mathlib_rev": "360da6fa66c1273b76b6b2d8c5666fd5ac2e3b56"
+  },
+  "source_provenance": {
+    "source_kind": "author_written",
+    "source_refs": [],
+    "authors": [
+      "The MathCorpus Authors"
+    ],
+    "copyright_holder": "The MathCorpus Authors",
+    "license_spdx": "Apache-2.0",
+    "license_content": "CC-BY-4.0",
+    "statement_fidelity": "author_written"
+  },
+  "informal_statement": "The sum of the first n+1 cubes equals the square of the sum of the first n+1 naturals: 0^3+1^3+...+n^3 = (0+1+...+n)^2 -- Nicomachus's theorem in its classic form.",
+  "informal_proof_idea": "Prove the Gauss sum identity (sum*2 = n*(n+1)) and Nicomachus's cubed identity (sum of cubes * 4 = (n*(n+1))^2) as universally-quantified helper facts by their own from-scratch inductions, then combine: 4*(sum of cubes) = (n*(n+1))^2 = (2*sum)^2 = 4*sum^2, so sum of cubes = sum^2 by cancelling the common factor of 4 (omega).",
+  "formal_statement_pp": "theorem sum_cubes_eq_sum_sq (n : ℕ) : (∑ i ∈ Finset.range (n + 1), i ^ 3) = (∑ i ∈ Finset.range (n + 1), i) ^ 2",
+  "proof_body_path": "lean/MathCorpus/Elementary/Induction/SumCubesEqSumSq.lean",
+  "proof_body_redacted": false,
+  "trust": {
+    "rung": 1,
+    "proof_authority": "lean_kernel",
+    "certificate_checker": "kernel_decide",
+    "encoding_required": false,
+    "encoding_soundness_status": "not_applicable",
+    "independent_review_status": "repo_reviewed",
+    "public_claim_class": "public_safe"
+  },
+  "training": {
+    "eligibility": "public_train",
+    "reason_codes": [
+      "public",
+      "non_benchmark",
+      "unredacted"
+    ],
+    "dedupe_cluster_id": "induction.sum_cubes_eq_sum_sq",
+    "template_family_id": "induction.finite_sum_closed_form",
+    "contamination_risk": "low",
+    "can_export_proof_body": true
+  },
+  "dependencies": {
+    "kits": [],
+    "tactic_tags": [
+      "Finset.sum_range_succ",
+      "induction",
+      "omega"
+    ],
+    "prerequisite_concepts": [
+      "gauss_sum",
+      "sum_of_cubes",
+      "nicomachus"
+    ]
+  },
+  "proof_variants": [
+    {
+      "variant_id": "elementary.induction.sum_cubes_eq_sum_sq.v1.variant.canonical",
+      "variant_style": "canonical",
+      "formal_statement_sha256": "7714f38bd2ab87c2f6efee0c485fbcd5ced322c242b5e5bac407ffdd17b41726",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "proof_body_path": "lean/MathCorpus/Elementary/Induction/SumCubesEqSumSq.lean",
+      "proof_body_sha256": "5b53be320fb4b229ae18493117eaef7488ad1d601a8e8190a81087c1220d8b29",
+      "proof_body_redacted": false,
+      "tactic_count": 11,
+      "proof_length": 11,
+      "proof_profile": {
+        "primary_proof_class": "induction",
+        "secondary_proof_classes": [],
+        "automation_level": "fully_automated",
+        "uses_witness_invention": false,
+        "uses_induction": true,
+        "uses_contradiction": false,
+        "uses_case_analysis": false
+      },
+      "source": "proof_search"
+    }
+  ],
+  "dependency_manifest": {
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "declared_theorem_deps": [
+      "Finset.range",
+      "Finset.sum_range_succ",
+      "add_mul"
+    ],
+    "used_theorem_deps": [
+      "Finset.range",
+      "Finset.sum_range_succ",
+      "add_mul"
+    ],
+    "obligation_deps": [],
+    "verified_module_item_deps": [
+      "Finset.range",
+      "Finset.sum_range_succ",
+      "add_mul"
+    ],
+    "transitive_dependency_count": 3,
+    "transitive_dependency_depth": 1,
+    "retrieval_candidates": [
+      "Finset.range",
+      "Finset.sum_range_succ",
+      "add_mul"
+    ],
+    "retrieved_unused_candidates": [],
+    "claim_sources": [
+      {
+        "dependency_id": "Finset.range",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.range",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.sum_range_succ",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "Finset.sum_range_succ",
+        "category": "verified_module_item",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "add_mul",
+        "category": "used",
+        "source": "manual"
+      },
+      {
+        "dependency_id": "add_mul",
+        "category": "verified_module_item",
+        "source": "manual"
+      }
+    ]
+  },
+  "metrics": {
+    "loc": 15,
+    "tactic_count": 11
+  },
+  "artifacts": {
+    "public_files": [
+      "lean/MathCorpus/Elementary/Induction/SumCubesEqSumSq.lean"
+    ]
+  },
+  "review": {
+    "review_basis": "repo self-review; kernel-verified through the tracked proof-search loop",
+    "reviewer_status": "repo_reviewed"
+  },
+  "verification": {
+    "verifier": "proofsearch",
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "episode_id": "7b9d236e-93a7-408a-9b86-53982e3bd447",
+    "outcome": "kernel_verified",
+    "kernel_verified": true,
+    "fidelity_status": "attested",
+    "import_manifest_hash": "aaf21893d520a78dee0787a1bcaf939ee6b922265ff670c272e2e1d450dd29a7",
+    "step_count": 2,
+    "verified_at": "2026-07-08T13:52:47Z"
+  },
+  "notes": "Proof authority: Lean kernel via the tracked proof-search loop (episode 7b9d236e), kernel_verified on the second attempt. The domain already has `gauss_sum` (sum*2=n(n+1)) and `sum_cubes` (sum-of-cubes*4=(n(n+1))^2) as SEPARATE packets in their division-free forms, but never the direct relationship between them (the classically famous form of Nicomachus's theorem) -- confirmed via grep before authoring. Since tracked proof-search episodes cannot reference another already-authored packet's Lean theorem (each episode is self-contained against Mathlib only), both helper facts had to be re-derived inline as local `have`s rather than imported. First attempt stated the two helper `have`s directly over the theorem's own outer `n` (matching the exact tactic scripts from the existing `gauss_sum`/`sum_cubes` packets) and hit the SAME auto-generalization pitfall recorded earlier this session (`exists_prime_factorization`, `two_pow_strictmono`): the first `have`'s conclusion (depending on `n`) was still in context when the second `have`'s `induction n` ran, so Lean auto-reverted it into the second induction's motive, leaving an extra, unproved sub-goal in the `succ` case. Fixed by stating each helper as a `∀ m : ℕ, ...` fact proved via `intro m; induction m` on a FRESH bound variable with no pre-existing same-named hypothesis in context, then instantiating both at `n` afterward -- the general, reusable fix for this whole class of bug: never let a hypothesis mentioning the induction target already be in context before calling `induction`; quantify the helper over its own fresh variable instead.",
+  "hashes": {
+    "packet_sha256": "0a549fff972c2438c079ac5a5e55b0344117d74df5fb318389152cacfd932b11",
+    "formal_statement_sha256": "7714f38bd2ab87c2f6efee0c485fbcd5ced322c242b5e5bac407ffdd17b41726",
+    "proof_body_sha256": "5b53be320fb4b229ae18493117eaef7488ad1d601a8e8190a81087c1220d8b29"
+  }
+}

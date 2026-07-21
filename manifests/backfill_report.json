@@ -1,36 +1,36 @@
 {
-  "packet_count": 358,
+  "packet_count": 359,
   "summary_by_field": {
     "tactics_and_proof_shape": {
       "not_applicable": 30,
-      "recovered": 328
+      "recovered": 329
     },
     "proof_profile": {
       "not_yet_backfilled": 2,
-      "recovered": 328,
+      "recovered": 329,
       "not_applicable": 28
     },
     "explicit_dependencies": {
       "not_yet_backfilled": 2,
-      "recovered": 328,
+      "recovered": 329,
       "not_applicable": 28
     },
     "episode_and_trajectory_linkage": {
       "unrecoverable_missing": 15,
-      "partial_episode_id_only": 307,
+      "partial_episode_id_only": 308,
       "recovered": 36
     },
     "attempts_and_diagnostics": {
       "unrecoverable_missing": 356,
-      "recovered": 2
+      "recovered": 3
     },
     "model_hashes_tokens_cost_timing": {
       "recovered": 1,
-      "unrecoverable_missing": 357
+      "unrecoverable_missing": 358
     },
     "proof_variants_and_repair_chains": {
       "not_yet_backfilled": 29,
-      "recovered": 329
+      "recovered": 330
     }
   },
   "packets": [
@@ -4650,6 +4650,20 @@
         "explicit_dependencies": "recovered",
         "episode_and_trajectory_linkage": "partial_episode_id_only",
         "attempts_and_diagnostics": "unrecoverable_missing",
+        "model_hashes_tokens_cost_timing": "unrecoverable_missing",
+        "proof_variants_and_repair_chains": "recovered"
+      }
+    },
+    {
+      "packet_id": "frontier.jacobian.jacobian_conjecture_false_dim_three.v1",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "fields": {
+        "tactics_and_proof_shape": "recovered",
+        "proof_profile": "recovered",
+        "explicit_dependencies": "recovered",
+        "episode_and_trajectory_linkage": "partial_episode_id_only",
+        "attempts_and_diagnostics": "recovered",
         "model_hashes_tokens_cost_timing": "unrecoverable_missing",
         "proof_variants_and_repair_chains": "recovered"
       }

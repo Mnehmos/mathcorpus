@@ -48,6 +48,9 @@ existed) via `strictMono_nat_of_lt_succ`. And this cycle's `sum_fib_sq`
 identity, `sum_{i<=n} fib(i)^2 = fib(n)*fib(n+1)`, complementing
 `fib_le_two_pow` (growth bound) and `fib_sum_succ` (plain sum) — no
 Mathlib convenience lemma exists for this, a genuine hand-derived
-induction via `Nat.fib_add_two`.
+induction via `Nat.fib_add_two`. And this cycle's `sum_cubes_eq_sum_sq`
+(D2, L1, episode `7b9d236e`): Nicomachus's theorem in its classic form,
+sum of cubes = square of the sum, the direct relationship between
+`gauss_sum` and `sum_cubes` that neither packet states on its own.
 
 Next targets: see `QUEUE.md`.

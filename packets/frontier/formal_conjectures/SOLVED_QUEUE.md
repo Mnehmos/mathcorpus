@@ -522,12 +522,11 @@ pass's remaining candidates rather than re-running it from scratch.
 
 ## Backlog
 
-- [ ] `Wikipedia/UnionClosed.lean::union_closed.variants.sharpness` (see
-      round 9 above) — ready candidate for a future cycle, genuinely
-      proof-complete, no custom class/inductive, but the largest of the
-      file's three special cases (~45 lines, shows the `1/2` constant in
-      the union-closed sets conjecture is optimal — cannot be replaced
-      by any larger constant).
+- [x] `Wikipedia/UnionClosed.lean::union_closed.variants.sharpness` (see
+      round 9 above) — **packetized** (concurrent agent, commit
+      `485dcaa`/`c476df6`) as `frontier.formal_conjectures.union_closed_sharpness.v1`.
+      `UnionClosed.lean` is now fully triaged (all 3 proof-complete
+      special cases packetized).
 
 - [ ] `HilbertProblems/` — triaged this cycle (see above); both files'
       `research solved` theorems are genuinely `sorry` and genuinely hard
