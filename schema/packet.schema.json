@@ -693,6 +693,7 @@
         "verifier": { "type": "string", "description": "e.g. 'proofsearch'" },
         "environment_hash": { "type": "string", "description": "Pinned Lean+mathlib environment hash the kernel ran under." },
         "episode_id": { "type": "string" },
+        "root_statement_sha256": { "type": "string", "description": "Raw SHA-256 of the environment's REGISTERED root/obligation statement text — identical to a proof-search MCIP bundle's packet_identity.formal_statement_sha256. This is the like-for-like bridge import_mcip checks a bundle against; note it is a raw-text hash, NOT the canonical-JSON hashes.formal_statement_sha256." },
         "outcome": { "type": "string", "enum": ["kernel_verified", "certified", "verified_certificate"] },
         "kernel_verified": { "type": "boolean" },
         "fidelity_status": { "type": "string", "enum": ["attested", "verified", "unreviewed"] },

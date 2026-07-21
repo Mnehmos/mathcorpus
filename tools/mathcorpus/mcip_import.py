@@ -100,6 +100,13 @@ _PACKET_FIELD_BY_RECORD_TYPE = {
     "empirical_difficulty_aggregate": ("empirical_difficulty_aggregates", "aggregate_id", False),
 }
 
+# MCIP record types a real proof-search bundle legitimately carries but this importer does
+# not fold onto a packet: rl_transitions are RL training data exported separately, and
+# literature_source/idea_attribution provenance folds only once its cross-repo catalog
+# linkage is aligned (see the #263 follow-up). Recognized-and-skipped, never an error — so
+# their presence does not abort the fold of the proof/dependency/attempt evidence.
+_RECOGNIZED_NOT_FOLDED = frozenset({"rl_transition", "literature_source", "idea_attribution"})
+
 
 @dataclass
 class ImportResult:
@@ -107,6 +114,7 @@ class ImportResult:
     skipped_idempotent: list[tuple[str, str]] = field(default_factory=list)  # already present, identical
     conflicts: list[tuple[str, str, str]] = field(default_factory=list)   # (field, id, reason)
     restriction_profiles: list[dict[str, Any]] = field(default_factory=list)
+    skipped_unfolded: list[tuple[str, str]] = field(default_factory=list)  # (record_type, id) recognized, not folded
     errors: list[str] = field(default_factory=list)
 
 
@@ -130,9 +138,26 @@ def fold_bundle_into_packet(bundle: dict[str, Any], packet: dict[str, Any]) -> I
         return result
     identity = identities[0]
 
+    # The bundle's packet_identity.formal_statement_sha256 is the RAW SHA-256 of the
+    # environment's registered root statement. A MathCorpus packet's own
+    # hashes.formal_statement_sha256 is a canonical-JSON hash over
+    # {theorem_name, formal_statement_pp, toolchain} — a different function, so the two
+    # are never equal for a real proof-search bundle. When the packet declares the
+    # registered-statement hash (verification.root_statement_sha256), compare the bundle
+    # against THAT like-for-like; only fall back to the legacy hashes.formal_statement_sha256
+    # comparison when it is absent, so pre-bridge fixtures/packets still validate (#13).
+    registered_fsh = (packet.get("verification") or {}).get("root_statement_sha256")
     packet_fsh = (packet.get("hashes") or {}).get("formal_statement_sha256")
     identity_fsh = identity.get("formal_statement_sha256")
-    if packet_fsh is not None and identity_fsh is not None and packet_fsh != identity_fsh:
+    if registered_fsh is not None and identity_fsh is not None:
+        if registered_fsh != identity_fsh:
+            result.errors.append(
+                f"packet_identity.formal_statement_sha256 ({identity_fsh}) does not match the "
+                f"target packet's verification.root_statement_sha256 ({registered_fsh}) — "
+                "refusing to import evidence for a statement mismatch"
+            )
+            return result
+    elif packet_fsh is not None and identity_fsh is not None and packet_fsh != identity_fsh:
         result.errors.append(
             f"packet_identity.formal_statement_sha256 ({identity_fsh}) does not match "
             f"target packet's hashes.formal_statement_sha256 ({packet_fsh}) — refusing to "
@@ -151,6 +176,15 @@ def fold_bundle_into_packet(bundle: dict[str, Any], packet: dict[str, Any]) -> I
             continue  # proof_profile is folded via its owning proof_variant, not standalone
         if rtype == "restriction_profile":
             result.restriction_profiles.append(r)
+            continue
+        if rtype in _RECOGNIZED_NOT_FOLDED:
+            # A real proof-search bundle carries these, but a packet does not store them
+            # as foldable child records: rl_transitions are exported as RL training data,
+            # not into a packet; literature_source/idea_attribution provenance folds only
+            # once its cross-repo catalog linkage is aligned (record_id linkage + record_hash
+            # pinning — see the #263 follow-up). Recognized and skipped so their presence
+            # never aborts the fold of the evidence that DOES belong on the packet.
+            result.skipped_unfolded.append((rtype, r.get("record_id", "<unknown>")))
             continue
         if rtype not in _PACKET_FIELD_BY_RECORD_TYPE:
             result.errors.append(f"unknown record_type '{rtype}' — not folded")
