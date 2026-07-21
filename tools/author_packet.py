@@ -114,7 +114,7 @@ def _verification(v: dict, env_hash: str) -> dict:
         "fidelity_status": v.get("fidelity_status", "attested"),
         "step_count": v.get("step_count", 1),
     }
-    for opt in ("import_manifest_hash", "trajectory_first_hash", "trajectory_last_hash", "verified_at"):
+    for opt in ("root_statement_sha256", "import_manifest_hash", "trajectory_first_hash", "trajectory_last_hash", "verified_at"):
         if v.get(opt):
             rec[opt] = v[opt]
     return rec
@@ -242,6 +242,8 @@ def _fold_verifier_export(packet: dict, spec: dict) -> None:
               f"'{field_name}' conflicts with a manually specified field ({reason}) — not applied", file=sys.stderr)
     for field_name, rid in result.applied:
         print(f"  + {field_name} {rid} (from verifier_export_bundle)")
+    for rtype, rid in result.skipped_unfolded:
+        print(f"  ~ {rtype} {rid} recognized but not folded onto the packet (see mcip_import._RECOGNIZED_NOT_FOLDED)")
 
     for rp_record in result.restriction_profiles:
         status, rid = import_restriction_profile(rp_record, REPO / "restriction_profiles")
