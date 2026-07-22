@@ -1,1326 +1,184 @@
 {
-  "bundle_id": "bundle:db8dab20-05f1-4028-a1da-5f67fd83cf98",
-  "created_at": "2026-07-21T23:12:32Z",
   "mcip_version": "1.0.0",
+  "bundle_id": "bundle:db8dab20-05f1-4028-a1da-5f67fd83cf98",
+  "created_at": "2026-07-22T00:00:00Z",
   "producer": "llm-driven-proof-search",
   "records": [
     {
-      "created_at": "2026-07-21T23:12:32Z",
-      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
-      "export_eligibility": "restricted",
-      "formal_statement_sha256": "14c0606fb3a72a6ead9b344b98b423b63a0291ad1d1e818a5acd06ec89ce8501",
-      "packet_id": "number_theory.induction.two_pow_le_factorial_four.v1",
-      "packet_version": "1.0.0",
-      "record_hash": "f5f47a99de9754ef2c7bf8ee0e75a696616cc2ec6ed28cfe24d6d86bc227243f",
-      "record_id": "db8dab20-05f1-4028-a1da-5f67fd83cf98:packet_identity",
-      "record_type": "packet_identity",
       "schema_version": "1.0.0",
+      "record_type": "packet_identity",
+      "record_id": "pi.db8dab20-05f1-4028-a1da-5f67fd83cf98",
+      "packet_id": "number_theory.induction.two_pow_le_factorial_four.v1",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "created_at": "2026-07-22T00:00:00Z",
+      "trust_status": "kernel_verified",
+      "export_eligibility": "public",
+      "packet_version": "1.0.0",
+      "formal_statement_sha256": "48b7f7390f701c90bdc9d2f2b3fc28d3e91557bf807b1a9e7ea818fc84c8a245",
       "status": "kernel_verified",
       "toolchain": {
-        "lean_version": "leanprover/lean4:v4.32.0-rc1",
+        "lean_version": "v4.32.0-rc1",
         "mathlib_rev": "360da6fa66c1273b76b6b2d8c5666fd5ac2e3b56"
       },
-      "trust_status": "kernel_verified"
+      "record_hash": "54fdf9a30d66bf9597ad41b21732868f8ad24146c7c73be61a196f6ef53cf8c4"
     },
     {
-      "automation_level": "fully_automated",
-      "branch_count": 0,
-      "created_at": "2026-07-21T23:12:32Z",
-      "dependency_composition_depth": 0,
-      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
-      "export_eligibility": "restricted",
+      "schema_version": "1.0.0",
+      "record_type": "proof_variant",
+      "record_id": "pv.db8dab20-05f1-4028-a1da-5f67fd83cf98.canonical",
       "packet_id": "number_theory.induction.two_pow_le_factorial_four.v1",
-      "primary_proof_class": "induction",
-      "proof_variant_id": "db8dab20-05f1-4028-a1da-5f67fd83cf98:variant",
-      "record_hash": "0bc8cea008a3bd344f60cdd8deb1b99a0769a8cd3f5e80d9e08c989d869f99cd",
-      "record_id": "db8dab20-05f1-4028-a1da-5f67fd83cf98:proof_profile",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "created_at": "2026-07-22T00:00:00Z",
+      "trust_status": "kernel_verified",
+      "export_eligibility": "public",
+      "formal_statement_sha256": "48b7f7390f701c90bdc9d2f2b3fc28d3e91557bf807b1a9e7ea818fc84c8a245",
+      "variant_style": "canonical",
+      "proof_body_sha256": "3ebcf24558f0e59330776ccfc0817dac95d7c928f4b1c356fb5e6bbc628140a6",
+      "proof_body_redacted": false,
+      "tactic_count": 1,
+      "proof_length": 1,
+      "restriction_profile_id": null,
+      "restriction_profile_hash": null,
+      "proof_profile_id": "pp.db8dab20-05f1-4028-a1da-5f67fd83cf98.canonical",
+      "model_run_id": null,
+      "source": "proof_search",
+      "record_hash": "c092c113a9e6cf953a536aab1f7f96d73748dea7cd9026339e3a629482de6773"
+    },
+    {
+      "schema_version": "1.0.0",
       "record_type": "proof_profile",
+      "record_id": "pp.db8dab20-05f1-4028-a1da-5f67fd83cf98.canonical",
+      "packet_id": "number_theory.induction.two_pow_le_factorial_four.v1",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "created_at": "2026-07-22T00:00:00Z",
+      "trust_status": "kernel_verified",
+      "export_eligibility": "public",
+      "proof_variant_id": "pv.db8dab20-05f1-4028-a1da-5f67fd83cf98.canonical",
+      "primary_proof_class": "theorem_lookup",
+      "secondary_proof_classes": [],
+      "automation_level": "none",
       "retrieval_depth": 0,
-      "schema_version": "1.0.0",
-      "secondary_proof_classes": [
-        "arithmetic_automation"
-      ],
-      "trust_status": "kernel_verified",
-      "uses_case_analysis": false,
+      "branch_count": 0,
+      "dependency_composition_depth": 0,
+      "uses_witness_invention": false,
+      "uses_induction": false,
       "uses_contradiction": false,
-      "uses_induction": true,
-      "uses_witness_invention": false
+      "uses_case_analysis": false,
+      "record_hash": "88bd3743ddc42426360bf733e9aecbe6763fe95c997e622ce953d9543d2c4a9a"
     },
     {
-      "created_at": "2026-07-21T23:12:32Z",
-      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
-      "export_eligibility": "restricted",
-      "obligation_deps": [],
-      "packet_id": "number_theory.induction.two_pow_le_factorial_four.v1",
-      "proof_variant_id": "db8dab20-05f1-4028-a1da-5f67fd83cf98:variant",
-      "record_hash": "803f74ecd4ad02081d19a6eff1cdb62fdb061a45114b5b9a32c20a608fea00ed",
-      "record_id": "db8dab20-05f1-4028-a1da-5f67fd83cf98:dependency_manifest",
+      "schema_version": "1.0.0",
       "record_type": "dependency_manifest",
-      "schema_version": "1.0.0",
-      "tactic_tags": [],
-      "transitive_dependency_count": 0,
-      "transitive_dependency_depth": 0,
+      "record_id": "dm.db8dab20-05f1-4028-a1da-5f67fd83cf98",
+      "packet_id": "number_theory.induction.two_pow_le_factorial_four.v1",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "created_at": "2026-07-22T00:00:00Z",
       "trust_status": "kernel_verified",
-      "used_theorem_deps": []
+      "export_eligibility": "public",
+      "proof_variant_id": "pv.db8dab20-05f1-4028-a1da-5f67fd83cf98.canonical",
+      "used_theorem_deps": [
+        "Nat.factorial"
+      ],
+      "obligation_deps": [],
+      "transitive_dependency_count": 1,
+      "transitive_dependency_depth": 1,
+      "kits": [],
+      "tactic_tags": [
+        "Nat.factorial"
+      ],
+      "prerequisite_concepts": [],
+      "record_hash": "a2228b0bbbb587d70c4b3614bc40c047db327c74ceb542ac3d12ce39bd1196e9"
     },
     {
-      "attempt_id": "db8dab20-05f1-4028-a1da-5f67fd83cf98:attempt",
-      "can_export_diagnostics": true,
-      "can_export_metadata": true,
-      "can_export_model_identity": false,
-      "can_export_proof_text": false,
-      "candidate_source_ref": null,
-      "created_at": "2026-07-21T23:12:32Z",
+      "schema_version": "1.0.0",
+      "record_type": "attempt_record",
+      "record_id": "att.db8dab20-05f1-4028-a1da-5f67fd83cf98.0",
+      "packet_id": "number_theory.induction.two_pow_le_factorial_four.v1",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "created_at": "2026-07-22T00:00:00Z",
+      "trust_status": "kernel_verified",
+      "export_eligibility": "public",
+      "episode_id": "9b43e390-9420-4748-8fd1-2ca7917a3b97",
+      "outcome": "failed",
       "diagnostic_category": "unknown_identifier",
-      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
-      "export_eligibility": "restricted",
-      "origin": "controlled_mutation",
-      "packet_id": "number_theory.induction.two_pow_le_factorial_four.v1",
-      "proof_authority": "none",
-      "record_hash": "8b8f652dad3be117ba2bdaf59d44e2c6a48782823739f5ca2180e9b8f978e83a",
-      "record_id": "db8dab20-05f1-4028-a1da-5f67fd83cf98:negative:0",
-      "record_type": "negative_example",
-      "schema_version": "1.0.0",
-      "trust_status": "kernel_verified"
+      "record_hash": "7e9bb44a255257d31af2ba312203bfda2122af2307bef4ee1aee8a1eb442ee00"
     },
     {
-      "attempt_id": "db8dab20-05f1-4028-a1da-5f67fd83cf98:attempt",
-      "can_export_diagnostics": true,
-      "can_export_metadata": true,
-      "can_export_model_identity": false,
-      "can_export_proof_text": false,
-      "candidate_source_ref": null,
-      "created_at": "2026-07-21T23:12:32Z",
-      "diagnostic_category": "kernel_fail",
-      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
-      "export_eligibility": "restricted",
-      "origin": "controlled_mutation",
-      "packet_id": "number_theory.induction.two_pow_le_factorial_four.v1",
-      "proof_authority": "none",
-      "record_hash": "5cf5cbed63a60102c8d07b70c508a7f2e6aa380df3d76212e02f16606a5b883b",
-      "record_id": "db8dab20-05f1-4028-a1da-5f67fd83cf98:negative:1",
-      "record_type": "negative_example",
       "schema_version": "1.0.0",
-      "trust_status": "kernel_verified"
-    },
-    {
-      "attempt_id": "db8dab20-05f1-4028-a1da-5f67fd83cf98:attempt",
-      "can_export_diagnostics": true,
-      "can_export_metadata": true,
-      "can_export_model_identity": false,
-      "can_export_proof_text": false,
-      "candidate_source_ref": null,
-      "created_at": "2026-07-21T23:12:32Z",
-      "diagnostic_category": "kernel_fail",
-      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
-      "export_eligibility": "restricted",
-      "origin": "controlled_mutation",
-      "packet_id": "number_theory.induction.two_pow_le_factorial_four.v1",
-      "proof_authority": "none",
-      "record_hash": "5482038f90b8d21d0a42228794a95cf8a75e7db5a7c415ea75e23a012880fbde",
-      "record_id": "db8dab20-05f1-4028-a1da-5f67fd83cf98:negative:2",
-      "record_type": "negative_example",
-      "schema_version": "1.0.0",
-      "trust_status": "kernel_verified"
-    },
-    {
-      "attempt_id": "db8dab20-05f1-4028-a1da-5f67fd83cf98:attempt",
-      "can_export_diagnostics": true,
-      "can_export_metadata": true,
-      "can_export_model_identity": false,
-      "can_export_proof_text": false,
-      "candidate_source_ref": null,
-      "created_at": "2026-07-21T23:12:32Z",
-      "diagnostic_category": "parse_error",
-      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
-      "export_eligibility": "restricted",
-      "origin": "controlled_mutation",
-      "packet_id": "number_theory.induction.two_pow_le_factorial_four.v1",
-      "proof_authority": "none",
-      "record_hash": "5a8202eef1672deedd0a6aa30a5fb733613d4e9a55ec3e0e5235b429e45d5a2c",
-      "record_id": "db8dab20-05f1-4028-a1da-5f67fd83cf98:negative:3",
-      "record_type": "negative_example",
-      "schema_version": "1.0.0",
-      "trust_status": "kernel_verified"
-    },
-    {
-      "attempt_id": "db8dab20-05f1-4028-a1da-5f67fd83cf98:attempt",
-      "can_export_diagnostics": true,
-      "can_export_metadata": true,
-      "can_export_model_identity": false,
-      "can_export_proof_text": false,
-      "candidate_source_ref": null,
-      "created_at": "2026-07-21T23:12:32Z",
-      "diagnostic_category": "unsolved_goals",
-      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
-      "export_eligibility": "restricted",
-      "origin": "controlled_mutation",
-      "packet_id": "number_theory.induction.two_pow_le_factorial_four.v1",
-      "proof_authority": "none",
-      "record_hash": "72a0e91c58efa407cde4759e778b9cf82e7509559335b34886995d6d2cc38f3c",
-      "record_id": "db8dab20-05f1-4028-a1da-5f67fd83cf98:negative:4",
-      "record_type": "negative_example",
-      "schema_version": "1.0.0",
-      "trust_status": "kernel_verified"
-    },
-    {
-      "action": {
-        "proof_format": "flat_tactic_sequence",
-        "proof_term": "intro n hn; induction' hn with n hn ih; \u00b7 decide; \u00b7 rw [pow_succ, Nat.factorial_succ]; nlinarith",
-        "type": "solve"
-      },
-      "action_space_version": null,
-      "cost": null,
-      "created_at": "2026-07-21T23:12:32Z",
-      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
-      "episode_id": "1c7b97ba-e47a-46f9-bb43-0f8ea2c80c03",
-      "export_eligibility": "restricted",
-      "formal_statement_sha256": "14c0606fb3a72a6ead9b344b98b423b63a0291ad1d1e818a5acd06ec89ce8501",
-      "lean_cpu_time_ms": null,
-      "model_config_hash": null,
-      "next_state": {
-        "artifact_hash": null,
-        "inline": {
-          "observation": {
-            "state_hash": "e5ecec4277a463c181b5d2338c41fce671944a7772efcc1c0bb30fb58f2c39d6",
-            "unavailable": true
-          },
-          "state_hash": "e5ecec4277a463c181b5d2338c41fce671944a7772efcc1c0bb30fb58f2c39d6"
-        }
-      },
-      "observation_space_version": null,
-      "outcome": "kernel_fail",
-      "packet_id": "number_theory.induction.two_pow_le_factorial_four.v1",
-      "problem_version_id": "150bbfa7-09ae-4304-ac7e-7a06feedf533",
-      "record_hash": "dbce1c669e6205e05313ab373f6f2b5eece9e0c7bb592a13689cfb92fc116648",
-      "record_id": "1c7b97ba-e47a-46f9-bb43-0f8ea2c80c03:transition:0",
-      "record_type": "rl_transition",
-      "restriction_profile_hash": null,
-      "restriction_profile_id": null,
-      "reward": -0.11,
-      "reward_policy_version": "1.0",
-      "schema_version": "1.0.0",
-      "state": {
-        "artifact_hash": null,
-        "inline": {
-          "observation": {
-            "budget": {
-              "bytes_per_token": 4,
-              "included_bytes": 319,
-              "max_observation_bytes": 16000,
-              "omitted_bytes": 0,
-              "referenced_bytes": 0,
-              "truncated": false
-            },
-            "direct_dependencies": [],
-            "direct_dependency_signatures": [],
-            "distilled_lesson": null,
-            "env_id": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
-            "import_manifest_hash": "aaf21893d520a78dee0787a1bcaf939ee6b922265ff670c272e2e1d450dd29a7",
-            "latest_diagnostic": null,
-            "obligation_signature": "theorem root_theorem : \u2200 (n : \u2115), 4 \u2264 n \u2192 2 ^ n \u2264 Nat.factorial n",
-            "obligation_statement_hash": "6d0c4515f0dda26e7bfb31d97ea323737a66287c3cf9bfc37bebb42ed9364054",
-            "references": [],
-            "retrieved_hint": null,
-            "root_theorem_signature": "\u2200 (n : \u2115), 4 \u2264 n \u2192 2 ^ n \u2264 Nat.factorial n"
-          },
-          "state_hash": "ff19b68ed65e410a34818f626e9937a9215cdc807d5865bc54721c8b7ae8db56"
-        }
-      },
-      "step_index": 0,
-      "terminated": false,
-      "termination_reason": null,
-      "tokens": null,
-      "truncated": false,
-      "truncation_reason": null,
-      "trust_status": "kernel_verified",
-      "verifier_version": null,
-      "wall_time_ms": null
-    },
-    {
-      "action": {
-        "proof_format": "flat_tactic_sequence",
-        "proof_term": "intro n hn; induction' hn with n hn ih; \u00b7 decide; \u00b7 rw [pow_succ, Nat.factorial_succ]; have hle : 2 \u2264 n + 1 := by omega; nlinarith",
-        "type": "solve"
-      },
-      "action_space_version": null,
-      "cost": null,
-      "created_at": "2026-07-21T23:12:32Z",
-      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
-      "episode_id": "1c7b97ba-e47a-46f9-bb43-0f8ea2c80c03",
-      "export_eligibility": "restricted",
-      "formal_statement_sha256": "14c0606fb3a72a6ead9b344b98b423b63a0291ad1d1e818a5acd06ec89ce8501",
-      "lean_cpu_time_ms": null,
-      "model_config_hash": null,
-      "next_state": {
-        "artifact_hash": null,
-        "inline": {
-          "observation": {
-            "state_hash": "0f5715f4f57f4d6b72fc45f03af811a8619ba4c42cdccba12ae3f20d7e104d53",
-            "unavailable": true
-          },
-          "state_hash": "0f5715f4f57f4d6b72fc45f03af811a8619ba4c42cdccba12ae3f20d7e104d53"
-        }
-      },
-      "observation_space_version": null,
-      "outcome": "kernel_fail",
-      "packet_id": "number_theory.induction.two_pow_le_factorial_four.v1",
-      "problem_version_id": "150bbfa7-09ae-4304-ac7e-7a06feedf533",
-      "record_hash": "71aa864a54bcba52548d17ea1718233a2286c6d45086266704987fa77f37dc39",
-      "record_id": "1c7b97ba-e47a-46f9-bb43-0f8ea2c80c03:transition:1",
-      "record_type": "rl_transition",
-      "restriction_profile_hash": null,
-      "restriction_profile_id": null,
-      "reward": -0.11,
-      "reward_policy_version": "1.0",
-      "schema_version": "1.0.0",
-      "state": {
-        "artifact_hash": null,
-        "inline": {
-          "observation": {
-            "budget": {
-              "bytes_per_token": 4,
-              "included_bytes": 2789,
-              "max_observation_bytes": 16000,
-              "omitted_bytes": 0,
-              "referenced_bytes": 0,
-              "truncated": false
-            },
-            "direct_dependencies": [],
-            "direct_dependency_signatures": [],
-            "distilled_lesson": "No goals to be solved",
-            "env_id": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
-            "import_manifest_hash": "aaf21893d520a78dee0787a1bcaf939ee6b922265ff670c272e2e1d450dd29a7",
-            "latest_diagnostic": "{\"outcome\":\"kernel_fail\",\"attempt_id\":\"b33df87c-d263-432c-b38e-bdb15700dd71\",\"obligation_id\":\"db8dab20-05f1-4028-a1da-5f67fd83cf98\",\"theorem_name\":\"O_db8dab2005f14028\",\"expected_statement_hash\":\"6d0c4515f0dda26e7bfb31d97ea323737a66287c3cf9bfc37bebb42ed9364054\",\"elaborated_statement_hash\":null,\"environment_hash\":\"9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d\",\"proof_source_hash\":\"\",\"compiled_artifact_hash\":null,\"proof_term_hash\":null,\"diagnostic\":{\"category\":\"tactic_failure\",\"primary_message\":\"No goals to be solved\",\"source_span\":\"10:52-10:98\",\"goal\":null,\"local_context\":[],\"unsolved_goals\":[],\"used_dependencies\":[],\"error_code\":null,\"canonical_goal_hash\":null},\"all_diagnostics\":[{\"category\":\"tactic_failure\",\"primary_message\":\"No goals to be solved\",\"source_span\":\"10:52-10:98\",\"goal\":null,\"local_context\":[],\"unsolved_goals\":[],\"used_dependencies\":[],\"error_code\":null,\"canonical_goal_hash\":null},{\"category\":\"unsolved_goals\",\"primary_message\":\"unsolved goals\\ncase step\\nn\u271d n : \u2115\\nhn : Nat.le 4 n\\nih : 2 ^ n \u2264 n.factorial\\n\u22a2 2 ^ n.succ \u2264 n.succ.factorial\",\"source_span\":\"9:75-10:98\",\"goal\":null,\"local_context\":[],\"unsolved_goals\":[],\"used_dependencies\":[],\"error_code\":null,\"canonical_goal_hash\":null}],\"dependency_use_report\":null,\"resource_policy\":{\"requested\":{\"proof_timeout_ms\":300000,\"module_timeout_ms\":1800000,\"import_validation_timeout_ms\":600000,\"declaration_lookup_timeout_ms\":60000,\"deep_declaration_lookup_timeout_ms\":300000,\"durability_build_timeout_ms\":600000,\"max_source_bytes\":4194304,\"max_output_bytes\":4194304,\"max_diagnostics\":1000,\"max_concurrent_processes\":4},\"effective\":{\"proof_timeout_ms\":300000,\"module_timeout_ms\":1800000,\"import_validation_timeout_ms\":600000,\"declaration_lookup_timeout_ms\":60000,\"deep_declaration_lookup_timeout_ms\":300000,\"durability_build_timeout_ms\":600000,\"max_source_bytes\":4194304,\"max_output_bytes\":4194304,\"max_diagnostics\":1000,\"max_concurrent_processes\":4},\"policy_hash\":\"aa27cbf2044b9dba3ab54143c97e2caf720f34f92f3c04387724e4240c8a3fff\"},\"output_receipt\":{\"artifact_hash\":\"sha256:63b87762c873f396fa725d35091c76c531d90c8dfb0f6a7b4dfee4409a37a308\",\"media_type\":\"application/vnd.proofsearch.verifier-log\",\"total_bytes\":811,\"stdout_bytes\":662,\"stderr_bytes\":149,\"retained_stdout_bytes\":662,\"retained_stderr_bytes\":149,\"truncated_bytes\":0,\"total_diagnostics\":2,\"retained_diagnostics\":2},\"durability_job\":null,\"wall_time_ms\":56763,\"lean_cpu_time_ms\":56763}",
-            "obligation_signature": "theorem root_theorem : \u2200 (n : \u2115), 4 \u2264 n \u2192 2 ^ n \u2264 Nat.factorial n",
-            "obligation_statement_hash": "6d0c4515f0dda26e7bfb31d97ea323737a66287c3cf9bfc37bebb42ed9364054",
-            "references": [],
-            "retrieved_hint": null,
-            "root_theorem_signature": "\u2200 (n : \u2115), 4 \u2264 n \u2192 2 ^ n \u2264 Nat.factorial n"
-          },
-          "state_hash": "04b0456032a86719ddd97c00bcbb6db9e1b9b64e51b09dda58270efb6b8314d2"
-        }
-      },
-      "step_index": 1,
-      "terminated": false,
-      "termination_reason": null,
-      "tokens": null,
-      "truncated": false,
-      "truncation_reason": null,
-      "trust_status": "kernel_verified",
-      "verifier_version": null,
-      "wall_time_ms": null
-    },
-    {
-      "action": {
-        "proof_format": "flat_tactic_sequence",
-        "proof_term": "intro n hn; induction' hn with n hn ih; \u00b7 decide; \u00b7 have h2 : 2 \u2264 n + 1 := by omega; have h3 : 2 * 2 ^ n \u2264 (n + 1) * Nat.factorial n := Nat.mul_le_mul h2 ih; rw [pow_succ', Nat.factorial_succ]; exact h3",
-        "type": "solve"
-      },
-      "action_space_version": null,
-      "cost": null,
-      "created_at": "2026-07-21T23:12:32Z",
-      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
-      "episode_id": "1c7b97ba-e47a-46f9-bb43-0f8ea2c80c03",
-      "export_eligibility": "restricted",
-      "formal_statement_sha256": "14c0606fb3a72a6ead9b344b98b423b63a0291ad1d1e818a5acd06ec89ce8501",
-      "lean_cpu_time_ms": null,
-      "model_config_hash": null,
-      "next_state": {
-        "artifact_hash": null,
-        "inline": {
-          "observation": {
-            "state_hash": "80ae9291eda537caf1d39a0df990c9feafc84df573617d5ba26d95227b8bc3c0",
-            "unavailable": true
-          },
-          "state_hash": "80ae9291eda537caf1d39a0df990c9feafc84df573617d5ba26d95227b8bc3c0"
-        }
-      },
-      "observation_space_version": null,
-      "outcome": "kernel_fail",
-      "packet_id": "number_theory.induction.two_pow_le_factorial_four.v1",
-      "problem_version_id": "150bbfa7-09ae-4304-ac7e-7a06feedf533",
-      "record_hash": "334294b335bf0251ef1d25b437e5dfe7fbe1561fb1edf8694906839421b89d18",
-      "record_id": "1c7b97ba-e47a-46f9-bb43-0f8ea2c80c03:transition:2",
-      "record_type": "rl_transition",
-      "restriction_profile_hash": null,
-      "restriction_profile_id": null,
-      "reward": -0.11,
-      "reward_policy_version": "1.0",
-      "schema_version": "1.0.0",
-      "state": {
-        "artifact_hash": null,
-        "inline": {
-          "observation": {
-            "budget": {
-              "bytes_per_token": 4,
-              "included_bytes": 2792,
-              "max_observation_bytes": 16000,
-              "omitted_bytes": 0,
-              "referenced_bytes": 0,
-              "truncated": false
-            },
-            "direct_dependencies": [],
-            "direct_dependency_signatures": [],
-            "distilled_lesson": "No goals to be solved",
-            "env_id": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
-            "import_manifest_hash": "aaf21893d520a78dee0787a1bcaf939ee6b922265ff670c272e2e1d450dd29a7",
-            "latest_diagnostic": "{\"outcome\":\"kernel_fail\",\"attempt_id\":\"60b80d81-11f7-4a7f-be74-91160dc3bba6\",\"obligation_id\":\"db8dab20-05f1-4028-a1da-5f67fd83cf98\",\"theorem_name\":\"O_db8dab2005f14028\",\"expected_statement_hash\":\"6d0c4515f0dda26e7bfb31d97ea323737a66287c3cf9bfc37bebb42ed9364054\",\"elaborated_statement_hash\":null,\"environment_hash\":\"9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d\",\"proof_source_hash\":\"\",\"compiled_artifact_hash\":null,\"proof_term_hash\":null,\"diagnostic\":{\"category\":\"tactic_failure\",\"primary_message\":\"No goals to be solved\",\"source_span\":\"10:52-10:132\",\"goal\":null,\"local_context\":[],\"unsolved_goals\":[],\"used_dependencies\":[],\"error_code\":null,\"canonical_goal_hash\":null},\"all_diagnostics\":[{\"category\":\"tactic_failure\",\"primary_message\":\"No goals to be solved\",\"source_span\":\"10:52-10:132\",\"goal\":null,\"local_context\":[],\"unsolved_goals\":[],\"used_dependencies\":[],\"error_code\":null,\"canonical_goal_hash\":null},{\"category\":\"unsolved_goals\",\"primary_message\":\"unsolved goals\\ncase step\\nn\u271d n : \u2115\\nhn : Nat.le 4 n\\nih : 2 ^ n \u2264 n.factorial\\n\u22a2 2 ^ n.succ \u2264 n.succ.factorial\",\"source_span\":\"9:75-10:132\",\"goal\":null,\"local_context\":[],\"unsolved_goals\":[],\"used_dependencies\":[],\"error_code\":null,\"canonical_goal_hash\":null}],\"dependency_use_report\":null,\"resource_policy\":{\"requested\":{\"proof_timeout_ms\":300000,\"module_timeout_ms\":1800000,\"import_validation_timeout_ms\":600000,\"declaration_lookup_timeout_ms\":60000,\"deep_declaration_lookup_timeout_ms\":300000,\"durability_build_timeout_ms\":600000,\"max_source_bytes\":4194304,\"max_output_bytes\":4194304,\"max_diagnostics\":1000,\"max_concurrent_processes\":4},\"effective\":{\"proof_timeout_ms\":300000,\"module_timeout_ms\":1800000,\"import_validation_timeout_ms\":600000,\"declaration_lookup_timeout_ms\":60000,\"deep_declaration_lookup_timeout_ms\":300000,\"durability_build_timeout_ms\":600000,\"max_source_bytes\":4194304,\"max_output_bytes\":4194304,\"max_diagnostics\":1000,\"max_concurrent_processes\":4},\"policy_hash\":\"aa27cbf2044b9dba3ab54143c97e2caf720f34f92f3c04387724e4240c8a3fff\"},\"output_receipt\":{\"artifact_hash\":\"sha256:449d6557ac54ae7d071966fafff964f011191ef06db8d8fb51bb5737d73cd85e\",\"media_type\":\"application/vnd.proofsearch.verifier-log\",\"total_bytes\":813,\"stdout_bytes\":664,\"stderr_bytes\":149,\"retained_stdout_bytes\":664,\"retained_stderr_bytes\":149,\"truncated_bytes\":0,\"total_diagnostics\":2,\"retained_diagnostics\":2},\"durability_job\":null,\"wall_time_ms\":47981,\"lean_cpu_time_ms\":47981}",
-            "obligation_signature": "theorem root_theorem : \u2200 (n : \u2115), 4 \u2264 n \u2192 2 ^ n \u2264 Nat.factorial n",
-            "obligation_statement_hash": "6d0c4515f0dda26e7bfb31d97ea323737a66287c3cf9bfc37bebb42ed9364054",
-            "references": [],
-            "retrieved_hint": null,
-            "root_theorem_signature": "\u2200 (n : \u2115), 4 \u2264 n \u2192 2 ^ n \u2264 Nat.factorial n"
-          },
-          "state_hash": "6fdb581cf4c433f80959fbec060925535bf929059ecd2c01e5bd820bcbd8b8b0"
-        }
-      },
-      "step_index": 2,
-      "terminated": false,
-      "termination_reason": null,
-      "tokens": null,
-      "truncated": false,
-      "truncation_reason": null,
-      "trust_status": "kernel_verified",
-      "verifier_version": null,
-      "wall_time_ms": null
-    },
-    {
-      "action": {
-        "proof_format": "flat_tactic_sequence",
-        "proof_term": "intro n hn; induction' hn with n hn ih; \u00b7 decide; \u00b7 have h2 : 2 \u2264 n + 1 := by omega; calc 2 ^ (n + 1) = 2 ^ n * 2 := by rw [pow_succ]; _ \u2264 n.factorial * (n + 1) := Nat.mul_le_mul ih h2; _ = (n + 1).factorial := rfl",
-        "type": "solve"
-      },
-      "action_space_version": null,
-      "cost": null,
-      "created_at": "2026-07-21T23:12:32Z",
-      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
-      "episode_id": "1c7b97ba-e47a-46f9-bb43-0f8ea2c80c03",
-      "export_eligibility": "restricted",
-      "formal_statement_sha256": "14c0606fb3a72a6ead9b344b98b423b63a0291ad1d1e818a5acd06ec89ce8501",
-      "lean_cpu_time_ms": null,
-      "model_config_hash": null,
-      "next_state": {
-        "artifact_hash": null,
-        "inline": {
-          "observation": {
-            "state_hash": "b47bfa15576e67d3e4352e2e4b28220006569e101e4b2d42efceed92720d16f6",
-            "unavailable": true
-          },
-          "state_hash": "b47bfa15576e67d3e4352e2e4b28220006569e101e4b2d42efceed92720d16f6"
-        }
-      },
-      "observation_space_version": null,
-      "outcome": "kernel_fail",
-      "packet_id": "number_theory.induction.two_pow_le_factorial_four.v1",
-      "problem_version_id": "150bbfa7-09ae-4304-ac7e-7a06feedf533",
-      "record_hash": "68a487b51e6814b41b8896a09c283d2db094ca43914d37c63e3340da6137297b",
-      "record_id": "1c7b97ba-e47a-46f9-bb43-0f8ea2c80c03:transition:3",
-      "record_type": "rl_transition",
-      "restriction_profile_hash": null,
-      "restriction_profile_id": null,
-      "reward": -0.11,
-      "reward_policy_version": "1.0",
-      "schema_version": "1.0.0",
-      "state": {
-        "artifact_hash": null,
-        "inline": {
-          "observation": {
-            "budget": {
-              "bytes_per_token": 4,
-              "included_bytes": 2792,
-              "max_observation_bytes": 16000,
-              "omitted_bytes": 0,
-              "referenced_bytes": 0,
-              "truncated": false
-            },
-            "direct_dependencies": [],
-            "direct_dependency_signatures": [],
-            "distilled_lesson": "No goals to be solved",
-            "env_id": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
-            "import_manifest_hash": "aaf21893d520a78dee0787a1bcaf939ee6b922265ff670c272e2e1d450dd29a7",
-            "latest_diagnostic": "{\"outcome\":\"kernel_fail\",\"attempt_id\":\"7f963e47-36aa-4f14-bccf-7a8b55c91054\",\"obligation_id\":\"db8dab20-05f1-4028-a1da-5f67fd83cf98\",\"theorem_name\":\"O_db8dab2005f14028\",\"expected_statement_hash\":\"6d0c4515f0dda26e7bfb31d97ea323737a66287c3cf9bfc37bebb42ed9364054\",\"elaborated_statement_hash\":null,\"environment_hash\":\"9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d\",\"proof_source_hash\":\"\",\"compiled_artifact_hash\":null,\"proof_term_hash\":null,\"diagnostic\":{\"category\":\"tactic_failure\",\"primary_message\":\"No goals to be solved\",\"source_span\":\"10:52-10:204\",\"goal\":null,\"local_context\":[],\"unsolved_goals\":[],\"used_dependencies\":[],\"error_code\":null,\"canonical_goal_hash\":null},\"all_diagnostics\":[{\"category\":\"tactic_failure\",\"primary_message\":\"No goals to be solved\",\"source_span\":\"10:52-10:204\",\"goal\":null,\"local_context\":[],\"unsolved_goals\":[],\"used_dependencies\":[],\"error_code\":null,\"canonical_goal_hash\":null},{\"category\":\"unsolved_goals\",\"primary_message\":\"unsolved goals\\ncase step\\nn\u271d n : \u2115\\nhn : Nat.le 4 n\\nih : 2 ^ n \u2264 n.factorial\\n\u22a2 2 ^ n.succ \u2264 n.succ.factorial\",\"source_span\":\"9:75-10:204\",\"goal\":null,\"local_context\":[],\"unsolved_goals\":[],\"used_dependencies\":[],\"error_code\":null,\"canonical_goal_hash\":null}],\"dependency_use_report\":null,\"resource_policy\":{\"requested\":{\"proof_timeout_ms\":300000,\"module_timeout_ms\":1800000,\"import_validation_timeout_ms\":600000,\"declaration_lookup_timeout_ms\":60000,\"deep_declaration_lookup_timeout_ms\":300000,\"durability_build_timeout_ms\":600000,\"max_source_bytes\":4194304,\"max_output_bytes\":4194304,\"max_diagnostics\":1000,\"max_concurrent_processes\":4},\"effective\":{\"proof_timeout_ms\":300000,\"module_timeout_ms\":1800000,\"import_validation_timeout_ms\":600000,\"declaration_lookup_timeout_ms\":60000,\"deep_declaration_lookup_timeout_ms\":300000,\"durability_build_timeout_ms\":600000,\"max_source_bytes\":4194304,\"max_output_bytes\":4194304,\"max_diagnostics\":1000,\"max_concurrent_processes\":4},\"policy_hash\":\"aa27cbf2044b9dba3ab54143c97e2caf720f34f92f3c04387724e4240c8a3fff\"},\"output_receipt\":{\"artifact_hash\":\"sha256:67a72a672d005c0f0927f8e6fc8fa1bc33bda4f6791bd977f2cdd80d78c712f7\",\"media_type\":\"application/vnd.proofsearch.verifier-log\",\"total_bytes\":813,\"stdout_bytes\":664,\"stderr_bytes\":149,\"retained_stdout_bytes\":664,\"retained_stderr_bytes\":149,\"truncated_bytes\":0,\"total_diagnostics\":2,\"retained_diagnostics\":2},\"durability_job\":null,\"wall_time_ms\":46997,\"lean_cpu_time_ms\":46997}",
-            "obligation_signature": "theorem root_theorem : \u2200 (n : \u2115), 4 \u2264 n \u2192 2 ^ n \u2264 Nat.factorial n",
-            "obligation_statement_hash": "6d0c4515f0dda26e7bfb31d97ea323737a66287c3cf9bfc37bebb42ed9364054",
-            "references": [],
-            "retrieved_hint": null,
-            "root_theorem_signature": "\u2200 (n : \u2115), 4 \u2264 n \u2192 2 ^ n \u2264 Nat.factorial n"
-          },
-          "state_hash": "726134d17fa6cfb5b8ab31be14086e71ac137e5f936cbac8a6845101652f57ec"
-        }
-      },
-      "step_index": 3,
-      "terminated": false,
-      "termination_reason": null,
-      "tokens": null,
-      "truncated": false,
-      "truncation_reason": null,
-      "trust_status": "kernel_verified",
-      "verifier_version": null,
-      "wall_time_ms": null
-    },
-    {
-      "action": {
-        "proof_format": "flat_tactic_sequence",
-        "proof_term": "intro n hn; induction hn with d hd ih; \u00b7 decide; \u00b7 rw [pow_succ, Nat.factorial_succ]; nlinarith [Nat.factorial_pos d]",
-        "type": "solve"
-      },
-      "action_space_version": null,
-      "cost": null,
-      "created_at": "2026-07-21T23:12:32Z",
-      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
-      "episode_id": "1c7b97ba-e47a-46f9-bb43-0f8ea2c80c03",
-      "export_eligibility": "restricted",
-      "formal_statement_sha256": "14c0606fb3a72a6ead9b344b98b423b63a0291ad1d1e818a5acd06ec89ce8501",
-      "lean_cpu_time_ms": null,
-      "model_config_hash": null,
-      "next_state": {
-        "artifact_hash": null,
-        "inline": {
-          "observation": {
-            "state_hash": "c889a29890f254119d59c03de5f1ce960193a22b207b50922401b665780853db",
-            "unavailable": true
-          },
-          "state_hash": "c889a29890f254119d59c03de5f1ce960193a22b207b50922401b665780853db"
-        }
-      },
-      "observation_space_version": null,
-      "outcome": "kernel_fail",
-      "packet_id": "number_theory.induction.two_pow_le_factorial_four.v1",
-      "problem_version_id": "150bbfa7-09ae-4304-ac7e-7a06feedf533",
-      "record_hash": "aa2cb60d39d07dd6b7b16d1dd3e2d9cbed3a11927d386836ab08bbeff4b983a6",
-      "record_id": "1c7b97ba-e47a-46f9-bb43-0f8ea2c80c03:transition:4",
-      "record_type": "rl_transition",
-      "restriction_profile_hash": null,
-      "restriction_profile_id": null,
-      "reward": -0.11,
-      "reward_policy_version": "1.0",
-      "schema_version": "1.0.0",
-      "state": {
-        "artifact_hash": null,
-        "inline": {
-          "observation": {
-            "budget": {
-              "bytes_per_token": 4,
-              "included_bytes": 3029,
-              "max_observation_bytes": 16000,
-              "omitted_bytes": 0,
-              "referenced_bytes": 0,
-              "truncated": false
-            },
-            "direct_dependencies": [],
-            "direct_dependency_signatures": [],
-            "distilled_lesson": "No goals to be solved",
-            "env_id": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
-            "import_manifest_hash": "aaf21893d520a78dee0787a1bcaf939ee6b922265ff670c272e2e1d450dd29a7",
-            "latest_diagnostic": "{\"outcome\":\"kernel_fail\",\"attempt_id\":\"9e159222-20d7-4336-b716-fbc608d1ae64\",\"obligation_id\":\"db8dab20-05f1-4028-a1da-5f67fd83cf98\",\"theorem_name\":\"O_db8dab2005f14028\",\"expected_statement_hash\":\"6d0c4515f0dda26e7bfb31d97ea323737a66287c3cf9bfc37bebb42ed9364054\",\"elaborated_statement_hash\":null,\"environment_hash\":\"9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d\",\"proof_source_hash\":\"\",\"compiled_artifact_hash\":null,\"proof_term_hash\":null,\"diagnostic\":{\"category\":\"tactic_failure\",\"primary_message\":\"No goals to be solved\",\"source_span\":\"10:52-10:162\",\"goal\":null,\"local_context\":[],\"unsolved_goals\":[],\"used_dependencies\":[],\"error_code\":null,\"canonical_goal_hash\":null},\"all_diagnostics\":[{\"category\":\"tactic_failure\",\"primary_message\":\"No goals to be solved\",\"source_span\":\"10:52-10:162\",\"goal\":null,\"local_context\":[],\"unsolved_goals\":[],\"used_dependencies\":[],\"error_code\":null,\"canonical_goal_hash\":null},{\"category\":\"unsolved_goals\",\"primary_message\":\"unsolved goals\\ncase step\\nn\u271d n : \u2115\\nhn : Nat.le 4 n\\nih : 2 ^ n \u2264 n.factorial\\n\u22a2 2 ^ n.succ \u2264 n.succ.factorial\",\"source_span\":\"9:75-10:162\",\"goal\":null,\"local_context\":[],\"unsolved_goals\":[],\"used_dependencies\":[],\"error_code\":null,\"canonical_goal_hash\":null},{\"category\":\"parse_error\",\"primary_message\":\"unexpected token ':='; expected command\",\"source_span\":\"10:163-10:165\",\"goal\":null,\"local_context\":[],\"unsolved_goals\":[],\"used_dependencies\":[],\"error_code\":null,\"canonical_goal_hash\":null}],\"dependency_use_report\":null,\"resource_policy\":{\"requested\":{\"proof_timeout_ms\":300000,\"module_timeout_ms\":1800000,\"import_validation_timeout_ms\":600000,\"declaration_lookup_timeout_ms\":60000,\"deep_declaration_lookup_timeout_ms\":300000,\"durability_build_timeout_ms\":600000,\"max_source_bytes\":4194304,\"max_output_bytes\":4194304,\"max_diagnostics\":1000,\"max_concurrent_processes\":4},\"effective\":{\"proof_timeout_ms\":300000,\"module_timeout_ms\":1800000,\"import_validation_timeout_ms\":600000,\"declaration_lookup_timeout_ms\":60000,\"deep_declaration_lookup_timeout_ms\":300000,\"durability_build_timeout_ms\":600000,\"max_source_bytes\":4194304,\"max_output_bytes\":4194304,\"max_diagnostics\":1000,\"max_concurrent_processes\":4},\"policy_hash\":\"aa27cbf2044b9dba3ab54143c97e2caf720f34f92f3c04387724e4240c8a3fff\"},\"output_receipt\":{\"artifact_hash\":\"sha256:b0ddc788609dafc88fceba75cf414a6f7cf001414d55e76194bb7e1ad9ee3441\",\"media_type\":\"application/vnd.proofsearch.verifier-log\",\"total_bytes\":1109,\"stdout_bytes\":960,\"stderr_bytes\":149,\"retained_stdout_bytes\":960,\"retained_stderr_bytes\":149,\"truncated_bytes\":0,\"total_diagnostics\":3,\"retained_diagnostics\":3},\"durability_job\":null,\"wall_time_ms\":22482,\"lean_cpu_time_ms\":22482}",
-            "obligation_signature": "theorem root_theorem : \u2200 (n : \u2115), 4 \u2264 n \u2192 2 ^ n \u2264 Nat.factorial n",
-            "obligation_statement_hash": "6d0c4515f0dda26e7bfb31d97ea323737a66287c3cf9bfc37bebb42ed9364054",
-            "references": [],
-            "retrieved_hint": null,
-            "root_theorem_signature": "\u2200 (n : \u2115), 4 \u2264 n \u2192 2 ^ n \u2264 Nat.factorial n"
-          },
-          "state_hash": "2c0f18769984817eacdf9c0dae90667710a73338d38e7dac793f7b13eaacfe40"
-        }
-      },
-      "step_index": 4,
-      "terminated": false,
-      "termination_reason": null,
-      "tokens": null,
-      "truncated": false,
-      "truncation_reason": null,
-      "trust_status": "kernel_verified",
-      "verifier_version": null,
-      "wall_time_ms": null
-    },
-    {
-      "action": {
-        "proof_format": "flat_tactic_sequence",
-        "proof_term": "intro n hn; induction hn with | base => decide | succ d hd ih => rw [pow_succ, Nat.factorial_succ]; nlinarith [Nat.factorial_pos d]",
-        "type": "solve"
-      },
-      "action_space_version": null,
-      "cost": null,
-      "created_at": "2026-07-21T23:12:32Z",
-      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
-      "episode_id": "1c7b97ba-e47a-46f9-bb43-0f8ea2c80c03",
-      "export_eligibility": "restricted",
-      "formal_statement_sha256": "14c0606fb3a72a6ead9b344b98b423b63a0291ad1d1e818a5acd06ec89ce8501",
-      "lean_cpu_time_ms": null,
-      "model_config_hash": null,
-      "next_state": {
-        "artifact_hash": null,
-        "inline": {
-          "observation": {
-            "state_hash": "8b2a6f74b2ac90b39f7d4419b878f55ec9151c96bdcb5be6874b584fc3bca5d5",
-            "unavailable": true
-          },
-          "state_hash": "8b2a6f74b2ac90b39f7d4419b878f55ec9151c96bdcb5be6874b584fc3bca5d5"
-        }
-      },
-      "observation_space_version": null,
-      "outcome": "kernel_fail",
-      "packet_id": "number_theory.induction.two_pow_le_factorial_four.v1",
-      "problem_version_id": "150bbfa7-09ae-4304-ac7e-7a06feedf533",
-      "record_hash": "f184ba0d26c060d01f66bec1bb6f0c3aa7d37b31af5ba1d835544c3f528c65e7",
-      "record_id": "1c7b97ba-e47a-46f9-bb43-0f8ea2c80c03:transition:5",
-      "record_type": "rl_transition",
-      "restriction_profile_hash": null,
-      "restriction_profile_id": null,
-      "reward": -0.11,
-      "reward_policy_version": "1.0",
-      "schema_version": "1.0.0",
-      "state": {
-        "artifact_hash": null,
-        "inline": {
-          "observation": {
-            "budget": {
-              "bytes_per_token": 4,
-              "included_bytes": 2808,
-              "max_observation_bytes": 16000,
-              "omitted_bytes": 0,
-              "referenced_bytes": 0,
-              "truncated": false
-            },
-            "direct_dependencies": [],
-            "direct_dependency_signatures": [],
-            "distilled_lesson": "unknown tactic",
-            "env_id": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
-            "import_manifest_hash": "aaf21893d520a78dee0787a1bcaf939ee6b922265ff670c272e2e1d450dd29a7",
-            "latest_diagnostic": "{\"outcome\":\"kernel_fail\",\"attempt_id\":\"16161719-dabb-4ced-b8fa-2d8e11af4fc5\",\"obligation_id\":\"db8dab20-05f1-4028-a1da-5f67fd83cf98\",\"theorem_name\":\"O_db8dab2005f14028\",\"expected_statement_hash\":\"6d0c4515f0dda26e7bfb31d97ea323737a66287c3cf9bfc37bebb42ed9364054\",\"elaborated_statement_hash\":null,\"environment_hash\":\"9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d\",\"proof_source_hash\":\"\",\"compiled_artifact_hash\":null,\"proof_term_hash\":null,\"diagnostic\":{\"category\":\"tactic_failure\",\"primary_message\":\"unknown tactic\",\"source_span\":\"10:33\",\"goal\":null,\"local_context\":[],\"unsolved_goals\":[],\"used_dependencies\":[],\"error_code\":null,\"canonical_goal_hash\":null},\"all_diagnostics\":[{\"category\":\"tactic_failure\",\"primary_message\":\"unknown tactic\",\"source_span\":\"10:33\",\"goal\":null,\"local_context\":[],\"unsolved_goals\":[],\"used_dependencies\":[],\"error_code\":null,\"canonical_goal_hash\":null},{\"category\":\"tactic_failure\",\"primary_message\":\"Invalid syntax for induction tactic: The `with` keyword must be followed by a tactic or by an alternative (e.g. `| zero =>`), but here it is followed by the identifier `d`.\",\"source_span\":\"10:27-10:33\",\"goal\":null,\"local_context\":[],\"unsolved_goals\":[],\"used_dependencies\":[],\"error_code\":null,\"canonical_goal_hash\":null}],\"dependency_use_report\":null,\"resource_policy\":{\"requested\":{\"proof_timeout_ms\":300000,\"module_timeout_ms\":1800000,\"import_validation_timeout_ms\":600000,\"declaration_lookup_timeout_ms\":60000,\"deep_declaration_lookup_timeout_ms\":300000,\"durability_build_timeout_ms\":600000,\"max_source_bytes\":4194304,\"max_output_bytes\":4194304,\"max_diagnostics\":1000,\"max_concurrent_processes\":4},\"effective\":{\"proof_timeout_ms\":300000,\"module_timeout_ms\":1800000,\"import_validation_timeout_ms\":600000,\"declaration_lookup_timeout_ms\":60000,\"deep_declaration_lookup_timeout_ms\":300000,\"durability_build_timeout_ms\":600000,\"max_source_bytes\":4194304,\"max_output_bytes\":4194304,\"max_diagnostics\":1000,\"max_concurrent_processes\":4},\"policy_hash\":\"aa27cbf2044b9dba3ab54143c97e2caf720f34f92f3c04387724e4240c8a3fff\"},\"output_receipt\":{\"artifact_hash\":\"sha256:50f02304f92835f81e8aef803074c9233bb7cd0dadc3c2afc415fe0f61c69a55\",\"media_type\":\"application/vnd.proofsearch.verifier-log\",\"total_bytes\":852,\"stdout_bytes\":703,\"stderr_bytes\":149,\"retained_stdout_bytes\":703,\"retained_stderr_bytes\":149,\"truncated_bytes\":0,\"total_diagnostics\":2,\"retained_diagnostics\":2},\"durability_job\":null,\"wall_time_ms\":23140,\"lean_cpu_time_ms\":23140}",
-            "obligation_signature": "theorem root_theorem : \u2200 (n : \u2115), 4 \u2264 n \u2192 2 ^ n \u2264 Nat.factorial n",
-            "obligation_statement_hash": "6d0c4515f0dda26e7bfb31d97ea323737a66287c3cf9bfc37bebb42ed9364054",
-            "references": [],
-            "retrieved_hint": null,
-            "root_theorem_signature": "\u2200 (n : \u2115), 4 \u2264 n \u2192 2 ^ n \u2264 Nat.factorial n"
-          },
-          "state_hash": "ea18163c392490fcbc5625e34b6a83ab3e3d9101c4db693269c576d5100dec0f"
-        }
-      },
-      "step_index": 5,
-      "terminated": false,
-      "termination_reason": null,
-      "tokens": null,
-      "truncated": false,
-      "truncation_reason": null,
-      "trust_status": "kernel_verified",
-      "verifier_version": null,
-      "wall_time_ms": null
-    },
-    {
-      "action": {
-        "proof_format": "flat_tactic_sequence",
-        "proof_term": "intro n hn; induction hn with | refl => decide | step d hd ih => rw [pow_succ, Nat.factorial_succ]; nlinarith [Nat.factorial_pos d]",
-        "type": "solve"
-      },
-      "action_space_version": null,
-      "cost": null,
-      "created_at": "2026-07-21T23:12:32Z",
-      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
-      "episode_id": "1c7b97ba-e47a-46f9-bb43-0f8ea2c80c03",
-      "export_eligibility": "restricted",
-      "formal_statement_sha256": "14c0606fb3a72a6ead9b344b98b423b63a0291ad1d1e818a5acd06ec89ce8501",
-      "lean_cpu_time_ms": null,
-      "model_config_hash": null,
-      "next_state": {
-        "artifact_hash": null,
-        "inline": {
-          "observation": {
-            "state_hash": "d7389574de7c1e22b66aa266bb52121f8961907c61e21fe2d42c65188588ea15",
-            "unavailable": true
-          },
-          "state_hash": "d7389574de7c1e22b66aa266bb52121f8961907c61e21fe2d42c65188588ea15"
-        }
-      },
-      "observation_space_version": null,
-      "outcome": "kernel_fail",
-      "packet_id": "number_theory.induction.two_pow_le_factorial_four.v1",
-      "problem_version_id": "150bbfa7-09ae-4304-ac7e-7a06feedf533",
-      "record_hash": "cd4e0172bd5de66885ab5dba9287f8c674722b3f7cce3dc627df82ef1d8244e0",
-      "record_id": "1c7b97ba-e47a-46f9-bb43-0f8ea2c80c03:transition:6",
-      "record_type": "rl_transition",
-      "restriction_profile_hash": null,
-      "restriction_profile_id": null,
-      "reward": -0.11,
-      "reward_policy_version": "1.0",
-      "schema_version": "1.0.0",
-      "state": {
-        "artifact_hash": null,
-        "inline": {
-          "observation": {
-            "budget": {
-              "bytes_per_token": 4,
-              "included_bytes": 3318,
-              "max_observation_bytes": 16000,
-              "omitted_bytes": 0,
-              "referenced_bytes": 0,
-              "truncated": false
-            },
-            "direct_dependencies": [],
-            "direct_dependency_signatures": [],
-            "distilled_lesson": "Invalid alternative name `base`: Expected `refl` or `step`",
-            "env_id": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
-            "import_manifest_hash": "aaf21893d520a78dee0787a1bcaf939ee6b922265ff670c272e2e1d450dd29a7",
-            "latest_diagnostic": "{\"outcome\":\"kernel_fail\",\"attempt_id\":\"1f395e0e-dd4b-47f7-a0be-fa90636b9c5f\",\"obligation_id\":\"db8dab20-05f1-4028-a1da-5f67fd83cf98\",\"theorem_name\":\"O_db8dab2005f14028\",\"expected_statement_hash\":\"6d0c4515f0dda26e7bfb31d97ea323737a66287c3cf9bfc37bebb42ed9364054\",\"elaborated_statement_hash\":null,\"environment_hash\":\"9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d\",\"proof_source_hash\":\"\",\"compiled_artifact_hash\":null,\"proof_term_hash\":null,\"diagnostic\":{\"category\":\"tactic_failure\",\"primary_message\":\"Invalid alternative name `base`: Expected `refl` or `step`\",\"source_span\":\"10:32-10:48\",\"goal\":null,\"local_context\":[],\"unsolved_goals\":[],\"used_dependencies\":[],\"error_code\":null,\"canonical_goal_hash\":null},\"all_diagnostics\":[{\"category\":\"tactic_failure\",\"primary_message\":\"Invalid alternative name `base`: Expected `refl` or `step`\",\"source_span\":\"10:32-10:48\",\"goal\":null,\"local_context\":[],\"unsolved_goals\":[],\"used_dependencies\":[],\"error_code\":null,\"canonical_goal_hash\":null},{\"category\":\"tactic_failure\",\"primary_message\":\"Invalid alternative name `succ`: Expected `refl` or `step`\",\"source_span\":\"10:49-10:133\",\"goal\":null,\"local_context\":[],\"unsolved_goals\":[],\"used_dependencies\":[],\"error_code\":null,\"canonical_goal_hash\":null},{\"category\":\"tactic_failure\",\"primary_message\":\"Alternative `refl` has not been provided\",\"source_span\":\"10:14-10:23\",\"goal\":null,\"local_context\":[],\"unsolved_goals\":[],\"used_dependencies\":[],\"error_code\":null,\"canonical_goal_hash\":null},{\"category\":\"tactic_failure\",\"primary_message\":\"Alternative `step` has not been provided\",\"source_span\":\"10:14-10:23\",\"goal\":null,\"local_context\":[],\"unsolved_goals\":[],\"used_dependencies\":[],\"error_code\":null,\"canonical_goal_hash\":null}],\"dependency_use_report\":null,\"resource_policy\":{\"requested\":{\"proof_timeout_ms\":300000,\"module_timeout_ms\":1800000,\"import_validation_timeout_ms\":600000,\"declaration_lookup_timeout_ms\":60000,\"deep_declaration_lookup_timeout_ms\":300000,\"durability_build_timeout_ms\":600000,\"max_source_bytes\":4194304,\"max_output_bytes\":4194304,\"max_diagnostics\":1000,\"max_concurrent_processes\":4},\"effective\":{\"proof_timeout_ms\":300000,\"module_timeout_ms\":1800000,\"import_validation_timeout_ms\":600000,\"declaration_lookup_timeout_ms\":60000,\"deep_declaration_lookup_timeout_ms\":300000,\"durability_build_timeout_ms\":600000,\"max_source_bytes\":4194304,\"max_output_bytes\":4194304,\"max_diagnostics\":1000,\"max_concurrent_processes\":4},\"policy_hash\":\"aa27cbf2044b9dba3ab54143c97e2caf720f34f92f3c04387724e4240c8a3fff\"},\"output_receipt\":{\"artifact_hash\":\"sha256:caf86ecd1ab2ea4f9dec2bf3305524f249946f8febb9cbc081f7f70f911cc236\",\"media_type\":\"application/vnd.proofsearch.verifier-log\",\"total_bytes\":1370,\"stdout_bytes\":1221,\"stderr_bytes\":149,\"retained_stdout_bytes\":1221,\"retained_stderr_bytes\":149,\"truncated_bytes\":0,\"total_diagnostics\":4,\"retained_diagnostics\":4},\"durability_job\":null,\"wall_time_ms\":20826,\"lean_cpu_time_ms\":20826}",
-            "obligation_signature": "theorem root_theorem : \u2200 (n : \u2115), 4 \u2264 n \u2192 2 ^ n \u2264 Nat.factorial n",
-            "obligation_statement_hash": "6d0c4515f0dda26e7bfb31d97ea323737a66287c3cf9bfc37bebb42ed9364054",
-            "references": [],
-            "retrieved_hint": null,
-            "root_theorem_signature": "\u2200 (n : \u2115), 4 \u2264 n \u2192 2 ^ n \u2264 Nat.factorial n"
-          },
-          "state_hash": "fa9f32395925ede76814f37ca6c4b1ae5527179ce2fb3a6401635ddfb70fbd08"
-        }
-      },
-      "step_index": 6,
-      "terminated": false,
-      "termination_reason": null,
-      "tokens": null,
-      "truncated": false,
-      "truncation_reason": null,
-      "trust_status": "kernel_verified",
-      "verifier_version": null,
-      "wall_time_ms": null
-    },
-    {
-      "action": {
-        "proof_format": "flat_tactic_sequence",
-        "proof_term": "intro n hn; induction hn with | refl => decide | step hd ih => rw [pow_succ, Nat.factorial_succ]; nlinarith [Nat.factorial_pos _]",
-        "type": "solve"
-      },
-      "action_space_version": null,
-      "cost": null,
-      "created_at": "2026-07-21T23:12:32Z",
-      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
-      "episode_id": "1c7b97ba-e47a-46f9-bb43-0f8ea2c80c03",
-      "export_eligibility": "restricted",
-      "formal_statement_sha256": "14c0606fb3a72a6ead9b344b98b423b63a0291ad1d1e818a5acd06ec89ce8501",
-      "lean_cpu_time_ms": null,
-      "model_config_hash": null,
-      "next_state": {
-        "artifact_hash": null,
-        "inline": {
-          "observation": {
-            "state_hash": "65625a4101b5db3205720d9409d2d223ad5c980bf3b762caa9a5775a37f3b6c8",
-            "unavailable": true
-          },
-          "state_hash": "65625a4101b5db3205720d9409d2d223ad5c980bf3b762caa9a5775a37f3b6c8"
-        }
-      },
-      "observation_space_version": null,
-      "outcome": "kernel_fail",
-      "packet_id": "number_theory.induction.two_pow_le_factorial_four.v1",
-      "problem_version_id": "150bbfa7-09ae-4304-ac7e-7a06feedf533",
-      "record_hash": "ebd04b936aa85e90821bd5cd5ea895ac170e4659492d6ffb2651b4901f5d2baa",
-      "record_id": "1c7b97ba-e47a-46f9-bb43-0f8ea2c80c03:transition:7",
-      "record_type": "rl_transition",
-      "restriction_profile_hash": null,
-      "restriction_profile_id": null,
-      "reward": -0.11,
-      "reward_policy_version": "1.0",
-      "schema_version": "1.0.0",
-      "state": {
-        "artifact_hash": null,
-        "inline": {
-          "observation": {
-            "budget": {
-              "bytes_per_token": 4,
-              "included_bytes": 3030,
-              "max_observation_bytes": 16000,
-              "omitted_bytes": 0,
-              "referenced_bytes": 0,
-              "truncated": false
-            },
-            "direct_dependencies": [],
-            "direct_dependency_signatures": [],
-            "distilled_lesson": "Too many variable names provided at alternative `step`: 3 provided, but 2 expected",
-            "env_id": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
-            "import_manifest_hash": "aaf21893d520a78dee0787a1bcaf939ee6b922265ff670c272e2e1d450dd29a7",
-            "latest_diagnostic": "{\"outcome\":\"kernel_fail\",\"attempt_id\":\"dc9dc2af-eeda-4c8c-9de1-5a725b5f253b\",\"obligation_id\":\"db8dab20-05f1-4028-a1da-5f67fd83cf98\",\"theorem_name\":\"O_db8dab2005f14028\",\"expected_statement_hash\":\"6d0c4515f0dda26e7bfb31d97ea323737a66287c3cf9bfc37bebb42ed9364054\",\"elaborated_statement_hash\":null,\"environment_hash\":\"9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d\",\"proof_source_hash\":\"\",\"compiled_artifact_hash\":null,\"proof_term_hash\":null,\"diagnostic\":{\"category\":\"parse_error\",\"primary_message\":\"Too many variable names provided at alternative `step`: 3 provided, but 2 expected\",\"source_span\":\"10:49-10:133\",\"goal\":null,\"local_context\":[],\"unsolved_goals\":[],\"used_dependencies\":[],\"error_code\":null,\"canonical_goal_hash\":null},\"all_diagnostics\":[{\"category\":\"parse_error\",\"primary_message\":\"Too many variable names provided at alternative `step`: 3 provided, but 2 expected\",\"source_span\":\"10:49-10:133\",\"goal\":null,\"local_context\":[],\"unsolved_goals\":[],\"used_dependencies\":[],\"error_code\":null,\"canonical_goal_hash\":null},{\"category\":\"type_mismatch\",\"primary_message\":\"Application type mismatch: The argument\\n  d\\nhas type\\n  Nat.le 4 m\u271d\\nof sort `Prop` but is expected to have type\\n  \u2115\\nof sort `Type` in the application\\n  Nat.factorial_pos d\",\"source_span\":\"10:131-10:132\",\"goal\":null,\"local_context\":[],\"unsolved_goals\":[],\"used_dependencies\":[],\"error_code\":null,\"canonical_goal_hash\":null}],\"dependency_use_report\":null,\"resource_policy\":{\"requested\":{\"proof_timeout_ms\":300000,\"module_timeout_ms\":1800000,\"import_validation_timeout_ms\":600000,\"declaration_lookup_timeout_ms\":60000,\"deep_declaration_lookup_timeout_ms\":300000,\"durability_build_timeout_ms\":600000,\"max_source_bytes\":4194304,\"max_output_bytes\":4194304,\"max_diagnostics\":1000,\"max_concurrent_processes\":4},\"effective\":{\"proof_timeout_ms\":300000,\"module_timeout_ms\":1800000,\"import_validation_timeout_ms\":600000,\"declaration_lookup_timeout_ms\":60000,\"deep_declaration_lookup_timeout_ms\":300000,\"durability_build_timeout_ms\":600000,\"max_source_bytes\":4194304,\"max_output_bytes\":4194304,\"max_diagnostics\":1000,\"max_concurrent_processes\":4},\"policy_hash\":\"aa27cbf2044b9dba3ab54143c97e2caf720f34f92f3c04387724e4240c8a3fff\"},\"output_receipt\":{\"artifact_hash\":\"sha256:7786e8c956131e941a2be063c52f341d919b9e5aa1bc647aa5551fbf8cf1f753\",\"media_type\":\"application/vnd.proofsearch.verifier-log\",\"total_bytes\":927,\"stdout_bytes\":778,\"stderr_bytes\":149,\"retained_stdout_bytes\":778,\"retained_stderr_bytes\":149,\"truncated_bytes\":0,\"total_diagnostics\":2,\"retained_diagnostics\":2},\"durability_job\":null,\"wall_time_ms\":22643,\"lean_cpu_time_ms\":22643}",
-            "obligation_signature": "theorem root_theorem : \u2200 (n : \u2115), 4 \u2264 n \u2192 2 ^ n \u2264 Nat.factorial n",
-            "obligation_statement_hash": "6d0c4515f0dda26e7bfb31d97ea323737a66287c3cf9bfc37bebb42ed9364054",
-            "references": [],
-            "retrieved_hint": null,
-            "root_theorem_signature": "\u2200 (n : \u2115), 4 \u2264 n \u2192 2 ^ n \u2264 Nat.factorial n"
-          },
-          "state_hash": "deb49d2d4f3b62b707f5cd1dec496a7c8f4d20dc1a59de34c4cadba0a10cd2c6"
-        }
-      },
-      "step_index": 7,
-      "terminated": false,
-      "termination_reason": null,
-      "tokens": null,
-      "truncated": false,
-      "truncation_reason": null,
-      "trust_status": "kernel_verified",
-      "verifier_version": null,
-      "wall_time_ms": null
-    },
-    {
-      "action": {
-        "proof_format": "flat_tactic_sequence",
-        "proof_term": "intro n hn; induction hn with | refl => decide | step hd ih => rename_i m; rw [pow_succ, Nat.factorial_succ]; nlinarith [Nat.factorial_pos m]",
-        "type": "solve"
-      },
-      "action_space_version": null,
-      "cost": null,
-      "created_at": "2026-07-21T23:12:32Z",
-      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
-      "episode_id": "1c7b97ba-e47a-46f9-bb43-0f8ea2c80c03",
-      "export_eligibility": "restricted",
-      "formal_statement_sha256": "14c0606fb3a72a6ead9b344b98b423b63a0291ad1d1e818a5acd06ec89ce8501",
-      "lean_cpu_time_ms": null,
-      "model_config_hash": null,
-      "next_state": {
-        "artifact_hash": null,
-        "inline": {
-          "observation": {
-            "state_hash": "8f87c08d43ca5225f04b9a604e73ca27bf18689ce53b3d1ae9667f29b14a8d88",
-            "unavailable": true
-          },
-          "state_hash": "8f87c08d43ca5225f04b9a604e73ca27bf18689ce53b3d1ae9667f29b14a8d88"
-        }
-      },
-      "observation_space_version": null,
-      "outcome": "kernel_fail",
-      "packet_id": "number_theory.induction.two_pow_le_factorial_four.v1",
-      "problem_version_id": "150bbfa7-09ae-4304-ac7e-7a06feedf533",
-      "record_hash": "c5434f8a21da329cdd2783f4faaaf9ff8f12c0e7631ca64c1eef219316b7215e",
-      "record_id": "1c7b97ba-e47a-46f9-bb43-0f8ea2c80c03:transition:8",
-      "record_type": "rl_transition",
-      "restriction_profile_hash": null,
-      "restriction_profile_id": null,
-      "reward": -0.11,
-      "reward_policy_version": "1.0",
-      "schema_version": "1.0.0",
-      "state": {
-        "artifact_hash": null,
-        "inline": {
-          "observation": {
-            "budget": {
-              "bytes_per_token": 4,
-              "included_bytes": 2839,
-              "max_observation_bytes": 16000,
-              "omitted_bytes": 0,
-              "referenced_bytes": 0,
-              "truncated": false
-            },
-            "direct_dependencies": [],
-            "direct_dependency_signatures": [],
-            "distilled_lesson": "don't know how to synthesize placeholder for argument `n`\ncontext:\nn m\u271d : \u2115\nhd : Nat.le 4 m\u271d\nih : 2 ^ m\u271d \u2264 m\u271d.factorial\n\u22a2 \u2115",
-            "env_id": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
-            "import_manifest_hash": "aaf21893d520a78dee0787a1bcaf939ee6b922265ff670c272e2e1d450dd29a7",
-            "latest_diagnostic": "{\"outcome\":\"kernel_fail\",\"attempt_id\":\"2cbc926e-49b2-4a70-b3d2-3b3219bbe23a\",\"obligation_id\":\"db8dab20-05f1-4028-a1da-5f67fd83cf98\",\"theorem_name\":\"O_db8dab2005f14028\",\"expected_statement_hash\":\"6d0c4515f0dda26e7bfb31d97ea323737a66287c3cf9bfc37bebb42ed9364054\",\"elaborated_statement_hash\":null,\"environment_hash\":\"9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d\",\"proof_source_hash\":\"\",\"compiled_artifact_hash\":null,\"proof_term_hash\":null,\"diagnostic\":{\"category\":\"tactic_failure\",\"primary_message\":\"don't know how to synthesize placeholder for argument `n`\\ncontext:\\nn m\u271d : \u2115\\nhd : Nat.le 4 m\u271d\\nih : 2 ^ m\u271d \u2264 m\u271d.factorial\\n\u22a2 \u2115\",\"source_span\":\"10:129-10:130\",\"goal\":null,\"local_context\":[],\"unsolved_goals\":[],\"used_dependencies\":[],\"error_code\":null,\"canonical_goal_hash\":null},\"all_diagnostics\":[{\"category\":\"tactic_failure\",\"primary_message\":\"don't know how to synthesize placeholder for argument `n`\\ncontext:\\nn m\u271d : \u2115\\nhd : Nat.le 4 m\u271d\\nih : 2 ^ m\u271d \u2264 m\u271d.factorial\\n\u22a2 \u2115\",\"source_span\":\"10:129-10:130\",\"goal\":null,\"local_context\":[],\"unsolved_goals\":[],\"used_dependencies\":[],\"error_code\":null,\"canonical_goal_hash\":null}],\"dependency_use_report\":null,\"resource_policy\":{\"requested\":{\"proof_timeout_ms\":300000,\"module_timeout_ms\":1800000,\"import_validation_timeout_ms\":600000,\"declaration_lookup_timeout_ms\":60000,\"deep_declaration_lookup_timeout_ms\":300000,\"durability_build_timeout_ms\":600000,\"max_source_bytes\":4194304,\"max_output_bytes\":4194304,\"max_diagnostics\":1000,\"max_concurrent_processes\":4},\"effective\":{\"proof_timeout_ms\":300000,\"module_timeout_ms\":1800000,\"import_validation_timeout_ms\":600000,\"declaration_lookup_timeout_ms\":60000,\"deep_declaration_lookup_timeout_ms\":300000,\"durability_build_timeout_ms\":600000,\"max_source_bytes\":4194304,\"max_output_bytes\":4194304,\"max_diagnostics\":1000,\"max_concurrent_processes\":4},\"policy_hash\":\"aa27cbf2044b9dba3ab54143c97e2caf720f34f92f3c04387724e4240c8a3fff\"},\"output_receipt\":{\"artifact_hash\":\"sha256:f90dd323d9e71181dfd1122c84891a7285bba2e8e16c15a2be725678d48ff061\",\"media_type\":\"application/vnd.proofsearch.verifier-log\",\"total_bytes\":561,\"stdout_bytes\":412,\"stderr_bytes\":149,\"retained_stdout_bytes\":412,\"retained_stderr_bytes\":149,\"truncated_bytes\":0,\"total_diagnostics\":1,\"retained_diagnostics\":1},\"durability_job\":null,\"wall_time_ms\":21615,\"lean_cpu_time_ms\":21615}",
-            "obligation_signature": "theorem root_theorem : \u2200 (n : \u2115), 4 \u2264 n \u2192 2 ^ n \u2264 Nat.factorial n",
-            "obligation_statement_hash": "6d0c4515f0dda26e7bfb31d97ea323737a66287c3cf9bfc37bebb42ed9364054",
-            "references": [],
-            "retrieved_hint": null,
-            "root_theorem_signature": "\u2200 (n : \u2115), 4 \u2264 n \u2192 2 ^ n \u2264 Nat.factorial n"
-          },
-          "state_hash": "007c974aa293710644c423a5fb25c9d5ae043ba84ee39db7b9420aacfa1cf128"
-        }
-      },
-      "step_index": 8,
-      "terminated": false,
-      "termination_reason": null,
-      "tokens": null,
-      "truncated": false,
-      "truncation_reason": null,
-      "trust_status": "kernel_verified",
-      "verifier_version": null,
-      "wall_time_ms": null
-    },
-    {
-      "action": {
-        "proof_format": "flat_tactic_sequence",
-        "proof_term": "intro n hn; induction hn with | refl => decide | step hd ih => rename_i m; have hm : 2 \u2264 m + 1 := by omega; have hstep : 2 * 2 ^ m \u2264 (m + 1) * Nat.factorial m := Nat.mul_le_mul hm ih; rw [pow_succ, Nat.factorial_succ]; linarith",
-        "type": "solve"
-      },
-      "action_space_version": null,
-      "cost": null,
-      "created_at": "2026-07-21T23:12:32Z",
-      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
-      "episode_id": "1c7b97ba-e47a-46f9-bb43-0f8ea2c80c03",
-      "export_eligibility": "restricted",
-      "formal_statement_sha256": "14c0606fb3a72a6ead9b344b98b423b63a0291ad1d1e818a5acd06ec89ce8501",
-      "lean_cpu_time_ms": null,
-      "model_config_hash": null,
-      "next_state": {
-        "artifact_hash": null,
-        "inline": {
-          "observation": {
-            "state_hash": "3c51b3b5057c1d1c6df09a1dfea52b9a508428e0c2cf05700075ebbf5385ed09",
-            "unavailable": true
-          },
-          "state_hash": "3c51b3b5057c1d1c6df09a1dfea52b9a508428e0c2cf05700075ebbf5385ed09"
-        }
-      },
-      "observation_space_version": null,
-      "outcome": "kernel_fail",
-      "packet_id": "number_theory.induction.two_pow_le_factorial_four.v1",
-      "problem_version_id": "150bbfa7-09ae-4304-ac7e-7a06feedf533",
-      "record_hash": "2dc35605d1c63d8b85dc266cff991ae4adfa4514c1c65ee316a01990d62a3a68",
-      "record_id": "1c7b97ba-e47a-46f9-bb43-0f8ea2c80c03:transition:9",
-      "record_type": "rl_transition",
-      "restriction_profile_hash": null,
-      "restriction_profile_id": null,
-      "reward": -0.11,
-      "reward_policy_version": "1.0",
-      "schema_version": "1.0.0",
-      "state": {
-        "artifact_hash": null,
-        "inline": {
-          "observation": {
-            "budget": {
-              "bytes_per_token": 4,
-              "included_bytes": 2906,
-              "max_observation_bytes": 16000,
-              "omitted_bytes": 0,
-              "referenced_bytes": 0,
-              "truncated": false
-            },
-            "direct_dependencies": [],
-            "direct_dependency_signatures": [],
-            "distilled_lesson": "linarith failed to find a contradiction\ncase step\nn m : \u2115\nhd : Nat.le 4 m\nih : 2 ^ m \u2264 m.factorial\na\u271d : (m + 1) * m.factorial < 2 ^ m * 2\n\u22a2 False\nfailed",
-            "env_id": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
-            "import_manifest_hash": "aaf21893d520a78dee0787a1bcaf939ee6b922265ff670c272e2e1d450dd29a7",
-            "latest_diagnostic": "{\"outcome\":\"kernel_fail\",\"attempt_id\":\"5896f3da-52be-4e4f-b18a-9dc8004ffcba\",\"obligation_id\":\"db8dab20-05f1-4028-a1da-5f67fd83cf98\",\"theorem_name\":\"O_db8dab2005f14028\",\"expected_statement_hash\":\"6d0c4515f0dda26e7bfb31d97ea323737a66287c3cf9bfc37bebb42ed9364054\",\"elaborated_statement_hash\":null,\"environment_hash\":\"9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d\",\"proof_source_hash\":\"\",\"compiled_artifact_hash\":null,\"proof_term_hash\":null,\"diagnostic\":{\"category\":\"tactic_failure\",\"primary_message\":\"linarith failed to find a contradiction\\ncase step\\nn m : \u2115\\nhd : Nat.le 4 m\\nih : 2 ^ m \u2264 m.factorial\\na\u271d : (m + 1) * m.factorial < 2 ^ m * 2\\n\u22a2 False\\nfailed\",\"source_span\":\"10:112-10:143\",\"goal\":null,\"local_context\":[],\"unsolved_goals\":[],\"used_dependencies\":[],\"error_code\":null,\"canonical_goal_hash\":null},\"all_diagnostics\":[{\"category\":\"tactic_failure\",\"primary_message\":\"linarith failed to find a contradiction\\ncase step\\nn m : \u2115\\nhd : Nat.le 4 m\\nih : 2 ^ m \u2264 m.factorial\\na\u271d : (m + 1) * m.factorial < 2 ^ m * 2\\n\u22a2 False\\nfailed\",\"source_span\":\"10:112-10:143\",\"goal\":null,\"local_context\":[],\"unsolved_goals\":[],\"used_dependencies\":[],\"error_code\":null,\"canonical_goal_hash\":null}],\"dependency_use_report\":null,\"resource_policy\":{\"requested\":{\"proof_timeout_ms\":300000,\"module_timeout_ms\":1800000,\"import_validation_timeout_ms\":600000,\"declaration_lookup_timeout_ms\":60000,\"deep_declaration_lookup_timeout_ms\":300000,\"durability_build_timeout_ms\":600000,\"max_source_bytes\":4194304,\"max_output_bytes\":4194304,\"max_diagnostics\":1000,\"max_concurrent_processes\":4},\"effective\":{\"proof_timeout_ms\":300000,\"module_timeout_ms\":1800000,\"import_validation_timeout_ms\":600000,\"declaration_lookup_timeout_ms\":60000,\"deep_declaration_lookup_timeout_ms\":300000,\"durability_build_timeout_ms\":600000,\"max_source_bytes\":4194304,\"max_output_bytes\":4194304,\"max_diagnostics\":1000,\"max_concurrent_processes\":4},\"policy_hash\":\"aa27cbf2044b9dba3ab54143c97e2caf720f34f92f3c04387724e4240c8a3fff\"},\"output_receipt\":{\"artifact_hash\":\"sha256:a02c543dfdc8417eb784b1d4e415c9d41baddfaae26d98fe847bf796dd1f261d\",\"media_type\":\"application/vnd.proofsearch.verifier-log\",\"total_bytes\":574,\"stdout_bytes\":425,\"stderr_bytes\":149,\"retained_stdout_bytes\":425,\"retained_stderr_bytes\":149,\"truncated_bytes\":0,\"total_diagnostics\":1,\"retained_diagnostics\":1},\"durability_job\":null,\"wall_time_ms\":21822,\"lean_cpu_time_ms\":21822}",
-            "obligation_signature": "theorem root_theorem : \u2200 (n : \u2115), 4 \u2264 n \u2192 2 ^ n \u2264 Nat.factorial n",
-            "obligation_statement_hash": "6d0c4515f0dda26e7bfb31d97ea323737a66287c3cf9bfc37bebb42ed9364054",
-            "references": [],
-            "retrieved_hint": null,
-            "root_theorem_signature": "\u2200 (n : \u2115), 4 \u2264 n \u2192 2 ^ n \u2264 Nat.factorial n"
-          },
-          "state_hash": "acfd454dcd033602ce786f66b209d2cb6b8fd7d185a0b6203c84db72dd91fda4"
-        }
-      },
-      "step_index": 9,
-      "terminated": false,
-      "termination_reason": null,
-      "tokens": null,
-      "truncated": false,
-      "truncation_reason": null,
-      "trust_status": "kernel_verified",
-      "verifier_version": null,
-      "wall_time_ms": null
-    },
-    {
-      "action": {
-        "proof_format": "flat_tactic_sequence",
-        "proof_term": "intro n hn; induction hn with | refl => decide | step hd ih => rename_i m; have hm : 2 \u2264 m + 1 := by omega; have hstep : 2 * 2 ^ m \u2264 (m + 1) * Nat.factorial m := Nat.mul_le_mul hm ih; calc 2 ^ (m + 1) = 2 * 2 ^ m := by rw [pow_succ']; _ \u2264 (m + 1) * Nat.factorial m := hstep; _ = (m + 1).factorial := by rw [Nat.factorial_succ]",
-        "type": "solve"
-      },
-      "action_space_version": null,
-      "cost": null,
-      "created_at": "2026-07-21T23:12:32Z",
-      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
-      "episode_id": "1c7b97ba-e47a-46f9-bb43-0f8ea2c80c03",
-      "export_eligibility": "restricted",
-      "formal_statement_sha256": "14c0606fb3a72a6ead9b344b98b423b63a0291ad1d1e818a5acd06ec89ce8501",
-      "lean_cpu_time_ms": null,
-      "model_config_hash": null,
-      "next_state": {
-        "artifact_hash": null,
-        "inline": {
-          "observation": {
-            "state_hash": "60ba9753803adac52c742e5a2326077ad14c52ed2d71029031deb9e280d9f2ba",
-            "unavailable": true
-          },
-          "state_hash": "60ba9753803adac52c742e5a2326077ad14c52ed2d71029031deb9e280d9f2ba"
-        }
-      },
-      "observation_space_version": null,
-      "outcome": "kernel_fail",
-      "packet_id": "number_theory.induction.two_pow_le_factorial_four.v1",
-      "problem_version_id": "150bbfa7-09ae-4304-ac7e-7a06feedf533",
-      "record_hash": "4bb908d1b48d291093e158b1e0fdb42dd9e581681fb9457dfde3aca11e413ae6",
-      "record_id": "1c7b97ba-e47a-46f9-bb43-0f8ea2c80c03:transition:10",
-      "record_type": "rl_transition",
-      "restriction_profile_hash": null,
-      "restriction_profile_id": null,
-      "reward": -0.11,
-      "reward_policy_version": "1.0",
-      "schema_version": "1.0.0",
-      "state": {
-        "artifact_hash": null,
-        "inline": {
-          "observation": {
-            "budget": {
-              "bytes_per_token": 4,
-              "included_bytes": 3212,
-              "max_observation_bytes": 16000,
-              "omitted_bytes": 0,
-              "referenced_bytes": 0,
-              "truncated": false
-            },
-            "direct_dependencies": [],
-            "direct_dependency_signatures": [],
-            "distilled_lesson": "omega could not prove the goal:\na possible counterexample may satisfy the constraints\n  a \u2265 0\n  a - b \u2265 0\nwhere\n a := \u2191m.factorial\n b := \u21912 ^ m",
-            "env_id": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
-            "import_manifest_hash": "aaf21893d520a78dee0787a1bcaf939ee6b922265ff670c272e2e1d450dd29a7",
-            "latest_diagnostic": "{\"outcome\":\"kernel_fail\",\"attempt_id\":\"9828a7e6-de58-4f75-bc36-77cd11cd033b\",\"obligation_id\":\"db8dab20-05f1-4028-a1da-5f67fd83cf98\",\"theorem_name\":\"O_db8dab2005f14028\",\"expected_statement_hash\":\"6d0c4515f0dda26e7bfb31d97ea323737a66287c3cf9bfc37bebb42ed9364054\",\"elaborated_statement_hash\":null,\"environment_hash\":\"9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d\",\"proof_source_hash\":\"\",\"compiled_artifact_hash\":null,\"proof_term_hash\":null,\"diagnostic\":{\"category\":\"tactic_failure\",\"primary_message\":\"omega could not prove the goal:\\na possible counterexample may satisfy the constraints\\n  a \u2265 0\\n  a - b \u2265 0\\nwhere\\n a := \u2191m.factorial\\n b := \u21912 ^ m\",\"source_span\":\"10:103-10:108\",\"goal\":null,\"local_context\":[],\"unsolved_goals\":[],\"used_dependencies\":[],\"error_code\":null,\"canonical_goal_hash\":null},\"all_diagnostics\":[{\"category\":\"tactic_failure\",\"primary_message\":\"omega could not prove the goal:\\na possible counterexample may satisfy the constraints\\n  a \u2265 0\\n  a - b \u2265 0\\nwhere\\n a := \u2191m.factorial\\n b := \u21912 ^ m\",\"source_span\":\"10:103-10:108\",\"goal\":null,\"local_context\":[],\"unsolved_goals\":[],\"used_dependencies\":[],\"error_code\":null,\"canonical_goal_hash\":null},{\"category\":\"unsolved_goals\",\"primary_message\":\"unsolved goals\\ncase step\\nn m : \u2115\\nhd : Nat.le 4 m\\nih : 2 ^ m \u2264 m.factorial\\nhm : 2 \u2264 m + 1\\n\u22a2 2 ^ m.succ \u2264 m.succ.factorial\",\"source_span\":\"10:62-10:229\",\"goal\":null,\"local_context\":[],\"unsolved_goals\":[],\"used_dependencies\":[],\"error_code\":null,\"canonical_goal_hash\":null}],\"dependency_use_report\":null,\"resource_policy\":{\"requested\":{\"proof_timeout_ms\":300000,\"module_timeout_ms\":1800000,\"import_validation_timeout_ms\":600000,\"declaration_lookup_timeout_ms\":60000,\"deep_declaration_lookup_timeout_ms\":300000,\"durability_build_timeout_ms\":600000,\"max_source_bytes\":4194304,\"max_output_bytes\":4194304,\"max_diagnostics\":1000,\"max_concurrent_processes\":4},\"effective\":{\"proof_timeout_ms\":300000,\"module_timeout_ms\":1800000,\"import_validation_timeout_ms\":600000,\"declaration_lookup_timeout_ms\":60000,\"deep_declaration_lookup_timeout_ms\":300000,\"durability_build_timeout_ms\":600000,\"max_source_bytes\":4194304,\"max_output_bytes\":4194304,\"max_diagnostics\":1000,\"max_concurrent_processes\":4},\"policy_hash\":\"aa27cbf2044b9dba3ab54143c97e2caf720f34f92f3c04387724e4240c8a3fff\"},\"output_receipt\":{\"artifact_hash\":\"sha256:80ee3d733ae5870455b911d22077c11a4e6352088b64e52c66b9e2eb8dcf5cb8\",\"media_type\":\"application/vnd.proofsearch.verifier-log\",\"total_bytes\":966,\"stdout_bytes\":817,\"stderr_bytes\":149,\"retained_stdout_bytes\":817,\"retained_stderr_bytes\":149,\"truncated_bytes\":0,\"total_diagnostics\":2,\"retained_diagnostics\":2},\"durability_job\":null,\"wall_time_ms\":16242,\"lean_cpu_time_ms\":16242}",
-            "obligation_signature": "theorem root_theorem : \u2200 (n : \u2115), 4 \u2264 n \u2192 2 ^ n \u2264 Nat.factorial n",
-            "obligation_statement_hash": "6d0c4515f0dda26e7bfb31d97ea323737a66287c3cf9bfc37bebb42ed9364054",
-            "references": [],
-            "retrieved_hint": null,
-            "root_theorem_signature": "\u2200 (n : \u2115), 4 \u2264 n \u2192 2 ^ n \u2264 Nat.factorial n"
-          },
-          "state_hash": "2dedcf9ab63b004c8c4754a492cec09961ea66bf7547d6f9ea55a15d92b1dd57"
-        }
-      },
-      "step_index": 10,
-      "terminated": false,
-      "termination_reason": null,
-      "tokens": null,
-      "truncated": false,
-      "truncation_reason": null,
-      "trust_status": "kernel_verified",
-      "verifier_version": null,
-      "wall_time_ms": null
-    },
-    {
-      "action": {
-        "proof_format": "flat_tactic_sequence",
-        "proof_term": "intro n hn; induction hn with | refl => decide | step hd ih => rename_i m; have hm : 2 \u2264 m + 1 := Nat.le_trans (by decide) (Nat.le_succ_of_le hd); have hstep : 2 * 2 ^ m \u2264 (m + 1) * Nat.factorial m := Nat.mul_le_mul hm ih; rw [pow_succ', Nat.factorial_succ]; exact hstep",
-        "type": "solve"
-      },
-      "action_space_version": null,
-      "cost": null,
-      "created_at": "2026-07-21T23:12:32Z",
-      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
-      "episode_id": "1c7b97ba-e47a-46f9-bb43-0f8ea2c80c03",
-      "export_eligibility": "restricted",
-      "formal_statement_sha256": "14c0606fb3a72a6ead9b344b98b423b63a0291ad1d1e818a5acd06ec89ce8501",
-      "lean_cpu_time_ms": null,
-      "model_config_hash": null,
-      "next_state": {
-        "artifact_hash": null,
-        "inline": {
-          "observation": {
-            "state_hash": "3cd93df4bbdfb0ac37db28e6e7cb94b96e16aa4ff952e0f192f0b32fb704c976",
-            "unavailable": true
-          },
-          "state_hash": "3cd93df4bbdfb0ac37db28e6e7cb94b96e16aa4ff952e0f192f0b32fb704c976"
-        }
-      },
-      "observation_space_version": null,
-      "outcome": "kernel_verified",
-      "packet_id": "number_theory.induction.two_pow_le_factorial_four.v1",
-      "problem_version_id": "150bbfa7-09ae-4304-ac7e-7a06feedf533",
-      "record_hash": "64a064dd3f29c2c971edb6fae01fa63a856069fbcd33d73438f9e2160c01cf7a",
-      "record_id": "1c7b97ba-e47a-46f9-bb43-0f8ea2c80c03:transition:11",
-      "record_type": "rl_transition",
-      "restriction_profile_hash": null,
-      "restriction_profile_id": null,
-      "reward": 2.49,
-      "reward_policy_version": "1.0",
-      "schema_version": "1.0.0",
-      "state": {
-        "artifact_hash": null,
-        "inline": {
-          "observation": {
-            "budget": {
-              "bytes_per_token": 4,
-              "included_bytes": 3451,
-              "max_observation_bytes": 16000,
-              "omitted_bytes": 0,
-              "referenced_bytes": 0,
-              "truncated": false
-            },
-            "direct_dependencies": [],
-            "direct_dependency_signatures": [],
-            "distilled_lesson": "omega could not prove the goal:\na possible counterexample may satisfy the constraints\n  a \u2265 0\n  a - b \u2265 0\nwhere\n a := \u2191m.factorial\n b := \u21912 ^ m",
-            "env_id": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
-            "import_manifest_hash": "aaf21893d520a78dee0787a1bcaf939ee6b922265ff670c272e2e1d450dd29a7",
-            "latest_diagnostic": "{\"outcome\":\"kernel_fail\",\"attempt_id\":\"5fcc4caf-31e2-4e86-9094-67b94b94ba49\",\"obligation_id\":\"db8dab20-05f1-4028-a1da-5f67fd83cf98\",\"theorem_name\":\"O_db8dab2005f14028\",\"expected_statement_hash\":\"6d0c4515f0dda26e7bfb31d97ea323737a66287c3cf9bfc37bebb42ed9364054\",\"elaborated_statement_hash\":null,\"environment_hash\":\"9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d\",\"proof_source_hash\":\"\",\"compiled_artifact_hash\":null,\"proof_term_hash\":null,\"diagnostic\":{\"category\":\"tactic_failure\",\"primary_message\":\"omega could not prove the goal:\\na possible counterexample may satisfy the constraints\\n  a \u2265 0\\n  a - b \u2265 0\\nwhere\\n a := \u2191m.factorial\\n b := \u21912 ^ m\",\"source_span\":\"10:103-10:108\",\"goal\":null,\"local_context\":[],\"unsolved_goals\":[],\"used_dependencies\":[],\"error_code\":null,\"canonical_goal_hash\":null},\"all_diagnostics\":[{\"category\":\"tactic_failure\",\"primary_message\":\"omega could not prove the goal:\\na possible counterexample may satisfy the constraints\\n  a \u2265 0\\n  a - b \u2265 0\\nwhere\\n a := \u2191m.factorial\\n b := \u21912 ^ m\",\"source_span\":\"10:103-10:108\",\"goal\":null,\"local_context\":[],\"unsolved_goals\":[],\"used_dependencies\":[],\"error_code\":null,\"canonical_goal_hash\":null},{\"category\":\"unsolved_goals\",\"primary_message\":\"unsolved goals\\ncase step\\nn m : \u2115\\nhd : Nat.le 4 m\\nih : 2 ^ m \u2264 m.factorial\\nhm : 2 \u2264 m + 1\\n\u22a2 2 ^ m.succ \u2264 m.succ.factorial\",\"source_span\":\"10:62-10:266\",\"goal\":null,\"local_context\":[],\"unsolved_goals\":[],\"used_dependencies\":[],\"error_code\":null,\"canonical_goal_hash\":null},{\"category\":\"parse_error\",\"primary_message\":\"unexpected token ':='; expected command\",\"source_span\":\"10:267-10:269\",\"goal\":null,\"local_context\":[],\"unsolved_goals\":[],\"used_dependencies\":[],\"error_code\":null,\"canonical_goal_hash\":null}],\"dependency_use_report\":null,\"resource_policy\":{\"requested\":{\"proof_timeout_ms\":300000,\"module_timeout_ms\":1800000,\"import_validation_timeout_ms\":600000,\"declaration_lookup_timeout_ms\":60000,\"deep_declaration_lookup_timeout_ms\":300000,\"durability_build_timeout_ms\":600000,\"max_source_bytes\":4194304,\"max_output_bytes\":4194304,\"max_diagnostics\":1000,\"max_concurrent_processes\":4},\"effective\":{\"proof_timeout_ms\":300000,\"module_timeout_ms\":1800000,\"import_validation_timeout_ms\":600000,\"declaration_lookup_timeout_ms\":60000,\"deep_declaration_lookup_timeout_ms\":300000,\"durability_build_timeout_ms\":600000,\"max_source_bytes\":4194304,\"max_output_bytes\":4194304,\"max_diagnostics\":1000,\"max_concurrent_processes\":4},\"policy_hash\":\"aa27cbf2044b9dba3ab54143c97e2caf720f34f92f3c04387724e4240c8a3fff\"},\"output_receipt\":{\"artifact_hash\":\"sha256:dbdd920bdc427a33b2217f6c57802820ac94d2532ad9f8f64806fc56e59f000d\",\"media_type\":\"application/vnd.proofsearch.verifier-log\",\"total_bytes\":1262,\"stdout_bytes\":1113,\"stderr_bytes\":149,\"retained_stdout_bytes\":1113,\"retained_stderr_bytes\":149,\"truncated_bytes\":0,\"total_diagnostics\":3,\"retained_diagnostics\":3},\"durability_job\":null,\"wall_time_ms\":17375,\"lean_cpu_time_ms\":17375}",
-            "obligation_signature": "theorem root_theorem : \u2200 (n : \u2115), 4 \u2264 n \u2192 2 ^ n \u2264 Nat.factorial n",
-            "obligation_statement_hash": "6d0c4515f0dda26e7bfb31d97ea323737a66287c3cf9bfc37bebb42ed9364054",
-            "references": [],
-            "retrieved_hint": null,
-            "root_theorem_signature": "\u2200 (n : \u2115), 4 \u2264 n \u2192 2 ^ n \u2264 Nat.factorial n"
-          },
-          "state_hash": "8cddd36ed999e37fbcbc51429ce4bf114d1532ac25cf72a952c079661f9ea30c"
-        }
-      },
-      "step_index": 11,
-      "terminated": true,
-      "termination_reason": null,
-      "tokens": null,
-      "truncated": false,
-      "truncation_reason": null,
-      "trust_status": "kernel_verified",
-      "verifier_version": null,
-      "wall_time_ms": null
-    },
-    {
-      "created_at": "2026-07-21T23:12:32Z",
-      "diagnostic_category": "tactic_failure",
-      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
-      "episode_id": "1c7b97ba-e47a-46f9-bb43-0f8ea2c80c03",
-      "export_eligibility": "restricted",
-      "outcome": "failed",
-      "packet_id": "number_theory.induction.two_pow_le_factorial_four.v1",
-      "record_hash": "d5c0e71771b455b501ca7a8a44c15bfd7a35ec52ae39774ae972d4101e769910",
-      "record_id": "db8dab20-05f1-4028-a1da-5f67fd83cf98:attempt:0",
       "record_type": "attempt_record",
-      "schema_version": "1.0.0",
-      "trust_status": "kernel_verified"
-    },
-    {
-      "created_at": "2026-07-21T23:12:32Z",
-      "diagnostic_category": "tactic_failure",
-      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
-      "episode_id": "1c7b97ba-e47a-46f9-bb43-0f8ea2c80c03",
-      "export_eligibility": "restricted",
-      "outcome": "failed",
+      "record_id": "att.db8dab20-05f1-4028-a1da-5f67fd83cf98.1",
       "packet_id": "number_theory.induction.two_pow_le_factorial_four.v1",
-      "record_hash": "9d6758998318884f7f537f123578d35ba94bc64a7972aa6b86a8a93921100d06",
-      "record_id": "db8dab20-05f1-4028-a1da-5f67fd83cf98:attempt:1",
-      "record_type": "attempt_record",
-      "schema_version": "1.0.0",
-      "trust_status": "kernel_verified"
-    },
-    {
-      "created_at": "2026-07-21T23:12:32Z",
-      "diagnostic_category": "tactic_failure",
       "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
-      "episode_id": "1c7b97ba-e47a-46f9-bb43-0f8ea2c80c03",
-      "export_eligibility": "restricted",
-      "outcome": "failed",
-      "packet_id": "number_theory.induction.two_pow_le_factorial_four.v1",
-      "record_hash": "cf3f5456655b0fe85c4d0caec7a4e4c9345603477c518ec4fa86a28ad37781e7",
-      "record_id": "db8dab20-05f1-4028-a1da-5f67fd83cf98:attempt:2",
-      "record_type": "attempt_record",
-      "schema_version": "1.0.0",
-      "trust_status": "kernel_verified"
-    },
-    {
-      "created_at": "2026-07-21T23:12:32Z",
-      "diagnostic_category": "tactic_failure",
-      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
-      "episode_id": "1c7b97ba-e47a-46f9-bb43-0f8ea2c80c03",
-      "export_eligibility": "restricted",
-      "outcome": "failed",
-      "packet_id": "number_theory.induction.two_pow_le_factorial_four.v1",
-      "record_hash": "3e388e509aa9f3e95f746e93149094a2549f4a03944e1156cb3272f96cdbd0dd",
-      "record_id": "db8dab20-05f1-4028-a1da-5f67fd83cf98:attempt:3",
-      "record_type": "attempt_record",
-      "schema_version": "1.0.0",
-      "trust_status": "kernel_verified"
-    },
-    {
-      "created_at": "2026-07-21T23:12:32Z",
-      "diagnostic_category": "tactic_failure",
-      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
-      "episode_id": "1c7b97ba-e47a-46f9-bb43-0f8ea2c80c03",
-      "export_eligibility": "restricted",
-      "outcome": "failed",
-      "packet_id": "number_theory.induction.two_pow_le_factorial_four.v1",
-      "record_hash": "0f54b5a82ab0ac2b5b7d49693ef129c42e573506b2b49783c4a7e36b0f4e8c5f",
-      "record_id": "db8dab20-05f1-4028-a1da-5f67fd83cf98:attempt:4",
-      "record_type": "attempt_record",
-      "schema_version": "1.0.0",
-      "trust_status": "kernel_verified"
-    },
-    {
-      "created_at": "2026-07-21T23:12:32Z",
-      "diagnostic_category": "tactic_failure",
-      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
-      "episode_id": "1c7b97ba-e47a-46f9-bb43-0f8ea2c80c03",
-      "export_eligibility": "restricted",
-      "outcome": "failed",
-      "packet_id": "number_theory.induction.two_pow_le_factorial_four.v1",
-      "record_hash": "be605ca136533ba9954b1445ed7df9b9f32fdaca77d72e08664279c49d9eee4b",
-      "record_id": "db8dab20-05f1-4028-a1da-5f67fd83cf98:attempt:5",
-      "record_type": "attempt_record",
-      "schema_version": "1.0.0",
-      "trust_status": "kernel_verified"
-    },
-    {
-      "created_at": "2026-07-21T23:12:32Z",
-      "diagnostic_category": "parse_error",
-      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
-      "episode_id": "1c7b97ba-e47a-46f9-bb43-0f8ea2c80c03",
-      "export_eligibility": "restricted",
-      "outcome": "failed",
-      "packet_id": "number_theory.induction.two_pow_le_factorial_four.v1",
-      "record_hash": "dbf460edc42d34f2bd795f6f91375fa730dde5452584685ab15d111b6042b83a",
-      "record_id": "db8dab20-05f1-4028-a1da-5f67fd83cf98:attempt:6",
-      "record_type": "attempt_record",
-      "schema_version": "1.0.0",
-      "trust_status": "kernel_verified"
-    },
-    {
-      "created_at": "2026-07-21T23:12:32Z",
-      "diagnostic_category": "tactic_failure",
-      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
-      "episode_id": "1c7b97ba-e47a-46f9-bb43-0f8ea2c80c03",
-      "export_eligibility": "restricted",
-      "outcome": "failed",
-      "packet_id": "number_theory.induction.two_pow_le_factorial_four.v1",
-      "record_hash": "2238c28b00ffb26473894fab7a5d2ef4391e1543e0f2df4873ba9d9a405ed377",
-      "record_id": "db8dab20-05f1-4028-a1da-5f67fd83cf98:attempt:7",
-      "record_type": "attempt_record",
-      "schema_version": "1.0.0",
-      "trust_status": "kernel_verified"
-    },
-    {
-      "created_at": "2026-07-21T23:12:32Z",
-      "diagnostic_category": "tactic_failure",
-      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
-      "episode_id": "1c7b97ba-e47a-46f9-bb43-0f8ea2c80c03",
-      "export_eligibility": "restricted",
-      "outcome": "failed",
-      "packet_id": "number_theory.induction.two_pow_le_factorial_four.v1",
-      "record_hash": "454461da27c8dd03be0ef54ad42623dffc4399b5e2c70addc49543834df71385",
-      "record_id": "db8dab20-05f1-4028-a1da-5f67fd83cf98:attempt:8",
-      "record_type": "attempt_record",
-      "schema_version": "1.0.0",
-      "trust_status": "kernel_verified"
-    },
-    {
-      "created_at": "2026-07-21T23:12:32Z",
-      "diagnostic_category": "tactic_failure",
-      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
-      "episode_id": "1c7b97ba-e47a-46f9-bb43-0f8ea2c80c03",
-      "export_eligibility": "restricted",
-      "outcome": "failed",
-      "packet_id": "number_theory.induction.two_pow_le_factorial_four.v1",
-      "record_hash": "54765275a34587ebcfe07152e939af21775d254702cb3efdad4939c7bc1c9f50",
-      "record_id": "db8dab20-05f1-4028-a1da-5f67fd83cf98:attempt:9",
-      "record_type": "attempt_record",
-      "schema_version": "1.0.0",
-      "trust_status": "kernel_verified"
-    },
-    {
-      "created_at": "2026-07-21T23:12:32Z",
-      "diagnostic_category": "tactic_failure",
-      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
-      "episode_id": "1c7b97ba-e47a-46f9-bb43-0f8ea2c80c03",
-      "export_eligibility": "restricted",
-      "outcome": "failed",
-      "packet_id": "number_theory.induction.two_pow_le_factorial_four.v1",
-      "record_hash": "86c2723381994f6806960a63910161027c855d24492caf02acce858ad3fd40e7",
-      "record_id": "db8dab20-05f1-4028-a1da-5f67fd83cf98:attempt:10",
-      "record_type": "attempt_record",
-      "schema_version": "1.0.0",
-      "trust_status": "kernel_verified"
-    },
-    {
-      "created_at": "2026-07-21T23:12:32Z",
-      "diagnostic_category": null,
-      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
-      "episode_id": "1c7b97ba-e47a-46f9-bb43-0f8ea2c80c03",
-      "export_eligibility": "restricted",
+      "created_at": "2026-07-22T00:00:00Z",
+      "trust_status": "kernel_verified",
+      "export_eligibility": "public",
+      "episode_id": "9b43e390-9420-4748-8fd1-2ca7917a3b97",
       "outcome": "succeeded",
-      "packet_id": "number_theory.induction.two_pow_le_factorial_four.v1",
-      "record_hash": "2f3925c2f177fd88b7b761cdd0ba0580300a4069eb9f0cc6d1ebe8cbb7585c8b",
-      "record_id": "db8dab20-05f1-4028-a1da-5f67fd83cf98:attempt:11",
-      "record_type": "attempt_record",
-      "schema_version": "1.0.0",
-      "trust_status": "kernel_verified"
+      "diagnostic_category": "unsolved_goals",
+      "record_hash": "032f780e46f91b45b34dace60544fa77f5f3f45e2c50fb8fddc4a358222b2190"
     },
     {
-      "created_at": "2026-07-21T23:12:32Z",
-      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
-      "export_eligibility": "restricted",
-      "packet_id": "number_theory.induction.two_pow_le_factorial_four.v1",
-      "record_hash": "c85099d5e891dcaefe6cfc316699cc6e8ed604e0745ef6098327fd373fb1edc3",
-      "record_id": "db8dab20-05f1-4028-a1da-5f67fd83cf98:repair_trajectory",
-      "record_type": "repair_trajectory",
       "schema_version": "1.0.0",
+      "record_type": "negative_example",
+      "record_id": "neg.db8dab20-05f1-4028-a1da-5f67fd83cf98.0",
+      "packet_id": "number_theory.induction.two_pow_le_factorial_four.v1",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "created_at": "2026-07-22T00:00:00Z",
+      "trust_status": "kernel_verified",
+      "export_eligibility": "public",
+      "attempt_id": "att.db8dab20-05f1-4028-a1da-5f67fd83cf98.0",
+      "diagnostic_category": "unknown_identifier",
+      "origin": "controlled_mutation",
+      "proof_authority": "none",
+      "can_export_proof_text": false,
+      "can_export_metadata": true,
+      "can_export_diagnostics": true,
+      "can_export_model_identity": false,
+      "candidate_source_ref": null,
+      "record_hash": "8ee48b85966aa5df6cff51b9a27c1fbcb7e79fa065a05b43a0613d811a11cb4a"
+    },
+    {
+      "schema_version": "1.0.0",
+      "record_type": "negative_example",
+      "record_id": "neg.db8dab20-05f1-4028-a1da-5f67fd83cf98.1",
+      "packet_id": "number_theory.induction.two_pow_le_factorial_four.v1",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "created_at": "2026-07-22T00:00:00Z",
+      "trust_status": "kernel_verified",
+      "export_eligibility": "public",
+      "attempt_id": "att.db8dab20-05f1-4028-a1da-5f67fd83cf98.1",
+      "diagnostic_category": "unsolved_goals",
+      "origin": "controlled_mutation",
+      "proof_authority": "none",
+      "can_export_proof_text": false,
+      "can_export_metadata": true,
+      "can_export_diagnostics": true,
+      "can_export_model_identity": false,
+      "candidate_source_ref": null,
+      "record_hash": "b8dfc0bd65f4677979442a549fd8354d44329239dc11999de34660697bac3ad6"
+    },
+    {
+      "schema_version": "1.0.0",
+      "record_type": "repair_trajectory",
+      "record_id": "tr.db8dab20-05f1-4028-a1da-5f67fd83cf98",
+      "packet_id": "number_theory.induction.two_pow_le_factorial_four.v1",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "created_at": "2026-07-22T00:00:00Z",
+      "trust_status": "kernel_verified",
+      "export_eligibility": "public",
+      "terminal_outcome": "verified_proof",
+      "terminal_ref": "pv.db8dab20-05f1-4028-a1da-5f67fd83cf98.canonical",
       "steps": [
         {
-          "diagnostic_category_addressed": "tactic_failure",
-          "from_attempt_id": "a45c3ca9-65c6-4431-a47a-76a2e86a4b8a",
-          "repair_action": "revised_submission",
-          "step_hash": "5e80c819d728ad477e4080147f020b4d8552f0f597cade7bbb6e30e68819081e",
           "step_index": 0,
-          "to_ref": "2379cb69-aa58-4641-afc6-9f5e1e01374a"
-        },
-        {
+          "from_attempt_id": "att.db8dab20-05f1-4028-a1da-5f67fd83cf98.0",
+          "to_ref": "pv.db8dab20-05f1-4028-a1da-5f67fd83cf98.canonical",
+          "repair_action": "revised_submission",
           "diagnostic_category_addressed": "tactic_failure",
-          "from_attempt_id": "2379cb69-aa58-4641-afc6-9f5e1e01374a",
-          "repair_action": "revised_submission",
-          "step_hash": "bec81b86c325f3239a4928a3abec8586c40eb96d194f44fe672158e4c2d37f0b",
-          "step_index": 1,
-          "to_ref": "e392d738-3e8a-4c50-a2e1-7e63490c2bc2"
-        },
-        {
-          "diagnostic_category_addressed": "tactic_failure",
-          "from_attempt_id": "e392d738-3e8a-4c50-a2e1-7e63490c2bc2",
-          "repair_action": "revised_submission",
-          "step_hash": "298794bae6e35b8aa4f16bdfd1bcf7cb267306fcc296259ce42bd2a4284a2eda",
-          "step_index": 2,
-          "to_ref": "b5ab011c-884c-4304-abd7-e79e874cc094"
-        },
-        {
-          "diagnostic_category_addressed": "tactic_failure",
-          "from_attempt_id": "b5ab011c-884c-4304-abd7-e79e874cc094",
-          "repair_action": "revised_submission",
-          "step_hash": "ebb3393b2c06978232be91354ed902cfaf9ca772e8527af59ff1b0cb2624bb11",
-          "step_index": 3,
-          "to_ref": "6faf5b0e-37e2-483c-8460-67dacc0beb28"
-        },
-        {
-          "diagnostic_category_addressed": "tactic_failure",
-          "from_attempt_id": "6faf5b0e-37e2-483c-8460-67dacc0beb28",
-          "repair_action": "revised_submission",
-          "step_hash": "767d27030ca5526d4cb07f123d7425fd20b87bf8efdf8b74e2f3ecb80146c6fc",
-          "step_index": 4,
-          "to_ref": "2d1dadfe-494c-4b0f-97c4-a7e61e907cbc"
-        },
-        {
-          "diagnostic_category_addressed": "tactic_failure",
-          "from_attempt_id": "2d1dadfe-494c-4b0f-97c4-a7e61e907cbc",
-          "repair_action": "revised_submission",
-          "step_hash": "27360a9334d535c000859814859e9f4de0f8f245b2708dfd57bc3a61cfab8b4d",
-          "step_index": 5,
-          "to_ref": "f9a2dd5f-ac20-44cd-bb69-ca9f5f7b91f2"
-        },
-        {
-          "diagnostic_category_addressed": "parse_error",
-          "from_attempt_id": "f9a2dd5f-ac20-44cd-bb69-ca9f5f7b91f2",
-          "repair_action": "revised_submission",
-          "step_hash": "5ac1459323480066adc0525a0efbcf7c43c459b21c868e9c9c5648cbd6d058a0",
-          "step_index": 6,
-          "to_ref": "730ad7db-e5e3-40e4-aaf7-dc40018e5ab4"
-        },
-        {
-          "diagnostic_category_addressed": "tactic_failure",
-          "from_attempt_id": "730ad7db-e5e3-40e4-aaf7-dc40018e5ab4",
-          "repair_action": "revised_submission",
-          "step_hash": "60c4adf2fa060add14621ca3fabf8499cdec089e98f03810e8b74341b307fdc7",
-          "step_index": 7,
-          "to_ref": "ff464b68-bd10-4468-8c8d-f62e3ff6a8e1"
-        },
-        {
-          "diagnostic_category_addressed": "tactic_failure",
-          "from_attempt_id": "ff464b68-bd10-4468-8c8d-f62e3ff6a8e1",
-          "repair_action": "revised_submission",
-          "step_hash": "be0b09b4ff45db02d59c723b9c72b02fbc97e61d501188cab1831f193aff59f5",
-          "step_index": 8,
-          "to_ref": "59672f5a-1877-4d46-8d62-d8f2411b6e77"
-        },
-        {
-          "diagnostic_category_addressed": "tactic_failure",
-          "from_attempt_id": "59672f5a-1877-4d46-8d62-d8f2411b6e77",
-          "repair_action": "revised_submission",
-          "step_hash": "f5b0cf9a2cc84139cd2c9d84e997869cda8f8900fd938bfcab90b6a4cccca68b",
-          "step_index": 9,
-          "to_ref": "8750b8f3-e692-4b7e-8946-4b78a7fc2f0c"
-        },
-        {
-          "diagnostic_category_addressed": "tactic_failure",
-          "from_attempt_id": "8750b8f3-e692-4b7e-8946-4b78a7fc2f0c",
-          "repair_action": "revised_submission",
-          "step_hash": "fa5df2b1a5fd2bcff452b3ee8a84c4958f0a3db9e4816773f5f4887703c37ef6",
-          "step_index": 10,
-          "to_ref": "69abe249-e3d4-40b5-a8a2-c8cd24b6c0fa"
+          "step_hash": "3438af8fc68ddf5ce4f5099eb038c7a3f7138c20bb0daa205e1182522a839512"
         }
       ],
-      "terminal_outcome": "verified_proof",
-      "terminal_ref": "69abe249-e3d4-40b5-a8a2-c8cd24b6c0fa",
-      "trust_status": "kernel_verified"
+      "record_hash": "ebdd54eddfff9835aac6ba038c2eb91a393c86d9f096fb5dff50d6c1294b8e58"
     }
   ]
 }

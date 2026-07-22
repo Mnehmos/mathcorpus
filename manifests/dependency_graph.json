@@ -245,6 +245,7 @@
     "elementary.inequalities.two_a_le_sq_add_one.v1",
     "elementary.inequalities.two_mul_le_add_sq.v1",
     "elementary.inequalities.two_sq_prod_le.v1",
+    "elementary.logic.finset_card_two_nonempty_density.v1",
     "logic.functions.injective_comp_self.v1",
     "logic.set.inter_self.v1",
     "elementary.number_theory.add_mod.v1",
@@ -307,7 +308,7 @@
     "elementary.number_theory.two_pow_pos.v1",
     "elementary.number_theory.well_ordering.v1",
     "elementary.number_theory.zero_mod.v1",
-    "frontier.union_closed_three_sets.v1",
+    "frontier.union_closed_pair_element.v1",
     "frontier.erdos.erdos_1052_filter_ordcompl.v1",
     "frontier.erdos.erdos_1052_not_dvd_div_ordproj.v1",
     "frontier.erdos.erdos_1052_omega_odd_le_two_adic_add_one.v1",
@@ -334,7 +335,7 @@
     "frontier.formal_conjectures.union_closed_univ_card_two.v1",
     "frontier.jacobian.jacobian_conjecture_false_dim_three.v1",
     "measure_theory.borel_space_is_open_measurable.v1",
-    "algebra.group_hom_one.v1",
+    "known.algebra.group_hom_kernel_normal.v1",
     "fixtures.diagnostics.diagnostic_categories_conformance.v1",
     "negative.algebra.div_mul_cancel_bare_ring_no_hypothesis_failure.v1",
     "negative.algebra.frac_sum_bare_ring.missing_field_simp.v1",
@@ -367,6 +368,7 @@
     "number_theory.induction.two_pow_le_factorial_four.v1",
     "undergrad.abstract_algebra.group_inv_inv.v1",
     "undergrad.abstract_algebra.group_mul_inv_rev.v1",
+    "undergrad.algebra.group_hom_one.v1",
     "analysis.metric_space_continuous_dist.v1",
     "undergrad.linear_algebra.smul_zero_vector.v1",
     "undergrad.logic.double_negation_elim.v1",
@@ -377,30 +379,6 @@
     "undergrad.topology.is_open_union.v1"
   ],
   "edges": {
-    "algebra.group_hom_one.v1": [
-      {
-        "to": "group_homomorphism",
-        "type": "prerequisite_concepts"
-      },
-      {
-        "to": "identity_element",
-        "type": "prerequisite_concepts"
-      }
-    ],
-    "analysis.metric_space_continuous_dist.v1": [
-      {
-        "to": "metric_space",
-        "type": "prerequisite_concepts"
-      },
-      {
-        "to": "distance_function",
-        "type": "prerequisite_concepts"
-      },
-      {
-        "to": "continuous_function",
-        "type": "prerequisite_concepts"
-      }
-    ],
     "elementary.algebra.add_assoc.v1": [
       {
         "to": "core_algebra",
@@ -5451,50 +5429,6 @@
         "type": "prerequisite_concepts"
       }
     ],
-    "frontier.union_closed_three_sets.v1": [
-      {
-        "to": "finset_cardinality",
-        "type": "prerequisite_concepts"
-      },
-      {
-        "to": "union_closed_conjecture",
-        "type": "prerequisite_concepts"
-      },
-      {
-        "to": "filter",
-        "type": "prerequisite_concepts"
-      }
-    ],
-    "logic.functions.injective_comp_self.v1": [
-      {
-        "to": "injective_function",
-        "type": "prerequisite_concepts"
-      },
-      {
-        "to": "function_composition",
-        "type": "prerequisite_concepts"
-      }
-    ],
-    "logic.set.inter_self.v1": [
-      {
-        "to": "set_intersection",
-        "type": "prerequisite_concepts"
-      }
-    ],
-    "measure_theory.borel_space_is_open_measurable.v1": [
-      {
-        "to": "borel_space",
-        "type": "prerequisite_concepts"
-      },
-      {
-        "to": "measurable_set",
-        "type": "prerequisite_concepts"
-      },
-      {
-        "to": "open_set",
-        "type": "prerequisite_concepts"
-      }
-    ],
     "negative.algebra.frac_sum_bare_ring.missing_field_simp.v1": [
       {
         "to": "reciprocal",
@@ -5839,30 +5773,6 @@
         "type": "prerequisite_concepts"
       }
     ],
-    "number_theory.induction.two_pow_le_factorial_four.v1": [
-      {
-        "to": "mathematical_induction",
-        "type": "prerequisite_concepts"
-      },
-      {
-        "to": "factorial",
-        "type": "prerequisite_concepts"
-      },
-      {
-        "to": "power_of_two",
-        "type": "prerequisite_concepts"
-      }
-    ],
-    "topology.continuous_id.v1": [
-      {
-        "to": "topological_space",
-        "type": "prerequisite_concepts"
-      },
-      {
-        "to": "continuous_function",
-        "type": "prerequisite_concepts"
-      }
-    ],
     "undergrad.abstract_algebra.group_inv_inv.v1": [
       {
         "to": "group_theory",
@@ -5913,7 +5823,7 @@
     ]
   },
   "dependency_manifest_summary": {
-    "packets_with_manifest": 336,
+    "packets_with_manifest": 339,
     "frequency_by_category": {
       "declared": {
         "sq_nonneg": 29,
@@ -6408,17 +6318,17 @@
         "add_mul": 7,
         "pow_succ": 7,
         "Nat.strong_induction_on": 5,
+        "Nat.factorial": 5,
         "le_trans": 5,
         "pow_pos": 5,
         "Finset.prod_range_succ": 4,
         "Nat.pos_of_ne_zero": 4,
         "Nat.factorial_succ": 4,
-        "Nat.factorial": 4,
         "abs_cases": 4,
         "le_max_left": 4,
         "le_max_right": 4,
-        "Nat.dvd_gcd": 4,
         "Finset.mem_filter": 4,
+        "Nat.dvd_gcd": 4,
         "le_refl": 4,
         "exact_mod_cast": 4,
         "Filter.eventually_atTop": 4,
@@ -6682,6 +6592,8 @@
         "le_div_iff": 1,
         "abs_sub_abs_le_abs_sub": 1,
         "mul_nonneg": 1,
+        "Finset.card_pos": 1,
+        "Function.Injective.comp": 1,
         "Set.inter_self": 1,
         "Int.gcdA": 1,
         "Int.gcdB": 1,
@@ -6723,7 +6635,7 @@
         "Nat.succ_ne_self": 1,
         "Nat.succ_ne_zero": 1,
         "Nat.zero_mod": 1,
-        "Finset.card_pos": 1,
+        "Finset.mem_union_left": 1,
         "Nat.Coprime.coprime_dvd_right": 1,
         "Nat.Coprime.mul_right": 1,
         "Nat.Coprime.pow_right": 1,
@@ -6890,7 +6802,11 @@
         "cancel_denoms": 1,
         "h_union_closed": 1,
         "true_or": 1,
-        "map_one": 1
+        "IsOpen.measurableSet": 1,
+        "MonoidHom.normal_ker": 1,
+        "map_one": 1,
+        "continuous_id.dist": 1,
+        "continuous_id": 1
       },
       "verified_module_item": {
         "sq_nonneg": 29,
@@ -7870,8 +7786,8 @@
     "transitive_depth": {
       "min": 0,
       "max": 1,
-      "avg": 0.7619047619047619,
-      "n": 336
+      "avg": 0.7846607669616519,
+      "n": 339
     }
   }
 }

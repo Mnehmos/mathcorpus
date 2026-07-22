@@ -1,8 +1,8 @@
 {
-  "packet_count": 375,
+  "packet_count": 377,
   "by_domain": {
-    "logic": 5,
-    "algebra": 172,
+    "logic": 6,
+    "algebra": 173,
     "combinatorics": 57,
     "geometry": 40,
     "number_theory": 65,
@@ -15,35 +15,25 @@
   },
   "by_level": {
     "L0_elementary": 112,
-    "L1_proof_basics": 188,
+    "L1_proof_basics": 189,
     "L2_olympiad": 37,
     "L7_frontier": 26,
     "L5_grad": 1,
     "L6_known_theorem": 1,
-    "L3_undergrad": 9,
+    "L3_undergrad": 10,
     "L4_advanced_undergrad": 1
   },
   "by_kind": {
     "concept": 296,
-    "theorem": 51,
+    "theorem": 53,
     "negative_example": 28
   },
   "by_status": {
     "empirical_only": 2,
-    "kernel_verified": 345,
+    "kernel_verified": 347,
     "failed_attempt": 28
   },
   "packets": [
-    {
-      "packet_id": "algebra.group_hom_one.v1",
-      "title": "Group homomorphism preserves identity element",
-      "domain": "algebra",
-      "level": "L6_known_theorem",
-      "kind": "theorem",
-      "status": "kernel_verified",
-      "eligibility": "public_train",
-      "packet_sha256": "18b4d2a7217715ea435e9d2304829c1d8100bf5132c04bffb9c874fb472f45b7"
-    },
     {
       "packet_id": "analysis.metric_space_continuous_dist.v1",
       "title": "Distance to a fixed point in a metric space is continuous",
@@ -52,7 +42,7 @@
       "kind": "theorem",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "f4af3397309bfe95c4f3e2cc3e18540991549a27856facb982fbcfccf84c6a3a"
+      "packet_sha256": "c9d48d59bb32f51859e723cdd55cef6ade31addcdffeff52cd5bc5c106b91075"
     },
     {
       "packet_id": "elementary.algebra.add_assoc.v1",
@@ -2495,6 +2485,16 @@
       "packet_sha256": "c512c8ff04db317ee4d2401d6e93590a95f07df2269b2a3ac39585e7e0e3ef1a"
     },
     {
+      "packet_id": "elementary.logic.finset_card_two_nonempty_density.v1",
+      "title": "Finsets of size at most 2 containing a non-empty set satisfy the half-density bound",
+      "domain": "logic",
+      "level": "L1_proof_basics",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "382730af72b61f043568dfe080479cedf0b3f0250da8686045e71d74a142a2e2"
+    },
+    {
       "packet_id": "elementary.number_theory.add_mod.v1",
       "title": "Addition modulo n",
       "domain": "number_theory",
@@ -3365,14 +3365,24 @@
       "packet_sha256": "4d28aefc6344bf8c8b82b7ebffb3753268f7058e741f2509b7f81d4b6ecf1108"
     },
     {
-      "packet_id": "frontier.union_closed_three_sets.v1",
-      "title": "Families of finsets of size at most 2 containing a non-empty set satisfy the half-density bound",
+      "packet_id": "frontier.union_closed_pair_element.v1",
+      "title": "Non-empty set in a union-closed pair contains an element of the union",
       "domain": "frontier",
       "level": "L7_frontier",
       "kind": "theorem",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "71cf55e10b1bf1d1534d4646c0823f0a4e4358271acde4d818bfd8ea5a9dd1fd"
+      "packet_sha256": "11e6cf25afc2f3d89ab6eba830c9d8db7a30d2ce9bee99ab4ae8406502ab1d77"
+    },
+    {
+      "packet_id": "known.algebra.group_hom_kernel_normal.v1",
+      "title": "The kernel of a group homomorphism is a normal subgroup",
+      "domain": "algebra",
+      "level": "L6_known_theorem",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "fd76438729be8d0707ac628b297f560540b50b976c4c399e98b0fbf0807b8fc2"
     },
     {
       "packet_id": "logic.functions.injective_comp_self.v1",
@@ -3382,7 +3392,7 @@
       "kind": "theorem",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "d53b13692c0756fb1d292f37ec2ab7d4eea168f50dae292cdef2833eae69021a"
+      "packet_sha256": "20e841faebb5c986554c9a0cd22cda06b624ac2bfb304528502e84e1994d33f4"
     },
     {
       "packet_id": "logic.set.inter_self.v1",
@@ -3392,7 +3402,7 @@
       "kind": "theorem",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "374394e4877318a5a9e0fd182d0a7d9435591c5ed50b726170372fb7a285907f"
+      "packet_sha256": "9c23debb16c0a5967621062ceae7eebbe801a7ed1ed3840e192a257716a8580b"
     },
     {
       "packet_id": "measure_theory.borel_space_is_open_measurable.v1",
@@ -3402,7 +3412,7 @@
       "kind": "theorem",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "ab7410292533e5ed89800969786531391116ef28420f1dc51be80097841daf10"
+      "packet_sha256": "6314f94f56903b8515fc2fd825b180fe45e41a25c77b6f95dd9d79bc41e99fa8"
     },
     {
       "packet_id": "negative.algebra.div_mul_cancel_bare_ring_no_hypothesis_failure.v1",
@@ -3692,7 +3702,7 @@
       "kind": "theorem",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "e3b070ad500d6d185997cd7a7a8add3b58df10188922595af2c0bd35da476232"
+      "packet_sha256": "bfed246b600e8877472bdfd7b1029710f2e436b9ada46d70393f331d68529879"
     },
     {
       "packet_id": "topology.continuous_id.v1",
@@ -3702,7 +3712,7 @@
       "kind": "theorem",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "79ed3b042a56e88693a3850d1633ae54e75700f6f9438fe67e744c501302b24b"
+      "packet_sha256": "32b19793468b39ba9917ffa4281434cdf8f70b7261d6e647d7118c4607dab055"
     },
     {
       "packet_id": "undergrad.abstract_algebra.group_inv_inv.v1",
@@ -3723,6 +3733,16 @@
       "status": "kernel_verified",
       "eligibility": "public_train",
       "packet_sha256": "40a8d20eb1f8f6e45726e14b0f5c283333a96553cf47c4700e472fc0eb4e4644"
+    },
+    {
+      "packet_id": "undergrad.algebra.group_hom_one.v1",
+      "title": "Group homomorphism preserves identity element",
+      "domain": "algebra",
+      "level": "L3_undergrad",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "9aec4a0f10ce4e06823141815c787a35cb6403283dcb94a1e7c54553e3ac6dc1"
     },
     {
       "packet_id": "undergrad.linear_algebra.smul_zero_vector.v1",

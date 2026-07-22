@@ -1,18 +1,6 @@
 {
   "entries": [
     {
-      "packet_id": "algebra.group_hom_one.v1",
-      "source_kind": "author_written",
-      "source_refs": [
-        "Mathlib.Algebra.Group.Hom.Defs"
-      ],
-      "authors": [
-        "The MathCorpus Authors"
-      ],
-      "statement_fidelity": "canonical_statement_hash_match",
-      "source_sha256": null
-    },
-    {
       "packet_id": "analysis.metric_space_continuous_dist.v1",
       "source_kind": "author_written",
       "source_refs": [
@@ -2465,6 +2453,18 @@
       "source_sha256": null
     },
     {
+      "packet_id": "elementary.logic.finset_card_two_nonempty_density.v1",
+      "source_kind": "author_written",
+      "source_refs": [
+        "Mathlib.Data.Finset.Basic"
+      ],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "canonical_statement_hash_match",
+      "source_sha256": null
+    },
+    {
       "packet_id": "elementary.number_theory.add_mod.v1",
       "source_kind": "author_written",
       "source_refs": [],
@@ -3418,7 +3418,7 @@
       "source_sha256": null
     },
     {
-      "packet_id": "frontier.union_closed_three_sets.v1",
+      "packet_id": "frontier.union_closed_pair_element.v1",
       "source_kind": "author_written",
       "source_refs": [
         "Mathlib.Data.Finset.Basic"
@@ -3430,10 +3430,22 @@
       "source_sha256": null
     },
     {
+      "packet_id": "known.algebra.group_hom_kernel_normal.v1",
+      "source_kind": "author_written",
+      "source_refs": [
+        "Mathlib.Algebra.Group.Subgroup.Ker"
+      ],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "canonical_statement_hash_match",
+      "source_sha256": null
+    },
+    {
       "packet_id": "logic.functions.injective_comp_self.v1",
       "source_kind": "author_written",
       "source_refs": [
-        "Mathlib.Logic.Function.Basic"
+        "Mathlib.Order.Function.Convex"
       ],
       "authors": [
         "The MathCorpus Authors"
@@ -3803,6 +3815,18 @@
         "The MathCorpus Authors"
       ],
       "statement_fidelity": "author_written",
+      "source_sha256": null
+    },
+    {
+      "packet_id": "undergrad.algebra.group_hom_one.v1",
+      "source_kind": "author_written",
+      "source_refs": [
+        "Mathlib.Algebra.Group.Hom.Defs"
+      ],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "canonical_statement_hash_match",
       "source_sha256": null
     },
     {

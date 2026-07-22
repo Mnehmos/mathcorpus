@@ -1,59 +1,59 @@
 {
   "mcip_version": "1.0.0",
-  "bundle_id": "bundle:bab11254-b6ff-4979-a73f-b5ac1b0b3268",
+  "bundle_id": "bundle:b31a2457-17b4-4f0c-863c-c6ffae38dbee",
   "created_at": "2026-07-22T00:00:00Z",
   "producer": "llm-driven-proof-search",
   "records": [
     {
       "schema_version": "1.0.0",
       "record_type": "packet_identity",
-      "record_id": "pi.bab11254-b6ff-4979-a73f-b5ac1b0b3268",
-      "packet_id": "topology.continuous_id.v1",
+      "record_id": "pi.b31a2457-17b4-4f0c-863c-c6ffae38dbee",
+      "packet_id": "undergrad.algebra.group_hom_one.v1",
       "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
       "created_at": "2026-07-22T00:00:00Z",
       "trust_status": "kernel_verified",
       "export_eligibility": "public",
       "packet_version": "1.0.0",
-      "formal_statement_sha256": "03ed096fc7ae7becc9dfa8eb33a25ef14d0c11ecdbbc10b64be656df935029e0",
+      "formal_statement_sha256": "4cfa5bb0a39a0fa0b4685ffaa3e6962325ae87caef9aeb3d15fc2aebae42d4df",
       "status": "kernel_verified",
       "toolchain": {
         "lean_version": "v4.32.0-rc1",
         "mathlib_rev": "360da6fa66c1273b76b6b2d8c5666fd5ac2e3b56"
       },
-      "record_hash": "8a44e65fab5d324d45d6fc723a159a56a316267bd14b6870644b5359d8e39209"
+      "record_hash": "ac218bee7e900660d0ff97fbd14184632eb2bcc9e7cb933459296c3394f8c1be"
     },
     {
       "schema_version": "1.0.0",
       "record_type": "proof_variant",
-      "record_id": "pv.bab11254-b6ff-4979-a73f-b5ac1b0b3268.canonical",
-      "packet_id": "topology.continuous_id.v1",
+      "record_id": "pv.b31a2457-17b4-4f0c-863c-c6ffae38dbee.canonical",
+      "packet_id": "undergrad.algebra.group_hom_one.v1",
       "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
       "created_at": "2026-07-22T00:00:00Z",
       "trust_status": "kernel_verified",
       "export_eligibility": "public",
-      "formal_statement_sha256": "03ed096fc7ae7becc9dfa8eb33a25ef14d0c11ecdbbc10b64be656df935029e0",
+      "formal_statement_sha256": "4cfa5bb0a39a0fa0b4685ffaa3e6962325ae87caef9aeb3d15fc2aebae42d4df",
       "variant_style": "canonical",
-      "proof_body_sha256": "ff7ae3019b5357e5a6f713101829843438b8faad0a723b59f55845b24229e931",
+      "proof_body_sha256": "1aefa8c243d7c968bb67ee59e8b890b0d2290ca6c64dcbd2f6b9c7bb5b10dbb8",
       "proof_body_redacted": false,
       "tactic_count": 1,
       "proof_length": 1,
       "restriction_profile_id": null,
       "restriction_profile_hash": null,
-      "proof_profile_id": "pp.bab11254-b6ff-4979-a73f-b5ac1b0b3268.canonical",
+      "proof_profile_id": "pp.b31a2457-17b4-4f0c-863c-c6ffae38dbee.canonical",
       "model_run_id": null,
       "source": "proof_search",
-      "record_hash": "e5c14cf5f87ec4c01b42c90de7af2484a5d6ab6ef059a58d5aec57bbb1a2bde6"
+      "record_hash": "1b9d7e2cbc538557ab02ce76d72295ee97af227b3dd521fd883da99baec6ef1c"
     },
     {
       "schema_version": "1.0.0",
       "record_type": "proof_profile",
-      "record_id": "pp.bab11254-b6ff-4979-a73f-b5ac1b0b3268.canonical",
-      "packet_id": "topology.continuous_id.v1",
+      "record_id": "pp.b31a2457-17b4-4f0c-863c-c6ffae38dbee.canonical",
+      "packet_id": "undergrad.algebra.group_hom_one.v1",
       "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
       "created_at": "2026-07-22T00:00:00Z",
       "trust_status": "kernel_verified",
       "export_eligibility": "public",
-      "proof_variant_id": "pv.bab11254-b6ff-4979-a73f-b5ac1b0b3268.canonical",
+      "proof_variant_id": "pv.b31a2457-17b4-4f0c-863c-c6ffae38dbee.canonical",
       "primary_proof_class": "theorem_lookup",
       "secondary_proof_classes": [],
       "automation_level": "none",
@@ -64,36 +64,36 @@
       "uses_induction": false,
       "uses_contradiction": false,
       "uses_case_analysis": false,
-      "record_hash": "32c90ed7c1e46616a4a22f1f2697a0b7a999220842ba26e2eecb93c56bc83229"
+      "record_hash": "4394782990cdfbd9a9b6bce52f940726d7d2213ecbd2692c6b5e997fc35cba1f"
     },
     {
       "schema_version": "1.0.0",
       "record_type": "dependency_manifest",
-      "record_id": "dm.bab11254-b6ff-4979-a73f-b5ac1b0b3268",
-      "packet_id": "topology.continuous_id.v1",
+      "record_id": "dm.b31a2457-17b4-4f0c-863c-c6ffae38dbee",
+      "packet_id": "undergrad.algebra.group_hom_one.v1",
       "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
       "created_at": "2026-07-22T00:00:00Z",
       "trust_status": "kernel_verified",
       "export_eligibility": "public",
-      "proof_variant_id": "pv.bab11254-b6ff-4979-a73f-b5ac1b0b3268.canonical",
+      "proof_variant_id": "pv.b31a2457-17b4-4f0c-863c-c6ffae38dbee.canonical",
       "used_theorem_deps": [
-        "continuous_id"
+        "map_one"
       ],
       "obligation_deps": [],
       "transitive_dependency_count": 1,
       "transitive_dependency_depth": 1,
       "kits": [],
       "tactic_tags": [
-        "continuous_id"
+        "map_one"
       ],
       "prerequisite_concepts": [],
-      "record_hash": "b74133b17b0fff060cc018bca11d28ddfa761b080ba38d2f0b3b0526cadf7822"
+      "record_hash": "bac9c66f0219d130b91270cfb2c58db30cbfced00256e316facd9395503b8ab0"
     },
     {
       "schema_version": "1.0.0",
       "record_type": "attempt_record",
-      "record_id": "att.bab11254-b6ff-4979-a73f-b5ac1b0b3268.0",
-      "packet_id": "topology.continuous_id.v1",
+      "record_id": "att.b31a2457-17b4-4f0c-863c-c6ffae38dbee.0",
+      "packet_id": "undergrad.algebra.group_hom_one.v1",
       "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
       "created_at": "2026-07-22T00:00:00Z",
       "trust_status": "kernel_verified",
@@ -101,13 +101,13 @@
       "episode_id": "9b43e390-9420-4748-8fd1-2ca7917a3b97",
       "outcome": "failed",
       "diagnostic_category": "unknown_identifier",
-      "record_hash": "317ad7695ff0cd68e3dc8068381e9a8c4a44926a413f8aeae139d60bd0615a0b"
+      "record_hash": "6a4b55d64a68426d38d3feb4ad5bb92219dcc45fd456b5f997adecb17a5671e0"
     },
     {
       "schema_version": "1.0.0",
       "record_type": "attempt_record",
-      "record_id": "att.bab11254-b6ff-4979-a73f-b5ac1b0b3268.1",
-      "packet_id": "topology.continuous_id.v1",
+      "record_id": "att.b31a2457-17b4-4f0c-863c-c6ffae38dbee.1",
+      "packet_id": "undergrad.algebra.group_hom_one.v1",
       "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
       "created_at": "2026-07-22T00:00:00Z",
       "trust_status": "kernel_verified",
@@ -115,18 +115,18 @@
       "episode_id": "9b43e390-9420-4748-8fd1-2ca7917a3b97",
       "outcome": "succeeded",
       "diagnostic_category": "unsolved_goals",
-      "record_hash": "695ef38cdbb1bce1f940b8c9e527346839d8c16012d65dfc5991fc619da4defe"
+      "record_hash": "7a5c8bff203dc99e59c2765898abbb0fb0074c95265d52325a14699ad0745fb2"
     },
     {
       "schema_version": "1.0.0",
       "record_type": "negative_example",
-      "record_id": "neg.bab11254-b6ff-4979-a73f-b5ac1b0b3268.0",
-      "packet_id": "topology.continuous_id.v1",
+      "record_id": "neg.b31a2457-17b4-4f0c-863c-c6ffae38dbee.0",
+      "packet_id": "undergrad.algebra.group_hom_one.v1",
       "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
       "created_at": "2026-07-22T00:00:00Z",
       "trust_status": "kernel_verified",
       "export_eligibility": "public",
-      "attempt_id": "att.bab11254-b6ff-4979-a73f-b5ac1b0b3268.0",
+      "attempt_id": "att.b31a2457-17b4-4f0c-863c-c6ffae38dbee.0",
       "diagnostic_category": "unknown_identifier",
       "origin": "controlled_mutation",
       "proof_authority": "none",
@@ -135,18 +135,18 @@
       "can_export_diagnostics": true,
       "can_export_model_identity": false,
       "candidate_source_ref": null,
-      "record_hash": "62c56efb3284dd81ffc78da163068ba1f855a111a2fa79c19944a14c94e42d2f"
+      "record_hash": "0980eca983d766195e29adae92d5a3af5d77de1877c0a3edce288d6a845a9178"
     },
     {
       "schema_version": "1.0.0",
       "record_type": "negative_example",
-      "record_id": "neg.bab11254-b6ff-4979-a73f-b5ac1b0b3268.1",
-      "packet_id": "topology.continuous_id.v1",
+      "record_id": "neg.b31a2457-17b4-4f0c-863c-c6ffae38dbee.1",
+      "packet_id": "undergrad.algebra.group_hom_one.v1",
       "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
       "created_at": "2026-07-22T00:00:00Z",
       "trust_status": "kernel_verified",
       "export_eligibility": "public",
-      "attempt_id": "att.bab11254-b6ff-4979-a73f-b5ac1b0b3268.1",
+      "attempt_id": "att.b31a2457-17b4-4f0c-863c-c6ffae38dbee.1",
       "diagnostic_category": "unsolved_goals",
       "origin": "controlled_mutation",
       "proof_authority": "none",
@@ -155,30 +155,30 @@
       "can_export_diagnostics": true,
       "can_export_model_identity": false,
       "candidate_source_ref": null,
-      "record_hash": "9cc4fe481e2fc783a45aea44697fb739793e9a3883a3d5652279fd0c5343e65f"
+      "record_hash": "7572a09d240322e3882ecd0f7ea7dcad20615c0aaf2774d6c5d01f41a6583ef7"
     },
     {
       "schema_version": "1.0.0",
       "record_type": "repair_trajectory",
-      "record_id": "tr.bab11254-b6ff-4979-a73f-b5ac1b0b3268",
-      "packet_id": "topology.continuous_id.v1",
+      "record_id": "tr.b31a2457-17b4-4f0c-863c-c6ffae38dbee",
+      "packet_id": "undergrad.algebra.group_hom_one.v1",
       "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
       "created_at": "2026-07-22T00:00:00Z",
       "trust_status": "kernel_verified",
       "export_eligibility": "public",
       "terminal_outcome": "verified_proof",
-      "terminal_ref": "pv.bab11254-b6ff-4979-a73f-b5ac1b0b3268.canonical",
+      "terminal_ref": "pv.b31a2457-17b4-4f0c-863c-c6ffae38dbee.canonical",
       "steps": [
         {
           "step_index": 0,
-          "from_attempt_id": "att.bab11254-b6ff-4979-a73f-b5ac1b0b3268.0",
-          "to_ref": "pv.bab11254-b6ff-4979-a73f-b5ac1b0b3268.canonical",
+          "from_attempt_id": "att.b31a2457-17b4-4f0c-863c-c6ffae38dbee.0",
+          "to_ref": "pv.b31a2457-17b4-4f0c-863c-c6ffae38dbee.canonical",
           "repair_action": "revised_submission",
           "diagnostic_category_addressed": "tactic_failure",
-          "step_hash": "353f1cc005b58cdaabc0e39b7d30e0e056b372427ec5ac4561b192db9ef1f8b1"
+          "step_hash": "81ba1e3827f29bf6a7b4b9e494eb8a683d8f656552031b16a7404b981e1d081e"
         }
       ],
-      "record_hash": "945a6c4f44fc565e6c3102035e7c414e1d2256e2356202b41179acd5e201c7cb"
+      "record_hash": "064a2c929301f9419e7714c43ef49dbf9ec7df6dfb8b00e71f04edaec0d9d23a"
     }
   ]
 }

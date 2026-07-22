@@ -1,24 +1,17 @@
 {
-  "packet_count": 375,
+  "packet_count": 377,
   "split_family_counts": {
     "negative_example_only": 28,
     "private_audit_only": 2,
     "quarantined": 26,
-    "train": 319
+    "train": 321
   },
   "entries": [
-    {
-      "packet_id": "algebra.group_hom_one.v1",
-      "eligibility": "public_train",
-      "split_family": "train",
-      "template_family_id": "algebra.group_theory",
-      "dedupe_cluster_id": "algebra.group_hom_one"
-    },
     {
       "packet_id": "analysis.metric_space_continuous_dist.v1",
       "eligibility": "public_train",
       "split_family": "train",
-      "template_family_id": "analysis.metric_space",
+      "template_family_id": "analysis.metric_spaces",
       "dedupe_cluster_id": "analysis.continuous_dist"
     },
     {
@@ -1730,6 +1723,13 @@
       "dedupe_cluster_id": "inequalities.two_sq_prod"
     },
     {
+      "packet_id": "elementary.logic.finset_card_two_nonempty_density.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "logic.finsets",
+      "dedupe_cluster_id": "elementary.logic.finset_card_two_nonempty_density"
+    },
+    {
       "packet_id": "elementary.number_theory.add_mod.v1",
       "eligibility": "public_train",
       "split_family": "train",
@@ -2339,11 +2339,18 @@
       "dedupe_cluster_id": "frontier.jacobian_dim3_refutation"
     },
     {
-      "packet_id": "frontier.union_closed_three_sets.v1",
+      "packet_id": "frontier.union_closed_pair_element.v1",
       "eligibility": "public_train",
       "split_family": "train",
       "template_family_id": "frontier.combinatorics",
-      "dedupe_cluster_id": "frontier.union_closed_three_sets"
+      "dedupe_cluster_id": "frontier.union_closed_pair_element"
+    },
+    {
+      "packet_id": "known.algebra.group_hom_kernel_normal.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "algebra.group_theory",
+      "dedupe_cluster_id": "known.algebra.group_hom_kernel_normal"
     },
     {
       "packet_id": "logic.functions.injective_comp_self.v1",
@@ -2356,14 +2363,14 @@
       "packet_id": "logic.set.inter_self.v1",
       "eligibility": "public_train",
       "split_family": "train",
-      "template_family_id": "logic.set_theory",
+      "template_family_id": "logic.set_basics",
       "dedupe_cluster_id": "logic.set_inter_self"
     },
     {
       "packet_id": "measure_theory.borel_space_is_open_measurable.v1",
       "eligibility": "public_train",
       "split_family": "train",
-      "template_family_id": "measure_theory.borel",
+      "template_family_id": "measure_theory.borel_spaces",
       "dedupe_cluster_id": "measure_theory.borel_space_is_open_measurable"
     },
     {
@@ -2573,7 +2580,7 @@
       "packet_id": "topology.continuous_id.v1",
       "eligibility": "public_train",
       "split_family": "train",
-      "template_family_id": "topology.basics",
+      "template_family_id": "topology.continuous_maps",
       "dedupe_cluster_id": "topology.continuous_id"
     },
     {
@@ -2589,6 +2596,13 @@
       "split_family": "train",
       "template_family_id": "abstract_algebra.group_theory",
       "dedupe_cluster_id": "abstract_algebra.group_mul_inv_rev"
+    },
+    {
+      "packet_id": "undergrad.algebra.group_hom_one.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "algebra.group_theory",
+      "dedupe_cluster_id": "undergrad.algebra.group_hom_one"
     },
     {
       "packet_id": "undergrad.linear_algebra.smul_zero_vector.v1",
