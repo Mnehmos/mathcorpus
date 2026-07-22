@@ -334,7 +334,7 @@
     "frontier.formal_conjectures.union_closed_univ_card_two.v1",
     "frontier.jacobian.jacobian_conjecture_false_dim_three.v1",
     "measure_theory.borel_space_is_open_measurable.v1",
-    "algebra.group_hom_kernel_subgroup.v1",
+    "algebra.group_hom_one.v1",
     "fixtures.diagnostics.diagnostic_categories_conformance.v1",
     "negative.algebra.div_mul_cancel_bare_ring_no_hypothesis_failure.v1",
     "negative.algebra.frac_sum_bare_ring.missing_field_simp.v1",
@@ -377,13 +377,13 @@
     "undergrad.topology.is_open_union.v1"
   ],
   "edges": {
-    "algebra.group_hom_kernel_subgroup.v1": [
+    "algebra.group_hom_one.v1": [
       {
         "to": "group_homomorphism",
         "type": "prerequisite_concepts"
       },
       {
-        "to": "group_identity",
+        "to": "identity_element",
         "type": "prerequisite_concepts"
       }
     ],
@@ -6418,6 +6418,7 @@
         "le_max_left": 4,
         "le_max_right": 4,
         "Nat.dvd_gcd": 4,
+        "Finset.mem_filter": 4,
         "le_refl": 4,
         "exact_mod_cast": 4,
         "Filter.eventually_atTop": 4,
@@ -6435,7 +6436,6 @@
         "le_total": 3,
         "Finset.mul_sum": 3,
         "dvd_mul_left": 3,
-        "Finset.mem_filter": 3,
         "mem_uDiv": 3,
         "Nat.gcd": 3,
         "Nat.pow_right_injective": 3,
@@ -6723,6 +6723,7 @@
         "Nat.succ_ne_self": 1,
         "Nat.succ_ne_zero": 1,
         "Nat.zero_mod": 1,
+        "Finset.card_pos": 1,
         "Nat.Coprime.coprime_dvd_right": 1,
         "Nat.Coprime.mul_right": 1,
         "Nat.Coprime.pow_right": 1,
@@ -6888,7 +6889,8 @@
         "and_true": 1,
         "cancel_denoms": 1,
         "h_union_closed": 1,
-        "true_or": 1
+        "true_or": 1,
+        "map_one": 1
       },
       "verified_module_item": {
         "sq_nonneg": 29,

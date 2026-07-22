@@ -3,7 +3,7 @@ import Mathlib
 /-!
 # Group homomorphism preserves identity element
 
-Packet: `algebra.group_hom_kernel_subgroup.v1`
+Packet: `algebra.group_hom_one.v1`
 Level:  L6_known_theorem · Domain: algebra · Trust rung 1 (Lean kernel).
 
 For any group homomorphism f : G →* H, f 1 = 1.

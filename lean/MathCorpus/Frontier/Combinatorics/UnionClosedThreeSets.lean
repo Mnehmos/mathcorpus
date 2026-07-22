@@ -1,7 +1,7 @@
 import Mathlib
 
 /-!
-# Union-closed families of size at most 2 satisfy the union-closed sets condition
+# Families of finsets of size at most 2 containing a non-empty set satisfy the half-density bound
 
 Packet: `frontier.union_closed_three_sets.v1`
 Level:  L7_frontier · Domain: frontier · Trust rung 1 (Lean kernel).

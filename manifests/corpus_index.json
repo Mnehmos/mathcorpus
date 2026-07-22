@@ -35,14 +35,14 @@
   },
   "packets": [
     {
-      "packet_id": "algebra.group_hom_kernel_subgroup.v1",
+      "packet_id": "algebra.group_hom_one.v1",
       "title": "Group homomorphism preserves identity element",
       "domain": "algebra",
       "level": "L6_known_theorem",
       "kind": "theorem",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "7fc36d1a52fbc2d6aa527f5ea9d8bd2ad36d92709d87ca20aa5cd27acf15cab9"
+      "packet_sha256": "18b4d2a7217715ea435e9d2304829c1d8100bf5132c04bffb9c874fb472f45b7"
     },
     {
       "packet_id": "analysis.metric_space_continuous_dist.v1",
@@ -3366,13 +3366,13 @@
     },
     {
       "packet_id": "frontier.union_closed_three_sets.v1",
-      "title": "Union-closed families of size at most 2 satisfy the union-closed sets condition",
+      "title": "Families of finsets of size at most 2 containing a non-empty set satisfy the half-density bound",
       "domain": "frontier",
       "level": "L7_frontier",
       "kind": "theorem",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "1c929b99584848f85bbcf4d6d8b25ae0f9d17f0f957112614b4992fe995d29fb"
+      "packet_sha256": "71cf55e10b1bf1d1534d4646c0823f0a4e4358271acde4d818bfd8ea5a9dd1fd"
     },
     {
       "packet_id": "logic.functions.injective_comp_self.v1",

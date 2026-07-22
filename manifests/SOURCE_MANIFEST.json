@@ -1,7 +1,7 @@
 {
   "entries": [
     {
-      "packet_id": "algebra.group_hom_kernel_subgroup.v1",
+      "packet_id": "algebra.group_hom_one.v1",
       "source_kind": "author_written",
       "source_refs": [
         "Mathlib.Algebra.Group.Hom.Defs"

@@ -1,5 +1,5 @@
 {
-  "packet_id": "algebra.group_hom_kernel_subgroup.v1",
+  "packet_id": "algebra.group_hom_one.v1",
   "packet_version": "1.0.0",
   "title": "Group homomorphism preserves identity element",
   "domain": "algebra",
@@ -51,7 +51,7 @@
       "unredacted"
     ],
     "dedupe_cluster_id": "algebra.group_hom_one",
-    "template_family_id": "algebra.group_hom",
+    "template_family_id": "algebra.group_theory",
     "contamination_risk": "low",
     "can_export_proof_body": true
   },
@@ -62,12 +62,12 @@
     ],
     "prerequisite_concepts": [
       "group_homomorphism",
-      "group_identity"
+      "identity_element"
     ]
   },
   "metrics": {
-    "loc": 3,
-    "tactic_count": 1
+    "loc": 4,
+    "tactic_count": 2
   },
   "artifacts": {
     "public_files": [
@@ -82,7 +82,7 @@
     "verifier": "proofsearch",
     "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
     "episode_id": "7045be23-4f9a-4ecf-aa69-cb2862753e9c",
-    "root_statement_sha256": "3b356c61fd06a83d34a8ffa1f6afbce4de23fd486479ec2ea0f956b866d2eb49",
+    "root_statement_sha256": "4cfa5bb0a39a0fa0b4685ffaa3e6962325ae87caef9aeb3d15fc2aebae42d4df",
     "outcome": "kernel_verified",
     "kernel_verified": true,
     "fidelity_status": "attested",
@@ -91,49 +91,29 @@
   },
   "notes": "Verified through tracked proof-search episode 7045be23-4f9a-4ecf-aa69-cb2862753e9c.",
   "hashes": {
-    "packet_sha256": "7fc36d1a52fbc2d6aa527f5ea9d8bd2ad36d92709d87ca20aa5cd27acf15cab9",
+    "packet_sha256": "18b4d2a7217715ea435e9d2304829c1d8100bf5132c04bffb9c874fb472f45b7",
     "formal_statement_sha256": "159b651506c78ccb046e16c92fc7913eed25f049087c9a7cc9245b1a9ef190a6",
-    "proof_body_sha256": "4b24dc974044e2cd6a2d74f27a0655177b521bd9ad721b6c40f3f6eceacd6b96"
+    "proof_body_sha256": "f6dd06f32ff016b0567167ef105f7c01fbd5c29145d103aa891c1f16793f22f5"
   },
   "dependency_manifest": {
     "obligation_deps": [],
     "transitive_dependency_count": 0,
     "transitive_dependency_depth": 0,
-    "used_theorem_deps": []
+    "used_theorem_deps": [
+      "map_one"
+    ]
   },
-  "negative_examples": [
-    {
-      "negative_id": "b31a2457-17b4-4f0c-863c-c6ffae38dbee:negative:0",
-      "attempt_id": "b31a2457-17b4-4f0c-863c-c6ffae38dbee:attempt:0",
-      "can_export_diagnostics": true,
-      "can_export_metadata": true,
-      "can_export_model_identity": false,
-      "can_export_proof_text": false,
-      "candidate_source_ref": null,
-      "diagnostic_category": "tactic_failure",
-      "origin": "controlled_mutation",
-      "proof_authority": "none"
-    }
-  ],
-  "attempts": [
-    {
-      "attempt_id": "b31a2457-17b4-4f0c-863c-c6ffae38dbee:attempt:0",
-      "diagnostic_category": null,
-      "episode_id": "7045be23-4f9a-4ecf-aa69-cb2862753e9c",
-      "outcome": "succeeded"
-    }
-  ],
   "proof_variants": [
     {
       "variant_id": "pv.b31a2457-17b4-4f0c-863c-c6ffae38dbee.canonical",
       "variant_style": "canonical",
-      "formal_statement_sha256": "3b356c61fd06a83d34a8ffa1f6afbce4de23fd486479ec2ea0f956b866d2eb49",
+      "formal_statement_sha256": "4cfa5bb0a39a0fa0b4685ffaa3e6962325ae87caef9aeb3d15fc2aebae42d4df",
       "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
       "proof_body_path": "lean/MathCorpus/Known/Algebra/GroupHomOne.lean",
-      "proof_body_sha256": "4b24dc974044e2cd6a2d74f27a0655177b521bd9ad721b6c40f3f6eceacd6b96",
+      "proof_body_sha256": "f6dd06f32ff016b0567167ef105f7c01fbd5c29145d103aa891c1f16793f22f5",
       "proof_body_redacted": false,
       "tactic_count": 2,
-      "proof_length": 2,
+      "proof_length": 4,
       "proof_profile": {
         "primary_proof_class": "theorem_lookup",
         "secondary_proof_classes": [],
