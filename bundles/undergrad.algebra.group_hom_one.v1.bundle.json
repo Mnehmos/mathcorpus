@@ -1,0 +1,188 @@
+{
+  "bundle_id": "bundle:b31a2457-17b4-4f0c-863c-c6ffae38dbee",
+  "created_at": "2026-07-23T14:17:14Z",
+  "mcip_version": "1.0.0",
+  "producer": "llm-driven-proof-search",
+  "records": [
+    {
+      "created_at": "2026-07-23T14:17:14Z",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "export_eligibility": "restricted",
+      "formal_statement_sha256": "3b356c61fd06a83d34a8ffa1f6afbce4de23fd486479ec2ea0f956b866d2eb49",
+      "packet_id": "undergrad.algebra.group_hom_one.v1",
+      "packet_version": "1.0.0",
+      "record_hash": "cddcb420b22040d6a048a18c23b6d33e7acd2c163d5739f148ab7d00c9c4df6a",
+      "record_id": "pi.b31a2457-17b4-4f0c-863c-c6ffae38dbee",
+      "record_type": "packet_identity",
+      "schema_version": "1.0.0",
+      "status": "kernel_verified",
+      "toolchain": {
+        "lean_version": "unknown",
+        "mathlib_rev": "unknown"
+      },
+      "trust_status": "kernel_verified"
+    },
+    {
+      "created_at": "2026-07-23T14:17:14Z",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "export_eligibility": "restricted",
+      "formal_statement_sha256": "3b356c61fd06a83d34a8ffa1f6afbce4de23fd486479ec2ea0f956b866d2eb49",
+      "packet_id": "undergrad.algebra.group_hom_one.v1",
+      "proof_body_redacted": false,
+      "proof_profile_id": "pv.b31a2457-17b4-4f0c-863c-c6ffae38dbee.canonical",
+      "record_hash": "5d3c85c2a38d0c536d751b9f5f13129894bde130f98585cd9a5d796327cc72ea",
+      "record_id": "pv.b31a2457-17b4-4f0c-863c-c6ffae38dbee.canonical",
+      "record_type": "proof_variant",
+      "schema_version": "1.0.0",
+      "source": "proof_search",
+      "trust_status": "kernel_verified",
+      "variant_style": "canonical"
+    },
+    {
+      "automation_level": "none",
+      "branch_count": 0,
+      "created_at": "2026-07-23T14:17:14Z",
+      "dependency_composition_depth": 0,
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "export_eligibility": "restricted",
+      "packet_id": "undergrad.algebra.group_hom_one.v1",
+      "primary_proof_class": "theorem_lookup",
+      "proof_variant_id": "pv.b31a2457-17b4-4f0c-863c-c6ffae38dbee.canonical",
+      "record_hash": "e1fb3ce5aa38dc19f8c9cada5384dc9de7e86834479cf73de71b37f5eb5c2896",
+      "record_id": "pp.b31a2457-17b4-4f0c-863c-c6ffae38dbee",
+      "record_type": "proof_profile",
+      "retrieval_depth": 0,
+      "schema_version": "1.0.0",
+      "trust_status": "kernel_verified",
+      "uses_case_analysis": false,
+      "uses_contradiction": false,
+      "uses_induction": false,
+      "uses_witness_invention": false
+    },
+    {
+      "created_at": "2026-07-23T14:17:14Z",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "export_eligibility": "restricted",
+      "obligation_deps": [],
+      "packet_id": "undergrad.algebra.group_hom_one.v1",
+      "proof_variant_id": "pv.b31a2457-17b4-4f0c-863c-c6ffae38dbee.canonical",
+      "record_hash": "f1015a297ace236105545df00c07852013e48ef6f01a28e6e7d1efc11afa78a0",
+      "record_id": "dm.b31a2457-17b4-4f0c-863c-c6ffae38dbee",
+      "record_type": "dependency_manifest",
+      "schema_version": "1.0.0",
+      "tactic_tags": [],
+      "transitive_dependency_count": 0,
+      "transitive_dependency_depth": 0,
+      "trust_status": "kernel_verified",
+      "used_theorem_deps": []
+    },
+    {
+      "created_at": "2026-07-23T14:17:14Z",
+      "diagnostic_category": null,
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "episode_id": "7045be23-4f9a-4ecf-aa69-cb2862753e9c",
+      "export_eligibility": "restricted",
+      "outcome": "succeeded",
+      "packet_id": "undergrad.algebra.group_hom_one.v1",
+      "record_hash": "5eb689f8553fe91b0d848ced81c7c807ba7d340089375aeb4538147b5021e210",
+      "record_id": "ar.7d8208f0-fb40-4a2a-a65a-25f0a9867687",
+      "record_type": "attempt_record",
+      "schema_version": "1.0.0",
+      "trust_status": "kernel_verified"
+    },
+    {
+      "attempt_id": "ar.7d8208f0-fb40-4a2a-a65a-25f0a9867687",
+      "can_export_diagnostics": true,
+      "can_export_metadata": true,
+      "can_export_model_identity": false,
+      "can_export_proof_text": false,
+      "candidate_source_ref": null,
+      "created_at": "2026-07-23T14:17:14Z",
+      "diagnostic_category": "unsolved_goals",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "export_eligibility": "restricted",
+      "origin": "controlled_mutation",
+      "packet_id": "undergrad.algebra.group_hom_one.v1",
+      "proof_authority": "none",
+      "record_hash": "5e435b9bf70c545c92681c2b4202e353f33f9d2f01f55a3a726ef3b4317b993e",
+      "record_id": "neg.b31a2457-17b4-4f0c-863c-c6ffae38dbee.0",
+      "record_type": "negative_example",
+      "schema_version": "1.0.0",
+      "trust_status": "kernel_verified"
+    },
+    {
+      "action": {
+        "proof_format": "flat_tactic_sequence",
+        "proof_term": "intro G H instG instH f; exact map_one f",
+        "type": "solve"
+      },
+      "action_space_version": null,
+      "cost": null,
+      "created_at": "2026-07-23T14:17:14Z",
+      "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+      "episode_id": "7045be23-4f9a-4ecf-aa69-cb2862753e9c",
+      "export_eligibility": "restricted",
+      "formal_statement_sha256": "3b356c61fd06a83d34a8ffa1f6afbce4de23fd486479ec2ea0f956b866d2eb49",
+      "lean_cpu_time_ms": null,
+      "model_config_hash": null,
+      "next_state": {
+        "artifact_hash": null,
+        "inline": {
+          "observation": {
+            "state_hash": "28cca6776e79dd4d148e150e6a83e313df0581849ba1e5f87d1c2ad93cc33695",
+            "unavailable": true
+          },
+          "state_hash": "28cca6776e79dd4d148e150e6a83e313df0581849ba1e5f87d1c2ad93cc33695"
+        }
+      },
+      "observation_space_version": null,
+      "outcome": "kernel_verified",
+      "packet_id": "undergrad.algebra.group_hom_one.v1",
+      "problem_version_id": "5c9c9a73-8758-4290-b07d-b4a801368c57",
+      "record_hash": "9e8d353133a87b6622f8a3f923dd109a2d6fa3e50c2cad2b2a2c3dd42efba61b",
+      "record_id": "tr.7045be23-4f9a-4ecf-aa69-cb2862753e9c.0",
+      "record_type": "rl_transition",
+      "restriction_profile_hash": null,
+      "restriction_profile_id": null,
+      "reward": 2.49,
+      "reward_policy_version": "1.0",
+      "schema_version": "1.0.0",
+      "state": {
+        "artifact_hash": null,
+        "inline": {
+          "observation": {
+            "budget": {
+              "bytes_per_token": 4,
+              "included_bytes": 337,
+              "max_observation_bytes": 16000,
+              "omitted_bytes": 0,
+              "referenced_bytes": 0,
+              "truncated": false
+            },
+            "direct_dependencies": [],
+            "direct_dependency_signatures": [],
+            "distilled_lesson": null,
+            "env_id": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+            "import_manifest_hash": "aaf21893d520a78dee0787a1bcaf939ee6b922265ff670c272e2e1d450dd29a7",
+            "latest_diagnostic": null,
+            "obligation_signature": "theorem root_theorem : ∀ {G H : Type*} [Group G] [Group H] (f : G →* H), f 1 = 1",
+            "obligation_statement_hash": "2a49922083b31f697cca5b3fde73c558b9b4931811cfb731bf8009d023e8056b",
+            "references": [],
+            "retrieved_hint": null,
+            "root_theorem_signature": "∀ {G H : Type*} [Group G] [Group H] (f : G →* H), f 1 = 1"
+          },
+          "state_hash": "e2542053061d8af2838c397280f4d51b76c5698fb18bc40d0cbc9cd7aa3a9b9e"
+        }
+      },
+      "step_index": 0,
+      "terminated": true,
+      "termination_reason": null,
+      "tokens": null,
+      "truncated": false,
+      "truncation_reason": null,
+      "trust_status": "kernel_verified",
+      "verifier_version": null,
+      "wall_time_ms": null
+    }
+  ]
+}

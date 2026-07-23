@@ -79,7 +79,7 @@
     "verifier": "proofsearch",
     "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
     "episode_id": "1c7b97ba-e47a-46f9-bb43-0f8ea2c80c03",
-    "root_statement_sha256": "48b7f7390f701c90bdc9d2f2b3fc28d3e91557bf807b1a9e7ea818fc84c8a245",
+    "root_statement_sha256": "14c0606fb3a72a6ead9b344b98b423b63a0291ad1d1e818a5acd06ec89ce8501",
     "outcome": "kernel_verified",
     "kernel_verified": true,
     "fidelity_status": "attested",
@@ -88,100 +88,270 @@
   },
   "notes": "Verified through tracked proof-search episode 1c7b97ba-e47a-46f9-bb43-0f8ea2c80c03.",
   "hashes": {
-    "packet_sha256": "bfed246b600e8877472bdfd7b1029710f2e436b9ada46d70393f331d68529879",
+    "packet_sha256": "46dccf5045a9a19539dda5fb97ba00d209afdcadc508c7106ff9ec475bf80741",
     "formal_statement_sha256": "1985596d60a09485cd40de73108209c0608a6bf41efc6f7f8011fb4fa5f90a35",
     "proof_body_sha256": "3ebcf24558f0e59330776ccfc0817dac95d7c928f4b1c356fb5e6bbc628140a6"
   },
   "proof_variants": [
     {
       "variant_id": "pv.db8dab20-05f1-4028-a1da-5f67fd83cf98.canonical",
-      "formal_statement_sha256": "48b7f7390f701c90bdc9d2f2b3fc28d3e91557bf807b1a9e7ea818fc84c8a245",
-      "variant_style": "canonical",
-      "proof_body_sha256": "3ebcf24558f0e59330776ccfc0817dac95d7c928f4b1c356fb5e6bbc628140a6",
+      "formal_statement_sha256": "14c0606fb3a72a6ead9b344b98b423b63a0291ad1d1e818a5acd06ec89ce8501",
       "proof_body_redacted": false,
-      "tactic_count": 1,
-      "proof_length": 1,
-      "restriction_profile_id": null,
-      "model_run_id": null,
       "source": "proof_search",
-      "restriction_profile_sha256": null,
+      "variant_style": "canonical",
       "proof_profile": {
-        "primary_proof_class": "theorem_lookup",
-        "secondary_proof_classes": [],
-        "automation_level": "none",
-        "retrieval_depth": 0,
+        "automation_level": "fully_automated",
         "branch_count": 0,
         "dependency_composition_depth": 0,
-        "uses_witness_invention": false,
-        "uses_induction": false,
+        "primary_proof_class": "induction",
+        "retrieval_depth": 0,
+        "secondary_proof_classes": [
+          "arithmetic_automation"
+        ],
+        "uses_case_analysis": false,
         "uses_contradiction": false,
-        "uses_case_analysis": false
+        "uses_induction": true,
+        "uses_witness_invention": false
       }
     }
   ],
   "dependency_manifest": {
-    "used_theorem_deps": [
-      "Nat.factorial"
-    ],
     "obligation_deps": [],
-    "transitive_dependency_count": 1,
-    "transitive_dependency_depth": 1
+    "transitive_dependency_count": 0,
+    "transitive_dependency_depth": 0,
+    "used_theorem_deps": []
   },
   "attempts": [
     {
-      "attempt_id": "att.db8dab20-05f1-4028-a1da-5f67fd83cf98.0",
-      "episode_id": "9b43e390-9420-4748-8fd1-2ca7917a3b97",
-      "outcome": "failed",
-      "diagnostic_category": "unknown_identifier"
+      "attempt_id": "ar.a45c3ca9-65c6-4431-a47a-76a2e86a4b8a",
+      "diagnostic_category": "tactic_failure",
+      "episode_id": "1c7b97ba-e47a-46f9-bb43-0f8ea2c80c03",
+      "outcome": "failed"
     },
     {
-      "attempt_id": "att.db8dab20-05f1-4028-a1da-5f67fd83cf98.1",
-      "episode_id": "9b43e390-9420-4748-8fd1-2ca7917a3b97",
-      "outcome": "succeeded",
-      "diagnostic_category": "unsolved_goals"
+      "attempt_id": "ar.2379cb69-aa58-4641-afc6-9f5e1e01374a",
+      "diagnostic_category": "tactic_failure",
+      "episode_id": "1c7b97ba-e47a-46f9-bb43-0f8ea2c80c03",
+      "outcome": "failed"
+    },
+    {
+      "attempt_id": "ar.e392d738-3e8a-4c50-a2e1-7e63490c2bc2",
+      "diagnostic_category": "tactic_failure",
+      "episode_id": "1c7b97ba-e47a-46f9-bb43-0f8ea2c80c03",
+      "outcome": "failed"
+    },
+    {
+      "attempt_id": "ar.b5ab011c-884c-4304-abd7-e79e874cc094",
+      "diagnostic_category": "tactic_failure",
+      "episode_id": "1c7b97ba-e47a-46f9-bb43-0f8ea2c80c03",
+      "outcome": "failed"
+    },
+    {
+      "attempt_id": "ar.6faf5b0e-37e2-483c-8460-67dacc0beb28",
+      "diagnostic_category": "tactic_failure",
+      "episode_id": "1c7b97ba-e47a-46f9-bb43-0f8ea2c80c03",
+      "outcome": "failed"
+    },
+    {
+      "attempt_id": "ar.2d1dadfe-494c-4b0f-97c4-a7e61e907cbc",
+      "diagnostic_category": "tactic_failure",
+      "episode_id": "1c7b97ba-e47a-46f9-bb43-0f8ea2c80c03",
+      "outcome": "failed"
+    },
+    {
+      "attempt_id": "ar.f9a2dd5f-ac20-44cd-bb69-ca9f5f7b91f2",
+      "diagnostic_category": "parse_error",
+      "episode_id": "1c7b97ba-e47a-46f9-bb43-0f8ea2c80c03",
+      "outcome": "failed"
+    },
+    {
+      "attempt_id": "ar.730ad7db-e5e3-40e4-aaf7-dc40018e5ab4",
+      "diagnostic_category": "tactic_failure",
+      "episode_id": "1c7b97ba-e47a-46f9-bb43-0f8ea2c80c03",
+      "outcome": "failed"
+    },
+    {
+      "attempt_id": "ar.ff464b68-bd10-4468-8c8d-f62e3ff6a8e1",
+      "diagnostic_category": "tactic_failure",
+      "episode_id": "1c7b97ba-e47a-46f9-bb43-0f8ea2c80c03",
+      "outcome": "failed"
+    },
+    {
+      "attempt_id": "ar.59672f5a-1877-4d46-8d62-d8f2411b6e77",
+      "diagnostic_category": "tactic_failure",
+      "episode_id": "1c7b97ba-e47a-46f9-bb43-0f8ea2c80c03",
+      "outcome": "failed"
+    },
+    {
+      "attempt_id": "ar.8750b8f3-e692-4b7e-8946-4b78a7fc2f0c",
+      "diagnostic_category": "tactic_failure",
+      "episode_id": "1c7b97ba-e47a-46f9-bb43-0f8ea2c80c03",
+      "outcome": "failed"
+    },
+    {
+      "attempt_id": "ar.69abe249-e3d4-40b5-a8a2-c8cd24b6c0fa",
+      "diagnostic_category": null,
+      "episode_id": "1c7b97ba-e47a-46f9-bb43-0f8ea2c80c03",
+      "outcome": "succeeded"
     }
   ],
   "negative_examples": [
     {
       "negative_id": "neg.db8dab20-05f1-4028-a1da-5f67fd83cf98.0",
-      "attempt_id": "att.db8dab20-05f1-4028-a1da-5f67fd83cf98.0",
+      "attempt_id": "ar.69abe249-e3d4-40b5-a8a2-c8cd24b6c0fa",
+      "can_export_diagnostics": true,
+      "can_export_metadata": true,
+      "can_export_model_identity": false,
+      "can_export_proof_text": false,
+      "candidate_source_ref": null,
       "diagnostic_category": "unknown_identifier",
       "origin": "controlled_mutation",
-      "proof_authority": "none",
-      "can_export_proof_text": false,
-      "can_export_metadata": true,
-      "can_export_diagnostics": true,
-      "can_export_model_identity": false,
-      "candidate_source_ref": null
+      "proof_authority": "none"
     },
     {
       "negative_id": "neg.db8dab20-05f1-4028-a1da-5f67fd83cf98.1",
-      "attempt_id": "att.db8dab20-05f1-4028-a1da-5f67fd83cf98.1",
+      "attempt_id": "ar.69abe249-e3d4-40b5-a8a2-c8cd24b6c0fa",
+      "can_export_diagnostics": true,
+      "can_export_metadata": true,
+      "can_export_model_identity": false,
+      "can_export_proof_text": false,
+      "candidate_source_ref": null,
+      "diagnostic_category": "kernel_fail",
+      "origin": "controlled_mutation",
+      "proof_authority": "none"
+    },
+    {
+      "negative_id": "neg.db8dab20-05f1-4028-a1da-5f67fd83cf98.2",
+      "attempt_id": "ar.69abe249-e3d4-40b5-a8a2-c8cd24b6c0fa",
+      "can_export_diagnostics": true,
+      "can_export_metadata": true,
+      "can_export_model_identity": false,
+      "can_export_proof_text": false,
+      "candidate_source_ref": null,
+      "diagnostic_category": "kernel_fail",
+      "origin": "controlled_mutation",
+      "proof_authority": "none"
+    },
+    {
+      "negative_id": "neg.db8dab20-05f1-4028-a1da-5f67fd83cf98.3",
+      "attempt_id": "ar.69abe249-e3d4-40b5-a8a2-c8cd24b6c0fa",
+      "can_export_diagnostics": true,
+      "can_export_metadata": true,
+      "can_export_model_identity": false,
+      "can_export_proof_text": false,
+      "candidate_source_ref": null,
+      "diagnostic_category": "parse_error",
+      "origin": "controlled_mutation",
+      "proof_authority": "none"
+    },
+    {
+      "negative_id": "neg.db8dab20-05f1-4028-a1da-5f67fd83cf98.4",
+      "attempt_id": "ar.69abe249-e3d4-40b5-a8a2-c8cd24b6c0fa",
+      "can_export_diagnostics": true,
+      "can_export_metadata": true,
+      "can_export_model_identity": false,
+      "can_export_proof_text": false,
+      "candidate_source_ref": null,
       "diagnostic_category": "unsolved_goals",
       "origin": "controlled_mutation",
-      "proof_authority": "none",
-      "can_export_proof_text": false,
-      "can_export_metadata": true,
-      "can_export_diagnostics": true,
-      "can_export_model_identity": false,
-      "candidate_source_ref": null
+      "proof_authority": "none"
     }
   ],
   "repair_trajectories": [
     {
-      "trajectory_id": "tr.db8dab20-05f1-4028-a1da-5f67fd83cf98",
-      "terminal_outcome": "verified_proof",
-      "terminal_ref": "pv.db8dab20-05f1-4028-a1da-5f67fd83cf98.canonical",
+      "trajectory_id": "rt.db8dab20-05f1-4028-a1da-5f67fd83cf98",
       "steps": [
         {
-          "step_index": 0,
-          "from_attempt_id": "att.db8dab20-05f1-4028-a1da-5f67fd83cf98.0",
-          "to_ref": "pv.db8dab20-05f1-4028-a1da-5f67fd83cf98.canonical",
-          "repair_action": "revised_submission",
           "diagnostic_category_addressed": "tactic_failure",
-          "step_hash": "3438af8fc68ddf5ce4f5099eb038c7a3f7138c20bb0daa205e1182522a839512"
+          "from_attempt_id": "ar.a45c3ca9-65c6-4431-a47a-76a2e86a4b8a",
+          "repair_action": "revised_submission",
+          "step_hash": "81d7f462ed49291a47a64cc6f4062cfd4dce654e34288fdba76d9fcd55ff1792",
+          "step_index": 0,
+          "to_ref": "ar.2379cb69-aa58-4641-afc6-9f5e1e01374a"
+        },
+        {
+          "diagnostic_category_addressed": "tactic_failure",
+          "from_attempt_id": "ar.2379cb69-aa58-4641-afc6-9f5e1e01374a",
+          "repair_action": "revised_submission",
+          "step_hash": "b8da5fdc3941e5ecf88aa0684d5a1ef561ecad589c8551aef9573d7dbd514a9a",
+          "step_index": 1,
+          "to_ref": "ar.e392d738-3e8a-4c50-a2e1-7e63490c2bc2"
+        },
+        {
+          "diagnostic_category_addressed": "tactic_failure",
+          "from_attempt_id": "ar.e392d738-3e8a-4c50-a2e1-7e63490c2bc2",
+          "repair_action": "revised_submission",
+          "step_hash": "f7146696bc8574003d26503877239d2e435160d1ffacdc0ebbe99066e756476f",
+          "step_index": 2,
+          "to_ref": "ar.b5ab011c-884c-4304-abd7-e79e874cc094"
+        },
+        {
+          "diagnostic_category_addressed": "tactic_failure",
+          "from_attempt_id": "ar.b5ab011c-884c-4304-abd7-e79e874cc094",
+          "repair_action": "revised_submission",
+          "step_hash": "886edfd7b1730af1b0b723f7a1bfb728c25859913e975377213c70d1135d31d5",
+          "step_index": 3,
+          "to_ref": "ar.6faf5b0e-37e2-483c-8460-67dacc0beb28"
+        },
+        {
+          "diagnostic_category_addressed": "tactic_failure",
+          "from_attempt_id": "ar.6faf5b0e-37e2-483c-8460-67dacc0beb28",
+          "repair_action": "revised_submission",
+          "step_hash": "b55214a16bded2002d12c9784c3cee18f4db33b21006eaeca38ea9a9fadbc1d6",
+          "step_index": 4,
+          "to_ref": "ar.2d1dadfe-494c-4b0f-97c4-a7e61e907cbc"
+        },
+        {
+          "diagnostic_category_addressed": "tactic_failure",
+          "from_attempt_id": "ar.2d1dadfe-494c-4b0f-97c4-a7e61e907cbc",
+          "repair_action": "revised_submission",
+          "step_hash": "12793c9d2b48fab55dbb28bcdb10dd6024147ff68c45035b9d39701b721e2264",
+          "step_index": 5,
+          "to_ref": "ar.f9a2dd5f-ac20-44cd-bb69-ca9f5f7b91f2"
+        },
+        {
+          "diagnostic_category_addressed": "parse_error",
+          "from_attempt_id": "ar.f9a2dd5f-ac20-44cd-bb69-ca9f5f7b91f2",
+          "repair_action": "revised_submission",
+          "step_hash": "b507d20d05edac39fcd710bb548f3205a273df2f2191580fedf50a429a9b55b6",
+          "step_index": 6,
+          "to_ref": "ar.730ad7db-e5e3-40e4-aaf7-dc40018e5ab4"
+        },
+        {
+          "diagnostic_category_addressed": "tactic_failure",
+          "from_attempt_id": "ar.730ad7db-e5e3-40e4-aaf7-dc40018e5ab4",
+          "repair_action": "revised_submission",
+          "step_hash": "2c053298edaf8bc4b9ddce6ef59d9db259f47fd78e83808db201d4a0502056c3",
+          "step_index": 7,
+          "to_ref": "ar.ff464b68-bd10-4468-8c8d-f62e3ff6a8e1"
+        },
+        {
+          "diagnostic_category_addressed": "tactic_failure",
+          "from_attempt_id": "ar.ff464b68-bd10-4468-8c8d-f62e3ff6a8e1",
+          "repair_action": "revised_submission",
+          "step_hash": "86e7f3e570530bbfee28f462bf5a3f5fd95ba0b87edf21033fc0be25669ed228",
+          "step_index": 8,
+          "to_ref": "ar.59672f5a-1877-4d46-8d62-d8f2411b6e77"
+        },
+        {
+          "diagnostic_category_addressed": "tactic_failure",
+          "from_attempt_id": "ar.59672f5a-1877-4d46-8d62-d8f2411b6e77",
+          "repair_action": "revised_submission",
+          "step_hash": "d8c30d0808da48763c163251ebfdaa1702b1898f3536709d4efbb565520ff9d6",
+          "step_index": 9,
+          "to_ref": "ar.8750b8f3-e692-4b7e-8946-4b78a7fc2f0c"
+        },
+        {
+          "diagnostic_category_addressed": "tactic_failure",
+          "from_attempt_id": "ar.8750b8f3-e692-4b7e-8946-4b78a7fc2f0c",
+          "repair_action": "revised_submission",
+          "step_hash": "6411187fce152f1f0e2b4185f567fe6382799c02d0d6372c5a771222e9e935a1",
+          "step_index": 10,
+          "to_ref": "ar.69abe249-e3d4-40b5-a8a2-c8cd24b6c0fa"
         }
-      ]
+      ],
+      "terminal_outcome": "verified_proof",
+      "terminal_ref": "pv.db8dab20-05f1-4028-a1da-5f67fd83cf98.canonical"
     }
   ]
 }

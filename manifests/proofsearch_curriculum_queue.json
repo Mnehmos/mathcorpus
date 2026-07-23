@@ -12,8 +12,13 @@
       "kind": "theorem",
       "statement_informal": "For any set s, s ∩ s = s.",
       "statement_formal_pp": "∀ {α : Type*} (s : Set α), s ∩ s = s",
-      "concepts_introduced": ["set_intersection", "idempotency"],
-      "theorem_or_definition_dependencies": ["Set.inter_self"],
+      "concepts_introduced": [
+        "set_intersection",
+        "idempotency"
+      ],
+      "theorem_or_definition_dependencies": [
+        "Set.inter_self"
+      ],
       "expected_mathlib_support": "full",
       "current_corpus_coverage": "covered",
       "dedupe_cluster_id": "logic.set_inter_self",
@@ -34,8 +39,13 @@
       "kind": "theorem",
       "statement_informal": "If f is injective, then f ∘ f is injective.",
       "statement_formal_pp": "∀ {α : Type*} (f : α → α), Function.Injective f → Function.Injective (f ∘ f)",
-      "concepts_introduced": ["injective_function", "function_composition"],
-      "theorem_or_definition_dependencies": ["Function.Injective.comp"],
+      "concepts_introduced": [
+        "injective_function",
+        "function_composition"
+      ],
+      "theorem_or_definition_dependencies": [
+        "Function.Injective.comp"
+      ],
       "expected_mathlib_support": "full",
       "current_corpus_coverage": "covered",
       "dedupe_cluster_id": "logic.injective_comp_self",
@@ -56,8 +66,14 @@
       "kind": "theorem",
       "statement_informal": "A non-empty family of finsets of size <= 2 containing a non-empty set has an element in at least half of the sets.",
       "statement_formal_pp": "∀ {α : Type*} [DecidableEq α] (F : Finset (Finset α)), F.Nonempty → F.card ≤ 2 → (∃ s ∈ F, s.Nonempty) → ∃ x, 2 * (F.filter (fun s => x ∈ s)).card ≥ F.card",
-      "concepts_introduced": ["finset_cardinality", "finset_filter"],
-      "theorem_or_definition_dependencies": ["Finset.mem_filter", "Finset.card_pos"],
+      "concepts_introduced": [
+        "finset_cardinality",
+        "finset_filter"
+      ],
+      "theorem_or_definition_dependencies": [
+        "Finset.mem_filter",
+        "Finset.card_pos"
+      ],
       "expected_mathlib_support": "full",
       "current_corpus_coverage": "covered",
       "dedupe_cluster_id": "elementary.logic.finset_card_two_nonempty_density",
@@ -78,8 +94,13 @@
       "kind": "theorem",
       "statement_informal": "For n >= 4, 2^n <= n!.",
       "statement_formal_pp": "∀ (n : ℕ), 4 ≤ n → 2 ^ n ≤ Nat.factorial n",
-      "concepts_introduced": ["mathematical_induction", "factorial_bounds"],
-      "theorem_or_definition_dependencies": ["Nat.factorial"],
+      "concepts_introduced": [
+        "mathematical_induction",
+        "factorial_bounds"
+      ],
+      "theorem_or_definition_dependencies": [
+        "Nat.factorial"
+      ],
       "expected_mathlib_support": "full",
       "current_corpus_coverage": "covered",
       "dedupe_cluster_id": "number_theory.two_pow_le_factorial_four",
@@ -100,8 +121,13 @@
       "kind": "theorem",
       "statement_informal": "The identity map on a topological space is continuous.",
       "statement_formal_pp": "∀ {α : Type*} [TopologicalSpace α], Continuous (id : α → α)",
-      "concepts_introduced": ["topological_space", "continuous_map"],
-      "theorem_or_definition_dependencies": ["continuous_id"],
+      "concepts_introduced": [
+        "topological_space",
+        "continuous_map"
+      ],
+      "theorem_or_definition_dependencies": [
+        "continuous_id"
+      ],
       "expected_mathlib_support": "full",
       "current_corpus_coverage": "covered",
       "dedupe_cluster_id": "topology.continuous_id",
@@ -122,8 +148,13 @@
       "kind": "theorem",
       "statement_informal": "For any group homomorphism f : G →* H, f 1 = 1.",
       "statement_formal_pp": "∀ {G H : Type*} [Group G] [Group H] (f : G →* H), f 1 = 1",
-      "concepts_introduced": ["group_homomorphism", "identity_preservation"],
-      "theorem_or_definition_dependencies": ["map_one"],
+      "concepts_introduced": [
+        "group_homomorphism",
+        "identity_preservation"
+      ],
+      "theorem_or_definition_dependencies": [
+        "map_one"
+      ],
       "expected_mathlib_support": "full",
       "current_corpus_coverage": "covered",
       "dedupe_cluster_id": "undergrad.algebra.group_hom_one",
@@ -144,8 +175,13 @@
       "kind": "theorem",
       "statement_informal": "The function x ↦ dist x p is continuous on a metric space.",
       "statement_formal_pp": "∀ {X : Type*} [MetricSpace X] (p : X), Continuous (fun x => dist x p)",
-      "concepts_introduced": ["metric_space", "distance_continuity"],
-      "theorem_or_definition_dependencies": ["continuous_id.dist"],
+      "concepts_introduced": [
+        "metric_space",
+        "distance_continuity"
+      ],
+      "theorem_or_definition_dependencies": [
+        "continuous_id.dist"
+      ],
       "expected_mathlib_support": "full",
       "current_corpus_coverage": "covered",
       "dedupe_cluster_id": "analysis.continuous_dist",
@@ -166,8 +202,13 @@
       "kind": "theorem",
       "statement_informal": "Every open set in a Borel space is measurable.",
       "statement_formal_pp": "∀ {α : Type*} [TopologicalSpace α] [MeasurableSpace α] [BorelSpace α] {s : Set α}, IsOpen s → MeasurableSet s",
-      "concepts_introduced": ["borel_space", "measurable_set"],
-      "theorem_or_definition_dependencies": ["IsOpen.measurableSet"],
+      "concepts_introduced": [
+        "borel_space",
+        "measurable_set"
+      ],
+      "theorem_or_definition_dependencies": [
+        "IsOpen.measurableSet"
+      ],
       "expected_mathlib_support": "full",
       "current_corpus_coverage": "covered",
       "dedupe_cluster_id": "measure_theory.borel_space_is_open_measurable",
@@ -188,8 +229,13 @@
       "kind": "theorem",
       "statement_informal": "For any group homomorphism f : G →* H, its kernel (MonoidHom.ker f) is a normal subgroup of G.",
       "statement_formal_pp": "∀ {G H : Type*} [Group G] [Group H] (f : G →* H), (MonoidHom.ker f).Normal",
-      "concepts_introduced": ["group_homomorphism", "kernel_normality"],
-      "theorem_or_definition_dependencies": ["MonoidHom.normal_ker"],
+      "concepts_introduced": [
+        "group_homomorphism",
+        "kernel_normality"
+      ],
+      "theorem_or_definition_dependencies": [
+        "MonoidHom.normal_ker"
+      ],
       "expected_mathlib_support": "full",
       "current_corpus_coverage": "covered",
       "dedupe_cluster_id": "known.algebra.group_hom_kernel_normal",
@@ -210,18 +256,24 @@
       "kind": "theorem",
       "statement_informal": "For any non-empty finset A and finset B, the union A ∪ B contains an element.",
       "statement_formal_pp": "∀ {α : Type*} [DecidableEq α] (A B : Finset α), A.Nonempty → ∃ x, x ∈ A ∪ B",
-      "concepts_introduced": ["union_closed_sets_conjecture", "finset_union"],
-      "theorem_or_definition_dependencies": ["Finset.mem_union_left"],
+      "concepts_introduced": [
+        "finset_union",
+        "exists_introduction"
+      ],
+      "theorem_or_definition_dependencies": [
+        "Finset.mem_union_left"
+      ],
       "expected_mathlib_support": "full",
       "current_corpus_coverage": "covered",
-      "dedupe_cluster_id": "frontier.union_closed_pair_element",
+      "dedupe_cluster_id": "elementary.logic.union_pair_element",
       "proof_search_difficulty_estimate": "D3",
       "compute_tier": "Tier_A",
       "public_training_eligibility": "public_train",
       "status": "completed",
-      "packet_id": "frontier.union_closed_pair_element.v1",
+      "packet_id": "elementary.logic.union_pair_element.v1",
       "problem_version_id": "3234a527-a1c6-40cd-a4bc-37faedd77b76",
-      "episode_id": "a478fec4-f715-4432-a593-cbdd95dde1f4"
+      "episode_id": "a478fec4-f715-4432-a593-cbdd95dde1f4",
+      "reclassification_note": "Landed packet reclassified to elementary.logic at L1_proof_basics: the proved statement is elementary finset-membership reasoning with no union-closed-family hypothesis, so the original L7_frontier intent was not met by this statement."
     }
   ]
 }

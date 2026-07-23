@@ -88,7 +88,7 @@
   },
   "notes": "Verified through tracked proof-search episode 9b43e390-9420-4748-8fd1-2ca7917a3b97.",
   "hashes": {
-    "packet_sha256": "9c23debb16c0a5967621062ceae7eebbe801a7ed1ed3840e192a257716a8580b",
+    "packet_sha256": "f7df0bc4ed68003136cb96de48a372f1dfd97274bff683d13e311ec020b7b8fd",
     "formal_statement_sha256": "329961a36ddb30defe7088a450c1388590b58addbc16cd1c8630649d624a3b7b",
     "proof_body_sha256": "7cac55c03a9576c61ac16c7c81ee32c239517083afff99314a9a481e035340d4"
   },
@@ -96,92 +96,83 @@
     {
       "variant_id": "pv.94666637-bd2d-4dca-8ff0-4d8a2b90fc54.canonical",
       "formal_statement_sha256": "4361e322bce6040491e1ff3841b77478075c1761a38863711176f2f88349d124",
-      "variant_style": "canonical",
-      "proof_body_sha256": "7cac55c03a9576c61ac16c7c81ee32c239517083afff99314a9a481e035340d4",
       "proof_body_redacted": false,
-      "tactic_count": 1,
-      "proof_length": 1,
-      "restriction_profile_id": null,
-      "model_run_id": null,
       "source": "proof_search",
-      "restriction_profile_sha256": null,
+      "variant_style": "canonical",
       "proof_profile": {
-        "primary_proof_class": "theorem_lookup",
-        "secondary_proof_classes": [],
         "automation_level": "none",
-        "retrieval_depth": 0,
         "branch_count": 0,
         "dependency_composition_depth": 0,
-        "uses_witness_invention": false,
-        "uses_induction": false,
+        "primary_proof_class": "theorem_lookup",
+        "retrieval_depth": 0,
+        "uses_case_analysis": false,
         "uses_contradiction": false,
-        "uses_case_analysis": false
+        "uses_induction": false,
+        "uses_witness_invention": false
       }
     }
   ],
   "dependency_manifest": {
-    "used_theorem_deps": [
-      "Set.inter_self"
-    ],
     "obligation_deps": [],
-    "transitive_dependency_count": 1,
-    "transitive_dependency_depth": 1
+    "transitive_dependency_count": 0,
+    "transitive_dependency_depth": 0,
+    "used_theorem_deps": []
   },
   "attempts": [
     {
-      "attempt_id": "att.94666637-bd2d-4dca-8ff0-4d8a2b90fc54.0",
+      "attempt_id": "ar.86554543-d3d7-4c24-8e4b-6c24eaadaed5",
+      "diagnostic_category": "tactic_failure",
       "episode_id": "9b43e390-9420-4748-8fd1-2ca7917a3b97",
-      "outcome": "failed",
-      "diagnostic_category": "unknown_identifier"
+      "outcome": "failed"
     },
     {
-      "attempt_id": "att.94666637-bd2d-4dca-8ff0-4d8a2b90fc54.1",
+      "attempt_id": "ar.0fa0ab3f-9b71-460c-b675-a593fd66918c",
+      "diagnostic_category": null,
       "episode_id": "9b43e390-9420-4748-8fd1-2ca7917a3b97",
-      "outcome": "succeeded",
-      "diagnostic_category": "unsolved_goals"
+      "outcome": "succeeded"
     }
   ],
   "negative_examples": [
     {
       "negative_id": "neg.94666637-bd2d-4dca-8ff0-4d8a2b90fc54.0",
-      "attempt_id": "att.94666637-bd2d-4dca-8ff0-4d8a2b90fc54.0",
+      "attempt_id": "ar.0fa0ab3f-9b71-460c-b675-a593fd66918c",
+      "can_export_diagnostics": true,
+      "can_export_metadata": true,
+      "can_export_model_identity": false,
+      "can_export_proof_text": false,
+      "candidate_source_ref": null,
       "diagnostic_category": "unknown_identifier",
       "origin": "controlled_mutation",
-      "proof_authority": "none",
-      "can_export_proof_text": false,
-      "can_export_metadata": true,
-      "can_export_diagnostics": true,
-      "can_export_model_identity": false,
-      "candidate_source_ref": null
+      "proof_authority": "none"
     },
     {
       "negative_id": "neg.94666637-bd2d-4dca-8ff0-4d8a2b90fc54.1",
-      "attempt_id": "att.94666637-bd2d-4dca-8ff0-4d8a2b90fc54.1",
+      "attempt_id": "ar.0fa0ab3f-9b71-460c-b675-a593fd66918c",
+      "can_export_diagnostics": true,
+      "can_export_metadata": true,
+      "can_export_model_identity": false,
+      "can_export_proof_text": false,
+      "candidate_source_ref": null,
       "diagnostic_category": "unsolved_goals",
       "origin": "controlled_mutation",
-      "proof_authority": "none",
-      "can_export_proof_text": false,
-      "can_export_metadata": true,
-      "can_export_diagnostics": true,
-      "can_export_model_identity": false,
-      "candidate_source_ref": null
+      "proof_authority": "none"
     }
   ],
   "repair_trajectories": [
     {
-      "trajectory_id": "tr.94666637-bd2d-4dca-8ff0-4d8a2b90fc54",
-      "terminal_outcome": "verified_proof",
-      "terminal_ref": "pv.94666637-bd2d-4dca-8ff0-4d8a2b90fc54.canonical",
+      "trajectory_id": "rt.94666637-bd2d-4dca-8ff0-4d8a2b90fc54",
       "steps": [
         {
-          "step_index": 0,
-          "from_attempt_id": "att.94666637-bd2d-4dca-8ff0-4d8a2b90fc54.0",
-          "to_ref": "pv.94666637-bd2d-4dca-8ff0-4d8a2b90fc54.canonical",
-          "repair_action": "revised_submission",
           "diagnostic_category_addressed": "tactic_failure",
-          "step_hash": "43198951c0f9cf059e6ff7c273026f79b3ce5e402675d364e74960631a17af0a"
+          "from_attempt_id": "ar.86554543-d3d7-4c24-8e4b-6c24eaadaed5",
+          "repair_action": "revised_submission",
+          "step_hash": "1336d14046723401e056b2170848ad3f01f364f359d15bfc16d69f5b777ad611",
+          "step_index": 0,
+          "to_ref": "ar.0fa0ab3f-9b71-460c-b675-a593fd66918c"
         }
-      ]
+      ],
+      "terminal_outcome": "verified_proof",
+      "terminal_ref": "pv.94666637-bd2d-4dca-8ff0-4d8a2b90fc54.canonical"
     }
   ]
 }

@@ -208,7 +208,7 @@ import MathCorpus.Undergrad.Algebra.GroupHomOne
 import MathCorpus.Undergrad.Analysis.ContinuousDist
 import MathCorpus.Grad.MeasureTheory.BorelOpenMeasurable
 import MathCorpus.Known.Algebra.GroupHomKernelNormal
-import MathCorpus.Frontier.Combinatorics.UnionClosedPairElement
+import MathCorpus.Elementary.Logic.UnionPairElement
 
 
 

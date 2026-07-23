@@ -182,8 +182,8 @@
     "combinatorics.set_basics": [
       "elementary.combinatorics.set_mem_union.v1"
     ],
-    "frontier.combinatorics": [
-      "frontier.union_closed_pair_element.v1"
+    "elementary.logic": [
+      "elementary.logic.union_pair_element.v1"
     ],
     "frontier.erdos_companion_results": [
       "frontier.erdos.erdos_1052_filter_ordcompl.v1",

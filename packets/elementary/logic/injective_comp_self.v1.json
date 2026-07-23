@@ -79,7 +79,7 @@
     "verifier": "proofsearch",
     "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
     "episode_id": "ae8905de-97b6-4101-b077-7afab61112a6",
-    "root_statement_sha256": "df9fa08b4efbf51e3fbff1c7e9db98e8ee487770857ef51a7bf52c3c907b8277",
+    "root_statement_sha256": "df6af0321aafea4c6982aef0688cc7c405af9493a3d79188509124fcd46f2fd1",
     "outcome": "kernel_verified",
     "kernel_verified": true,
     "fidelity_status": "attested",
@@ -88,100 +88,68 @@
   },
   "notes": "Verified through tracked proof-search episode ae8905de-97b6-4101-b077-7afab61112a6.",
   "hashes": {
-    "packet_sha256": "20e841faebb5c986554c9a0cd22cda06b624ac2bfb304528502e84e1994d33f4",
+    "packet_sha256": "f26f8cc3d4826aa4d6bd20505d42e1cec684740a39fbc4d4ae81bc3f1ecb8fab",
     "formal_statement_sha256": "9fd7d736207f19f6f5d16417cdba532b50bb5c7bf10658d4273323341b229ec6",
     "proof_body_sha256": "04bd352afbfe92c70dce2fb7310db32926d942777512c5e511f3c5e220fcd160"
   },
   "proof_variants": [
     {
       "variant_id": "pv.f81ecb7c-4902-4c02-bf40-58a90987a479.canonical",
-      "formal_statement_sha256": "df9fa08b4efbf51e3fbff1c7e9db98e8ee487770857ef51a7bf52c3c907b8277",
-      "variant_style": "canonical",
-      "proof_body_sha256": "04bd352afbfe92c70dce2fb7310db32926d942777512c5e511f3c5e220fcd160",
+      "formal_statement_sha256": "df6af0321aafea4c6982aef0688cc7c405af9493a3d79188509124fcd46f2fd1",
       "proof_body_redacted": false,
-      "tactic_count": 1,
-      "proof_length": 1,
-      "restriction_profile_id": null,
-      "model_run_id": null,
       "source": "proof_search",
-      "restriction_profile_sha256": null,
+      "variant_style": "canonical",
       "proof_profile": {
-        "primary_proof_class": "theorem_lookup",
-        "secondary_proof_classes": [],
         "automation_level": "none",
-        "retrieval_depth": 0,
         "branch_count": 0,
         "dependency_composition_depth": 0,
-        "uses_witness_invention": false,
-        "uses_induction": false,
+        "primary_proof_class": "theorem_lookup",
+        "retrieval_depth": 0,
+        "uses_case_analysis": false,
         "uses_contradiction": false,
-        "uses_case_analysis": false
+        "uses_induction": false,
+        "uses_witness_invention": false
       }
     }
   ],
   "dependency_manifest": {
-    "used_theorem_deps": [
-      "Function.Injective.comp"
-    ],
     "obligation_deps": [],
-    "transitive_dependency_count": 1,
-    "transitive_dependency_depth": 1
+    "transitive_dependency_count": 0,
+    "transitive_dependency_depth": 0,
+    "used_theorem_deps": []
   },
   "attempts": [
     {
-      "attempt_id": "att.f81ecb7c-4902-4c02-bf40-58a90987a479.0",
-      "episode_id": "9b43e390-9420-4748-8fd1-2ca7917a3b97",
-      "outcome": "failed",
-      "diagnostic_category": "unknown_identifier"
-    },
-    {
-      "attempt_id": "att.f81ecb7c-4902-4c02-bf40-58a90987a479.1",
-      "episode_id": "9b43e390-9420-4748-8fd1-2ca7917a3b97",
-      "outcome": "succeeded",
-      "diagnostic_category": "unsolved_goals"
+      "attempt_id": "ar.c99a1d86-1073-4c55-a468-1903b3de3730",
+      "diagnostic_category": null,
+      "episode_id": "ae8905de-97b6-4101-b077-7afab61112a6",
+      "outcome": "succeeded"
     }
   ],
   "negative_examples": [
     {
       "negative_id": "neg.f81ecb7c-4902-4c02-bf40-58a90987a479.0",
-      "attempt_id": "att.f81ecb7c-4902-4c02-bf40-58a90987a479.0",
+      "attempt_id": "ar.c99a1d86-1073-4c55-a468-1903b3de3730",
+      "can_export_diagnostics": true,
+      "can_export_metadata": true,
+      "can_export_model_identity": false,
+      "can_export_proof_text": false,
+      "candidate_source_ref": null,
       "diagnostic_category": "unknown_identifier",
       "origin": "controlled_mutation",
-      "proof_authority": "none",
-      "can_export_proof_text": false,
-      "can_export_metadata": true,
-      "can_export_diagnostics": true,
-      "can_export_model_identity": false,
-      "candidate_source_ref": null
+      "proof_authority": "none"
     },
     {
       "negative_id": "neg.f81ecb7c-4902-4c02-bf40-58a90987a479.1",
-      "attempt_id": "att.f81ecb7c-4902-4c02-bf40-58a90987a479.1",
+      "attempt_id": "ar.c99a1d86-1073-4c55-a468-1903b3de3730",
+      "can_export_diagnostics": true,
+      "can_export_metadata": true,
+      "can_export_model_identity": false,
+      "can_export_proof_text": false,
+      "candidate_source_ref": null,
       "diagnostic_category": "unsolved_goals",
       "origin": "controlled_mutation",
-      "proof_authority": "none",
-      "can_export_proof_text": false,
-      "can_export_metadata": true,
-      "can_export_diagnostics": true,
-      "can_export_model_identity": false,
-      "candidate_source_ref": null
-    }
-  ],
-  "repair_trajectories": [
-    {
-      "trajectory_id": "tr.f81ecb7c-4902-4c02-bf40-58a90987a479",
-      "terminal_outcome": "verified_proof",
-      "terminal_ref": "pv.f81ecb7c-4902-4c02-bf40-58a90987a479.canonical",
-      "steps": [
-        {
-          "step_index": 0,
-          "from_attempt_id": "att.f81ecb7c-4902-4c02-bf40-58a90987a479.0",
-          "to_ref": "pv.f81ecb7c-4902-4c02-bf40-58a90987a479.canonical",
-          "repair_action": "revised_submission",
-          "diagnostic_category_addressed": "tactic_failure",
-          "step_hash": "879710cad3155f65c0abccf6a93db87877796a8472bb404a6cc0fb96642c0011"
-        }
-      ]
+      "proof_authority": "none"
     }
   ]
 }

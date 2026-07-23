@@ -2465,6 +2465,18 @@
       "source_sha256": null
     },
     {
+      "packet_id": "elementary.logic.union_pair_element.v1",
+      "source_kind": "author_written",
+      "source_refs": [
+        "Mathlib.Data.Finset.Basic"
+      ],
+      "authors": [
+        "The MathCorpus Authors"
+      ],
+      "statement_fidelity": "canonical_statement_hash_match",
+      "source_sha256": null
+    },
+    {
       "packet_id": "elementary.number_theory.add_mod.v1",
       "source_kind": "author_written",
       "source_refs": [],
@@ -3415,18 +3427,6 @@
         "The MathCorpus Authors"
       ],
       "statement_fidelity": "adapted_with_review",
-      "source_sha256": null
-    },
-    {
-      "packet_id": "frontier.union_closed_pair_element.v1",
-      "source_kind": "author_written",
-      "source_refs": [
-        "Mathlib.Data.Finset.Basic"
-      ],
-      "authors": [
-        "The MathCorpus Authors"
-      ],
-      "statement_fidelity": "canonical_statement_hash_match",
       "source_sha256": null
     },
     {

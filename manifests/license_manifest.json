@@ -1477,6 +1477,12 @@
       "source_kind": "author_written"
     },
     {
+      "packet_id": "elementary.logic.union_pair_element.v1",
+      "license_spdx": "Apache-2.0",
+      "license_content": "CC-BY-4.0",
+      "source_kind": "author_written"
+    },
+    {
       "packet_id": "elementary.number_theory.add_mod.v1",
       "license_spdx": "Apache-2.0",
       "license_content": "CC-BY-4.0",
@@ -1997,12 +2003,6 @@
       "license_spdx": "Apache-2.0",
       "license_content": "CC-BY-4.0",
       "source_kind": "formal_conjectures"
-    },
-    {
-      "packet_id": "frontier.union_closed_pair_element.v1",
-      "license_spdx": "Apache-2.0",
-      "license_content": "CC-BY-4.0",
-      "source_kind": "author_written"
     },
     {
       "packet_id": "known.algebra.group_hom_kernel_normal.v1",

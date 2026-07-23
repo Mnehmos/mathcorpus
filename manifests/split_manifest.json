@@ -1730,6 +1730,13 @@
       "dedupe_cluster_id": "elementary.logic.finset_card_two_nonempty_density"
     },
     {
+      "packet_id": "elementary.logic.union_pair_element.v1",
+      "eligibility": "public_train",
+      "split_family": "train",
+      "template_family_id": "elementary.logic",
+      "dedupe_cluster_id": "elementary.logic.union_pair_element"
+    },
+    {
       "packet_id": "elementary.number_theory.add_mod.v1",
       "eligibility": "public_train",
       "split_family": "train",
@@ -2337,13 +2344,6 @@
       "split_family": "quarantined",
       "template_family_id": "frontier.jacobian_counterexample",
       "dedupe_cluster_id": "frontier.jacobian_dim3_refutation"
-    },
-    {
-      "packet_id": "frontier.union_closed_pair_element.v1",
-      "eligibility": "public_train",
-      "split_family": "train",
-      "template_family_id": "frontier.combinatorics",
-      "dedupe_cluster_id": "frontier.union_closed_pair_element"
     },
     {
       "packet_id": "known.algebra.group_hom_kernel_normal.v1",

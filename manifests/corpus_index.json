@@ -1,12 +1,12 @@
 {
   "packet_count": 377,
   "by_domain": {
-    "logic": 6,
+    "logic": 7,
     "algebra": 173,
     "combinatorics": 57,
     "geometry": 40,
     "number_theory": 65,
-    "frontier": 26,
+    "frontier": 25,
     "analysis": 2,
     "abstract_algebra": 2,
     "linear_algebra": 1,
@@ -15,9 +15,9 @@
   },
   "by_level": {
     "L0_elementary": 112,
-    "L1_proof_basics": 189,
+    "L1_proof_basics": 190,
     "L2_olympiad": 37,
-    "L7_frontier": 26,
+    "L7_frontier": 25,
     "L5_grad": 1,
     "L6_known_theorem": 1,
     "L3_undergrad": 10,
@@ -42,7 +42,7 @@
       "kind": "theorem",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "c9d48d59bb32f51859e723cdd55cef6ade31addcdffeff52cd5bc5c106b91075"
+      "packet_sha256": "dd102e1f0981c32ab9030452a5f5e33cdbb4135153fbfd0011217be8b7e3e71e"
     },
     {
       "packet_id": "elementary.algebra.add_assoc.v1",
@@ -2492,7 +2492,17 @@
       "kind": "theorem",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "382730af72b61f043568dfe080479cedf0b3f0250da8686045e71d74a142a2e2"
+      "packet_sha256": "04153a74e19803c62bc5ebd109f79a5516c642df2fff52204fac888f9c22cd79"
+    },
+    {
+      "packet_id": "elementary.logic.union_pair_element.v1",
+      "title": "Non-empty finset has an element in any union",
+      "domain": "logic",
+      "level": "L1_proof_basics",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "7958debd2b99aef71deb2f61d11083027de304cc14fdf9b389bb34ab3929ddbd"
     },
     {
       "packet_id": "elementary.number_theory.add_mod.v1",
@@ -3365,16 +3375,6 @@
       "packet_sha256": "4d28aefc6344bf8c8b82b7ebffb3753268f7058e741f2509b7f81d4b6ecf1108"
     },
     {
-      "packet_id": "frontier.union_closed_pair_element.v1",
-      "title": "Non-empty set in a union-closed pair contains an element of the union",
-      "domain": "frontier",
-      "level": "L7_frontier",
-      "kind": "theorem",
-      "status": "kernel_verified",
-      "eligibility": "public_train",
-      "packet_sha256": "11e6cf25afc2f3d89ab6eba830c9d8db7a30d2ce9bee99ab4ae8406502ab1d77"
-    },
-    {
       "packet_id": "known.algebra.group_hom_kernel_normal.v1",
       "title": "The kernel of a group homomorphism is a normal subgroup",
       "domain": "algebra",
@@ -3382,7 +3382,7 @@
       "kind": "theorem",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "fd76438729be8d0707ac628b297f560540b50b976c4c399e98b0fbf0807b8fc2"
+      "packet_sha256": "0cbb243f2a5b051a3f47f81537d402b0b767118c1841f1b95788362f984b4d9d"
     },
     {
       "packet_id": "logic.functions.injective_comp_self.v1",
@@ -3392,7 +3392,7 @@
       "kind": "theorem",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "20e841faebb5c986554c9a0cd22cda06b624ac2bfb304528502e84e1994d33f4"
+      "packet_sha256": "f26f8cc3d4826aa4d6bd20505d42e1cec684740a39fbc4d4ae81bc3f1ecb8fab"
     },
     {
       "packet_id": "logic.set.inter_self.v1",
@@ -3402,7 +3402,7 @@
       "kind": "theorem",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "9c23debb16c0a5967621062ceae7eebbe801a7ed1ed3840e192a257716a8580b"
+      "packet_sha256": "f7df0bc4ed68003136cb96de48a372f1dfd97274bff683d13e311ec020b7b8fd"
     },
     {
       "packet_id": "measure_theory.borel_space_is_open_measurable.v1",
@@ -3412,7 +3412,7 @@
       "kind": "theorem",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "6314f94f56903b8515fc2fd825b180fe45e41a25c77b6f95dd9d79bc41e99fa8"
+      "packet_sha256": "698ab25be39c6a7181293d5a18aacfd575a7bf63b4deb873ec7f7168c7928def"
     },
     {
       "packet_id": "negative.algebra.div_mul_cancel_bare_ring_no_hypothesis_failure.v1",
@@ -3702,7 +3702,7 @@
       "kind": "theorem",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "bfed246b600e8877472bdfd7b1029710f2e436b9ada46d70393f331d68529879"
+      "packet_sha256": "46dccf5045a9a19539dda5fb97ba00d209afdcadc508c7106ff9ec475bf80741"
     },
     {
       "packet_id": "topology.continuous_id.v1",
@@ -3712,7 +3712,7 @@
       "kind": "theorem",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "32b19793468b39ba9917ffa4281434cdf8f70b7261d6e647d7118c4607dab055"
+      "packet_sha256": "532fb8421c6882d94f900039267dbf36a6ebba2dc26faf713d6f5d0313760609"
     },
     {
       "packet_id": "undergrad.abstract_algebra.group_inv_inv.v1",
@@ -3742,7 +3742,7 @@
       "kind": "theorem",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "9aec4a0f10ce4e06823141815c787a35cb6403283dcb94a1e7c54553e3ac6dc1"
+      "packet_sha256": "e2b887c39f2e8d6b3f4ff388dea70ead52457ae3c58538a069520ffb19eb122d"
     },
     {
       "packet_id": "undergrad.linear_algebra.smul_zero_vector.v1",

@@ -3479,6 +3479,20 @@
       }
     },
     {
+      "packet_id": "elementary.logic.union_pair_element.v1",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "fields": {
+        "tactics_and_proof_shape": "recovered",
+        "proof_profile": "recovered",
+        "explicit_dependencies": "recovered",
+        "episode_and_trajectory_linkage": "partial_episode_id_only",
+        "attempts_and_diagnostics": "recovered",
+        "model_hashes_tokens_cost_timing": "unrecoverable_missing",
+        "proof_variants_and_repair_chains": "recovered"
+      }
+    },
+    {
       "packet_id": "elementary.number_theory.add_mod.v1",
       "kind": "concept",
       "status": "kernel_verified",
@@ -4684,20 +4698,6 @@
     },
     {
       "packet_id": "frontier.jacobian.jacobian_conjecture_false_dim_three.v1",
-      "kind": "theorem",
-      "status": "kernel_verified",
-      "fields": {
-        "tactics_and_proof_shape": "recovered",
-        "proof_profile": "recovered",
-        "explicit_dependencies": "recovered",
-        "episode_and_trajectory_linkage": "partial_episode_id_only",
-        "attempts_and_diagnostics": "recovered",
-        "model_hashes_tokens_cost_timing": "unrecoverable_missing",
-        "proof_variants_and_repair_chains": "recovered"
-      }
-    },
-    {
-      "packet_id": "frontier.union_closed_pair_element.v1",
       "kind": "theorem",
       "status": "kernel_verified",
       "fields": {
