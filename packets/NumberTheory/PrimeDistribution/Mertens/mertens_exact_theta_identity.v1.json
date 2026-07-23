@@ -1,0 +1,103 @@
+{
+  "packet_id": "number_theory.prime_distribution.mertens.mertens_exact_theta_identity.v1",
+  "packet_version": "1.0.0",
+  "title": "Exact Mertens identity via Chebyshev theta",
+  "domain": "number_theory",
+  "level": "L5_grad",
+  "kind": "theorem",
+  "status": "kernel_verified",
+  "difficulty_bin": "D4",
+  "lean_module": "MathCorpus.NumberTheory.PrimeDistribution.Mertens.MertensExactThetaIdentity",
+  "theorem_name": "mertens_exact_theta_identity",
+  "imports": [
+    "Mathlib"
+  ],
+  "toolchain": {
+    "lean_version": "v4.32.0-rc1",
+    "mathlib_rev": "360da6fa66c1273b76b6b2d8c5666fd5ac2e3b56"
+  },
+  "source_provenance": {
+    "source_kind": "author_written",
+    "source_refs": [
+      "Erdős-647 campaign (Mnehmos/llm-driven-proof-search), Layer A quantitative-Mertens infrastructure; classical: Mertens (1874)"
+    ],
+    "authors": [
+      "The MathCorpus Authors"
+    ],
+    "copyright_holder": "The MathCorpus Authors",
+    "license_spdx": "Apache-2.0",
+    "license_content": "CC-BY-4.0",
+    "statement_fidelity": "canonical_statement_hash_match"
+  },
+  "informal_statement": "For every real x ≥ 2, the prime reciprocal sum ∑_{p≤x} 1/p equals θ(x)/(x log x) plus the weighted integral ∫_{(2,x]} (log t + 1)/(t² log² t) · θ(t) dt, where θ is Chebyshev's theta function.",
+  "informal_proof_idea": "Abel summation applied to the prime indicator weighted by log p, with f(t) = 1/(t log t): the boundary term produces θ(x)/(x log x) and differentiating the weight produces the exact integral kernel (log t + 1)/(t² log² t).",
+  "formal_statement_pp": "theorem mertens_exact_theta_identity :\n    ∀ x : ℝ, 2 ≤ x →\n      ∑ p ∈ Finset.Icc 1 ⌊x⌋₊ with p.Prime, (1/(p:ℝ))\n        = Chebyshev.theta x / (x * Real.log x)\n          + ∫ t in Set.Ioc (2:ℝ) x,\n              (Real.log t + 1) / (t^2 * (Real.log t)^2) * Chebyshev.theta t",
+  "proof_body_path": "lean/MathCorpus/NumberTheory/PrimeDistribution/Mertens/MertensExactThetaIdentity.lean",
+  "proof_body_redacted": false,
+  "trust": {
+    "rung": 1,
+    "proof_authority": "lean_kernel",
+    "certificate_checker": "kernel_decide",
+    "encoding_required": false,
+    "encoding_soundness_status": "not_applicable",
+    "independent_review_status": "repo_reviewed",
+    "public_claim_class": "public_safe"
+  },
+  "training": {
+    "eligibility": "public_train",
+    "reason_codes": [
+      "public",
+      "non_benchmark",
+      "unredacted"
+    ],
+    "dedupe_cluster_id": "number_theory.prime_distribution.mertens_exact_theta_identity",
+    "template_family_id": "number_theory.prime_distribution.mertens_layer_a",
+    "contamination_risk": "low",
+    "can_export_proof_body": true
+  },
+  "dependencies": {
+    "theorem_deps": [],
+    "kits": [],
+    "tactic_tags": [
+      "intervalIntegral",
+      "abel_summation",
+      "explicit_bounds"
+    ],
+    "prerequisite_concepts": [
+      "chebyshev_theta",
+      "abel_summation",
+      "interval_integral"
+    ]
+  },
+  "metrics": {
+    "loc": 115,
+    "tactic_count": 1
+  },
+  "artifacts": {
+    "public_files": [
+      "lean/MathCorpus/NumberTheory/PrimeDistribution/Mertens/MertensExactThetaIdentity.lean"
+    ]
+  },
+  "review": {
+    "review_basis": "repo self-review; kernel-verified through the tracked proof-search loop",
+    "reviewer_status": "repo_reviewed"
+  },
+  "verification": {
+    "verifier": "proofsearch",
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "episode_id": "7a7e8098-a5bf-4dd9-97df-145e34ee914b",
+    "outcome": "kernel_verified",
+    "kernel_verified": true,
+    "fidelity_status": "attested",
+    "step_count": 1,
+    "root_statement_sha256": "9802976a83cd2b4a604d3a77e6f1c4cf2800c41b9ec7797550df9f1fa28a7c98",
+    "import_manifest_hash": "aaf21893d520a78dee0787a1bcaf939ee6b922265ff670c272e2e1d450dd29a7",
+    "verified_at": "2026-07-13T16:59:18.746434300+00:00"
+  },
+  "notes": "Neutral Prime Distribution port (mathcorpus #12 / proofsearch #253) of Erdős-647 campaign theorem erdos647_mertens_identity (problem_version d584666d-e50d-488d-b459-5d1265a3aadd). Statement and proof are the kernel-verified campaign snapshot verbatim modulo the neutral rename; proof authority is the Lean kernel via the tracked proof-search loop.",
+  "hashes": {
+    "packet_sha256": "2ba6ed4713a236e62e8a69aac3b07834d404ddef44c71d79d04f26166de62eb5",
+    "formal_statement_sha256": "142c8fd94927af2fba561411cd02a6edb90e15c1314650d0e857845d55dfab90",
+    "proof_body_sha256": "5b084b9e3391046a97ab9ce01cb773e94c615d3d43db9628031138abfa7d0e5d"
+  }
+}

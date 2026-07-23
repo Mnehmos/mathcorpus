@@ -1,11 +1,11 @@
 {
-  "packet_count": 367,
+  "packet_count": 377,
   "by_domain": {
+    "number_theory": 74,
     "logic": 3,
     "algebra": 171,
     "combinatorics": 57,
     "geometry": 40,
-    "number_theory": 64,
     "frontier": 25,
     "abstract_algebra": 2,
     "linear_algebra": 1,
@@ -13,6 +13,9 @@
     "topology": 2
   },
   "by_level": {
+    "L5_grad": 8,
+    "L4_advanced_undergrad": 1,
+    "L6_known_theorem": 1,
     "L0_elementary": 111,
     "L1_proof_basics": 187,
     "L2_olympiad": 36,
@@ -20,13 +23,13 @@
     "L3_undergrad": 8
   },
   "by_kind": {
+    "theorem": 53,
     "concept": 296,
-    "theorem": 43,
     "negative_example": 28
   },
   "by_status": {
+    "kernel_verified": 347,
     "empirical_only": 2,
-    "kernel_verified": 337,
     "failed_attempt": 28
   },
   "packets": [
@@ -3619,6 +3622,106 @@
       "status": "failed_attempt",
       "eligibility": "negative_example_only",
       "packet_sha256": "1180e83178294b0387609a870da22e0f19e3b217e24f6abf21d59886cf708b5c"
+    },
+    {
+      "packet_id": "number_theory.prime_distribution.chebyshev_theta.prime_log_div_sum_upper.v1",
+      "title": "Explicit upper bound for the prime logarithmic moment",
+      "domain": "number_theory",
+      "level": "L5_grad",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "77935681c77b6d2bd96a39818d7656a98af7587d12295951ab86fc6af40d0958"
+    },
+    {
+      "packet_id": "number_theory.prime_distribution.chebyshev_theta.theta_abel_prime_log_identity.v1",
+      "title": "Abel identity for the prime logarithmic moment",
+      "domain": "number_theory",
+      "level": "L5_grad",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "dedea1dab892d2b1c11b1efcbef3fb1e72786d097d6b571f3e0cd1dbb1a595f7"
+    },
+    {
+      "packet_id": "number_theory.prime_distribution.chebyshev_theta.theta_real_lower_bridge.v1",
+      "title": "Real-valued Chebyshev theta lower-bound bridge",
+      "domain": "number_theory",
+      "level": "L5_grad",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "ecbdb75a2ae06242ab84c84b9f649794786b7241472fbdc139446b0061ab698f"
+    },
+    {
+      "packet_id": "number_theory.prime_distribution.explicit_bounds.mertens_error_integral_log_bound.v1",
+      "title": "Explicit bound for the logarithmic Mertens error integral",
+      "domain": "number_theory",
+      "level": "L5_grad",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "ba10b4c0e3f84ccd312c97313812fcab2aac0c066b2beb829bce2674686a4e78"
+    },
+    {
+      "packet_id": "number_theory.prime_distribution.explicit_bounds.mertens_error_integral_sqrt_bound.v1",
+      "title": "Explicit bound for the square-root Mertens error integral",
+      "domain": "number_theory",
+      "level": "L5_grad",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "ab6e4bd50971a409562fe4dbb39cffdea0018652b391f25307fcc2b033372f51"
+    },
+    {
+      "packet_id": "number_theory.prime_distribution.harmonic_asymptotics.mertens_main_term_antiderivative.v1",
+      "title": "Closed-form antiderivative of the Mertens main-term kernel",
+      "domain": "number_theory",
+      "level": "L5_grad",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "ea804f3309eebfb1c2db22ad801bb724c98d3eb8b8e9e1f6e67b178cf7261bd8"
+    },
+    {
+      "packet_id": "number_theory.prime_distribution.harmonic_asymptotics.mertens_weight_integral_closed_form.v1",
+      "title": "Closed-form Mertens weight integral",
+      "domain": "number_theory",
+      "level": "L5_grad",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "3809b8912d05c749a0ab8369eae09b31c31152e183158a48f817bcb3316c9490"
+    },
+    {
+      "packet_id": "number_theory.prime_distribution.harmonic_asymptotics.power_law_integral_two_to_x.v1",
+      "title": "Power-law comparison integral",
+      "domain": "number_theory",
+      "level": "L4_advanced_undergrad",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "a78956a9aae903d36a18064208773e233b32bc6a49e9c30a9a171c1f96d0f748"
+    },
+    {
+      "packet_id": "number_theory.prime_distribution.mertens.mertens_exact_theta_identity.v1",
+      "title": "Exact Mertens identity via Chebyshev theta",
+      "domain": "number_theory",
+      "level": "L5_grad",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "2ba6ed4713a236e62e8a69aac3b07834d404ddef44c71d79d04f26166de62eb5"
+    },
+    {
+      "packet_id": "number_theory.prime_distribution.prime_reciprocal_sums.prime_reciprocal_quantitative_lower.v1",
+      "title": "Quantitative Mertens lower bound for the prime reciprocal sum",
+      "domain": "number_theory",
+      "level": "L6_known_theorem",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "487b73e353b1e8a21f9e708c8d38815a0a56a87af6894ecc10bdd2d2e476a665"
     },
     {
       "packet_id": "undergrad.abstract_algebra.group_inv_inv.v1",

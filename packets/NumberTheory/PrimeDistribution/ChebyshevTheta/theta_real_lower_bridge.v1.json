@@ -1,0 +1,103 @@
+{
+  "packet_id": "number_theory.prime_distribution.chebyshev_theta.theta_real_lower_bridge.v1",
+  "packet_version": "1.0.0",
+  "title": "Real-valued Chebyshev theta lower-bound bridge",
+  "domain": "number_theory",
+  "level": "L5_grad",
+  "kind": "theorem",
+  "status": "kernel_verified",
+  "difficulty_bin": "D3",
+  "lean_module": "MathCorpus.NumberTheory.PrimeDistribution.ChebyshevTheta.ThetaRealLowerBridge",
+  "theorem_name": "theta_real_lower_bridge",
+  "imports": [
+    "Mathlib"
+  ],
+  "toolchain": {
+    "lean_version": "v4.32.0-rc1",
+    "mathlib_rev": "360da6fa66c1273b76b6b2d8c5666fd5ac2e3b56"
+  },
+  "source_provenance": {
+    "source_kind": "author_written",
+    "source_refs": [
+      "Erdős-647 campaign (Mnehmos/llm-driven-proof-search), Layer A quantitative-Mertens infrastructure; classical: Mertens (1874)"
+    ],
+    "authors": [
+      "The MathCorpus Authors"
+    ],
+    "copyright_holder": "The MathCorpus Authors",
+    "license_spdx": "Apache-2.0",
+    "license_content": "CC-BY-4.0",
+    "statement_fidelity": "canonical_statement_hash_match"
+  },
+  "informal_statement": "For every real t ≥ 2, (t − 1) log 2 − log(t + 2) − 2√t · log t ≤ θ(t): the natural-number Chebyshev lower bound transfers to a fully real-valued form usable inside integrals.",
+  "informal_proof_idea": "Combine the primorial-based lower bound for θ at natural arguments with explicit floor bracketing, absorbing the rounding loss into the −log(t+2) − 2√t·log t correction terms so the inequality holds pointwise for all real t ≥ 2.",
+  "formal_statement_pp": "theorem theta_real_lower_bridge :\n    ∀ t : ℝ, 2 ≤ t → (t - 1) * Real.log 2 - Real.log (t + 2) - 2 * Real.sqrt t * Real.log t ≤ Chebyshev.theta t",
+  "proof_body_path": "lean/MathCorpus/NumberTheory/PrimeDistribution/ChebyshevTheta/ThetaRealLowerBridge.lean",
+  "proof_body_redacted": false,
+  "trust": {
+    "rung": 1,
+    "proof_authority": "lean_kernel",
+    "certificate_checker": "kernel_decide",
+    "encoding_required": false,
+    "encoding_soundness_status": "not_applicable",
+    "independent_review_status": "repo_reviewed",
+    "public_claim_class": "public_safe"
+  },
+  "training": {
+    "eligibility": "public_train",
+    "reason_codes": [
+      "public",
+      "non_benchmark",
+      "unredacted"
+    ],
+    "dedupe_cluster_id": "number_theory.prime_distribution.theta_real_lower_bridge",
+    "template_family_id": "number_theory.prime_distribution.mertens_layer_a",
+    "contamination_risk": "low",
+    "can_export_proof_body": true
+  },
+  "dependencies": {
+    "theorem_deps": [],
+    "kits": [],
+    "tactic_tags": [
+      "intervalIntegral",
+      "abel_summation",
+      "explicit_bounds"
+    ],
+    "prerequisite_concepts": [
+      "chebyshev_theta",
+      "abel_summation",
+      "interval_integral"
+    ]
+  },
+  "metrics": {
+    "loc": 34,
+    "tactic_count": 1
+  },
+  "artifacts": {
+    "public_files": [
+      "lean/MathCorpus/NumberTheory/PrimeDistribution/ChebyshevTheta/ThetaRealLowerBridge.lean"
+    ]
+  },
+  "review": {
+    "review_basis": "repo self-review; kernel-verified through the tracked proof-search loop",
+    "reviewer_status": "repo_reviewed"
+  },
+  "verification": {
+    "verifier": "proofsearch",
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "episode_id": "c34d5708-40ab-45be-837e-1b5cc54a453a",
+    "outcome": "kernel_verified",
+    "kernel_verified": true,
+    "fidelity_status": "attested",
+    "step_count": 1,
+    "root_statement_sha256": "72cb80ab472e749d02f2ec9507b84f08254d17a1a8d971e0f5ee69028e709531",
+    "import_manifest_hash": "aaf21893d520a78dee0787a1bcaf939ee6b922265ff670c272e2e1d450dd29a7",
+    "verified_at": "2026-07-14T00:45:57.731643600+00:00"
+  },
+  "notes": "Neutral Prime Distribution port (mathcorpus #12 / proofsearch #253) of Erdős-647 campaign theorem erdos647_theta_real_ge (problem_version e7195e43-dab5-4ee8-85e6-b105d48503b8). Statement and proof are the kernel-verified campaign snapshot verbatim modulo the neutral rename; proof authority is the Lean kernel via the tracked proof-search loop.",
+  "hashes": {
+    "packet_sha256": "ecbdb75a2ae06242ab84c84b9f649794786b7241472fbdc139446b0061ab698f",
+    "formal_statement_sha256": "3786e7816c8d3de3cdba02443313db0831ad673fc723efbea4c5eaa14dde4104",
+    "proof_body_sha256": "470f13a0020a0a081c473be3735f158813b657d718f0b0eed25d906141326770"
+  }
+}

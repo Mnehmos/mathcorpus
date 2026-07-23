@@ -2155,6 +2155,66 @@
       "source_kind": "repo_original"
     },
     {
+      "packet_id": "number_theory.prime_distribution.chebyshev_theta.prime_log_div_sum_upper.v1",
+      "license_spdx": "Apache-2.0",
+      "license_content": "CC-BY-4.0",
+      "source_kind": "author_written"
+    },
+    {
+      "packet_id": "number_theory.prime_distribution.chebyshev_theta.theta_abel_prime_log_identity.v1",
+      "license_spdx": "Apache-2.0",
+      "license_content": "CC-BY-4.0",
+      "source_kind": "author_written"
+    },
+    {
+      "packet_id": "number_theory.prime_distribution.chebyshev_theta.theta_real_lower_bridge.v1",
+      "license_spdx": "Apache-2.0",
+      "license_content": "CC-BY-4.0",
+      "source_kind": "author_written"
+    },
+    {
+      "packet_id": "number_theory.prime_distribution.explicit_bounds.mertens_error_integral_log_bound.v1",
+      "license_spdx": "Apache-2.0",
+      "license_content": "CC-BY-4.0",
+      "source_kind": "author_written"
+    },
+    {
+      "packet_id": "number_theory.prime_distribution.explicit_bounds.mertens_error_integral_sqrt_bound.v1",
+      "license_spdx": "Apache-2.0",
+      "license_content": "CC-BY-4.0",
+      "source_kind": "author_written"
+    },
+    {
+      "packet_id": "number_theory.prime_distribution.harmonic_asymptotics.mertens_main_term_antiderivative.v1",
+      "license_spdx": "Apache-2.0",
+      "license_content": "CC-BY-4.0",
+      "source_kind": "author_written"
+    },
+    {
+      "packet_id": "number_theory.prime_distribution.harmonic_asymptotics.mertens_weight_integral_closed_form.v1",
+      "license_spdx": "Apache-2.0",
+      "license_content": "CC-BY-4.0",
+      "source_kind": "author_written"
+    },
+    {
+      "packet_id": "number_theory.prime_distribution.harmonic_asymptotics.power_law_integral_two_to_x.v1",
+      "license_spdx": "Apache-2.0",
+      "license_content": "CC-BY-4.0",
+      "source_kind": "author_written"
+    },
+    {
+      "packet_id": "number_theory.prime_distribution.mertens.mertens_exact_theta_identity.v1",
+      "license_spdx": "Apache-2.0",
+      "license_content": "CC-BY-4.0",
+      "source_kind": "author_written"
+    },
+    {
+      "packet_id": "number_theory.prime_distribution.prime_reciprocal_sums.prime_reciprocal_quantitative_lower.v1",
+      "license_spdx": "Apache-2.0",
+      "license_content": "CC-BY-4.0",
+      "source_kind": "author_written"
+    },
+    {
       "packet_id": "undergrad.abstract_algebra.group_inv_inv.v1",
       "license_spdx": "Apache-2.0",
       "license_content": "CC-BY-4.0",
