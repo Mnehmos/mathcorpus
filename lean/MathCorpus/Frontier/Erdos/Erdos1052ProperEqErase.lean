@@ -36,6 +36,10 @@ Kernel-verified through the tracked proof-search loop (episode 59a627f1).
 
 namespace MathCorpus.Frontier.Erdos
 
+-- Module-local scope: sibling Erdos-1052 snapshots re-declare shared helpers
+-- (uDiv, sigmaStar, ...); this inner namespace keeps the root import collision-free.
+namespace ProperEqErase
+
 /-- All unitary divisors of `n`, including `1` and `n`. -/
 def uDiv (n : ℕ) : Finset ℕ := n.divisors.filter (fun d => Nat.Coprime d (n / d))
 
@@ -58,5 +62,7 @@ theorem proper_eq_erase {n : ℕ} (hn : n ≠ 0) :
   have hpos : 0 < d := Nat.pos_of_dvd_of_pos hdvd (Nat.pos_of_ne_zero hn)
   have hle : d ≤ n := Nat.le_of_dvd (Nat.pos_of_ne_zero hn) hdvd
   exact ⟨⟨hpos, lt_of_le_of_ne hle hne⟩, hdvd, hcop⟩
+
+end ProperEqErase
 
 end MathCorpus.Frontier.Erdos

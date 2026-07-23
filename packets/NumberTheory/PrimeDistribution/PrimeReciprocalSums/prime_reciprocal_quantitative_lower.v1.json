@@ -10,7 +10,13 @@
   "lean_module": "MathCorpus.NumberTheory.PrimeDistribution.PrimeReciprocalSums.PrimeReciprocalQuantitativeLower",
   "theorem_name": "prime_reciprocal_quantitative_lower",
   "imports": [
-    "Mathlib"
+    "Mathlib",
+    "MathCorpus.NumberTheory.PrimeDistribution.Mertens.MertensExactThetaIdentity",
+    "MathCorpus.NumberTheory.PrimeDistribution.HarmonicAsymptotics.MertensMainTermAntiderivative",
+    "MathCorpus.NumberTheory.PrimeDistribution.HarmonicAsymptotics.MertensWeightIntegralClosedForm",
+    "MathCorpus.NumberTheory.PrimeDistribution.ExplicitBounds.MertensErrorIntegralLogBound",
+    "MathCorpus.NumberTheory.PrimeDistribution.ExplicitBounds.MertensErrorIntegralSqrtBound",
+    "MathCorpus.NumberTheory.PrimeDistribution.ChebyshevTheta.ThetaRealLowerBridge"
   ],
   "toolchain": {
     "lean_version": "v4.32.0-rc1",
@@ -56,21 +62,29 @@
     "can_export_proof_body": true
   },
   "dependencies": {
-    "theorem_deps": [],
+    "theorem_deps": [
+      "MathCorpus.NumberTheory.PrimeDistribution.Mertens.mertens_exact_theta_identity",
+      "MathCorpus.NumberTheory.PrimeDistribution.HarmonicAsymptotics.mertens_main_term_antiderivative",
+      "MathCorpus.NumberTheory.PrimeDistribution.HarmonicAsymptotics.mertens_weight_integral_closed_form",
+      "MathCorpus.NumberTheory.PrimeDistribution.ExplicitBounds.mertens_error_integral_log_bound",
+      "MathCorpus.NumberTheory.PrimeDistribution.ExplicitBounds.mertens_error_integral_sqrt_bound",
+      "MathCorpus.NumberTheory.PrimeDistribution.ChebyshevTheta.theta_real_lower_bridge"
+    ],
     "kits": [],
     "tactic_tags": [
       "intervalIntegral",
-      "abel_summation",
-      "explicit_bounds"
+      "integral_comparison",
+      "linarith"
     ],
     "prerequisite_concepts": [
       "chebyshev_theta",
       "abel_summation",
-      "interval_integral"
+      "interval_integral",
+      "mertens_theorems"
     ]
   },
   "metrics": {
-    "loc": 491,
+    "loc": 164,
     "tactic_count": 1
   },
   "artifacts": {
@@ -94,10 +108,10 @@
     "import_manifest_hash": "aaf21893d520a78dee0787a1bcaf939ee6b922265ff670c272e2e1d450dd29a7",
     "verified_at": "2026-07-14T01:32:58.039665300+00:00"
   },
-  "notes": "Neutral Prime Distribution port (mathcorpus #12 / proofsearch #253) of Erdős-647 campaign theorem erdos647_mertens_assembly (problem_version 15d4503a-0985-4d50-9c6b-aa445348bb9d). Statement and proof are the kernel-verified campaign snapshot verbatim modulo the neutral rename; proof authority is the Lean kernel via the tracked proof-search loop.",
+  "notes": "Neutral Prime Distribution port (mathcorpus #12 / proofsearch #253) of Erdős-647 campaign theorem erdos647_mertens_assembly (problem_version 15d4503a-0985-4d50-9c6b-aa445348bb9d). Statement and proof are the kernel-verified campaign snapshot verbatim modulo the neutral rename; proof authority is the Lean kernel via the tracked proof-search loop. Refactored to import and reuse the five sibling analytic packets plus the theta bridge as recorded in dependencies.theorem_deps, instead of re-proving them inline.",
   "hashes": {
-    "packet_sha256": "a393d885b627471302c63673ff7c016a6500dcecbd0b5999972b51fdc8550d2f",
+    "packet_sha256": "df7c34af2a62ce85ddae30eb11e2b059ffb2ee572b2633ded1ebb03650ecc86b",
     "formal_statement_sha256": "ea4343adcc7dc623c357f0c369b62ac572a4a712bb38722af1fc48cd13905074",
-    "proof_body_sha256": "e8775af4784e184c7a96fad2d58ec6e3202008a18589ccdd4c61a14d6cb8df5f"
+    "proof_body_sha256": "28bab56d000eb5d79de2312b45effe2641cde416da34b7a231dccf4ae85bc2bd"
   }
 }

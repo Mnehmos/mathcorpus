@@ -28,6 +28,10 @@ headline theorem.
 
 namespace MathCorpus.Frontier.Erdos
 
+-- Module-local scope: sibling Erdos-1052 snapshots re-declare shared helpers
+-- (uDiv, sigmaStar, ...); this inner namespace keeps the root import collision-free.
+namespace OmegaOddLeTwoAdicAddOne
+
 def uDiv : ℕ → Finset ℕ :=
   fun n => n.divisors.filter (fun d => Nat.Coprime d (n / d))
 
@@ -316,5 +320,7 @@ theorem omega_odd_le_two_adic_add_one (a m : ℕ) (hm_odd : Odd m) (ha : 0 < a)
   have hdvdfinal := (Nat.Prime.pow_dvd_iff_le_factorization (p := 2) (by norm_num) hsm0).mp
     (two_pow_card_primeFactors_dvd_sigmaStar m hm_odd)
   omega
+
+end OmegaOddLeTwoAdicAddOne
 
 end MathCorpus.Frontier.Erdos

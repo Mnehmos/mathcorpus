@@ -80,7 +80,7 @@
       "formal_statement_sha256": "db30cd6f746d8ee8ff9ed8c5fafeda8b5aa9184d8e5e79f4e48be12c8b1d9626",
       "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
       "proof_body_path": "lean/MathCorpus/Frontier/Erdos/Erdos1052SigmaStarMulOfCoprime.lean",
-      "proof_body_sha256": "4d355ea927531407c05dbf810bc1f157da9f8178fce76a4c2349420a4b2f3786",
+      "proof_body_sha256": "17578fa9216f6ddb753e22dde3fe0544e4c99409046cb105056801ce0cefe0d8",
       "proof_body_redacted": false,
       "tactic_count": 55,
       "proof_length": 55,
@@ -588,9 +588,9 @@
   },
   "notes": "ANTI-OVERCLAIM: this packet proves only bounded companion infrastructure (sigma-star multiplicativity), not Erdos #1052 itself (genuinely OPEN), and not the omega_odd_le_two_adic_add_one structural bound that depends on this theorem (deferred to a future cycle) or the full even_of_isUnitaryPerfect headline theorem. Proof authority: Lean kernel via the tracked proof-search loop (episode 19b68166, problem_version cea84b0b-b31d-4567-b5c4-327ba4817749), submitted as a SubmitModule (2 defs uDiv/sigmaStar, re-transported from the companion packet erdos_1052_sigmastar_prime_pow_and_prime.v1 since a SubmitModule is a self-contained namespace that cannot reference another packet's verified declarations, + 4 helper theorems mem_uDiv/split_dvd_mul/quot_mul_quot/gcd_mul_left_eq + root theorem sigmaStar_mul_of_coprime), kernel_verified on the 3rd attempt. The sibling source's root proof used a 5-branch Finset.sum_nbij' with two nested-bullet `have := by apply Nat.dvd_gcd; · A; · B` blocks (bullets inside bullets); rewritten fully bullet-free: the 5 top-level bullets became 5 sequential unbulleted tactic blocks (Lean processes an unbulleted sequence against the first remaining goal, so each block just needs to fully close its own goal before the next begins), and the two nested apply+bullet pairs became term-mode `Nat.dvd_gcd proofA proofB` applications with each proof branch written as its own (possibly parenthesized single-`by`) term. New lesson beyond issue #67's known flattened-sequence trap: the SubmitModule flattener treats a bare newline as a new-tactic boundary whenever bracket/paren depth is 0 -- this bit both a multi-line `refine ... ?_ ?_ ?_ ?_ ?_` (attempt 1, fixed by keeping it on one line) and a multi-line term-mode application `have h := Foo\\n  arg1\\n  arg2` (attempt 2, fixed by wrapping the whole RHS in an outer paren immediately after `:=` so depth never returns to 0 mid-term). Independently re-verified in THIS environment's own pinned toolchain rather than treated as evidence merely because the sibling repo already reports it kernel_verified there -- per this repo's evidence policy. training.eligibility: quarantined per the default-quarantine policy for open_problem_related packets, matching every other packet in this lane.",
   "hashes": {
-    "packet_sha256": "18754cd4b0799c7c42d67b052118055211fd2c0668a66d8112ce51d4cc072a96",
+    "packet_sha256": "3ae96f5757901fc3c8cc149edd8f033f39bff5f5ad8fcf319d14983ed86b8d51",
     "formal_statement_sha256": "db30cd6f746d8ee8ff9ed8c5fafeda8b5aa9184d8e5e79f4e48be12c8b1d9626",
-    "proof_body_sha256": "4d355ea927531407c05dbf810bc1f157da9f8178fce76a4c2349420a4b2f3786"
+    "proof_body_sha256": "17578fa9216f6ddb753e22dde3fe0544e4c99409046cb105056801ce0cefe0d8"
   },
   "idea_attributions": [
     {

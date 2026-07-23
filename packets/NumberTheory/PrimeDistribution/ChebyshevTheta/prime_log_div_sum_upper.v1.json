@@ -59,8 +59,8 @@
     "theorem_deps": [],
     "kits": [],
     "tactic_tags": [
-      "intervalIntegral",
       "abel_summation",
+      "intervalIntegral",
       "explicit_bounds"
     ],
     "prerequisite_concepts": [
@@ -96,7 +96,7 @@
   },
   "notes": "Neutral Prime Distribution port (mathcorpus #12 / proofsearch #253) of Erdős-647 campaign theorem erdos647_prime_log_div_upper (problem_version b6aa3391-d6b7-4f3b-bc08-9a73261ecf4d). Statement and proof are the kernel-verified campaign snapshot verbatim modulo the neutral rename; proof authority is the Lean kernel via the tracked proof-search loop.",
   "hashes": {
-    "packet_sha256": "77935681c77b6d2bd96a39818d7656a98af7587d12295951ab86fc6af40d0958",
+    "packet_sha256": "713a9c36bcc26c78e196d2f4ff2d9edd65a8d509ef146586b2d06aee5c000580",
     "formal_statement_sha256": "cabd38999e501f88a4a4323543afc7c7679d5b95dddb126b512871e53877d879",
     "proof_body_sha256": "7a695e932d6fe6d26b379e5c646c116bd486b3e28e98463ae4c0253a3e314336"
   }

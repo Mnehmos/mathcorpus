@@ -79,7 +79,7 @@
       "formal_statement_sha256": "1b4332f23dd57127e6d994632359c7bf6fe25cc6b36a79f90092af2e1b7fc7ba",
       "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
       "proof_body_path": "lean/MathCorpus/Frontier/Erdos/Erdos1052FilterOrdCompl.lean",
-      "proof_body_sha256": "c4d2006b8ac026925350669649dcf3f5de8b963dd328b2c376a27a997a1c928b",
+      "proof_body_sha256": "c4829dca809204306a7bf3003ebbbc36b8f98f2703660a4be583e9cda1dc73c9",
       "proof_body_redacted": false,
       "tactic_count": 18,
       "proof_length": 18,
@@ -362,9 +362,9 @@
   },
   "notes": "ANTI-OVERCLAIM: this packet proves only bounded companion infrastructure, not Erdos #1052 itself (genuinely OPEN) and not the full known Subbarao-Warren 1966 companion result (unitary perfect numbers are even) -- that headline theorem still additionally needs sum_uDiv_factor (a Finset.sum_bij' 5-argument bijection with deeply nested bullets) and sum_uDiv_even (a Finset.sum_involution 4-argument involution), both deferred to a future cycle as the genuinely hard remaining pieces. Proof authority: Lean kernel via the tracked proof-search loop (episode 32ac25bb, problem_version 93ac7bac-dcbc-46d1-90c2-39bfbe11c157), submitted as a SubmitModule (1 def uDiv + 1 helper theorem mem_uDiv + root theorem filter_not_dvd_eq_uDiv_ordCompl), kernel_verified on the FIRST attempt. The original's `constructor` + two `.`-bullet Iff case splits were rewritten as a single Iff.intro term with each direction's multi-step body wrapped in its own parenthesized by-block, reusing the exact template that worked for erdos_1052_proper_eq_erase.v1's Iff split. Independently re-verified in THIS environment's own pinned toolchain rather than treated as evidence merely because the sibling repo already reports it kernel_verified there -- per this repo's evidence policy. training.eligibility: quarantined per the default-quarantine policy for open_problem_related packets pending real external review.",
   "hashes": {
-    "packet_sha256": "f87633f7402d5b1ce317975318cc53bd9fda522a48be99e76b63c5f22b6bef0f",
+    "packet_sha256": "b365225ebfb14381b3e80476757bd33fe4ab06cfede3cba53b443422c6ccd48a",
     "formal_statement_sha256": "1b4332f23dd57127e6d994632359c7bf6fe25cc6b36a79f90092af2e1b7fc7ba",
-    "proof_body_sha256": "c4d2006b8ac026925350669649dcf3f5de8b963dd328b2c376a27a997a1c928b"
+    "proof_body_sha256": "c4829dca809204306a7bf3003ebbbc36b8f98f2703660a4be583e9cda1dc73c9"
   },
   "idea_attributions": [
     {

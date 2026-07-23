@@ -44,6 +44,9 @@ jobs:
           python tools/dedupe_pipeline.py packets/ --out manifests/dedupe_clusters.json
           python tools/backfill_report.py packets/ --out manifests/backfill_report.json
 
+      - name: Committed manifests are current (regeneration must be a no-op)
+        run: git diff --exit-code -- manifests/
+
       - name: Build public exports
         run: python tools/export_jsonl.py packets/ --out exports/
 
@@ -51,15 +54,46 @@ jobs:
         run: python tools/redaction_audit.py packets/ exports/
 
   lean:
-    name: Lean build (kernel check)
+    name: Lean kernel check (changed modules)
     runs-on: ubuntu-latest
-    # The formal packets build against a pinned Lean + mathlib. This job is heavy
-    # (mathlib cache) and is a required gate once the toolchain is provisioned.
-    # It only runs when Lean sources change.
-    if: ${{ false }}  # flip to a path filter once lean-toolchain/mathlib rev is finalized
+    # Kernel-checks every Lean module the PR adds or changes, against the pinned
+    # toolchain + Mathlib cache. A full `lake build MathCorpus` of all ~380
+    # modules costs many hours per run (each module pays the full Mathlib import);
+    # run that as a scheduled/nightly job once corpus-olean caching is set up.
+    if: ${{ github.event_name == 'pull_request' }}
     steps:
       - uses: actions/checkout@v4
-      - uses: leanprover/lean-action@v1
         with:
-          lake-package-directory: "lean"
-          build-args: "MathCorpus"
+          fetch-depth: 0
+
+      - name: Detect changed Lean modules
+        id: changed
+        run: |
+          git diff --name-only --diff-filter=ACMR "origin/${{ github.base_ref }}"...HEAD -- 'lean/MathCorpus/**/*.lean' > changed_lean.txt
+          echo "count=$(wc -l < changed_lean.txt)" >> "$GITHUB_OUTPUT"
+          cat changed_lean.txt
+
+      - name: Install elan
+        if: steps.changed.outputs.count != '0'
+        run: |
+          curl -sSfL https://elan.lean-lang.org/elan-init.sh | sh -s -- -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+
+      - name: Fetch Mathlib cache
+        if: steps.changed.outputs.count != '0'
+        working-directory: lean
+        run: |
+          lake exe cache get
+
+      - name: Kernel-check changed modules (dependencies first)
+        if: steps.changed.outputs.count != '0'
+        working-directory: lean
+        run: |
+          # Build each changed module through lake so intra-corpus imports
+          # (dependency packets) are built and kernel-checked first.
+          while IFS= read -r f; do
+            mod=$(echo "${f#lean/}" | sed 's/\.lean$//; s/\//./g')
+            echo "::group::lake build $mod"
+            lake build "$mod"
+            echo "::endgroup::"
+          done < ../changed_lean.txt

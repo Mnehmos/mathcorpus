@@ -60,13 +60,12 @@
     "kits": [],
     "tactic_tags": [
       "intervalIntegral",
-      "abel_summation",
-      "explicit_bounds"
+      "hasDerivAt"
     ],
     "prerequisite_concepts": [
-      "chebyshev_theta",
-      "abel_summation",
-      "interval_integral"
+      "interval_integral",
+      "logarithm",
+      "fundamental_theorem_of_calculus"
     ]
   },
   "metrics": {
@@ -96,7 +95,7 @@
   },
   "notes": "Neutral Prime Distribution port (mathcorpus #12 / proofsearch #253) of Erdős-647 campaign theorem erdos647_mertens_weight_integral (problem_version 1fc1ab2d-de49-4660-8d7c-8aefeb853a73). Statement and proof are the kernel-verified campaign snapshot verbatim modulo the neutral rename; proof authority is the Lean kernel via the tracked proof-search loop.",
   "hashes": {
-    "packet_sha256": "3809b8912d05c749a0ab8369eae09b31c31152e183158a48f817bcb3316c9490",
+    "packet_sha256": "d291da91739ae379a7e9a4bac998408c5085dc6f9d8f1f765be7b1016197071f",
     "formal_statement_sha256": "b16942ebf3561f212261c1e485b0905d0e05dfb28737a2be9655e4b3cf904bb4",
     "proof_body_sha256": "639bfe019777d1c8594b92baff0c96e31d02fbc88651c4a2106dcbfcd2aaa15b"
   }

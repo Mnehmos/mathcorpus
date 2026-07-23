@@ -59,14 +59,14 @@
     "theorem_deps": [],
     "kits": [],
     "tactic_tags": [
-      "intervalIntegral",
-      "abel_summation",
+      "floor_bracketing",
+      "monotonicity",
       "explicit_bounds"
     ],
     "prerequisite_concepts": [
       "chebyshev_theta",
-      "abel_summation",
-      "interval_integral"
+      "floor_function",
+      "logarithm"
     ]
   },
   "metrics": {
@@ -96,7 +96,7 @@
   },
   "notes": "Neutral Prime Distribution port (mathcorpus #12 / proofsearch #253) of Erdős-647 campaign theorem erdos647_theta_real_ge (problem_version e7195e43-dab5-4ee8-85e6-b105d48503b8). Statement and proof are the kernel-verified campaign snapshot verbatim modulo the neutral rename; proof authority is the Lean kernel via the tracked proof-search loop.",
   "hashes": {
-    "packet_sha256": "ecbdb75a2ae06242ab84c84b9f649794786b7241472fbdc139446b0061ab698f",
+    "packet_sha256": "76bf4fc0632d75fc224367e0b878d8e1fefa0929a4fd863e5fbbadb87a0d4298",
     "formal_statement_sha256": "3786e7816c8d3de3cdba02443313db0831ad673fc723efbea4c5eaa14dde4104",
     "proof_body_sha256": "470f13a0020a0a081c473be3735f158813b657d718f0b0eed25d906141326770"
   }

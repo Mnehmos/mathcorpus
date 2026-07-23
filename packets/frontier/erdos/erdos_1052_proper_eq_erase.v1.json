@@ -78,7 +78,7 @@
       "formal_statement_sha256": "d2666d6fa7036045acca8da8095c6a99f28500a5198cafa2a9751df352a474ef",
       "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
       "proof_body_path": "lean/MathCorpus/Frontier/Erdos/Erdos1052ProperEqErase.lean",
-      "proof_body_sha256": "e4d8dd8fc27704306ab5031fe7325b2b0898f69fc4f523db9a26ceabe5b2dd11",
+      "proof_body_sha256": "382531bdf04dba6717e6235812bf80aaa9509c533d78c9938035250b2eba6da9",
       "proof_body_redacted": false,
       "tactic_count": 10,
       "proof_length": 10,
@@ -263,9 +263,9 @@
   },
   "notes": "ANTI-OVERCLAIM: this packet proves only bounded companion infrastructure (a bridge lemma between two divisor-set conventions), not Erdos #1052 itself (genuinely OPEN: are there finitely many unitary perfect numbers?), and not even the full known Subbarao-Warren 1966 companion result (unitary perfect numbers are even) -- that headline theorem additionally needs ordProj_dvd_of_mem_uDiv, not_dvd_div_ordProj, filter_not_dvd_eq_uDiv_ordCompl, sum_uDiv_factor (a Finset.sum_bij' 5-argument bijection), and sum_uDiv_even (a Finset.sum_involution 4-argument involution) -- all present, already kernel_verified, in the sibling repo's source file, but deferred here since transporting their nested `.`-bullet case splits (bullets inside bullets, in the sum_bij' branches) requires substantial bullet-free restructuring that this cycle's budget did not cover; a future cycle should attempt them, recording any blocker in packets/frontier/erdos/BLOCKERS.md rather than re-discovering this scoping decision from scratch. Proof authority: Lean kernel via the tracked proof-search loop (episode 59a627f1, problem_version 41662057-906e-478a-9593-de5cf47322a7), submitted as a SubmitModule (1 def uDiv + 2 helper theorems mem_uDiv/self_mem_uDiv + root theorem proper_eq_erase), kernel_verified on the FIRST attempt. The only bullet hazard in this bounded scope (proper_eq_erase's `constructor; · A; · B` Iff split) was rewritten as `Iff.intro (fun ... => A) (fun ... => ?_)`, continuing the remaining goal linearly with ordinary tactics -- no bullets needed since a single-`?_` refine never requires case-split syntax. Independently re-verified in THIS environment's own pinned toolchain rather than treated as evidence merely because the sibling repo (F:\\Github\\mnehmos.llm-driven-proof-search.environment\\ErdosProblems\\erdos-1052\\proof\\Erdos1052_even_of_isUnitaryPerfect.lean) already reports it kernel_verified there -- per this repo's evidence policy. training.eligibility: quarantined per the default-quarantine policy for open_problem_related packets pending real external review (same policy as the #291/#399/#349/#494 packets).",
   "hashes": {
-    "packet_sha256": "1d410372f6eafd4175e69ea8bb52aee2940a67992692cc2b1a4e29bffa5a90c8",
+    "packet_sha256": "d8c152b6c2f47a1f3a4cca85e76fe21201fbb1d1173e47df085f579098590791",
     "formal_statement_sha256": "d2666d6fa7036045acca8da8095c6a99f28500a5198cafa2a9751df352a474ef",
-    "proof_body_sha256": "e4d8dd8fc27704306ab5031fe7325b2b0898f69fc4f523db9a26ceabe5b2dd11"
+    "proof_body_sha256": "382531bdf04dba6717e6235812bf80aaa9509c533d78c9938035250b2eba6da9"
   },
   "idea_attributions": [
     {

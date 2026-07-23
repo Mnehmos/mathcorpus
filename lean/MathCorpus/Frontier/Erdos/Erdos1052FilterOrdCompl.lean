@@ -34,6 +34,10 @@ Kernel-verified through the tracked proof-search loop (episode 32ac25bb).
 
 namespace MathCorpus.Frontier.Erdos
 
+-- Module-local scope: sibling Erdos-1052 snapshots re-declare shared helpers
+-- (uDiv, sigmaStar, ...); this inner namespace keeps the root import collision-free.
+namespace FilterOrdCompl
+
 /-- All unitary divisors of `n`, including `1` and `n`. -/
 def uDiv (n : ℕ) : Finset ℕ := n.divisors.filter (fun d => Nat.Coprime d (n / d))
 
@@ -71,5 +75,7 @@ theorem filter_not_dvd_eq_uDiv_ordCompl {n p : ℕ} (hn : n ≠ 0) (hp : p.Prime
       rw [← Nat.mul_div_assoc _ hem, hPm]
     rw [hne]
     exact Nat.Coprime.mul_right (Nat.Coprime.pow_right _ ((hp.coprime_iff_not_dvd.mpr hpe).symm)) hcop
+
+end FilterOrdCompl
 
 end MathCorpus.Frontier.Erdos
