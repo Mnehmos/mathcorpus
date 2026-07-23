@@ -17,6 +17,10 @@ Subbarao-Warren `even_of_isUnitaryPerfect` headline theorem either.
 
 namespace MathCorpus.Frontier.Erdos
 
+-- Module-local scope: sibling Erdos-1052 snapshots re-declare shared helpers
+-- (uDiv, sigmaStar, ...); this inner namespace keeps the root import collision-free.
+namespace SigmaStarPrimePowAndPrime
+
 def uDiv : ℕ → Finset ℕ := fun n => n.divisors.filter (fun d => Nat.Coprime d (n / d))
 
 theorem mem_uDiv : ∀ {n d : ℕ}, n ≠ 0 → (d ∈ uDiv n ↔ d ∣ n ∧ Nat.Coprime d (n / d)) := by
@@ -72,5 +76,7 @@ theorem sigmaStar_prime : ∀ {p : ℕ}, p.Prime → sigmaStar p = p + 1 := by
   intro p hp
   have h := sigmaStar_prime_pow hp (le_refl 1)
   simpa using h
+
+end SigmaStarPrimePowAndPrime
 
 end MathCorpus.Frontier.Erdos

@@ -1,0 +1,117 @@
+{
+  "packet_id": "number_theory.prime_distribution.prime_reciprocal_sums.prime_reciprocal_quantitative_lower.v1",
+  "packet_version": "1.0.0",
+  "title": "Quantitative Mertens lower bound for the prime reciprocal sum",
+  "domain": "number_theory",
+  "level": "L6_known_theorem",
+  "kind": "theorem",
+  "status": "kernel_verified",
+  "difficulty_bin": "D5",
+  "lean_module": "MathCorpus.NumberTheory.PrimeDistribution.PrimeReciprocalSums.PrimeReciprocalQuantitativeLower",
+  "theorem_name": "prime_reciprocal_quantitative_lower",
+  "imports": [
+    "Mathlib",
+    "MathCorpus.NumberTheory.PrimeDistribution.Mertens.MertensExactThetaIdentity",
+    "MathCorpus.NumberTheory.PrimeDistribution.HarmonicAsymptotics.MertensMainTermAntiderivative",
+    "MathCorpus.NumberTheory.PrimeDistribution.HarmonicAsymptotics.MertensWeightIntegralClosedForm",
+    "MathCorpus.NumberTheory.PrimeDistribution.ExplicitBounds.MertensErrorIntegralLogBound",
+    "MathCorpus.NumberTheory.PrimeDistribution.ExplicitBounds.MertensErrorIntegralSqrtBound",
+    "MathCorpus.NumberTheory.PrimeDistribution.ChebyshevTheta.ThetaRealLowerBridge"
+  ],
+  "toolchain": {
+    "lean_version": "v4.32.0-rc1",
+    "mathlib_rev": "360da6fa66c1273b76b6b2d8c5666fd5ac2e3b56"
+  },
+  "source_provenance": {
+    "source_kind": "author_written",
+    "source_refs": [
+      "Erdős-647 campaign (Mnehmos/llm-driven-proof-search), Layer A quantitative-Mertens infrastructure; classical: Mertens (1874)"
+    ],
+    "authors": [
+      "The MathCorpus Authors"
+    ],
+    "copyright_holder": "The MathCorpus Authors",
+    "license_spdx": "Apache-2.0",
+    "license_content": "CC-BY-4.0",
+    "statement_fidelity": "canonical_statement_hash_match"
+  },
+  "informal_statement": "For every real x ≥ 2, log 2 · log log x − (1/2 + log 2 · log log 2 + (1 + 1/log 2)(1 + 2√2)) ≤ ∑_{p≤x} 1/p: an unconditional, fully explicit quantitative form of Mertens' second theorem (with leading constant log 2 in place of the optimal 1).",
+  "informal_proof_idea": "Substitute the real-valued Chebyshev lower bound for θ pointwise into the exact Mertens identity, split the weighted integral by linearity into the closed-form main term, the closed-form weight integral, and the two explicitly bounded error integrals, then collect constants.",
+  "formal_statement_pp": "theorem prime_reciprocal_quantitative_lower :\n    ∀ x : ℝ, 2 ≤ x → Real.log 2 * Real.log (Real.log x) -\n      (1/2 + Real.log 2 * Real.log (Real.log 2) + (1 + (Real.log 2)⁻¹) * (1 + 2*Real.sqrt 2))\n      ≤ ∑ p ∈ Finset.Icc 1 ⌊x⌋₊ with p.Prime, (1/(p:ℝ))",
+  "proof_body_path": "lean/MathCorpus/NumberTheory/PrimeDistribution/PrimeReciprocalSums/PrimeReciprocalQuantitativeLower.lean",
+  "proof_body_redacted": false,
+  "trust": {
+    "rung": 1,
+    "proof_authority": "lean_kernel",
+    "certificate_checker": "kernel_decide",
+    "encoding_required": false,
+    "encoding_soundness_status": "not_applicable",
+    "independent_review_status": "repo_reviewed",
+    "public_claim_class": "public_safe"
+  },
+  "training": {
+    "eligibility": "public_train",
+    "reason_codes": [
+      "public",
+      "non_benchmark",
+      "unredacted"
+    ],
+    "dedupe_cluster_id": "number_theory.prime_distribution.prime_reciprocal_quantitative_lower",
+    "template_family_id": "number_theory.prime_distribution.mertens_layer_a",
+    "contamination_risk": "low",
+    "can_export_proof_body": true
+  },
+  "dependencies": {
+    "theorem_deps": [
+      "MathCorpus.NumberTheory.PrimeDistribution.Mertens.mertens_exact_theta_identity",
+      "MathCorpus.NumberTheory.PrimeDistribution.HarmonicAsymptotics.mertens_main_term_antiderivative",
+      "MathCorpus.NumberTheory.PrimeDistribution.HarmonicAsymptotics.mertens_weight_integral_closed_form",
+      "MathCorpus.NumberTheory.PrimeDistribution.ExplicitBounds.mertens_error_integral_log_bound",
+      "MathCorpus.NumberTheory.PrimeDistribution.ExplicitBounds.mertens_error_integral_sqrt_bound",
+      "MathCorpus.NumberTheory.PrimeDistribution.ChebyshevTheta.theta_real_lower_bridge"
+    ],
+    "kits": [],
+    "tactic_tags": [
+      "intervalIntegral",
+      "integral_comparison",
+      "linarith"
+    ],
+    "prerequisite_concepts": [
+      "chebyshev_theta",
+      "abel_summation",
+      "interval_integral",
+      "mertens_theorems"
+    ]
+  },
+  "metrics": {
+    "loc": 164,
+    "tactic_count": 1
+  },
+  "artifacts": {
+    "public_files": [
+      "lean/MathCorpus/NumberTheory/PrimeDistribution/PrimeReciprocalSums/PrimeReciprocalQuantitativeLower.lean"
+    ]
+  },
+  "review": {
+    "review_basis": "repo self-review; kernel-verified through the tracked proof-search loop",
+    "reviewer_status": "repo_reviewed"
+  },
+  "verification": {
+    "verifier": "proofsearch",
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "episode_id": "2e9066f2-b66a-4bb1-a3ba-a821a7826448",
+    "outcome": "kernel_verified",
+    "kernel_verified": true,
+    "fidelity_status": "attested",
+    "step_count": 1,
+    "root_statement_sha256": "2470d4498d67527b14af26b8f3e21b68924d7f4751f105c6895623d310d207d1",
+    "import_manifest_hash": "aaf21893d520a78dee0787a1bcaf939ee6b922265ff670c272e2e1d450dd29a7",
+    "verified_at": "2026-07-14T01:32:58.039665300+00:00"
+  },
+  "notes": "Neutral Prime Distribution port (mathcorpus #12 / proofsearch #253) of Erdős-647 campaign theorem erdos647_mertens_assembly (problem_version 15d4503a-0985-4d50-9c6b-aa445348bb9d). Statement and proof are the kernel-verified campaign snapshot verbatim modulo the neutral rename; proof authority is the Lean kernel via the tracked proof-search loop. Refactored to import and reuse the five sibling analytic packets plus the theta bridge as recorded in dependencies.theorem_deps, instead of re-proving them inline.",
+  "hashes": {
+    "packet_sha256": "df7c34af2a62ce85ddae30eb11e2b059ffb2ee572b2633ded1ebb03650ecc86b",
+    "formal_statement_sha256": "ea4343adcc7dc623c357f0c369b62ac572a4a712bb38722af1fc48cd13905074",
+    "proof_body_sha256": "28bab56d000eb5d79de2312b45effe2641cde416da34b7a231dccf4ae85bc2bd"
+  }
+}

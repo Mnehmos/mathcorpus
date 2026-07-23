@@ -1,0 +1,102 @@
+{
+  "packet_id": "number_theory.prime_distribution.harmonic_asymptotics.mertens_main_term_antiderivative.v1",
+  "packet_version": "1.0.0",
+  "title": "Closed-form antiderivative of the Mertens main-term kernel",
+  "domain": "number_theory",
+  "level": "L5_grad",
+  "kind": "theorem",
+  "status": "kernel_verified",
+  "difficulty_bin": "D3",
+  "lean_module": "MathCorpus.NumberTheory.PrimeDistribution.HarmonicAsymptotics.MertensMainTermAntiderivative",
+  "theorem_name": "mertens_main_term_antiderivative",
+  "imports": [
+    "Mathlib"
+  ],
+  "toolchain": {
+    "lean_version": "v4.32.0-rc1",
+    "mathlib_rev": "360da6fa66c1273b76b6b2d8c5666fd5ac2e3b56"
+  },
+  "source_provenance": {
+    "source_kind": "author_written",
+    "source_refs": [
+      "Erdős-647 campaign (Mnehmos/llm-driven-proof-search), Layer A quantitative-Mertens infrastructure; classical: Mertens (1874)"
+    ],
+    "authors": [
+      "The MathCorpus Authors"
+    ],
+    "copyright_holder": "The MathCorpus Authors",
+    "license_spdx": "Apache-2.0",
+    "license_content": "CC-BY-4.0",
+    "statement_fidelity": "canonical_statement_hash_match"
+  },
+  "informal_statement": "For every real x ≥ 2, ∫_2^x (log t + 1)/(t log² t) dt = (log log x − 1/log x) − (log log 2 − 1/log 2).",
+  "informal_proof_idea": "The integrand is the exact derivative of t ↦ log log t − 1/log t; verify the derivative pointwise on [2, x] and apply the fundamental theorem of calculus for interval integrals.",
+  "formal_statement_pp": "theorem mertens_main_term_antiderivative :\n    ∀ x : ℝ, 2 ≤ x →\n      ∫ t in (2:ℝ)..x, (Real.log t + 1) / (t * (Real.log t)^2)\n        = (Real.log (Real.log x) - (Real.log x)⁻¹)\n          - (Real.log (Real.log 2) - (Real.log 2)⁻¹)",
+  "proof_body_path": "lean/MathCorpus/NumberTheory/PrimeDistribution/HarmonicAsymptotics/MertensMainTermAntiderivative.lean",
+  "proof_body_redacted": false,
+  "trust": {
+    "rung": 1,
+    "proof_authority": "lean_kernel",
+    "certificate_checker": "kernel_decide",
+    "encoding_required": false,
+    "encoding_soundness_status": "not_applicable",
+    "independent_review_status": "repo_reviewed",
+    "public_claim_class": "public_safe"
+  },
+  "training": {
+    "eligibility": "public_train",
+    "reason_codes": [
+      "public",
+      "non_benchmark",
+      "unredacted"
+    ],
+    "dedupe_cluster_id": "number_theory.prime_distribution.mertens_main_term_antiderivative",
+    "template_family_id": "number_theory.prime_distribution.mertens_layer_a",
+    "contamination_risk": "low",
+    "can_export_proof_body": true
+  },
+  "dependencies": {
+    "theorem_deps": [],
+    "kits": [],
+    "tactic_tags": [
+      "intervalIntegral",
+      "hasDerivAt"
+    ],
+    "prerequisite_concepts": [
+      "interval_integral",
+      "logarithm",
+      "fundamental_theorem_of_calculus"
+    ]
+  },
+  "metrics": {
+    "loc": 47,
+    "tactic_count": 1
+  },
+  "artifacts": {
+    "public_files": [
+      "lean/MathCorpus/NumberTheory/PrimeDistribution/HarmonicAsymptotics/MertensMainTermAntiderivative.lean"
+    ]
+  },
+  "review": {
+    "review_basis": "repo self-review; kernel-verified through the tracked proof-search loop",
+    "reviewer_status": "repo_reviewed"
+  },
+  "verification": {
+    "verifier": "proofsearch",
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "episode_id": "36f8eaa9-7116-44a3-b633-f8f1a03210f4",
+    "outcome": "kernel_verified",
+    "kernel_verified": true,
+    "fidelity_status": "attested",
+    "step_count": 1,
+    "root_statement_sha256": "513062caa29c528d7f2df3f6e92de50073c08703b87b05fe15abc49064431b65",
+    "import_manifest_hash": "aaf21893d520a78dee0787a1bcaf939ee6b922265ff670c272e2e1d450dd29a7",
+    "verified_at": "2026-07-13T17:39:34.591692200+00:00"
+  },
+  "notes": "Neutral Prime Distribution port (mathcorpus #12 / proofsearch #253) of Erdős-647 campaign theorem erdos647_mertens_mainterm (problem_version 781d4876-55c9-4c3c-9420-602b508771be). Statement and proof are the kernel-verified campaign snapshot verbatim modulo the neutral rename; proof authority is the Lean kernel via the tracked proof-search loop.",
+  "hashes": {
+    "packet_sha256": "7c8e7b733e0a98f97be1e2e9f85fc5355f3186b7a79ede025089fc631573b90c",
+    "formal_statement_sha256": "9a90cc730c1cf98afb973c6c411b8ceca75655c7d159c13906d2b8a94786188d",
+    "proof_body_sha256": "0e0dc8e8e52c0deed32f897a21cc640b57a48bbab2e3b01d13f776a34001a2e3"
+  }
+}

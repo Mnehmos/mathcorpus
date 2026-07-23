@@ -1,5 +1,15 @@
 {
   "nodes": [
+    "number_theory.prime_distribution.chebyshev_theta.prime_log_div_sum_upper.v1",
+    "number_theory.prime_distribution.chebyshev_theta.theta_abel_prime_log_identity.v1",
+    "number_theory.prime_distribution.chebyshev_theta.theta_real_lower_bridge.v1",
+    "number_theory.prime_distribution.explicit_bounds.mertens_error_integral_log_bound.v1",
+    "number_theory.prime_distribution.explicit_bounds.mertens_error_integral_sqrt_bound.v1",
+    "number_theory.prime_distribution.harmonic_asymptotics.mertens_main_term_antiderivative.v1",
+    "number_theory.prime_distribution.harmonic_asymptotics.mertens_weight_integral_closed_form.v1",
+    "number_theory.prime_distribution.harmonic_asymptotics.power_law_integral_two_to_x.v1",
+    "number_theory.prime_distribution.mertens.mertens_exact_theta_identity.v1",
+    "number_theory.prime_distribution.prime_reciprocal_sums.prime_reciprocal_quantitative_lower.v1",
     "fixtures.metrics.model_performance_conformance.v1",
     "elementary.algebra.add_assoc.v1",
     "elementary.algebra.add_comm.v1",
@@ -5760,6 +5770,170 @@
       },
       {
         "to": "modular_arithmetic",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "number_theory.prime_distribution.chebyshev_theta.prime_log_div_sum_upper.v1": [
+      {
+        "to": "chebyshev_theta",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "abel_summation",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "interval_integral",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "number_theory.prime_distribution.chebyshev_theta.theta_abel_prime_log_identity.v1": [
+      {
+        "to": "chebyshev_theta",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "abel_summation",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "interval_integral",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "number_theory.prime_distribution.chebyshev_theta.theta_real_lower_bridge.v1": [
+      {
+        "to": "chebyshev_theta",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "floor_function",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "logarithm",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "number_theory.prime_distribution.explicit_bounds.mertens_error_integral_log_bound.v1": [
+      {
+        "to": "interval_integral",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "logarithm",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "integral_comparison",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "number_theory.prime_distribution.explicit_bounds.mertens_error_integral_sqrt_bound.v1": [
+      {
+        "to": "interval_integral",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "square_root",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "integral_comparison",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "number_theory.prime_distribution.harmonic_asymptotics.mertens_main_term_antiderivative.v1": [
+      {
+        "to": "interval_integral",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "logarithm",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "fundamental_theorem_of_calculus",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "number_theory.prime_distribution.harmonic_asymptotics.mertens_weight_integral_closed_form.v1": [
+      {
+        "to": "interval_integral",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "logarithm",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "fundamental_theorem_of_calculus",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "number_theory.prime_distribution.harmonic_asymptotics.power_law_integral_two_to_x.v1": [
+      {
+        "to": "interval_integral",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "fundamental_theorem_of_calculus",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "number_theory.prime_distribution.mertens.mertens_exact_theta_identity.v1": [
+      {
+        "to": "chebyshev_theta",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "abel_summation",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "interval_integral",
+        "type": "prerequisite_concepts"
+      }
+    ],
+    "number_theory.prime_distribution.prime_reciprocal_sums.prime_reciprocal_quantitative_lower.v1": [
+      {
+        "to": "MathCorpus.NumberTheory.PrimeDistribution.Mertens.mertens_exact_theta_identity",
+        "type": "theorem_deps"
+      },
+      {
+        "to": "MathCorpus.NumberTheory.PrimeDistribution.HarmonicAsymptotics.mertens_main_term_antiderivative",
+        "type": "theorem_deps"
+      },
+      {
+        "to": "MathCorpus.NumberTheory.PrimeDistribution.HarmonicAsymptotics.mertens_weight_integral_closed_form",
+        "type": "theorem_deps"
+      },
+      {
+        "to": "MathCorpus.NumberTheory.PrimeDistribution.ExplicitBounds.mertens_error_integral_log_bound",
+        "type": "theorem_deps"
+      },
+      {
+        "to": "MathCorpus.NumberTheory.PrimeDistribution.ExplicitBounds.mertens_error_integral_sqrt_bound",
+        "type": "theorem_deps"
+      },
+      {
+        "to": "MathCorpus.NumberTheory.PrimeDistribution.ChebyshevTheta.theta_real_lower_bridge",
+        "type": "theorem_deps"
+      },
+      {
+        "to": "chebyshev_theta",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "abel_summation",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "interval_integral",
+        "type": "prerequisite_concepts"
+      },
+      {
+        "to": "mertens_theorems",
         "type": "prerequisite_concepts"
       }
     ],

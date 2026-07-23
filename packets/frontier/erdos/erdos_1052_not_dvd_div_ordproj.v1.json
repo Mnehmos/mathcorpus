@@ -78,7 +78,7 @@
       "formal_statement_sha256": "f187ad28f61a366051ac1f3d0965218cc70702f08a69909b7ed2df03c0231e7d",
       "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
       "proof_body_path": "lean/MathCorpus/Frontier/Erdos/Erdos1052NotDvdDivOrdProj.lean",
-      "proof_body_sha256": "e9f41ce4279ea4eb8efa90959dab057d1367abaeb98f211508a48ba04a124439",
+      "proof_body_sha256": "89578902c96e621fce96b75d72e1a9cc07b5d20c2606202b020ce1d18817d125",
       "proof_body_redacted": false,
       "tactic_count": 12,
       "proof_length": 12,
@@ -221,9 +221,9 @@
   },
   "notes": "ANTI-OVERCLAIM: this packet proves only bounded companion infrastructure, not Erdos #1052 itself (genuinely OPEN) and not the full known Subbarao-Warren 1966 companion result (unitary perfect numbers are even) -- that headline theorem still additionally needs filter_not_dvd_eq_uDiv_ordCompl, sum_uDiv_factor (a Finset.sum_bij' 5-argument bijection with deeply nested bullets), and sum_uDiv_even (a Finset.sum_involution 4-argument involution), all deferred to a future cycle. Proof authority: Lean kernel via the tracked proof-search loop (episode 2d9c2f64, problem_version ac4911a9-a44e-47a0-8a4f-d1df1330bdd9), submitted as a SubmitModule (1 def uDiv + 2 helper theorems mem_uDiv/ordProj_dvd_of_mem_uDiv + root theorem not_dvd_div_ordProj), kernel_verified on the FIRST attempt -- unlike the prior erdos_1052_proper_eq_erase packet, none of these three lemmas needed bullet-free rewriting (the sibling source already had no `.`-bullet case splits in them), so this was a near-verbatim transport with only the standard `have h := by tac1; tac2` -> `have h := (by tac1; tac2)` parenthesization fix applied once (in ordProj_dvd_of_mem_uDiv's `happ`) per the documented flattened-sequence lesson. Independently re-verified in THIS environment's own pinned toolchain rather than treated as evidence merely because the sibling repo already reports it kernel_verified there -- per this repo's evidence policy. training.eligibility: quarantined per the default-quarantine policy for open_problem_related packets pending real external review.",
   "hashes": {
-    "packet_sha256": "681314e8862d1fe596ffa1f7bb38288eebb4d2c55b680f85ec4e223ee10f20c6",
+    "packet_sha256": "48f9c35fbed104c87ab3160511f9fa6cdb58612eed1a71f58f541a7f13e06325",
     "formal_statement_sha256": "f187ad28f61a366051ac1f3d0965218cc70702f08a69909b7ed2df03c0231e7d",
-    "proof_body_sha256": "e9f41ce4279ea4eb8efa90959dab057d1367abaeb98f211508a48ba04a124439"
+    "proof_body_sha256": "89578902c96e621fce96b75d72e1a9cc07b5d20c2606202b020ce1d18817d125"
   },
   "idea_attributions": [
     {

@@ -1,11 +1,11 @@
 {
-  "packet_count": 367,
+  "packet_count": 377,
   "by_domain": {
+    "number_theory": 74,
     "logic": 3,
     "algebra": 171,
     "combinatorics": 57,
     "geometry": 40,
-    "number_theory": 64,
     "frontier": 25,
     "abstract_algebra": 2,
     "linear_algebra": 1,
@@ -13,6 +13,9 @@
     "topology": 2
   },
   "by_level": {
+    "L5_grad": 8,
+    "L4_advanced_undergrad": 1,
+    "L6_known_theorem": 1,
     "L0_elementary": 111,
     "L1_proof_basics": 187,
     "L2_olympiad": 36,
@@ -20,13 +23,13 @@
     "L3_undergrad": 8
   },
   "by_kind": {
+    "theorem": 53,
     "concept": 296,
-    "theorem": 43,
     "negative_example": 28
   },
   "by_status": {
+    "kernel_verified": 347,
     "empirical_only": 2,
-    "kernel_verified": 337,
     "failed_attempt": 28
   },
   "packets": [
@@ -1948,7 +1951,7 @@
       "kind": "concept",
       "status": "kernel_verified",
       "eligibility": "public_train",
-      "packet_sha256": "f80f3693be16c30a318eee7171be53089bc6bbe0d9de2cf47abcd4184590b3e9"
+      "packet_sha256": "9fff7385492f2c1da2543c6db82a527d105eca1a2ead505475c693c7a834dddb"
     },
     {
       "packet_id": "elementary.induction.odd_part_decomposition.v1",
@@ -3098,7 +3101,7 @@
       "kind": "theorem",
       "status": "kernel_verified",
       "eligibility": "quarantined",
-      "packet_sha256": "f87633f7402d5b1ce317975318cc53bd9fda522a48be99e76b63c5f22b6bef0f"
+      "packet_sha256": "b365225ebfb14381b3e80476757bd33fe4ab06cfede3cba53b443422c6ccd48a"
     },
     {
       "packet_id": "frontier.erdos.erdos_1052_not_dvd_div_ordproj.v1",
@@ -3108,7 +3111,7 @@
       "kind": "theorem",
       "status": "kernel_verified",
       "eligibility": "quarantined",
-      "packet_sha256": "681314e8862d1fe596ffa1f7bb38288eebb4d2c55b680f85ec4e223ee10f20c6"
+      "packet_sha256": "48f9c35fbed104c87ab3160511f9fa6cdb58612eed1a71f58f541a7f13e06325"
     },
     {
       "packet_id": "frontier.erdos.erdos_1052_omega_odd_le_two_adic_add_one.v1",
@@ -3118,7 +3121,7 @@
       "kind": "theorem",
       "status": "kernel_verified",
       "eligibility": "quarantined",
-      "packet_sha256": "f0161e3fae30c9863486ece6c419b4952b24618392abd725e700658e75220b69"
+      "packet_sha256": "14f39367f94d6203fbda16e291b3f39714c3a0dd8b7e53be833cb13c5f04e612"
     },
     {
       "packet_id": "frontier.erdos.erdos_1052_proper_eq_erase.v1",
@@ -3128,7 +3131,7 @@
       "kind": "theorem",
       "status": "kernel_verified",
       "eligibility": "quarantined",
-      "packet_sha256": "1d410372f6eafd4175e69ea8bb52aee2940a67992692cc2b1a4e29bffa5a90c8"
+      "packet_sha256": "d8c152b6c2f47a1f3a4cca85e76fe21201fbb1d1173e47df085f579098590791"
     },
     {
       "packet_id": "frontier.erdos.erdos_1052_sigmastar_mul_of_coprime.v1",
@@ -3138,7 +3141,7 @@
       "kind": "theorem",
       "status": "kernel_verified",
       "eligibility": "quarantined",
-      "packet_sha256": "18754cd4b0799c7c42d67b052118055211fd2c0668a66d8112ce51d4cc072a96"
+      "packet_sha256": "3ae96f5757901fc3c8cc149edd8f033f39bff5f5ad8fcf319d14983ed86b8d51"
     },
     {
       "packet_id": "frontier.erdos.erdos_1052_sigmastar_prime_pow_and_prime.v1",
@@ -3148,7 +3151,7 @@
       "kind": "theorem",
       "status": "kernel_verified",
       "eligibility": "quarantined",
-      "packet_sha256": "27912b85059e009f3152f9f8906634e17701d5c171ba0b5145dd54b666954af0"
+      "packet_sha256": "70bd7ebbb41da379bd7890c50a7ff209e50156e39de0d1821e9158bd6d241476"
     },
     {
       "packet_id": "frontier.erdos.erdos_291_infinite_gcd_gt_one.v1",
@@ -3619,6 +3622,106 @@
       "status": "failed_attempt",
       "eligibility": "negative_example_only",
       "packet_sha256": "1180e83178294b0387609a870da22e0f19e3b217e24f6abf21d59886cf708b5c"
+    },
+    {
+      "packet_id": "number_theory.prime_distribution.chebyshev_theta.prime_log_div_sum_upper.v1",
+      "title": "Explicit upper bound for the prime logarithmic moment",
+      "domain": "number_theory",
+      "level": "L5_grad",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "713a9c36bcc26c78e196d2f4ff2d9edd65a8d509ef146586b2d06aee5c000580"
+    },
+    {
+      "packet_id": "number_theory.prime_distribution.chebyshev_theta.theta_abel_prime_log_identity.v1",
+      "title": "Abel identity for the prime logarithmic moment",
+      "domain": "number_theory",
+      "level": "L5_grad",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "2cdd54c01bc38096958be5d2450de1991a770681d9f2ee077240636d613f6978"
+    },
+    {
+      "packet_id": "number_theory.prime_distribution.chebyshev_theta.theta_real_lower_bridge.v1",
+      "title": "Real-valued Chebyshev theta lower-bound bridge",
+      "domain": "number_theory",
+      "level": "L5_grad",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "76bf4fc0632d75fc224367e0b878d8e1fefa0929a4fd863e5fbbadb87a0d4298"
+    },
+    {
+      "packet_id": "number_theory.prime_distribution.explicit_bounds.mertens_error_integral_log_bound.v1",
+      "title": "Explicit bound for the logarithmic Mertens error integral",
+      "domain": "number_theory",
+      "level": "L5_grad",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "16ee9e2c0936bab2e15fc4fae6dc967b6e60cfc8d96bdbe016bf3e6f2e70e0dc"
+    },
+    {
+      "packet_id": "number_theory.prime_distribution.explicit_bounds.mertens_error_integral_sqrt_bound.v1",
+      "title": "Explicit bound for the square-root Mertens error integral",
+      "domain": "number_theory",
+      "level": "L5_grad",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "a8da0427a6540e907785dbf4075e5b219928dd06547604f1cd3d3f9c907cd3b5"
+    },
+    {
+      "packet_id": "number_theory.prime_distribution.harmonic_asymptotics.mertens_main_term_antiderivative.v1",
+      "title": "Closed-form antiderivative of the Mertens main-term kernel",
+      "domain": "number_theory",
+      "level": "L5_grad",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "7c8e7b733e0a98f97be1e2e9f85fc5355f3186b7a79ede025089fc631573b90c"
+    },
+    {
+      "packet_id": "number_theory.prime_distribution.harmonic_asymptotics.mertens_weight_integral_closed_form.v1",
+      "title": "Closed-form Mertens weight integral",
+      "domain": "number_theory",
+      "level": "L5_grad",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "d291da91739ae379a7e9a4bac998408c5085dc6f9d8f1f765be7b1016197071f"
+    },
+    {
+      "packet_id": "number_theory.prime_distribution.harmonic_asymptotics.power_law_integral_two_to_x.v1",
+      "title": "Power-law comparison integral",
+      "domain": "number_theory",
+      "level": "L4_advanced_undergrad",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "5befdbaec9332331fe51b8e94a88ffa77d7ddba2e0a1473b131ffaee854b9f13"
+    },
+    {
+      "packet_id": "number_theory.prime_distribution.mertens.mertens_exact_theta_identity.v1",
+      "title": "Exact Mertens identity via Chebyshev theta",
+      "domain": "number_theory",
+      "level": "L5_grad",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "9a7f344a566ceaab3340be0ec17418cb2e47bcab0eade569045f979e01ee63e1"
+    },
+    {
+      "packet_id": "number_theory.prime_distribution.prime_reciprocal_sums.prime_reciprocal_quantitative_lower.v1",
+      "title": "Quantitative Mertens lower bound for the prime reciprocal sum",
+      "domain": "number_theory",
+      "level": "L6_known_theorem",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "df7c34af2a62ce85ddae30eb11e2b059ffb2ee572b2633ded1ebb03650ecc86b"
     },
     {
       "packet_id": "undergrad.abstract_algebra.group_inv_inv.v1",

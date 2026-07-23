@@ -1,0 +1,102 @@
+{
+  "packet_id": "number_theory.prime_distribution.explicit_bounds.mertens_error_integral_log_bound.v1",
+  "packet_version": "1.0.0",
+  "title": "Explicit bound for the logarithmic Mertens error integral",
+  "domain": "number_theory",
+  "level": "L5_grad",
+  "kind": "theorem",
+  "status": "kernel_verified",
+  "difficulty_bin": "D4",
+  "lean_module": "MathCorpus.NumberTheory.PrimeDistribution.ExplicitBounds.MertensErrorIntegralLogBound",
+  "theorem_name": "mertens_error_integral_log_bound",
+  "imports": [
+    "Mathlib"
+  ],
+  "toolchain": {
+    "lean_version": "v4.32.0-rc1",
+    "mathlib_rev": "360da6fa66c1273b76b6b2d8c5666fd5ac2e3b56"
+  },
+  "source_provenance": {
+    "source_kind": "author_written",
+    "source_refs": [
+      "Erdős-647 campaign (Mnehmos/llm-driven-proof-search), Layer A quantitative-Mertens infrastructure; classical: Mertens (1874)"
+    ],
+    "authors": [
+      "The MathCorpus Authors"
+    ],
+    "copyright_holder": "The MathCorpus Authors",
+    "license_spdx": "Apache-2.0",
+    "license_content": "CC-BY-4.0",
+    "statement_fidelity": "canonical_statement_hash_match"
+  },
+  "informal_statement": "For every real x ≥ 2, ∫_2^x (log t + 1) · log(t + 2)/(t² log² t) dt ≤ 1 + 1/log 2.",
+  "informal_proof_idea": "Bound log(t+2) against t^(1/2)-free elementary comparisons so the integrand is dominated by a multiple of the exactly integrable weight kernel; integrate the dominating kernel in closed form and evaluate the constant.",
+  "formal_statement_pp": "theorem mertens_error_integral_log_bound :\n    ∀ x : ℝ, 2 ≤ x →\n      (∫ t in (2:ℝ)..x, (Real.log t + 1) * Real.log (t + 2) / (t^2 * (Real.log t)^2))\n        ≤ 1 + (Real.log 2)⁻¹",
+  "proof_body_path": "lean/MathCorpus/NumberTheory/PrimeDistribution/ExplicitBounds/MertensErrorIntegralLogBound.lean",
+  "proof_body_redacted": false,
+  "trust": {
+    "rung": 1,
+    "proof_authority": "lean_kernel",
+    "certificate_checker": "kernel_decide",
+    "encoding_required": false,
+    "encoding_soundness_status": "not_applicable",
+    "independent_review_status": "repo_reviewed",
+    "public_claim_class": "public_safe"
+  },
+  "training": {
+    "eligibility": "public_train",
+    "reason_codes": [
+      "public",
+      "non_benchmark",
+      "unredacted"
+    ],
+    "dedupe_cluster_id": "number_theory.prime_distribution.mertens_error_integral_log_bound",
+    "template_family_id": "number_theory.prime_distribution.mertens_layer_a",
+    "contamination_risk": "low",
+    "can_export_proof_body": true
+  },
+  "dependencies": {
+    "theorem_deps": [],
+    "kits": [],
+    "tactic_tags": [
+      "intervalIntegral",
+      "explicit_bounds"
+    ],
+    "prerequisite_concepts": [
+      "interval_integral",
+      "logarithm",
+      "integral_comparison"
+    ]
+  },
+  "metrics": {
+    "loc": 84,
+    "tactic_count": 1
+  },
+  "artifacts": {
+    "public_files": [
+      "lean/MathCorpus/NumberTheory/PrimeDistribution/ExplicitBounds/MertensErrorIntegralLogBound.lean"
+    ]
+  },
+  "review": {
+    "review_basis": "repo self-review; kernel-verified through the tracked proof-search loop",
+    "reviewer_status": "repo_reviewed"
+  },
+  "verification": {
+    "verifier": "proofsearch",
+    "environment_hash": "9e26d28efe88484c36562da27aa22a2cc73a0638d11532cbbc9071a60609025d",
+    "episode_id": "6fa25185-251b-4203-a843-63fc2b0c43e6",
+    "outcome": "kernel_verified",
+    "kernel_verified": true,
+    "fidelity_status": "attested",
+    "step_count": 1,
+    "root_statement_sha256": "935fe42967e7ff964228916ae4a685a231db58b3131fe2f491aff2da5b1c0a61",
+    "import_manifest_hash": "aaf21893d520a78dee0787a1bcaf939ee6b922265ff670c272e2e1d450dd29a7",
+    "verified_at": "2026-07-13T20:16:37.089661200+00:00"
+  },
+  "notes": "Neutral Prime Distribution port (mathcorpus #12 / proofsearch #253) of Erdős-647 campaign theorem erdos647_mertens_error_log (problem_version 8bf294a3-c882-4588-9894-e2fbc8ee0edf). Statement and proof are the kernel-verified campaign snapshot verbatim modulo the neutral rename; proof authority is the Lean kernel via the tracked proof-search loop.",
+  "hashes": {
+    "packet_sha256": "16ee9e2c0936bab2e15fc4fae6dc967b6e60cfc8d96bdbe016bf3e6f2e70e0dc",
+    "formal_statement_sha256": "31f5efe204c004b5453f2b8a7962212b6dc52fded0d324c129ee0b815fee1751",
+    "proof_body_sha256": "2c51d0a504d90cad00e9519d31d1c170e79cfbd5f725c5476cfd51e899bc95de"
+  }
+}

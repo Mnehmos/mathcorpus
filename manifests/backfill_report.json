@@ -1,35 +1,35 @@
 {
-  "packet_count": 359,
+  "packet_count": 377,
   "summary_by_field": {
     "tactics_and_proof_shape": {
-      "not_applicable": 30,
-      "recovered": 329
+      "recovered": 347,
+      "not_applicable": 30
     },
     "proof_profile": {
-      "not_yet_backfilled": 2,
+      "not_yet_backfilled": 20,
       "recovered": 329,
       "not_applicable": 28
     },
     "explicit_dependencies": {
-      "not_yet_backfilled": 2,
+      "not_yet_backfilled": 20,
       "recovered": 329,
       "not_applicable": 28
     },
     "episode_and_trajectory_linkage": {
-      "unrecoverable_missing": 15,
-      "partial_episode_id_only": 308,
+      "partial_episode_id_only": 318,
+      "unrecoverable_missing": 23,
       "recovered": 36
     },
     "attempts_and_diagnostics": {
-      "unrecoverable_missing": 356,
+      "unrecoverable_missing": 374,
       "recovered": 3
     },
     "model_hashes_tokens_cost_timing": {
-      "recovered": 1,
-      "unrecoverable_missing": 358
+      "unrecoverable_missing": 376,
+      "recovered": 1
     },
     "proof_variants_and_repair_chains": {
-      "not_yet_backfilled": 29,
+      "not_yet_backfilled": 47,
       "recovered": 330
     }
   },
@@ -2822,7 +2822,7 @@
     },
     {
       "packet_id": "elementary.induction.sum_cubes_eq_sum_sq.v1",
-      "kind": "concept",
+      "kind": "theorem",
       "status": "kernel_verified",
       "fields": {
         "tactics_and_proof_shape": "recovered",
@@ -5055,6 +5055,258 @@
         "proof_profile": "not_applicable",
         "explicit_dependencies": "not_applicable",
         "episode_and_trajectory_linkage": "partial_episode_id_only",
+        "attempts_and_diagnostics": "unrecoverable_missing",
+        "model_hashes_tokens_cost_timing": "unrecoverable_missing",
+        "proof_variants_and_repair_chains": "not_yet_backfilled"
+      }
+    },
+    {
+      "packet_id": "number_theory.prime_distribution.chebyshev_theta.prime_log_div_sum_upper.v1",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "fields": {
+        "tactics_and_proof_shape": "recovered",
+        "proof_profile": "not_yet_backfilled",
+        "explicit_dependencies": "not_yet_backfilled",
+        "episode_and_trajectory_linkage": "partial_episode_id_only",
+        "attempts_and_diagnostics": "unrecoverable_missing",
+        "model_hashes_tokens_cost_timing": "unrecoverable_missing",
+        "proof_variants_and_repair_chains": "not_yet_backfilled"
+      }
+    },
+    {
+      "packet_id": "number_theory.prime_distribution.chebyshev_theta.theta_abel_prime_log_identity.v1",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "fields": {
+        "tactics_and_proof_shape": "recovered",
+        "proof_profile": "not_yet_backfilled",
+        "explicit_dependencies": "not_yet_backfilled",
+        "episode_and_trajectory_linkage": "partial_episode_id_only",
+        "attempts_and_diagnostics": "unrecoverable_missing",
+        "model_hashes_tokens_cost_timing": "unrecoverable_missing",
+        "proof_variants_and_repair_chains": "not_yet_backfilled"
+      }
+    },
+    {
+      "packet_id": "number_theory.prime_distribution.chebyshev_theta.theta_real_lower_bridge.v1",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "fields": {
+        "tactics_and_proof_shape": "recovered",
+        "proof_profile": "not_yet_backfilled",
+        "explicit_dependencies": "not_yet_backfilled",
+        "episode_and_trajectory_linkage": "partial_episode_id_only",
+        "attempts_and_diagnostics": "unrecoverable_missing",
+        "model_hashes_tokens_cost_timing": "unrecoverable_missing",
+        "proof_variants_and_repair_chains": "not_yet_backfilled"
+      }
+    },
+    {
+      "packet_id": "number_theory.prime_distribution.explicit_bounds.mertens_error_integral_log_bound.v1",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "fields": {
+        "tactics_and_proof_shape": "recovered",
+        "proof_profile": "not_yet_backfilled",
+        "explicit_dependencies": "not_yet_backfilled",
+        "episode_and_trajectory_linkage": "partial_episode_id_only",
+        "attempts_and_diagnostics": "unrecoverable_missing",
+        "model_hashes_tokens_cost_timing": "unrecoverable_missing",
+        "proof_variants_and_repair_chains": "not_yet_backfilled"
+      }
+    },
+    {
+      "packet_id": "number_theory.prime_distribution.explicit_bounds.mertens_error_integral_sqrt_bound.v1",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "fields": {
+        "tactics_and_proof_shape": "recovered",
+        "proof_profile": "not_yet_backfilled",
+        "explicit_dependencies": "not_yet_backfilled",
+        "episode_and_trajectory_linkage": "partial_episode_id_only",
+        "attempts_and_diagnostics": "unrecoverable_missing",
+        "model_hashes_tokens_cost_timing": "unrecoverable_missing",
+        "proof_variants_and_repair_chains": "not_yet_backfilled"
+      }
+    },
+    {
+      "packet_id": "number_theory.prime_distribution.harmonic_asymptotics.mertens_main_term_antiderivative.v1",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "fields": {
+        "tactics_and_proof_shape": "recovered",
+        "proof_profile": "not_yet_backfilled",
+        "explicit_dependencies": "not_yet_backfilled",
+        "episode_and_trajectory_linkage": "partial_episode_id_only",
+        "attempts_and_diagnostics": "unrecoverable_missing",
+        "model_hashes_tokens_cost_timing": "unrecoverable_missing",
+        "proof_variants_and_repair_chains": "not_yet_backfilled"
+      }
+    },
+    {
+      "packet_id": "number_theory.prime_distribution.harmonic_asymptotics.mertens_weight_integral_closed_form.v1",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "fields": {
+        "tactics_and_proof_shape": "recovered",
+        "proof_profile": "not_yet_backfilled",
+        "explicit_dependencies": "not_yet_backfilled",
+        "episode_and_trajectory_linkage": "partial_episode_id_only",
+        "attempts_and_diagnostics": "unrecoverable_missing",
+        "model_hashes_tokens_cost_timing": "unrecoverable_missing",
+        "proof_variants_and_repair_chains": "not_yet_backfilled"
+      }
+    },
+    {
+      "packet_id": "number_theory.prime_distribution.harmonic_asymptotics.power_law_integral_two_to_x.v1",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "fields": {
+        "tactics_and_proof_shape": "recovered",
+        "proof_profile": "not_yet_backfilled",
+        "explicit_dependencies": "not_yet_backfilled",
+        "episode_and_trajectory_linkage": "partial_episode_id_only",
+        "attempts_and_diagnostics": "unrecoverable_missing",
+        "model_hashes_tokens_cost_timing": "unrecoverable_missing",
+        "proof_variants_and_repair_chains": "not_yet_backfilled"
+      }
+    },
+    {
+      "packet_id": "number_theory.prime_distribution.mertens.mertens_exact_theta_identity.v1",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "fields": {
+        "tactics_and_proof_shape": "recovered",
+        "proof_profile": "not_yet_backfilled",
+        "explicit_dependencies": "not_yet_backfilled",
+        "episode_and_trajectory_linkage": "partial_episode_id_only",
+        "attempts_and_diagnostics": "unrecoverable_missing",
+        "model_hashes_tokens_cost_timing": "unrecoverable_missing",
+        "proof_variants_and_repair_chains": "not_yet_backfilled"
+      }
+    },
+    {
+      "packet_id": "number_theory.prime_distribution.prime_reciprocal_sums.prime_reciprocal_quantitative_lower.v1",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "fields": {
+        "tactics_and_proof_shape": "recovered",
+        "proof_profile": "not_yet_backfilled",
+        "explicit_dependencies": "not_yet_backfilled",
+        "episode_and_trajectory_linkage": "partial_episode_id_only",
+        "attempts_and_diagnostics": "unrecoverable_missing",
+        "model_hashes_tokens_cost_timing": "unrecoverable_missing",
+        "proof_variants_and_repair_chains": "not_yet_backfilled"
+      }
+    },
+    {
+      "packet_id": "undergrad.abstract_algebra.group_inv_inv.v1",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "fields": {
+        "tactics_and_proof_shape": "recovered",
+        "proof_profile": "not_yet_backfilled",
+        "explicit_dependencies": "not_yet_backfilled",
+        "episode_and_trajectory_linkage": "unrecoverable_missing",
+        "attempts_and_diagnostics": "unrecoverable_missing",
+        "model_hashes_tokens_cost_timing": "unrecoverable_missing",
+        "proof_variants_and_repair_chains": "not_yet_backfilled"
+      }
+    },
+    {
+      "packet_id": "undergrad.abstract_algebra.group_mul_inv_rev.v1",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "fields": {
+        "tactics_and_proof_shape": "recovered",
+        "proof_profile": "not_yet_backfilled",
+        "explicit_dependencies": "not_yet_backfilled",
+        "episode_and_trajectory_linkage": "unrecoverable_missing",
+        "attempts_and_diagnostics": "unrecoverable_missing",
+        "model_hashes_tokens_cost_timing": "unrecoverable_missing",
+        "proof_variants_and_repair_chains": "not_yet_backfilled"
+      }
+    },
+    {
+      "packet_id": "undergrad.linear_algebra.smul_zero_vector.v1",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "fields": {
+        "tactics_and_proof_shape": "recovered",
+        "proof_profile": "not_yet_backfilled",
+        "explicit_dependencies": "not_yet_backfilled",
+        "episode_and_trajectory_linkage": "unrecoverable_missing",
+        "attempts_and_diagnostics": "unrecoverable_missing",
+        "model_hashes_tokens_cost_timing": "unrecoverable_missing",
+        "proof_variants_and_repair_chains": "not_yet_backfilled"
+      }
+    },
+    {
+      "packet_id": "undergrad.logic.double_negation_elim.v1",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "fields": {
+        "tactics_and_proof_shape": "recovered",
+        "proof_profile": "not_yet_backfilled",
+        "explicit_dependencies": "not_yet_backfilled",
+        "episode_and_trajectory_linkage": "unrecoverable_missing",
+        "attempts_and_diagnostics": "unrecoverable_missing",
+        "model_hashes_tokens_cost_timing": "unrecoverable_missing",
+        "proof_variants_and_repair_chains": "not_yet_backfilled"
+      }
+    },
+    {
+      "packet_id": "undergrad.real_analysis.continuous_add.v1",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "fields": {
+        "tactics_and_proof_shape": "recovered",
+        "proof_profile": "not_yet_backfilled",
+        "explicit_dependencies": "not_yet_backfilled",
+        "episode_and_trajectory_linkage": "unrecoverable_missing",
+        "attempts_and_diagnostics": "unrecoverable_missing",
+        "model_hashes_tokens_cost_timing": "unrecoverable_missing",
+        "proof_variants_and_repair_chains": "not_yet_backfilled"
+      }
+    },
+    {
+      "packet_id": "undergrad.real_analysis.continuous_mul.v1",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "fields": {
+        "tactics_and_proof_shape": "recovered",
+        "proof_profile": "not_yet_backfilled",
+        "explicit_dependencies": "not_yet_backfilled",
+        "episode_and_trajectory_linkage": "unrecoverable_missing",
+        "attempts_and_diagnostics": "unrecoverable_missing",
+        "model_hashes_tokens_cost_timing": "unrecoverable_missing",
+        "proof_variants_and_repair_chains": "not_yet_backfilled"
+      }
+    },
+    {
+      "packet_id": "undergrad.topology.is_closed_inter.v1",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "fields": {
+        "tactics_and_proof_shape": "recovered",
+        "proof_profile": "not_yet_backfilled",
+        "explicit_dependencies": "not_yet_backfilled",
+        "episode_and_trajectory_linkage": "unrecoverable_missing",
+        "attempts_and_diagnostics": "unrecoverable_missing",
+        "model_hashes_tokens_cost_timing": "unrecoverable_missing",
+        "proof_variants_and_repair_chains": "not_yet_backfilled"
+      }
+    },
+    {
+      "packet_id": "undergrad.topology.is_open_union.v1",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "fields": {
+        "tactics_and_proof_shape": "recovered",
+        "proof_profile": "not_yet_backfilled",
+        "explicit_dependencies": "not_yet_backfilled",
+        "episode_and_trajectory_linkage": "unrecoverable_missing",
         "attempts_and_diagnostics": "unrecoverable_missing",
         "model_hashes_tokens_cost_timing": "unrecoverable_missing",
         "proof_variants_and_repair_chains": "not_yet_backfilled"

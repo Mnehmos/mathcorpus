@@ -34,7 +34,7 @@ Kernel-verified through the tracked proof-search loop (episode 7e36dbd3).
 
 namespace MathCorpus.Elementary.Induction
 
-def myGcd : ℕ → ℕ → ℕ := fun a b =>
+noncomputable def myGcd : ℕ → ℕ → ℕ := fun a b =>
   Nat.strongRecOn (motive := fun _ => ℕ → ℕ) b
     (fun n ih x =>
       match n with
