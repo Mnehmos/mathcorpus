@@ -1,35 +1,49 @@
 {
-  "packet_count": 367,
+  "packet_count": 377,
   "by_domain": {
-    "logic": 3,
-    "algebra": 171,
+    "logic": 7,
+    "algebra": 173,
     "combinatorics": 57,
     "geometry": 40,
-    "number_theory": 64,
+    "number_theory": 65,
     "frontier": 25,
+    "analysis": 2,
     "abstract_algebra": 2,
     "linear_algebra": 1,
     "real_analysis": 2,
-    "topology": 2
+    "topology": 3
   },
   "by_level": {
-    "L0_elementary": 111,
-    "L1_proof_basics": 187,
-    "L2_olympiad": 36,
+    "L0_elementary": 112,
+    "L1_proof_basics": 190,
+    "L2_olympiad": 37,
     "L7_frontier": 25,
-    "L3_undergrad": 8
+    "L5_grad": 1,
+    "L6_known_theorem": 1,
+    "L3_undergrad": 10,
+    "L4_advanced_undergrad": 1
   },
   "by_kind": {
     "concept": 296,
-    "theorem": 43,
+    "theorem": 53,
     "negative_example": 28
   },
   "by_status": {
     "empirical_only": 2,
-    "kernel_verified": 337,
+    "kernel_verified": 347,
     "failed_attempt": 28
   },
   "packets": [
+    {
+      "packet_id": "analysis.metric_space_continuous_dist.v1",
+      "title": "Distance to a fixed point in a metric space is continuous",
+      "domain": "analysis",
+      "level": "L4_advanced_undergrad",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "dd102e1f0981c32ab9030452a5f5e33cdbb4135153fbfd0011217be8b7e3e71e"
+    },
     {
       "packet_id": "elementary.algebra.add_assoc.v1",
       "title": "Addition is associative",
@@ -2471,6 +2485,26 @@
       "packet_sha256": "c512c8ff04db317ee4d2401d6e93590a95f07df2269b2a3ac39585e7e0e3ef1a"
     },
     {
+      "packet_id": "elementary.logic.finset_card_two_nonempty_density.v1",
+      "title": "Finsets of size at most 2 containing a non-empty set satisfy the half-density bound",
+      "domain": "logic",
+      "level": "L1_proof_basics",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "04153a74e19803c62bc5ebd109f79a5516c642df2fff52204fac888f9c22cd79"
+    },
+    {
+      "packet_id": "elementary.logic.union_pair_element.v1",
+      "title": "Non-empty finset has an element in any union",
+      "domain": "logic",
+      "level": "L1_proof_basics",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "7958debd2b99aef71deb2f61d11083027de304cc14fdf9b389bb34ab3929ddbd"
+    },
+    {
       "packet_id": "elementary.number_theory.add_mod.v1",
       "title": "Addition modulo n",
       "domain": "number_theory",
@@ -3341,6 +3375,46 @@
       "packet_sha256": "4d28aefc6344bf8c8b82b7ebffb3753268f7058e741f2509b7f81d4b6ecf1108"
     },
     {
+      "packet_id": "known.algebra.group_hom_kernel_normal.v1",
+      "title": "The kernel of a group homomorphism is a normal subgroup",
+      "domain": "algebra",
+      "level": "L6_known_theorem",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "0cbb243f2a5b051a3f47f81537d402b0b767118c1841f1b95788362f984b4d9d"
+    },
+    {
+      "packet_id": "logic.functions.injective_comp_self.v1",
+      "title": "Composition of an injective function with itself is injective",
+      "domain": "logic",
+      "level": "L1_proof_basics",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "f26f8cc3d4826aa4d6bd20505d42e1cec684740a39fbc4d4ae81bc3f1ecb8fab"
+    },
+    {
+      "packet_id": "logic.set.inter_self.v1",
+      "title": "Intersection of a set with itself is itself",
+      "domain": "logic",
+      "level": "L0_elementary",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "f7df0bc4ed68003136cb96de48a372f1dfd97274bff683d13e311ec020b7b8fd"
+    },
+    {
+      "packet_id": "measure_theory.borel_space_is_open_measurable.v1",
+      "title": "Open sets in a topological space are Borel measurable",
+      "domain": "analysis",
+      "level": "L5_grad",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "698ab25be39c6a7181293d5a18aacfd575a7bf63b4deb873ec7f7168c7928def"
+    },
+    {
       "packet_id": "negative.algebra.div_mul_cancel_bare_ring_no_hypothesis_failure.v1",
       "title": "ring fails on a division-cancellation identity despite a true nonzero hypothesis",
       "domain": "algebra",
@@ -3621,6 +3695,26 @@
       "packet_sha256": "1180e83178294b0387609a870da22e0f19e3b217e24f6abf21d59886cf708b5c"
     },
     {
+      "packet_id": "number_theory.induction.two_pow_le_factorial_four.v1",
+      "title": "Factorial grows faster than power of 2 for n >= 4",
+      "domain": "number_theory",
+      "level": "L2_olympiad",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "46dccf5045a9a19539dda5fb97ba00d209afdcadc508c7106ff9ec475bf80741"
+    },
+    {
+      "packet_id": "topology.continuous_id.v1",
+      "title": "Identity map on any topological space is continuous",
+      "domain": "topology",
+      "level": "L3_undergrad",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "532fb8421c6882d94f900039267dbf36a6ebba2dc26faf713d6f5d0313760609"
+    },
+    {
       "packet_id": "undergrad.abstract_algebra.group_inv_inv.v1",
       "title": "Double inverse in a group",
       "domain": "abstract_algebra",
@@ -3639,6 +3733,16 @@
       "status": "kernel_verified",
       "eligibility": "public_train",
       "packet_sha256": "40a8d20eb1f8f6e45726e14b0f5c283333a96553cf47c4700e472fc0eb4e4644"
+    },
+    {
+      "packet_id": "undergrad.algebra.group_hom_one.v1",
+      "title": "Group homomorphism preserves identity element",
+      "domain": "algebra",
+      "level": "L3_undergrad",
+      "kind": "theorem",
+      "status": "kernel_verified",
+      "eligibility": "public_train",
+      "packet_sha256": "e2b887c39f2e8d6b3f4ff388dea70ead52457ae3c58538a069520ffb19eb122d"
     },
     {
       "packet_id": "undergrad.linear_algebra.smul_zero_vector.v1",

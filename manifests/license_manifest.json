@@ -1,6 +1,12 @@
 {
   "entries": [
     {
+      "packet_id": "analysis.metric_space_continuous_dist.v1",
+      "license_spdx": "Apache-2.0",
+      "license_content": "CC-BY-4.0",
+      "source_kind": "author_written"
+    },
+    {
       "packet_id": "elementary.algebra.add_assoc.v1",
       "license_spdx": "Apache-2.0",
       "license_content": "CC-BY-4.0",
@@ -1465,6 +1471,18 @@
       "source_kind": "author_written"
     },
     {
+      "packet_id": "elementary.logic.finset_card_two_nonempty_density.v1",
+      "license_spdx": "Apache-2.0",
+      "license_content": "CC-BY-4.0",
+      "source_kind": "author_written"
+    },
+    {
+      "packet_id": "elementary.logic.union_pair_element.v1",
+      "license_spdx": "Apache-2.0",
+      "license_content": "CC-BY-4.0",
+      "source_kind": "author_written"
+    },
+    {
       "packet_id": "elementary.number_theory.add_mod.v1",
       "license_spdx": "Apache-2.0",
       "license_content": "CC-BY-4.0",
@@ -1987,6 +2005,30 @@
       "source_kind": "formal_conjectures"
     },
     {
+      "packet_id": "known.algebra.group_hom_kernel_normal.v1",
+      "license_spdx": "Apache-2.0",
+      "license_content": "CC-BY-4.0",
+      "source_kind": "author_written"
+    },
+    {
+      "packet_id": "logic.functions.injective_comp_self.v1",
+      "license_spdx": "Apache-2.0",
+      "license_content": "CC-BY-4.0",
+      "source_kind": "author_written"
+    },
+    {
+      "packet_id": "logic.set.inter_self.v1",
+      "license_spdx": "Apache-2.0",
+      "license_content": "CC-BY-4.0",
+      "source_kind": "author_written"
+    },
+    {
+      "packet_id": "measure_theory.borel_space_is_open_measurable.v1",
+      "license_spdx": "Apache-2.0",
+      "license_content": "CC-BY-4.0",
+      "source_kind": "author_written"
+    },
+    {
       "packet_id": "negative.algebra.div_mul_cancel_bare_ring_no_hypothesis_failure.v1",
       "license_spdx": "Apache-2.0",
       "license_content": "CC-BY-4.0",
@@ -2155,6 +2197,18 @@
       "source_kind": "repo_original"
     },
     {
+      "packet_id": "number_theory.induction.two_pow_le_factorial_four.v1",
+      "license_spdx": "Apache-2.0",
+      "license_content": "CC-BY-4.0",
+      "source_kind": "author_written"
+    },
+    {
+      "packet_id": "topology.continuous_id.v1",
+      "license_spdx": "Apache-2.0",
+      "license_content": "CC-BY-4.0",
+      "source_kind": "author_written"
+    },
+    {
       "packet_id": "undergrad.abstract_algebra.group_inv_inv.v1",
       "license_spdx": "Apache-2.0",
       "license_content": "CC-BY-4.0",
@@ -2162,6 +2216,12 @@
     },
     {
       "packet_id": "undergrad.abstract_algebra.group_mul_inv_rev.v1",
+      "license_spdx": "Apache-2.0",
+      "license_content": "CC-BY-4.0",
+      "source_kind": "author_written"
+    },
+    {
+      "packet_id": "undergrad.algebra.group_hom_one.v1",
       "license_spdx": "Apache-2.0",
       "license_content": "CC-BY-4.0",
       "source_kind": "author_written"

@@ -1,0 +1,279 @@
+{
+  "queue_version": "1.0.0",
+  "campaign_id": "wave_001_curriculum_proofsearch",
+  "created_at": "2026-07-21T18:50:00Z",
+  "targets": [
+    {
+      "curriculum_target_id": "target.l0.set.inter_self",
+      "title": "Intersection of a set with itself is itself",
+      "domain": "logic",
+      "subdomain": "set_basics",
+      "intended_level": "L0_elementary",
+      "kind": "theorem",
+      "statement_informal": "For any set s, s ∩ s = s.",
+      "statement_formal_pp": "∀ {α : Type*} (s : Set α), s ∩ s = s",
+      "concepts_introduced": [
+        "set_intersection",
+        "idempotency"
+      ],
+      "theorem_or_definition_dependencies": [
+        "Set.inter_self"
+      ],
+      "expected_mathlib_support": "full",
+      "current_corpus_coverage": "covered",
+      "dedupe_cluster_id": "logic.set_inter_self",
+      "proof_search_difficulty_estimate": "D0",
+      "compute_tier": "Tier_A",
+      "public_training_eligibility": "public_train",
+      "status": "completed",
+      "packet_id": "logic.set.inter_self.v1",
+      "problem_version_id": "71bc21cf-d414-4221-8116-bac4f03469f3",
+      "episode_id": "9b43e390-9420-4748-8fd1-2ca7917a3b97"
+    },
+    {
+      "curriculum_target_id": "target.l1.functions.injective_comp_self",
+      "title": "Composition of an injective function with itself is injective",
+      "domain": "logic",
+      "subdomain": "functions",
+      "intended_level": "L1_proof_basics",
+      "kind": "theorem",
+      "statement_informal": "If f is injective, then f ∘ f is injective.",
+      "statement_formal_pp": "∀ {α : Type*} (f : α → α), Function.Injective f → Function.Injective (f ∘ f)",
+      "concepts_introduced": [
+        "injective_function",
+        "function_composition"
+      ],
+      "theorem_or_definition_dependencies": [
+        "Function.Injective.comp"
+      ],
+      "expected_mathlib_support": "full",
+      "current_corpus_coverage": "covered",
+      "dedupe_cluster_id": "logic.injective_comp_self",
+      "proof_search_difficulty_estimate": "D1",
+      "compute_tier": "Tier_A",
+      "public_training_eligibility": "public_train",
+      "status": "completed",
+      "packet_id": "logic.functions.injective_comp_self.v1",
+      "problem_version_id": "40143d2d-37dd-4ad9-a340-d8e6e5a774d7",
+      "episode_id": "ae8905de-97b6-4101-b077-7afab61112a6"
+    },
+    {
+      "curriculum_target_id": "target.l1.logic.finset_card_two_nonempty_density",
+      "title": "Finsets of size at most 2 containing a non-empty set satisfy the half-density bound",
+      "domain": "logic",
+      "subdomain": "finsets",
+      "intended_level": "L1_proof_basics",
+      "kind": "theorem",
+      "statement_informal": "A non-empty family of finsets of size <= 2 containing a non-empty set has an element in at least half of the sets.",
+      "statement_formal_pp": "∀ {α : Type*} [DecidableEq α] (F : Finset (Finset α)), F.Nonempty → F.card ≤ 2 → (∃ s ∈ F, s.Nonempty) → ∃ x, 2 * (F.filter (fun s => x ∈ s)).card ≥ F.card",
+      "concepts_introduced": [
+        "finset_cardinality",
+        "finset_filter"
+      ],
+      "theorem_or_definition_dependencies": [
+        "Finset.mem_filter",
+        "Finset.card_pos"
+      ],
+      "expected_mathlib_support": "full",
+      "current_corpus_coverage": "covered",
+      "dedupe_cluster_id": "elementary.logic.finset_card_two_nonempty_density",
+      "proof_search_difficulty_estimate": "D1",
+      "compute_tier": "Tier_A",
+      "public_training_eligibility": "public_train",
+      "status": "completed",
+      "packet_id": "elementary.logic.finset_card_two_nonempty_density.v1",
+      "problem_version_id": "137bbc0d-bd8c-4272-b762-9d247961d4d5",
+      "episode_id": "e39fceb9-dd51-4cdf-af66-758850561900"
+    },
+    {
+      "curriculum_target_id": "target.l2.number_theory.two_pow_le_factorial_four",
+      "title": "Factorial grows faster than power of 2 for n >= 4",
+      "domain": "number_theory",
+      "subdomain": "induction",
+      "intended_level": "L2_olympiad",
+      "kind": "theorem",
+      "statement_informal": "For n >= 4, 2^n <= n!.",
+      "statement_formal_pp": "∀ (n : ℕ), 4 ≤ n → 2 ^ n ≤ Nat.factorial n",
+      "concepts_introduced": [
+        "mathematical_induction",
+        "factorial_bounds"
+      ],
+      "theorem_or_definition_dependencies": [
+        "Nat.factorial"
+      ],
+      "expected_mathlib_support": "full",
+      "current_corpus_coverage": "covered",
+      "dedupe_cluster_id": "number_theory.two_pow_le_factorial_four",
+      "proof_search_difficulty_estimate": "D2",
+      "compute_tier": "Tier_A",
+      "public_training_eligibility": "public_train",
+      "status": "completed",
+      "packet_id": "number_theory.induction.two_pow_le_factorial_four.v1",
+      "problem_version_id": "150bbfa7-09ae-4304-ac7e-7a06feedf533",
+      "episode_id": "1c7b97ba-e47a-46f9-bb43-0f8ea2c80c03"
+    },
+    {
+      "curriculum_target_id": "target.l3.topology.continuous_id",
+      "title": "Identity map on any topological space is continuous",
+      "domain": "topology",
+      "subdomain": "continuous_maps",
+      "intended_level": "L3_undergrad",
+      "kind": "theorem",
+      "statement_informal": "The identity map on a topological space is continuous.",
+      "statement_formal_pp": "∀ {α : Type*} [TopologicalSpace α], Continuous (id : α → α)",
+      "concepts_introduced": [
+        "topological_space",
+        "continuous_map"
+      ],
+      "theorem_or_definition_dependencies": [
+        "continuous_id"
+      ],
+      "expected_mathlib_support": "full",
+      "current_corpus_coverage": "covered",
+      "dedupe_cluster_id": "topology.continuous_id",
+      "proof_search_difficulty_estimate": "D1",
+      "compute_tier": "Tier_A",
+      "public_training_eligibility": "public_train",
+      "status": "completed",
+      "packet_id": "topology.continuous_id.v1",
+      "problem_version_id": "46846296-a9fd-4c6a-bfa8-4f5ff0a67d66",
+      "episode_id": "44ba49c4-b182-43c3-aa1d-7328f328ec60"
+    },
+    {
+      "curriculum_target_id": "target.l3.algebra.group_hom_one",
+      "title": "Group homomorphism preserves identity element",
+      "domain": "algebra",
+      "subdomain": "group_theory",
+      "intended_level": "L3_undergrad",
+      "kind": "theorem",
+      "statement_informal": "For any group homomorphism f : G →* H, f 1 = 1.",
+      "statement_formal_pp": "∀ {G H : Type*} [Group G] [Group H] (f : G →* H), f 1 = 1",
+      "concepts_introduced": [
+        "group_homomorphism",
+        "identity_preservation"
+      ],
+      "theorem_or_definition_dependencies": [
+        "map_one"
+      ],
+      "expected_mathlib_support": "full",
+      "current_corpus_coverage": "covered",
+      "dedupe_cluster_id": "undergrad.algebra.group_hom_one",
+      "proof_search_difficulty_estimate": "D1",
+      "compute_tier": "Tier_A",
+      "public_training_eligibility": "public_train",
+      "status": "completed",
+      "packet_id": "undergrad.algebra.group_hom_one.v1",
+      "problem_version_id": "5c9c9a73-8758-4290-b07d-b4a801368c57",
+      "episode_id": "7045be23-4f9a-4ecf-aa69-cb2862753e9c"
+    },
+    {
+      "curriculum_target_id": "target.l4.analysis.metric_space_continuous_dist",
+      "title": "Distance to a fixed point in a metric space is continuous",
+      "domain": "analysis",
+      "subdomain": "metric_spaces",
+      "intended_level": "L4_advanced_undergrad",
+      "kind": "theorem",
+      "statement_informal": "The function x ↦ dist x p is continuous on a metric space.",
+      "statement_formal_pp": "∀ {X : Type*} [MetricSpace X] (p : X), Continuous (fun x => dist x p)",
+      "concepts_introduced": [
+        "metric_space",
+        "distance_continuity"
+      ],
+      "theorem_or_definition_dependencies": [
+        "continuous_id.dist"
+      ],
+      "expected_mathlib_support": "full",
+      "current_corpus_coverage": "covered",
+      "dedupe_cluster_id": "analysis.continuous_dist",
+      "proof_search_difficulty_estimate": "D2",
+      "compute_tier": "Tier_A",
+      "public_training_eligibility": "public_train",
+      "status": "completed",
+      "packet_id": "analysis.metric_space_continuous_dist.v1",
+      "problem_version_id": "0195f494-3256-425a-9009-f872bfd9173b",
+      "episode_id": "fd19fda7-1f07-417f-83ee-222015e143e2"
+    },
+    {
+      "curriculum_target_id": "target.l5.measure_theory.borel_space_is_open_measurable",
+      "title": "Open sets in a topological space are Borel measurable",
+      "domain": "analysis",
+      "subdomain": "measure_theory",
+      "intended_level": "L5_grad",
+      "kind": "theorem",
+      "statement_informal": "Every open set in a Borel space is measurable.",
+      "statement_formal_pp": "∀ {α : Type*} [TopologicalSpace α] [MeasurableSpace α] [BorelSpace α] {s : Set α}, IsOpen s → MeasurableSet s",
+      "concepts_introduced": [
+        "borel_space",
+        "measurable_set"
+      ],
+      "theorem_or_definition_dependencies": [
+        "IsOpen.measurableSet"
+      ],
+      "expected_mathlib_support": "full",
+      "current_corpus_coverage": "covered",
+      "dedupe_cluster_id": "measure_theory.borel_space_is_open_measurable",
+      "proof_search_difficulty_estimate": "D2",
+      "compute_tier": "Tier_A",
+      "public_training_eligibility": "public_train",
+      "status": "completed",
+      "packet_id": "measure_theory.borel_space_is_open_measurable.v1",
+      "problem_version_id": "9d1d5427-c744-4559-8971-41812f6128bb",
+      "episode_id": "da23697b-4fa8-4a1d-a69b-d1abddb2bfee"
+    },
+    {
+      "curriculum_target_id": "target.l6.algebra.group_hom_kernel_normal",
+      "title": "The kernel of a group homomorphism is a normal subgroup",
+      "domain": "algebra",
+      "subdomain": "group_theory",
+      "intended_level": "L6_known_theorem",
+      "kind": "theorem",
+      "statement_informal": "For any group homomorphism f : G →* H, its kernel (MonoidHom.ker f) is a normal subgroup of G.",
+      "statement_formal_pp": "∀ {G H : Type*} [Group G] [Group H] (f : G →* H), (MonoidHom.ker f).Normal",
+      "concepts_introduced": [
+        "group_homomorphism",
+        "kernel_normality"
+      ],
+      "theorem_or_definition_dependencies": [
+        "MonoidHom.normal_ker"
+      ],
+      "expected_mathlib_support": "full",
+      "current_corpus_coverage": "covered",
+      "dedupe_cluster_id": "known.algebra.group_hom_kernel_normal",
+      "proof_search_difficulty_estimate": "D2",
+      "compute_tier": "Tier_A",
+      "public_training_eligibility": "public_train",
+      "status": "completed",
+      "packet_id": "known.algebra.group_hom_kernel_normal.v1",
+      "problem_version_id": "efbb8708-ddeb-48f2-acf1-dd4105c94efe",
+      "episode_id": "2fcee18a-a26a-4f13-80c0-33cb829fed8f"
+    },
+    {
+      "curriculum_target_id": "target.l7.frontier.union_closed_pair_element",
+      "title": "Non-empty set in a union-closed pair contains an element of the union",
+      "domain": "frontier",
+      "subdomain": "combinatorics",
+      "intended_level": "L7_frontier",
+      "kind": "theorem",
+      "statement_informal": "For any non-empty finset A and finset B, the union A ∪ B contains an element.",
+      "statement_formal_pp": "∀ {α : Type*} [DecidableEq α] (A B : Finset α), A.Nonempty → ∃ x, x ∈ A ∪ B",
+      "concepts_introduced": [
+        "finset_union",
+        "exists_introduction"
+      ],
+      "theorem_or_definition_dependencies": [
+        "Finset.mem_union_left"
+      ],
+      "expected_mathlib_support": "full",
+      "current_corpus_coverage": "covered",
+      "dedupe_cluster_id": "elementary.logic.union_pair_element",
+      "proof_search_difficulty_estimate": "D3",
+      "compute_tier": "Tier_A",
+      "public_training_eligibility": "public_train",
+      "status": "completed",
+      "packet_id": "elementary.logic.union_pair_element.v1",
+      "problem_version_id": "3234a527-a1c6-40cd-a4bc-37faedd77b76",
+      "episode_id": "a478fec4-f715-4432-a593-cbdd95dde1f4",
+      "reclassification_note": "Landed packet reclassified to elementary.logic at L1_proof_basics: the proved statement is elementary finset-membership reasoning with no union-closed-family hypothesis, so the original L7_frontier intent was not met by this statement."
+    }
+  ]
+}
